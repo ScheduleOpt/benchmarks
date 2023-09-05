@@ -70,10 +70,10 @@ Cumulative jobshop instances (1400)
 ## Classification of the jobshop instances
 
 We use the following ***engines*** for the benchmark
-- **IBM ILOG Cplex** : representative of the **MIP** family of engines
-- **IBM ILOG CP Optimizer** : representative of the **CP-scheduling** family of engines
-- **ScheduleOpt OptalCP** : representative of the **CP-scheduling** family of engines
-- **Google OR-Tools** : representative of the **CP-SAT** family of engines
+- [**IBM ILOG Cplex**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-optimizer) : representative of the **MIP** family of engines
+- [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : representative of the **CP-scheduling** family of engines
+- [**ScheduleOpt OptalCP**](https://optalcp.com) : representative of the **CP-scheduling** family of engines
+- [**Google OR-Tools**](https://developers.google.com/optimization) : representative of the **CP-SAT** family of engines
 
 *We would like to add a representative of the local search family of engines. Please contact us if you are willing to provide us with licenses for benchmarking purposes.*
 
