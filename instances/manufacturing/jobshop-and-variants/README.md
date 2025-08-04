@@ -21,9 +21,9 @@
     - [Jobshop with arbitrary precedences](#jobshop-with-arbitrary-precedences)
     - [Jobshop with setup times](#jobshop-with-setup-times)
     - [Flexible jobshop](#flexible-jobshop)
-- [Jobshop benchmark](#jobshop-benchmark)
+- [Jobshop benchmark - JSPLib](#jobshop-benchmark---jsplib)
     - [Methodology](#methodology)
-    - [Best known results](#best-known-results)
+    - [Best known results](#best-known-results-on-the-jsplib)
     - [Publications](#publications-1)
 - [Test instances](#test-instances)
 
@@ -514,7 +514,7 @@ There are setup times in the machines to switch from one job to another
 
 Notice that this variant is only interesting if the setup times are sequence-dependent. Otherwise it is equivalent to increase each task by the length of the setup time and to solve an usual jobshop
 
-## Flexible jobshop
+## Flexible jobshop - JSPLib
 
 The tasks of a job can be processed by any machine in a predefined group of similar machines.
 
@@ -522,7 +522,7 @@ The tasks of a job can be processed by any machine in a predefined group of simi
 
 <br/>
 
-# Jobshop benchmark (JSPLib)
+# Jobshop benchmark - JSPLib
 
 The JSPLib is an informal group of instances that have been used to investigate solution methods for the jobshop problem. 
 
@@ -550,6 +550,8 @@ An instance is considered
 The publications that reported a best known bound are cited. We always consider that a bound of same value found by a reference engine (CPO, OptalCP, CP-SAT) is superior to the one reported in a publication, as it is easier to reproduce by just running the corresponding engine.
 
 ## Best known results on the JSPLib
+
+Find here the best reported results on the JSPlib instances. For the same result, we always prioritize results reported by engines than published documents (because of reproducibility of the results).
 
 ### Fisher and Thompson (1963)
 
