@@ -21,18 +21,11 @@
     - [Jobshop with arbitrary precedences](#jobshop-with-arbitrary-precedences)
     - [Jobshop with setup times](#jobshop-with-setup-times)
     - [Flexible jobshop](#flexible-jobshop)
-- [Jobshop benchmark](#jobshop-benchmark-results)
+- [Jobshop benchmark](#jobshop-benchmark)
     - [Methodology](#methodology)
-    - [Instances of interest](#problems-of-interest)
-        - [Small but still open](#small-yet-open)
-        - [Large](#large)
-        - [Industrial](#missing-industrial-instances)
-    - [Current results](#current-results)
-        - [Reentrant jobshop](#reentrant-jobshop)
-        - [Jobshop](#jobshop-1)
-        - [Flowshop (non permutation)](#non-permutation-flowshop)
+    - [Best known results](#best-known-results)
     - [Publications](#publications-1)
-- [Recommendations](#recommendations)
+- [Test instances](#test-instances)
 
 <br/>
 
@@ -42,67 +35,50 @@
 
 All instances in the benchmark follow the standard jobshop format, regardless of the problem they were originally meant for. The DaColTeppan instances use a conservative extension of the existing jobshop format. Cumulative jobshop have the capacity per machine in the filename, which may or may not be used.
 
-Flowshop instances (631)
-- 2 instances of flowshop `hel` from Heller 1960
-- 8 instances of flowshop `car` from Carlier 1978
-- 120 instances of flowshop `tfs` from Taillard 1993
-- 21 instances of flowshop `reC` from Reeves 1995
-- 480 instances of flowshop `vrf` from Vallada, Ruiz and Framinan 2015
-
-Jobshop instances (242)
+Jobshop instances (332)
 - 3 instances of jobshop `ft` from Fischer and Thompson 1963 
 - 40 instances of jobshop `la` from Lawrence 1984
 - 5 instances of jobshop `abz` from Adams, Balas and Zawack 1988
 - 10 instances of jobshop `orb` from Applegate and Cook 1991
-- 4 instances of jobshop `yn` from Yamada and Nakano 1992
 - 20 instances of jobshop `swv` from Storer, Wu and Vaccari 1992
+- 4 instances of jobshop `yn` from Yamada and Nakano 1992
 - 80 instances of jobshop `tjs` from Taillard 1993
 - 80 instances of jobshop `dmu` from Demirkol, Mehta and Uzsoy 1998
-
-Reentrant jobshop instances (114)
-- 12 instances of jobshop `long-js` from Da Col and Teppan 2022
-- 12 instances of jobshop `short-js` from Da Col and Teppan 2022
 - 90 instances of jobshop `tai` from Da Col and Teppan 2022
 
-Cumulative jobshop instances (1400)
-- 1400 instances of cumulative flowshop `pra` from Pan, Ruiz and Alfaro-Fernandez in 2017
-
-<br/>
+Reentrant jobshop instances (24)
+- 12 instances of jobshop `long-js` from Da Col and Teppan 2022
+- 12 instances of jobshop `short-js` from Da Col and Teppan 2022
 
 
 ## Classification of the jobshop instances
 
-We use the following ***engines*** for the benchmark
-- [**IBM ILOG Cplex**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-optimizer) : representative of the **MIP** family of engines
-- [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : representative of the **CP-scheduling** family of engines
-- [**ScheduleOpt OptalCP**](https://optalcp.com) : representative of the **CP-scheduling** family of engines
-- [**Google OR-Tools**](https://developers.google.com/optimization) : representative of the **CP-SAT** family of engines
+We use the following ***engines*** as reference engines the benchmark
+- [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : representative of the CP-scheduling family of engines
+- [**Google CP-SAT**](https://developers.google.com/optimization) : representative of the lazy clause generation family of engines
+- [**OptalCP**](https://optalcp.com) : representative of the CP-scheduling family of engines
 
-*We would like to add a representative of the local search family of engines. Please contact us if you are willing to provide us with licenses for benchmarking purposes.*
+***Linear programming engines like Cplex were so behind in performance that we dropped them as reference engines**
 
-The instances are divided into
+Instances are divided into
 - **easy** : solved to optimality (with proof) in 1 minute by at least 1 reference engine
 - **medium** : solved to optimality (with proof) in 1 hour by at least 1 reference engine
-- **hard** : solved to optimality (with proof) by someone, somewhere ... allegedly
+- **hard** : solved to optimality (with proof) in > 1h by at least 1 reference engine
+- **presumed closed** : allegedly solved by someone in a paper. Most of the time the optimal solution is known because 2 different methods were used to find upper and lower bounds.
 - **open** : no proof of optimality
 
-<br/> 
+Currently the instances divide as follows
+- `ft` : 3 easy
+- `la` : 39 easy, 1 medium
+- `abz` : 2 easy, 2 medium, 1 hard
+- `orb` : 10 easy
+- `swv` : 7 easy, 4 medium, 6 hard, 3 open
+- `yn` : 1 hard, 3 open
+- `tjs` : 40 easy, 21 medium, 7 hard, 12 open
+- `dmu` : 17 easy, 13 medium, 5 hard, 45 open
+- `tai` : 50 easy, 40 open
 
-If we consider the benchmark as a pure jobshop + flowshop benchmark (no cumulative, etc), there are currently
-- 313 easy instances
-- 62 medium instances
-- 22 hard instances
-- 590 open instances
-
-The detailed results are available as a table [Current results](#current-results)
-
-There are two subsets of remarkable instances
-- 75 open instances of dimensions smaller than 20 x 20 [Small but still open](#small-yet-open)
-- 40 very large instances (from 100 x 100 to 1000 x 1000) [Large](#large)
-
-<br/> 
-
-
+Previous versions of these results had `presumed closed` instances which we proceed to solve with OptalCP running for longer times.
 
 ## Formats
 
@@ -225,7 +201,7 @@ For instance `l01` in taillard format is
 
 The instances come from the following publications
 
-- **Heller, J.** (1960). Some numerical experiments for an M× J flow shop and its decision-theoretical aspects. Operations Research, 8(2), 178-184.
+- **Heller, J.** (1960). Some numerical experiments for an M×J flow shop and its decision-theoretical aspects. Operations Research, 8(2), 178-184.
 
 - **H. Fisher, G.L. Thompson** (1963), Probabilistic learning combinations of local job-shop scheduling rules, J.F. Muth, G.L. Thompson (eds.), Industrial Scheduling,  Prentice Hall, Englewood Cliffs, New Jersey, 225-251.
 
@@ -544,30 +520,19 @@ The tasks of a job can be processed by any machine in a predefined group of simi
 
 ***Please refer to the flexible-jobshop section of this benchmark for more information***
 
-
 <br/>
 
+# Jobshop benchmark (JSPLib)
 
-# Jobshop benchmark 
+The JSPLib is an informal group of instances that have been used to investigate solution methods for the jobshop problem. 
 
-The purpose of this effort is to ***classify*** the instances into `easy`, `medium`, `hard` and `open`.
-
-At this point in time, it is NOT to compare the engines, as we haven't had the time to run all engines on the same hardware. The engine comparison is ***ongoing work***
-
-<br/>
+In this section we keep track of the best known solutions and ***classify*** the JSPLib instances into `easy`, `medium`, `hard`, `presumed closed   ` and `open`.
 
 ## Methodology
 
 We have based our work on the ***outstanding*** work of Naderi, Ruiz and Roshanaei *Mixed-Integer Programming versus Constraint Programming for shop scheduling problems : New Results and Outlook* [**NRR2022**] which compares CPO, Cplex and Gurobi on a benchmark of 6623 instances over 17 benchmarks with a timeout of 1h. They have made all the [raw results available](http://soa.iti.es/problem-instances)
 
-We proceeded as follows
-- We took for each instance the best result provided by Naderi et al. (i.e. the engine that solves it the fastest or which finds the best bounds) and classified that instance in `easy`, `medium` or `open` accordingly
-- Then we ran OptalCP and ORtools on a hardware that is close to theirs (a 4 core Intel i7), and updated all results in which an improved bound or a change in category (`open` or `hard` -> `medium` -> `easy`) was found
-- Then we added bounds from literature and websites (which can only change a problem from `open` to allegedly `hard`, the classification as `easy` or `medium` requires an engine to find and prove optimality in a single run)
-
-<br/>
-
-The websites used to add bounds are
+The websites used as references for existing best known bounds are
 - http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html
 - https://github.com/thomasWeise/jsspInstancesAndResults
 - http://jobshop.jjvh.nl/
@@ -575,393 +540,30 @@ The websites used to add bounds are
 
 And the upper bounds from NRR2022
 
+An instance is considered
+- `easy` if it is solved to optimality by a reference engine in < 1 minute
+- `medium` if it is solved to optimality by a reference engine in < 1h
+- `hard` if it is solved to optimality by a reference engine in > 1h
+- `presumed closed` if the combination of upper and lower bounds found in the literature allows concluding the value of the optimal solution is known
+- `open` otherwise
 
-In a subsequent version of the benchmark we will run all engines, on all problems on the same hardware
+The publications that reported a best known bound are cited. We always consider that a bound of same value found by a reference engine (CPO, OptalCP, CP-SAT) is superior to the one reported in a publication, as it is easier to reproduce by just running the corresponding engine.
 
-<br/>
+## Best known results on the JSPLib
 
-## Instances of interest
-
-### Small yet open
-
-We have isolated a subset of 75 problems that are smaller than 20x20 and yet still open. We recommend engines to report results on this subset rather than the whole benchmark due to the large amount of instances. 
-
-Practitioners working on heuristic approaches may find these instances too small and are invited to use larger instances in the benchmark. 
-
-| type | name | size | LB | UB | status | lb found by | ub found by |
-|---|---|---|---|---|---|---|---|
-jobshop|abz8|20x15|651|665|open|OptalCP|He2002
-jobshop|dmu04|20x15|2629|2669|open|OptalCP|BB2001
-jobshop|dmu06|20x20|3165|3244|open|OptalCP|PSV2010
-jobshop|dmu07|20x20|2982|3046|open|OptalCP|PSV2010
-jobshop|dmu41|20x15|3138|3248|open|OptalCP|PLC2015
-jobshop|dmu42|20x15|3312|3390|open|OptalCP|SS2018
-jobshop|dmu43|20x15|3385|3441|open|OptalCP|SS2018
-jobshop|dmu44|20x15|3387|3475|open|OptalCP|SS2018
-jobshop|dmu45|20x15|3186|3266|open|OptalCP|CS2022
-jobshop|dmu46|20x20|3725|4035|open|OptalCP|GR2014
-jobshop|dmu47|20x20|3672|3939|open|OptalCP|GR2014
-jobshop|dmu48|20x20|3591|3763|open|OptalCP|SS2018
-jobshop|dmu49|20x20|3508|3710|open|OptalCP|SS2018
-jobshop|dmu50|20x20|3578|3729|open|OptalCP|PLC2015
-jobshop|swv06|20x15|1633|1667|open|OptalCP|CS2022
-jobshop|swv07|20x15|1520|1594|open|OptalCP|GR2014
-jobshop|swv08|20x15|1677|1751|open|OptalCP|Mu2015
-jobshop|swv09|20x15|1637|1655|open|OptalCP|SS2018
-jobshop|swv10|20x15|1664|1743|open|OptalCP|SS2018
-jobshop|tjs18|20x15|1384|1396|open|OptalCP|BV1998
-jobshop|tjs22|20x20|1573|1600|open|OptalCP|NS2002
-jobshop|tjs23|20x20|1529|1557|open|OptalCP|OptalCP_FFBL
-jobshop|tjs25|20x20|1573|1595|open|OptalCP|NS2002
-jobshop|tjs26|20x20|1604|1643|open|OptalCP|GR2014
-jobshop|tjs27|20x20|1660|1680|open|OptalCP|NS2002
-jobshop|tjs29|20x20|1592|1625|open|OptalCP|OptalCP
-jobshop|tjs30|20x20|1533|1584|open|OptalCP|NS2002
-jobshop|yn2|20x20|879|904|open|OptalCP|SS2018
-jobshop|yn3|20x20|865|892|open|OptalCP|SS2018
-jobshop|yn4|20x20|935|968|open|OptalCP|SS2018
-flowshop|reC13|20x15|1875|1911|open|OptalCP|OptalCP
-flowshop|reC15|20x15|1939|1940|open|OptalCP|OptalCP_FFLL
-flowshop|reC17|20x15|1837|1855|open|OptalCP|OptalCP_FFLL
-flowshop|tfs012|20x10|1631|1644|open|OptalCP|OptalCP_FFLL
-flowshop|tfs013|20x10|1462|1468|open|OptalCP|OptalCP_FFLL
-flowshop|tfs017|20x10|1421|1427|open|OptalCP|OptalCP
-flowshop|tfs018|20x10|1512|1516|open|OptalCP|OptalCP
-flowshop|tfs021|20x20|2135|2297|open|OptalCP|Ta1993
-flowshop|tfs022|20x20|1923|2099|open|OptalCP|Ta1993
-flowshop|tfs023|20x20|2086|2294|open|OptalCP|OptalCP
-flowshop|tfs024|20x20|2056|2181|open|OptalCP|OptalCP
-flowshop|tfs025|20x20|2149|2261|open|OptalCP|OptalCP
-flowshop|tfs026|20x20|2047|2181|open|OptalCP|OptalCP_FFLL
-flowshop|tfs027|20x20|2084|2261|open|OptalCP|OptalCP_FFLL
-flowshop|tfs028|20x20|2059|2191|open|OptalCP|OptalCP
-flowshop|tfs029|20x20|2064|2221|open|OptalCP|OptalCP
-flowshop|tfs030|20x20|2058|2164|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_10_01|20x10|1425|1471|open|OptalCP|OptalCP
-flowshop|vrf_020_10_02|20x10|1467|1506|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_10_03|20x10|1537|1555|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_10_04|20x10|1402|1422|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_10_05|20x10|1528|1566|open|OptalCP|OptalCP
-flowshop|vrf_020_10_06|20x10|1525|1549|open|OptalCP|OptalCP
-flowshop|vrf_020_10_07|20x10|1548|1568|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_10_09|20x10|1492|1512|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_10_10|20x10|1466|1489|open|OptalCP|OptalCP
-flowshop|vrf_020_15_01|20x15|1796|1899|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_15_02|20x15|1747|1905|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_15_03|20x15|1670|1780|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_15_04|20x15|1703|1806|open|OptalCP|OptalCP
-flowshop|vrf_020_15_05|20x15|1802|1846|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_15_06|20x15|1818|1928|open|OptalCP|OptalCP
-flowshop|vrf_020_15_07|20x15|1792|1864|open|OptalCP|OptalCP
-flowshop|vrf_020_15_08|20x15|1668|1802|open|OptalCP|OptalCP
-flowshop|vrf_020_15_09|20x15|1826|1916|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_15_10|20x15|1738|1845|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_20_01|20x20|2001|2236|open|OptalCP|OptalCP
-flowshop|vrf_020_20_02|20x20|1973|2170|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_20_03|20x20|2003|2254|open|OptalCP|OptalCP
-flowshop|vrf_020_20_04|20x20|1924|2146|open|OptalCP|OptalCP
-flowshop|vrf_020_20_05|20x20|1975|2206|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_20_06|20x20|2023|2237|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_20_07|20x20|1989|2267|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_20_08|20x20|2012|2139|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_20_09|20x20|2140|2322|open|OptalCP|OptalCP_FFLL
-flowshop|vrf_020_20_10|20x20|1953|2167|open|OptalCP|OptalCP_FFLL
-
-### Large
-
-The 40 Taillard-like instances generated by Da Col and Teppan in 2022 are a good benchmark to evaluate the ability of optimization engines to solve very large instances (from 100 x 100 to 1000 x 1000). 
-
-In particular engines have struggled with the upper bounds for the 1000 x 1000 jobshops, with a simple heuristic `DOFP2023` defeating them 
-
-| type | name | size | LB | UB | status | lb found by | ub found by |
-|---|---|---|---|---|---|---|---|
-jobshop|tai_j1000_m1000_1|1000x1000|549392|984915|open|OptalCP|DOFP2023
-jobshop|tai_j1000_m1000_10|1000x1000|541530|980447|open|OptalCP|DOFP2023
-jobshop|tai_j1000_m1000_2|1000x1000|549043|976457|open|OptalCP|DOFP2023
-jobshop|tai_j1000_m1000_3|1000x1000|552580|982286|open|OptalCP|DOFP2023
-jobshop|tai_j1000_m1000_4|1000x1000|547670|982960|open|OptalCP|DOFP2023
-jobshop|tai_j1000_m1000_5|1000x1000|545193|978300|open|OptalCP|DOFP2023
-jobshop|tai_j1000_m1000_6|1000x1000|547286|982360|open|OptalCP|DOFP2023
-jobshop|tai_j1000_m1000_7|1000x1000|545877|988315|open|OptalCP|DOFP2023
-jobshop|tai_j1000_m1000_8|1000x1000|549220|985274|open|OptalCP|DOFP2023
-jobshop|tai_j1000_m1000_9|1000x1000|543559|993692|open|OptalCP|DOFP2023
-jobshop|tai_j1000_m100_1|1000x100|525343|539120|open|OptalCP|OptalCP
-jobshop|tai_j1000_m100_10|1000x100|529112|540884|open|OptalCP|OptalCP
-jobshop|tai_j1000_m100_2|1000x100|528088|540895|open|OptalCP|OptalCP
-jobshop|tai_j1000_m100_3|1000x100|522793|534794|open|OptalCP|OptalCP
-jobshop|tai_j1000_m100_4|1000x100|524271|536317|open|OptalCP|OptalCP
-jobshop|tai_j1000_m100_5|1000x100|531216|532016|open|OptalCP|OptalCP
-jobshop|tai_j1000_m100_6|1000x100|518763|535189|open|OptalCP|OptalCP
-jobshop|tai_j1000_m100_7|1000x100|527093|535894|open|OptalCP|OptalCP
-jobshop|tai_j1000_m100_8|1000x100|519524|533985|open|OptalCP|OptalCP
-jobshop|tai_j1000_m100_9|1000x100|520889|539511|open|OptalCP|OptalCP
-jobshop|tai_j100_m1000_1|100x1000|522298|544732|open|OptalCP|OptalCP
-jobshop|tai_j100_m1000_10|100x1000|521766|543797|open|OptalCP|OptalCP
-jobshop|tai_j100_m1000_2|100x1000|530375|546598|open|OptalCP|OptalCP
-jobshop|tai_j100_m1000_3|100x1000|530560|549372|open|OptalCP|OptalCP
-jobshop|tai_j100_m1000_4|100x1000|527101|545138|open|OptalCP|OptalCP
-jobshop|tai_j100_m1000_5|100x1000|517728|545535|open|OptalCP|OptalCP
-jobshop|tai_j100_m1000_6|100x1000|522907|545730|open|OptalCP|OptalCP
-jobshop|tai_j100_m1000_7|100x1000|522537|546899|open|OptalCP|OptalCP
-jobshop|tai_j100_m1000_8|100x1000|526428|549337|open|OptalCP|OptalCP
-jobshop|tai_j100_m1000_9|100x1000|528097|550693|open|OptalCP|OptalCP
-jobshop|tai_j100_m100_1|100x100|62703|79253|open|OptalCP|OptalCP
-jobshop|tai_j100_m100_10|100x100|64866|79018|open|OptalCP|OptalCP
-jobshop|tai_j100_m100_2|100x100|62814|78714|open|OptalCP|OptalCP
-jobshop|tai_j100_m100_3|100x100|61533|77770|open|OptalCP|OptalCP
-jobshop|tai_j100_m100_4|100x100|64742|80167|open|OptalCP|OptalCP
-jobshop|tai_j100_m100_5|100x100|61766|79583|open|OptalCP|OptalCP_FFLL
-jobshop|tai_j100_m100_6|100x100|61360|79522|open|OptalCP|OptalCP
-jobshop|tai_j100_m100_7|100x100|64040|79477|open|OptalCP|OptalCP
-jobshop|tai_j100_m100_8|100x100|63224|79303|open|OptalCP|OptalCP
-jobshop|tai_j100_m100_9|100x100|62631|80608|open|OptalCP|OptalCP_FFLL
-
-<br/>
-
-Upper bounds for the different engines with a 1h timeout
-
-| name | size | OptalCP | or-tools | greedy
-|---|---|---|---|---|
-tai_j1000_m1000_1|1000x1000|Infinity|500517330|984915 (17s)
-tai_j1000_m1000_10|1000x1000|Infinity|500099600|980447 (13s)
-tai_j1000_m1000_2|1000x1000|Infinity|500108522|976457 (14s)
-tai_j1000_m1000_3|1000x1000|Infinity|500961143|982286 (13s)
-tai_j1000_m1000_4|1000x1000|Infinity|500731097|982960 (14s)
-tai_j1000_m1000_5|1000x1000|Infinity|500801456|978300 (12s)
-tai_j1000_m1000_6|1000x1000|Infinity|500199506|982360 (14s)
-tai_j1000_m1000_7|1000x1000|Infinity|500514434|988315 (12s)
-tai_j1000_m1000_8|1000x1000|Infinity|500685254|985274 (13s)
-tai_j1000_m1000_9|1000x1000|Infinity|500301012|993692 (13s)
-
-
-### Missing industrial instances
-
-> When generating good instances, Taillard (1993) carried out an unspecified
-> number of runs in which he selected hard instances by minimizing the gap
-> between a trivial lower bound and the upper bound obtained with taboo
-> search methods. While this might seem unsophisticated, we will later see that
-> elaborating on this procedure is the only known approach.<br/>
-> **Vallada, Ruiz and Framinan** in *New hard benchmark for flowshop scheduling problems minimizing makespan* (2015)
-
-The purpose of an optimization engine is not to solve quickly problems that are close to (what SAT practitioners call) **the phase transition**, that is the hardest problems. The purpose of an optimization engine is to solve problems that are representative of the problems found in the industry, which usually have a **structure** due to a certain similarity between products being manufactured, the types of machines and physical constraints. 
-
-It is the engine's work to identify and exploit said structure to speed-up the resolution of the instances. 
-
-**Randomly generated instances are usually a poor approximation of real-world problems**, and this benchmark is sadly missing instances coming from real production lines.
-
-Also generating random instances and filtering only by comparing a trivial lower bound with a heuristic neglects the fact that engines have ***deduction algorithms*** that sometimes instantly close instances that appear to be hard for heuristics.
-
-Consider the taillard jobshop instances
-- instances 0 (15x15) to 10 (15x15) are solved by OptalCP in < 1 minute
-- instances 11 (20x15) to 40 (30x15) are a mix of easy (4), medium (9), hard (7) and open (10)
-- instances 41 (30x20) to 50 (30x30) are open
-- instances 51 (50x15) to 80 (100x20) are solved to optimality by OptalCP in < 1 min with the exception of 3 instances that require < 1h and `tjs67` (50x20) for which the optimal solution is known (engine lb + heuristic) but engines cannot close it in < 1h
-
-
-
-
-## Publications
-
-The upper and lower bounds come from
-
-- Ta1993 (3 bounds) : **Taillard, E. (1993)**. Benchmarks for basic scheduling problems. european journal of operational research, 64(2), 278-285.
-
-- Va1995 (34 bounds) : Vaessens, personal communication (to Taillard)
-
-- BV1998 (1 bound) : **Balas, E., & Vazacopoulos, A. (1998)**. Guided local search with shifting bottleneck for job shop scheduling. Management science, 44(2), 262-275.
-
-- AELS1999 (1 bound) :  E. Aarts, Huub ten Eikelder, J.K. Lenstra, R. Schilham, personal communication (to Taillard)
-
-- BB2001 (1 bounds) : **Brucker, P., & Brinkkötter, W. (2001)**. Solving open benchmark problems for the job-shop-problem. Journal of Scheduling, 4, 53-64.
-
-- He2002 (3 bounds) : **Andre Henning (2002)** Practical job shop scheduling problems (in german) Ph.D. Thesis, Friedrich-Schiller-University Jena, Jena, Germany
-
-- NS2002 (7 bounds) : **Nowicki, E., & Smutnicki, C. (2002)**. Some new tools to solve the job shop problem. Raport serii: Preprinty, 60.
-
-- NS2005 (23 bounds) : **Nowicki, E., & Smutnicki, C. (2005)**. An advanced tabu search algorithm for the job shop problem. Journal of Scheduling, 8, 145-159.
-
-- RMA2005 (4 bounds) : Ramon Companys, Manel Mateo & Agustín Alemán, personal communication (to Taillard)
-
-- PS2006 (1 bounds) : **Pardalos, P. M., & Shylo, O. V. (2006)**. An algorithm for the job shop scheduling problem based on global equilibrium search techniques. Computational Management Science, 3, 331-348.
-
-- RS2007 (5 bounds) : **Ruiz, R., & Stützle, T. (2007)**. A simple and effective iterated DOFP2023 algorithm for the permutation flowshop scheduling problem. European journal of operational research, 177(3), 2033-2049.
-
-- ZLRG2007 (2 bounds) : **Zhang, C., Li, P., Guan, Z., & Rao, Y. (2007)**. A tabu search algorithm with a new neighborhood structure for the job shop scheduling problem. Computers & Operations Research, 34(11), 3229-3242.
-
-- ZLRG2008 (2 bounds) : **Zhang, C. Y., Li, P., Rao, Y., & Guan, Z. (2008)**. A very fast TS/SA algorithm for the job shop scheduling problem. Computers & operations research, 35(1), 282-294.
-
-- KNFH2010 (1 bound) : **Koshimura, M., Nabeshima, H., Fujita, H., & Hasegawa, R. (2010)** . Solving open job-shop scheduling problems by SAT encoding. IEICE TRANSACTIONS on Information and Systems, 93(8), 2316-2318.
-
-- PSV2010 (3 bounds) : **Pardalos, P. M., Shylo, O. V., & Vazacopoulos, A. (2010)**. Solving job shop scheduling problems utilizing the properties of backbone and “big valley”. Computational Optimization and Applications, 47, 61-76.
-
-- GR2014 (8 bounds) : **Gonçalves, J. F., & Resende, M. G.** (2014). An extended Akers graphical method with a biased random‐key genetic algorithm for job‐shop scheduling. International Transactions in Operational Research, 21(2), 215-246.
-
-- CPO2015 (11 bounds): 
-
-    - **Vilím, P., Laborie, P., & Shaw, P. (2015).** Failure-directed search for constraint-based scheduling. In Integration of AI and OR Techniques in Constraint Programming: 12th International Conference, CPAIOR 2015, Barcelona, Spain, May 18-22, 2015, Proceedings 12 (pp. 437-453). Springer International Publishing.
-
-    - **Vilım, P., Laborie, P., & Shaw, P**. Failure-directed Search for Constraint-based Scheduling Detailed Experimental Results.
-
-- Mu2015 (1 bound) : Personal communication to optimizizer, probably based on **Murovec, B. (2015)**. Job-shop local-search move evaluation without direct consideration of the criterion’s value. European Journal of Operational Research, 241(2), 320-329.
-
-- PLC2015 (7 bounds) : **Peng, B., Lü, Z., & Cheng, T. C. E. (2015)**. A tabu search/path relinking algorithm to solve the job shop scheduling problem. Computers & Operations Research, 53, 154-164.
-
-- RMA2015 (2 bounds) : Ramon Companys, Manel Mateo & Agustín Alemán, personal communication (to Taillard)
-
-- VRM2105 (240 bounds) : **Vallada, E., Ruiz, R., & Framinan, J. M. (2015)**. New hard benchmark for flowshop scheduling problems minimising makespan. European Journal of Operational Research, 240(3), 666-677.
-
-- SS2018 (21 bounds) : **Shylo, O. V., & Shams, H. (2018)**. Boosting binary optimization via binary classification: A case study of job shop scheduling. arXiv preprint arXiv:1808.10813.
-
-- CS2022 (30 bounds) : **Constantino, O. H., & Segura, C. (2022)**. A parallel memetic algorithm with explicit management of diversity for the job shop scheduling problem. Applied Intelligence, 52(1), 141-153.
-
-- XLGG2022 (2 bounds) : **Xie, J., Li, X., Gao, L., & Gui, L. (2022)**. A hybrid algorithm with a new neighborhood structure for job shop scheduling problems. Computers & Industrial Engineering, 169, 108205.
-
-- DOFP2023 (10 bounds) : **Diego Olivier Fernandez Pons (2023)**. DOFP2023 heuristic in JavaScript assigning tasks from left to right. Personal communication
-
-<br/>
-
-*There is a large number of bounds in the flowshop problems that were obtained solving the permutation flowshop problem, which is more constrained (and optimization engines like CPO and OptalCP misuse the extra-freedom).*
-
-*Every time an engine reaches a published bound we discount the bound. When a publication reaches 0 bounds it is removed.*
-
-
-<br/>
-
-
-
-## Current results
-
-*If you look at the `.md` file in a displayer that is not Github, you will have colors*
-
-Last updated 2023-09-15
-- different parameters used for OptalCP improved 384 lower bounds 40 upper bounds with respect to the best known solutions. Bounds found by previous parameters, when they are the best known, appear as `OptalCP_FFLL` or `OptalCP_FFBL`
-
-*Check the release notes for a summary of the changes*
-
-<br/>
-
-### Reentrant jobshop
+### Fisher and Thompson (1963)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>long-js-600000-100-10000-1</td><td>103x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>long-js-600000-100-10000-2</td><td>103x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>long-js-600000-100-10000-3</td><td>103x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>long-js-600000-100-100000-1</td><td>109x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>long-js-600000-100-100000-2</td><td>114x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>long-js-600000-100-100000-3</td><td>109x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>long-js-600000-1000-10000-1</td><td>1002x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>long-js-600000-1000-10000-2</td><td>1002x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>long-js-600000-1000-10000-3</td><td>1002x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>long-js-600000-1000-100000-1</td><td>1002x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>long-js-600000-1000-100000-2</td><td>1002x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>long-js-600000-1000-100000-3</td><td>1003x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>short-js-600000-100-10000-1</td><td>2162x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>short-js-600000-100-10000-2</td><td>2192x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>short-js-600000-100-10000-3</td><td>2169x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>short-js-600000-100-100000-1</td><td>20685x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>short-js-600000-100-100000-2</td><td>20870x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>short-js-600000-100-100000-3</td><td>20767x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>short-js-600000-1000-10000-1</td><td>2882x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>short-js-600000-1000-10000-2</td><td>2863x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>short-js-600000-1000-10000-3</td><td>2897x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>short-js-600000-1000-100000-1</td><td>21280x1000</td><td>reentrant jobshop</td><td>600000</td><td>600038</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>short-js-600000-1000-100000-2</td><td>21349x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>short-js-600000-1000-100000-3</td><td>21338x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-</table>
-
-### Jobshop
-
-<table>
-<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>abz5</td><td>10x10</td><td>jobshop</td><td>1234</td><td>1234</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>abz6</td><td>10x10</td><td>jobshop</td><td>943</td><td>943</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>abz7</td><td>20x15</td><td>jobshop</td><td>656</td><td>656</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>abz8</td><td>20x15</td><td>jobshop</td><td>651</td><td>665</td><td style="background-color:grey">open</td><td>lb OptalCP / ub He2002</td></tr>
-<tr><td>abz9</td><td>20x15</td><td>jobshop</td><td>678</td><td>678</td><td style="background-color:orange">medium</td><td>OptalCP_FFBL in < 1h</td></tr>
-<tr><td>dmu01</td><td>20x15</td><td>jobshop</td><td>2563</td><td>2563</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dmu02</td><td>20x15</td><td>jobshop</td><td>2706</td><td>2706</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dmu03</td><td>20x15</td><td>jobshop</td><td>2731</td><td>2731</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>dmu04</td><td>20x15</td><td>jobshop</td><td>2629</td><td>2669</td><td style="background-color:grey">open</td><td>lb OptalCP / ub BB2001</td></tr>
-<tr><td>dmu05</td><td>20x15</td><td>jobshop</td><td>2749</td><td>2749</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dmu06</td><td>20x20</td><td>jobshop</td><td>3165</td><td>3244</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PSV2010</td></tr>
-<tr><td>dmu07</td><td>20x20</td><td>jobshop</td><td>2982</td><td>3046</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PSV2010</td></tr>
-<tr><td>dmu08</td><td>20x20</td><td>jobshop</td><td>3188</td><td>3188</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dmu09</td><td>20x20</td><td>jobshop</td><td>3092</td><td>3092</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dmu10</td><td>20x20</td><td>jobshop</td><td>2984</td><td>2984</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dmu11</td><td>30x15</td><td>jobshop</td><td>3397</td><td>3430</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PLC2015</td></tr>
-<tr><td>dmu12</td><td>30x15</td><td>jobshop</td><td>3481</td><td>3492</td><td style="background-color:grey">open</td><td>lb CPO / ub SS2018</td></tr>
-<tr><td>dmu13</td><td>30x15</td><td>jobshop</td><td>3681</td><td>3681</td><td style="background-color:red">hard</td><td>lb CPO / ub ZLRG2008</td></tr>
-<tr><td>dmu14</td><td>30x15</td><td>jobshop</td><td>3394</td><td>3394</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>dmu15</td><td>30x15</td><td>jobshop</td><td>3343</td><td>3343</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>dmu16</td><td>30x20</td><td>jobshop</td><td>3734</td><td>3751</td><td style="background-color:grey">open</td><td>lb CPO / ub SS2018</td></tr>
-<tr><td>dmu17</td><td>30x20</td><td>jobshop</td><td>3718</td><td>3814</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu18</td><td>30x20</td><td>jobshop</td><td>3844</td><td>3844</td><td style="background-color:red">hard</td><td>lb CPO / ub GR2014</td></tr>
-<tr><td>dmu19</td><td>30x20</td><td>jobshop</td><td>3698</td><td>3764</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu20</td><td>30x20</td><td>jobshop</td><td>3617</td><td>3703</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu21</td><td>40x15</td><td>jobshop</td><td>4380</td><td>4380</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>dmu22</td><td>40x15</td><td>jobshop</td><td>4725</td><td>4725</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>dmu23</td><td>40x15</td><td>jobshop</td><td>4668</td><td>4668</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>dmu24</td><td>40x15</td><td>jobshop</td><td>4648</td><td>4648</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>dmu25</td><td>40x15</td><td>jobshop</td><td>4164</td><td>4164</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>dmu26</td><td>40x20</td><td>jobshop</td><td>4647</td><td>4647</td><td style="background-color:red">hard</td><td>lb CPO / ub ZLRG2008</td></tr>
-<tr><td>dmu27</td><td>40x20</td><td>jobshop</td><td>4848</td><td>4848</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dmu28</td><td>40x20</td><td>jobshop</td><td>4692</td><td>4692</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>dmu29</td><td>40x20</td><td>jobshop</td><td>4691</td><td>4691</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>dmu30</td><td>40x20</td><td>jobshop</td><td>4732</td><td>4732</td><td style="background-color:red">hard</td><td>lb CPO / ub NS2002</td></tr>
-<tr><td>dmu31</td><td>50x15</td><td>jobshop</td><td>5640</td><td>5640</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>dmu32</td><td>50x15</td><td>jobshop</td><td>5927</td><td>5927</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>dmu33</td><td>50x15</td><td>jobshop</td><td>5728</td><td>5728</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>dmu34</td><td>50x15</td><td>jobshop</td><td>5385</td><td>5385</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>dmu35</td><td>50x15</td><td>jobshop</td><td>5635</td><td>5635</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>dmu36</td><td>50x20</td><td>jobshop</td><td>5621</td><td>5621</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>dmu37</td><td>50x20</td><td>jobshop</td><td>5851</td><td>5851</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>dmu38</td><td>50x20</td><td>jobshop</td><td>5713</td><td>5713</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dmu39</td><td>50x20</td><td>jobshop</td><td>5747</td><td>5747</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>dmu40</td><td>50x20</td><td>jobshop</td><td>5577</td><td>5577</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>dmu41</td><td>20x15</td><td>jobshop</td><td>3138</td><td>3248</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PLC2015</td></tr>
-<tr><td>dmu42</td><td>20x15</td><td>jobshop</td><td>3312</td><td>3390</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu43</td><td>20x15</td><td>jobshop</td><td>3385</td><td>3441</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu44</td><td>20x15</td><td>jobshop</td><td>3387</td><td>3475</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu45</td><td>20x15</td><td>jobshop</td><td>3186</td><td>3266</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu46</td><td>20x20</td><td>jobshop</td><td>3725</td><td>4035</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>dmu47</td><td>20x20</td><td>jobshop</td><td>3672</td><td>3939</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>dmu48</td><td>20x20</td><td>jobshop</td><td>3591</td><td>3763</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu49</td><td>20x20</td><td>jobshop</td><td>3508</td><td>3710</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu50</td><td>20x20</td><td>jobshop</td><td>3578</td><td>3729</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PLC2015</td></tr>
-<tr><td>dmu51</td><td>30x15</td><td>jobshop</td><td>4054</td><td>4156</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu52</td><td>30x15</td><td>jobshop</td><td>4183</td><td>4303</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu53</td><td>30x15</td><td>jobshop</td><td>4236</td><td>4378</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu54</td><td>30x15</td><td>jobshop</td><td>4271</td><td>4361</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu55</td><td>30x15</td><td>jobshop</td><td>4181</td><td>4263</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu56</td><td>30x20</td><td>jobshop</td><td>4715</td><td>4939</td><td style="background-color:grey">open</td><td>lb OptalCP / ub XLGG2022</td></tr>
-<tr><td>dmu57</td><td>30x20</td><td>jobshop</td><td>4434</td><td>4647</td><td style="background-color:grey">open</td><td>lb OptalCP / ub XLGG2022</td></tr>
-<tr><td>dmu58</td><td>30x20</td><td>jobshop</td><td>4441</td><td>4701</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu59</td><td>30x20</td><td>jobshop</td><td>4338</td><td>4616</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu60</td><td>30x20</td><td>jobshop</td><td>4445</td><td>4721</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu61</td><td>40x15</td><td>jobshop</td><td>5021</td><td>5171</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu62</td><td>40x15</td><td>jobshop</td><td>5165</td><td>5248</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu63</td><td>40x15</td><td>jobshop</td><td>5230</td><td>5313</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu64</td><td>40x15</td><td>jobshop</td><td>5147</td><td>5226</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu65</td><td>40x15</td><td>jobshop</td><td>5122</td><td>5184</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu66</td><td>40x20</td><td>jobshop</td><td>5510</td><td>5701</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu67</td><td>40x20</td><td>jobshop</td><td>5650</td><td>5779</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu68</td><td>40x20</td><td>jobshop</td><td>5492</td><td>5763</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu69</td><td>40x20</td><td>jobshop</td><td>5501</td><td>5688</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu70</td><td>40x20</td><td>jobshop</td><td>5618</td><td>5868</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu71</td><td>50x15</td><td>jobshop</td><td>6127</td><td>6207</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu72</td><td>50x15</td><td>jobshop</td><td>6430</td><td>6463</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu73</td><td>50x15</td><td>jobshop</td><td>6107</td><td>6136</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu74</td><td>50x15</td><td>jobshop</td><td>6168</td><td>6196</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu75</td><td>50x15</td><td>jobshop</td><td>6123</td><td>6189</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu76</td><td>50x20</td><td>jobshop</td><td>6453</td><td>6718</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu77</td><td>50x20</td><td>jobshop</td><td>6518</td><td>6747</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu78</td><td>50x20</td><td>jobshop</td><td>6639</td><td>6755</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu79</td><td>50x20</td><td>jobshop</td><td>6708</td><td>6910</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu80</td><td>50x20</td><td>jobshop</td><td>6459</td><td>6634</td><td style="background-color:grey">open</td><td>lb CPO / ub CS2022</td></tr>
 <tr><td>ft06</td><td>6x6</td><td>jobshop</td><td>55</td><td>55</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>ft10</td><td>10x10</td><td>jobshop</td><td>930</td><td>930</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>ft20</td><td>20x5</td><td>jobshop</td><td>1165</td><td>1165</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+</table>
+
+### Lawrence (1984)
+
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>la01</td><td>10x5</td><td>jobshop</td><td>666</td><td>666</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>la02</td><td>10x5</td><td>jobshop</td><td>655</td><td>655</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>la03</td><td>10x5</td><td>jobshop</td><td>597</td><td>597</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
@@ -980,7 +582,7 @@ Last updated 2023-09-15
 <tr><td>la16</td><td>10x10</td><td>jobshop</td><td>945</td><td>945</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>la17</td><td>10x10</td><td>jobshop</td><td>784</td><td>784</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>la18</td><td>10x10</td><td>jobshop</td><td>848</td><td>848</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>la19</td><td>10x10</td><td>jobshop</td><td>842</td><td>842</td><td style="background-color:green">easy</td><td>Cplex in < 1 min</td></tr>
+<tr><td>la19</td><td>10x10</td><td>jobshop</td><td>842</td><td>842</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>la20</td><td>10x10</td><td>jobshop</td><td>902</td><td>902</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>la21</td><td>15x10</td><td>jobshop</td><td>1046</td><td>1046</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>la22</td><td>15x10</td><td>jobshop</td><td>927</td><td>927</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
@@ -990,7 +592,7 @@ Last updated 2023-09-15
 <tr><td>la26</td><td>20x10</td><td>jobshop</td><td>1218</td><td>1218</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>la27</td><td>20x10</td><td>jobshop</td><td>1235</td><td>1235</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>la28</td><td>20x10</td><td>jobshop</td><td>1216</td><td>1216</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>la29</td><td>20x10</td><td>jobshop</td><td>1152</td><td>1152</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
+<tr><td>la29</td><td>20x10</td><td>jobshop</td><td>1152</td><td>1152</td><td style="background-color:orange">medium</td><td>OptalCP in 5 min</td></tr>
 <tr><td>la30</td><td>20x10</td><td>jobshop</td><td>1355</td><td>1355</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>la31</td><td>30x10</td><td>jobshop</td><td>1784</td><td>1784</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>la32</td><td>30x10</td><td>jobshop</td><td>1850</td><td>1850</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
@@ -1002,6 +604,23 @@ Last updated 2023-09-15
 <tr><td>la38</td><td>15x15</td><td>jobshop</td><td>1196</td><td>1196</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>la39</td><td>15x15</td><td>jobshop</td><td>1233</td><td>1233</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>la40</td><td>15x15</td><td>jobshop</td><td>1222</td><td>1222</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+</table>
+
+### Adams, Balas and Zawack (1988)
+
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
+<tr><td>abz5</td><td>10x10</td><td>jobshop</td><td>1234</td><td>1234</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>abz6</td><td>10x10</td><td>jobshop</td><td>943</td><td>943</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>abz7</td><td>20x15</td><td>jobshop</td><td>656</td><td>656</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>abz8</td><td>20x15</td><td>jobshop</td><td>667</td><td>667</td><td style="background-color:red">hard</td><td>OptalCP in 10h</td></tr>
+<tr><td>abz9</td><td>20x15</td><td>jobshop</td><td>678</td><td>678</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+</table>
+
+### Applegate and Cook (1991)
+
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>orb01</td><td>10x10</td><td>jobshop</td><td>1059</td><td>1059</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>orb02</td><td>10x10</td><td>jobshop</td><td>888</td><td>888</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>orb03</td><td>10x10</td><td>jobshop</td><td>1005</td><td>1005</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
@@ -1012,36 +631,230 @@ Last updated 2023-09-15
 <tr><td>orb08</td><td>10x10</td><td>jobshop</td><td>899</td><td>899</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>orb09</td><td>10x10</td><td>jobshop</td><td>934</td><td>934</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>orb10</td><td>10x10</td><td>jobshop</td><td>944</td><td>944</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+</table>
+
+### Storer, Wu and Vaccari (1992)
+
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>swv01</td><td>20x10</td><td>jobshop</td><td>1407</td><td>1407</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>swv02</td><td>20x10</td><td>jobshop</td><td>1475</td><td>1475</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>swv03</td><td>20x10</td><td>jobshop</td><td>1398</td><td>1398</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>swv04</td><td>20x10</td><td>jobshop</td><td>1464</td><td>1464</td><td style="background-color:red">hard</td><td>lb CPO2015 / ub CPO2015</td></tr>
+<tr><td>swv04</td><td>20x10</td><td>jobshop</td><td>1464</td><td>1464</td><td style="background-color:red">hard</td><td>OptalCP</td></tr>
 <tr><td>swv05</td><td>20x10</td><td>jobshop</td><td>1424</td><td>1424</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>swv06</td><td>20x15</td><td>jobshop</td><td>1633</td><td>1667</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>swv07</td><td>20x15</td><td>jobshop</td><td>1520</td><td>1594</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>swv08</td><td>20x15</td><td>jobshop</td><td>1677</td><td>1751</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Mu2015</td></tr>
-<tr><td>swv09</td><td>20x15</td><td>jobshop</td><td>1637</td><td>1655</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>swv10</td><td>20x15</td><td>jobshop</td><td>1664</td><td>1743</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>swv11</td><td>50x10</td><td>jobshop</td><td>2983</td><td>2983</td><td style="background-color:red">hard</td><td>lb CPO / ub SS2018</td></tr>
-<tr><td>swv12</td><td>50x10</td><td>jobshop</td><td>2972</td><td>2972</td><td style="background-color:red">hard</td><td>lb CPO / ub CS2022</td></tr>
+<tr><td>swv06</td><td>20x15</td><td>jobshop</td><td>1667</td><td>1667</td><td style="background-color:red">hard</td><td>OptalCP</td></tr>
+<tr><td>swv07</td><td>20x15</td><td>jobshop</td><td>1541</td><td>1594</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
+<tr><td>swv08</td><td>20x15</td><td>jobshop</td><td>1694</td><td>1751</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Mu2015</td></tr>
+<tr><td>swv09</td><td>20x15</td><td>jobshop</td><td>1655</td><td>1655</td><td style="background-color:red">hard</td><td>OptalCP</td></tr>
+<tr><td>swv10</td><td>20x15</td><td>jobshop</td><td>1692</td><td>1743</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>swv11</td><td>50x10</td><td>jobshop</td><td>2983</td><td>2983</td><td style="background-color:red">hard</td><td>OptalCP</td></tr>
+<tr><td>swv12</td><td>50x10</td><td>jobshop</td><td>2972</td><td>2972</td><td style="background-color:red">hard</td><td>OptalCP</td></tr>
 <tr><td>swv13</td><td>50x10</td><td>jobshop</td><td>3104</td><td>3104</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>swv14</td><td>50x10</td><td>jobshop</td><td>2968</td><td>2968</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>swv15</td><td>50x10</td><td>jobshop</td><td>2885</td><td>2885</td><td style="background-color:red">hard</td><td>lb CPO / ub PLC2015</td></tr>
+<tr><td>swv15</td><td>50x10</td><td>jobshop</td><td>2885</td><td>2885</td><td style="background-color:red">hard</td><td>OptalCP</td></tr>
 <tr><td>swv16</td><td>50x10</td><td>jobshop</td><td>2924</td><td>2924</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>swv17</td><td>50x10</td><td>jobshop</td><td>2794</td><td>2794</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>swv18</td><td>50x10</td><td>jobshop</td><td>2852</td><td>2852</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>swv19</td><td>50x10</td><td>jobshop</td><td>2843</td><td>2843</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>swv20</td><td>50x10</td><td>jobshop</td><td>2823</td><td>2823</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tai_j1000_m1000_1</td><td>1000x1000</td><td>jobshop</td><td>549392</td><td>984915</td><td style="background-color:grey">open</td><td>lb OptalCP / ub DOFP2023</td></tr>
-<tr><td>tai_j1000_m1000_10</td><td>1000x1000</td><td>jobshop</td><td>541530</td><td>980447</td><td style="background-color:grey">open</td><td>lb OptalCP / ub DOFP2023</td></tr>
-<tr><td>tai_j1000_m1000_2</td><td>1000x1000</td><td>jobshop</td><td>549043</td><td>976457</td><td style="background-color:grey">open</td><td>lb OptalCP / ub DOFP2023</td></tr>
-<tr><td>tai_j1000_m1000_3</td><td>1000x1000</td><td>jobshop</td><td>552580</td><td>982286</td><td style="background-color:grey">open</td><td>lb OptalCP / ub DOFP2023</td></tr>
-<tr><td>tai_j1000_m1000_4</td><td>1000x1000</td><td>jobshop</td><td>547670</td><td>982960</td><td style="background-color:grey">open</td><td>lb OptalCP / ub DOFP2023</td></tr>
-<tr><td>tai_j1000_m1000_5</td><td>1000x1000</td><td>jobshop</td><td>545193</td><td>978300</td><td style="background-color:grey">open</td><td>lb OptalCP / ub DOFP2023</td></tr>
-<tr><td>tai_j1000_m1000_6</td><td>1000x1000</td><td>jobshop</td><td>547286</td><td>982360</td><td style="background-color:grey">open</td><td>lb OptalCP / ub DOFP2023</td></tr>
-<tr><td>tai_j1000_m1000_7</td><td>1000x1000</td><td>jobshop</td><td>545877</td><td>988315</td><td style="background-color:grey">open</td><td>lb OptalCP / ub DOFP2023</td></tr>
-<tr><td>tai_j1000_m1000_8</td><td>1000x1000</td><td>jobshop</td><td>549220</td><td>985274</td><td style="background-color:grey">open</td><td>lb OptalCP / ub DOFP2023</td></tr>
-<tr><td>tai_j1000_m1000_9</td><td>1000x1000</td><td>jobshop</td><td>543559</td><td>993692</td><td style="background-color:grey">open</td><td>lb OptalCP / ub DOFP2023</td></tr>
+</table>
+
+### Yamada Nakano (1992)
+
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
+<tr><td>yn1</td><td>20x20</td><td>jobshop</td><td>884</td><td>884</td><td style="background-color:red">hard</td><td>OptalCP</td></tr>
+<tr><td>yn2</td><td>20x20</td><td>jobshop</td><td>879</td><td>904</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>yn3</td><td>20x20</td><td>jobshop</td><td>865</td><td>892</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>yn4</td><td>20x20</td><td>jobshop</td><td>935</td><td>968</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+</table>
+
+### Taillard (1993)
+
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
+<tr><td>tjs01</td><td>15x15</td><td>jobshop</td><td>1231</td><td>1231</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>tjs02</td><td>15x15</td><td>jobshop</td><td>1244</td><td>1244</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs03</td><td>15x15</td><td>jobshop</td><td>1218</td><td>1218</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs04</td><td>15x15</td><td>jobshop</td><td>1175</td><td>1175</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs05</td><td>15x15</td><td>jobshop</td><td>1224</td><td>1224</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs06</td><td>15x15</td><td>jobshop</td><td>1238</td><td>1238</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs07</td><td>15x15</td><td>jobshop</td><td>1227</td><td>1227</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs08</td><td>15x15</td><td>jobshop</td><td>1217</td><td>1217</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs09</td><td>15x15</td><td>jobshop</td><td>1274</td><td>1274</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs10</td><td>15x15</td><td>jobshop</td><td>1241</td><td>1241</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs11</td><td>20x15</td><td>jobshop</td><td>1357</td><td>1357</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs12</td><td>20x15</td><td>jobshop</td><td>1367</td><td>1367</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs13</td><td>20x15</td><td>jobshop</td><td>1342</td><td>1342</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs14</td><td>20x15</td><td>jobshop</td><td>1345</td><td>1345</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>tjs15</td><td>20x15</td><td>jobshop</td><td>1339</td><td>1339</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs16</td><td>20x15</td><td>jobshop</td><td>1360</td><td>1360</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs17</td><td>20x15</td><td>jobshop</td><td>1462</td><td>1462</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs18</td><td>20x15</td><td>jobshop</td><td>1396</td><td>1396</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs19</td><td>20x15</td><td>jobshop</td><td>1332</td><td>1332</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs20</td><td>20x15</td><td>jobshop</td><td>1348</td><td>1348</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs21</td><td>20x20</td><td>jobshop</td><td>1642</td><td>1642</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>tjs22</td><td>20x20</td><td>jobshop</td><td>1600</td><td>1600</td><td style="background-color:red">hard</td><td>OptalCP in 2h</td></tr>
+<tr><td>tjs23</td><td>20x20</td><td>jobshop</td><td>1557</td><td>1557</td><td style="background-color:red">hard</td><td>OptalCP in 2h</td></tr>
+<tr><td>tjs24</td><td>20x20</td><td>jobshop</td><td>1644</td><td>1644</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs25</td><td>20x20</td><td>jobshop</td><td>1595</td><td>1595</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs26</td><td>20x20</td><td>jobshop</td><td>1643</td><td>1643</td><td style="background-color:orange">medium</td><td>OptalCP in 7h</td></tr>
+<tr><td>tjs27</td><td>20x20</td><td>jobshop</td><td>1680</td><td>1680</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs28</td><td>20x20</td><td>jobshop</td><td>1603</td><td>1603</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs29</td><td>20x20</td><td>jobshop</td><td>1625</td><td>1625</td><td style="background-color:red">hard</td><td>OptalCP in 2h</td></tr>
+<tr><td>tjs30</td><td>20x20</td><td>jobshop</td><td>1562</td><td>1584</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2002</td></tr>
+<tr><td>tjs31</td><td>30x15</td><td>jobshop</td><td>1764</td><td>1764</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
+<tr><td>tjs32</td><td>30x15</td><td>jobshop</td><td>1774</td><td>1784</td><td style="background-color:grey">open</td><td>lb CPO2015 / ub PSV2010</td></tr>
+<tr><td>tjs33</td><td>30x15</td><td>jobshop</td><td>1791</td><td>1791</td><td style="background-color:red">hard</td><td>OptalCP in 10h</td></tr>
+<tr><td>tjs34</td><td>30x15</td><td>jobshop</td><td>1828</td><td>1828</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs35</td><td>30x15</td><td>jobshop</td><td>2007</td><td>2007</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs36</td><td>30x15</td><td>jobshop</td><td>1819</td><td>1819</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs37</td><td>30x15</td><td>jobshop</td><td>1771</td><td>1771</td><td style="background-color:red">hard</td><td>OptalCP in 2h</td></tr>
+<tr><td>tjs38</td><td>30x15</td><td>jobshop</td><td>1673</td><td>1673</td><td style="background-color:red">hard</td><td>OptalCP in 7h</td></tr>
+<tr><td>tjs39</td><td>30x15</td><td>jobshop</td><td>1795</td><td>1795</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs40</td><td>30x15</td><td>jobshop</td><td>1658</td><td>1669</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
+<tr><td>tjs41</td><td>30x20</td><td>jobshop</td><td>1926</td><td>2005</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CPO2015</td></tr>
+<tr><td>tjs42</td><td>30x20</td><td>jobshop</td><td>1900</td><td>1937</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
+<tr><td>tjs43</td><td>30x20</td><td>jobshop</td><td>1809</td><td>1846</td><td style="background-color:grey">open</td><td>lb CPO2015 / ub PLC2015</td></tr>
+<tr><td>tjs44</td><td>30x20</td><td>jobshop</td><td>1961</td><td>1979</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>tjs45</td><td>30x20</td><td>jobshop</td><td>1997</td><td>1997</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs46</td><td>30x20</td><td>jobshop</td><td>1976</td><td>2004</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
+<tr><td>tjs47</td><td>30x20</td><td>jobshop</td><td>1827</td><td>1889</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PLC2015</td></tr>
+<tr><td>tjs48</td><td>30x20</td><td>jobshop</td><td>1921</td><td>1937</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>tjs49</td><td>30x20</td><td>jobshop</td><td>1938</td><td>1961</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CPO2015</td></tr>
+<tr><td>tjs50</td><td>30x20</td><td>jobshop</td><td>1848</td><td>1923</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PLC2015</td></tr>
+<tr><td>tjs51</td><td>50x15</td><td>jobshop</td><td>2760</td><td>2760</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>tjs52</td><td>50x15</td><td>jobshop</td><td>2756</td><td>2756</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs53</td><td>50x15</td><td>jobshop</td><td>2717</td><td>2717</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs54</td><td>50x15</td><td>jobshop</td><td>2839</td><td>2839</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>tjs55</td><td>50x15</td><td>jobshop</td><td>2679</td><td>2679</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs56</td><td>50x15</td><td>jobshop</td><td>2781</td><td>2781</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs57</td><td>50x15</td><td>jobshop</td><td>2943</td><td>2943</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>tjs58</td><td>50x15</td><td>jobshop</td><td>2885</td><td>2885</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>tjs59</td><td>50x15</td><td>jobshop</td><td>2655</td><td>2655</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs60</td><td>50x15</td><td>jobshop</td><td>2723</td><td>2723</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs61</td><td>50x20</td><td>jobshop</td><td>2868</td><td>2868</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs62</td><td>50x20</td><td>jobshop</td><td>2869</td><td>2869</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tjs63</td><td>50x20</td><td>jobshop</td><td>2755</td><td>2755</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs64</td><td>50x20</td><td>jobshop</td><td>2702</td><td>2702</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs65</td><td>50x20</td><td>jobshop</td><td>2725</td><td>2725</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs66</td><td>50x20</td><td>jobshop</td><td>2845</td><td>2845</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs67</td><td>50x20</td><td>jobshop</td><td>2825</td><td>2825</td><td style="background-color:red">hard</td><td>OptalCP in 4h</td></tr>
+<tr><td>tjs68</td><td>50x20</td><td>jobshop</td><td>2784</td><td>2784</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs69</td><td>50x20</td><td>jobshop</td><td>3071</td><td>3071</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs70</td><td>50x20</td><td>jobshop</td><td>2995</td><td>2995</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
+<tr><td>tjs71</td><td>100x20</td><td>jobshop</td><td>5464</td><td>5464</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs72</td><td>100x20</td><td>jobshop</td><td>5181</td><td>5181</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs73</td><td>100x20</td><td>jobshop</td><td>5568</td><td>5568</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs74</td><td>100x20</td><td>jobshop</td><td>5339</td><td>5339</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs75</td><td>100x20</td><td>jobshop</td><td>5392</td><td>5392</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
+<tr><td>tjs76</td><td>100x20</td><td>jobshop</td><td>5342</td><td>5342</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs77</td><td>100x20</td><td>jobshop</td><td>5436</td><td>5436</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs78</td><td>100x20</td><td>jobshop</td><td>5394</td><td>5394</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs79</td><td>100x20</td><td>jobshop</td><td>5358</td><td>5358</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tjs80</td><td>100x20</td><td>jobshop</td><td>5183</td><td>5183</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+</table>
+
+### Demikol, Mehta and Uzsoy (1998)
+
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
+<tr><td>dmu01</td><td>20x15</td><td>jobshop</td><td>2563</td><td>2563</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dmu02</td><td>20x15</td><td>jobshop</td><td>2706</td><td>2706</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dmu03</td><td>20x15</td><td>jobshop</td><td>2731</td><td>2731</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
+<tr><td>dmu04</td><td>20x15</td><td>jobshop</td><td>2669</td><td>2669</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dmu05</td><td>20x15</td><td>jobshop</td><td>2749</td><td>2749</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dmu06</td><td>20x20</td><td>jobshop</td><td>3244</td><td>3244</td><td style="background-color:red">hard</td><td>OptalCP in 2h</td></tr>
+<tr><td>dmu07</td><td>20x20</td><td>jobshop</td><td>3046</td><td>3046</td><td style="background-color:red">hard</td><td>OptalCP in 3h</td></tr>
+<tr><td>dmu08</td><td>20x20</td><td>jobshop</td><td>3188</td><td>3188</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dmu09</td><td>20x20</td><td>jobshop</td><td>3092</td><td>3092</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dmu10</td><td>20x20</td><td>jobshop</td><td>2984</td><td>2984</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dmu11</td><td>30x15</td><td>jobshop</td><td>3402</td><td>3430</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PLC2015</td></tr>
+<tr><td>dmu12</td><td>30x15</td><td>jobshop</td><td>3481</td><td>3492</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu13</td><td>30x15</td><td>jobshop</td><td>3681</td><td>3681</td><td style="background-color:red">hard</td><td>OptalCP in 3h</td></tr>
+<tr><td>dmu14</td><td>30x15</td><td>jobshop</td><td>3394</td><td>3394</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>dmu15</td><td>30x15</td><td>jobshop</td><td>3343</td><td>3343</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>dmu16</td><td>30x20</td><td>jobshop</td><td>3734</td><td>3751</td><td style="background-color:grey">open</td><td>lb CPO2015 / ub SS2018</td></tr>
+<tr><td>dmu17</td><td>30x20</td><td>jobshop</td><td>3733</td><td>3814</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu18</td><td>30x20</td><td>jobshop</td><td>3844</td><td>3844</td><td style="background-color:red">hard</td><td>OptalCP in 10h</td></tr>
+<tr><td>dmu19</td><td>30x20</td><td>jobshop</td><td>3707</td><td>3764</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu20</td><td>30x20</td><td>jobshop</td><td>3632</td><td>3703</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu21</td><td>40x15</td><td>jobshop</td><td>4380</td><td>4380</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>dmu22</td><td>40x15</td><td>jobshop</td><td>4725</td><td>4725</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>dmu23</td><td>40x15</td><td>jobshop</td><td>4668</td><td>4668</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>dmu24</td><td>40x15</td><td>jobshop</td><td>4648</td><td>4648</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>dmu25</td><td>40x15</td><td>jobshop</td><td>4164</td><td>4164</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>dmu26</td><td>40x20</td><td>jobshop</td><td>4647</td><td>4647</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>dmu27</td><td>40x20</td><td>jobshop</td><td>4848</td><td>4848</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dmu28</td><td>40x20</td><td>jobshop</td><td>4692</td><td>4692</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>dmu29</td><td>40x20</td><td>jobshop</td><td>4691</td><td>4691</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>dmu30</td><td>40x20</td><td>jobshop</td><td>4732</td><td>4732</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>dmu31</td><td>50x15</td><td>jobshop</td><td>5640</td><td>5640</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>dmu32</td><td>50x15</td><td>jobshop</td><td>5927</td><td>5927</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>dmu33</td><td>50x15</td><td>jobshop</td><td>5728</td><td>5728</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>dmu34</td><td>50x15</td><td>jobshop</td><td>5385</td><td>5385</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>dmu35</td><td>50x15</td><td>jobshop</td><td>5635</td><td>5635</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>dmu36</td><td>50x20</td><td>jobshop</td><td>5621</td><td>5621</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>dmu37</td><td>50x20</td><td>jobshop</td><td>5851</td><td>5851</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
+<tr><td>dmu38</td><td>50x20</td><td>jobshop</td><td>5713</td><td>5713</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dmu39</td><td>50x20</td><td>jobshop</td><td>5747</td><td>5747</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>dmu40</td><td>50x20</td><td>jobshop</td><td>5577</td><td>5577</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>dmu41</td><td>20x15</td><td>jobshop</td><td>3176</td><td>3248</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PLC2015</td></tr>
+<tr><td>dmu42</td><td>20x15</td><td>jobshop</td><td>3339</td><td>3390</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu43</td><td>20x15</td><td>jobshop</td><td>3441</td><td>3441</td><td style="background-color:red">hard</td><td>OptalCP in 8h</td></tr>
+<tr><td>dmu44</td><td>20x15</td><td>jobshop</td><td>3414</td><td>3475</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu45</td><td>20x15</td><td>jobshop</td><td>3217</td><td>3266</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu46</td><td>20x20</td><td>jobshop</td><td>3780</td><td>4035</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
+<tr><td>dmu47</td><td>20x20</td><td>jobshop</td><td>3714</td><td>3939</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
+<tr><td>dmu48</td><td>20x20</td><td>jobshop</td><td>3628</td><td>3763</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu49</td><td>20x20</td><td>jobshop</td><td>3543</td><td>3710</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu50</td><td>20x20</td><td>jobshop</td><td>3618</td><td>3729</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PLC2015</td></tr>
+<tr><td>dmu51</td><td>30x15</td><td>jobshop</td><td>4070</td><td>4156</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu52</td><td>30x15</td><td>jobshop</td><td>4203</td><td>4303</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu53</td><td>30x15</td><td>jobshop</td><td>4248</td><td>4378</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu54</td><td>30x15</td><td>jobshop</td><td>4277</td><td>4361</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu55</td><td>30x15</td><td>jobshop</td><td>4191</td><td>4263</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu56</td><td>30x20</td><td>jobshop</td><td>4755</td><td>4939</td><td style="background-color:grey">open</td><td>lb OptalCP / ub XLGG2022</td></tr>
+<tr><td>dmu57</td><td>30x20</td><td>jobshop</td><td>4462</td><td>4647</td><td style="background-color:grey">open</td><td>lb OptalCP / ub XLGG2022</td></tr>
+<tr><td>dmu58</td><td>30x20</td><td>jobshop</td><td>4484</td><td>4701</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu59</td><td>30x20</td><td>jobshop</td><td>4366</td><td>4616</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu60</td><td>30x20</td><td>jobshop</td><td>4468</td><td>4721</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu61</td><td>40x15</td><td>jobshop</td><td>5038</td><td>5171</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu62</td><td>40x15</td><td>jobshop</td><td>5176</td><td>5248</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu63</td><td>40x15</td><td>jobshop</td><td>5245</td><td>5313</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu64</td><td>40x15</td><td>jobshop</td><td>5155</td><td>5226</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu65</td><td>40x15</td><td>jobshop</td><td>5122</td><td>5184</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu66</td><td>40x20</td><td>jobshop</td><td>5526</td><td>5701</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu67</td><td>40x20</td><td>jobshop</td><td>5661</td><td>5779</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu68</td><td>40x20</td><td>jobshop</td><td>5513</td><td>5763</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu69</td><td>40x20</td><td>jobshop</td><td>5511</td><td>5688</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu70</td><td>40x20</td><td>jobshop</td><td>5633</td><td>5868</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu71</td><td>50x15</td><td>jobshop</td><td>6129</td><td>6207</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu72</td><td>50x15</td><td>jobshop</td><td>6430</td><td>6463</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu73</td><td>50x15</td><td>jobshop</td><td>6107</td><td>6136</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu74</td><td>50x15</td><td>jobshop</td><td>6168</td><td>6196</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu75</td><td>50x15</td><td>jobshop</td><td>6123</td><td>6189</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu76</td><td>50x20</td><td>jobshop</td><td>6479</td><td>6718</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu77</td><td>50x20</td><td>jobshop</td><td>6520</td><td>6747</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu78</td><td>50x20</td><td>jobshop</td><td>6643</td><td>6755</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu79</td><td>50x20</td><td>jobshop</td><td>6720</td><td>6910</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu80</td><td>50x20</td><td>jobshop</td><td>6460</td><td>6634</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+</table>
+
+### Da Col and Teppan (2022)
+
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
+<tr><td>tai_j1000_m1000_1</td><td>1000x1000</td><td>jobshop</td><td>549392</td><td>877062</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_10</td><td>1000x1000</td><td>jobshop</td><td>541530</td><td>874820</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_2</td><td>1000x1000</td><td>jobshop</td><td>549043</td><td>877115</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_3</td><td>1000x1000</td><td>jobshop</td><td>552580</td><td>878805</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_4</td><td>1000x1000</td><td>jobshop</td><td>547670</td><td>876363</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_5</td><td>1000x1000</td><td>jobshop</td><td>545193</td><td>877562</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_6</td><td>1000x1000</td><td>jobshop</td><td>547286</td><td>876067</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_7</td><td>1000x1000</td><td>jobshop</td><td>545877</td><td>875891</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_8</td><td>1000x1000</td><td>jobshop</td><td>549220</td><td>876456</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_9</td><td>1000x1000</td><td>jobshop</td><td>543559</td><td>875914</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
 <tr><td>tai_j1000_m100_1</td><td>1000x100</td><td>jobshop</td><td>525343</td><td>539120</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
 <tr><td>tai_j1000_m100_10</td><td>1000x100</td><td>jobshop</td><td>529112</td><td>540884</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
 <tr><td>tai_j1000_m100_2</td><td>1000x100</td><td>jobshop</td><td>528088</td><td>540895</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
@@ -1077,11 +890,11 @@ Last updated 2023-09-15
 <tr><td>tai_j100_m100_2</td><td>100x100</td><td>jobshop</td><td>62814</td><td>78714</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
 <tr><td>tai_j100_m100_3</td><td>100x100</td><td>jobshop</td><td>61533</td><td>77770</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
 <tr><td>tai_j100_m100_4</td><td>100x100</td><td>jobshop</td><td>64742</td><td>80167</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_5</td><td>100x100</td><td>jobshop</td><td>61766</td><td>79583</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
+<tr><td>tai_j100_m100_5</td><td>100x100</td><td>jobshop</td><td>61766</td><td>79583</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
 <tr><td>tai_j100_m100_6</td><td>100x100</td><td>jobshop</td><td>61360</td><td>79522</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
 <tr><td>tai_j100_m100_7</td><td>100x100</td><td>jobshop</td><td>64040</td><td>79477</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
 <tr><td>tai_j100_m100_8</td><td>100x100</td><td>jobshop</td><td>63224</td><td>79303</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_9</td><td>100x100</td><td>jobshop</td><td>62631</td><td>80608</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
+<tr><td>tai_j100_m100_9</td><td>100x100</td><td>jobshop</td><td>62631</td><td>80608</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
 <tr><td>tai_j100_m10_1</td><td>100x10</td><td>jobshop</td><td>54951</td><td>54951</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j100_m10_10</td><td>100x10</td><td>jobshop</td><td>55464</td><td>55464</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j100_m10_2</td><td>100x10</td><td>jobshop</td><td>57160</td><td>57160</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
@@ -1122,788 +935,229 @@ Last updated 2023-09-15
 <tr><td>tai_j10_m10_7</td><td>10x10</td><td>jobshop</td><td>8299</td><td>8299</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j10_m10_8</td><td>10x10</td><td>jobshop</td><td>7788</td><td>7788</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j10_m10_9</td><td>10x10</td><td>jobshop</td><td>8300</td><td>8300</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs01</td><td>15x15</td><td>jobshop</td><td>1231</td><td>1231</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tjs02</td><td>15x15</td><td>jobshop</td><td>1244</td><td>1244</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs03</td><td>15x15</td><td>jobshop</td><td>1218</td><td>1218</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs04</td><td>15x15</td><td>jobshop</td><td>1175</td><td>1175</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs05</td><td>15x15</td><td>jobshop</td><td>1224</td><td>1224</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs06</td><td>15x15</td><td>jobshop</td><td>1238</td><td>1238</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tjs07</td><td>15x15</td><td>jobshop</td><td>1227</td><td>1227</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs08</td><td>15x15</td><td>jobshop</td><td>1217</td><td>1217</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs09</td><td>15x15</td><td>jobshop</td><td>1274</td><td>1274</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs10</td><td>15x15</td><td>jobshop</td><td>1241</td><td>1241</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs11</td><td>20x15</td><td>jobshop</td><td>1357</td><td>1357</td><td style="background-color:red">hard</td><td>lb CPO2015 / ub OptalCP</td></tr>
-<tr><td>tjs12</td><td>20x15</td><td>jobshop</td><td>1367</td><td>1367</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tjs13</td><td>20x15</td><td>jobshop</td><td>1342</td><td>1342</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tjs14</td><td>20x15</td><td>jobshop</td><td>1345</td><td>1345</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tjs15</td><td>20x15</td><td>jobshop</td><td>1339</td><td>1339</td><td style="background-color:orange">medium</td><td>OptalCP_FFBL in < 1h</td></tr>
-<tr><td>tjs16</td><td>20x15</td><td>jobshop</td><td>1360</td><td>1360</td><td style="background-color:red">hard</td><td>lb CPO2015 / ub OptalCP_FFBL</td></tr>
-<tr><td>tjs17</td><td>20x15</td><td>jobshop</td><td>1462</td><td>1462</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs18</td><td>20x15</td><td>jobshop</td><td>1384</td><td>1396</td><td style="background-color:grey">open</td><td>lb OptalCP / ub BV1998</td></tr>
-<tr><td>tjs19</td><td>20x15</td><td>jobshop</td><td>1332</td><td>1332</td><td style="background-color:orange">medium</td><td>OptalCP_FFBL in < 1h</td></tr>
-<tr><td>tjs20</td><td>20x15</td><td>jobshop</td><td>1348</td><td>1348</td><td style="background-color:orange">medium</td><td>OptalCP_FFBL in < 1h</td></tr>
-<tr><td>tjs21</td><td>20x20</td><td>jobshop</td><td>1642</td><td>1642</td><td style="background-color:red">hard</td><td>lb CPO2015 / ub NS2005</td></tr>
-<tr><td>tjs22</td><td>20x20</td><td>jobshop</td><td>1573</td><td>1600</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2002</td></tr>
-<tr><td>tjs23</td><td>20x20</td><td>jobshop</td><td>1529</td><td>1557</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFBL</td></tr>
-<tr><td>tjs24</td><td>20x20</td><td>jobshop</td><td>1644</td><td>1644</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tjs25</td><td>20x20</td><td>jobshop</td><td>1573</td><td>1595</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2002</td></tr>
-<tr><td>tjs26</td><td>20x20</td><td>jobshop</td><td>1604</td><td>1643</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>tjs27</td><td>20x20</td><td>jobshop</td><td>1660</td><td>1680</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2002</td></tr>
-<tr><td>tjs28</td><td>20x20</td><td>jobshop</td><td>1603</td><td>1603</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tjs29</td><td>20x20</td><td>jobshop</td><td>1592</td><td>1625</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tjs30</td><td>20x20</td><td>jobshop</td><td>1533</td><td>1584</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2002</td></tr>
-<tr><td>tjs31</td><td>30x15</td><td>jobshop</td><td>1764</td><td>1764</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>tjs32</td><td>30x15</td><td>jobshop</td><td>1774</td><td>1784</td><td style="background-color:grey">open</td><td>lb CPO / ub PSV2010</td></tr>
-<tr><td>tjs33</td><td>30x15</td><td>jobshop</td><td>1791</td><td>1791</td><td style="background-color:red">hard</td><td>lb OptalCP / ub ZLRG2007</td></tr>
-<tr><td>tjs34</td><td>30x15</td><td>jobshop</td><td>1828</td><td>1828</td><td style="background-color:red">hard</td><td>lb CPO / ub CS2022</td></tr>
-<tr><td>tjs35</td><td>30x15</td><td>jobshop</td><td>2007</td><td>2007</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs36</td><td>30x15</td><td>jobshop</td><td>1819</td><td>1819</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tjs37</td><td>30x15</td><td>jobshop</td><td>1771</td><td>1771</td><td style="background-color:red">hard</td><td>lb CPO / ub ZLRG2007</td></tr>
-<tr><td>tjs38</td><td>30x15</td><td>jobshop</td><td>1673</td><td>1673</td><td style="background-color:red">hard</td><td>lb CPO / ub He2002</td></tr>
-<tr><td>tjs39</td><td>30x15</td><td>jobshop</td><td>1795</td><td>1795</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs40</td><td>30x15</td><td>jobshop</td><td>1653</td><td>1669</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>tjs41</td><td>30x20</td><td>jobshop</td><td>1912</td><td>2005</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CPO2015</td></tr>
-<tr><td>tjs42</td><td>30x20</td><td>jobshop</td><td>1889</td><td>1937</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>tjs43</td><td>30x20</td><td>jobshop</td><td>1809</td><td>1846</td><td style="background-color:grey">open</td><td>lb CPO / ub PLC2015</td></tr>
-<tr><td>tjs44</td><td>30x20</td><td>jobshop</td><td>1953</td><td>1979</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>tjs45</td><td>30x20</td><td>jobshop</td><td>1997</td><td>2000</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2002</td></tr>
-<tr><td>tjs46</td><td>30x20</td><td>jobshop</td><td>1966</td><td>2004</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>tjs47</td><td>30x20</td><td>jobshop</td><td>1817</td><td>1889</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PLC2015</td></tr>
-<tr><td>tjs48</td><td>30x20</td><td>jobshop</td><td>1917</td><td>1937</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>tjs49</td><td>30x20</td><td>jobshop</td><td>1934</td><td>1961</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CPO2015</td></tr>
-<tr><td>tjs50</td><td>30x20</td><td>jobshop</td><td>1838</td><td>1923</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PLC2015</td></tr>
-<tr><td>tjs51</td><td>50x15</td><td>jobshop</td><td>2760</td><td>2760</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tjs52</td><td>50x15</td><td>jobshop</td><td>2756</td><td>2756</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs53</td><td>50x15</td><td>jobshop</td><td>2717</td><td>2717</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs54</td><td>50x15</td><td>jobshop</td><td>2839</td><td>2839</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tjs55</td><td>50x15</td><td>jobshop</td><td>2679</td><td>2679</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs56</td><td>50x15</td><td>jobshop</td><td>2781</td><td>2781</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs57</td><td>50x15</td><td>jobshop</td><td>2943</td><td>2943</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tjs58</td><td>50x15</td><td>jobshop</td><td>2885</td><td>2885</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tjs59</td><td>50x15</td><td>jobshop</td><td>2655</td><td>2655</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs60</td><td>50x15</td><td>jobshop</td><td>2723</td><td>2723</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs61</td><td>50x20</td><td>jobshop</td><td>2868</td><td>2868</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs62</td><td>50x20</td><td>jobshop</td><td>2869</td><td>2869</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tjs63</td><td>50x20</td><td>jobshop</td><td>2755</td><td>2755</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs64</td><td>50x20</td><td>jobshop</td><td>2702</td><td>2702</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs65</td><td>50x20</td><td>jobshop</td><td>2725</td><td>2725</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs66</td><td>50x20</td><td>jobshop</td><td>2845</td><td>2845</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs67</td><td>50x20</td><td>jobshop</td><td>2825</td><td>2825</td><td style="background-color:red">hard</td><td>lb CPO / ub AELS1999</td></tr>
-<tr><td>tjs68</td><td>50x20</td><td>jobshop</td><td>2784</td><td>2784</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs69</td><td>50x20</td><td>jobshop</td><td>3071</td><td>3071</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs70</td><td>50x20</td><td>jobshop</td><td>2995</td><td>2995</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>tjs71</td><td>100x20</td><td>jobshop</td><td>5464</td><td>5464</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs72</td><td>100x20</td><td>jobshop</td><td>5181</td><td>5181</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs73</td><td>100x20</td><td>jobshop</td><td>5568</td><td>5568</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs74</td><td>100x20</td><td>jobshop</td><td>5339</td><td>5339</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs75</td><td>100x20</td><td>jobshop</td><td>5392</td><td>5392</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>tjs76</td><td>100x20</td><td>jobshop</td><td>5342</td><td>5342</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs77</td><td>100x20</td><td>jobshop</td><td>5436</td><td>5436</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs78</td><td>100x20</td><td>jobshop</td><td>5394</td><td>5394</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs79</td><td>100x20</td><td>jobshop</td><td>5358</td><td>5358</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tjs80</td><td>100x20</td><td>jobshop</td><td>5183</td><td>5183</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>yn1</td><td>20x20</td><td>jobshop</td><td>884</td><td>884</td><td style="background-color:red">hard</td><td>lb KNFH2010 / ub SS2018</td></tr>
-<tr><td>yn2</td><td>20x20</td><td>jobshop</td><td>879</td><td>904</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>yn3</td><td>20x20</td><td>jobshop</td><td>865</td><td>892</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>yn4</td><td>20x20</td><td>jobshop</td><td>935</td><td>968</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
 </table>
 
-### (non permutation) Flowshop
+### DaCol and Teppan - reentrant jobshop (2022)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>car1</td><td>11x5</td><td>flowshop</td><td>7038</td><td>7038</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>car2</td><td>13x4</td><td>flowshop</td><td>7166</td><td>7166</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>car3</td><td>12x5</td><td>flowshop</td><td>7312</td><td>7312</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>car4</td><td>14x4</td><td>flowshop</td><td>8003</td><td>8003</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>car5</td><td>10x6</td><td>flowshop</td><td>7702</td><td>7702</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>car6</td><td>8x9</td><td>flowshop</td><td>8313</td><td>8313</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>car7</td><td>7x7</td><td>flowshop</td><td>6558</td><td>6558</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>car8</td><td>8x8</td><td>flowshop</td><td>8264</td><td>8264</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>hel1</td><td>100x10</td><td>flowshop</td><td>510</td><td>515</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>hel2</td><td>20x10</td><td>flowshop</td><td>134</td><td>134</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>reC01</td><td>20x5</td><td>flowshop</td><td>1245</td><td>1245</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>reC03</td><td>20x5</td><td>flowshop</td><td>1093</td><td>1093</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>reC05</td><td>20x5</td><td>flowshop</td><td>1228</td><td>1228</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>reC07</td><td>20x10</td><td>flowshop</td><td>1522</td><td>1522</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>reC09</td><td>20x10</td><td>flowshop</td><td>1520</td><td>1520</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>reC11</td><td>20x10</td><td>flowshop</td><td>1402</td><td>1402</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>reC13</td><td>20x15</td><td>flowshop</td><td>1875</td><td>1911</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>reC15</td><td>20x15</td><td>flowshop</td><td>1939</td><td>1940</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>reC17</td><td>20x15</td><td>flowshop</td><td>1837</td><td>1855</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>reC19</td><td>30x10</td><td>flowshop</td><td>2067</td><td>2067</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>reC21</td><td>30x10</td><td>flowshop</td><td>2013</td><td>2013</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>reC23</td><td>30x10</td><td>flowshop</td><td>1989</td><td>1989</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>reC25</td><td>30x15</td><td>flowshop</td><td>2400</td><td>2574</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>reC27</td><td>30x15</td><td>flowshop</td><td>2314</td><td>2366</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>reC29</td><td>30x15</td><td>flowshop</td><td>2179</td><td>2299</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>reC31</td><td>50x10</td><td>flowshop</td><td>3021</td><td>3061</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>reC33</td><td>50x10</td><td>flowshop</td><td>3093</td><td>3093</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>reC35</td><td>50x10</td><td>flowshop</td><td>3262</td><td>3262</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>reC37</td><td>75x20</td><td>flowshop</td><td>4808</td><td>5239</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>reC39</td><td>75x20</td><td>flowshop</td><td>4982</td><td>5436</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>reC41</td><td>75x20</td><td>flowshop</td><td>4778</td><td>5212</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tfs001</td><td>20x5</td><td>flowshop</td><td>1278</td><td>1278</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs002</td><td>20x5</td><td>flowshop</td><td>1358</td><td>1358</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs003</td><td>20x5</td><td>flowshop</td><td>1073</td><td>1073</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs004</td><td>20x5</td><td>flowshop</td><td>1292</td><td>1292</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs005</td><td>20x5</td><td>flowshop</td><td>1231</td><td>1231</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs006</td><td>20x5</td><td>flowshop</td><td>1193</td><td>1193</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs007</td><td>20x5</td><td>flowshop</td><td>1234</td><td>1234</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs008</td><td>20x5</td><td>flowshop</td><td>1199</td><td>1199</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs009</td><td>20x5</td><td>flowshop</td><td>1210</td><td>1210</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs010</td><td>20x5</td><td>flowshop</td><td>1103</td><td>1103</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs011</td><td>20x10</td><td>flowshop</td><td>1554</td><td>1554</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>tfs012</td><td>20x10</td><td>flowshop</td><td>1631</td><td>1644</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>tfs013</td><td>20x10</td><td>flowshop</td><td>1462</td><td>1468</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>tfs014</td><td>20x10</td><td>flowshop</td><td>1356</td><td>1356</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tfs015</td><td>20x10</td><td>flowshop</td><td>1389</td><td>1389</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tfs016</td><td>20x10</td><td>flowshop</td><td>1367</td><td>1367</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>tfs017</td><td>20x10</td><td>flowshop</td><td>1421</td><td>1427</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tfs018</td><td>20x10</td><td>flowshop</td><td>1512</td><td>1516</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tfs019</td><td>20x10</td><td>flowshop</td><td>1586</td><td>1586</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs020</td><td>20x10</td><td>flowshop</td><td>1559</td><td>1559</td><td style="background-color:orange">medium</td><td>OptalCP_FFLL in < 1h</td></tr>
-<tr><td>tfs021</td><td>20x20</td><td>flowshop</td><td>2135</td><td>2297</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Ta1993</td></tr>
-<tr><td>tfs022</td><td>20x20</td><td>flowshop</td><td>1923</td><td>2099</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Ta1993</td></tr>
-<tr><td>tfs023</td><td>20x20</td><td>flowshop</td><td>2086</td><td>2294</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tfs024</td><td>20x20</td><td>flowshop</td><td>2056</td><td>2181</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tfs025</td><td>20x20</td><td>flowshop</td><td>2149</td><td>2261</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tfs026</td><td>20x20</td><td>flowshop</td><td>2047</td><td>2181</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>tfs027</td><td>20x20</td><td>flowshop</td><td>2084</td><td>2261</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>tfs028</td><td>20x20</td><td>flowshop</td><td>2059</td><td>2191</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tfs029</td><td>20x20</td><td>flowshop</td><td>2064</td><td>2221</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tfs030</td><td>20x20</td><td>flowshop</td><td>2058</td><td>2164</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>tfs031</td><td>50x5</td><td>flowshop</td><td>2724</td><td>2724</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs032</td><td>50x5</td><td>flowshop</td><td>2834</td><td>2834</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs033</td><td>50x5</td><td>flowshop</td><td>2612</td><td>2612</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs034</td><td>50x5</td><td>flowshop</td><td>2751</td><td>2751</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs035</td><td>50x5</td><td>flowshop</td><td>2853</td><td>2853</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs036</td><td>50x5</td><td>flowshop</td><td>2825</td><td>2825</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs037</td><td>50x5</td><td>flowshop</td><td>2716</td><td>2716</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs038</td><td>50x5</td><td>flowshop</td><td>2683</td><td>2683</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs039</td><td>50x5</td><td>flowshop</td><td>2545</td><td>2545</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs040</td><td>50x5</td><td>flowshop</td><td>2776</td><td>2776</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tfs041</td><td>50x10</td><td>flowshop</td><td>2981</td><td>2991</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs042</td><td>50x10</td><td>flowshop</td><td>2842</td><td>2867</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs043</td><td>50x10</td><td>flowshop</td><td>2832</td><td>2839</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs044</td><td>50x10</td><td>flowshop</td><td>3059</td><td>3059</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tfs045</td><td>50x10</td><td>flowshop</td><td>2947</td><td>2976</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs046</td><td>50x10</td><td>flowshop</td><td>2990</td><td>3006</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tfs047</td><td>50x10</td><td>flowshop</td><td>3093</td><td>3093</td><td style="background-color:red">hard</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs048</td><td>50x10</td><td>flowshop</td><td>3007</td><td>3037</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs049</td><td>50x10</td><td>flowshop</td><td>2874</td><td>2874</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tfs050</td><td>50x10</td><td>flowshop</td><td>3046</td><td>3065</td><td style="background-color:grey">open</td><td>lb CPO / ub Va1995</td></tr>
-<tr><td>tfs051</td><td>50x20</td><td>flowshop</td><td>3639</td><td>3850</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2005</td></tr>
-<tr><td>tfs052</td><td>50x20</td><td>flowshop</td><td>3588</td><td>3704</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2005</td></tr>
-<tr><td>tfs053</td><td>50x20</td><td>flowshop</td><td>3485</td><td>3640</td><td style="background-color:grey">open</td><td>lb OptalCP / ub RS2007</td></tr>
-<tr><td>tfs054</td><td>50x20</td><td>flowshop</td><td>3478</td><td>3723</td><td style="background-color:grey">open</td><td>lb OptalCP / ub RS2007</td></tr>
-<tr><td>tfs055</td><td>50x20</td><td>flowshop</td><td>3431</td><td>3611</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2005</td></tr>
-<tr><td>tfs056</td><td>50x20</td><td>flowshop</td><td>3574</td><td>3681</td><td style="background-color:grey">open</td><td>lb OptalCP / ub RS2007</td></tr>
-<tr><td>tfs057</td><td>50x20</td><td>flowshop</td><td>3538</td><td>3704</td><td style="background-color:grey">open</td><td>lb OptalCP / ub RS2007</td></tr>
-<tr><td>tfs058</td><td>50x20</td><td>flowshop</td><td>3503</td><td>3691</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2005</td></tr>
-<tr><td>tfs059</td><td>50x20</td><td>flowshop</td><td>3535</td><td>3743</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2005</td></tr>
-<tr><td>tfs060</td><td>50x20</td><td>flowshop</td><td>3560</td><td>3756</td><td style="background-color:grey">open</td><td>lb OptalCP / ub RS2007</td></tr>
-<tr><td>tfs061</td><td>100x5</td><td>flowshop</td><td>5493</td><td>5493</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tfs062</td><td>100x5</td><td>flowshop</td><td>5257</td><td>5257</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tfs063</td><td>100x5</td><td>flowshop</td><td>5173</td><td>5173</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tfs064</td><td>100x5</td><td>flowshop</td><td>4993</td><td>4993</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>tfs065</td><td>100x5</td><td>flowshop</td><td>5247</td><td>5247</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>tfs066</td><td>100x5</td><td>flowshop</td><td>5135</td><td>5135</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>tfs067</td><td>100x5</td><td>flowshop</td><td>5232</td><td>5232</td><td style="background-color:green">easy</td><td>OptalCP_FFLL in < 1 min</td></tr>
-<tr><td>tfs068</td><td>100x5</td><td>flowshop</td><td>5083</td><td>5083</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tfs069</td><td>100x5</td><td>flowshop</td><td>5442</td><td>5442</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tfs070</td><td>100x5</td><td>flowshop</td><td>5318</td><td>5318</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>tfs071</td><td>100x10</td><td>flowshop</td><td>5759</td><td>5770</td><td style="background-color:grey">open</td><td>lb CPO / ub NS2005</td></tr>
-<tr><td>tfs072</td><td>100x10</td><td>flowshop</td><td>5349</td><td>5349</td><td style="background-color:red">hard</td><td>lb OptalCP / ub NS2005</td></tr>
-<tr><td>tfs073</td><td>100x10</td><td>flowshop</td><td>5661</td><td>5676</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs074</td><td>100x10</td><td>flowshop</td><td>5745</td><td>5781</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs075</td><td>100x10</td><td>flowshop</td><td>5441</td><td>5467</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs076</td><td>100x10</td><td>flowshop</td><td>5274</td><td>5303</td><td style="background-color:grey">open</td><td>lb CPO / ub NS2005</td></tr>
-<tr><td>tfs077</td><td>100x10</td><td>flowshop</td><td>5569</td><td>5595</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs078</td><td>100x10</td><td>flowshop</td><td>5593</td><td>5617</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs079</td><td>100x10</td><td>flowshop</td><td>5843</td><td>5871</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs080</td><td>100x10</td><td>flowshop</td><td>5845</td><td>5845</td><td style="background-color:red">hard</td><td>lb OptalCP / ub NS2005</td></tr>
-<tr><td>tfs081</td><td>100x20</td><td>flowshop</td><td>5971</td><td>6202</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2005</td></tr>
-<tr><td>tfs082</td><td>100x20</td><td>flowshop</td><td>6132</td><td>6183</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs083</td><td>100x20</td><td>flowshop</td><td>6220</td><td>6271</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs084</td><td>100x20</td><td>flowshop</td><td>6117</td><td>6269</td><td style="background-color:grey">open</td><td>lb CPO / ub Va1995</td></tr>
-<tr><td>tfs085</td><td>100x20</td><td>flowshop</td><td>6148</td><td>6314</td><td style="background-color:grey">open</td><td>lb CPO / ub NS2005</td></tr>
-<tr><td>tfs086</td><td>100x20</td><td>flowshop</td><td>6232</td><td>6364</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2005</td></tr>
-<tr><td>tfs087</td><td>100x20</td><td>flowshop</td><td>6101</td><td>6268</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2005</td></tr>
-<tr><td>tfs088</td><td>100x20</td><td>flowshop</td><td>6140</td><td>6401</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2005</td></tr>
-<tr><td>tfs089</td><td>100x20</td><td>flowshop</td><td>6094</td><td>6275</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs090</td><td>100x20</td><td>flowshop</td><td>6359</td><td>6434</td><td style="background-color:grey">open</td><td>lb CPO / ub Va1995</td></tr>
-<tr><td>tfs091</td><td>200x10</td><td>flowshop</td><td>10842</td><td>10862</td><td style="background-color:grey">open</td><td>lb CPO / ub Va1995</td></tr>
-<tr><td>tfs092</td><td>200x10</td><td>flowshop</td><td>10441</td><td>10480</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs093</td><td>200x10</td><td>flowshop</td><td>10915</td><td>10922</td><td style="background-color:grey">open</td><td>lb CPO / ub NS2005</td></tr>
-<tr><td>tfs094</td><td>200x10</td><td>flowshop</td><td>10862</td><td>10889</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2005</td></tr>
-<tr><td>tfs095</td><td>200x10</td><td>flowshop</td><td>10474</td><td>10524</td><td style="background-color:grey">open</td><td>lb CPO / ub NS2005</td></tr>
-<tr><td>tfs096</td><td>200x10</td><td>flowshop</td><td>10311</td><td>10329</td><td style="background-color:grey">open</td><td>lb CPO / ub Va1995</td></tr>
-<tr><td>tfs097</td><td>200x10</td><td>flowshop</td><td>10836</td><td>10854</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs098</td><td>200x10</td><td>flowshop</td><td>10711</td><td>10730</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs099</td><td>200x10</td><td>flowshop</td><td>10419</td><td>10438</td><td style="background-color:grey">open</td><td>lb CPO / ub NS2005</td></tr>
-<tr><td>tfs100</td><td>200x10</td><td>flowshop</td><td>10675</td><td>10675</td><td style="background-color:red">hard</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs101</td><td>200x20</td><td>flowshop</td><td>11087</td><td>11195</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs102</td><td>200x20</td><td>flowshop</td><td>10980</td><td>11203</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2005</td></tr>
-<tr><td>tfs103</td><td>200x20</td><td>flowshop</td><td>11193</td><td>11281</td><td style="background-color:grey">open</td><td>lb OptalCP / ub RMA2005</td></tr>
-<tr><td>tfs104</td><td>200x20</td><td>flowshop</td><td>11159</td><td>11275</td><td style="background-color:grey">open</td><td>lb OptalCP / ub RMA2005</td></tr>
-<tr><td>tfs105</td><td>200x20</td><td>flowshop</td><td>11210</td><td>11259</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2005</td></tr>
-<tr><td>tfs106</td><td>200x20</td><td>flowshop</td><td>11117</td><td>11176</td><td style="background-color:grey">open</td><td>lb OptalCP / ub RMA2005</td></tr>
-<tr><td>tfs107</td><td>200x20</td><td>flowshop</td><td>11274</td><td>11360</td><td style="background-color:grey">open</td><td>lb OptalCP / ub RMA2005</td></tr>
-<tr><td>tfs108</td><td>200x20</td><td>flowshop</td><td>11187</td><td>11334</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2005</td></tr>
-<tr><td>tfs109</td><td>200x20</td><td>flowshop</td><td>11013</td><td>11192</td><td style="background-color:grey">open</td><td>lb CPO / ub NS2005</td></tr>
-<tr><td>tfs110</td><td>200x20</td><td>flowshop</td><td>11211</td><td>11288</td><td style="background-color:grey">open</td><td>lb OptalCP_FFBL / ub RMA2015</td></tr>
-<tr><td>tfs111</td><td>500x20</td><td>flowshop</td><td>25939</td><td>26059</td><td style="background-color:grey">open</td><td>lb OptalCP / ub RMA2015</td></tr>
-<tr><td>tfs112</td><td>500x20</td><td>flowshop</td><td>26393</td><td>26520</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs113</td><td>500x20</td><td>flowshop</td><td>26330</td><td>26371</td><td style="background-color:grey">open</td><td>lb CPO / ub Va1995</td></tr>
-<tr><td>tfs114</td><td>500x20</td><td>flowshop</td><td>26456</td><td>26456</td><td style="background-color:red">hard</td><td>lb CPO / ub Va1995</td></tr>
-<tr><td>tfs115</td><td>500x20</td><td>flowshop</td><td>26241</td><td>26334</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs116</td><td>500x20</td><td>flowshop</td><td>26442</td><td>26477</td><td style="background-color:grey">open</td><td>lb OptalCP_FFBL / ub Va1995</td></tr>
-<tr><td>tfs117</td><td>500x20</td><td>flowshop</td><td>26329</td><td>26389</td><td style="background-color:grey">open</td><td>lb CPO / ub Va1995</td></tr>
-<tr><td>tfs118</td><td>500x20</td><td>flowshop</td><td>26459</td><td>26560</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Va1995</td></tr>
-<tr><td>tfs119</td><td>500x20</td><td>flowshop</td><td>25929</td><td>26005</td><td style="background-color:grey">open</td><td>lb CPO / ub Va1995</td></tr>
-<tr><td>tfs120</td><td>500x20</td><td>flowshop</td><td>26386</td><td>26457</td><td style="background-color:grey">open</td><td>lb OptalCP_FFBL / ub Va1995</td></tr>
-<tr><td>vrf_010_05_01</td><td>10x5</td><td>flowshop</td><td>651</td><td>651</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_05_02</td><td>10x5</td><td>flowshop</td><td>698</td><td>698</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_05_03</td><td>10x5</td><td>flowshop</td><td>724</td><td>724</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_05_04</td><td>10x5</td><td>flowshop</td><td>675</td><td>675</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_05_05</td><td>10x5</td><td>flowshop</td><td>707</td><td>707</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_05_06</td><td>10x5</td><td>flowshop</td><td>735</td><td>735</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_05_07</td><td>10x5</td><td>flowshop</td><td>719</td><td>719</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_05_08</td><td>10x5</td><td>flowshop</td><td>683</td><td>683</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_05_09</td><td>10x5</td><td>flowshop</td><td>761</td><td>761</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_05_10</td><td>10x5</td><td>flowshop</td><td>632</td><td>632</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_10_01</td><td>10x10</td><td>flowshop</td><td>1051</td><td>1051</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_10_02</td><td>10x10</td><td>flowshop</td><td>1037</td><td>1037</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_10_03</td><td>10x10</td><td>flowshop</td><td>1071</td><td>1071</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_10_04</td><td>10x10</td><td>flowshop</td><td>984</td><td>984</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_10_05</td><td>10x10</td><td>flowshop</td><td>1060</td><td>1060</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_10_06</td><td>10x10</td><td>flowshop</td><td>1011</td><td>1011</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_10_07</td><td>10x10</td><td>flowshop</td><td>1026</td><td>1026</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_10_08</td><td>10x10</td><td>flowshop</td><td>1061</td><td>1061</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_10_09</td><td>10x10</td><td>flowshop</td><td>1020</td><td>1020</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_10_10</td><td>10x10</td><td>flowshop</td><td>1026</td><td>1026</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_15_01</td><td>10x15</td><td>flowshop</td><td>1253</td><td>1253</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_15_02</td><td>10x15</td><td>flowshop</td><td>1328</td><td>1328</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_15_03</td><td>10x15</td><td>flowshop</td><td>1325</td><td>1325</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_15_04</td><td>10x15</td><td>flowshop</td><td>1351</td><td>1351</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_15_05</td><td>10x15</td><td>flowshop</td><td>1331</td><td>1331</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>vrf_010_15_06</td><td>10x15</td><td>flowshop</td><td>1301</td><td>1301</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_15_07</td><td>10x15</td><td>flowshop</td><td>1361</td><td>1361</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_15_08</td><td>10x15</td><td>flowshop</td><td>1351</td><td>1351</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_15_09</td><td>10x15</td><td>flowshop</td><td>1358</td><td>1358</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_15_10</td><td>10x15</td><td>flowshop</td><td>1412</td><td>1412</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_20_01</td><td>10x20</td><td>flowshop</td><td>1568</td><td>1568</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_20_02</td><td>10x20</td><td>flowshop</td><td>1686</td><td>1686</td><td style="background-color:green">easy</td><td>OptalCP_FFLL in < 1 min</td></tr>
-<tr><td>vrf_010_20_03</td><td>10x20</td><td>flowshop</td><td>1640</td><td>1640</td><td style="background-color:green">easy</td><td>OptalCP_FFLL in < 1 min</td></tr>
-<tr><td>vrf_010_20_04</td><td>10x20</td><td>flowshop</td><td>1567</td><td>1567</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_20_05</td><td>10x20</td><td>flowshop</td><td>1570</td><td>1570</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_20_06</td><td>10x20</td><td>flowshop</td><td>1755</td><td>1755</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_20_07</td><td>10x20</td><td>flowshop</td><td>1633</td><td>1633</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_010_20_08</td><td>10x20</td><td>flowshop</td><td>1575</td><td>1575</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>vrf_010_20_09</td><td>10x20</td><td>flowshop</td><td>1666</td><td>1666</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>vrf_010_20_10</td><td>10x20</td><td>flowshop</td><td>1609</td><td>1609</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_020_05_01</td><td>20x5</td><td>flowshop</td><td>1192</td><td>1192</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_020_05_02</td><td>20x5</td><td>flowshop</td><td>1274</td><td>1274</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_020_05_03</td><td>20x5</td><td>flowshop</td><td>1299</td><td>1299</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_020_05_04</td><td>20x5</td><td>flowshop</td><td>1117</td><td>1117</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_020_05_05</td><td>20x5</td><td>flowshop</td><td>1339</td><td>1339</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_020_05_06</td><td>20x5</td><td>flowshop</td><td>1066</td><td>1066</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_020_05_07</td><td>20x5</td><td>flowshop</td><td>1154</td><td>1154</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_020_05_08</td><td>20x5</td><td>flowshop</td><td>1102</td><td>1102</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_020_05_09</td><td>20x5</td><td>flowshop</td><td>1310</td><td>1310</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_020_05_10</td><td>20x5</td><td>flowshop</td><td>1226</td><td>1226</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_020_10_01</td><td>20x10</td><td>flowshop</td><td>1425</td><td>1471</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_020_10_02</td><td>20x10</td><td>flowshop</td><td>1467</td><td>1506</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_10_03</td><td>20x10</td><td>flowshop</td><td>1537</td><td>1555</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_10_04</td><td>20x10</td><td>flowshop</td><td>1402</td><td>1422</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_10_05</td><td>20x10</td><td>flowshop</td><td>1528</td><td>1566</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_020_10_06</td><td>20x10</td><td>flowshop</td><td>1525</td><td>1549</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_020_10_07</td><td>20x10</td><td>flowshop</td><td>1548</td><td>1568</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_10_08</td><td>20x10</td><td>flowshop</td><td>1522</td><td>1522</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>vrf_020_10_09</td><td>20x10</td><td>flowshop</td><td>1492</td><td>1512</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_10_10</td><td>20x10</td><td>flowshop</td><td>1466</td><td>1489</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_020_15_01</td><td>20x15</td><td>flowshop</td><td>1796</td><td>1899</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_15_02</td><td>20x15</td><td>flowshop</td><td>1747</td><td>1905</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_15_03</td><td>20x15</td><td>flowshop</td><td>1670</td><td>1780</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_15_04</td><td>20x15</td><td>flowshop</td><td>1703</td><td>1806</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_020_15_05</td><td>20x15</td><td>flowshop</td><td>1802</td><td>1846</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_15_06</td><td>20x15</td><td>flowshop</td><td>1818</td><td>1928</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_020_15_07</td><td>20x15</td><td>flowshop</td><td>1792</td><td>1864</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_020_15_08</td><td>20x15</td><td>flowshop</td><td>1668</td><td>1802</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_020_15_09</td><td>20x15</td><td>flowshop</td><td>1826</td><td>1916</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_15_10</td><td>20x15</td><td>flowshop</td><td>1738</td><td>1845</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_20_01</td><td>20x20</td><td>flowshop</td><td>2001</td><td>2236</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_020_20_02</td><td>20x20</td><td>flowshop</td><td>1973</td><td>2170</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_20_03</td><td>20x20</td><td>flowshop</td><td>2003</td><td>2254</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_020_20_04</td><td>20x20</td><td>flowshop</td><td>1924</td><td>2146</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_020_20_05</td><td>20x20</td><td>flowshop</td><td>1975</td><td>2206</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_20_06</td><td>20x20</td><td>flowshop</td><td>2023</td><td>2237</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_20_07</td><td>20x20</td><td>flowshop</td><td>1989</td><td>2267</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_20_08</td><td>20x20</td><td>flowshop</td><td>2012</td><td>2139</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_20_09</td><td>20x20</td><td>flowshop</td><td>2140</td><td>2322</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_020_20_10</td><td>20x20</td><td>flowshop</td><td>1953</td><td>2167</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_05_01</td><td>30x5</td><td>flowshop</td><td>1805</td><td>1805</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_030_05_02</td><td>30x5</td><td>flowshop</td><td>1571</td><td>1571</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_030_05_03</td><td>30x5</td><td>flowshop</td><td>1663</td><td>1663</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_030_05_04</td><td>30x5</td><td>flowshop</td><td>1768</td><td>1768</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_030_05_05</td><td>30x5</td><td>flowshop</td><td>1706</td><td>1706</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_030_05_06</td><td>30x5</td><td>flowshop</td><td>1860</td><td>1860</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_030_05_07</td><td>30x5</td><td>flowshop</td><td>1733</td><td>1733</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_030_05_08</td><td>30x5</td><td>flowshop</td><td>1705</td><td>1705</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_030_05_09</td><td>30x5</td><td>flowshop</td><td>1718</td><td>1718</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_030_05_10</td><td>30x5</td><td>flowshop</td><td>1637</td><td>1637</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_030_10_01</td><td>30x10</td><td>flowshop</td><td>1876</td><td>1907</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_030_10_02</td><td>30x10</td><td>flowshop</td><td>2025</td><td>2098</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_10_03</td><td>30x10</td><td>flowshop</td><td>2025</td><td>2057</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_030_10_04</td><td>30x10</td><td>flowshop</td><td>1889</td><td>1945</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_10_05</td><td>30x10</td><td>flowshop</td><td>2002</td><td>2012</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_030_10_06</td><td>30x10</td><td>flowshop</td><td>2004</td><td>2034</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_030_10_07</td><td>30x10</td><td>flowshop</td><td>1900</td><td>1965</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_030_10_08</td><td>30x10</td><td>flowshop</td><td>1857</td><td>1896</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_10_09</td><td>30x10</td><td>flowshop</td><td>1854</td><td>1908</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_10_10</td><td>30x10</td><td>flowshop</td><td>1888</td><td>1888</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>vrf_030_15_01</td><td>30x15</td><td>flowshop</td><td>2203</td><td>2381</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_15_02</td><td>30x15</td><td>flowshop</td><td>2171</td><td>2318</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_15_03</td><td>30x15</td><td>flowshop</td><td>2127</td><td>2304</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_15_04</td><td>30x15</td><td>flowshop</td><td>2316</td><td>2444</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_15_05</td><td>30x15</td><td>flowshop</td><td>2295</td><td>2409</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_030_15_06</td><td>30x15</td><td>flowshop</td><td>2116</td><td>2306</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_15_07</td><td>30x15</td><td>flowshop</td><td>2182</td><td>2316</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_15_08</td><td>30x15</td><td>flowshop</td><td>2232</td><td>2366</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_15_09</td><td>30x15</td><td>flowshop</td><td>2050</td><td>2259</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_15_10</td><td>30x15</td><td>flowshop</td><td>2234</td><td>2385</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_20_01</td><td>30x20</td><td>flowshop</td><td>2320</td><td>2628</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_030_20_02</td><td>30x20</td><td>flowshop</td><td>2542</td><td>2835</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_20_03</td><td>30x20</td><td>flowshop</td><td>2500</td><td>2761</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_030_20_04</td><td>30x20</td><td>flowshop</td><td>2442</td><td>2680</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_20_05</td><td>30x20</td><td>flowshop</td><td>2426</td><td>2672</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_20_06</td><td>30x20</td><td>flowshop</td><td>2455</td><td>2715</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_20_07</td><td>30x20</td><td>flowshop</td><td>2448</td><td>2683</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_030_20_08</td><td>30x20</td><td>flowshop</td><td>2561</td><td>2812</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_20_09</td><td>30x20</td><td>flowshop</td><td>2559</td><td>2795</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_030_20_10</td><td>30x20</td><td>flowshop</td><td>2526</td><td>2780</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_040_05_01</td><td>40x5</td><td>flowshop</td><td>2396</td><td>2396</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_040_05_02</td><td>40x5</td><td>flowshop</td><td>2414</td><td>2414</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_040_05_03</td><td>40x5</td><td>flowshop</td><td>2174</td><td>2174</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_040_05_04</td><td>40x5</td><td>flowshop</td><td>2149</td><td>2149</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_040_05_05</td><td>40x5</td><td>flowshop</td><td>2231</td><td>2231</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_040_05_06</td><td>40x5</td><td>flowshop</td><td>2154</td><td>2154</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_040_05_07</td><td>40x5</td><td>flowshop</td><td>2197</td><td>2197</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_040_05_08</td><td>40x5</td><td>flowshop</td><td>2403</td><td>2403</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_040_05_09</td><td>40x5</td><td>flowshop</td><td>2292</td><td>2292</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_040_05_10</td><td>40x5</td><td>flowshop</td><td>2348</td><td>2348</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_040_10_01</td><td>40x10</td><td>flowshop</td><td>2419</td><td>2480</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_10_02</td><td>40x10</td><td>flowshop</td><td>2364</td><td>2444</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_040_10_03</td><td>40x10</td><td>flowshop</td><td>2367</td><td>2410</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_040_10_04</td><td>40x10</td><td>flowshop</td><td>2416</td><td>2472</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_10_05</td><td>40x10</td><td>flowshop</td><td>2383</td><td>2400</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_040_10_06</td><td>40x10</td><td>flowshop</td><td>2510</td><td>2547</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_10_07</td><td>40x10</td><td>flowshop</td><td>2449</td><td>2501</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_10_08</td><td>40x10</td><td>flowshop</td><td>2446</td><td>2479</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_040_10_09</td><td>40x10</td><td>flowshop</td><td>2389</td><td>2411</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_10_10</td><td>40x10</td><td>flowshop</td><td>2447</td><td>2447</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>vrf_040_15_01</td><td>40x15</td><td>flowshop</td><td>2864</td><td>3011</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_15_02</td><td>40x15</td><td>flowshop</td><td>2655</td><td>2821</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_15_03</td><td>40x15</td><td>flowshop</td><td>2750</td><td>2906</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_15_04</td><td>40x15</td><td>flowshop</td><td>2737</td><td>2919</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_15_05</td><td>40x15</td><td>flowshop</td><td>2789</td><td>2945</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_15_06</td><td>40x15</td><td>flowshop</td><td>2686</td><td>2805</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_15_07</td><td>40x15</td><td>flowshop</td><td>2726</td><td>2868</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_15_08</td><td>40x15</td><td>flowshop</td><td>2749</td><td>2900</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_15_09</td><td>40x15</td><td>flowshop</td><td>2570</td><td>2708</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_15_10</td><td>40x15</td><td>flowshop</td><td>2815</td><td>2945</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_20_01</td><td>40x20</td><td>flowshop</td><td>3160</td><td>3326</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_20_02</td><td>40x20</td><td>flowshop</td><td>2892</td><td>3226</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_20_03</td><td>40x20</td><td>flowshop</td><td>2912</td><td>3233</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_20_04</td><td>40x20</td><td>flowshop</td><td>2980</td><td>3233</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_20_05</td><td>40x20</td><td>flowshop</td><td>2787</td><td>3055</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_20_06</td><td>40x20</td><td>flowshop</td><td>2865</td><td>3192</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_20_07</td><td>40x20</td><td>flowshop</td><td>2955</td><td>3244</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_20_08</td><td>40x20</td><td>flowshop</td><td>2987</td><td>3266</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_20_09</td><td>40x20</td><td>flowshop</td><td>3027</td><td>3335</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_040_20_10</td><td>40x20</td><td>flowshop</td><td>2884</td><td>3122</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_05_01</td><td>50x5</td><td>flowshop</td><td>3054</td><td>3054</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_050_05_02</td><td>50x5</td><td>flowshop</td><td>2851</td><td>2851</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_050_05_03</td><td>50x5</td><td>flowshop</td><td>2746</td><td>2746</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_050_05_04</td><td>50x5</td><td>flowshop</td><td>2824</td><td>2824</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_050_05_05</td><td>50x5</td><td>flowshop</td><td>2866</td><td>2866</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_050_05_06</td><td>50x5</td><td>flowshop</td><td>2841</td><td>2841</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_050_05_07</td><td>50x5</td><td>flowshop</td><td>2600</td><td>2600</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_050_05_08</td><td>50x5</td><td>flowshop</td><td>2684</td><td>2684</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_050_05_09</td><td>50x5</td><td>flowshop</td><td>2614</td><td>2614</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_050_05_10</td><td>50x5</td><td>flowshop</td><td>2834</td><td>2834</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_050_10_01</td><td>50x10</td><td>flowshop</td><td>2871</td><td>2926</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_10_02</td><td>50x10</td><td>flowshop</td><td>2991</td><td>3028</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_050_10_03</td><td>50x10</td><td>flowshop</td><td>2969</td><td>3019</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_10_04</td><td>50x10</td><td>flowshop</td><td>2971</td><td>3003</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_10_05</td><td>50x10</td><td>flowshop</td><td>3232</td><td>3232</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>vrf_050_10_06</td><td>50x10</td><td>flowshop</td><td>3149</td><td>3149</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_050_10_07</td><td>50x10</td><td>flowshop</td><td>2807</td><td>2842</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_10_08</td><td>50x10</td><td>flowshop</td><td>3032</td><td>3072</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_10_09</td><td>50x10</td><td>flowshop</td><td>2959</td><td>2959</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>vrf_050_10_10</td><td>50x10</td><td>flowshop</td><td>3023</td><td>3056</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_15_01</td><td>50x15</td><td>flowshop</td><td>3138</td><td>3316</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_15_02</td><td>50x15</td><td>flowshop</td><td>3230</td><td>3347</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_15_03</td><td>50x15</td><td>flowshop</td><td>3160</td><td>3301</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_15_04</td><td>50x15</td><td>flowshop</td><td>3395</td><td>3521</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_15_05</td><td>50x15</td><td>flowshop</td><td>3210</td><td>3334</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_15_06</td><td>50x15</td><td>flowshop</td><td>3232</td><td>3346</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_15_07</td><td>50x15</td><td>flowshop</td><td>3333</td><td>3490</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_15_08</td><td>50x15</td><td>flowshop</td><td>3299</td><td>3430</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_15_09</td><td>50x15</td><td>flowshop</td><td>3050</td><td>3205</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_15_10</td><td>50x15</td><td>flowshop</td><td>3257</td><td>3399</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_20_01</td><td>50x20</td><td>flowshop</td><td>3390</td><td>3693</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_20_02</td><td>50x20</td><td>flowshop</td><td>3419</td><td>3719</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_20_03</td><td>50x20</td><td>flowshop</td><td>3510</td><td>3784</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_20_04</td><td>50x20</td><td>flowshop</td><td>3437</td><td>3709</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_20_05</td><td>50x20</td><td>flowshop</td><td>3366</td><td>3632</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_20_06</td><td>50x20</td><td>flowshop</td><td>3492</td><td>3795</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_20_07</td><td>50x20</td><td>flowshop</td><td>3433</td><td>3696</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_20_08</td><td>50x20</td><td>flowshop</td><td>3478</td><td>3783</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_20_09</td><td>50x20</td><td>flowshop</td><td>3487</td><td>3816</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_050_20_10</td><td>50x20</td><td>flowshop</td><td>3466</td><td>3769</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_05_01</td><td>60x5</td><td>flowshop</td><td>3350</td><td>3350</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_060_05_02</td><td>60x5</td><td>flowshop</td><td>3034</td><td>3034</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_060_05_03</td><td>60x5</td><td>flowshop</td><td>3207</td><td>3207</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_060_05_04</td><td>60x5</td><td>flowshop</td><td>3266</td><td>3266</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_060_05_05</td><td>60x5</td><td>flowshop</td><td>3187</td><td>3187</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_060_05_06</td><td>60x5</td><td>flowshop</td><td>3100</td><td>3100</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_060_05_07</td><td>60x5</td><td>flowshop</td><td>3312</td><td>3312</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_060_05_08</td><td>60x5</td><td>flowshop</td><td>3405</td><td>3405</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_060_05_09</td><td>60x5</td><td>flowshop</td><td>3119</td><td>3119</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_060_05_10</td><td>60x5</td><td>flowshop</td><td>3656</td><td>3656</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>vrf_060_10_01</td><td>60x10</td><td>flowshop</td><td>3377</td><td>3435</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_10_02</td><td>60x10</td><td>flowshop</td><td>3616</td><td>3655</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_10_03</td><td>60x10</td><td>flowshop</td><td>3400</td><td>3423</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_10_04</td><td>60x10</td><td>flowshop</td><td>3416</td><td>3455</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_10_05</td><td>60x10</td><td>flowshop</td><td>3482</td><td>3505</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_10_06</td><td>60x10</td><td>flowshop</td><td>3557</td><td>3594</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_10_07</td><td>60x10</td><td>flowshop</td><td>3597</td><td>3654</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_10_08</td><td>60x10</td><td>flowshop</td><td>3552</td><td>3552</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>vrf_060_10_09</td><td>60x10</td><td>flowshop</td><td>3638</td><td>3679</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>vrf_060_10_10</td><td>60x10</td><td>flowshop</td><td>3471</td><td>3492</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_15_01</td><td>60x15</td><td>flowshop</td><td>3848</td><td>3940</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_15_02</td><td>60x15</td><td>flowshop</td><td>3744</td><td>3888</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_15_03</td><td>60x15</td><td>flowshop</td><td>3718</td><td>3880</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_15_04</td><td>60x15</td><td>flowshop</td><td>3569</td><td>3716</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_15_05</td><td>60x15</td><td>flowshop</td><td>3758</td><td>3881</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_15_06</td><td>60x15</td><td>flowshop</td><td>3743</td><td>3893</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_15_07</td><td>60x15</td><td>flowshop</td><td>3642</td><td>3809</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_15_08</td><td>60x15</td><td>flowshop</td><td>3585</td><td>3749</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_15_09</td><td>60x15</td><td>flowshop</td><td>3666</td><td>3800</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_15_10</td><td>60x15</td><td>flowshop</td><td>3808</td><td>3902</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_20_01</td><td>60x20</td><td>flowshop</td><td>3903</td><td>4163</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_20_02</td><td>60x20</td><td>flowshop</td><td>3957</td><td>4290</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_20_03</td><td>60x20</td><td>flowshop</td><td>4047</td><td>4365</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_20_04</td><td>60x20</td><td>flowshop</td><td>3985</td><td>4193</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_20_05</td><td>60x20</td><td>flowshop</td><td>3900</td><td>4196</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_20_06</td><td>60x20</td><td>flowshop</td><td>3933</td><td>4202</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_20_07</td><td>60x20</td><td>flowshop</td><td>3997</td><td>4263</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_20_08</td><td>60x20</td><td>flowshop</td><td>3930</td><td>4180</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_20_09</td><td>60x20</td><td>flowshop</td><td>4008</td><td>4221</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_060_20_10</td><td>60x20</td><td>flowshop</td><td>3912</td><td>4202</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP_FFLL</td></tr>
-<tr><td>vrf_100_20_01</td><td>100x20</td><td>flowshop</td><td>5849</td><td>6198</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_20_02</td><td>100x20</td><td>flowshop</td><td>5999</td><td>6306</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_20_03</td><td>100x20</td><td>flowshop</td><td>5908</td><td>6238</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_20_04</td><td>100x20</td><td>flowshop</td><td>5905</td><td>6245</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_20_05</td><td>100x20</td><td>flowshop</td><td>5984</td><td>6296</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_20_06</td><td>100x20</td><td>flowshop</td><td>6034</td><td>6321</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_20_07</td><td>100x20</td><td>flowshop</td><td>6056</td><td>6434</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_20_08</td><td>100x20</td><td>flowshop</td><td>5781</td><td>6104</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_20_09</td><td>100x20</td><td>flowshop</td><td>6000</td><td>6354</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_20_10</td><td>100x20</td><td>flowshop</td><td>5887</td><td>6145</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_40_01</td><td>100x40</td><td>flowshop</td><td>6761</td><td>7881</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_40_02</td><td>100x40</td><td>flowshop</td><td>6878</td><td>8007</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_40_03</td><td>100x40</td><td>flowshop</td><td>6797</td><td>7935</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_40_04</td><td>100x40</td><td>flowshop</td><td>6871</td><td>7932</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_40_05</td><td>100x40</td><td>flowshop</td><td>6912</td><td>8011</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_40_06</td><td>100x40</td><td>flowshop</td><td>6925</td><td>8023</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_40_07</td><td>100x40</td><td>flowshop</td><td>6938</td><td>8006</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_40_08</td><td>100x40</td><td>flowshop</td><td>6937</td><td>7979</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_40_09</td><td>100x40</td><td>flowshop</td><td>6879</td><td>7931</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_40_10</td><td>100x40</td><td>flowshop</td><td>6853</td><td>7952</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_60_01</td><td>100x60</td><td>flowshop</td><td>7615</td><td>9395</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_60_02</td><td>100x60</td><td>flowshop</td><td>7874</td><td>9596</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_60_03</td><td>100x60</td><td>flowshop</td><td>7686</td><td>9349</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_60_04</td><td>100x60</td><td>flowshop</td><td>7755</td><td>9426</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_60_05</td><td>100x60</td><td>flowshop</td><td>7820</td><td>9465</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_100_60_06</td><td>100x60</td><td>flowshop</td><td>7935</td><td>9667</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_60_07</td><td>100x60</td><td>flowshop</td><td>7854</td><td>9391</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_60_08</td><td>100x60</td><td>flowshop</td><td>7859</td><td>9534</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_60_09</td><td>100x60</td><td>flowshop</td><td>7844</td><td>9527</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_100_60_10</td><td>100x60</td><td>flowshop</td><td>7921</td><td>9598</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_20_01</td><td>200x20</td><td>flowshop</td><td>11014</td><td>11305</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_20_02</td><td>200x20</td><td>flowshop</td><td>11052</td><td>11265</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_20_03</td><td>200x20</td><td>flowshop</td><td>11063</td><td>11327</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_20_04</td><td>200x20</td><td>flowshop</td><td>10958</td><td>11208</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_20_05</td><td>200x20</td><td>flowshop</td><td>10914</td><td>11208</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_20_06</td><td>200x20</td><td>flowshop</td><td>11079</td><td>11367</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_20_07</td><td>200x20</td><td>flowshop</td><td>11118</td><td>11380</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_20_08</td><td>200x20</td><td>flowshop</td><td>10880</td><td>11141</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_20_09</td><td>200x20</td><td>flowshop</td><td>10853</td><td>11123</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_200_20_10</td><td>200x20</td><td>flowshop</td><td>11035</td><td>11310</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_40_01</td><td>200x40</td><td>flowshop</td><td>11875</td><td>13132</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_40_02</td><td>200x40</td><td>flowshop</td><td>11814</td><td>13102</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_40_03</td><td>200x40</td><td>flowshop</td><td>11983</td><td>13264</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_40_04</td><td>200x40</td><td>flowshop</td><td>12055</td><td>13232</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_200_40_05</td><td>200x40</td><td>flowshop</td><td>11769</td><td>13043</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_40_06</td><td>200x40</td><td>flowshop</td><td>11861</td><td>13124</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_40_07</td><td>200x40</td><td>flowshop</td><td>12025</td><td>13299</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_40_08</td><td>200x40</td><td>flowshop</td><td>11965</td><td>13238</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_40_09</td><td>200x40</td><td>flowshop</td><td>11885</td><td>13166</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_40_10</td><td>200x40</td><td>flowshop</td><td>11970</td><td>13228</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_60_01</td><td>200x60</td><td>flowshop</td><td>13008</td><td>14990</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_60_02</td><td>200x60</td><td>flowshop</td><td>12903</td><td>14954</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_60_03</td><td>200x60</td><td>flowshop</td><td>13105</td><td>15200</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_60_04</td><td>200x60</td><td>flowshop</td><td>13051</td><td>15044</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_60_05</td><td>200x60</td><td>flowshop</td><td>13107</td><td>15130</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_60_06</td><td>200x60</td><td>flowshop</td><td>13021</td><td>15035</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_60_07</td><td>200x60</td><td>flowshop</td><td>13024</td><td>15040</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_60_08</td><td>200x60</td><td>flowshop</td><td>13007</td><td>14968</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_60_09</td><td>200x60</td><td>flowshop</td><td>12977</td><td>15022</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_200_60_10</td><td>200x60</td><td>flowshop</td><td>12967</td><td>15000</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_20_01</td><td>300x20</td><td>flowshop</td><td>15841</td><td>16149</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_20_02</td><td>300x20</td><td>flowshop</td><td>16225</td><td>16512</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_300_20_03</td><td>300x20</td><td>flowshop</td><td>15907</td><td>16173</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_20_04</td><td>300x20</td><td>flowshop</td><td>15907</td><td>16181</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_20_05</td><td>300x20</td><td>flowshop</td><td>16035</td><td>16342</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_20_06</td><td>300x20</td><td>flowshop</td><td>15945</td><td>16137</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_300_20_07</td><td>300x20</td><td>flowshop</td><td>15992</td><td>16266</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_20_08</td><td>300x20</td><td>flowshop</td><td>16160</td><td>16416</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_300_20_09</td><td>300x20</td><td>flowshop</td><td>16108</td><td>16376</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_20_10</td><td>300x20</td><td>flowshop</td><td>16640</td><td>16899</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_300_40_01</td><td>300x40</td><td>flowshop</td><td>17026</td><td>18298</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_40_02</td><td>300x40</td><td>flowshop</td><td>17097</td><td>18454</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_40_03</td><td>300x40</td><td>flowshop</td><td>17052</td><td>18457</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_40_04</td><td>300x40</td><td>flowshop</td><td>16963</td><td>18351</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_40_05</td><td>300x40</td><td>flowshop</td><td>17128</td><td>18484</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_300_40_06</td><td>300x40</td><td>flowshop</td><td>17018</td><td>18449</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_40_07</td><td>300x40</td><td>flowshop</td><td>17089</td><td>18419</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_40_08</td><td>300x40</td><td>flowshop</td><td>17080</td><td>18392</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_40_09</td><td>300x40</td><td>flowshop</td><td>17090</td><td>18394</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_40_10</td><td>300x40</td><td>flowshop</td><td>17067</td><td>18401</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_60_01</td><td>300x60</td><td>flowshop</td><td>18104</td><td>20522</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_60_02</td><td>300x60</td><td>flowshop</td><td>17850</td><td>20399</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_60_03</td><td>300x60</td><td>flowshop</td><td>18163</td><td>20434</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_60_04</td><td>300x60</td><td>flowshop</td><td>17990</td><td>20395</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_300_60_05</td><td>300x60</td><td>flowshop</td><td>17898</td><td>20341</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_60_06</td><td>300x60</td><td>flowshop</td><td>17916</td><td>20388</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_60_07</td><td>300x60</td><td>flowshop</td><td>18105</td><td>20457</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_300_60_08</td><td>300x60</td><td>flowshop</td><td>18038</td><td>20410</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_60_09</td><td>300x60</td><td>flowshop</td><td>18061</td><td>20549</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_300_60_10</td><td>300x60</td><td>flowshop</td><td>18017</td><td>20472</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_20_01</td><td>400x20</td><td>flowshop</td><td>20750</td><td>21120</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_20_02</td><td>400x20</td><td>flowshop</td><td>21191</td><td>21457</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_20_03</td><td>400x20</td><td>flowshop</td><td>21231</td><td>21441</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_400_20_04</td><td>400x20</td><td>flowshop</td><td>20973</td><td>21247</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_400_20_05</td><td>400x20</td><td>flowshop</td><td>21271</td><td>21553</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_20_06</td><td>400x20</td><td>flowshop</td><td>20973</td><td>21214</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_20_07</td><td>400x20</td><td>flowshop</td><td>21375</td><td>21625</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_20_08</td><td>400x20</td><td>flowshop</td><td>21054</td><td>21277</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_20_09</td><td>400x20</td><td>flowshop</td><td>21150</td><td>21346</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_20_10</td><td>400x20</td><td>flowshop</td><td>21336</td><td>21538</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_40_01</td><td>400x40</td><td>flowshop</td><td>22101</td><td>23578</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_40_02</td><td>400x40</td><td>flowshop</td><td>21960</td><td>23456</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_40_03</td><td>400x40</td><td>flowshop</td><td>22177</td><td>23575</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_40_04</td><td>400x40</td><td>flowshop</td><td>21977</td><td>23409</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_40_05</td><td>400x40</td><td>flowshop</td><td>21947</td><td>23339</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_40_06</td><td>400x40</td><td>flowshop</td><td>22076</td><td>23444</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_40_07</td><td>400x40</td><td>flowshop</td><td>22160</td><td>23556</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_40_08</td><td>400x40</td><td>flowshop</td><td>21956</td><td>23411</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_40_09</td><td>400x40</td><td>flowshop</td><td>22205</td><td>23637</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_40_10</td><td>400x40</td><td>flowshop</td><td>22318</td><td>23720</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_60_01</td><td>400x60</td><td>flowshop</td><td>22927</td><td>25607</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_400_60_02</td><td>400x60</td><td>flowshop</td><td>22915</td><td>25656</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_60_03</td><td>400x60</td><td>flowshop</td><td>23176</td><td>25821</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_60_04</td><td>400x60</td><td>flowshop</td><td>23169</td><td>25837</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_60_05</td><td>400x60</td><td>flowshop</td><td>23148</td><td>25877</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_60_06</td><td>400x60</td><td>flowshop</td><td>22867</td><td>25536</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_60_07</td><td>400x60</td><td>flowshop</td><td>23025</td><td>25600</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_60_08</td><td>400x60</td><td>flowshop</td><td>23145</td><td>25800</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_60_09</td><td>400x60</td><td>flowshop</td><td>23278</td><td>25882</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_400_60_10</td><td>400x60</td><td>flowshop</td><td>23296</td><td>25767</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_20_01</td><td>500x20</td><td>flowshop</td><td>26155</td><td>26411</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_20_02</td><td>500x20</td><td>flowshop</td><td>26423</td><td>26681</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_20_03</td><td>500x20</td><td>flowshop</td><td>26163</td><td>26409</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_20_04</td><td>500x20</td><td>flowshop</td><td>25887</td><td>26124</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_20_05</td><td>500x20</td><td>flowshop</td><td>26594</td><td>26781</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_20_06</td><td>500x20</td><td>flowshop</td><td>26211</td><td>26443</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_20_07</td><td>500x20</td><td>flowshop</td><td>26228</td><td>26433</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_20_08</td><td>500x20</td><td>flowshop</td><td>26119</td><td>26318</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_20_09</td><td>500x20</td><td>flowshop</td><td>26262</td><td>26442</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_20_10</td><td>500x20</td><td>flowshop</td><td>25900</td><td>26072</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_40_01</td><td>500x40</td><td>flowshop</td><td>27076</td><td>28548</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_500_40_02</td><td>500x40</td><td>flowshop</td><td>27218</td><td>28793</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_40_03</td><td>500x40</td><td>flowshop</td><td>27134</td><td>28607</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_40_04</td><td>500x40</td><td>flowshop</td><td>27283</td><td>28828</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_40_05</td><td>500x40</td><td>flowshop</td><td>27177</td><td>28683</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_40_06</td><td>500x40</td><td>flowshop</td><td>26958</td><td>28524</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_40_07</td><td>500x40</td><td>flowshop</td><td>27206</td><td>28760</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_40_08</td><td>500x40</td><td>flowshop</td><td>27275</td><td>28698</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_40_09</td><td>500x40</td><td>flowshop</td><td>27341</td><td>28870</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_40_10</td><td>500x40</td><td>flowshop</td><td>27281</td><td>28758</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_60_01</td><td>500x60</td><td>flowshop</td><td>27993</td><td>30861</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_60_02</td><td>500x60</td><td>flowshop</td><td>27941</td><td>30828</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_60_03</td><td>500x60</td><td>flowshop</td><td>28159</td><td>31125</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_60_04</td><td>500x60</td><td>flowshop</td><td>28103</td><td>30928</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_60_05</td><td>500x60</td><td>flowshop</td><td>28088</td><td>30935</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_60_06</td><td>500x60</td><td>flowshop</td><td>28215</td><td>31027</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_60_07</td><td>500x60</td><td>flowshop</td><td>28251</td><td>30928</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_60_08</td><td>500x60</td><td>flowshop</td><td>28196</td><td>30988</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_60_09</td><td>500x60</td><td>flowshop</td><td>28158</td><td>30978</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_500_60_10</td><td>500x60</td><td>flowshop</td><td>28272</td><td>31050</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_20_01</td><td>600x20</td><td>flowshop</td><td>31157</td><td>31433</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_20_02</td><td>600x20</td><td>flowshop</td><td>31189</td><td>31418</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_20_03</td><td>600x20</td><td>flowshop</td><td>31228</td><td>31429</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_20_04</td><td>600x20</td><td>flowshop</td><td>31282</td><td>31547</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_20_05</td><td>600x20</td><td>flowshop</td><td>31239</td><td>31448</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_20_06</td><td>600x20</td><td>flowshop</td><td>31507</td><td>31717</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_20_07</td><td>600x20</td><td>flowshop</td><td>31346</td><td>31527</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_600_20_08</td><td>600x20</td><td>flowshop</td><td>31316</td><td>31564</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_20_09</td><td>600x20</td><td>flowshop</td><td>31373</td><td>31577</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_20_10</td><td>600x20</td><td>flowshop</td><td>30909</td><td>31130</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_40_01</td><td>600x40</td><td>flowshop</td><td>32320</td><td>33839</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_40_02</td><td>600x40</td><td>flowshop</td><td>32214</td><td>33467</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_600_40_03</td><td>600x40</td><td>flowshop</td><td>32347</td><td>33866</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_40_04</td><td>600x40</td><td>flowshop</td><td>32226</td><td>33693</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_600_40_05</td><td>600x40</td><td>flowshop</td><td>32142</td><td>33553</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_40_06</td><td>600x40</td><td>flowshop</td><td>32360</td><td>33809</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_40_07</td><td>600x40</td><td>flowshop</td><td>32263</td><td>33686</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_600_40_08</td><td>600x40</td><td>flowshop</td><td>32113</td><td>33482</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_40_09</td><td>600x40</td><td>flowshop</td><td>32319</td><td>33697</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_40_10</td><td>600x40</td><td>flowshop</td><td>32269</td><td>33642</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_60_01</td><td>600x60</td><td>flowshop</td><td>33186</td><td>36198</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_60_02</td><td>600x60</td><td>flowshop</td><td>33208</td><td>36184</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_60_03</td><td>600x60</td><td>flowshop</td><td>33197</td><td>36201</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_60_04</td><td>600x60</td><td>flowshop</td><td>33304</td><td>36136</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_60_05</td><td>600x60</td><td>flowshop</td><td>33161</td><td>36153</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_60_06</td><td>600x60</td><td>flowshop</td><td>33251</td><td>36116</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_60_07</td><td>600x60</td><td>flowshop</td><td>33354</td><td>36179</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_600_60_08</td><td>600x60</td><td>flowshop</td><td>33295</td><td>36185</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_60_09</td><td>600x60</td><td>flowshop</td><td>33337</td><td>36195</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_600_60_10</td><td>600x60</td><td>flowshop</td><td>33268</td><td>36163</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_20_01</td><td>700x20</td><td>flowshop</td><td>36121</td><td>36394</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_700_20_02</td><td>700x20</td><td>flowshop</td><td>36165</td><td>36337</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_700_20_03</td><td>700x20</td><td>flowshop</td><td>36317</td><td>36568</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_20_04</td><td>700x20</td><td>flowshop</td><td>36258</td><td>36452</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_20_05</td><td>700x20</td><td>flowshop</td><td>36400</td><td>36584</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_20_06</td><td>700x20</td><td>flowshop</td><td>36418</td><td>36671</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_20_07</td><td>700x20</td><td>flowshop</td><td>36435</td><td>36624</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_20_08</td><td>700x20</td><td>flowshop</td><td>36337</td><td>36522</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_20_09</td><td>700x20</td><td>flowshop</td><td>36091</td><td>36329</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_700_20_10</td><td>700x20</td><td>flowshop</td><td>36310</td><td>36417</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_40_01</td><td>700x40</td><td>flowshop</td><td>37368</td><td>38964</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_40_02</td><td>700x40</td><td>flowshop</td><td>37298</td><td>38775</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_40_03</td><td>700x40</td><td>flowshop</td><td>37091</td><td>38621</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_40_04</td><td>700x40</td><td>flowshop</td><td>37282</td><td>38785</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_40_05</td><td>700x40</td><td>flowshop</td><td>37251</td><td>38671</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_40_06</td><td>700x40</td><td>flowshop</td><td>37249</td><td>38710</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_700_40_07</td><td>700x40</td><td>flowshop</td><td>37004</td><td>38585</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_40_08</td><td>700x40</td><td>flowshop</td><td>37575</td><td>39059</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_40_09</td><td>700x40</td><td>flowshop</td><td>37287</td><td>38814</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_40_10</td><td>700x40</td><td>flowshop</td><td>37479</td><td>38850</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_700_60_01</td><td>700x60</td><td>flowshop</td><td>38316</td><td>41436</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_60_02</td><td>700x60</td><td>flowshop</td><td>38300</td><td>41375</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_60_03</td><td>700x60</td><td>flowshop</td><td>38301</td><td>41317</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_700_60_04</td><td>700x60</td><td>flowshop</td><td>38515</td><td>41401</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_700_60_05</td><td>700x60</td><td>flowshop</td><td>38350</td><td>41262</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_60_06</td><td>700x60</td><td>flowshop</td><td>38319</td><td>41340</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_700_60_07</td><td>700x60</td><td>flowshop</td><td>37953</td><td>40876</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_60_08</td><td>700x60</td><td>flowshop</td><td>38512</td><td>41474</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_60_09</td><td>700x60</td><td>flowshop</td><td>38262</td><td>41291</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_700_60_10</td><td>700x60</td><td>flowshop</td><td>38429</td><td>41377</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_800_20_01</td><td>800x20</td><td>flowshop</td><td>41299</td><td>41558</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_20_02</td><td>800x20</td><td>flowshop</td><td>41172</td><td>41407</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_20_03</td><td>800x20</td><td>flowshop</td><td>41205</td><td>41425</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_20_04</td><td>800x20</td><td>flowshop</td><td>41225</td><td>41426</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_20_05</td><td>800x20</td><td>flowshop</td><td>41504</td><td>41710</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_20_06</td><td>800x20</td><td>flowshop</td><td>41828</td><td>42010</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_800_20_07</td><td>800x20</td><td>flowshop</td><td>41205</td><td>41425</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_20_08</td><td>800x20</td><td>flowshop</td><td>41379</td><td>41492</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_800_20_09</td><td>800x20</td><td>flowshop</td><td>41568</td><td>41796</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_20_10</td><td>800x20</td><td>flowshop</td><td>41351</td><td>41574</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_40_01</td><td>800x40</td><td>flowshop</td><td>42212</td><td>43671</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_40_02</td><td>800x40</td><td>flowshop</td><td>42242</td><td>43746</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_40_03</td><td>800x40</td><td>flowshop</td><td>42193</td><td>43749</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_40_04</td><td>800x40</td><td>flowshop</td><td>42389</td><td>43892</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_800_40_05</td><td>800x40</td><td>flowshop</td><td>42524</td><td>43905</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_40_06</td><td>800x40</td><td>flowshop</td><td>42261</td><td>43811</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_800_40_07</td><td>800x40</td><td>flowshop</td><td>42263</td><td>43766</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_40_08</td><td>800x40</td><td>flowshop</td><td>42427</td><td>43839</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_40_09</td><td>800x40</td><td>flowshop</td><td>42411</td><td>43879</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_40_10</td><td>800x40</td><td>flowshop</td><td>42425</td><td>43861</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_60_01</td><td>800x60</td><td>flowshop</td><td>43276</td><td>46470</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_60_02</td><td>800x60</td><td>flowshop</td><td>43248</td><td>46493</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_60_03</td><td>800x60</td><td>flowshop</td><td>43355</td><td>46389</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_60_04</td><td>800x60</td><td>flowshop</td><td>43289</td><td>46457</td><td style="background-color:grey">open</td><td>lb CPO / ub VRF2015</td></tr>
-<tr><td>vrf_800_60_05</td><td>800x60</td><td>flowshop</td><td>43376</td><td>46401</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_60_06</td><td>800x60</td><td>flowshop</td><td>43267</td><td>46421</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_60_07</td><td>800x60</td><td>flowshop</td><td>43288</td><td>46319</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_60_08</td><td>800x60</td><td>flowshop</td><td>43390</td><td>46474</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_60_09</td><td>800x60</td><td>flowshop</td><td>43550</td><td>46538</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
-<tr><td>vrf_800_60_10</td><td>800x60</td><td>flowshop</td><td>43333</td><td>46244</td><td style="background-color:grey">open</td><td>lb OptalCP / ub VRF2015</td></tr>
+<tr><td>long-js-600000-100-10000-1</td><td>103x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>long-js-600000-100-10000-2</td><td>103x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>long-js-600000-100-10000-3</td><td>103x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>long-js-600000-100-100000-1</td><td>109x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>long-js-600000-100-100000-2</td><td>114x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>long-js-600000-100-100000-3</td><td>109x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>long-js-600000-1000-10000-1</td><td>1002x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>long-js-600000-1000-10000-2</td><td>1002x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>long-js-600000-1000-10000-3</td><td>1002x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>long-js-600000-1000-100000-1</td><td>1002x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>long-js-600000-1000-100000-2</td><td>1002x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>long-js-600000-1000-100000-3</td><td>1003x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>short-js-600000-100-10000-1</td><td>2162x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>short-js-600000-100-10000-2</td><td>2192x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>short-js-600000-100-10000-3</td><td>2169x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>short-js-600000-100-100000-1</td><td>20685x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>short-js-600000-100-100000-2</td><td>20870x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>short-js-600000-100-100000-3</td><td>20767x100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>short-js-600000-1000-10000-1</td><td>2882x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>short-js-600000-1000-10000-2</td><td>2863x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>short-js-600000-1000-10000-3</td><td>2897x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>short-js-600000-1000-100000-1</td><td>21280x1000</td><td>reentrant jobshop</td><td>600000</td><td>600038</td><td style="background-color:grey">open</td><td>lb OptalCP / ub OptalCP</td></tr>
+<tr><td>short-js-600000-1000-100000-2</td><td>21349x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>short-js-600000-1000-100000-3</td><td>21338x1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
 </table>
 
 
 
+## Publications
 
-<br/>
+The upper and lower bounds come from
+
+- NS2002 (1 bounds - tjs30) : **Nowicki, E., & Smutnicki, C. (2002)**. Some new tools to solve the job shop problem. Raport serii: Preprinty, 60.
+
+- PSV2010 (1 bounds - tjs32) : **Pardalos, P. M., Shylo, O. V., & Vazacopoulos, A. (2010)**. Solving job shop scheduling problems utilizing the properties of backbone and “big valley”. Computational Optimization and Applications, 47, 61-76.
+
+- GR2014 (6 bounds in dmu, tjs and swv) : **Gonçalves, J. F., & Resende, M. G.** (2014). An extended Akers graphical method with a biased random‐key genetic algorithm for job‐shop scheduling. International Transactions in Operational Research, 21(2), 215-246.
+
+- CPO2015 (5 bounds in dmu and tjs): 
+
+    - **Vilím, P., Laborie, P., & Shaw, P. (2015).** Failure-directed search for constraint-based scheduling. In Integration of AI and OR Techniques in Constraint Programming: 12th International Conference, CPAIOR 2015, Barcelona, Spain, May 18-22, 2015, Proceedings 12 (pp. 437-453). Springer International Publishing.
+
+    - **Vilım, P., Laborie, P., & Shaw, P**. Failure-directed Search for Constraint-based Scheduling Detailed Experimental Results.
+
+- Mu2015 (1 bound - swv08) : Personal communication to optimizizer, probably based on **Murovec, B. (2015)**. Job-shop local-search move evaluation without direct consideration of the criterion’s value. European Journal of Operational Research, 241(2), 320-329.
+
+- PLC2015 (6 bounds in dmu and tjs) : **Peng, B., Lü, Z., & Cheng, T. C. E. (2015)**. A tabu search/path relinking algorithm to solve the job shop scheduling problem. Computers & Operations Research, 53, 154-164.
+
+- SS2018 (17 bounds in dmu, yn and swv) : **Shylo, O. V., & Shams, H. (2018)**. Boosting binary optimization via binary classification: A case study of job shop scheduling. arXiv preprint arXiv:1808.10813.
+
+- CS2022 (27 bounds in dmu and tjs) : **Constantino, O. H., & Segura, C. (2022)**. A parallel memetic algorithm with explicit management of diversity for the job shop scheduling problem. Applied Intelligence, 52(1), 141-153.
+
+- XLGG2022 (2 bounds in dmu) : **Xie, J., Li, X., Gao, L., & Gui, L. (2022)**. A hybrid algorithm with a new neighborhood structure for job shop scheduling problems. Computers & Industrial Engineering, 169, 108205.
+
+- Hexaly2024 (10 bounds in tai) : **Lea Blaise**. Hexaly2024 (https://www.hexaly.com/benchmarks/hexaly-vs-cp-optimizer-vs-CP-SAT-on-the-job-shop-scheduling-problem-jssp)
+
+All other bounds were found by OptalCP
+
+# Test instances
+
+***We are planning to change the testbed soon and redo this whole section***
+
+Comparing your algorithm with the best known results is usually unfair (we don't know how long the the algorithms were ran to obtain the results, nor whether the published results are indeed valid)
+
+We have selected a subset of 50 small yet difficult instances to test algorithms and engines, to be tested with a timeout of 10 minutes (8h in total for the whole testbed)
 
 
-# Recommendations
-
-- We recommend the jobshop instances to be used for all variants of jobshop, flowshop and openshop problems where no extra data is needed. The intra-job precedence can be discarded wherever it makes sense.
-
-- We recommend replacing the reentrant jobshop benchmark by a harder one where the lower bounds are not so easy to find. An approach could be to first build instances with known optima, and then randomly shorten some tasks.
-
-- We recommend the deprecation of the following instance families
-    - `car` : they are all solved in 0 seconds by OptalCP
-    - `ft` : they are solved in <= 1 seconds by OptalCP
-    - `orb` : they are solved in <= 2 seconds by OptalCP
-    - `la` : the running times in seconds of CPO [NRR2022], OptalCP (our tests) and ORtools [DaCol Teppan 2022] are as follows
-
-| Instance | CPO | OptalCP | ORtools
-|---|---:|---:|---:|
-la01 | 0 | 0 | 0
-la02 | 2 | 0 | 0
-la03 | 1 | 0 | 0
-la04 | 2 | 0 | 0
-la05 | 0 | 0 | 0
-la06 | 0 | 0 | 0
-la07 | 0 | 0 | 0
-la08 | 0 | 0 | 0
-la09 | 0 | 0 | 0
-la10 | 0 | 0 | 0
-la11 | 0 | 0 | 0
-la12 | 0 | 0 | 0
-la13 | 0 | 0 | 0
-la14 | 0 | 0 | 0
-la15 | 1 | 0 | 2
-la16 | 5 | 0 | 0
-la17 | 3 | 0 | 0
-la18 | 3 | 0 | 1
-la19 | 5 | 1 | 1
-la20 | 4 | 0 | 1
-la21 | 75 | 8 | 85
-la22 | 25 | 1 | 5
-la23 | 1 | 0 | 2
-la24 | 29 | 3 | 14
-la25 | 33 | 3 | 24
-la26 | 5 | 0 | 12
-la27 | 406 | 10 | 480
-la28 | 16 | 1 | 7
-la29 | 3292| 381 | 3600
-la30 | 1 | 0 | 8
-la31 | 2 | 0 | 12
-la32 | 0 | 0 | 21
-la33 | 1 | 0 | 35
-la34 | 2 | 0 | 32
-la35 | 1 | 0 | 15
-la36 | 18 | 1 | 7
-la37 | 17 | 1 | 5
-la38 | 378 | 16 | 135
-la39 | 27 | 1 | 5
-la40 | 62 | 7 | 31
-
-Various authors on various machines with various solvers have found that the `la` family of instances is easy to solve (except for `la29` but there are enough hard instances in the rest of the benchmark)
+<table>
+<tr><th>name</th><th>engine</th><th>jobshop</th><th>nowait</th><th>nobuffer</th><th>cumul2</th><th>cumul3</th><th>cumul4</th><th>cumul5</th></tr>
+<tr><td> abz8 </td><td>OptalCP</td> <td><b>641</b> / <b>673</b></td><td><b>1051</b> / <b>1700</b></td><td><b>634</b> / <b>1051</b></td><td><b>457</b> / <b>457</b></td><td><b>443</b> / <b>443</b></td><td><b>443</b> / <b>443</b></td><td><b>443</b> / <b>443</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>444 / 682</td><td>588 / <b>1700</b></td><td>444 / 1091</td><td><b>457</b> / <b>457</b></td><td><b>443</b> / <b>443</b></td><td><b>443</b> / <b>443</b></td><td><b>443</b> / <b>443</b></td> </tr>
+<tr><td> dmu04 </td><td>OptalCP</td> <td><b>2617</b> / 2689</td><td><b>4486</b> / <b>6977</b></td><td><b>2618</b> / <b>4467</b></td><td><b>1908</b> / <b>1908</b></td><td><b>1908</b> / <b>1908</b></td><td><b>1908</b> / <b>1908</b></td><td><b>1908</b> / <b>1908</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1908 / <b>2688</b></td><td>2393 / 7044</td><td>1909 / 4556</td><td><b>1908</b> / <b>1908</b></td><td><b>1908</b> / <b>1908</b></td><td><b>1908</b> / <b>1908</b></td><td><b>1908</b> / <b>1908</b></td> </tr>
+<tr><td> dmu06 </td><td>OptalCP</td> <td><b>3119</b> / <b>3276</b></td><td><b>5534</b> / <b>8860</b></td><td><b>3124</b> / <b>5141</b></td><td><b>2585</b> / <b>2585</b></td><td><b>2585</b> / <b>2585</b></td><td><b>2585</b> / <b>2585</b></td><td><b>2585</b> / <b>2585</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>2585 / 3314</td><td>2830 / 9807</td><td>2585 / 5421</td><td><b>2585</b> / <b>2585</b></td><td><b>2585</b> / <b>2585</b></td><td><b>2585</b> / <b>2585</b></td><td><b>2585</b> / <b>2585</b></td> </tr>
+<tr><td> dmu07 </td><td>OptalCP</td> <td><b>2943</b> / <b>3081</b></td><td><b>5116</b> / 8682</td><td><b>2873</b> / <b>4624</b></td><td><b>2545</b> / <b>2545</b></td><td><b>2545</b> / <b>2545</b></td><td><b>2545</b> / <b>2545</b></td><td><b>2545</b> / <b>2545</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>2545 / 3118</td><td>2604 / <b>8555</b></td><td>2545 / 5149</td><td><b>2545</b> / <b>2545</b></td><td><b>2545</b> / <b>2545</b></td><td><b>2545</b> / <b>2545</b></td><td><b>2545</b> / <b>2545</b></td> </tr>
+<tr><td> dmu41 </td><td>OptalCP</td> <td><b>3087</b> / <b>3319</b></td><td><b>4156</b> / 6544</td><td><b>3126</b> / <b>4575</b></td><td><b>2035</b> / <b>2088</b></td><td><b>1842</b> / <b>1842</b></td><td><b>1842</b> / <b>1842</b></td><td><b>1842</b> / <b>1842</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1985 / 3360</td><td>2839 / <b>6536</b></td><td>1985 / 4819</td><td>1842 / 2104</td><td><b>1842</b> / <b>1842</b></td><td><b>1842</b> / <b>1842</b></td><td><b>1842</b> / <b>1842</b></td> </tr>
+<tr><td> dmu42 </td><td>OptalCP</td> <td><b>3268</b> / <b>3438</b></td><td><b>3999</b> / <b>7018</b></td><td><b>3220</b> / <b>4874</b></td><td><b>2090</b> / <b>2193</b></td><td><b>1856</b> / <b>1856</b></td><td><b>1810</b> / <b>1810</b></td><td><b>1810</b> / <b>1810</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1954 / 3505</td><td>3066 / 7442</td><td>1954 / 5178</td><td>1810 / 2236</td><td><b>1856</b> / <b>1856</b></td><td><b>1810</b> / <b>1810</b></td><td><b>1810</b> / <b>1810</b></td> </tr>
+<tr><td> dmu43 </td><td>OptalCP</td> <td><b>3350</b> / <b>3538</b></td><td><b>4296</b> / <b>6544</b></td><td><b>3388</b> / <b>4667</b></td><td><b>2148</b> / <b>2181</b></td><td><b>1915</b> / <b>1915</b></td><td><b>1915</b> / <b>1915</b></td><td><b>1915</b> / <b>1915</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>2051 / 3621</td><td>3121 / 6873</td><td>2051 / 4829</td><td>1915 / 2236</td><td><b>1915</b> / <b>1915</b></td><td><b>1915</b> / <b>1915</b></td><td><b>1915</b> / <b>1915</b></td> </tr>
+<tr><td> dmu44 </td><td>OptalCP</td> <td><b>3340</b> / <b>3539</b></td><td><b>4354</b> / <b>6810</b></td><td><b>3413</b> / <b>4839</b></td><td><b>2176</b> / <b>2271</b></td><td><b>1975</b> / <b>1975</b></td><td><b>1975</b> / <b>1975</b></td><td><b>1975</b> / <b>1975</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1975 / 3692</td><td>3112 / 7536</td><td>1976 / 5230</td><td>1975 / 2287</td><td><b>1975</b> / <b>1975</b></td><td><b>1975</b> / <b>1975</b></td><td><b>1975</b> / <b>1975</b></td> </tr>
+<tr><td> dmu45 </td><td>OptalCP</td> <td><b>3152</b> / <b>3360</b></td><td><b>4328</b> / <b>6589</b></td><td><b>3141</b> / <b>4697</b></td><td><b>2036</b> / <b>2126</b></td><td><b>1799</b> / <b>1799</b></td><td><b>1768</b> / <b>1768</b></td><td><b>1768</b> / <b>1768</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1775 / 3401</td><td>2930 / 7052</td><td>1855 / 4864</td><td>1768 / 2137</td><td><b>1799</b> / <b>1799</b></td><td><b>1768</b> / <b>1768</b></td><td><b>1768</b> / <b>1768</b></td> </tr>
+<tr><td> dmu46 </td><td>OptalCP</td> <td><b>3640</b> / <b>4163</b></td><td><b>4984</b> / <b>8926</b></td><td><b>3584</b> / <b>5744</b></td><td><b>2743</b> / <b>2743</b></td><td><b>2664</b> / <b>2664</b></td><td><b>2664</b> / <b>2664</b></td><td><b>2664</b> / <b>2664</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>2665 / 4317</td><td>3394 / 9321</td><td>2664 / 5801</td><td>2664 / 2768</td><td><b>2664</b> / <b>2664</b></td><td><b>2664</b> / <b>2664</b></td><td><b>2664</b> / <b>2664</b></td> </tr>
+<tr><td> dmu47 </td><td>OptalCP</td> <td><b>3541</b> / <b>4085</b></td><td><b>5136</b> / <b>8955</b></td><td><b>3549</b> / <b>5509</b></td><td><b>2689</b> / <b>2689</b></td><td><b>2689</b> / <b>2689</b></td><td><b>2689</b> / <b>2689</b></td><td><b>2689</b> / <b>2689</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>2689 / 4159</td><td>3353 / 9423</td><td>2689 / 5937</td><td><b>2689</b> / 2699</td><td><b>2689</b> / <b>2689</b></td><td><b>2689</b> / <b>2689</b></td><td><b>2689</b> / <b>2689</b></td> </tr>
+<tr><td> dmu48 </td><td>OptalCP</td> <td><b>3556</b> / 3913</td><td><b>4625</b> / <b>8412</b></td><td><b>3401</b> / <b>5477</b></td><td><b>2525</b> / <b>2556</b></td><td><b>2516</b> / <b>2516</b></td><td><b>2516</b> / <b>2516</b></td><td><b>2516</b> / <b>2516</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>2516 / <b>3868</b></td><td>3269 / 8912</td><td>2516 / 5852</td><td>2516 / 2599</td><td><b>2516</b> / <b>2516</b></td><td><b>2516</b> / <b>2516</b></td><td><b>2516</b> / <b>2516</b></td> </tr>
+<tr><td> dmu49 </td><td>OptalCP</td> <td><b>3469</b> / <b>3838</b></td><td><b>5000</b> / <b>8381</b></td><td><b>3480</b> / <b>5205</b></td><td><b>2466</b> / <b>2523</b></td><td><b>2403</b> / <b>2403</b></td><td><b>2403</b> / <b>2403</b></td><td><b>2403</b> / <b>2403</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>2404 / 3895</td><td>3369 / 8687</td><td>2404 / 5842</td><td>2403 / 2568</td><td><b>2403</b> / <b>2403</b></td><td><b>2403</b> / <b>2403</b></td><td><b>2403</b> / <b>2403</b></td> </tr>
+<tr><td> dmu50 </td><td>OptalCP</td> <td><b>3531</b> / 3876</td><td><b>4692</b> / <b>8100</b></td><td><b>3499</b> / <b>5141</b></td><td><b>2509</b> / 2550</td><td><b>2494</b> / <b>2494</b></td><td><b>2494</b> / <b>2494</b></td><td><b>2494</b> / <b>2494</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>2494 / <b>3861</b></td><td>3379 / 8556</td><td>2495 / 5416</td><td>2494 / <b>2549</b></td><td><b>2494</b> / <b>2494</b></td><td><b>2494</b> / <b>2494</b></td><td><b>2494</b> / <b>2494</b></td> </tr>
+<tr><td> reC13 </td><td>OptalCP</td> <td><b>1856</b> / <b>1921</b></td><td><b>1895</b> / 2578</td><td><b>1853</b> / <b>2131</b></td><td><b>1245</b> / <b>1303</b></td><td><b>1068</b> / <b>1086</b></td><td><b>989</b> / <b>1000</b></td><td><b>949</b> / <b>949</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1695 / 1926</td><td>1694 / <b>2556</b></td><td>1694 / 2236</td><td>924 / 1316</td><td>924 / 1090</td><td>924 / 1002</td><td>924 / 950</td> </tr>
+<tr><td> reC15 </td><td>OptalCP</td> <td><b>1937</b> / <b>1946</b></td><td><b>2027</b> / <b>2542</b></td><td><b>1939</b> / <b>2088</b></td><td><b>1273</b> / <b>1309</b></td><td><b>1065</b> / <b>1095</b></td><td><b>982</b> / 997</td><td><b>954</b> / <b>954</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1811 / 2014</td><td>1811 / 2568</td><td>1811 / 2189</td><td>954 / 1362</td><td>954 / 1111</td><td>954 / <b>996</b></td><td><b>954</b> / <b>954</b></td> </tr>
+<tr><td> reC17 </td><td>OptalCP</td> <td><b>1819</b> / <b>1850</b></td><td><b>1943</b> / 2618</td><td><b>1867</b> / <b>2156</b></td><td><b>1175</b> / <b>1279</b></td><td><b>1063</b> / <b>1069</b></td><td><b>1063</b> / <b>1063</b></td><td><b>1063</b> / <b>1063</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1446 / 1947</td><td>1708 / <b>2616</b></td><td>1446 / 2232</td><td>1063 / 1328</td><td><b>1063</b> / 1070</td><td><b>1063</b> / <b>1063</b></td><td><b>1063</b> / <b>1063</b></td> </tr>
+<tr><td> swv06 </td><td>OptalCP</td> <td><b>1619</b> / <b>1705</b></td><td><b>2280</b> / <b>3403</b></td><td><b>1625</b> / <b>2373</b></td><td><b>1043</b> / <b>1080</b></td><td><b>974</b> / <b>974</b></td><td><b>974</b> / <b>974</b></td><td><b>974</b> / <b>974</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1038 / 1746</td><td>1513 / 3441</td><td>1038 / 2616</td><td>974 / 1086</td><td><b>974</b> / <b>974</b></td><td><b>974</b> / <b>974</b></td><td><b>974</b> / <b>974</b></td> </tr>
+<tr><td> swv07 </td><td>OptalCP</td> <td><b>1495</b> / <b>1632</b></td><td><b>2170</b> / <b>3315</b></td><td><b>1455</b> / <b>2131</b></td><td><b>1014</b> / <b>1043</b></td><td><b>947</b> / <b>947</b></td><td><b>947</b> / <b>947</b></td><td><b>947</b> / <b>947</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>948 / 1660</td><td>1394 / 3413</td><td>947 / 2386</td><td>947 / 1052</td><td><b>947</b> / <b>947</b></td><td><b>947</b> / <b>947</b></td><td><b>947</b> / <b>947</b></td> </tr>
+<tr><td> swv08 </td><td>OptalCP</td> <td><b>1656</b> / <b>1810</b></td><td><b>2076</b> / 3595</td><td><b>1667</b> / <b>2509</b></td><td><b>1112</b> / <b>1134</b></td><td><b>1058</b> / <b>1058</b></td><td><b>1058</b> / <b>1058</b></td><td><b>1058</b> / <b>1058</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1059 / 1826</td><td>1586 / <b>3505</b></td><td>1059 / 2645</td><td>1058 / 1155</td><td><b>1058</b> / <b>1058</b></td><td><b>1058</b> / <b>1058</b></td><td><b>1058</b> / <b>1058</b></td> </tr>
+<tr><td> swv09 </td><td>OptalCP</td> <td><b>1616</b> / <b>1711</b></td><td><b>2129</b> / <b>3381</b></td><td><b>1653</b> / <b>2379</b></td><td><b>1042</b> / <b>1070</b></td><td><b>947</b> / <b>947</b></td><td><b>947</b> / <b>947</b></td><td><b>947</b> / <b>947</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>948 / 1730</td><td>1594 / 3510</td><td>950 / 2434</td><td>947 / 1073</td><td><b>947</b> / <b>947</b></td><td><b>947</b> / <b>947</b></td><td><b>947</b> / <b>947</b></td> </tr>
+<tr><td> swv10 </td><td>OptalCP</td> <td><b>1637</b> / <b>1802</b></td><td><b>2292</b> / 3596</td><td><b>1697</b> / <b>2550</b></td><td><b>1076</b> / <b>1124</b></td><td><b>945</b> / <b>945</b></td><td><b>939</b> / <b>939</b></td><td><b>939</b> / <b>939</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>955 / 1836</td><td>1560 / <b>3584</b></td><td>954 / 2562</td><td>939 / 1135</td><td><b>945</b> / <b>945</b></td><td><b>939</b> / <b>939</b></td><td><b>939</b> / <b>939</b></td> </tr>
+<tr><td> tfs012 </td><td>OptalCP</td> <td><b>1615</b> / <b>1650</b></td><td><b>1731</b> / <b>2180</b></td><td><b>1639</b> / <b>1841</b></td><td><b>991</b> / <b>1049</b></td><td><b>806</b> / <b>851</b></td><td><b>739</b> / <b>753</b></td><td><b>700</b> / <b>700</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1475 / 1677</td><td>1488 / 2189</td><td>1474 / 2030</td><td>666 / 1090</td><td>666 / 874</td><td>666 / <b>753</b></td><td>666 / <b>700</b></td> </tr>
+<tr><td> tfs013 </td><td>OptalCP</td> <td><b>1456</b> / <b>1470</b></td><td><b>1579</b> / 1946</td><td><b>1489</b> / <b>1689</b></td><td><b>890</b> / <b>938</b></td><td><b>751</b> / <b>773</b></td><td><b>693</b> / <b>696</b></td><td><b>656</b> / <b>656</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1228 / 1520</td><td>1407 / <b>1940</b></td><td>1227 / 1738</td><td>635 / 960</td><td>635 / 787</td><td>635 / 700</td><td><b>656</b> / <b>656</b></td> </tr>
+<tr><td> tfs017 </td><td>OptalCP</td> <td><b>1407</b> / <b>1428</b></td><td><b>1544</b> / <b>1972</b></td><td><b>1452</b> / <b>1636</b></td><td><b>868</b> / <b>918</b></td><td><b>731</b> / <b>748</b></td><td><b>676</b> / <b>676</b></td><td><b>671</b> / <b>671</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1251 / 1446</td><td>1388 / <b>1972</b></td><td>1250 / 1738</td><td>671 / 919</td><td>671 / 761</td><td>671 / 678</td><td><b>671</b> / <b>671</b></td> </tr>
+<tr><td> tfs018 </td><td>OptalCP</td> <td><b>1496</b> / <b>1527</b></td><td><b>1615</b> / <b>2076</b></td><td><b>1535</b> / <b>1758</b></td><td><b>913</b> / <b>952</b></td><td><b>739</b> / <b>779</b></td><td><b>692</b> / <b>692</b></td><td><b>692</b> / <b>692</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1135 / 1541</td><td>1363 / 2110</td><td>1135 / 1845</td><td>692 / 984</td><td>692 / 781</td><td><b>692</b> / 693</td><td><b>692</b> / <b>692</b></td> </tr>
+<tr><td> tfs021 </td><td>OptalCP</td> <td><b>2104</b> / <b>2305</b></td><td><b>2198</b> / <b>3000</b></td><td><b>2090</b> / <b>2467</b></td><td><b>1451</b> / <b>1564</b></td><td><b>1295</b> / <b>1351</b></td><td><b>1251</b> / <b>1251</b></td><td><b>1237</b> / <b>1237</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1687 / 2342</td><td>1911 / 3045</td><td>1687 / 2587</td><td>1237 / 1645</td><td>1237 / 1366</td><td>1237 / <b>1251</b></td><td><b>1237</b> / <b>1237</b></td> </tr>
+<tr><td> tfs022 </td><td>OptalCP</td> <td><b>1883</b> / <b>2118</b></td><td><b>1985</b> / <b>2860</b></td><td><b>1885</b> / <b>2274</b></td><td><b>1329</b> / 1510</td><td><b>1222</b> / <b>1266</b></td><td><b>1191</b> / <b>1191</b></td><td><b>1191</b> / <b>1191</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1680 / 2139</td><td>1746 / 2870</td><td>1680 / 2663</td><td>1191 / <b>1500</b></td><td>1191 / <b>1266</b></td><td><b>1191</b> / <b>1191</b></td><td><b>1191</b> / <b>1191</b></td> </tr>
+<tr><td> tfs023 </td><td>OptalCP</td> <td><b>2035</b> / <b>2334</b></td><td><b>2171</b> / <b>3052</b></td><td><b>2033</b> / <b>2541</b></td><td><b>1420</b> / 1604</td><td><b>1320</b> / <b>1374</b></td><td><b>1320</b> / <b>1320</b></td><td><b>1320</b> / <b>1320</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1795 / 2349</td><td>1877 / 3072</td><td>1795 / 2694</td><td>1320 / <b>1594</b></td><td><b>1320</b> / 1385</td><td><b>1320</b> / <b>1320</b></td><td><b>1320</b> / <b>1320</b></td> </tr>
+<tr><td> tfs024 </td><td>OptalCP</td> <td><b>2025</b> / <b>2246</b></td><td><b>1994</b> / <b>3074</b></td><td><b>2047</b> / <b>2354</b></td><td><b>1419</b> / 1555</td><td><b>1306</b> / <b>1331</b></td><td><b>1251</b> / <b>1251</b></td><td><b>1238</b> / <b>1238</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1678 / 2270</td><td>1810 / 3085</td><td>1678 / 2659</td><td>1238 / <b>1551</b></td><td>1238 / 1348</td><td><b>1251</b> / <b>1251</b></td><td><b>1238</b> / <b>1238</b></td> </tr>
+<tr><td> tfs025 </td><td>OptalCP</td> <td><b>2105</b> / <b>2274</b></td><td><b>2221</b> / 3078</td><td><b>2140</b> / <b>2500</b></td><td><b>1458</b> / <b>1573</b></td><td><b>1293</b> / <b>1356</b></td><td><b>1253</b> / <b>1253</b></td><td><b>1253</b> / <b>1253</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1682 / 2330</td><td>1925 / <b>3056</b></td><td>1683 / 2716</td><td>1253 / 1658</td><td>1253 / 1371</td><td><b>1253</b> / 1256</td><td><b>1253</b> / <b>1253</b></td> </tr>
+<tr><td> tfs026 </td><td>OptalCP</td> <td><b>2021</b> / <b>2193</b></td><td><b>2112</b> / <b>3023</b></td><td><b>2011</b> / <b>2434</b></td><td><b>1380</b> / <b>1512</b></td><td><b>1271</b> / <b>1298</b></td><td><b>1256</b> / <b>1256</b></td><td><b>1256</b> / <b>1256</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1774 / 2249</td><td>1875 / 3058</td><td>1774 / 2592</td><td>1256 / 1533</td><td>1256 / <b>1298</b></td><td><b>1256</b> / <b>1256</b></td><td><b>1256</b> / <b>1256</b></td> </tr>
+<tr><td> tfs027 </td><td>OptalCP</td> <td><b>2048</b> / <b>2270</b></td><td><b>2112</b> / <b>3052</b></td><td><b>2037</b> / <b>2424</b></td><td><b>1434</b> / <b>1569</b></td><td><b>1281</b> / <b>1336</b></td><td><b>1232</b> / 1249</td><td><b>1232</b> / <b>1232</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1867 / 2338</td><td>1884 / 3122</td><td>1866 / 2502</td><td>1232 / 1603</td><td>1232 / 1338</td><td><b>1232</b> / <b>1247</b></td><td><b>1232</b> / <b>1232</b></td> </tr>
+<tr><td> tfs028 </td><td>OptalCP</td> <td><b>2023</b> / <b>2199</b></td><td><b>2177</b> / <b>2839</b></td><td><b>2053</b> / <b>2377</b></td><td><b>1376</b> / <b>1531</b></td><td><b>1254</b> / <b>1315</b></td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1635 / 2239</td><td>1880 / 2889</td><td>1635 / 2599</td><td>1227 / 1564</td><td>1227 / 1323</td><td><b>1227</b> / 1234</td><td><b>1227</b> / <b>1227</b></td> </tr>
+<tr><td> tfs029 </td><td>OptalCP</td> <td><b>2011</b> / <b>2249</b></td><td><b>2143</b> / <b>3103</b></td><td><b>2036</b> / <b>2461</b></td><td><b>1408</b> / <b>1540</b></td><td><b>1283</b> / <b>1335</b></td><td><b>1240</b> / <b>1240</b></td><td><b>1240</b> / <b>1240</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1840 / 2349</td><td>1840 / 3157</td><td>1840 / 2625</td><td>1240 / 1588</td><td>1240 / <b>1335</b></td><td><b>1240</b> / <b>1240</b></td><td><b>1240</b> / <b>1240</b></td> </tr>
+<tr><td> tfs030 </td><td>OptalCP</td> <td><b>2032</b> / <b>2205</b></td><td><b>2150</b> / <b>2979</b></td><td><b>1998</b> / <b>2351</b></td><td><b>1381</b> / <b>1494</b></td><td><b>1238</b> / <b>1282</b></td><td><b>1168</b> / <b>1187</b></td><td><b>1137</b> / <b>1137</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1791 / 2243</td><td>1900 / 2996</td><td>1791 / 2746</td><td>1131 / 1516</td><td>1131 / 1287</td><td>1131 / 1197</td><td>1131 / <b>1137</b></td> </tr>
+<tr><td> tjs18 </td><td>OptalCP</td> <td><b>1371</b> / <b>1414</b></td><td><b>2169</b> / 3506</td><td><b>1359</b> / <b>2141</b></td><td><b>929</b> / <b>929</b></td><td><b>900</b> / <b>900</b></td><td><b>900</b> / <b>900</b></td><td><b>900</b> / <b>900</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>901 / 1426</td><td>1315 / <b>3328</b></td><td>901 / 2285</td><td><b>929</b> / <b>929</b></td><td><b>900</b> / <b>900</b></td><td><b>900</b> / <b>900</b></td><td><b>900</b> / <b>900</b></td> </tr>
+<tr><td> tjs22 </td><td>OptalCP</td> <td><b>1556</b> / <b>1613</b></td><td><b>2475</b> / <b>4394</b></td><td><b>1555</b> / 2471</td><td><b>1223</b> / <b>1223</b></td><td><b>1223</b> / <b>1223</b></td><td><b>1223</b> / <b>1223</b></td><td><b>1223</b> / <b>1223</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1223 / 1615</td><td>1385 / 4413</td><td>1226 / <b>2468</b></td><td><b>1223</b> / <b>1223</b></td><td><b>1223</b> / <b>1223</b></td><td><b>1223</b> / <b>1223</b></td><td><b>1223</b> / <b>1223</b></td> </tr>
+<tr><td> tjs23 </td><td>OptalCP</td> <td><b>1502</b> / 1580</td><td><b>2527</b> / <b>4236</b></td><td><b>1489</b> / <b>2540</b></td><td><b>1168</b> / <b>1168</b></td><td><b>1164</b> / <b>1164</b></td><td><b>1164</b> / <b>1164</b></td><td><b>1164</b> / <b>1164</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1195 / <b>1575</b></td><td>1351 / 4529</td><td>1195 / 2581</td><td><b>1168</b> / <b>1168</b></td><td><b>1164</b> / <b>1164</b></td><td><b>1164</b> / <b>1164</b></td><td><b>1164</b> / <b>1164</b></td> </tr>
+<tr><td> tjs26 </td><td>OptalCP</td> <td><b>1582</b> / 1671</td><td><b>2695</b> / <b>4130</b></td><td><b>1522</b> / <b>2483</b></td><td><b>1208</b> / <b>1208</b></td><td><b>1207</b> / <b>1207</b></td><td><b>1207</b> / <b>1207</b></td><td><b>1207</b> / <b>1207</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1208 / <b>1670</b></td><td>1396 / 4270</td><td>1208 / 2498</td><td><b>1208</b> / <b>1208</b></td><td><b>1207</b> / <b>1207</b></td><td><b>1207</b> / <b>1207</b></td><td><b>1207</b> / <b>1207</b></td> </tr>
+<tr><td> tjs27 </td><td>OptalCP</td> <td><b>1644</b> / <b>1692</b></td><td><b>2566</b> / <b>4577</b></td><td><b>1644</b> / 2680</td><td><b>1291</b> / <b>1291</b></td><td><b>1291</b> / <b>1291</b></td><td><b>1291</b> / <b>1291</b></td><td><b>1291</b> / <b>1291</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1292 / 1709</td><td>1538 / 4745</td><td>1291 / <b>2671</b></td><td><b>1291</b> / <b>1291</b></td><td><b>1291</b> / <b>1291</b></td><td><b>1291</b> / <b>1291</b></td><td><b>1291</b> / <b>1291</b></td> </tr>
+<tr><td> tjs29 </td><td>OptalCP</td> <td><b>1577</b> / <b>1629</b></td><td><b>2643</b> / <b>4607</b></td><td><b>1538</b> / <b>2509</b></td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1228 / 1651</td><td>1352 / 4730</td><td>1227 / 2579</td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td> </tr>
+<tr><td> tjs30 </td><td>OptalCP</td> <td><b>1505</b> / <b>1588</b></td><td><b>2383</b> / <b>4305</b></td><td><b>1473</b> / <b>2480</b></td><td><b>1212</b> / <b>1212</b></td><td><b>1212</b> / <b>1212</b></td><td><b>1212</b> / <b>1212</b></td><td><b>1212</b> / <b>1212</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1212 / 1614</td><td>1310 / 4487</td><td>1213 / 2679</td><td><b>1212</b> / <b>1212</b></td><td><b>1212</b> / <b>1212</b></td><td><b>1212</b> / <b>1212</b></td><td><b>1212</b> / <b>1212</b></td> </tr>
+<tr><td> vrf_020_10_01 </td><td>OptalCP</td> <td><b>1406</b> / <b>1470</b></td><td><b>1537</b> / <b>2022</b></td><td><b>1460</b> / <b>1705</b></td><td><b>870</b> / <b>923</b></td><td><b>736</b> / <b>753</b></td><td><b>706</b> / <b>706</b></td><td><b>706</b> / <b>706</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1290 / 1560</td><td>1290 / <b>2022</b></td><td>1290 / 1848</td><td>706 / 933</td><td>706 / 754</td><td><b>706</b> / <b>706</b></td><td><b>706</b> / <b>706</b></td> </tr>
+<tr><td> vrf_020_10_02 </td><td>OptalCP</td> <td><b>1451</b> / <b>1509</b></td><td><b>1596</b> / <b>2003</b></td><td><b>1459</b> / <b>1716</b></td><td><b>903</b> / <b>951</b></td><td><b>746</b> / <b>771</b></td><td><b>741</b> / <b>741</b></td><td><b>741</b> / <b>741</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1282 / 1544</td><td>1290 / 2015</td><td>1282 / 1797</td><td>741 / 962</td><td>741 / 793</td><td><b>741</b> / <b>741</b></td><td><b>741</b> / <b>741</b></td> </tr>
+<tr><td> vrf_020_10_03 </td><td>OptalCP</td> <td><b>1523</b> / <b>1577</b></td><td><b>1653</b> / 2050</td><td><b>1563</b> / <b>1810</b></td><td><b>938</b> / <b>986</b></td><td><b>767</b> / <b>801</b></td><td><b>712</b> / <b>712</b></td><td><b>687</b> / <b>687</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1342 / 1606</td><td>1352 / <b>2048</b></td><td>1342 / 1907</td><td>687 / 1031</td><td>687 / 810</td><td>687 / <b>712</b></td><td><b>687</b> / <b>687</b></td> </tr>
+<tr><td> vrf_020_10_04 </td><td>OptalCP</td> <td><b>1385</b> / <b>1428</b></td><td><b>1476</b> / <b>1945</b></td><td><b>1430</b> / <b>1632</b></td><td><b>864</b> / <b>922</b></td><td><b>735</b> / <b>753</b></td><td><b>686</b> / <b>686</b></td><td><b>670</b> / <b>670</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1185 / 1433</td><td>1226 / 1948</td><td>1185 / 1693</td><td>670 / 941</td><td>670 / 759</td><td>670 / <b>686</b></td><td><b>670</b> / <b>670</b></td> </tr>
+<tr><td> vrf_020_10_05 </td><td>OptalCP</td> <td><b>1513</b> / 1614</td><td><b>1643</b> / <b>2032</b></td><td><b>1539</b> / <b>1767</b></td><td><b>928</b> / <b>1001</b></td><td><b>791</b> / <b>816</b></td><td><b>736</b> / <b>736</b></td><td><b>736</b> / <b>736</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1229 / <b>1613</b></td><td>1372 / 2033</td><td>1229 / 1870</td><td>736 / 1017</td><td>736 / 820</td><td><b>736</b> / <b>736</b></td><td><b>736</b> / <b>736</b></td> </tr>
+<tr><td> vrf_020_10_06 </td><td>OptalCP</td> <td><b>1510</b> / <b>1560</b></td><td><b>1648</b> / <b>2059</b></td><td><b>1517</b> / <b>1807</b></td><td><b>921</b> / <b>981</b></td><td><b>756</b> / <b>791</b></td><td><b>683</b> / <b>702</b></td><td><b>677</b> / <b>677</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1336 / 1591</td><td>1348 / <b>2059</b></td><td>1336 / 1886</td><td>677 / 990</td><td>677 / 800</td><td>677 / 704</td><td><b>677</b> / <b>677</b></td> </tr>
+<tr><td> vrf_020_10_07 </td><td>OptalCP</td> <td><b>1532</b> / <b>1579</b></td><td><b>1665</b> / <b>2052</b></td><td><b>1529</b> / <b>1769</b></td><td><b>966</b> / <b>997</b></td><td><b>817</b> / <b>821</b></td><td><b>744</b> / <b>744</b></td><td><b>700</b> / <b>700</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1287 / 1586</td><td>1363 / 2066</td><td>1287 / 1865</td><td>653 / 1059</td><td>653 / 845</td><td>653 / 745</td><td><b>700</b> / <b>700</b></td> </tr>
+<tr><td> vrf_020_10_09 </td><td>OptalCP</td> <td><b>1476</b> / <b>1521</b></td><td><b>1574</b> / <b>1980</b></td><td><b>1474</b> / <b>1715</b></td><td><b>911</b> / <b>966</b></td><td><b>757</b> / <b>782</b></td><td><b>709</b> / <b>709</b></td><td><b>709</b> / <b>709</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1311 / 1542</td><td>1339 / 1990</td><td>1306 / 1803</td><td>709 / 987</td><td>709 / 793</td><td><b>709</b> / <b>709</b></td><td><b>709</b> / <b>709</b></td> </tr>
+<tr><td> vrf_020_10_10 </td><td>OptalCP</td> <td><b>1446</b> / <b>1497</b></td><td><b>1539</b> / <b>1971</b></td><td><b>1489</b> / <b>1684</b></td><td><b>891</b> / <b>958</b></td><td><b>756</b> / <b>780</b></td><td><b>698</b> / <b>698</b></td><td><b>671</b> / <b>671</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1112 / 1501</td><td>1279 / 1980</td><td>1111 / 1792</td><td>671 / 984</td><td>671 / 787</td><td>671 / 699</td><td><b>671</b> / <b>671</b></td> </tr>
+<tr><td> vrf_020_15_01 </td><td>OptalCP</td> <td><b>1759</b> / <b>1919</b></td><td><b>1881</b> / 2742</td><td><b>1807</b> / <b>2105</b></td><td><b>1173</b> / <b>1278</b></td><td><b>1049</b> / <b>1081</b></td><td><b>1049</b> / <b>1049</b></td><td><b>1049</b> / <b>1049</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1526 / 2000</td><td>1542 / <b>2716</b></td><td>1526 / 2328</td><td>1049 / 1317</td><td><b>1049</b> / <b>1081</b></td><td><b>1049</b> / <b>1049</b></td><td><b>1049</b> / <b>1049</b></td> </tr>
+<tr><td> vrf_020_15_02 </td><td>OptalCP</td> <td><b>1706</b> / <b>1896</b></td><td><b>1822</b> / <b>2526</b></td><td><b>1701</b> / <b>2111</b></td><td><b>1168</b> / <b>1276</b></td><td><b>1060</b> / <b>1081</b></td><td><b>1030</b> / <b>1030</b></td><td><b>1030</b> / <b>1030</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1466 / 1940</td><td>1526 / 2555</td><td>1466 / 2160</td><td>1030 / 1286</td><td>1030 / <b>1081</b></td><td><b>1030</b> / <b>1030</b></td><td><b>1030</b> / <b>1030</b></td> </tr>
+<tr><td> vrf_020_15_03 </td><td>OptalCP</td> <td><b>1633</b> / <b>1793</b></td><td><b>1745</b> / <b>2392</b></td><td><b>1677</b> / <b>1972</b></td><td><b>1104</b> / <b>1196</b></td><td><b>1003</b> / <b>1024</b></td><td><b>963</b> / <b>963</b></td><td><b>963</b> / <b>963</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1454 / 1871</td><td>1453 / 2457</td><td>1454 / 2099</td><td>963 / 1228</td><td>963 / 1037</td><td><b>963</b> / <b>963</b></td><td><b>963</b> / <b>963</b></td> </tr>
+<tr><td> vrf_020_15_04 </td><td>OptalCP</td> <td><b>1668</b> / <b>1819</b></td><td><b>1818</b> / <b>2414</b></td><td><b>1683</b> / <b>2056</b></td><td><b>1098</b> / <b>1200</b></td><td><b>958</b> / <b>1002</b></td><td><b>905</b> / <b>910</b></td><td><b>869</b> / <b>869</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1369 / 1850</td><td>1499 / <b>2414</b></td><td>1369 / 2168</td><td>869 / 1217</td><td>869 / 1007</td><td>869 / <b>910</b></td><td><b>869</b> / <b>869</b></td> </tr>
+<tr><td> vrf_020_15_05 </td><td>OptalCP</td> <td><b>1778</b> / <b>1869</b></td><td><b>1901</b> / <b>2530</b></td><td><b>1801</b> / <b>2012</b></td><td><b>1206</b> / <b>1252</b></td><td><b>1040</b> / <b>1066</b></td><td><b>972</b> / 980</td><td><b>937</b> / <b>937</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1420 / 1873</td><td>1522 / 2531</td><td>1420 / 2106</td><td>910 / 1266</td><td>910 / 1067</td><td>910 / <b>979</b></td><td>910 / <b>937</b></td> </tr>
+<tr><td> vrf_020_15_06 </td><td>OptalCP</td> <td><b>1779</b> / <b>1972</b></td><td><b>1857</b> / <b>2656</b></td><td><b>1828</b> / <b>2177</b></td><td><b>1165</b> / <b>1296</b></td><td><b>1043</b> / <b>1073</b></td><td><b>1043</b> / <b>1043</b></td><td><b>1043</b> / <b>1043</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1587 / 2015</td><td>1587 / 2745</td><td>1587 / 2255</td><td>1043 / 1311</td><td><b>1043</b> / 1085</td><td><b>1043</b> / <b>1043</b></td><td><b>1043</b> / <b>1043</b></td> </tr>
+<tr><td> vrf_020_15_07 </td><td>OptalCP</td> <td><b>1756</b> / <b>1878</b></td><td><b>1888</b> / 2621</td><td><b>1789</b> / <b>2201</b></td><td><b>1143</b> / <b>1226</b></td><td><b>1017</b> / <b>1033</b></td><td><b>992</b> / <b>992</b></td><td><b>992</b> / <b>992</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1381 / 1890</td><td>1566 / <b>2583</b></td><td>1381 / 2269</td><td>992 / 1252</td><td>992 / 1051</td><td><b>992</b> / <b>992</b></td><td><b>992</b> / <b>992</b></td> </tr>
+<tr><td> vrf_020_15_08 </td><td>OptalCP</td> <td><b>1626</b> / 1854</td><td><b>1779</b> / <b>2548</b></td><td><b>1626</b> / <b>2018</b></td><td><b>1127</b> / <b>1219</b></td><td><b>1030</b> / <b>1030</b></td><td><b>1030</b> / <b>1030</b></td><td><b>1030</b> / <b>1030</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1449 / <b>1845</b></td><td>1477 / 2579</td><td>1449 / 2123</td><td>1030 / 1224</td><td><b>1030</b> / 1038</td><td><b>1030</b> / <b>1030</b></td><td><b>1030</b> / <b>1030</b></td> </tr>
+<tr><td> vrf_020_15_09 </td><td>OptalCP</td> <td><b>1809</b> / <b>1953</b></td><td><b>1912</b> / 2526</td><td><b>1786</b> / <b>2095</b></td><td><b>1182</b> / <b>1283</b></td><td><b>1029</b> / <b>1073</b></td><td><b>978</b> / <b>979</b></td><td><b>978</b> / <b>978</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1553 / 2024</td><td>1586 / <b>2521</b></td><td>1552 / 2246</td><td>978 / 1317</td><td>978 / 1077</td><td><b>978</b> / 983</td><td><b>978</b> / <b>978</b></td> </tr>
+<tr><td> vrf_020_15_10 </td><td>OptalCP</td> <td><b>1715</b> / <b>1853</b></td><td><b>1707</b> / 2536</td><td><b>1739</b> / <b>2078</b></td><td><b>1125</b> / <b>1228</b></td><td><b>982</b> / <b>1017</b></td><td><b>931</b> / <b>931</b></td><td><b>893</b> / <b>893</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1431 / 1887</td><td>1511 / <b>2526</b></td><td>1431 / 2156</td><td>884 / 1254</td><td>884 / 1023</td><td>884 / 936</td><td><b>893</b> / <b>893</b></td> </tr>
+<tr><td> vrf_020_20_01 </td><td>OptalCP</td> <td><b>1969</b> / <b>2236</b></td><td><b>2065</b> / 3208</td><td><b>1944</b> / <b>2572</b></td><td><b>1417</b> / <b>1539</b></td><td><b>1391</b> / <b>1391</b></td><td><b>1391</b> / <b>1391</b></td><td><b>1391</b> / <b>1391</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1697 / 2280</td><td>1741 / <b>3104</b></td><td>1697 / 2793</td><td>1391 / 1570</td><td><b>1391</b> / <b>1391</b></td><td><b>1391</b> / <b>1391</b></td><td><b>1391</b> / <b>1391</b></td> </tr>
+<tr><td> vrf_020_20_02 </td><td>OptalCP</td> <td><b>1937</b> / <b>2173</b></td><td><b>1991</b> / 2922</td><td><b>1987</b> / <b>2397</b></td><td><b>1373</b> / <b>1497</b></td><td><b>1258</b> / <b>1296</b></td><td><b>1241</b> / <b>1241</b></td><td><b>1241</b> / <b>1241</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1682 / 2230</td><td>1686 / <b>2910</b></td><td>1682 / 2739</td><td>1241 / 1540</td><td>1241 / 1304</td><td><b>1241</b> / <b>1241</b></td><td><b>1241</b> / <b>1241</b></td> </tr>
+<tr><td> vrf_020_20_03 </td><td>OptalCP</td> <td><b>1946</b> / <b>2268</b></td><td><b>2155</b> / <b>2938</b></td><td><b>1865</b> / <b>2477</b></td><td><b>1429</b> / 1578</td><td><b>1305</b> / <b>1345</b></td><td><b>1268</b> / <b>1268</b></td><td><b>1268</b> / <b>1268</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1743 / 2269</td><td>1770 / 3021</td><td>1743 / 2729</td><td>1268 / <b>1565</b></td><td>1268 / 1350</td><td><b>1268</b> / <b>1268</b></td><td><b>1268</b> / <b>1268</b></td> </tr>
+<tr><td> vrf_020_20_04 </td><td>OptalCP</td> <td><b>1851</b> / <b>2116</b></td><td><b>2017</b> / 2922</td><td><b>1907</b> / <b>2343</b></td><td><b>1394</b> / 1505</td><td><b>1334</b> / <b>1334</b></td><td><b>1334</b> / <b>1334</b></td><td><b>1334</b> / <b>1334</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1647 / 2164</td><td>1685 / <b>2868</b></td><td>1647 / 2574</td><td>1334 / <b>1502</b></td><td><b>1334</b> / <b>1334</b></td><td><b>1334</b> / <b>1334</b></td><td><b>1334</b> / <b>1334</b></td> </tr>
+<tr><td> vrf_020_20_05 </td><td>OptalCP</td> <td><b>1918</b> / 2234</td><td><b>1874</b> / <b>3198</b></td><td><b>1944</b> / <b>2400</b></td><td><b>1476</b> / <b>1553</b></td><td><b>1403</b> / <b>1403</b></td><td><b>1403</b> / <b>1403</b></td><td><b>1403</b> / <b>1403</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1660 / <b>2232</b></td><td>1736 / 3211</td><td>1660 / 2601</td><td>1403 / 1582</td><td><b>1403</b> / <b>1403</b></td><td><b>1403</b> / <b>1403</b></td><td><b>1403</b> / <b>1403</b></td> </tr>
+<tr><td> vrf_020_20_06 </td><td>OptalCP</td> <td><b>1936</b> / <b>2227</b></td><td><b>2064</b> / 3266</td><td><b>1939</b> / <b>2482</b></td><td><b>1386</b> / <b>1525</b></td><td><b>1268</b> / <b>1297</b></td><td><b>1268</b> / <b>1268</b></td><td><b>1268</b> / <b>1268</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1654 / 2341</td><td>1796 / <b>3246</b></td><td>1654 / 2905</td><td>1268 / 1547</td><td><b>1268</b> / 1305</td><td><b>1268</b> / <b>1268</b></td><td><b>1268</b> / <b>1268</b></td> </tr>
+<tr><td> vrf_020_20_07 </td><td>OptalCP</td> <td><b>1889</b> / 2325</td><td><b>2219</b> / <b>3057</b></td><td><b>1930</b> / <b>2500</b></td><td><b>1532</b> / <b>1594</b></td><td><b>1488</b> / <b>1488</b></td><td><b>1488</b> / <b>1488</b></td><td><b>1488</b> / <b>1488</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1785 / <b>2315</b></td><td>1785 / 3082</td><td>1785 / 2792</td><td>1488 / 1655</td><td><b>1488</b> / <b>1488</b></td><td><b>1488</b> / <b>1488</b></td><td><b>1488</b> / <b>1488</b></td> </tr>
+<tr><td> vrf_020_20_08 </td><td>OptalCP</td> <td><b>1969</b> / 2171</td><td><b>2106</b> / <b>2898</b></td><td><b>1996</b> / <b>2423</b></td><td><b>1384</b> / <b>1498</b></td><td><b>1226</b> / <b>1277</b></td><td><b>1162</b> / <b>1178</b></td><td><b>1128</b> / <b>1128</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1692 / <b>2140</b></td><td>1707 / 2934</td><td>1692 / 2546</td><td>1105 / 1508</td><td>1105 / 1278</td><td>1105 / <b>1178</b></td><td>1105 / 1129</td> </tr>
+<tr><td> vrf_020_20_09 </td><td>OptalCP</td> <td><b>2112</b> / <b>2339</b></td><td><b>2319</b> / <b>3094</b></td><td><b>2044</b> / <b>2567</b></td><td><b>1483</b> / <b>1619</b></td><td><b>1339</b> / <b>1394</b></td><td><b>1313</b> / <b>1313</b></td><td><b>1313</b> / <b>1313</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1851 / 2443</td><td>1851 / 3144</td><td>1851 / 2785</td><td>1313 / 1624</td><td>1313 / 1402</td><td><b>1313</b> / <b>1313</b></td><td><b>1313</b> / <b>1313</b></td> </tr>
+<tr><td> vrf_020_20_10 </td><td>OptalCP</td> <td><b>1899</b> / <b>2173</b></td><td><b>2052</b> / <b>2910</b></td><td><b>1885</b> / <b>2371</b></td><td><b>1371</b> / <b>1512</b></td><td><b>1251</b> / 1288</td><td><b>1230</b> / <b>1230</b></td><td><b>1230</b> / <b>1230</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>1497 / 2227</td><td>1732 / 2914</td><td>1497 / 2676</td><td>1230 / 1527</td><td>1230 / <b>1282</b></td><td><b>1230</b> / <b>1230</b></td><td><b>1230</b> / <b>1230</b></td> </tr>
+<tr><td> yn2 </td><td>OptalCP</td> <td><b>863</b> / <b>919</b></td><td><b>1377</b> / <b>2567</b></td><td><b>840</b> / <b>1446</b></td><td><b>713</b> / <b>713</b></td><td><b>713</b> / <b>713</b></td><td><b>713</b> / <b>713</b></td><td><b>713</b> / <b>713</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>714 / 931</td><td>778 / 2604</td><td>713 / 1464</td><td><b>713</b> / <b>713</b></td><td><b>713</b> / <b>713</b></td><td><b>713</b> / <b>713</b></td><td><b>713</b> / <b>713</b></td> </tr>
+<tr><td> yn3 </td><td>OptalCP</td> <td><b>846</b> / <b>898</b></td><td><b>1404</b> / <b>2459</b></td><td><b>854</b> / <b>1386</b></td><td><b>682</b> / <b>682</b></td><td><b>680</b> / <b>680</b></td><td><b>680</b> / <b>680</b></td><td><b>680</b> / <b>680</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>689 / 912</td><td>793 / 2479</td><td>702 / 1454</td><td><b>682</b> / <b>682</b></td><td><b>680</b> / <b>680</b></td><td><b>680</b> / <b>680</b></td><td><b>680</b> / <b>680</b></td> </tr>
+<tr><td> yn4 </td><td>OptalCP</td> <td><b>911</b> / <b>977</b></td><td><b>1345</b> / <b>2643</b></td><td><b>911</b> / <b>1529</b></td><td><b>719</b> / <b>719</b></td><td><b>719</b> / <b>719</b></td><td><b>719</b> / <b>719</b></td><td><b>719</b> / <b>719</b></td> </tr>
+<tr><td>  </td><td>CP-SAT</td> <td>797 / 998</td><td>872 / 2698</td><td>797 / 1582</td><td><b>719</b> / <b>719</b></td><td><b>719</b> / <b>719</b></td><td><b>719</b> / <b>719</b></td><td><b>719</b> / <b>719</b></td> </tr>
+</table>
