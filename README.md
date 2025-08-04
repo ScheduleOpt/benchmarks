@@ -3,10 +3,9 @@
 This benchmark of scheduling problems is intended to compare scheduling engines to the state-of-the-art techniques (heuristics, meta-heuristics, decompositions, etc)
 
 The engines that are benchmarked are
-- [**IBM ILOG Cplex**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-optimizer) : representative of the **MIP** family of engines
 - [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : representative of the **CP-scheduling** family of engines
-- [**ScheduleOpt OptalCP**](https://optalcp.com) : representative of the **CP-scheduling** family of engines
-- [**Google OR-Tools**](https://developers.google.com/optimization) : representative of the **CP-SAT** family of engines
+- [**OptalCP**](https://optalcp.com) : representative of the **CP-scheduling** family of engines
+- [**Google CP-SAT**](https://developers.google.com/optimization) : representative of the **CP-SAT** family of engines
 
 <br/>
 
