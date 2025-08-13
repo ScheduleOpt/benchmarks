@@ -23,7 +23,7 @@
     - [Flexible jobshop](#flexible-jobshop)
 - [Jobshop benchmark - JSPLib](#jobshop-benchmark---jsplib)
     - [Methodology](#methodology)
-    - [Best known results](#best-known-results-on-the-jsplib)
+    - [Best known solutions](#best-known-results-on-the-jsplib)
     - [Publications](#publications-1)
 - [Test instances](#test-instances)
 
@@ -201,11 +201,7 @@ For instance `l01` in taillard format is
 
 The instances come from the following publications
 
-- **Heller, J.** (1960). Some numerical experiments for an M×J flow shop and its decision-theoretical aspects. Operations Research, 8(2), 178-184.
-
 - **H. Fisher, G.L. Thompson** (1963), Probabilistic learning combinations of local job-shop scheduling rules, J.F. Muth, G.L. Thompson (eds.), Industrial Scheduling,  Prentice Hall, Englewood Cliffs, New Jersey, 225-251.
-
-- **Carlier, J.** (1978). Ordonnancements a contraintes disjonctives. RAIRO-Operations Research, 12(4), 333-350.
 
 - **Lawrence, S.** (1984). Resource constrained project scheduling: An experimental investigation of heuristic scheduling techniques (Supplement). Graduate School of Industrial Administration, Carnegie-Mellon University.
 
@@ -219,13 +215,7 @@ The instances come from the following publications
 
 - **Taillard, E.** (1993). Benchmarks for basic scheduling problems. european journal of operational research, 64(2), 278-285.
 
-- **Reeves, C. R.** (1995). A genetic algorithm for flowshop sequencing. Computers & operations research, 22(1), 5-13.
-
 - **Demirkol, E., Mehta, S., & Uzsoy, R.** (1998). Benchmarks for shop scheduling problems. European Journal of Operational Research, 109(1), 137-141.
-
-- **Vallada, E., Ruiz, R., & Framinan, J. M.** (2015). New hard benchmark for flowshop scheduling problems minimising makespan. European Journal of Operational Research, 240(3), 666-677.
-
-- **Pan, Q. K., Ruiz, R., & Alfaro-Fernández, P.** (2017). Iterated search methods for earliness and tardiness minimization in hybrid flowshops with due windows. Computers & Operations Research, 80, 50-60.
 
 - **Da Col, G., & Teppan, E. C.** (2022). Industrial-size job shop scheduling with constraint programming. Operations Research Perspectives, 9, 100249.
 
@@ -313,8 +303,6 @@ or
 $$\forall m \in \mathrm{machines} \quad \mathrm{noOverlap} \ \lbrace \ [ \mathrm{start}_j^m \dots \ \mathrm{end}_j^m ] \mid j \in \mathrm{jobs} \ \rbrace$$
 
 <br/>
-
-
 
 ## Cumulative jobshop
 
@@ -549,7 +537,7 @@ An instance is considered
 
 The publications that reported a best known bound are cited. We always consider that a bound of same value found by a reference engine (CPO, OptalCP, CP-SAT) is superior to the one reported in a publication, as it is easier to reproduce by just running the corresponding engine.
 
-## Best known results on the JSPLib
+## Best known solutions on the JSPLib
 
 Find here the best reported results on the JSPlib instances. For the same result, we always prioritize results reported by engines than published documents (because of reproducibility of the results).
 
@@ -672,93 +660,93 @@ Find here the best reported results on the JSPlib instances. For the same result
 <tr><td>yn1</td><td>20x20</td><td>jobshop</td><td>884</td><td>884</td><td style="background-color:red">hard</td><td>OptalCP in 6h</td></tr>
 <tr><td>yn2</td><td>20x20</td><td>jobshop</td><td>904</td><td>904</td><td style="background-color:red">hard</td><td>OptalCP in 40h</td></tr>
 <tr><td>yn3</td><td>20x20</td><td>jobshop</td><td>892</td><td>892</td><td style="background-color:red">hard</td><td>OptalCP in 40h</td></tr>
-<tr><td>yn4</td><td>20x20</td><td>jobshop</td><td>967</td><td>967</td><td style="background-color:red">hard</td><td>OptaCP in 16h</td></tr>
+<tr><td>yn4</td><td>20x20</td><td>jobshop</td><td>967</td><td>967</td><td style="background-color:red">hard</td><td>OptalCP in 16h</td></tr>
 </table>
 
 ### Taillard (1993)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>tajs01</td><td>15x15</td><td>jobshop</td><td>1231</td><td>1231</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tajs02</td><td>15x15</td><td>jobshop</td><td>1244</td><td>1244</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs03</td><td>15x15</td><td>jobshop</td><td>1218</td><td>1218</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs04</td><td>15x15</td><td>jobshop</td><td>1175</td><td>1175</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs05</td><td>15x15</td><td>jobshop</td><td>1224</td><td>1224</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs06</td><td>15x15</td><td>jobshop</td><td>1238</td><td>1238</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs07</td><td>15x15</td><td>jobshop</td><td>1227</td><td>1227</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs08</td><td>15x15</td><td>jobshop</td><td>1217</td><td>1217</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs09</td><td>15x15</td><td>jobshop</td><td>1274</td><td>1274</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs10</td><td>15x15</td><td>jobshop</td><td>1241</td><td>1241</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs11</td><td>20x15</td><td>jobshop</td><td>1357</td><td>1357</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs12</td><td>20x15</td><td>jobshop</td><td>1367</td><td>1367</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs13</td><td>20x15</td><td>jobshop</td><td>1342</td><td>1342</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs14</td><td>20x15</td><td>jobshop</td><td>1345</td><td>1345</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tajs15</td><td>20x15</td><td>jobshop</td><td>1339</td><td>1339</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs16</td><td>20x15</td><td>jobshop</td><td>1360</td><td>1360</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs17</td><td>20x15</td><td>jobshop</td><td>1462</td><td>1462</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs18</td><td>20x15</td><td>jobshop</td><td>1396</td><td>1396</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs19</td><td>20x15</td><td>jobshop</td><td>1332</td><td>1332</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs20</td><td>20x15</td><td>jobshop</td><td>1348</td><td>1348</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs21</td><td>20x20</td><td>jobshop</td><td>1642</td><td>1642</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>tajs22</td><td>20x20</td><td>jobshop</td><td>1600</td><td>1600</td><td style="background-color:red">hard</td><td>OptalCP in 2h</td></tr>
-<tr><td>tajs23</td><td>20x20</td><td>jobshop</td><td>1557</td><td>1557</td><td style="background-color:red">hard</td><td>OptalCP in 2h</td></tr>
-<tr><td>tajs24</td><td>20x20</td><td>jobshop</td><td>1644</td><td>1644</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs25</td><td>20x20</td><td>jobshop</td><td>1595</td><td>1595</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs26</td><td>20x20</td><td>jobshop</td><td>1643</td><td>1643</td><td style="background-color:orange">medium</td><td>OptalCP in 7h</td></tr>
-<tr><td>tajs27</td><td>20x20</td><td>jobshop</td><td>1680</td><td>1680</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs28</td><td>20x20</td><td>jobshop</td><td>1603</td><td>1603</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs29</td><td>20x20</td><td>jobshop</td><td>1625</td><td>1625</td><td style="background-color:red">hard</td><td>OptalCP in 2h</td></tr>
-<tr><td>tajs30</td><td>20x20</td><td>jobshop</td><td>1562</td><td>1584</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2002</td></tr>
-<tr><td>tajs31</td><td>30x15</td><td>jobshop</td><td>1764</td><td>1764</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>tajs32</td><td>30x15</td><td>jobshop</td><td>1774</td><td>1784</td><td style="background-color:grey">open</td><td>lb CPO2015 / ub PSV2010</td></tr>
-<tr><td>tajs33</td><td>30x15</td><td>jobshop</td><td>1791</td><td>1791</td><td style="background-color:red">hard</td><td>OptalCP in 10h</td></tr>
-<tr><td>tajs34</td><td>30x15</td><td>jobshop</td><td>1828</td><td>1828</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs35</td><td>30x15</td><td>jobshop</td><td>2007</td><td>2007</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs36</td><td>30x15</td><td>jobshop</td><td>1819</td><td>1819</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs37</td><td>30x15</td><td>jobshop</td><td>1771</td><td>1771</td><td style="background-color:red">hard</td><td>OptalCP in 2h</td></tr>
-<tr><td>tajs38</td><td>30x15</td><td>jobshop</td><td>1673</td><td>1673</td><td style="background-color:red">hard</td><td>OptalCP in 7h</td></tr>
-<tr><td>tajs39</td><td>30x15</td><td>jobshop</td><td>1795</td><td>1795</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs40</td><td>30x15</td><td>jobshop</td><td>1658</td><td>1669</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>tajs41</td><td>30x20</td><td>jobshop</td><td>1926</td><td>2005</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CPO2015</td></tr>
-<tr><td>tajs42</td><td>30x20</td><td>jobshop</td><td>1900</td><td>1937</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>tajs43</td><td>30x20</td><td>jobshop</td><td>1809</td><td>1846</td><td style="background-color:grey">open</td><td>lb CPO2015 / ub PLC2015</td></tr>
-<tr><td>tajs44</td><td>30x20</td><td>jobshop</td><td>1961</td><td>1979</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>tajs45</td><td>30x20</td><td>jobshop</td><td>1997</td><td>1997</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs46</td><td>30x20</td><td>jobshop</td><td>1976</td><td>2004</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>tajs47</td><td>30x20</td><td>jobshop</td><td>1827</td><td>1889</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PLC2015</td></tr>
-<tr><td>tajs48</td><td>30x20</td><td>jobshop</td><td>1921</td><td>1937</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>tajs49</td><td>30x20</td><td>jobshop</td><td>1938</td><td>1961</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CPO2015</td></tr>
-<tr><td>tajs50</td><td>30x20</td><td>jobshop</td><td>1848</td><td>1923</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PLC2015</td></tr>
-<tr><td>tajs51</td><td>50x15</td><td>jobshop</td><td>2760</td><td>2760</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tajs52</td><td>50x15</td><td>jobshop</td><td>2756</td><td>2756</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs53</td><td>50x15</td><td>jobshop</td><td>2717</td><td>2717</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs54</td><td>50x15</td><td>jobshop</td><td>2839</td><td>2839</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tajs55</td><td>50x15</td><td>jobshop</td><td>2679</td><td>2679</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs56</td><td>50x15</td><td>jobshop</td><td>2781</td><td>2781</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs57</td><td>50x15</td><td>jobshop</td><td>2943</td><td>2943</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tajs58</td><td>50x15</td><td>jobshop</td><td>2885</td><td>2885</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
-<tr><td>tajs59</td><td>50x15</td><td>jobshop</td><td>2655</td><td>2655</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs60</td><td>50x15</td><td>jobshop</td><td>2723</td><td>2723</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs61</td><td>50x20</td><td>jobshop</td><td>2868</td><td>2868</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs62</td><td>50x20</td><td>jobshop</td><td>2869</td><td>2869</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tajs63</td><td>50x20</td><td>jobshop</td><td>2755</td><td>2755</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs64</td><td>50x20</td><td>jobshop</td><td>2702</td><td>2702</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs65</td><td>50x20</td><td>jobshop</td><td>2725</td><td>2725</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs66</td><td>50x20</td><td>jobshop</td><td>2845</td><td>2845</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs67</td><td>50x20</td><td>jobshop</td><td>2825</td><td>2825</td><td style="background-color:red">hard</td><td>OptalCP in 4h</td></tr>
-<tr><td>tajs68</td><td>50x20</td><td>jobshop</td><td>2784</td><td>2784</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs69</td><td>50x20</td><td>jobshop</td><td>3071</td><td>3071</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs70</td><td>50x20</td><td>jobshop</td><td>2995</td><td>2995</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>tajs71</td><td>100x20</td><td>jobshop</td><td>5464</td><td>5464</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs72</td><td>100x20</td><td>jobshop</td><td>5181</td><td>5181</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs73</td><td>100x20</td><td>jobshop</td><td>5568</td><td>5568</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs74</td><td>100x20</td><td>jobshop</td><td>5339</td><td>5339</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs75</td><td>100x20</td><td>jobshop</td><td>5392</td><td>5392</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>tajs76</td><td>100x20</td><td>jobshop</td><td>5342</td><td>5342</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs77</td><td>100x20</td><td>jobshop</td><td>5436</td><td>5436</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs78</td><td>100x20</td><td>jobshop</td><td>5394</td><td>5394</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs79</td><td>100x20</td><td>jobshop</td><td>5358</td><td>5358</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tajs80</td><td>100x20</td><td>jobshop</td><td>5183</td><td>5183</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta01js</td><td>15x15</td><td>jobshop</td><td>1231</td><td>1231</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>ta02js</td><td>15x15</td><td>jobshop</td><td>1244</td><td>1244</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta03js</td><td>15x15</td><td>jobshop</td><td>1218</td><td>1218</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta04js</td><td>15x15</td><td>jobshop</td><td>1175</td><td>1175</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta05js</td><td>15x15</td><td>jobshop</td><td>1224</td><td>1224</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta06js</td><td>15x15</td><td>jobshop</td><td>1238</td><td>1238</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta07js</td><td>15x15</td><td>jobshop</td><td>1227</td><td>1227</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta08js</td><td>15x15</td><td>jobshop</td><td>1217</td><td>1217</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta09js</td><td>15x15</td><td>jobshop</td><td>1274</td><td>1274</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta10js</td><td>15x15</td><td>jobshop</td><td>1241</td><td>1241</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta11js</td><td>20x15</td><td>jobshop</td><td>1357</td><td>1357</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta12js</td><td>20x15</td><td>jobshop</td><td>1367</td><td>1367</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta13js</td><td>20x15</td><td>jobshop</td><td>1342</td><td>1342</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta14js</td><td>20x15</td><td>jobshop</td><td>1345</td><td>1345</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>ta15js</td><td>20x15</td><td>jobshop</td><td>1339</td><td>1339</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta16js</td><td>20x15</td><td>jobshop</td><td>1360</td><td>1360</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta17js</td><td>20x15</td><td>jobshop</td><td>1462</td><td>1462</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta18js</td><td>20x15</td><td>jobshop</td><td>1396</td><td>1396</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta19js</td><td>20x15</td><td>jobshop</td><td>1332</td><td>1332</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta20js</td><td>20x15</td><td>jobshop</td><td>1348</td><td>1348</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta21js</td><td>20x20</td><td>jobshop</td><td>1642</td><td>1642</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>ta22js</td><td>20x20</td><td>jobshop</td><td>1600</td><td>1600</td><td style="background-color:red">hard</td><td>OptalCP in 2h</td></tr>
+<tr><td>ta23js</td><td>20x20</td><td>jobshop</td><td>1557</td><td>1557</td><td style="background-color:red">hard</td><td>OptalCP in 2h</td></tr>
+<tr><td>ta24js</td><td>20x20</td><td>jobshop</td><td>1644</td><td>1644</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta25js</td><td>20x20</td><td>jobshop</td><td>1595</td><td>1595</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta26js</td><td>20x20</td><td>jobshop</td><td>1643</td><td>1643</td><td style="background-color:orange">medium</td><td>OptalCP in 7h</td></tr>
+<tr><td>ta27js</td><td>20x20</td><td>jobshop</td><td>1680</td><td>1680</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta28js</td><td>20x20</td><td>jobshop</td><td>1603</td><td>1603</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta29js</td><td>20x20</td><td>jobshop</td><td>1625</td><td>1625</td><td style="background-color:red">hard</td><td>OptalCP in 2h</td></tr>
+<tr><td>ta30js</td><td>20x20</td><td>jobshop</td><td>1562</td><td>1584</td><td style="background-color:grey">open</td><td>lb OptalCP / ub NS2002</td></tr>
+<tr><td>ta31js</td><td>30x15</td><td>jobshop</td><td>1764</td><td>1764</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
+<tr><td>ta32js</td><td>30x15</td><td>jobshop</td><td>1774</td><td>1784</td><td style="background-color:grey">open</td><td>lb CPO2015 / ub PSV2010</td></tr>
+<tr><td>ta33js</td><td>30x15</td><td>jobshop</td><td>1791</td><td>1791</td><td style="background-color:red">hard</td><td>OptalCP in 10h</td></tr>
+<tr><td>ta34js</td><td>30x15</td><td>jobshop</td><td>1828</td><td>1828</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta35js</td><td>30x15</td><td>jobshop</td><td>2007</td><td>2007</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta36js</td><td>30x15</td><td>jobshop</td><td>1819</td><td>1819</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta37js</td><td>30x15</td><td>jobshop</td><td>1771</td><td>1771</td><td style="background-color:red">hard</td><td>OptalCP in 2h</td></tr>
+<tr><td>ta38js</td><td>30x15</td><td>jobshop</td><td>1673</td><td>1673</td><td style="background-color:red">hard</td><td>OptalCP in 7h</td></tr>
+<tr><td>ta39js</td><td>30x15</td><td>jobshop</td><td>1795</td><td>1795</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta40js</td><td>30x15</td><td>jobshop</td><td>1658</td><td>1669</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
+<tr><td>ta41js</td><td>30x20</td><td>jobshop</td><td>1926</td><td>2005</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CPO2015</td></tr>
+<tr><td>ta42js</td><td>30x20</td><td>jobshop</td><td>1900</td><td>1937</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
+<tr><td>ta43js</td><td>30x20</td><td>jobshop</td><td>1809</td><td>1846</td><td style="background-color:grey">open</td><td>lb CPO2015 / ub PLC2015</td></tr>
+<tr><td>ta44js</td><td>30x20</td><td>jobshop</td><td>1961</td><td>1979</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>ta45js</td><td>30x20</td><td>jobshop</td><td>1997</td><td>1997</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta46js</td><td>30x20</td><td>jobshop</td><td>1976</td><td>2004</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
+<tr><td>ta47js</td><td>30x20</td><td>jobshop</td><td>1827</td><td>1889</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PLC2015</td></tr>
+<tr><td>ta48js</td><td>30x20</td><td>jobshop</td><td>1921</td><td>1937</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>ta49js</td><td>30x20</td><td>jobshop</td><td>1938</td><td>1960</td><td style="background-color:grey">open</td><td>lb OptalCP / ub LHW2024</td></tr>
+<tr><td>ta50js</td><td>30x20</td><td>jobshop</td><td>1848</td><td>1923</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PLC2015</td></tr>
+<tr><td>ta51js</td><td>50x15</td><td>jobshop</td><td>2760</td><td>2760</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>ta52js</td><td>50x15</td><td>jobshop</td><td>2756</td><td>2756</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta53js</td><td>50x15</td><td>jobshop</td><td>2717</td><td>2717</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta54js</td><td>50x15</td><td>jobshop</td><td>2839</td><td>2839</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>ta55js</td><td>50x15</td><td>jobshop</td><td>2679</td><td>2679</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta56js</td><td>50x15</td><td>jobshop</td><td>2781</td><td>2781</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta57js</td><td>50x15</td><td>jobshop</td><td>2943</td><td>2943</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>ta58js</td><td>50x15</td><td>jobshop</td><td>2885</td><td>2885</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
+<tr><td>ta59js</td><td>50x15</td><td>jobshop</td><td>2655</td><td>2655</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta60js</td><td>50x15</td><td>jobshop</td><td>2723</td><td>2723</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta61js</td><td>50x20</td><td>jobshop</td><td>2868</td><td>2868</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta62js</td><td>50x20</td><td>jobshop</td><td>2869</td><td>2869</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta63js</td><td>50x20</td><td>jobshop</td><td>2755</td><td>2755</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta64js</td><td>50x20</td><td>jobshop</td><td>2702</td><td>2702</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta65js</td><td>50x20</td><td>jobshop</td><td>2725</td><td>2725</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta66js</td><td>50x20</td><td>jobshop</td><td>2845</td><td>2845</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta67js</td><td>50x20</td><td>jobshop</td><td>2825</td><td>2825</td><td style="background-color:red">hard</td><td>OptalCP in 4h</td></tr>
+<tr><td>ta68js</td><td>50x20</td><td>jobshop</td><td>2784</td><td>2784</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta69js</td><td>50x20</td><td>jobshop</td><td>3071</td><td>3071</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta70js</td><td>50x20</td><td>jobshop</td><td>2995</td><td>2995</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
+<tr><td>ta71js</td><td>100x20</td><td>jobshop</td><td>5464</td><td>5464</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta72js</td><td>100x20</td><td>jobshop</td><td>5181</td><td>5181</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta73js</td><td>100x20</td><td>jobshop</td><td>5568</td><td>5568</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta74js</td><td>100x20</td><td>jobshop</td><td>5339</td><td>5339</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta75js</td><td>100x20</td><td>jobshop</td><td>5392</td><td>5392</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
+<tr><td>ta76js</td><td>100x20</td><td>jobshop</td><td>5342</td><td>5342</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta77js</td><td>100x20</td><td>jobshop</td><td>5436</td><td>5436</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta78js</td><td>100x20</td><td>jobshop</td><td>5394</td><td>5394</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta79js</td><td>100x20</td><td>jobshop</td><td>5358</td><td>5358</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>ta80js</td><td>100x20</td><td>jobshop</td><td>5183</td><td>5183</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
 </table>
 
 ### Demikol, Mehta and Uzsoy (1998)
@@ -780,11 +768,11 @@ Find here the best reported results on the JSPlib instances. For the same result
 <tr><td>dmu13</td><td>30x15</td><td>jobshop</td><td>3681</td><td>3681</td><td style="background-color:red">hard</td><td>OptalCP in 3h</td></tr>
 <tr><td>dmu14</td><td>30x15</td><td>jobshop</td><td>3394</td><td>3394</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>dmu15</td><td>30x15</td><td>jobshop</td><td>3343</td><td>3343</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>dmu16</td><td>30x20</td><td>jobshop</td><td>3734</td><td>3751</td><td style="background-color:grey">open</td><td>lb CPO2015 / ub SS2018</td></tr>
-<tr><td>dmu17</td><td>30x20</td><td>jobshop</td><td>3733</td><td>3814</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu16</td><td>30x20</td><td>jobshop</td><td>3734</td><td>3750</td><td style="background-color:grey">open</td><td>lb CPO2015 / ub LHW2024</td></tr>
+<tr><td>dmu17</td><td>30x20</td><td>jobshop</td><td>3733</td><td>3812</td><td style="background-color:grey">open</td><td>lb OptalCP / ub LHW2024</td></tr>
 <tr><td>dmu18</td><td>30x20</td><td>jobshop</td><td>3844</td><td>3844</td><td style="background-color:red">hard</td><td>OptalCP in 10h</td></tr>
 <tr><td>dmu19</td><td>30x20</td><td>jobshop</td><td>3707</td><td>3764</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu20</td><td>30x20</td><td>jobshop</td><td>3632</td><td>3703</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu20</td><td>30x20</td><td>jobshop</td><td>3632</td><td>3699</td><td style="background-color:grey">open</td><td>lb OptalCP / ub LHW2024</td></tr>
 <tr><td>dmu21</td><td>40x15</td><td>jobshop</td><td>4380</td><td>4380</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>dmu22</td><td>40x15</td><td>jobshop</td><td>4725</td><td>4725</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>dmu23</td><td>40x15</td><td>jobshop</td><td>4668</td><td>4668</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
@@ -813,23 +801,23 @@ Find here the best reported results on the JSPlib instances. For the same result
 <tr><td>dmu46</td><td>20x20</td><td>jobshop</td><td>3780</td><td>4035</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
 <tr><td>dmu47</td><td>20x20</td><td>jobshop</td><td>3714</td><td>3939</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
 <tr><td>dmu48</td><td>20x20</td><td>jobshop</td><td>3628</td><td>3763</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu49</td><td>20x20</td><td>jobshop</td><td>3543</td><td>3710</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu49</td><td>20x20</td><td>jobshop</td><td>3543</td><td>3706</td><td style="background-color:grey">open</td><td>lb OptalCP / ub LHW2024</td></tr>
 <tr><td>dmu50</td><td>20x20</td><td>jobshop</td><td>3618</td><td>3729</td><td style="background-color:grey">open</td><td>lb OptalCP / ub PLC2015</td></tr>
 <tr><td>dmu51</td><td>30x15</td><td>jobshop</td><td>4070</td><td>4156</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu52</td><td>30x15</td><td>jobshop</td><td>4203</td><td>4303</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu52</td><td>30x15</td><td>jobshop</td><td>4203</td><td>4297</td><td style="background-color:grey">open</td><td>lb OptalCP / ub LHW2024</td></tr>
 <tr><td>dmu53</td><td>30x15</td><td>jobshop</td><td>4248</td><td>4378</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
 <tr><td>dmu54</td><td>30x15</td><td>jobshop</td><td>4277</td><td>4361</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu55</td><td>30x15</td><td>jobshop</td><td>4191</td><td>4263</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu55</td><td>30x15</td><td>jobshop</td><td>4191</td><td>4258</td><td style="background-color:grey">open</td><td>lb OptalCP / ub LHW2024</td></tr>
 <tr><td>dmu56</td><td>30x20</td><td>jobshop</td><td>4755</td><td>4939</td><td style="background-color:grey">open</td><td>lb OptalCP / ub XLGG2022</td></tr>
 <tr><td>dmu57</td><td>30x20</td><td>jobshop</td><td>4462</td><td>4647</td><td style="background-color:grey">open</td><td>lb OptalCP / ub XLGG2022</td></tr>
 <tr><td>dmu58</td><td>30x20</td><td>jobshop</td><td>4484</td><td>4701</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu59</td><td>30x20</td><td>jobshop</td><td>4366</td><td>4616</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu59</td><td>30x20</td><td>jobshop</td><td>4366</td><td>4607</td><td style="background-color:grey">open</td><td>lb OptalCP / ub LHW2024</td></tr>
 <tr><td>dmu60</td><td>30x20</td><td>jobshop</td><td>4468</td><td>4721</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu61</td><td>40x15</td><td>jobshop</td><td>5038</td><td>5171</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu62</td><td>40x15</td><td>jobshop</td><td>5176</td><td>5248</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu63</td><td>40x15</td><td>jobshop</td><td>5245</td><td>5313</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu61</td><td>40x15</td><td>jobshop</td><td>5038</td><td>5169</td><td style="background-color:grey">open</td><td>lb OptalCP / ub LHW2024</td></tr>
+<tr><td>dmu62</td><td>40x15</td><td>jobshop</td><td>5176</td><td>5247</td><td style="background-color:grey">open</td><td>lb OptalCP / ub LHW2024</td></tr>
+<tr><td>dmu63</td><td>40x15</td><td>jobshop</td><td>5245</td><td>5312</td><td style="background-color:grey">open</td><td>lb OptalCP / ub LHW2024</td></tr>
 <tr><td>dmu64</td><td>40x15</td><td>jobshop</td><td>5155</td><td>5226</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu65</td><td>40x15</td><td>jobshop</td><td>5122</td><td>5184</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu65</td><td>40x15</td><td>jobshop</td><td>5122</td><td>5173</td><td style="background-color:grey">open</td><td>lb OptalCP / ub LHW2024</td></tr>
 <tr><td>dmu66</td><td>40x20</td><td>jobshop</td><td>5526</td><td>5701</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
 <tr><td>dmu67</td><td>40x20</td><td>jobshop</td><td>5661</td><td>5779</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
 <tr><td>dmu68</td><td>40x20</td><td>jobshop</td><td>5513</td><td>5763</td><td style="background-color:grey">open</td><td>lb OptalCP / ub CS2022</td></tr>
@@ -979,13 +967,13 @@ Find here the best reported results on the JSPlib instances. For the same result
 
 The upper and lower bounds come from
 
-- NS2002 (1 bounds - tajs30) : **Nowicki, E., & Smutnicki, C. (2002)**. Some new tools to solve the job shop problem. Raport serii: Preprinty, 60.
+- NS2002 (1 bounds - ta30js) : **Nowicki, E., & Smutnicki, C. (2002)**. Some new tools to solve the job shop problem. Raport serii: Preprinty, 60.
 
-- PSV2010 (1 bounds - tajs32) : **Pardalos, P. M., Shylo, O. V., & Vazacopoulos, A. (2010)**. Solving job shop scheduling problems utilizing the properties of backbone and “big valley”. Computational Optimization and Applications, 47, 61-76.
+- PSV2010 (1 bounds - ta32js) : **Pardalos, P. M., Shylo, O. V., & Vazacopoulos, A. (2010)**. Solving job shop scheduling problems utilizing the properties of backbone and “big valley”. Computational Optimization and Applications, 47, 61-76.
 
 - GR2014 (6 bounds in dmu, tajs and swv) : **Gonçalves, J. F., & Resende, M. G.** (2014). An extended Akers graphical method with a biased random‐key genetic algorithm for job‐shop scheduling. International Transactions in Operational Research, 21(2), 215-246.
 
-- CPO2015 (5 bounds in dmu and tajs): 
+- CPO2015 (4 bounds in dmu and tajs): 
 
     - **Vilím, P., Laborie, P., & Shaw, P. (2015).** Failure-directed search for constraint-based scheduling. In Integration of AI and OR Techniques in Constraint Programming: 12th International Conference, CPAIOR 2015, Barcelona, Spain, May 18-22, 2015, Proceedings 12 (pp. 437-453). Springer International Publishing.
 
@@ -995,15 +983,20 @@ The upper and lower bounds come from
 
 - PLC2015 (6 bounds in dmu and tajs) : **Peng, B., Lü, Z., & Cheng, T. C. E. (2015)**. A tabu search/path relinking algorithm to solve the job shop scheduling problem. Computers & Operations Research, 53, 154-164.
 
-- SS2018 (14 bounds in dmu and swv) : **Shylo, O. V., & Shams, H. (2018)**. Boosting binary optimization via binary classification: A case study of job shop scheduling. arXiv preprint arXiv:1808.10813.
+- SS2018 (11 bounds in dmu and swv) : **Shylo, O. V., & Shams, H. (2018)**. Boosting binary optimization via binary classification: A case study of job shop scheduling. arXiv preprint arXiv:1808.10813.
 
-- CS2022 (27 bounds in dmu and tajs) : **Constantino, O. H., & Segura, C. (2022)**. A parallel memetic algorithm with explicit management of diversity for the job shop scheduling problem. Applied Intelligence, 52(1), 141-153.
+- CS2022 (19 bounds in dmu and tajs) : **Constantino, O. H., & Segura, C. (2022)**. A parallel memetic algorithm with explicit management of diversity for the job shop scheduling problem. Applied Intelligence, 52(1), 141-153.
 
 - XLGG2022 (2 bounds in dmu) : **Xie, J., Li, X., Gao, L., & Gui, L. (2022)**. A hybrid algorithm with a new neighborhood structure for job shop scheduling problems. Computers & Industrial Engineering, 169, 108205.
 
-- Hexaly2024 (10 bounds in tai) : **Lea Blaise**. Hexaly2024 (https://www.hexaly.com/benchmarks/hexaly-vs-cp-optimizer-vs-CP-SAT-on-the-job-shop-scheduling-problem-jssp)
+- Hexaly2024 (10 bounds - tai) : **Lea Blaise**. Hexaly2024 (https://www.hexaly.com/benchmarks/hexaly-vs-cp-optimizer-vs-CP-SAT-on-the-job-shop-scheduling-problem-jssp)
+
+- LHW2024 (12 bounds - dmu, tajs) : **Mingjie Li, Jin-Kao Hao & Qinghua Wu (2024)**. Combining Hash-based Tabu Search and Frequent Pattern Mining for Job-Shop Scheduling. 
 
 All other bounds were found by OptalCP
+
+
+
 
 # Test instances
 
@@ -1088,19 +1081,19 @@ We have selected a subset of 50 small yet difficult instances to test algorithms
 <tr><td>  </td><td>CP-SAT</td> <td>1840 / 2349</td><td>1840 / 3157</td><td>1840 / 2625</td><td>1240 / 1588</td><td>1240 / <b>1335</b></td><td><b>1240</b> / <b>1240</b></td><td><b>1240</b> / <b>1240</b></td> </tr>
 <tr><td> tfs030 </td><td>OptalCP</td> <td><b>2032</b> / <b>2205</b></td><td><b>2150</b> / <b>2979</b></td><td><b>1998</b> / <b>2351</b></td><td><b>1381</b> / <b>1494</b></td><td><b>1238</b> / <b>1282</b></td><td><b>1168</b> / <b>1187</b></td><td><b>1137</b> / <b>1137</b></td> </tr>
 <tr><td>  </td><td>CP-SAT</td> <td>1791 / 2243</td><td>1900 / 2996</td><td>1791 / 2746</td><td>1131 / 1516</td><td>1131 / 1287</td><td>1131 / 1197</td><td>1131 / <b>1137</b></td> </tr>
-<tr><td> tajs18 </td><td>OptalCP</td> <td><b>1371</b> / <b>1414</b></td><td><b>2169</b> / 3506</td><td><b>1359</b> / <b>2141</b></td><td><b>929</b> / <b>929</b></td><td><b>900</b> / <b>900</b></td><td><b>900</b> / <b>900</b></td><td><b>900</b> / <b>900</b></td> </tr>
+<tr><td> ta18js </td><td>OptalCP</td> <td><b>1371</b> / <b>1414</b></td><td><b>2169</b> / 3506</td><td><b>1359</b> / <b>2141</b></td><td><b>929</b> / <b>929</b></td><td><b>900</b> / <b>900</b></td><td><b>900</b> / <b>900</b></td><td><b>900</b> / <b>900</b></td> </tr>
 <tr><td>  </td><td>CP-SAT</td> <td>901 / 1426</td><td>1315 / <b>3328</b></td><td>901 / 2285</td><td><b>929</b> / <b>929</b></td><td><b>900</b> / <b>900</b></td><td><b>900</b> / <b>900</b></td><td><b>900</b> / <b>900</b></td> </tr>
-<tr><td> tajs22 </td><td>OptalCP</td> <td><b>1556</b> / <b>1613</b></td><td><b>2475</b> / <b>4394</b></td><td><b>1555</b> / 2471</td><td><b>1223</b> / <b>1223</b></td><td><b>1223</b> / <b>1223</b></td><td><b>1223</b> / <b>1223</b></td><td><b>1223</b> / <b>1223</b></td> </tr>
+<tr><td> ta22js </td><td>OptalCP</td> <td><b>1556</b> / <b>1613</b></td><td><b>2475</b> / <b>4394</b></td><td><b>1555</b> / 2471</td><td><b>1223</b> / <b>1223</b></td><td><b>1223</b> / <b>1223</b></td><td><b>1223</b> / <b>1223</b></td><td><b>1223</b> / <b>1223</b></td> </tr>
 <tr><td>  </td><td>CP-SAT</td> <td>1223 / 1615</td><td>1385 / 4413</td><td>1226 / <b>2468</b></td><td><b>1223</b> / <b>1223</b></td><td><b>1223</b> / <b>1223</b></td><td><b>1223</b> / <b>1223</b></td><td><b>1223</b> / <b>1223</b></td> </tr>
-<tr><td> tajs23 </td><td>OptalCP</td> <td><b>1502</b> / 1580</td><td><b>2527</b> / <b>4236</b></td><td><b>1489</b> / <b>2540</b></td><td><b>1168</b> / <b>1168</b></td><td><b>1164</b> / <b>1164</b></td><td><b>1164</b> / <b>1164</b></td><td><b>1164</b> / <b>1164</b></td> </tr>
+<tr><td> ta23js </td><td>OptalCP</td> <td><b>1502</b> / 1580</td><td><b>2527</b> / <b>4236</b></td><td><b>1489</b> / <b>2540</b></td><td><b>1168</b> / <b>1168</b></td><td><b>1164</b> / <b>1164</b></td><td><b>1164</b> / <b>1164</b></td><td><b>1164</b> / <b>1164</b></td> </tr>
 <tr><td>  </td><td>CP-SAT</td> <td>1195 / <b>1575</b></td><td>1351 / 4529</td><td>1195 / 2581</td><td><b>1168</b> / <b>1168</b></td><td><b>1164</b> / <b>1164</b></td><td><b>1164</b> / <b>1164</b></td><td><b>1164</b> / <b>1164</b></td> </tr>
-<tr><td> tajs26 </td><td>OptalCP</td> <td><b>1582</b> / 1671</td><td><b>2695</b> / <b>4130</b></td><td><b>1522</b> / <b>2483</b></td><td><b>1208</b> / <b>1208</b></td><td><b>1207</b> / <b>1207</b></td><td><b>1207</b> / <b>1207</b></td><td><b>1207</b> / <b>1207</b></td> </tr>
+<tr><td> ta26js </td><td>OptalCP</td> <td><b>1582</b> / 1671</td><td><b>2695</b> / <b>4130</b></td><td><b>1522</b> / <b>2483</b></td><td><b>1208</b> / <b>1208</b></td><td><b>1207</b> / <b>1207</b></td><td><b>1207</b> / <b>1207</b></td><td><b>1207</b> / <b>1207</b></td> </tr>
 <tr><td>  </td><td>CP-SAT</td> <td>1208 / <b>1670</b></td><td>1396 / 4270</td><td>1208 / 2498</td><td><b>1208</b> / <b>1208</b></td><td><b>1207</b> / <b>1207</b></td><td><b>1207</b> / <b>1207</b></td><td><b>1207</b> / <b>1207</b></td> </tr>
-<tr><td> tajs27 </td><td>OptalCP</td> <td><b>1644</b> / <b>1692</b></td><td><b>2566</b> / <b>4577</b></td><td><b>1644</b> / 2680</td><td><b>1291</b> / <b>1291</b></td><td><b>1291</b> / <b>1291</b></td><td><b>1291</b> / <b>1291</b></td><td><b>1291</b> / <b>1291</b></td> </tr>
+<tr><td> ta27js </td><td>OptalCP</td> <td><b>1644</b> / <b>1692</b></td><td><b>2566</b> / <b>4577</b></td><td><b>1644</b> / 2680</td><td><b>1291</b> / <b>1291</b></td><td><b>1291</b> / <b>1291</b></td><td><b>1291</b> / <b>1291</b></td><td><b>1291</b> / <b>1291</b></td> </tr>
 <tr><td>  </td><td>CP-SAT</td> <td>1292 / 1709</td><td>1538 / 4745</td><td>1291 / <b>2671</b></td><td><b>1291</b> / <b>1291</b></td><td><b>1291</b> / <b>1291</b></td><td><b>1291</b> / <b>1291</b></td><td><b>1291</b> / <b>1291</b></td> </tr>
-<tr><td> tajs29 </td><td>OptalCP</td> <td><b>1577</b> / <b>1629</b></td><td><b>2643</b> / <b>4607</b></td><td><b>1538</b> / <b>2509</b></td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td> </tr>
+<tr><td> ta29js </td><td>OptalCP</td> <td><b>1577</b> / <b>1629</b></td><td><b>2643</b> / <b>4607</b></td><td><b>1538</b> / <b>2509</b></td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td> </tr>
 <tr><td>  </td><td>CP-SAT</td> <td>1228 / 1651</td><td>1352 / 4730</td><td>1227 / 2579</td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td><td><b>1227</b> / <b>1227</b></td> </tr>
-<tr><td> tajs30 </td><td>OptalCP</td> <td><b>1505</b> / <b>1588</b></td><td><b>2383</b> / <b>4305</b></td><td><b>1473</b> / <b>2480</b></td><td><b>1212</b> / <b>1212</b></td><td><b>1212</b> / <b>1212</b></td><td><b>1212</b> / <b>1212</b></td><td><b>1212</b> / <b>1212</b></td> </tr>
+<tr><td> ta30js </td><td>OptalCP</td> <td><b>1505</b> / <b>1588</b></td><td><b>2383</b> / <b>4305</b></td><td><b>1473</b> / <b>2480</b></td><td><b>1212</b> / <b>1212</b></td><td><b>1212</b> / <b>1212</b></td><td><b>1212</b> / <b>1212</b></td><td><b>1212</b> / <b>1212</b></td> </tr>
 <tr><td>  </td><td>CP-SAT</td> <td>1212 / 1614</td><td>1310 / 4487</td><td>1213 / 2679</td><td><b>1212</b> / <b>1212</b></td><td><b>1212</b> / <b>1212</b></td><td><b>1212</b> / <b>1212</b></td><td><b>1212</b> / <b>1212</b></td> </tr>
 <tr><td> vrf_020_10_01 </td><td>OptalCP</td> <td><b>1406</b> / <b>1470</b></td><td><b>1537</b> / <b>2022</b></td><td><b>1460</b> / <b>1705</b></td><td><b>870</b> / <b>923</b></td><td><b>736</b> / <b>753</b></td><td><b>706</b> / <b>706</b></td><td><b>706</b> / <b>706</b></td> </tr>
 <tr><td>  </td><td>CP-SAT</td> <td>1290 / 1560</td><td>1290 / <b>2022</b></td><td>1290 / 1848</td><td>706 / 933</td><td>706 / 754</td><td><b>706</b> / <b>706</b></td><td><b>706</b> / <b>706</b></td> </tr>
