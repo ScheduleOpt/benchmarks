@@ -642,7 +642,7 @@ Find here the best reported results on the JSPlib instances. For the same result
 <tr><td>swv01</td><td>20x10</td><td>jobshop</td><td>1407</td><td>1407</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>swv02</td><td>20x10</td><td>jobshop</td><td>1475</td><td>1475</td><td style="background-color:green">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>swv03</td><td>20x10</td><td>jobshop</td><td>1398</td><td>1398</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>swv04</td><td>20x10</td><td>jobshop</td><td>1464</td><td>1464</td><td style="background-color:red">hard</td><td>OptalCP</td></tr>
+<tr><td>swv04</td><td>20x10</td><td>jobshop</td><td>1464</td><td>1464</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>swv05</td><td>20x10</td><td>jobshop</td><td>1424</td><td>1424</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>swv06</td><td>20x15</td><td>jobshop</td><td>1667</td><td>1667</td><td style="background-color:red">hard</td><td>OptalCP in 40h</td></tr>
 <tr><td>swv07</td><td>20x15</td><td>jobshop</td><td>1541</td><td>1594</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
