@@ -644,16 +644,16 @@ Find here the best reported results on the JSPlib instances. For the same result
 <tr><td>swv03</td><td>20x10</td><td>jobshop</td><td>1398</td><td>1398</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
 <tr><td>swv04</td><td>20x10</td><td>jobshop</td><td>1464</td><td>1464</td><td style="background-color:red">hard</td><td>OptalCP</td></tr>
 <tr><td>swv05</td><td>20x10</td><td>jobshop</td><td>1424</td><td>1424</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>swv06</td><td>20x15</td><td>jobshop</td><td>1667</td><td>1667</td><td style="background-color:red">hard</td><td>OptalCP</td></tr>
+<tr><td>swv06</td><td>20x15</td><td>jobshop</td><td>1667</td><td>1667</td><td style="background-color:red">hard</td><td>OptalCP in 40h</td></tr>
 <tr><td>swv07</td><td>20x15</td><td>jobshop</td><td>1541</td><td>1594</td><td style="background-color:grey">open</td><td>lb OptalCP / ub GR2014</td></tr>
 <tr><td>swv08</td><td>20x15</td><td>jobshop</td><td>1694</td><td>1751</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Mu2015</td></tr>
-<tr><td>swv09</td><td>20x15</td><td>jobshop</td><td>1655</td><td>1655</td><td style="background-color:red">hard</td><td>OptalCP</td></tr>
+<tr><td>swv09</td><td>20x15</td><td>jobshop</td><td>1655</td><td>1655</td><td style="background-color:red">hard</td><td>OptalCP in 15h</td></tr>
 <tr><td>swv10</td><td>20x15</td><td>jobshop</td><td>1692</td><td>1743</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>swv11</td><td>50x10</td><td>jobshop</td><td>2983</td><td>2983</td><td style="background-color:red">hard</td><td>OptalCP</td></tr>
-<tr><td>swv12</td><td>50x10</td><td>jobshop</td><td>2972</td><td>2972</td><td style="background-color:red">hard</td><td>OptalCP</td></tr>
+<tr><td>swv11</td><td>50x10</td><td>jobshop</td><td>2983</td><td>2983</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>swv12</td><td>50x10</td><td>jobshop</td><td>2972</td><td>2972</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>swv13</td><td>50x10</td><td>jobshop</td><td>3104</td><td>3104</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>swv14</td><td>50x10</td><td>jobshop</td><td>2968</td><td>2968</td><td style="background-color:orange">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>swv15</td><td>50x10</td><td>jobshop</td><td>2885</td><td>2885</td><td style="background-color:red">hard</td><td>OptalCP</td></tr>
+<tr><td>swv15</td><td>50x10</td><td>jobshop</td><td>2885</td><td>2885</td><td style="background-color:red">hard</td><td>OptalCP in 9h</td></tr>
 <tr><td>swv16</td><td>50x10</td><td>jobshop</td><td>2924</td><td>2924</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>swv17</td><td>50x10</td><td>jobshop</td><td>2794</td><td>2794</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>swv18</td><td>50x10</td><td>jobshop</td><td>2852</td><td>2852</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
@@ -665,10 +665,10 @@ Find here the best reported results on the JSPlib instances. For the same result
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>yn1</td><td>20x20</td><td>jobshop</td><td>884</td><td>884</td><td style="background-color:red">hard</td><td>OptalCP</td></tr>
-<tr><td>yn2</td><td>20x20</td><td>jobshop</td><td>879</td><td>904</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>yn3</td><td>20x20</td><td>jobshop</td><td>865</td><td>892</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>yn4</td><td>20x20</td><td>jobshop</td><td>935</td><td>968</td><td style="background-color:grey">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>yn1</td><td>20x20</td><td>jobshop</td><td>884</td><td>884</td><td style="background-color:red">hard</td><td>OptalCP in 6h</td></tr>
+<tr><td>yn2</td><td>20x20</td><td>jobshop</td><td>904</td><td>904</td><td style="background-color:red">hard</td><td>OptalCP in 40h</td></tr>
+<tr><td>yn3</td><td>20x20</td><td>jobshop</td><td>892</td><td>892</td><td style="background-color:red">hard</td><td>OptalCP in 40h</td></tr>
+<tr><td>yn4</td><td>20x20</td><td>jobshop</td><td>967</td><td>967</td><td style="background-color:red">hard</td><td>OptaCP in 16h</td></tr>
 </table>
 
 ### Taillard (1993)
@@ -991,7 +991,7 @@ The upper and lower bounds come from
 
 - PLC2015 (6 bounds in dmu and tjs) : **Peng, B., Lü, Z., & Cheng, T. C. E. (2015)**. A tabu search/path relinking algorithm to solve the job shop scheduling problem. Computers & Operations Research, 53, 154-164.
 
-- SS2018 (17 bounds in dmu, yn and swv) : **Shylo, O. V., & Shams, H. (2018)**. Boosting binary optimization via binary classification: A case study of job shop scheduling. arXiv preprint arXiv:1808.10813.
+- SS2018 (14 bounds in dmu and swv) : **Shylo, O. V., & Shams, H. (2018)**. Boosting binary optimization via binary classification: A case study of job shop scheduling. arXiv preprint arXiv:1808.10813.
 
 - CS2022 (27 bounds in dmu and tjs) : **Constantino, O. H., & Segura, C. (2022)**. A parallel memetic algorithm with explicit management of diversity for the job shop scheduling problem. Applied Intelligence, 52(1), 141-153.
 
