@@ -619,6 +619,10 @@ Find here the best reported results on the JSPlib instances. For the same result
 <tr><td>abz9</td><td>20x15</td><td>jobshop</td><td>678</td><td>678</td><td style="background-color:orange">medium</td><td>OptalCP in < 1h</td></tr>
 </table>
 
+<br>
+
+***Various places report that "Henning A (2002). Praktische Job-Shop Scheduling-Probleme. Ph.D. thesis, Friedrich-Schiller-Universität Jena, Jena, Germany" as having found a solution of 665 for abz8, but the original document says their solution is 667 and 665 is a "solution from the literature". We believe it is just a typing mistake and they meant 667. In any case OptalCP proves a lower bound of 667.***
+
 ### Applegate and Cook (1991)
 
 <table>
