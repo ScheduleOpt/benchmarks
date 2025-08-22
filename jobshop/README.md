@@ -3,28 +3,24 @@
 ## Table of Contents
 
 - [Jobshop instances](#jobshop-benchmark-instances)
-    - [Overview of the jobshop benchmark](#overview-of-the-benchmark)
+    - [Overview of the jobshop benchmark](#overview-of-the-jobshop-benchmark)
     - [Classification of the jobshop instances](#classification-of-the-jobshop-instances)
     - [Formats](#formats)
-    - [Publications](#publications)
+    - [Publications](#publications-instances)
 - [Jobshop and variants using the standard format](#jobshop-variants)
     - [Jobshop](#jobshop)
     - [No buffer jobshop (blocking)](#no-buffer-jobshop-blocking-jobshop)
     - [No wait jobshop](#no-wait-jobshop)
     - [Cumulative jobshop](#cumulative-jobshop)
-    - [Jobshop with operators](#jobshop-with-operators)
-    - [Flowshop](#flow-shop)
-    - [Permutation flow shop](#permutation-flow-shop)
-    - [Non permutation flow shop](#non-permutation-flow-shop)
-    - [Open shop](#open-shop)
+    - [Jobshop with operators](#jobshop-with-operators---workers)
 - [Jobshop variants that require extra data](#other-jobshop-variants)
     - [Jobshop with arbitrary precedences](#jobshop-with-arbitrary-precedences)
-    - [Jobshop with setup times](#jobshop-with-setup-times)
+    - [Jobshop with setup times](#jobshop-with-sequence-dependent-setup-times)
     - [Flexible jobshop](#flexible-jobshop)
 - [Jobshop benchmark - JSPLib](#jobshop-benchmark---jsplib)
-    - [Methodology](#methodology)
-    - [Best known solutions](#best-known-results-on-the-jsplib)
-    - [Publications](#publications-1)
+    - [Similar work](#similar-work)
+    - [Best known solutions](#best-known-solutions---jsplib)
+    - [Publications](#publications-best-known-solutions)
 - [Test instances for algorithms](#test-instances)
 
 <br/>
@@ -202,7 +198,7 @@ For instance `l01` in taillard format is
 
 <br/>
 
-## Publications
+## Publications (instances)
 
 The instances come from the following publications
 
@@ -345,7 +341,7 @@ $$
 
 <br/>
 
-## Jobshop with operators / workers
+## Jobshop with operators
 
 In the jobshop with operators, workers have to be assigned to the machines while the tasks are being performed. 
 - when the operator assignment can be interrupted (preemptive operators) the problem becomes a jobshop with maximum number of simultaneous jobs.
@@ -427,7 +423,7 @@ The upper bounds available in optimizizer are verified before publication (which
 We also think https://www.jobshoppuzzle.com/ is a very cool site with interactive visualizations of jobshop heuristics and solutions.
 
 
-## Best known solutions on the JSPLib
+## Best known solutions - JSPLib
 
 If you visualize the markdown in Visual Studio Code you will have colors !
 
@@ -868,7 +864,7 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 
 
 
-## Publications
+## Publications (best known solutions)
 
 The upper and lower bounds come from
 
