@@ -27,11 +27,11 @@
 
 # Jobshop benchmark instances
 
-The JSPLib is an informal group of instances (`ft`, `la`, `abz`, `orb`, `swv`, `yn`, `ta`, `dmu` to which we added `tai`) that have been used to investigate solution methods for the jobshop problem. On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
+The JSPLib is an informal group of instances (`ft`, `la`, `abz`, `orb`, `swv`, `yn`, `ta`, `dmu` to which we added `tai`, `long` and `short`) that have been used to investigate solution methods for the jobshop problem. On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
 
 ## Overview of the jobshop benchmark
 
-All instances in the benchmark follow the standard jobshop format, regardless of the problem they were originally meant for. The DaColTeppan instances use a conservative extension of the existing jobshop format. Cumulative jobshop have the capacity per machine in the filename, which may or may not be used.
+All instances in the benchmark follow the standard jobshop format. The DaColTeppan instances use a conservative extension of the existing jobshop format.
 
 Jobshop instances (332)
 - 3 instances `ft` from Fischer and Thompson 1963 
@@ -51,10 +51,10 @@ Reentrant jobshop instances (24)
 
 ## Classification of the jobshop instances
 
-We use the following ***engines*** as reference engines the benchmark
+We use the following engines as references for the benchmark
 - [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : representative of the CP-scheduling family of engines
 - [**Google CP-SAT**](https://developers.google.com/optimization) : representative of the lazy clause generation family of engines
-- [**OptalCP**](https://optalcp.com) : representative of the CP-scheduling family of engines
+- [**OptalCP**](https://optalcp.com) : representative of the lazy clause generation family of engines
 
 We have dropped Cplex from the jobshop tests due to poor performance of linear solvers as reported by multiple authors in the literature and confirmed by ourselves.
 
@@ -63,7 +63,7 @@ Instances are divided into
 - **easy** : solved to optimality (with proof) in 1 minute by at least 1 reference engine
 - **medium** : solved to optimality (with proof) in 1 hour by at least 1 reference engine
 - **hard** : solved to optimality (with proof) in > 1h by at least 1 reference engine
-- **presumed closed** : allegedly solved by someone in a paper. Most of the time the optimal solution is known because 2 different methods were used to find upper and lower bounds.
+- **presumed closed** : allegedly solved to optimality. Most of the time the optimal solution is known because 2 different methods were used to find upper and lower bounds.
 - **open** : no proof of optimality
 
 Currently the instances divide as follows
@@ -79,7 +79,7 @@ Currently the instances divide as follows
 - `long` : 11 easy, 1 medium
 - `short` : 5 easy, 6 medium, 1 open
 
-Previous versions of these results had `presumed closed` instances which we proceed to solve with OptalCP running for longer times.
+Previous versions of these results had some `presumed closed` instances which we proceed to solve with OptalCP running for longer times to confirm their status of solved
 
 ## Formats
 
@@ -392,7 +392,7 @@ The tasks of a job can be processed by any machine in a predefined group of simi
 
 # Jobshop benchmark - JSPLib
 
-The JSPLib is an informal group of instances (`ft`, `la`, `abz`, `orb`, `swv`, `yn`, `ta`, `dmu` to which we added `tai`) that have been used to investigate solution methods for the jobshop problem. On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
+The JSPLib is an informal group of instances (`ft`, `la`, `abz`, `orb`, `swv`, `yn`, `ta`, `dmu` to which we added `tai`, `short` and `long`) that have been used to investigate solution methods for the jobshop problem. On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
 
 An instance is considered
 - `easy` if it is solved to optimality by a reference engine in < 1 minute
@@ -401,22 +401,26 @@ An instance is considered
 - `presumed closed` if the combination of upper and lower bounds found in the literature allows concluding the value of the optimal solution is known
 - `open` otherwise
 
-For each instance we indicate the publication or engine that reaches that bound (lower or upper). 
-- we always give priority to engines over publications because of reproductibility of the results
-- we always give priority to the fastest engine to attain the bound
-- when an engine attains a bound previously reported in the literature, we remove the correponding paper from the list of relevant references
+<br/>
 
-Other databases keep instead the reference of the ***first*** publication or method to have achieved that bound for historical reference. This work instead is meant for engine and algorithm developers to have a reference versus other engines.
+For each instance we indicate the publication or engine that reaches that bound (lower or upper). When reporting the results:
+- we give priority to engines over publications because of reproductibility of the results
+- we give priority to the fastest engine to attain the bound
+- when an engine attains a bound previously reported in the literature, we attribute the bound to the engine and remove the correponding paper from the list of relevant references
+
+Other databases keep instead the ***first*** publication or method to have achieved that bound for historical reference. This work instead is meant for engine and algorithm developers to have means of reproducing the claimed results for comparison.
 
 ## Similar work
 
-Our work is inspired of the ***outstanding*** work of Naderi, Ruiz and Roshanaei *Mixed-Integer Programming versus Constraint Programming for shop scheduling problems : New Results and Outlook* [**NRR2022**] which compares CPO, Cplex and Gurobi on a benchmark of 6623 instances over 17 benchmarks with a timeout of 1h. They have made all the [raw results available](http://soa.iti.es/problem-instances)
+Our work was inspired by the ***outstanding*** work of Naderi, Ruiz and Roshanaei *Mixed-Integer Programming versus Constraint Programming for shop scheduling problems : New Results and Outlook* [**NRR2022**] which compares CPO, Cplex, Gurobi and OR-tools on a benchmark of 6623 instances over 17 benchmarks with a timeout of 1h. They have made all the [raw results available](http://soa.iti.es/problem-instances)
 
 We borrowed references for existing best known bounds from
 - http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html
 - https://github.com/thomasWeise/jsspInstancesAndResults
 - http://jobshop.jjvh.nl/
 - https://optimizizer.com/jobshop.php
+
+<br/>
 
 The upper bounds available in optimizizer are verified before publication (which we don't do directly - our verification is the fact that an engine achieves the same value). We encourage you to also visit his site.
 
