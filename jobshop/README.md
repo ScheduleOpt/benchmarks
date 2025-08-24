@@ -433,6 +433,8 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 
 ### Fisher and Thompson (1963)
 
+*FT instances are also known as MT because the 1963 paper of Fisher and Thompson was published in the book "Industrial scheduling" by Muth and Thompson.*
+
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>ft06</td><td>6x6</td><td>jobshop</td><td>55</td><td>55</td><td style="background-color:green">easy</td><td>CPO in < 1 min</td></tr>
@@ -499,7 +501,7 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 
 <br>
 
-***Various places report that "Henning A (2002). Praktische Job-Shop Scheduling-Probleme. Ph.D. thesis, Friedrich-Schiller-Universität Jena, Jena, Germany" as having found a solution of 665 for abz8, but the original document says their solution is 667 and 665 is a "solution from the literature". We believe it is just a typing mistake in the sources they used. In any case OptalCP proves a lower bound of 667.***
+*Various places report that "Henning A (2002). Praktische Job-Shop Scheduling-Probleme. Ph.D. thesis, Friedrich-Schiller-Universität Jena, Jena, Germany" as having found a solution of 665 for abz8, but the original document says their solution is 667 and 665 is a "solution from the literature". We believe it is just a typing mistake in the sources they used. In any case OptalCP proves a lower bound of 667.*
 
 ### Applegate and Cook (1991)
 
@@ -901,9 +903,145 @@ The upper and lower bounds come from
 All other bounds were found by OptalCP
 
 
-
-
 # Test instances
+
+## Reference tests
+
+We provide these tests as a reference, you should get something ***similar*** on your hardware or find an explanation of why the engines don't behave as expected.
+They were done on an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds. We ***strongly*** encourage you to run all engines you want to compare against on your own hardware. 
+
+
+### LA instances
+
+| Instance | OptalCP | CP-SAT |
+|----------|---------|--------|
+| la01 | 666 in 0s | 666 in 0s |
+| la02 | 655 in 0s | 655 in 0s |
+| la03 | 597 in 0s | 597 in 0s |
+| la04 | 590 in 0s | 590 in 0s |
+| la05 | 593 in 0s | 593 in 0s |
+| la06 | 926 in 0s | 926 in 0s |
+| la07 | 890 in 0s | 890 in 0s |
+| la08 | 863 in 0s | 863 in 0s |
+| la09 | 951 in 0s | 951 in 0s |
+| la10 | 958 in 0s | 958 in 0s |
+| la11 | 1222 in 0s | 1222 in 0s |
+| la12 | 1039 in 0s | 1039 in 0s |
+| la13 | 1150 in 0s | 1150 in 0s |
+| la14 | 1292 in 0s | 1292 in 0s |
+| la15 | 1207 in 0s | 1207 in 0s |
+| la16 | 945 in 0s | 945 in 0s |
+| la17 | 784 in 0s | 784 in 0s |
+| la18 | 848 in 0s | 848 in 0s |
+| la19 | 842 in 0s | 842 in 1s |
+| la20 | 902 in 0s | 902 in 0s |
+| la21 | 1046 in 4s | 1046 in 49s |
+| la22 | 927 in 0s | 927 in 3s |
+| la23 | 1032 in 0s | 1032 in 0s |
+| la24 | 935 in 1s | 935 in 12s |
+| la25 | 977 in 1s | 977 in 11s |
+| la26 | 1218 in 0s | 1218 in 2s |
+| la27 | 1235 in 1s | 1235 in 9s |
+| la28 | 1216 in 0s | 1216 in 3s |
+| la29 | 1152 in 534s | 1130 .. 1162 in 600s |
+| la30 | 1355 in 0s | 1355 in 1s |
+| la31 | 1784 in 0s | 1784 in 1s |
+| la32 | 1850 in 0s | 1850 in 0s |
+| la33 | 1719 in 0s | 1719 in 1s |
+| la34 | 1721 in 0s | 1721 in 1s |
+| la35 | 1888 in 0s | 1888 in 0s |
+| la36 | 1268 in 0s | 1268 in 6s |
+| la37 | 1397 in 0s | 1397 in 1s |
+| la38 | 1196 in 18s | 1196 in 148s |
+| la39 | 1233 in 0s | 1233 in 2s |
+| la40 | 1222 in 1s | 1222 in 23s |
+
+### TA instances
+
+| Instance | OptalCP | CP-SAT |
+|----------|---------|--------|
+| ta01js | 1231 in 0s | 1231 in 6s |
+| ta02js | 1244 in 3s | 1244 in 44s |
+| ta03js | 1218 in 2s | 1218 in 19s |
+| ta04js | 1175 in 2s | 1175 in 53s |
+| ta05js | 1224 in 21s | 1224 in 352s |
+| ta06js | 1238 in 282s | 1203 .. 1238 in 600s |
+| ta07js | 1227 in 20s | 1227 in 200s |
+| ta08js | 1217 in 13s | 1217 in 130s |
+| ta09js | 1274 in 11s | 1274 in 84s |
+| ta10js | 1241 in 3s | 1241 in 20s |
+| ta11js | 1336 .. 1360 in 600s | 1310 .. 1373 in 600s |
+| ta12js | 1367 in 236s | 1352 .. 1387 in 600s |
+| ta13js | 1326 .. 1343 in 600s | 1279 .. 1348 in 600s |
+| ta14js | 1345 in 0s | 1345 in 9s |
+| ta15js | 1331 .. 1339 in 600s | 1304 .. 1351 in 600s |
+| ta16js | 1338 .. 1368 in 600s | 1300 .. 1370 in 600s |
+| ta17js | 1462 in 2s | 1462 in 88s |
+| ta18js | 1377 .. 1398 in 600s | 1361 .. 1414 in 600s |
+| ta19js | 1322 .. 1345 in 600s | 1299 .. 1368 in 600s |
+| ta20js | 1333 .. 1354 in 600s | 1316 .. 1363 in 600s |
+| ta21js | 1612 .. 1658 in 600s | 1583 .. 1655 in 600s |
+| ta22js | 1561 .. 1623 in 600s | 1533 .. 1613 in 600s |
+| ta23js | 1518 .. 1575 in 600s | 1496 .. 1586 in 600s |
+| ta24js | 1644 in 508s | 1613 .. 1653 in 600s |
+| ta25js | 1562 .. 1617 in 600s | 1531 .. 1619 in 600s |
+| ta26js | 1591 .. 1664 in 600s | 1562 .. 1673 in 600s |
+| ta27js | 1649 .. 1708 in 600s | 1627 .. 1702 in 600s |
+| ta28js | 1603 in 488s | 1588 .. 1609 in 600s |
+| ta29js | 1577 .. 1637 in 600s | 1537 .. 1644 in 600s |
+| ta30js | 1518 .. 1612 in 600s | 1488 .. 1612 in 600s |
+| ta31js | 1764 in 568s | 1764 .. 1768 in 600s |
+| ta32js | 1774 .. 1808 in 600s | 1774 .. 1830 in 600s |
+| ta33js | 1789 .. 1813 in 600s | 1783 .. 1857 in 600s |
+| ta34js | 1828 .. 1849 in 600s | 1828 .. 1846 in 600s |
+| ta35js | 2007 in 1s | 2007 in 11s |
+| ta36js | 1819 .. 1822 in 600s | 1819 in 413s |
+| ta37js | 1771 .. 1787 in 600s | 1771 .. 1812 in 600s |
+| ta38js | 1673 .. 1688 in 600s | 1673 .. 1732 in 600s |
+| ta39js | 1795 in 42s | 1795 in 506s |
+| ta40js | 1652 .. 1720 in 600s | 1643 .. 1745 in 600s |
+| ta41js | 1906 .. 2064 in 600s | 1890 .. 2100 in 600s |
+| ta42js | 1886 .. 1969 in 600s | 1875 .. 1985 in 600s |
+| ta43js | 1809 .. 1890 in 600s | 1809 .. 1941 in 600s |
+| ta44js | 1949 .. 2022 in 600s | 1938 .. 2083 in 600s |
+| ta45js | 1997 .. 2008 in 600s | 1997 .. 2042 in 600s |
+| ta46js | 1962 .. 2060 in 600s | 1945 .. 2057 in 600s |
+| ta47js | 1812 .. 1936 in 600s | 1800 .. 1986 in 600s |
+| ta48js | 1914 .. 1983 in 600s | 1912 .. 2022 in 600s |
+| ta49js | 1932 .. 2007 in 600s | 1927 .. 2051 in 600s |
+| ta50js | 1833 .. 1982 in 600s | 1821 .. 2003 in 600s |
+| ta51js | 2760 in 6s | 2760 in 329s |
+| ta52js | 2756 in 5s | 2756 in 401s |
+| ta53js | 2717 in 2s | 2717 in 104s |
+| ta54js | 2839 in 2s | 2839 in 29s |
+| ta55js | 2679 in 10s | 2679 .. 2693 in 600s |
+| ta56js | 2781 in 4s | 2781 in 105s |
+| ta57js | 2943 in 2s | 2943 in 60s |
+| ta58js | 2885 in 2s | 2885 in 157s |
+| ta59js | 2655 in 7s | 2655 .. 2682 in 600s |
+| ta60js | 2723 in 5s | 2723 in 562s |
+| ta61js | 2868 in 8s | 2868 .. 2916 in 600s |
+| ta62js | 2869 .. 2877 in 600s |  2869 .. 3008 in 600s |
+| ta63js | 2755 in 44s | 2755 .. 2825 in 600s |
+| ta64js | 2702 in 13s | 2702 .. 2756 in 600s |
+| ta65js | 2725 in 29s | 2725 .. 2842 in 600s |
+| ta66js | 2845 in 17s | 2845 .. 2916 in 600s |
+| ta67js | 2825 .. 2826 in 600s | 2825 .. 2869 in 600s |
+| ta68js | 2784 in 6s | 2784 .. 2822 in 600s |
+| ta69js | 3071 in 7s | 3071 in 286s |
+| ta70js | 2995 in 27s | 2995 .. 3109 in 600s |
+| ta71js | 5464 in 18s | 5464 .. 5648 in 600s |
+| ta72js | 5181 in 15s | 5181 .. 5310 in 600s |
+| ta73js | 5568 in 17s | 5568 .. 5648 in 600s |
+| ta74js | 5339 in 13s | 5339 .. 5367 in 600s |
+| ta75js | 5392 in 30s | 5392 .. 5693 in 600s |
+| ta76js | 5342 in 19s | 5342 .. 5475 in 600s |
+| ta77js | 5436 in 12s | 5436 .. 5488 in 600s |
+| ta78js | 5394 in 15s | 5394 .. 5522 in 600s |
+| ta79js | 5358 in 20s | 5358 .. 5463 in 600s |
+| ta80js | 5183 in 15s | 5183 .. 5304 in 600s |
+
+## Testbed for engines
 
 ***We are planning to change the testbed soon and redo this whole section***
 
