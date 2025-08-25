@@ -9,8 +9,8 @@ const params = {
     relativeGapTolerance: 0,
     workers: [
         { searchType: "FDS",   noOverlapPropagationLevel: 4, cumulPropagationLevel: 3 },
+        { searchType: "FDS",   noOverlapPropagationLevel: 4, cumulPropagationLevel: 3 },
         { searchType: "FDSLB", noOverlapPropagationLevel: 4, cumulPropagationLevel: 3, FDSLBStrategy: "Split" },
-        { searchType: "FDSLB", noOverlapPropagationLevel: 4, cumulPropagationLevel: 3, FDSLBStrategy: "Minimum" },
         { searchType: "LNS",   noOverlapPropagationLevel: 2, cumulPropagationLevel: 2 },
     ]
 }
