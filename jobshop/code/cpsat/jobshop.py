@@ -2,8 +2,8 @@ import re
 import os
 from ortools.sat.python import cp_model
 
-instance = "../data/Taillard1993/jobshop/tjs80.txt"
-directory = "../data/Lawrence1984/"
+instance = "../../instances/Taillard1993/jobshop/tjs32.txt"
+directory = "../../instancesd/Lawrence1984/"
 
 def generate(instance):
     lines = open(instance, "r").readlines()

@@ -38,7 +38,7 @@ Instances are divided into
 - **easy** : solved to optimality (with proof) in 1 minute by at least 1 reference engine
 - **medium** : solved to optimality (with proof) in 1 hour by at least 1 reference engine
 - **hard** : solved to optimality (with proof) in > 1h by at least 1 reference engine
-- **presumed closed** : allegedly solved by someone in a paper. Most of the time the optimal solution is known because 2 different methods were used to find upper and lower bounds.
+- **closed** : allegedly solved by someone in a paper. Most of the time the optimal solution is known because 2 different methods were used to find upper and lower bounds.
 - **open** : no proof of optimality
 
 <br/>
@@ -48,55 +48,18 @@ Currently the instances in the openshop benchmark are solved to optimality by Op
 
 ## Formats
 
-There are two main formats, the ***standard***, and the ***taillard***
-
-### Standard format
-
 ```
 #n 
 #m
 ((duration){m}\n){n}
 ```
-For instance `tfs001` in standard format is
+For instance `ta4x4_1os` in  format is
 ```
-20
-5
-54	79	16	66	58	
-83	3	89	58	56	
-15	11	49	31	20	
-71	99	15	68	85	
-77	56	89	78	53	
-36	70	45	91	35	
-53	99	60	13	53	
-38	60	23	59	41	
-27	5	57	49	69	
-87	56	64	85	13	
-76	3	7	85	86	
-91	61	1	9	72	
-14	73	63	39	8	
-29	75	41	41	49	
-12	47	63	56	47	
-77	14	47	40	87	
-32	21	26	54	58	
-87	86	75	77	18	
-68	5	77	51	68	
-94	77	40	31	28	
-```
-
-### Taillard format
-
-The taillard format is the transposed
-
-```
-#n #m
-((duration ){m}\n){n}
-```
-
-For instance `tfs001` in taillard format is
-```
-20
-5
-
+4 4
+34 2 54 61
+15 89 70 9
+38 19 28 87
+95 7 34 29
 ```
 
 <br/>
@@ -144,7 +107,6 @@ The openshop problem can be added the same constraints as the jobshop problem
 - openshop with operators
 
 <br/>
-
 
 # Openshop benchmark results
 

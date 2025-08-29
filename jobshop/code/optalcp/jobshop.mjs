@@ -1,18 +1,21 @@
-
 import * as CP from '@scheduleopt/optalcp'
 import * as fs from 'node:fs/promises'
 
-const directory = "../data/Taillard1993/jobshop/"
+const instance = "../../instances/Taillard1993/ta32js.txt"
+const directory = "../../instances//"
+
+
+const defaults = {  
+    "FDS" :   { searchType: "FDS",   noOverlapPropagationLevel: 4, cumulPropagationLevel: 3, reservoirPropagationLevel: 2 },
+    "FDSLB" : { searchType: "FDS",   noOverlapPropagationLevel: 4, cumulPropagationLevel: 3, reservoirPropagationLevel: 2, FDSLBStrategy: "Split"},
+    "LNS" :   { searchType: "LNS" },
+}
 
 const params = {
     timeLimit: 600,
-    relativeGapTolerance: 0,
-    workers: [
-        { searchType: "FDS",   noOverlapPropagationLevel: 4, cumulPropagationLevel: 3 },
-        { searchType: "FDS",   noOverlapPropagationLevel: 4, cumulPropagationLevel: 3 },
-        { searchType: "FDSLB", noOverlapPropagationLevel: 4, cumulPropagationLevel: 3, FDSLBStrategy: "Split" },
-        { searchType: "LNS",   noOverlapPropagationLevel: 2, cumulPropagationLevel: 2 },
-    ]
+    workers: [ "FDS", "FDSLB", "LNS", "LNS" ].map(v => defaults[v]),
+    usePrecedenceEnergy : 1,
+    packPropagationLevel : 2
 }
 
 const create_model = async filename => {
@@ -63,4 +66,5 @@ const run_once = async filename => {
     if (model) CP.solve(model, params)
 }
 
+//run_once(instance)
 run_benchmark(directory)
