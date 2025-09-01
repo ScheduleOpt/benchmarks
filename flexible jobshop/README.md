@@ -51,9 +51,9 @@ Instances are divided into
 
 Currently the instances divide as follows
 - `mk` : 7 easy, 2 medium, 1 open
-- `edata` : 57 easy, 3 medium, 6 open
-- `rdata` : 43 easy, 4 medium, 19 open
-- `vdata` : 45 easy, 5 medium, 16 open
+- `edata` : 57 easy, 3 medium, 4 hard, 2 open
+- `rdata` : 43 easy, 5 medium, 6 closed, 12 open
+- `vdata` : 47 easy, 8 medium, 1 hard, 9 closed, 1 open
 - `#a` : 3 easy, 1 medium, 14 open
 - `mt` : 7 easy
 - `setb4` : 7 easy
@@ -160,7 +160,14 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>mk08</td><td>20 x 10</td><td>fjsp</td><td>523</td><td>523</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>mk09</td><td>20 x 10</td><td>fjsp</td><td>307</td><td>307</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>mk10</td><td>20 x 15</td><td>fjsp</td><td>189</td><td>193</td><td style="background-color:grey">open</td><td>lb Quintiq / ub Quintiq</td></tr>
+<tr><td>mk11</td><td>30 x 5</td><td>fjsp</td><td>594</td><td>615</td><td style="background-color:grey">open</td><td>CPO in 2012</td></tr>
+<tr><td>mk12</td><td>30 x 10</td><td>fjsp</td><td>320</td><td>508</td><td style="background-color:grey">open</td><td>CPO in 2012</td></tr>
+<tr><td>mk13</td><td>30 x 10</td><td>fjsp</td><td>353</td><td>430</td><td style="background-color:grey">open</td><td>CPO in 2012</td></tr>
+<tr><td>mk14</td><td>30 x 15</td><td>fjsp</td><td>694</td><td>694</td><td style="background-color:purple">closed</td><td>CPO in 2012</td></tr>
+<tr><td>mk15</td><td>30 x 15</td><td>fjsp</td><td>283</td><td>341</td><td style="background-color:grey">open</td><td>CPO in 2012</td></tr>
 </table>
+
+***Instances mk11 to mk15 are only available from the supplementary material of Test Instances for the Flexible Job Shop Scheduling Problem with Work Centers  Research Report RR-12-01-01 · January 2012 · ISSN 2192-0826***
 
 ### Hurink, Jurisch and Thole (1994)
 
@@ -174,9 +181,9 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><th>Instance</th><th>Size</th><th>sdata</th><th>edata</th><th>rdata</th><th>vdata</th><td>Solved by</td></tr>
 <tr><td>abz5</td><td>10 x 10</td><td style="background-color:green">1234</td><td style="background-color:green">1167</td><td style="background-color:green">954</td><td style="background-color:green">859</td><td>OptalCP</td></tr>
 <tr><td>abz6</td><td>10 x 10</td><td style="background-color:green">943</td><td style="background-color:green">925</td><td style="background-color:green">807</td><td style="background-color:green">742</td><td>OptalCP</td></tr>
-<tr><td>abz7</td><td>20 x 15</td><td style="background-color:orange">656</td><td style="background-color:grey">604 / 610</td><td style="background-color:grey">497 / 522</td><td style="background-color:purple">492</td><td>OptalCP, CPO2013 / Quintiq, CdGKGC2025 / DLLSXG2019, Quintiq</td></tr>
+<tr><td>abz7</td><td>20 x 15</td><td style="background-color:orange">656</td><td style="background-color:grey">604 / 610</td><td style="background-color:grey">497 / 522</td><td style="background-color:purple">492</td><td>OptalCP, CPO2013 / Quintiq, CdGKGC2025 / DLLSXG2019, Quintiq / Quintiq</td></tr>
 <tr><td>abz8</td><td>20 x 15</td><td style="background-color:red">667</td><td style="background-color:grey">625 / 636</td><td style="background-color:grey">509 / 535</td><td style="background-color:grey">506 / 507</td><td>OptalCP, CPO2013 / Quintiq, CdGKGC2025 / DLLSXG2019, OptalCP / Quintiq</td></tr>
-<tr><td>abz9</td><td>20 x 15</td><td style="background-color:red">678</td><td style="background-color:red">644</td><td style="background-color:grey">517 / 536</td><td style="background-color:purple">497</td><td>OptalCP, CPO2013, CPO2013 / Quintiq, OptalCP / Quintiq</td></tr>
+<tr><td>abz9</td><td>20 x 15</td><td style="background-color:red">678</td><td style="background-color:red">644</td><td style="background-color:grey">517 / 536</td><td style="background-color:purple">497</td><td>OptalCP, CPO2013 / CPO2013, CPO2013 / Quintiq, OptalCP / Quintiq</td></tr>
 </table>
 
 <table>
@@ -263,7 +270,7 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>01a</td><td>10 x 5</td><td>fjsp</td><td>2505</td><td>2505</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>02a</td><td>10 x 5</td><td>fjsp</td><td>2228</td><td>2228</td><td style="background-color:purple">closed</td><td>lb HHHL2010 / ub Quintiq</td></tr>
+<tr><td>02a</td><td>10 x 5</td><td>fjsp</td><td>2228</td><td>2228</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>03a</td><td>10 x 5</td><td>fjsp</td><td>2228</td><td>2228</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>04a</td><td>10 x 5</td><td>fjsp</td><td>2503</td><td>2503</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>05a</td><td>10 x 5</td><td>fjsp</td><td>2195</td><td>2199</td><td style="background-color:grey">open</td><td>lb CdGKGC2025 / ub CdGKGC2025</td></tr>
@@ -420,11 +427,11 @@ The upper and lower bounds come from
 
  - Quintiq (37 bounds in mk, #a, abz, car and la) : **Quintiq** http://www.quintiq.com/optimization/fjssp-world-records.html (2013) - this site doesn't exist anymore
 
-- CPO2013 (10 bounds in #a, abz and la) : **Jean-François Puget** Solving flexible job shop scheduling problems (cp optimizer 12.6)  https://www.ibm.com/developerworks/community/blogs/jfp/entry/solving\_flexible\_job\_shop\_scheduling\_problems?lang=en (2013) - this site doesn't exist anymore
+- CPO2013 (11 bounds in #a, abz and la) : **Jean-François Puget** Solving flexible job shop scheduling problems (cp optimizer 12.6)  https://www.ibm.com/developerworks/community/blogs/jfp/entry/solving\_flexible\_job\_shop\_scheduling\_problems?lang=en (2013) - this site doesn't exist anymore
 
-- HHHL2010 (4 bounds in #a) : **A. B. Hmida, M. Haouari, M.-J. Huguet, P. Lopez**, Discrepancy search for the flexible job shop scheduling problem, Computers & Operations Research 37 (12) (2010) 2192–2201
+- HHHL2010 (3 bounds in #a) : **A. B. Hmida, M. Haouari, M.-J. Huguet, P. Lopez**, Discrepancy search for the flexible job shop scheduling problem, Computers & Operations Research 37 (12) (2010) 2192–2201
 
-- DLLSXG2019 (10 bonds in #a, abz, car and la ) : **J. Ding, Z. Lu, C.-M. Li, L. Shen, L. Xu, F. Glover** (2019) A two-individual based evolutionary algorithm for the flexible job shop scheduling problem, in: Proceedings of the AAAI Conference on Artificial Intelligence, Vol. 33, 2019, pp. 2262–2271
+- DLLSXG2019 (8 bonds in #a, abz, car and la ) : **J. Ding, Z. Lu, C.-M. Li, L. Shen, L. Xu, F. Glover** (2019) A two-individual based evolutionary algorithm for the flexible job shop scheduling problem, in: Proceedings of the AAAI Conference on Artificial Intelligence, Vol. 33, 2019, pp. 2262–2271
 
 - CdGKGC2025 (16 bounds in #a, abz, car and la) : **Marc-Emmanuel Coupvent des Graviers, Lotfi Kobrosly, Christophe Guettier, and Tristan Cazenave** (2025). Updating Lower and Upper Bounds for the Job-Shop Scheduling Problem Test Instances CoRR abs/2504.16106
 
