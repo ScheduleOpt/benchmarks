@@ -1,4 +1,14 @@
-# The flexible jobshop problem and benchmark
+---
+layout: page
+title: FJSPLib
+permalink: /fjsplib/
+nav_order: 1
+---
+
+# The flexible jobshop benchmark
+
+The FJSPLib is a benchmark of flexible jobshop problems with their best known solutions to date.
+Problems come from a variety of publications (all referenced). The best solutions known to date (upper bound and lower bound) are provided with the corresponding publication or engine that attained it.
 
 ## Table of Contents
 
@@ -12,12 +22,6 @@
     - [Publications](#publications-best-known-solutions)
 
 <br/>
-
-# Flexible jobshop benchmark instances
-
-The flexible jobshop benchmark problems have been collected from the literature from 1993 to 2012. Some are modified versions of JSPLIB jobshop problems, but some instances come from industrial problems.
-
-On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
 
 ## Overview of the flexible jobshop benchmark
 

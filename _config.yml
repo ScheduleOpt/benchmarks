@@ -1,0 +1,8 @@
+title: Scheduling benchmark
+description: Scheduling benchmarks for optimization engines
+url: https://scheduleopt.github.io/
+baseurl: /
+
+theme: minima
+plugins:
+  - jekyll-feed

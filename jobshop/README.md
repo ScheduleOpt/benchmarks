@@ -1,4 +1,13 @@
-# The Jobshop problem and benchmark
+---
+layout: page
+title: JSPLib
+permalink: /jsplib/
+nav_order: 2
+---
+
+# The jobshop benchmark
+
+The JSPLib is an informal group of instances (`ft`, `la`, `abz`, `orb`, `swv`, `yn`, `ta`, `dmu` to which we added `tai`, `long` and `short`) that have been used to investigate solution methods for the jobshop problem. On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
 
 ## Table of Contents
 
@@ -24,10 +33,6 @@
 - [Test instances for algorithms](#test-instances)
 
 <br/>
-
-# Jobshop benchmark instances
-
-The JSPLib is an informal group of instances (`ft`, `la`, `abz`, `orb`, `swv`, `yn`, `ta`, `dmu` to which we added `tai`, `long` and `short`) that have been used to investigate solution methods for the jobshop problem. On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
 
 ## Overview of the jobshop benchmark
 
@@ -1107,7 +1112,7 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 
 ## Testbed for engines
 
-***We are planning to change the testbed soon and redo this whole section***
+***These tests are completely OUTDATED (very old versions of both engines, old hardware). We are planning to change the testbed soon and redo this whole section***
 
 Comparing your algorithm with the best known results is usually unfair (we don't know how long the the algorithms were ran to obtain the results, nor whether the published results are indeed valid)
 
