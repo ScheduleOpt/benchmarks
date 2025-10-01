@@ -154,21 +154,21 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>mk01</td><td>10 x 6</td><td>fjsp</td><td>40</td><td>40</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mk02</td><td>10 x 6</td><td>fjsp</td><td>26</td><td>26</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mk03</td><td>15 x 8</td><td>fjsp</td><td>204</td><td>204</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mk04</td><td>15 x 8</td><td>fjsp</td><td>60</td><td>60</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mk05</td><td>15 x 4</td><td>fjsp</td><td>172</td><td>172</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mk06</td><td>10 x 15</td><td>fjsp</td><td>57</td><td>57</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>mk07</td><td>20 x 5</td><td>fjsp</td><td>139</td><td>139</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>mk08</td><td>20 x 10</td><td>fjsp</td><td>523</td><td>523</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mk09</td><td>20 x 10</td><td>fjsp</td><td>307</td><td>307</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mk10</td><td>20 x 15</td><td>fjsp</td><td>189</td><td>193</td><td style="background-color:grey">open</td><td>lb Quintiq / ub Quintiq</td></tr>
-<tr><td>mk11</td><td>30 x 5</td><td>fjsp</td><td>594</td><td>615</td><td style="background-color:grey">open</td><td>CPO in 2012</td></tr>
-<tr><td>mk12</td><td>30 x 10</td><td>fjsp</td><td>320</td><td>508</td><td style="background-color:grey">open</td><td>CPO in 2012</td></tr>
-<tr><td>mk13</td><td>30 x 10</td><td>fjsp</td><td>353</td><td>430</td><td style="background-color:grey">open</td><td>CPO in 2012</td></tr>
-<tr><td>mk14</td><td>30 x 15</td><td>fjsp</td><td>694</td><td>694</td><td style="background-color:purple">closed</td><td>CPO in 2012</td></tr>
-<tr><td>mk15</td><td>30 x 15</td><td>fjsp</td><td>283</td><td>341</td><td style="background-color:grey">open</td><td>CPO in 2012</td></tr>
+<tr><td>mk01</td><td>10 x 6</td><td>fjsp</td><td>40</td><td>40</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mk02</td><td>10 x 6</td><td>fjsp</td><td>26</td><td>26</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mk03</td><td>15 x 8</td><td>fjsp</td><td>204</td><td>204</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mk04</td><td>15 x 8</td><td>fjsp</td><td>60</td><td>60</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mk05</td><td>15 x 4</td><td>fjsp</td><td>172</td><td>172</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mk06</td><td>10 x 15</td><td>fjsp</td><td>57</td><td>57</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>mk07</td><td>20 x 5</td><td>fjsp</td><td>139</td><td>139</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>mk08</td><td>20 x 10</td><td>fjsp</td><td>523</td><td>523</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mk09</td><td>20 x 10</td><td>fjsp</td><td>307</td><td>307</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mk10</td><td>20 x 15</td><td>fjsp</td><td>189</td><td>193</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb Quintiq / ub Quintiq</td></tr>
+<tr><td>mk11</td><td>30 x 5</td><td>fjsp</td><td>594</td><td>615</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>CPO in 2012</td></tr>
+<tr><td>mk12</td><td>30 x 10</td><td>fjsp</td><td>320</td><td>508</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>CPO in 2012</td></tr>
+<tr><td>mk13</td><td>30 x 10</td><td>fjsp</td><td>353</td><td>430</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>CPO in 2012</td></tr>
+<tr><td>mk14</td><td>30 x 15</td><td>fjsp</td><td>694</td><td>694</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>CPO in 2012</td></tr>
+<tr><td>mk15</td><td>30 x 15</td><td>fjsp</td><td>283</td><td>341</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>CPO in 2012</td></tr>
 </table>
 
 ***Instances mk11 to mk15 are only available from the supplementary material of Test Instances for the Flexible Job Shop Scheduling Problem with Work Centers  Research Report RR-12-01-01 · January 2012 · ISSN 2192-0826***
@@ -183,88 +183,88 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>sdata</th><th>edata</th><th>rdata</th><th>vdata</th><td>Solved by</td></tr>
-<tr><td>abz5</td><td>10 x 10</td><td style="background-color:green">1234</td><td style="background-color:green">1167</td><td style="background-color:green">954</td><td style="background-color:green">859</td><td>OptalCP</td></tr>
-<tr><td>abz6</td><td>10 x 10</td><td style="background-color:green">943</td><td style="background-color:green">925</td><td style="background-color:green">807</td><td style="background-color:green">742</td><td>OptalCP</td></tr>
-<tr><td>abz7</td><td>20 x 15</td><td style="background-color:orange">656</td><td style="background-color:grey">604 / 610</td><td style="background-color:grey">497 / 522</td><td style="background-color:purple">492</td><td>OptalCP, CPO2013 / Quintiq, CdGKGC2025 / DLLSXG2019, Quintiq / Quintiq</td></tr>
-<tr><td>abz8</td><td>20 x 15</td><td style="background-color:red">667</td><td style="background-color:grey">625 / 636</td><td style="background-color:grey">509 / 535</td><td style="background-color:grey">506 / 507</td><td>OptalCP, CPO2013 / Quintiq, CdGKGC2025 / DLLSXG2019, OptalCP / Quintiq</td></tr>
-<tr><td>abz9</td><td>20 x 15</td><td style="background-color:red">678</td><td style="background-color:red">644</td><td style="background-color:grey">517 / 536</td><td style="background-color:purple">497</td><td>OptalCP, CPO2013 / CPO2013, CPO2013 / Quintiq, OptalCP / Quintiq</td></tr>
+<tr><td>abz5</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">1234</td><td style="background-color:green;color:white;font-weight:bold">1167</td><td style="background-color:green;color:white;font-weight:bold">954</td><td style="background-color:green;color:white;font-weight:bold">859</td><td>OptalCP</td></tr>
+<tr><td>abz6</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">943</td><td style="background-color:green;color:white;font-weight:bold">925</td><td style="background-color:green;color:white;font-weight:bold">807</td><td style="background-color:green;color:white;font-weight:bold">742</td><td>OptalCP</td></tr>
+<tr><td>abz7</td><td>20 x 15</td><td style="background-color:orange;color:white;font-weight:bold">656</td><td style="background-color:grey;color:white;font-weight:bold">604 / 610</td><td style="background-color:grey;color:white;font-weight:bold">497 / 522</td><td style="background-color:purple;color:white;font-weight:bold">492</td><td>OptalCP, CPO2013 / Quintiq, CdGKGC2025 / DLLSXG2019, Quintiq / Quintiq</td></tr>
+<tr><td>abz8</td><td>20 x 15</td><td style="background-color:red;color:white;font-weight:bold">667</td><td style="background-color:grey;color:white;font-weight:bold">625 / 636</td><td style="background-color:grey;color:white;font-weight:bold">509 / 535</td><td style="background-color:grey;color:white;font-weight:bold">506 / 507</td><td>OptalCP, CPO2013 / Quintiq, CdGKGC2025 / DLLSXG2019, OptalCP / Quintiq</td></tr>
+<tr><td>abz9</td><td>20 x 15</td><td style="background-color:red;color:white;font-weight:bold">678</td><td style="background-color:red;color:white;font-weight:bold">644</td><td style="background-color:grey;color:white;font-weight:bold">517 / 536</td><td style="background-color:purple;color:white;font-weight:bold">497</td><td>OptalCP, CPO2013 / CPO2013, CPO2013 / Quintiq, OptalCP / Quintiq</td></tr>
 </table>
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>sdata</th><th>edata</th><th>rdata</th><th>vdata</th><td>Solved by</td></tr>
-<tr><td>car1</td><td>11 x 5</td><td style="background-color:green">7038</td><td style="background-color:green">6176</td><td style="background-color:orange">5034</td><td style="background-color:purple">5005</td><td>OptalCP, OptalCP / Quintiq</td></tr>
-<tr><td>car2</td><td>13 x 4</td><td style="background-color:green">7166</td><td style="background-color:green">6327</td><td style="background-color:green">5985</td><td style="background-color:green">5929</td><td>OptalCP</td></tr>
-<tr><td>car3</td><td>12 x 5</td><td style="background-color:green">7312</td><td style="background-color:green">6856</td><td style="background-color:purple">5622</td><td style="background-color:orange">5597</td><td>OptalCP, Quintiq / Quintiq</td></tr>
-<tr><td>car4</td><td>14 x 4</td><td style="background-color:green">8003</td><td style="background-color:green">7789</td><td style="background-color:green">6514</td><td style="background-color:green">6514</td><td>OptalCP</td></tr>
-<tr><td>car5</td><td>10 x 6</td><td style="background-color:green">7702</td><td style="background-color:green">7229</td><td style="background-color:green">5615</td><td style="background-color:purple">4909</td><td>OptalCP, OptalCP / CdGKGC2025</td></tr>
-<tr><td>car6</td><td>8 x 9</td><td style="background-color:green">8313</td><td style="background-color:green">7990</td><td style="background-color:green">6147</td><td style="background-color:green">5486</td><td>OptalCP</td></tr>
-<tr><td>car7</td><td>7 x 7</td><td style="background-color:green">6558</td><td style="background-color:green">6123</td><td style="background-color:green">4425</td><td style="background-color:green">4281</td><td>OptalCP</td></tr>
-<tr><td>car8</td><td>8 x 8</td><td style="background-color:green">8264</td><td style="background-color:green">7689</td><td style="background-color:green">5692</td><td style="background-color:green">4613</td><td>OptalCP</td></tr>
+<tr><td>car1</td><td>11 x 5</td><td style="background-color:green;color:white;font-weight:bold">7038</td><td style="background-color:green;color:white;font-weight:bold">6176</td><td style="background-color:orange;color:white;font-weight:bold">5034</td><td style="background-color:purple;color:white;font-weight:bold">5005</td><td>OptalCP, OptalCP / Quintiq</td></tr>
+<tr><td>car2</td><td>13 x 4</td><td style="background-color:green;color:white;font-weight:bold">7166</td><td style="background-color:green;color:white;font-weight:bold">6327</td><td style="background-color:green;color:white;font-weight:bold">5985</td><td style="background-color:green;color:white;font-weight:bold">5929</td><td>OptalCP</td></tr>
+<tr><td>car3</td><td>12 x 5</td><td style="background-color:green;color:white;font-weight:bold">7312</td><td style="background-color:green;color:white;font-weight:bold">6856</td><td style="background-color:purple;color:white;font-weight:bold">5622</td><td style="background-color:orange;color:white;font-weight:bold">5597</td><td>OptalCP, Quintiq / Quintiq</td></tr>
+<tr><td>car4</td><td>14 x 4</td><td style="background-color:green;color:white;font-weight:bold">8003</td><td style="background-color:green;color:white;font-weight:bold">7789</td><td style="background-color:green;color:white;font-weight:bold">6514</td><td style="background-color:green;color:white;font-weight:bold">6514</td><td>OptalCP</td></tr>
+<tr><td>car5</td><td>10 x 6</td><td style="background-color:green;color:white;font-weight:bold">7702</td><td style="background-color:green;color:white;font-weight:bold">7229</td><td style="background-color:green;color:white;font-weight:bold">5615</td><td style="background-color:purple;color:white;font-weight:bold">4909</td><td>OptalCP, OptalCP / CdGKGC2025</td></tr>
+<tr><td>car6</td><td>8 x 9</td><td style="background-color:green;color:white;font-weight:bold">8313</td><td style="background-color:green;color:white;font-weight:bold">7990</td><td style="background-color:green;color:white;font-weight:bold">6147</td><td style="background-color:green;color:white;font-weight:bold">5486</td><td>OptalCP</td></tr>
+<tr><td>car7</td><td>7 x 7</td><td style="background-color:green;color:white;font-weight:bold">6558</td><td style="background-color:green;color:white;font-weight:bold">6123</td><td style="background-color:green;color:white;font-weight:bold">4425</td><td style="background-color:green;color:white;font-weight:bold">4281</td><td>OptalCP</td></tr>
+<tr><td>car8</td><td>8 x 8</td><td style="background-color:green;color:white;font-weight:bold">8264</td><td style="background-color:green;color:white;font-weight:bold">7689</td><td style="background-color:green;color:white;font-weight:bold">5692</td><td style="background-color:green;color:white;font-weight:bold">4613</td><td>OptalCP</td></tr>
 </table>
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>sdata</th><th>edata</th><th>rdata</th><th>vdata</th><td>Solved by</td></tr>
-<tr><td>la01</td><td>10 x 5</td><td style="background-color:green">666</td><td style="background-color:green">609</td><td style="background-color:orange">570</td><td style="background-color:green">570</td><td>OptalCP</td></tr>
-<tr><td>la02</td><td>10 x 5</td><td style="background-color:green">655</td><td style="background-color:green">655</td><td style="background-color:green">529</td><td style="background-color:green">529</td><td>OptalCP</td></tr>
-<tr><td>la03</td><td>10 x 5</td><td style="background-color:green">597</td><td style="background-color:green">550</td><td style="background-color:green">477</td><td style="background-color:green">477</td><td>OptalCP</td></tr>
-<tr><td>la04</td><td>10 x 5</td><td style="background-color:green">590</td><td style="background-color:green">568</td><td style="background-color:green">502</td><td style="background-color:green">502</td><td>OptalCP</td></tr>
-<tr><td>la05</td><td>10 x 5</td><td style="background-color:green">593</td><td style="background-color:green">503</td><td style="background-color:green">457</td><td style="background-color:green">457</td><td>OptalCP</td></tr>
-<tr><td>la06</td><td>15 x 5</td><td style="background-color:green">926</td><td style="background-color:green">833</td><td style="background-color:green">799</td><td style="background-color:green">799</td><td>OptalCP</td></tr>
-<tr><td>la07</td><td>15 x 5</td><td style="background-color:green">890</td><td style="background-color:green">762</td><td style="background-color:green">749</td><td style="background-color:green">749</td><td>OptalCP</td></tr>
-<tr><td>la08</td><td>15 x 5</td><td style="background-color:green">863</td><td style="background-color:green">845</td><td style="background-color:green">765</td><td style="background-color:green">765</td><td>OptalCP</td></tr>
-<tr><td>la09</td><td>15 x 5</td><td style="background-color:green">951</td><td style="background-color:green">878</td><td style="background-color:green">853</td><td style="background-color:green">853</td><td>OptalCP</td></tr>
-<tr><td>la10</td><td>15 x 5</td><td style="background-color:green">958</td><td style="background-color:green">866</td><td style="background-color:green">804</td><td style="background-color:green">804</td><td>OptalCP</td></tr>
-<tr><td>la11</td><td>20 x 5</td><td style="background-color:green">1222</td><td style="background-color:green">1103</td><td style="background-color:green">1071</td><td style="background-color:green">1071</td><td>OptalCP</td></tr>
-<tr><td>la12</td><td>20 x 5</td><td style="background-color:green">1039</td><td style="background-color:green">960</td><td style="background-color:green">936</td><td style="background-color:green">936</td><td>OptalCP</td></tr>
-<tr><td>la13</td><td>20 x 5</td><td style="background-color:green">1150</td><td style="background-color:green">1053</td><td style="background-color:green">1038</td><td style="background-color:green">1038</td><td>OptalCP</td></tr>
-<tr><td>la14</td><td>20 x 5</td><td style="background-color:green">1292</td><td style="background-color:green">1123</td><td style="background-color:green">1070</td><td style="background-color:green">1070</td><td>OptalCP</td></tr>
-<tr><td>la15</td><td>20 x 5</td><td style="background-color:green">1207</td><td style="background-color:green">1111</td><td style="background-color:green">1089</td><td style="background-color:green">1089</td><td>OptalCP</td></tr>
-<tr><td>la16</td><td>10 x 10</td><td style="background-color:green">945</td><td style="background-color:green">892</td><td style="background-color:green">717</td><td style="background-color:green">717</td><td>OptalCP</td></tr>
-<tr><td>la17</td><td>10 x 10</td><td style="background-color:green">784</td><td style="background-color:green">707</td><td style="background-color:green">646</td><td style="background-color:green">646</td><td>OptalCP</td></tr>
-<tr><td>la18</td><td>10 x 10</td><td style="background-color:green">848</td><td style="background-color:green">842</td><td style="background-color:green">666</td><td style="background-color:green">663</td><td>OptalCP</td></tr>
-<tr><td>la19</td><td>10 x 10</td><td style="background-color:green">842</td><td style="background-color:green">796</td><td style="background-color:green">700</td><td style="background-color:green">617</td><td>OptalCP</td></tr>
-<tr><td>la20</td><td>10 x 10</td><td style="background-color:green">902</td><td style="background-color:green">857</td><td style="background-color:green">756</td><td style="background-color:green">756</td><td>OptalCP</td></tr>
-<tr><td>la21</td><td>15 x 10</td><td style="background-color:green">1046</td><td style="background-color:green">1009</td><td style="background-color:grey">809 / 825</td><td style="background-color:orange">800</td><td>OptalCP, CdGKGC2025 / Quintiq</td></tr>
-<tr><td>la22</td><td>15 x 10</td><td style="background-color:green">927</td><td style="background-color:green">880</td><td style="background-color:grey">745 / 753</td><td style="background-color:red">733</td><td>OptalCP, CdGKGC2025 / DLLSXG2019, OptalCP / CPO2013</td></tr>
-<tr><td>la23</td><td>15 x 10</td><td style="background-color:green">1032</td><td style="background-color:green">950</td><td style="background-color:grey">820 / 831</td><td style="background-color:purple">809</td><td>OptalCP, CdGKGC2025 / DLLSXG2019, OptalCP / Quintiq</td></tr>
-<tr><td>la24</td><td>15 x 10</td><td style="background-color:green">935</td><td style="background-color:green">908</td><td style="background-color:grey">780 / 795</td><td style="background-color:purple">773</td><td>OptalCP, CdGKGC2025 / DLLSXG2019, OptalCP / Quintiq</td></tr>
-<tr><td>la25</td><td>15 x 10</td><td style="background-color:green">977</td><td style="background-color:green">936</td><td style="background-color:grey">771 / 779</td><td style="background-color:purple">751</td><td>OptalCP, CdGKGC2025 / DLLSXG2019, OptalCP / Quintiq</td></tr>
-<tr><td>la26</td><td>20 x 10</td><td style="background-color:green">1218</td><td style="background-color:orange">1106</td><td style="background-color:grey">1056 / 1057</td><td style="background-color:orange">1052</td><td>OptalCP, MG2000 / Quintiq</td></tr>
-<tr><td>la27</td><td>20 x 10</td><td style="background-color:green">1235</td><td style="background-color:green">1181</td><td style="background-color:purple">1085</td><td style="background-color:orange">1084</td><td>OptalCP, MG2000 / Quintiq</td></tr>
-<tr><td>la28</td><td>20 x 10</td><td style="background-color:green">1216</td><td style="background-color:red">1142</td><td style="background-color:grey">1075 / 1076</td><td style="background-color:orange">1069</td><td>OptalCP, CPO2013, MG2000 / Quintiq</td></tr>
-<tr><td>la29</td><td>20 x 10</td><td style="background-color:orange">1152</td><td style="background-color:red">1107</td><td style="background-color:grey">993 / 994</td><td style="background-color:purple">993</td><td>OptalCP, CPO2013, OptalCP / Quintiq, OptalCP / Quintiq</td></tr>
-<tr><td>la30</td><td>20 x 10</td><td style="background-color:green">1355</td><td style="background-color:red">1188</td><td style="background-color:grey">1068 / 1071</td><td style="background-color:purple">1068</td><td>OptalCP, CPO2013, OptalCP / Quintiq, OptalCP / Quintiq</td></tr>
-<tr><td>la31</td><td>30 x 10</td><td style="background-color:green">1784</td><td style="background-color:orange">1532</td><td style="background-color:orange">1520</td><td style="background-color:orange">1520</td><td>OptalCP</td></tr>
-<tr><td>la32</td><td>30 x 10</td><td style="background-color:green">1850</td><td style="background-color:green">1698</td><td style="background-color:purple">1657</td><td style="background-color:purple">1657</td><td>OptalCP, OptalCP / Quintiq, OptalCP / Quintiq</td></tr>
-<tr><td>la33</td><td>30 x 10</td><td style="background-color:green">1719</td><td style="background-color:green">1547</td><td style="background-color:purple">1497</td><td style="background-color:purple">1497</td><td>OptalCP, OptalCP / Quintiq, OptalCP / MG2000</td></tr>
-<tr><td>la34</td><td>30 x 10</td><td style="background-color:green">1721</td><td style="background-color:green">1599</td><td style="background-color:purple">1535</td><td style="background-color:orange">1535</td><td>OptalCP, OptalCP / Quintiq,</td></tr>
-<tr><td>la35</td><td>30 x 10</td><td style="background-color:green">1888</td><td style="background-color:green">1736</td><td style="background-color:purple">1549</td><td style="background-color:orange">1549</td><td>OptalCP, OptalCP / Quintiq</td></tr>
-<tr><td>la36</td><td>15 x 15</td><td style="background-color:green">1268</td><td style="background-color:green">1160</td><td style="background-color:green">1023</td><td style="background-color:green">948</td><td>OptalCP</td></tr>
-<tr><td>la37</td><td>15 x 15</td><td style="background-color:green">1397</td><td style="background-color:green">1397</td><td style="background-color:orange">1062</td><td style="background-color:green">986</td><td>OptalCP</td></tr>
-<tr><td>la38</td><td>15 x 15</td><td style="background-color:orange">1196</td><td style="background-color:green">1141</td><td style="background-color:green">954</td><td style="background-color:green">943</td><td>OptalCP</td></tr>
-<tr><td>la39</td><td>15 x 15</td><td style="background-color:green">1233</td><td style="background-color:green">1184</td><td style="background-color:green">1011</td><td style="background-color:green">922</td><td>OptalCP</td></tr>
-<tr><td>la40</td><td>15 x 15</td><td style="background-color:green">1222</td><td style="background-color:orange">1144</td><td style="background-color:orange">955</td><td style="background-color:green">955</td><td>OptalCP</td></tr>
+<tr><td>la01</td><td>10 x 5</td><td style="background-color:green;color:white;font-weight:bold">666</td><td style="background-color:green;color:white;font-weight:bold">609</td><td style="background-color:orange;color:white;font-weight:bold">570</td><td style="background-color:green;color:white;font-weight:bold">570</td><td>OptalCP</td></tr>
+<tr><td>la02</td><td>10 x 5</td><td style="background-color:green;color:white;font-weight:bold">655</td><td style="background-color:green;color:white;font-weight:bold">655</td><td style="background-color:green;color:white;font-weight:bold">529</td><td style="background-color:green;color:white;font-weight:bold">529</td><td>OptalCP</td></tr>
+<tr><td>la03</td><td>10 x 5</td><td style="background-color:green;color:white;font-weight:bold">597</td><td style="background-color:green;color:white;font-weight:bold">550</td><td style="background-color:green;color:white;font-weight:bold">477</td><td style="background-color:green;color:white;font-weight:bold">477</td><td>OptalCP</td></tr>
+<tr><td>la04</td><td>10 x 5</td><td style="background-color:green;color:white;font-weight:bold">590</td><td style="background-color:green;color:white;font-weight:bold">568</td><td style="background-color:green;color:white;font-weight:bold">502</td><td style="background-color:green;color:white;font-weight:bold">502</td><td>OptalCP</td></tr>
+<tr><td>la05</td><td>10 x 5</td><td style="background-color:green;color:white;font-weight:bold">593</td><td style="background-color:green;color:white;font-weight:bold">503</td><td style="background-color:green;color:white;font-weight:bold">457</td><td style="background-color:green;color:white;font-weight:bold">457</td><td>OptalCP</td></tr>
+<tr><td>la06</td><td>15 x 5</td><td style="background-color:green;color:white;font-weight:bold">926</td><td style="background-color:green;color:white;font-weight:bold">833</td><td style="background-color:green;color:white;font-weight:bold">799</td><td style="background-color:green;color:white;font-weight:bold">799</td><td>OptalCP</td></tr>
+<tr><td>la07</td><td>15 x 5</td><td style="background-color:green;color:white;font-weight:bold">890</td><td style="background-color:green;color:white;font-weight:bold">762</td><td style="background-color:green;color:white;font-weight:bold">749</td><td style="background-color:green;color:white;font-weight:bold">749</td><td>OptalCP</td></tr>
+<tr><td>la08</td><td>15 x 5</td><td style="background-color:green;color:white;font-weight:bold">863</td><td style="background-color:green;color:white;font-weight:bold">845</td><td style="background-color:green;color:white;font-weight:bold">765</td><td style="background-color:green;color:white;font-weight:bold">765</td><td>OptalCP</td></tr>
+<tr><td>la09</td><td>15 x 5</td><td style="background-color:green;color:white;font-weight:bold">951</td><td style="background-color:green;color:white;font-weight:bold">878</td><td style="background-color:green;color:white;font-weight:bold">853</td><td style="background-color:green;color:white;font-weight:bold">853</td><td>OptalCP</td></tr>
+<tr><td>la10</td><td>15 x 5</td><td style="background-color:green;color:white;font-weight:bold">958</td><td style="background-color:green;color:white;font-weight:bold">866</td><td style="background-color:green;color:white;font-weight:bold">804</td><td style="background-color:green;color:white;font-weight:bold">804</td><td>OptalCP</td></tr>
+<tr><td>la11</td><td>20 x 5</td><td style="background-color:green;color:white;font-weight:bold">1222</td><td style="background-color:green;color:white;font-weight:bold">1103</td><td style="background-color:green;color:white;font-weight:bold">1071</td><td style="background-color:green;color:white;font-weight:bold">1071</td><td>OptalCP</td></tr>
+<tr><td>la12</td><td>20 x 5</td><td style="background-color:green;color:white;font-weight:bold">1039</td><td style="background-color:green;color:white;font-weight:bold">960</td><td style="background-color:green;color:white;font-weight:bold">936</td><td style="background-color:green;color:white;font-weight:bold">936</td><td>OptalCP</td></tr>
+<tr><td>la13</td><td>20 x 5</td><td style="background-color:green;color:white;font-weight:bold">1150</td><td style="background-color:green;color:white;font-weight:bold">1053</td><td style="background-color:green;color:white;font-weight:bold">1038</td><td style="background-color:green;color:white;font-weight:bold">1038</td><td>OptalCP</td></tr>
+<tr><td>la14</td><td>20 x 5</td><td style="background-color:green;color:white;font-weight:bold">1292</td><td style="background-color:green;color:white;font-weight:bold">1123</td><td style="background-color:green;color:white;font-weight:bold">1070</td><td style="background-color:green;color:white;font-weight:bold">1070</td><td>OptalCP</td></tr>
+<tr><td>la15</td><td>20 x 5</td><td style="background-color:green;color:white;font-weight:bold">1207</td><td style="background-color:green;color:white;font-weight:bold">1111</td><td style="background-color:green;color:white;font-weight:bold">1089</td><td style="background-color:green;color:white;font-weight:bold">1089</td><td>OptalCP</td></tr>
+<tr><td>la16</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">945</td><td style="background-color:green;color:white;font-weight:bold">892</td><td style="background-color:green;color:white;font-weight:bold">717</td><td style="background-color:green;color:white;font-weight:bold">717</td><td>OptalCP</td></tr>
+<tr><td>la17</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">784</td><td style="background-color:green;color:white;font-weight:bold">707</td><td style="background-color:green;color:white;font-weight:bold">646</td><td style="background-color:green;color:white;font-weight:bold">646</td><td>OptalCP</td></tr>
+<tr><td>la18</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">848</td><td style="background-color:green;color:white;font-weight:bold">842</td><td style="background-color:green;color:white;font-weight:bold">666</td><td style="background-color:green;color:white;font-weight:bold">663</td><td>OptalCP</td></tr>
+<tr><td>la19</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">842</td><td style="background-color:green;color:white;font-weight:bold">796</td><td style="background-color:green;color:white;font-weight:bold">700</td><td style="background-color:green;color:white;font-weight:bold">617</td><td>OptalCP</td></tr>
+<tr><td>la20</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">902</td><td style="background-color:green;color:white;font-weight:bold">857</td><td style="background-color:green;color:white;font-weight:bold">756</td><td style="background-color:green;color:white;font-weight:bold">756</td><td>OptalCP</td></tr>
+<tr><td>la21</td><td>15 x 10</td><td style="background-color:green;color:white;font-weight:bold">1046</td><td style="background-color:green;color:white;font-weight:bold">1009</td><td style="background-color:grey;color:white;font-weight:bold">809 / 825</td><td style="background-color:orange;color:white;font-weight:bold">800</td><td>OptalCP, CdGKGC2025 / Quintiq</td></tr>
+<tr><td>la22</td><td>15 x 10</td><td style="background-color:green;color:white;font-weight:bold">927</td><td style="background-color:green;color:white;font-weight:bold">880</td><td style="background-color:grey;color:white;font-weight:bold">745 / 753</td><td style="background-color:red;color:white;font-weight:bold">733</td><td>OptalCP, CdGKGC2025 / DLLSXG2019, OptalCP / CPO2013</td></tr>
+<tr><td>la23</td><td>15 x 10</td><td style="background-color:green;color:white;font-weight:bold">1032</td><td style="background-color:green;color:white;font-weight:bold">950</td><td style="background-color:grey;color:white;font-weight:bold">820 / 831</td><td style="background-color:purple;color:white;font-weight:bold">809</td><td>OptalCP, CdGKGC2025 / DLLSXG2019, OptalCP / Quintiq</td></tr>
+<tr><td>la24</td><td>15 x 10</td><td style="background-color:green;color:white;font-weight:bold">935</td><td style="background-color:green;color:white;font-weight:bold">908</td><td style="background-color:grey;color:white;font-weight:bold">780 / 795</td><td style="background-color:purple;color:white;font-weight:bold">773</td><td>OptalCP, CdGKGC2025 / DLLSXG2019, OptalCP / Quintiq</td></tr>
+<tr><td>la25</td><td>15 x 10</td><td style="background-color:green;color:white;font-weight:bold">977</td><td style="background-color:green;color:white;font-weight:bold">936</td><td style="background-color:grey;color:white;font-weight:bold">771 / 779</td><td style="background-color:purple;color:white;font-weight:bold">751</td><td>OptalCP, CdGKGC2025 / DLLSXG2019, OptalCP / Quintiq</td></tr>
+<tr><td>la26</td><td>20 x 10</td><td style="background-color:green;color:white;font-weight:bold">1218</td><td style="background-color:orange;color:white;font-weight:bold">1106</td><td style="background-color:grey;color:white;font-weight:bold">1056 / 1057</td><td style="background-color:orange;color:white;font-weight:bold">1052</td><td>OptalCP, MG2000 / Quintiq</td></tr>
+<tr><td>la27</td><td>20 x 10</td><td style="background-color:green;color:white;font-weight:bold">1235</td><td style="background-color:green;color:white;font-weight:bold">1181</td><td style="background-color:purple;color:white;font-weight:bold">1085</td><td style="background-color:orange;color:white;font-weight:bold">1084</td><td>OptalCP, MG2000 / Quintiq</td></tr>
+<tr><td>la28</td><td>20 x 10</td><td style="background-color:green;color:white;font-weight:bold">1216</td><td style="background-color:red;color:white;font-weight:bold">1142</td><td style="background-color:grey;color:white;font-weight:bold">1075 / 1076</td><td style="background-color:orange;color:white;font-weight:bold">1069</td><td>OptalCP, CPO2013, MG2000 / Quintiq</td></tr>
+<tr><td>la29</td><td>20 x 10</td><td style="background-color:orange;color:white;font-weight:bold">1152</td><td style="background-color:red;color:white;font-weight:bold">1107</td><td style="background-color:grey;color:white;font-weight:bold">993 / 994</td><td style="background-color:purple;color:white;font-weight:bold">993</td><td>OptalCP, CPO2013, OptalCP / Quintiq, OptalCP / Quintiq</td></tr>
+<tr><td>la30</td><td>20 x 10</td><td style="background-color:green;color:white;font-weight:bold">1355</td><td style="background-color:red;color:white;font-weight:bold">1188</td><td style="background-color:grey;color:white;font-weight:bold">1068 / 1071</td><td style="background-color:purple;color:white;font-weight:bold">1068</td><td>OptalCP, CPO2013, OptalCP / Quintiq, OptalCP / Quintiq</td></tr>
+<tr><td>la31</td><td>30 x 10</td><td style="background-color:green;color:white;font-weight:bold">1784</td><td style="background-color:orange;color:white;font-weight:bold">1532</td><td style="background-color:orange;color:white;font-weight:bold">1520</td><td style="background-color:orange;color:white;font-weight:bold">1520</td><td>OptalCP</td></tr>
+<tr><td>la32</td><td>30 x 10</td><td style="background-color:green;color:white;font-weight:bold">1850</td><td style="background-color:green;color:white;font-weight:bold">1698</td><td style="background-color:purple;color:white;font-weight:bold">1657</td><td style="background-color:purple;color:white;font-weight:bold">1657</td><td>OptalCP, OptalCP / Quintiq, OptalCP / Quintiq</td></tr>
+<tr><td>la33</td><td>30 x 10</td><td style="background-color:green;color:white;font-weight:bold">1719</td><td style="background-color:green;color:white;font-weight:bold">1547</td><td style="background-color:purple;color:white;font-weight:bold">1497</td><td style="background-color:purple;color:white;font-weight:bold">1497</td><td>OptalCP, OptalCP / Quintiq, OptalCP / MG2000</td></tr>
+<tr><td>la34</td><td>30 x 10</td><td style="background-color:green;color:white;font-weight:bold">1721</td><td style="background-color:green;color:white;font-weight:bold">1599</td><td style="background-color:purple;color:white;font-weight:bold">1535</td><td style="background-color:orange;color:white;font-weight:bold">1535</td><td>OptalCP, OptalCP / Quintiq,</td></tr>
+<tr><td>la35</td><td>30 x 10</td><td style="background-color:green;color:white;font-weight:bold">1888</td><td style="background-color:green;color:white;font-weight:bold">1736</td><td style="background-color:purple;color:white;font-weight:bold">1549</td><td style="background-color:orange;color:white;font-weight:bold">1549</td><td>OptalCP, OptalCP / Quintiq</td></tr>
+<tr><td>la36</td><td>15 x 15</td><td style="background-color:green;color:white;font-weight:bold">1268</td><td style="background-color:green;color:white;font-weight:bold">1160</td><td style="background-color:green;color:white;font-weight:bold">1023</td><td style="background-color:green;color:white;font-weight:bold">948</td><td>OptalCP</td></tr>
+<tr><td>la37</td><td>15 x 15</td><td style="background-color:green;color:white;font-weight:bold">1397</td><td style="background-color:green;color:white;font-weight:bold">1397</td><td style="background-color:orange;color:white;font-weight:bold">1062</td><td style="background-color:green;color:white;font-weight:bold">986</td><td>OptalCP</td></tr>
+<tr><td>la38</td><td>15 x 15</td><td style="background-color:orange;color:white;font-weight:bold">1196</td><td style="background-color:green;color:white;font-weight:bold">1141</td><td style="background-color:green;color:white;font-weight:bold">954</td><td style="background-color:green;color:white;font-weight:bold">943</td><td>OptalCP</td></tr>
+<tr><td>la39</td><td>15 x 15</td><td style="background-color:green;color:white;font-weight:bold">1233</td><td style="background-color:green;color:white;font-weight:bold">1184</td><td style="background-color:green;color:white;font-weight:bold">1011</td><td style="background-color:green;color:white;font-weight:bold">922</td><td>OptalCP</td></tr>
+<tr><td>la40</td><td>15 x 15</td><td style="background-color:green;color:white;font-weight:bold">1222</td><td style="background-color:orange;color:white;font-weight:bold">1144</td><td style="background-color:orange;color:white;font-weight:bold">955</td><td style="background-color:green;color:white;font-weight:bold">955</td><td>OptalCP</td></tr>
 </table>
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>sdata</th><th>edata</th><th>rdata</th><th>vdata</th><td>Solved by</td></tr>
-<tr><td>ft06</td><td>6 x 6</td><td style="background-color:green">55</td><td style="background-color:green">55</td><td style="background-color:green">47</td><td style="background-color:green">47</td><td>OptalCP</td></tr>
-<tr><td>ft10</td><td>10 x 10</td><td style="background-color:green">930</td><td style="background-color:green">871</td><td style="background-color:green">686</td><td style="background-color:green">655</td><td>OptalCP</td></tr>
-<tr><td>ft20</td><td>20 x 5</td><td style="background-color:green">1165</td><td style="background-color:green">1088</td><td style="background-color:green">1022</td><td style="background-color:green">1022</td><td>OptalCP</td></tr>
+<tr><td>ft06</td><td>6 x 6</td><td style="background-color:green;color:white;font-weight:bold">55</td><td style="background-color:green;color:white;font-weight:bold">55</td><td style="background-color:green;color:white;font-weight:bold">47</td><td style="background-color:green;color:white;font-weight:bold">47</td><td>OptalCP</td></tr>
+<tr><td>ft10</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">930</td><td style="background-color:green;color:white;font-weight:bold">871</td><td style="background-color:green;color:white;font-weight:bold">686</td><td style="background-color:green;color:white;font-weight:bold">655</td><td>OptalCP</td></tr>
+<tr><td>ft20</td><td>20 x 5</td><td style="background-color:green;color:white;font-weight:bold">1165</td><td style="background-color:green;color:white;font-weight:bold">1088</td><td style="background-color:green;color:white;font-weight:bold">1022</td><td style="background-color:green;color:white;font-weight:bold">1022</td><td>OptalCP</td></tr>
 </table>
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>sdata</th><th>edata</th><th>rdata</th><th>vdata</th><td>Solved by</td></tr>
-<tr><td>orb1</td><td>10 x 10</td><td style="background-color:green">1059</td><td style="background-color:green">977</td><td style="background-color:green">746</td><td style="background-color:green">695</td><td>OptalCP</td></tr>
-<tr><td>orb2</td><td>10 x 10</td><td style="background-color:green">888</td><td style="background-color:green">865</td><td style="background-color:green">696</td><td style="background-color:green">620</td><td>OptalCP</td></tr>
-<tr><td>orb3</td><td>10 x 10</td><td style="background-color:green">1005</td><td style="background-color:green">951</td><td style="background-color:green">712</td><td style="background-color:green">648</td><td>OptalCP</td></tr>
-<tr><td>orb4</td><td>10 x 10</td><td style="background-color:green">1005</td><td style="background-color:green">984</td><td style="background-color:green">753</td><td style="background-color:green">753</td><td>OptalCP</td></tr>
-<tr><td>orb5</td><td>10 x 10</td><td style="background-color:green">887</td><td style="background-color:green">842</td><td style="background-color:green">639</td><td style="background-color:green">584</td><td>OptalCP</td></tr>
-<tr><td>orb6</td><td>10 x 10</td><td style="background-color:green">1010</td><td style="background-color:green">958</td><td style="background-color:green">754</td><td style="background-color:green">715</td><td>OptalCP</td></tr>
-<tr><td>orb7</td><td>10 x 10</td><td style="background-color:green">397</td><td style="background-color:green">389</td><td style="background-color:green">302</td><td style="background-color:green">275</td><td>OptalCP</td></tr>
-<tr><td>orb8</td><td>10 x 10</td><td style="background-color:green">899</td><td style="background-color:green">894</td><td style="background-color:green">639</td><td style="background-color:green">573</td><td>OptalCP</td></tr>
-<tr><td>orb9</td><td>10 x 10</td><td style="background-color:green">934</td><td style="background-color:green">933</td><td style="background-color:green">694</td><td style="background-color:green">659</td><td>OptalCP</td></tr>
-<tr><td>orb10</td><td>10 x 10</td><td style="background-color:green">944</td><td style="background-color:green">933</td><td style="background-color:green">742</td><td style="background-color:green">681</td><td>OptalCP</td></tr>
+<tr><td>orb1</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">1059</td><td style="background-color:green;color:white;font-weight:bold">977</td><td style="background-color:green;color:white;font-weight:bold">746</td><td style="background-color:green;color:white;font-weight:bold">695</td><td>OptalCP</td></tr>
+<tr><td>orb2</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">888</td><td style="background-color:green;color:white;font-weight:bold">865</td><td style="background-color:green;color:white;font-weight:bold">696</td><td style="background-color:green;color:white;font-weight:bold">620</td><td>OptalCP</td></tr>
+<tr><td>orb3</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">1005</td><td style="background-color:green;color:white;font-weight:bold">951</td><td style="background-color:green;color:white;font-weight:bold">712</td><td style="background-color:green;color:white;font-weight:bold">648</td><td>OptalCP</td></tr>
+<tr><td>orb4</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">1005</td><td style="background-color:green;color:white;font-weight:bold">984</td><td style="background-color:green;color:white;font-weight:bold">753</td><td style="background-color:green;color:white;font-weight:bold">753</td><td>OptalCP</td></tr>
+<tr><td>orb5</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">887</td><td style="background-color:green;color:white;font-weight:bold">842</td><td style="background-color:green;color:white;font-weight:bold">639</td><td style="background-color:green;color:white;font-weight:bold">584</td><td>OptalCP</td></tr>
+<tr><td>orb6</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">1010</td><td style="background-color:green;color:white;font-weight:bold">958</td><td style="background-color:green;color:white;font-weight:bold">754</td><td style="background-color:green;color:white;font-weight:bold">715</td><td>OptalCP</td></tr>
+<tr><td>orb7</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">397</td><td style="background-color:green;color:white;font-weight:bold">389</td><td style="background-color:green;color:white;font-weight:bold">302</td><td style="background-color:green;color:white;font-weight:bold">275</td><td>OptalCP</td></tr>
+<tr><td>orb8</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">899</td><td style="background-color:green;color:white;font-weight:bold">894</td><td style="background-color:green;color:white;font-weight:bold">639</td><td style="background-color:green;color:white;font-weight:bold">573</td><td>OptalCP</td></tr>
+<tr><td>orb9</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">934</td><td style="background-color:green;color:white;font-weight:bold">933</td><td style="background-color:green;color:white;font-weight:bold">694</td><td style="background-color:green;color:white;font-weight:bold">659</td><td>OptalCP</td></tr>
+<tr><td>orb10</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">944</td><td style="background-color:green;color:white;font-weight:bold">933</td><td style="background-color:green;color:white;font-weight:bold">742</td><td style="background-color:green;color:white;font-weight:bold">681</td><td>OptalCP</td></tr>
 </table>
 
 
@@ -273,153 +273,153 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>01a</td><td>10 x 5</td><td>fjsp</td><td>2505</td><td>2505</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>02a</td><td>10 x 5</td><td>fjsp</td><td>2228</td><td>2228</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>03a</td><td>10 x 5</td><td>fjsp</td><td>2228</td><td>2228</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>04a</td><td>10 x 5</td><td>fjsp</td><td>2503</td><td>2503</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>05a</td><td>10 x 5</td><td>fjsp</td><td>2195</td><td>2199</td><td style="background-color:grey">open</td><td>lb CdGKGC2025 / ub CdGKGC2025</td></tr>
-<tr><td>06a</td><td>10 x 5</td><td>fjsp</td><td>2164</td><td>2169</td><td style="background-color:grey">open</td><td>lb CdGKGC2025 / ub CdGKGC2025 </td></tr>
-<tr><td>07a</td><td>15 x 8</td><td>fjsp</td><td>2216</td><td>2254</td><td style="background-color:grey">open</td><td>lb CPO2013 / ub DLLSXG2019</td></tr>
-<tr><td>08a</td><td>15 x 8</td><td>fjsp</td><td>2061</td><td>2061</td><td style="background-color:purple">closed</td><td>lb HHHL2010 / ub Quintiq</td></tr>
-<tr><td>09a</td><td>15 x 8</td><td>fjsp</td><td>2061</td><td>2061</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>10a</td><td>15 x 8</td><td>fjsp</td><td>2212</td><td>2241</td><td style="background-color:grey">open</td><td>lb CPO2013 / ub Quintiq</td></tr>
-<tr><td>11a</td><td>15 x 8</td><td>fjsp</td><td>2019</td><td>2037</td><td style="background-color:grey">open</td><td>lb CdGKGC2025 / ub Quintiq</td></tr>
-<tr><td>12a</td><td>15 x 8</td><td>fjsp</td><td>1969</td><td>1984</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Quintiq</td></tr>
-<tr><td>13a</td><td>20 x 10</td><td>fjsp</td><td>2206</td><td>2236</td><td style="background-color:grey">open</td><td>lb CdGKGC2025 / ub DLLSXG2019</td></tr>
-<tr><td>14a</td><td>20 x 10</td><td>fjsp</td><td>2161</td><td>2161</td><td style="background-color:purple">closed</td><td>lb HHHL2010 / ub Quintiq</td></tr>
-<tr><td>15a</td><td>20 x 10</td><td>fjsp</td><td>2161</td><td>2161</td><td style="background-color:purple">closed</td><td>lb HHHL2010 / ub Quintiq</td></tr>
-<tr><td>16a</td><td>20 x 10</td><td>fjsp</td><td>2202</td><td>2231</td><td style="background-color:grey">open</td><td>lb CdGKGC2025 / ub Quintiq</td></tr>
-<tr><td>17a</td><td>20 x 10</td><td>fjsp</td><td>2089</td><td>2105</td><td style="background-color:grey">open</td><td>lb CdGKGC2025 / ub Quintiq</td></tr>
-<tr><td>18a</td><td>20 x 10</td><td>fjsp</td><td>2057</td><td>2070</td><td style="background-color:grey">open</td><td>lb OptalCP / ub Quintiq</td></tr>
+<tr><td>01a</td><td>10 x 5</td><td>fjsp</td><td>2505</td><td>2505</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>02a</td><td>10 x 5</td><td>fjsp</td><td>2228</td><td>2228</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>03a</td><td>10 x 5</td><td>fjsp</td><td>2228</td><td>2228</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>04a</td><td>10 x 5</td><td>fjsp</td><td>2503</td><td>2503</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>05a</td><td>10 x 5</td><td>fjsp</td><td>2195</td><td>2199</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb CdGKGC2025 / ub CdGKGC2025</td></tr>
+<tr><td>06a</td><td>10 x 5</td><td>fjsp</td><td>2164</td><td>2169</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb CdGKGC2025 / ub CdGKGC2025 </td></tr>
+<tr><td>07a</td><td>15 x 8</td><td>fjsp</td><td>2216</td><td>2254</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb CPO2013 / ub DLLSXG2019</td></tr>
+<tr><td>08a</td><td>15 x 8</td><td>fjsp</td><td>2061</td><td>2061</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb HHHL2010 / ub Quintiq</td></tr>
+<tr><td>09a</td><td>15 x 8</td><td>fjsp</td><td>2061</td><td>2061</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>10a</td><td>15 x 8</td><td>fjsp</td><td>2212</td><td>2241</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb CPO2013 / ub Quintiq</td></tr>
+<tr><td>11a</td><td>15 x 8</td><td>fjsp</td><td>2019</td><td>2037</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb CdGKGC2025 / ub Quintiq</td></tr>
+<tr><td>12a</td><td>15 x 8</td><td>fjsp</td><td>1969</td><td>1984</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Quintiq</td></tr>
+<tr><td>13a</td><td>20 x 10</td><td>fjsp</td><td>2206</td><td>2236</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb CdGKGC2025 / ub DLLSXG2019</td></tr>
+<tr><td>14a</td><td>20 x 10</td><td>fjsp</td><td>2161</td><td>2161</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb HHHL2010 / ub Quintiq</td></tr>
+<tr><td>15a</td><td>20 x 10</td><td>fjsp</td><td>2161</td><td>2161</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb HHHL2010 / ub Quintiq</td></tr>
+<tr><td>16a</td><td>20 x 10</td><td>fjsp</td><td>2202</td><td>2231</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb CdGKGC2025 / ub Quintiq</td></tr>
+<tr><td>17a</td><td>20 x 10</td><td>fjsp</td><td>2089</td><td>2105</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb CdGKGC2025 / ub Quintiq</td></tr>
+<tr><td>18a</td><td>20 x 10</td><td>fjsp</td><td>2057</td><td>2070</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Quintiq</td></tr>
 </table>
 
 ### Chambers and Barnes (1996)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>mt10c1</td><td>10 x 11</td><td>fjsp</td><td>927</td><td>927</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mt10cc</td><td>10 x 12</td><td>fjsp</td><td>908</td><td>908</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mt10x</td><td>10 x 11</td><td>fjsp</td><td>918</td><td>918</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mt10xx</td><td>10 x 12</td><td>fjsp</td><td>918</td><td>918</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mt10xxx</td><td>10 x 13</td><td>fjsp</td><td>918</td><td>918</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mt10xy</td><td>10 x 12</td><td>fjsp</td><td>905</td><td>905</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mt10xyz</td><td>10 x 13</td><td>fjsp</td><td>847</td><td>847</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mtb4c9</td><td>15 x 11</td><td>fjsp</td><td>914</td><td>914</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>setb4cc</td><td>15 x 12</td><td>fjsp</td><td>907</td><td>907</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>setb4x</td><td>15 x 11</td><td>fjsp</td><td>925</td><td>925</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>setb4xx</td><td>15 x 12</td><td>fjsp</td><td>925</td><td>925</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>setb4xxx</td><td>15 x 13</td><td>fjsp</td><td>925</td><td>925</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>setb4xy</td><td>15 x 12</td><td>fjsp</td><td>910</td><td>910</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>setb4xyz</td><td>15 x 13</td><td>fjsp</td><td>902</td><td>902</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>seti5c12</td><td>15 x 16</td><td>fjsp</td><td>1169</td><td>1169</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>seti5cc</td><td>15 x 17</td><td>fjsp</td><td>1135</td><td>1135</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>seti5x</td><td>15 x 16</td><td>fjsp</td><td>1198</td><td>1198</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>seti5xx</td><td>15 x 17</td><td>fjsp</td><td>1194</td><td>1194</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>seti5xxx</td><td>15 x 18</td><td>fjsp</td><td>1194</td><td>1194</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>seti5xy</td><td>15 x 17</td><td>fjsp</td><td>1135</td><td>1135</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>seti5xyz</td><td>15 x 18</td><td>fjsp</td><td>1125</td><td>1125</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mt10c1</td><td>10 x 11</td><td>fjsp</td><td>927</td><td>927</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mt10cc</td><td>10 x 12</td><td>fjsp</td><td>908</td><td>908</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mt10x</td><td>10 x 11</td><td>fjsp</td><td>918</td><td>918</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mt10xx</td><td>10 x 12</td><td>fjsp</td><td>918</td><td>918</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mt10xxx</td><td>10 x 13</td><td>fjsp</td><td>918</td><td>918</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mt10xy</td><td>10 x 12</td><td>fjsp</td><td>905</td><td>905</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mt10xyz</td><td>10 x 13</td><td>fjsp</td><td>847</td><td>847</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mtb4c9</td><td>15 x 11</td><td>fjsp</td><td>914</td><td>914</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>setb4cc</td><td>15 x 12</td><td>fjsp</td><td>907</td><td>907</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>setb4x</td><td>15 x 11</td><td>fjsp</td><td>925</td><td>925</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>setb4xx</td><td>15 x 12</td><td>fjsp</td><td>925</td><td>925</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>setb4xxx</td><td>15 x 13</td><td>fjsp</td><td>925</td><td>925</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>setb4xy</td><td>15 x 12</td><td>fjsp</td><td>910</td><td>910</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>setb4xyz</td><td>15 x 13</td><td>fjsp</td><td>902</td><td>902</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>seti5c12</td><td>15 x 16</td><td>fjsp</td><td>1169</td><td>1169</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>seti5cc</td><td>15 x 17</td><td>fjsp</td><td>1135</td><td>1135</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>seti5x</td><td>15 x 16</td><td>fjsp</td><td>1198</td><td>1198</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>seti5xx</td><td>15 x 17</td><td>fjsp</td><td>1194</td><td>1194</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>seti5xxx</td><td>15 x 18</td><td>fjsp</td><td>1194</td><td>1194</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>seti5xy</td><td>15 x 17</td><td>fjsp</td><td>1135</td><td>1135</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>seti5xyz</td><td>15 x 18</td><td>fjsp</td><td>1125</td><td>1125</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 </table>
 
 ### Kacem, Hammadi and Borne (2002)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>kacem1</td><td>4 x 6</td><td>fjsp</td><td>11</td><td>11</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>kacem2</td><td>10 x 7</td><td>fjsp</td><td>11</td><td>11</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>kacem3</td><td>10 x 10</td><td>fjsp</td><td>7</td><td>7</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>kacem4</td><td>15 x 10</td><td>fjsp</td><td>11</td><td>11</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>kacem1</td><td>4 x 6</td><td>fjsp</td><td>11</td><td>11</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>kacem2</td><td>10 x 7</td><td>fjsp</td><td>11</td><td>11</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>kacem3</td><td>10 x 10</td><td>fjsp</td><td>7</td><td>7</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>kacem4</td><td>15 x 10</td><td>fjsp</td><td>11</td><td>11</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 </table>
 
 ### Fattahi, Mehrabad and Jolai (2007)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>fattahi1</td><td>2 x 2</td><td>fjsp</td><td>66</td><td>66</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi2</td><td>2 x 2</td><td>fjsp</td><td>107</td><td>107</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi3</td><td>3 x 2</td><td>fjsp</td><td>221</td><td>221</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi4</td><td>3 x 2</td><td>fjsp</td><td>355</td><td>355</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi5</td><td>3 x 2</td><td>fjsp</td><td>119</td><td>119</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi6</td><td>3 x 2</td><td>fjsp</td><td>320</td><td>320</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi7</td><td>3 x 5</td><td>fjsp</td><td>397</td><td>397</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi8</td><td>3 x 4</td><td>fjsp</td><td>253</td><td>253</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi9</td><td>3 x 3</td><td>fjsp</td><td>210</td><td>210</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi10</td><td>4 x 5</td><td>fjsp</td><td>516</td><td>516</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi11</td><td>5 x 6</td><td>fjsp</td><td>468</td><td>468</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi12</td><td>5 x 7</td><td>fjsp</td><td>446</td><td>446</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi13</td><td>6 x 7</td><td>fjsp</td><td>466</td><td>466</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi14</td><td>7 x 7</td><td>fjsp</td><td>554</td><td>554</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi15</td><td>7 x 7</td><td>fjsp</td><td>514</td><td>514</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi16</td><td>8 x 7</td><td>fjsp</td><td>634</td><td>634</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi17</td><td>8 x 7</td><td>fjsp</td><td>879</td><td>879</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi18</td><td>9 x 8</td><td>fjsp</td><td>884</td><td>884</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi19</td><td>11 x 8</td><td>fjsp</td><td>1055</td><td>1055</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>fattahi20</td><td>12 x 8</td><td>fjsp</td><td>1196</td><td>1196</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi1</td><td>2 x 2</td><td>fjsp</td><td>66</td><td>66</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi2</td><td>2 x 2</td><td>fjsp</td><td>107</td><td>107</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi3</td><td>3 x 2</td><td>fjsp</td><td>221</td><td>221</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi4</td><td>3 x 2</td><td>fjsp</td><td>355</td><td>355</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi5</td><td>3 x 2</td><td>fjsp</td><td>119</td><td>119</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi6</td><td>3 x 2</td><td>fjsp</td><td>320</td><td>320</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi7</td><td>3 x 5</td><td>fjsp</td><td>397</td><td>397</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi8</td><td>3 x 4</td><td>fjsp</td><td>253</td><td>253</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi9</td><td>3 x 3</td><td>fjsp</td><td>210</td><td>210</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi10</td><td>4 x 5</td><td>fjsp</td><td>516</td><td>516</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi11</td><td>5 x 6</td><td>fjsp</td><td>468</td><td>468</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi12</td><td>5 x 7</td><td>fjsp</td><td>446</td><td>446</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi13</td><td>6 x 7</td><td>fjsp</td><td>466</td><td>466</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi14</td><td>7 x 7</td><td>fjsp</td><td>554</td><td>554</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi15</td><td>7 x 7</td><td>fjsp</td><td>514</td><td>514</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi16</td><td>8 x 7</td><td>fjsp</td><td>634</td><td>634</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi17</td><td>8 x 7</td><td>fjsp</td><td>879</td><td>879</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi18</td><td>9 x 8</td><td>fjsp</td><td>884</td><td>884</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi19</td><td>11 x 8</td><td>fjsp</td><td>1055</td><td>1055</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>fattahi20</td><td>12 x 8</td><td>fjsp</td><td>1196</td><td>1196</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 </table>
 
 ### Behnke and Geiger (2012)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>behnke1</td><td>10 x 20</td><td>fjsp</td><td>90</td><td>90</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>behnke2</td><td>10 x 20</td><td>fjsp</td><td>91</td><td>91</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>behnke3</td><td>10 x 20</td><td>fjsp</td><td>91</td><td>91</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>behnke4</td><td>10 x 20</td><td>fjsp</td><td>97</td><td>97</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>behnke5</td><td>10 x 20</td><td>fjsp</td><td>91</td><td>91</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>behnke6</td><td>20 x 20</td><td>fjsp</td><td>125</td><td>125</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>behnke7</td><td>20 x 20</td><td>fjsp</td><td>89</td><td>124</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke8</td><td>20 x 20</td><td>fjsp</td><td>123</td><td>123</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>behnke9</td><td>20 x 20</td><td>fjsp</td><td>125</td><td>125</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>behnke10</td><td>20 x 20</td><td>fjsp</td><td>127</td><td>127</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>behnke11</td><td>50 x 20</td><td>fjsp</td><td>163</td><td>228</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke12</td><td>50 x 20</td><td>fjsp</td><td>157</td><td>219</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke13</td><td>50 x 20</td><td>fjsp</td><td>160</td><td>229</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke14</td><td>50 x 20</td><td>fjsp</td><td>164</td><td>230</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke15</td><td>50 x 20</td><td>fjsp</td><td>159</td><td>228</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke16</td><td>100 x 20</td><td>fjsp</td><td>327</td><td>412</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke17</td><td>100 x 20</td><td>fjsp</td><td>320</td><td>401</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke18</td><td>100 x 20</td><td>fjsp</td><td>321</td><td>396</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke19</td><td>100 x 20</td><td>fjsp</td><td>323</td><td>400</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke20</td><td>100 x 20</td><td>fjsp</td><td>322</td><td>398</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke21</td><td>10 x 40</td><td>fjsp</td><td>85</td><td>85</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>behnke22</td><td>10 x 40</td><td>fjsp</td><td>87</td><td>87</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>behnke23</td><td>10 x 40</td><td>fjsp</td><td>85</td><td>85</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>behnke24</td><td>10 x 40</td><td>fjsp</td><td>87</td><td>87</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>behnke25</td><td>10 x 40</td><td>fjsp</td><td>87</td><td>87</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>behnke26</td><td>20 x 40</td><td>fjsp</td><td>113</td><td>113</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>behnke27</td><td>20 x 40</td><td>fjsp</td><td>122</td><td>122</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>behnke28</td><td>20 x 40</td><td>fjsp</td><td>114</td><td>114</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>behnke29</td><td>20 x 40</td><td>fjsp</td><td>76</td><td>117</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke30</td><td>20 x 40</td><td>fjsp</td><td>120</td><td>120</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>behnke31</td><td>50 x 40</td><td>fjsp</td><td>85</td><td>226</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke32</td><td>50 x 40</td><td>fjsp</td><td>79</td><td>224</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke33</td><td>50 x 40</td><td>fjsp</td><td>80</td><td>224</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke34</td><td>50 x 40</td><td>fjsp</td><td>80</td><td>223</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke35</td><td>50 x 40</td><td>fjsp</td><td>82</td><td>214</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke36</td><td>100 x 40</td><td>fjsp</td><td>152</td><td>388</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke37</td><td>100 x 40</td><td>fjsp</td><td>153</td><td>391</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke38</td><td>100 x 40</td><td>fjsp</td><td>151</td><td>389</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke39</td><td>100 x 40</td><td>fjsp</td><td>153</td><td>389</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke40</td><td>100 x 40</td><td>fjsp</td><td>156</td><td>419</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke41</td><td>10 x 60</td><td>fjsp</td><td>87</td><td>87</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>behnke42</td><td>10 x 60</td><td>fjsp</td><td>87</td><td>87</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>behnke43</td><td>10 x 60</td><td>fjsp</td><td>86</td><td>86</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>behnke44</td><td>10 x 60</td><td>fjsp</td><td>84</td><td>84</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>behnke45</td><td>10 x 60</td><td>fjsp</td><td>87</td><td>87</td><td style="background-color:green">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>behnke46</td><td>20 x 60</td><td>fjsp</td><td>114</td><td>114</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>behnke47</td><td>20 x 60</td><td>fjsp</td><td>117</td><td>117</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>behnke48</td><td>20 x 60</td><td>fjsp</td><td>78</td><td>125</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke49</td><td>20 x 60</td><td>fjsp</td><td>113</td><td>113</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>behnke50</td><td>20 x 60</td><td>fjsp</td><td>123</td><td>123</td><td style="background-color:orange">medium</td><td>OptalCP < 1h</td></tr>
-<tr><td>behnke51</td><td>50 x 60</td><td>fjsp</td><td>77</td><td>218</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke52</td><td>50 x 60</td><td>fjsp</td><td>81</td><td>212</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke53</td><td>50 x 60</td><td>fjsp</td><td>76</td><td>215</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke54</td><td>50 x 60</td><td>fjsp</td><td>81</td><td>223</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke55</td><td>50 x 60</td><td>fjsp</td><td>79</td><td>223</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke56</td><td>100 x 60</td><td>fjsp</td><td>99</td><td>390</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke57</td><td>100 x 60</td><td>fjsp</td><td>99</td><td>390</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke58</td><td>100 x 60</td><td>fjsp</td><td>100</td><td>397</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke59</td><td>100 x 60</td><td>fjsp</td><td>99</td><td>398</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
-<tr><td>behnke60</td><td>100 x 60</td><td>fjsp</td><td>101</td><td>402</td><td style="background-color:grey">open</td><td>OptalCP</td></tr>
+<tr><td>behnke1</td><td>10 x 20</td><td>fjsp</td><td>90</td><td>90</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>behnke2</td><td>10 x 20</td><td>fjsp</td><td>91</td><td>91</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>behnke3</td><td>10 x 20</td><td>fjsp</td><td>91</td><td>91</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>behnke4</td><td>10 x 20</td><td>fjsp</td><td>97</td><td>97</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>behnke5</td><td>10 x 20</td><td>fjsp</td><td>91</td><td>91</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>behnke6</td><td>20 x 20</td><td>fjsp</td><td>125</td><td>125</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>behnke7</td><td>20 x 20</td><td>fjsp</td><td>89</td><td>124</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke8</td><td>20 x 20</td><td>fjsp</td><td>123</td><td>123</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>behnke9</td><td>20 x 20</td><td>fjsp</td><td>125</td><td>125</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>behnke10</td><td>20 x 20</td><td>fjsp</td><td>127</td><td>127</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>behnke11</td><td>50 x 20</td><td>fjsp</td><td>163</td><td>228</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke12</td><td>50 x 20</td><td>fjsp</td><td>157</td><td>219</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke13</td><td>50 x 20</td><td>fjsp</td><td>160</td><td>229</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke14</td><td>50 x 20</td><td>fjsp</td><td>164</td><td>230</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke15</td><td>50 x 20</td><td>fjsp</td><td>159</td><td>228</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke16</td><td>100 x 20</td><td>fjsp</td><td>327</td><td>412</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke17</td><td>100 x 20</td><td>fjsp</td><td>320</td><td>401</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke18</td><td>100 x 20</td><td>fjsp</td><td>321</td><td>396</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke19</td><td>100 x 20</td><td>fjsp</td><td>323</td><td>400</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke20</td><td>100 x 20</td><td>fjsp</td><td>322</td><td>398</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke21</td><td>10 x 40</td><td>fjsp</td><td>85</td><td>85</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>behnke22</td><td>10 x 40</td><td>fjsp</td><td>87</td><td>87</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>behnke23</td><td>10 x 40</td><td>fjsp</td><td>85</td><td>85</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>behnke24</td><td>10 x 40</td><td>fjsp</td><td>87</td><td>87</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>behnke25</td><td>10 x 40</td><td>fjsp</td><td>87</td><td>87</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>behnke26</td><td>20 x 40</td><td>fjsp</td><td>113</td><td>113</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>behnke27</td><td>20 x 40</td><td>fjsp</td><td>122</td><td>122</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>behnke28</td><td>20 x 40</td><td>fjsp</td><td>114</td><td>114</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>behnke29</td><td>20 x 40</td><td>fjsp</td><td>76</td><td>117</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke30</td><td>20 x 40</td><td>fjsp</td><td>120</td><td>120</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>behnke31</td><td>50 x 40</td><td>fjsp</td><td>85</td><td>226</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke32</td><td>50 x 40</td><td>fjsp</td><td>79</td><td>224</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke33</td><td>50 x 40</td><td>fjsp</td><td>80</td><td>224</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke34</td><td>50 x 40</td><td>fjsp</td><td>80</td><td>223</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke35</td><td>50 x 40</td><td>fjsp</td><td>82</td><td>214</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke36</td><td>100 x 40</td><td>fjsp</td><td>152</td><td>388</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke37</td><td>100 x 40</td><td>fjsp</td><td>153</td><td>391</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke38</td><td>100 x 40</td><td>fjsp</td><td>151</td><td>389</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke39</td><td>100 x 40</td><td>fjsp</td><td>153</td><td>389</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke40</td><td>100 x 40</td><td>fjsp</td><td>156</td><td>419</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke41</td><td>10 x 60</td><td>fjsp</td><td>87</td><td>87</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>behnke42</td><td>10 x 60</td><td>fjsp</td><td>87</td><td>87</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>behnke43</td><td>10 x 60</td><td>fjsp</td><td>86</td><td>86</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>behnke44</td><td>10 x 60</td><td>fjsp</td><td>84</td><td>84</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>behnke45</td><td>10 x 60</td><td>fjsp</td><td>87</td><td>87</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>behnke46</td><td>20 x 60</td><td>fjsp</td><td>114</td><td>114</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>behnke47</td><td>20 x 60</td><td>fjsp</td><td>117</td><td>117</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>behnke48</td><td>20 x 60</td><td>fjsp</td><td>78</td><td>125</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke49</td><td>20 x 60</td><td>fjsp</td><td>113</td><td>113</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>behnke50</td><td>20 x 60</td><td>fjsp</td><td>123</td><td>123</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
+<tr><td>behnke51</td><td>50 x 60</td><td>fjsp</td><td>77</td><td>218</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke52</td><td>50 x 60</td><td>fjsp</td><td>81</td><td>212</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke53</td><td>50 x 60</td><td>fjsp</td><td>76</td><td>215</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke54</td><td>50 x 60</td><td>fjsp</td><td>81</td><td>223</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke55</td><td>50 x 60</td><td>fjsp</td><td>79</td><td>223</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke56</td><td>100 x 60</td><td>fjsp</td><td>99</td><td>390</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke57</td><td>100 x 60</td><td>fjsp</td><td>99</td><td>390</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke58</td><td>100 x 60</td><td>fjsp</td><td>100</td><td>397</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke59</td><td>100 x 60</td><td>fjsp</td><td>99</td><td>398</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>behnke60</td><td>100 x 60</td><td>fjsp</td><td>101</td><td>402</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 </table>
 
 
