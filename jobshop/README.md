@@ -11,6 +11,9 @@ nav_order: 2
 
 The JSPLib is an informal group of instances (`ft`, `la`, `abz`, `orb`, `swv`, `yn`, `ta`, `dmu` to which we added `tai`, `long` and `short`) that have been used to investigate solution methods for the jobshop problem. On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
 
+The data and source code can be found in the [Github repository](https://github.com/ScheduleOpt/benchmarks)
+This document is visible as a README.md in the Github folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib/)
+
 ## Table of Contents
 
 - [Jobshop instances](#jobshop-benchmark-instances)
@@ -348,7 +351,7 @@ $$
 
 <br/>
 
-## Jobshop with operators
+## Jobshop with operators - workers
 
 In the jobshop with operators, workers have to be assigned to the machines while the tasks are being performed. 
 - when the operator assignment can be interrupted (preemptive operators) the problem becomes a jobshop with maximum number of simultaneous jobs.
@@ -382,7 +385,6 @@ Instead of having precedences only within the tasks of a job, there is a more ge
 
 ![Precedence graph](./img/js_arbitrary_precedences.png)
 
-
 ## Jobshop with sequence dependent setup times
 
 There are setup times in the machines to switch from one job to another
@@ -393,7 +395,7 @@ Notice that this variant is only interesting if the setup times are sequence-dep
 
 The tasks of a job can be processed by any machine in a predefined group of similar machines.
 
-***Please refer to the flexible-jobshop section of this benchmark for more information***
+***Please refer to the [flexible-jobshop section](https://scheduleopt.github.io/benchmarks/fjsplib/) of this benchmark for more information***
 
 <br/>
 
@@ -422,16 +424,16 @@ Other databases keep instead the ***first*** publication or method to have achie
 Our work was inspired by the ***outstanding*** work of Naderi, Ruiz and Roshanaei *Mixed-Integer Programming versus Constraint Programming for shop scheduling problems : New Results and Outlook* [**NRR2022**] which compares CPO, Cplex, Gurobi and OR-tools on a benchmark of 6623 instances over 17 benchmarks with a timeout of 1h. They have made all the [raw results available](http://soa.iti.es/problem-instances)
 
 We borrowed references for existing best known bounds from
-- http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html
-- https://github.com/thomasWeise/jsspInstancesAndResults
-- http://jobshop.jjvh.nl/
-- https://optimizizer.com/jobshop.php
+- [http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html](http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html)
+- [https://github.com/thomasWeise/jsspInstancesAndResults](https://github.com/thomasWeise/jsspInstancesAndResults)
+- [http://jobshop.jjvh.nl/](http://jobshop.jjvh.nl/)
+- [https://optimizizer.com/jobshop.php](https://optimizizer.com/jobshop.php)
 
 <br/>
 
 The upper bounds available in optimizizer are verified before publication (which we don't do directly - our verification is the fact that an engine achieves the same value). We encourage you to also visit his site.
 
-We also think https://www.jobshoppuzzle.com/ is a very cool site with interactive visualizations of jobshop heuristics and solutions.
+We also think [https://www.jobshoppuzzle.com/](https://www.jobshoppuzzle.com/) is a very cool site with interactive visualizations of jobshop heuristics and solutions.
 
 
 ## Best known solutions - JSPLib
@@ -505,8 +507,6 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>abz8</td><td>20 x 15</td><td>jobshop</td><td>667</td><td>667</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 10h</td></tr>
 <tr><td>abz9</td><td>20 x 15</td><td>jobshop</td><td>678</td><td>678</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 </table>
-
-<br>
 
 *Various places report that "Henning A (2002). Praktische Job-Shop Scheduling-Probleme. Ph.D. thesis, Friedrich-Schiller-Universität Jena, Jena, Germany" as having found a solution of 665 for abz8, but the original document says their solution is 667 and 665 is a "solution from the literature". We believe it is just a typing mistake in the sources they used. In any case OptalCP proves a lower bound of 667.*
 
@@ -904,7 +904,7 @@ The upper and lower bounds come from
 
 - XLGG2022 (2 bounds in dmu) : **Xie, J., Li, X., Gao, L., & Gui, L.** (2022). A hybrid algorithm with a new neighborhood structure for job shop scheduling problems. Computers & Industrial Engineering, 169, 108205.
 
-- Hexaly2024 (10 bounds - tai) : **Lea Blaise** (2014) (https://www.hexaly.com/benchmarks/hexaly-vs-cp-optimizer-vs-CP-SAT-on-the-job-shop-scheduling-problem-jssp)
+- Hexaly2024 (10 bounds - tai) : **Lea Blaise** (2014) [https://www.hexaly.com/benchmarks/hexaly-vs-cp-optimizer-vs-CP-SAT-on-the-job-shop-scheduling-problem-jssp](https://www.hexaly.com/benchmarks/hexaly-vs-cp-optimizer-vs-CP-SAT-on-the-job-shop-scheduling-problem-jssp)
 
 - LHW2024 (12 bounds - dmu, tajs) : **Mingjie Li, Jin-Kao Hao & Qinghua Wu** (2024). Combining Hash-based Tabu Search and Frequent Pattern Mining for Job-Shop Scheduling. 
 

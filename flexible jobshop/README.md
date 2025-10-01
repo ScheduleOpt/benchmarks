@@ -10,6 +10,10 @@ nav_order: 1
 The FJSPLib is a benchmark of flexible jobshop problems with their best known solutions to date.
 Problems come from a variety of publications (all referenced). The best solutions known to date (upper bound and lower bound) are provided with the corresponding publication or engine that attained it.
 
+The data and source code can be found in the [Github repository](https://github.com/ScheduleOpt/benchmarks)
+This document is visible as a README.md in the Github folder [flexible jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/flexible%20jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/fjsplib/)
+
+
 ## Table of Contents
 
 - [Flexible jobshop instances](#flexible-jobshop-benchmark-instances)
