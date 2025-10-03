@@ -1,20 +1,19 @@
 ---
 layout: page
 title: JSPLib
-permalink: /jsplib/
-nav_order: 2
+permalink: /jsplib
 ---
 
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-# The jobshop benchmark
+## The jobshop benchmark library
 
 The JSPLib is an informal group of instances (`ft`, `la`, `abz`, `orb`, `swv`, `yn`, `ta`, `dmu` to which we added `tai`, `long` and `short`) that have been used to investigate solution methods for the jobshop problem. On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
 
 The data and source code can be found in the [Github repository](https://github.com/ScheduleOpt/benchmarks)
 This document is visible as a README.md in the Github folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib/)
 
-## Table of Contents
+### Table of Contents
 
 - [Jobshop instances](#jobshop-benchmark-instances)
     - [Overview of the jobshop benchmark](#overview-of-the-jobshop-benchmark)
@@ -39,7 +38,7 @@ This document is visible as a README.md in the Github folder [jobshop](https://g
 
 <br/>
 
-## Overview of the jobshop benchmark
+### Overview of the jobshop benchmark
 
 All instances in the benchmark follow the standard jobshop format. The DaColTeppan instances use a conservative extension of the existing jobshop format.
 
@@ -59,7 +58,7 @@ Reentrant jobshop instances (24)
 - 12 instances `short` from Da Col and Teppan 2022
 
 
-## Classification of the jobshop instances
+### Classification of the jobshop instances
 
 We use the following engines as references for the benchmark
 - [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : representative of the CP-scheduling family of engines
@@ -91,12 +90,12 @@ Currently the instances divide as follows
 
 Previous versions of these results had some `closed` instances which we proceed to solve with OptalCP running for longer times to confirm their status of solved
 
-## Formats
+### Formats
 
 There are three main formats, the ***standard***, the ***DaColTeppan*** and the ***taillard***
 
 
-### Standard format
+#### Standard format
 
 ```
 #n #m
@@ -127,7 +126,7 @@ For instance `l01` on standard format is
 <br/>
 
 
-### Da Col Teppan format
+#### Da Col Teppan format
 
 ```
 #n #m
@@ -170,7 +169,7 @@ accepts both.
 <br/>
 
 
-### Taillard format
+#### Taillard format
 
 The taillard format first lists the machines, then the durations
 
@@ -208,7 +207,7 @@ For instance `l01` in taillard format is
 
 <br/>
 
-## Publications (instances)
+### Publications (instances)
 
 The instances come from the following publications
 
@@ -233,12 +232,12 @@ The instances come from the following publications
 <br/>
 
 
-# Jobshop variants
+## Jobshop variants
 
 Many variants of the jobshop problem can be solved with the same data
 or simple addition of parameters
 
-## Jobshop
+### Jobshop
 
 The classical jobshop problem has 2 constraints
 
@@ -259,7 +258,7 @@ $$\forall m \in \mathrm{machines} \quad \mathrm{noOverlap} \ \lbrace \ [ \mathrm
 
 <br/>
 
-## No buffer jobshop (blocking jobshop)
+### No buffer jobshop (blocking jobshop)
 
 In the classic jobshop there is implicitly a buffer area in front of each machine where tasks can wait to be processed. In the non-buffer jobshop, also called blocking jobshop this area doesn't exist, as a result a job `(j,r)`processed on machine `m` blocks this machine until `(j,r+1)` starts being processed on the next machine.
 
@@ -290,7 +289,7 @@ The extra variables $\mathrm{end}$ can be pre-processed out of the equations
 
 <br/>
 
-## No-wait jobshop
+### No-wait jobshop
 
 In the no-wait jobshop variant, once the processing of a job has started, it has to go through all machines without interruption.
 
@@ -313,7 +312,7 @@ $$\forall m \in \mathrm{machines} \quad \mathrm{noOverlap} \ \lbrace \ [ \mathrm
 
 <br/>
 
-## Cumulative jobshop
+### Cumulative jobshop
 
 In the cumulative jobshop, the capacity of the capacity of the machines is not unitary anymore. In other words there is a limit $C_m$ on the number of tasks that can be simultaneously processed by machine $m$
 
@@ -351,14 +350,14 @@ $$
 
 <br/>
 
-## Jobshop with operators - workers
+### Jobshop with operators - workers
 
 In the jobshop with operators, workers have to be assigned to the machines while the tasks are being performed. 
 - when the operator assignment can be interrupted (preemptive operators) the problem becomes a jobshop with maximum number of simultaneous jobs.
 - when the operator assignment cannot be interrupted (non-preemptive operators) the operators need to be assigned to jobs individually and they cannot be assigned to simultaneous jobs
 
 
-### Jobshop with preemptive operators 
+#### Jobshop with preemptive operators 
 
 The constraints of the problem become
 
@@ -374,24 +373,24 @@ $$\forall m \in \mathrm{machines} \quad \mathrm{noOverlap} \ \lbrace \ [ \mathrm
 
 $$\sum_m \sum_j \mathrm{step}(\mathrm{start}_j^m) - \mathrm{step}(\mathrm{start}_j^m + \mathrm{Duration}_j^m) \leq \mathrm{Op}$$
 
-# Other jobshop variants
+## Other jobshop variants
 
 Because these jobshop variants require extra data, we cannot run them
 over the standard benchmark
 
-## Jobshop with arbitrary precedences
+### Jobshop with arbitrary precedences
 
 Instead of having precedences only within the tasks of a job, there is a more general precedence graph
 
 ![Precedence graph](./img/js_arbitrary_precedences.png)
 
-## Jobshop with sequence dependent setup times
+### Jobshop with sequence dependent setup times
 
 There are setup times in the machines to switch from one job to another
 
 Notice that this variant is only interesting if the setup times are sequence-dependent. Otherwise it is equivalent to increase each task by the length of the setup time and to solve an usual jobshop
 
-## Flexible jobshop
+### Flexible jobshop
 
 The tasks of a job can be processed by any machine in a predefined group of similar machines.
 
@@ -399,7 +398,7 @@ The tasks of a job can be processed by any machine in a predefined group of simi
 
 <br/>
 
-# Jobshop benchmark - JSPLib
+## Jobshop benchmark - JSPLib
 
 The JSPLib is an informal group of instances (`ft`, `la`, `abz`, `orb`, `swv`, `yn`, `ta`, `dmu` to which we added `tai`, `short` and `long`) that have been used to investigate solution methods for the jobshop problem. On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
 
@@ -419,7 +418,7 @@ For each instance we indicate the publication or engine that reaches that bound 
 
 Other databases keep instead the ***first*** publication or method to have achieved that bound for historical reference. This work instead is meant for engine and algorithm developers to have means of reproducing the claimed results for comparison.
 
-## Similar work
+### Similar work
 
 Our work was inspired by the ***outstanding*** work of Naderi, Ruiz and Roshanaei *Mixed-Integer Programming versus Constraint Programming for shop scheduling problems : New Results and Outlook* [**NRR2022**] which compares CPO, Cplex, Gurobi and OR-tools on a benchmark of 6623 instances over 17 benchmarks with a timeout of 1h. They have made all the [raw results available](http://soa.iti.es/problem-instances)
 
@@ -436,11 +435,11 @@ The upper bounds available in optimizizer are verified before publication (which
 We also think [https://www.jobshoppuzzle.com/](https://www.jobshoppuzzle.com/) is a very cool site with interactive visualizations of jobshop heuristics and solutions.
 
 
-## Best known solutions - JSPLib
+### Best known solutions - JSPLib
 
 If you visualize the markdown in Visual Studio Code you will have colors !
 
-### Fisher and Thompson (1963)
+#### Fisher and Thompson (1963)
 
 *FT instances are also known as MT because the 1963 paper of Fisher and Thompson was published in the book "Industrial scheduling" by Muth and Thompson.*
 
@@ -451,7 +450,7 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>ft20</td><td>20 x 5</td><td>jobshop</td><td>1165</td><td>1165</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>CPO in < 1 min</td></tr>
 </table>
 
-### Lawrence (1984)
+#### Lawrence (1984)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
@@ -497,7 +496,7 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>la40</td><td>15 x 15</td><td>jobshop</td><td>1222</td><td>1222</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 </table>
 
-### Adams, Balas and Zawack (1988)
+#### Adams, Balas and Zawack (1988)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
@@ -510,7 +509,7 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 
 *Various places report that "Henning A (2002). Praktische Job-Shop Scheduling-Probleme. Ph.D. thesis, Friedrich-Schiller-Universität Jena, Jena, Germany" as having found a solution of 665 for abz8, but the original document says their solution is 667 and 665 is a "solution from the literature". We believe it is just a typing mistake in the sources they used. In any case OptalCP proves a lower bound of 667.*
 
-### Applegate and Cook (1991)
+#### Applegate and Cook (1991)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
@@ -526,7 +525,7 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>orb10</td><td>10 x 10</td><td>jobshop</td><td>944</td><td>944</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>CPO in < 1 min</td></tr>
 </table>
 
-### Storer, Wu and Vaccari (1992)
+#### Storer, Wu and Vaccari (1992)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
@@ -552,7 +551,7 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>swv20</td><td>50 x 10</td><td>jobshop</td><td>2823</td><td>2823</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>CPO in < 1 min</td></tr>
 </table>
 
-### Yamada Nakano (1992)
+#### Yamada Nakano (1992)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
@@ -562,7 +561,7 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>yn4</td><td>20 x 20</td><td>jobshop</td><td>967</td><td>967</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 16h</td></tr>
 </table>
 
-### Taillard (1993)
+#### Taillard (1993)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
@@ -648,7 +647,7 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>ta80js</td><td>100 x 20</td><td>jobshop</td><td>5183</td><td>5183</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 </table>
 
-### Demikol, Mehta and Uzsoy (1998)
+#### Demikol, Mehta and Uzsoy (1998)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
@@ -734,7 +733,7 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>dmu80</td><td>50 x 20</td><td>jobshop</td><td>6460</td><td>6634</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
 </table>
 
-### Da Col and Teppan (2022)
+#### Da Col and Teppan (2022)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
@@ -838,7 +837,7 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>tai_j1000_m1000_10</td><td>1000 x 1000</td><td>jobshop</td><td>541530</td><td>874820</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
 </table>
 
-### DaCol and Teppan - reentrant jobshop (2022)
+#### DaCol and Teppan - reentrant jobshop (2022)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
@@ -878,7 +877,7 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 *DaCol and Tepan report instance short-1000-100000-1 was solved to optimality by CP Optimizer in 6h which we haven't been able to reproduce (with CPO any other solver). We are still investigating*
 
 
-## Publications (best known solutions)
+### Publications (best known solutions)
 
 The upper and lower bounds come from
 
@@ -913,14 +912,14 @@ The upper and lower bounds come from
 All other bounds were found by OptalCP
 
 
-# Test instances
+## Test instances
 
-## Reference tests
+### Reference tests
 
 We provide these tests as a reference, you should get something ***similar*** on your hardware (multi-core engines are inherently non-deterministic hence each run returns slightly different results) or find an explanation of why the engines don't behave as expected. We ***strongly*** encourage you to run all engines you want to compare against on your own hardware. 
 
 
-### LA instances
+#### LA instances
 
 On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 - OptalCP Academic Version 2025.6.1 with 2 FDS, 1 FDSLB, 1 LNS (3 provers, 1 searcher)
@@ -969,7 +968,7 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 | la39 | 1233 in 0s | 1233 in  2s |
 | la40 | 1222 in 2s | 1222 in 23s |
 
-### TA instances
+#### TA instances
 
 On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 - OptalCP Academic Version 2025.6.1 with 2 FDS, 1 FDSLB, 1 LNS (3 provers, 1 searcher)
@@ -1058,7 +1057,7 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 | ta79js | 5358 in  21s | 5358 .. 5463 in 600s |
 | ta80js | 5183 in  15s | 5183 .. 5304 in 600s |
 
-### YN instances
+#### YN instances
 
 On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 - OptalCP Demo Version 2025.7.0 with 1 FDS, 1 FDSLB, 2 LNS (2 provers, 2 searchers)
@@ -1071,7 +1070,7 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 | yn3 |  853 .. 903 in 600s | 842 .. 918 in 600s |
 | yn4 |  932 .. 977 in 600s | 910 .. 985 in 600s |
 
-### TAI 100 x 100 instances
+#### TAI 100 x 100 instances
 
 On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 - OptalCP Demo Version 2025.7.0 with 1 FDS, 1 FDSLB, 2 LNS (2 provers, 2 searchers)
@@ -1092,7 +1091,7 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 
 
 <!--
-### TAI 1000 x 1000 instances
+#### TAI 1000 x 1000 instances
 
 On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 - OptalCP Academic Version 2025.6.1 with 2 FDS, 1 FDSLB, 1 LNS

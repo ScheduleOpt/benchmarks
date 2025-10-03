@@ -2,7 +2,7 @@
 layout: page
 title: Openshop
 permalink: /openshop/
-nav_order: 3
+published: false
 ---
 
 # Openshop

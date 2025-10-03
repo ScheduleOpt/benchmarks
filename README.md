@@ -2,7 +2,6 @@
 layout: page
 title: About
 permalink: /
-nav_order: 5
 ---
 
 # Benchmark of scheduling problems

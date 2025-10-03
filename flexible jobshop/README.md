@@ -1,20 +1,19 @@
 ---
 layout: page
 title: FJSPLib
-permalink: /fjsplib/
-nav_order: 1
+permalink: /fjsplib
 ---
 
-# The flexible jobshop benchmark
+## The flexible jobshop benchmark library
 
 The FJSPLib is a benchmark of flexible jobshop problems with their best known solutions to date.
 Problems come from a variety of publications (all referenced). The best solutions known to date (upper bound and lower bound) are provided with the corresponding publication or engine that attained it.
 
-The data and source code can be found in the [Github repository](https://github.com/ScheduleOpt/benchmarks)
+The data and source code for the optimization models can be found in the [Github repository](https://github.com/ScheduleOpt/benchmarks)
 This document is visible as a README.md in the Github folder [flexible jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/flexible%20jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/fjsplib/)
 
 
-## Table of Contents
+### Table of Contents
 
 - [Flexible jobshop instances](#flexible-jobshop-benchmark-instances)
     - [Overview of the flexible jobshop benchmark](#overview-of-the-flexible-jobshop-benchmark)
@@ -27,7 +26,7 @@ This document is visible as a README.md in the Github folder [flexible jobshop](
 
 <br/>
 
-## Overview of the flexible jobshop benchmark
+### Overview of the flexible jobshop benchmark
 
 Flexible jobshop instances (332)
 - 10 instances `mk` from Brandimarte 1993
@@ -40,7 +39,7 @@ Flexible jobshop instances (332)
 
 The Hurinkm Jurisch and Thole instances are classic jobshop problems modified into flexible jobshops
 
-## Classification of the flexible jobshop instances
+### Classification of the flexible jobshop instances
 
 We use the following engines as references for the benchmark
 - [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : representative of the CP-scheduling family of engines
@@ -70,7 +69,7 @@ Currently the instances divide as follows
 - `fattahi` : 20 easy
 - `behnke` : 15 easy, 12 medium, 33 open
 
-## Formats
+### Formats
 
 The flexible jobshop format is a variant of the standard jobshop format.
 
@@ -107,7 +106,7 @@ meaning
 <br/>
 
 
-## Publications (instances)
+### Publications (instances)
 
 The instances come from the following publications
 
@@ -130,7 +129,7 @@ The instances come from the following publications
 
 
 
-# Flexible jobshop benchmark
+## Flexible jobshop benchmark
 
 The flexible jobshop benchmark problems have been collected from the literature from 1993 to 2012. Some are modified versions of JSPLIB jobshop problems, but some instances come from industrial problems. On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
 
@@ -150,11 +149,11 @@ For each instance we indicate the publication or engine that reaches that bound 
 
 Other databases keep instead the ***first*** publication or method to have achieved that bound for historical reference. This work instead is meant for engine and algorithm developers to have means of reproducing the claimed results for comparison.
 
-## Best known solutions 
+### Best known solutions 
 
 If you visualize the markdown in Visual Studio Code you will have colors !
 
-### Brandimarte (1993)
+#### Brandimarte (1993)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
@@ -167,17 +166,17 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>mk07</td><td>20 x 5</td><td>fjsp</td><td>139</td><td>139</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP < 1h</td></tr>
 <tr><td>mk08</td><td>20 x 10</td><td>fjsp</td><td>523</td><td>523</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>mk09</td><td>20 x 10</td><td>fjsp</td><td>307</td><td>307</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mk10</td><td>20 x 15</td><td>fjsp</td><td>189</td><td>193</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb Quintiq / ub Quintiq</td></tr>
-<tr><td>mk11</td><td>30 x 5</td><td>fjsp</td><td>594</td><td>615</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>CPO in 2012</td></tr>
-<tr><td>mk12</td><td>30 x 10</td><td>fjsp</td><td>320</td><td>508</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>CPO in 2012</td></tr>
-<tr><td>mk13</td><td>30 x 10</td><td>fjsp</td><td>353</td><td>430</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>CPO in 2012</td></tr>
-<tr><td>mk14</td><td>30 x 15</td><td>fjsp</td><td>694</td><td>694</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>CPO in 2012</td></tr>
-<tr><td>mk15</td><td>30 x 15</td><td>fjsp</td><td>283</td><td>341</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>CPO in 2012</td></tr>
+<tr><td>mk10</td><td>20 x 15</td><td>fjsp</td><td>189</td><td>193</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>Quintiq / Quintiq</td></tr>
+<tr><td>mk11</td><td>30 x 5</td><td>fjsp</td><td>605</td><td>612</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>mk12</td><td>30 x 10</td><td>fjsp</td><td>508</td><td>508</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mk13</td><td>30 x 10</td><td>fjsp</td><td>353</td><td>391</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>CPO / OptalCP</td></tr>
+<tr><td>mk14</td><td>30 x 15</td><td>fjsp</td><td>694</td><td>694</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>mk15</td><td>30 x 15</td><td>fjsp</td><td>333</td><td>336</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 </table>
 
 ***Instances mk11 to mk15 are only available from the supplementary material of Test Instances for the Flexible Job Shop Scheduling Problem with Work Centers  Research Report RR-12-01-01 · January 2012 · ISSN 2192-0826***
 
-### Hurink, Jurisch and Thole (1994)
+#### Hurink, Jurisch and Thole (1994)
 
 The problems in this benchmark are modified versions of the corresponding jobshop problems. They are divided into
 - **sdata** : each operation can be assigned to a single machine (jobshop)
@@ -273,7 +272,7 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 
 
 
-### Dauzère-Pérès and Paulli (1994)
+#### Dauzère-Pérès and Paulli (1994)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
@@ -297,7 +296,7 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><td>18a</td><td>20 x 10</td><td>fjsp</td><td>2057</td><td>2070</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Quintiq</td></tr>
 </table>
 
-### Chambers and Barnes (1996)
+#### Chambers and Barnes (1996)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
@@ -324,7 +323,7 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><td>seti5xyz</td><td>15 x 18</td><td>fjsp</td><td>1125</td><td>1125</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 </table>
 
-### Kacem, Hammadi and Borne (2002)
+#### Kacem, Hammadi and Borne (2002)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
@@ -334,7 +333,7 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><td>kacem4</td><td>15 x 10</td><td>fjsp</td><td>11</td><td>11</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 </table>
 
-### Fattahi, Mehrabad and Jolai (2007)
+#### Fattahi, Mehrabad and Jolai (2007)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
@@ -360,7 +359,7 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><td>fattahi20</td><td>12 x 8</td><td>fjsp</td><td>1196</td><td>1196</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 </table>
 
-### Behnke and Geiger (2012)
+#### Behnke and Geiger (2012)
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
@@ -427,7 +426,7 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 </table>
 
 
-## Publications (best known solutions)
+### Publications (best known solutions)
 
 The upper and lower bounds come from
 
