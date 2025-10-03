@@ -1,8 +1,15 @@
 title: Scheduling benchmark
 description: Scheduling benchmarks for optimization engines
-url: https://scheduleopt.github.io/
+url: https://scheduleopt.github.io
 baseurl: /
-
 theme: minima
+markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+
+kramdown:
+  math_engine: mathjax
+
+minima:
+  skin: auto
