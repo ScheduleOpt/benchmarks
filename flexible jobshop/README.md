@@ -11,6 +11,7 @@ Problems come from a variety of publications (all referenced). The best solution
 
 The data and source code for the optimization models can be found in the [Github repository](https://github.com/ScheduleOpt/benchmarks)
 This document is visible as a README.md in the Github folder [flexible jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/flexible%20jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/fjsplib/)
+This document is visible as a README.md in the Github folder [flexible jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/flexible%20jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/fjsplib)
 
 
 ### Table of Contents

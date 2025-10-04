@@ -11,7 +11,7 @@ permalink: /jsplib
 The JSPLib is an informal group of instances (`ft`, `la`, `abz`, `orb`, `swv`, `yn`, `ta`, `dmu` to which we added `tai`, `long` and `short`) that have been used to investigate solution methods for the jobshop problem. On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
 
 The data and source code can be found in the [Github repository](https://github.com/ScheduleOpt/benchmarks)
-This document is visible as a README.md in the Github folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib/)
+This document is visible as a README.md in the Github folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib)
 
 ### Table of Contents
 
