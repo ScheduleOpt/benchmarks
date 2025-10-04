@@ -171,7 +171,7 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>mk12</td><td>30 x 10</td><td>fjsp</td><td>508</td><td>508</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>mk13</td><td>30 x 10</td><td>fjsp</td><td>353</td><td>391</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>CPO / OptalCP</td></tr>
 <tr><td>mk14</td><td>30 x 15</td><td>fjsp</td><td>694</td><td>694</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mk15</td><td>30 x 15</td><td>fjsp</td><td>333</td><td>336</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>mk15</td><td>30 x 15</td><td>fjsp</td><td>333</td><td>333</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h</td></tr>
 </table>
 
 ***Instances mk11 to mk15 are only available from the supplementary material of Test Instances for the Flexible Job Shop Scheduling Problem with Work Centers  Research Report RR-12-01-01 · January 2012 · ISSN 2192-0826***
@@ -436,11 +436,11 @@ The upper and lower bounds come from
 
 - CPO2013 (11 bounds in #a, abz and la) : **Jean-François Puget** Solving flexible job shop scheduling problems (cp optimizer 12.6)  https://www.ibm.com/developerworks/community/blogs/jfp/entry/solving\_flexible\_job\_shop\_scheduling\_problems?lang=en (2013) - this site doesn't exist anymore
 
-- HHHL2010 (3 bounds in #a) : **A. B. Hmida, M. Haouari, M.-J. Huguet, P. Lopez**, Discrepancy search for the flexible job shop scheduling problem, Computers & Operations Research 37 (12) (2010) 2192–2201
+- HHHL2010 (3 bounds in #a) : **A. B. Hmida, M. Haouari, M.-J. Huguet, P. Lopez**, [Discrepancy search for the flexible job shop scheduling problem](https://hal.science/file/index/docid/461981/filename/Flexible_Job_Shop-COR.pdf), Computers & Operations Research 37 (12) (2010) 2192–2201
 
-- DLLSXG2019 (8 bonds in #a, abz, car and la ) : **J. Ding, Z. Lu, C.-M. Li, L. Shen, L. Xu, F. Glover** (2019) A two-individual based evolutionary algorithm for the flexible job shop scheduling problem, in: Proceedings of the AAAI Conference on Artificial Intelligence, Vol. 33, 2019, pp. 2262–2271
+- DLLSXG2019 (8 bonds in #a, abz, car and la ) : **J. Ding, Z. Lu, C.-M. Li, L. Shen, L. Xu, F. Glover** (2019) [A two-individual based evolutionary algorithm for the flexible job shop scheduling problem](https://dl.acm.org/doi/pdf/10.1609/aaai.v33i01.33012262), in: Proceedings of the AAAI Conference on Artificial Intelligence, Vol. 33, 2019, pp. 2262–2271
 
-- CdGKGC2025 (16 bounds in #a, abz, car and la) : **Marc-Emmanuel Coupvent des Graviers, Lotfi Kobrosly, Christophe Guettier, and Tristan Cazenave** (2025). Updating Lower and Upper Bounds for the Job-Shop Scheduling Problem Test Instances CoRR abs/2504.16106
+- CdGKGC2025 (16 bounds in #a, abz, car and la) : **Marc-Emmanuel Coupvent des Graviers, Lotfi Kobrosly, Christophe Guettier, and Tristan Cazenave** (2025). [Updating Lower and Upper Bounds for the Job-Shop Scheduling Problem Test Instances](https://arxiv.org/abs/2504.16106) CoRR abs/2504.16106
 
 
 All other bounds were found with OptalCP
