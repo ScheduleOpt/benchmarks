@@ -31,7 +31,7 @@ The data and source code can be found in the [Github repository](https://github.
 - The best known solutions from published results or engines 
 - A list of relevant publications (for problems and solutions)
 
-Each summary document is visible as a README.md in the Github folder ([jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop), [flexible jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/flexible%20jobshop)) or as webpages ([jobshop](https://scheduleopt.github.io/benchmarks/jsplib/), [flexible jobshop](https://scheduleopt.github.io/benchmarks/fjsplib/))
+Each summary document is visible as a README.md in the Github folder ([jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop), [flexible jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/flexible%20jobshop)) or as webpages ([jobshop](https://scheduleopt.github.io/benchmarks/jsplib), [flexible jobshop](https://scheduleopt.github.io/benchmarks/fjsplib))
 
 <br/>
 
