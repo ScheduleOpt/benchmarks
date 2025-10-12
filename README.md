@@ -4,7 +4,7 @@ title: About
 permalink: /
 ---
 
-# Benchmark of scheduling problems
+## Benchmark of scheduling problems
 
 This benchmark of scheduling problems is intended to compare scheduling engines to the state-of-the-art techniques (heuristics, meta-heuristics, decompositions, etc)
 

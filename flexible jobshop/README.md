@@ -4,7 +4,7 @@ title: FJSPLib
 permalink: /fjsplib
 ---
 
-## The flexible jobshop benchmark library
+## The flexible jobshop scheduling problem benchmark library
 
 The FJSPLib is a benchmark of flexible jobshop problems with their best known solutions to date.
 Problems come from a variety of publications (all referenced). The best solutions known to date (upper bound and lower bound) are provided with the corresponding publication or engine that attained it.
@@ -26,7 +26,7 @@ This document is visible as a README.md in the Github folder [flexible jobshop](
 
 <br/>
 
-### Overview of the flexible jobshop benchmark
+### Overview of the flexible jobshop benchmark library
 
 Flexible jobshop instances (332)
 - 10 instances `mk` from Brandimarte 1993
@@ -50,11 +50,11 @@ We have dropped Cplex from the flexible jobshop tests due to poor performance of
 
 
 Instances are divided into
-- **easy** : solved to optimality (with proof) in 1 minute by at least 1 reference engine
-- **medium** : solved to optimality (with proof) in 1 hour by at least 1 reference engine
-- **hard** : solved to optimality (with proof) in > 1h by at least 1 reference engine
-- **closed** : allegedly solved to optimality. Most of the time the optimal solution is known because 2 different methods were used to find upper and lower bounds.
-- **open** : no proof of optimality
+- <strong style="color:green">easy</strong> : solved to optimality (with proof) in 1 minute by at least 1 reference engine
+- <strong style="color:orange">medium</strong> : solved to optimality (with proof) in 1 hour by at least 1 reference engine
+- <strong style="color:red">hard</strong> : solved to optimality (with proof) in > 1h by at least 1 reference engine
+- <strong style="color:purple">closed</strong> : *allegedly* solved to optimality. Most of the time the optimal solution is known because 2 different methods independently found equal upper and lower bounds. The problem moves to `hard` only when the optimality proof can be reproduced by a reference engine.
+- <strong style="color:grey">open</strong> : no proof of optimality
 
 Currently the instances divide as follows
 - `mk` : 7 easy, 2 medium, 1 open
@@ -122,7 +122,7 @@ The instances come from the following publications
 
 - **Fattahi, P., Saidi Mehrabad, M., & Jolai, F.** (2007). Mathematical modeling and heuristic approaches to flexible job shop scheduling problems. Journal of intelligent manufacturing, 18(3), 331-342.
 
-- **Behnke, D., & Geiger, M. J.** (2012). Test instances for the flexible job shop scheduling problem with work centers.
+- **Behnke, D., & Geiger, M. J.** (2012). [Test instances for the flexible job shop scheduling problem with work centers](https://d-nb.info/1023241773/34) Technical report, Helmut-Schmidt-Universität, Lehrstuhl für Betriebswirtschaftslehre, insbes. Logistik-Management, RR 12-01-01.
 
 
 <br/>
@@ -167,14 +167,14 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>mk08</td><td>20 x 10</td><td>fjsp</td><td>523</td><td>523</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>mk09</td><td>20 x 10</td><td>fjsp</td><td>307</td><td>307</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>mk10</td><td>20 x 15</td><td>fjsp</td><td>189</td><td>193</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>Quintiq / Quintiq</td></tr>
-<tr><td>mk11</td><td>30 x 5</td><td>fjsp</td><td>605</td><td>612</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>mk11</td><td>30 x 5</td><td>fjsp</td><td>608</td><td>612</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 <tr><td>mk12</td><td>30 x 10</td><td>fjsp</td><td>508</td><td>508</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>mk13</td><td>30 x 10</td><td>fjsp</td><td>353</td><td>391</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>CPO / OptalCP</td></tr>
 <tr><td>mk14</td><td>30 x 15</td><td>fjsp</td><td>694</td><td>694</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>mk15</td><td>30 x 15</td><td>fjsp</td><td>333</td><td>333</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h</td></tr>
 </table>
 
-***Instances mk11 to mk15 are only available from the supplementary material of Test Instances for the Flexible Job Shop Scheduling Problem with Work Centers  Research Report RR-12-01-01 · January 2012 · ISSN 2192-0826***
+***Instances mk11 to mk15 are present in the supplementary material of Test Instances for the Flexible Job Shop Scheduling Problem with Work Centers but absent of other problem repositories***
 
 #### Hurink, Jurisch and Thole (1994)
 

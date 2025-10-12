@@ -4,9 +4,11 @@ title: JSPLib
 permalink: /jsplib/
 ---
 
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
-## The jobshop benchmark library
+
+
+## The jobshop scheduling problem benchmark library
 
 The JSPLib is an informal group of instances (`ft`, `la`, `abz`, `orb`, `swv`, `yn`, `ta`, `dmu` to which we added `tai`, `long` and `short`) that have been used to investigate solution methods for the jobshop problem. On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
 
@@ -38,7 +40,7 @@ This document is visible as a README.md in the Github folder [jobshop](https://g
 
 <br/>
 
-### Overview of the jobshop benchmark
+### Overview of the jobshop benchmark library
 
 All instances in the benchmark follow the standard jobshop format. The DaColTeppan instances use a conservative extension of the existing jobshop format.
 
@@ -69,11 +71,11 @@ We have dropped Cplex from the jobshop tests due to poor performance of linear s
 
 
 Instances are divided into
-- **easy** : solved to optimality (with proof) in 1 minute by at least 1 reference engine
-- **medium** : solved to optimality (with proof) in 1 hour by at least 1 reference engine
-- **hard** : solved to optimality (with proof) in > 1h by at least 1 reference engine
-- **closed** : allegedly solved to optimality. Most of the time the optimal solution is known because 2 different methods were used to find upper and lower bounds.
-- **open** : no proof of optimality
+- <strong style="color:green">easy</strong> : solved to optimality (with proof) in 1 minute by at least 1 reference engine
+- <strong style="color:orange">medium</strong> : solved to optimality (with proof) in 1 hour by at least 1 reference engine
+- <strong style="color:red">hard</strong> : solved to optimality (with proof) in > 1h by at least 1 reference engine
+- <strong style="color:purple">closed</strong> : *allegedly* solved to optimality. Most of the time the optimal solution is known because 2 different methods independently found equal upper and lower bounds. The problem moves to `hard` only when the optimality proof can be reproduced by a reference engine.
+- <strong style="color:grey">open</strong> : no proof of optimality
 
 Currently the instances divide as follows
 - `ft` : 3 easy
