@@ -36,3 +36,7 @@ Each summary document is visible as a README.md in the Github folder ([jobshop](
 <br/>
 
 The benchmark, best known solutions, repository and website are maintained by [OptalCP](https://optalcp.org) that is also the editor of the OptalCP scheduling engine. The benchmark was initially meant as a training dataset for OptalCP tuning and was subsequently made public.
+
+Other interesting repositories include
+- [IBM CP Optimizer examples](https://github.com/plaborie/cpoptimizer-examples/tree/main)
+- [OptalCP examples](https://github.com/ScheduleOpt/optalcp-benchmarks)
