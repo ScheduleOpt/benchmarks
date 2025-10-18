@@ -1075,22 +1075,21 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 #### TAI 100 x 100 instances
 
 On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Demo Version 2025.7.0 with 1 FDS, 1 FDSLB, 2 LNS (2 provers, 2 searchers)
+- OptalCP Academic Version 2025.8.0 with 1 FDS, 3 LNS (1 prover, 3 searchers)
 - CP-SAT V9.14.6206 with default configuration (its log reports running 8 workers)
 
 | Instance | OptalCP | CP-SAT |
 |:---------|--------:|-------:|
-| tai_j100_m100_1  |  62521 .. 82081 in 600s | 62303 .. 89932 in 601s |
-| tai_j100_m100_2  |  64866 .. 81838 in 600s | 62032 .. 89636 in 601s |
-| tai_j100_m100_3  |  62741 .. 80842 in 600s | 60201 .. 89282 in 601s |
-| tai_j100_m100_4  |  61197 .. 80957 in 600s | 60980 .. 92178 in 601s |
-| tai_j100_m100_5  |  64449 .. 83466 in 600s | 61165 .. 90602 in 601s |
-| tai_j100_m100_6  |  61340 .. 82824 in 600s | 59272 .. 92399 in 601s |
-| tai_j100_m100_7  |  60932 .. 82099 in 600s | 62755 .. 90905 in 601s |
-| tai_j100_m100_8  |  63641 .. 81830 in 600s | 61238 .. 90028 in 601s |
-| tai_j100_m100_9  |  62989 .. 81859 in 600s | 60619 .. 92256 in 601s |
-| tai_j100_m100_10 |  62370 .. 83961 in 600s | 61008 .. 90217 in 601s |
-
+| tai_j100_m100_1  |  62521 .. 79694 in 600s | 62303 .. 89932 in 601s |
+| tai_j100_m100_2  |  62741 .. 79265 in 600s | 62032 .. 89636 in 601s |
+| tai_j100_m100_3  |  61197 .. 78375 in 600s | 60201 .. 89282 in 601s |
+| tai_j100_m100_4  |  64449 .. 80653 in 600s | 60980 .. 92178 in 601s |
+| tai_j100_m100_5  |  61340 .. 79746 in 600s | 61165 .. 90602 in 601s |
+| tai_j100_m100_6  |  60932 .. 79567 in 600s | 59272 .. 92399 in 601s |
+| tai_j100_m100_7  |  63641 .. 78857 in 600s | 62755 .. 90905 in 601s |
+| tai_j100_m100_8  |  62989 .. 79131 in 600s | 61238 .. 90028 in 601s |
+| tai_j100_m100_9  |  62379 .. 80599 in 600s | 60619 .. 92256 in 601s |
+| tai_j100_m100_10 |  64866 .. 79005 in 600s | 61008 .. 90217 in 601s |
 
 <!--
 #### TAI 1000 x 1000 instances
