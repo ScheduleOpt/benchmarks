@@ -894,6 +894,7 @@ The upper and lower bounds come from
     - **Vilím, P., Laborie, P., & Shaw, P.** (2015). [Failure-directed search for constraint-based scheduling](https://vilim.eu/petr/cpaior2015.pdf). In Integration of AI and OR Techniques in Constraint Programming: 12th International Conference, CPAIOR 2015, Barcelona, Spain, May 18-22, 2015, Proceedings 12 (pp. 437-453). Springer International Publishing.
 
     - **Vilım, P., Laborie, P., & Shaw, P**. [Failure-directed Search for Constraint-based Scheduling Detailed Experimental Results(https://vilim.eu/petr/cpaior2015-results.pdf)].
+    - **Vilım, P., Laborie, P., & Shaw, P**. [Failure-directed Search for Constraint-based Scheduling Detailed Experimental Results](https://vilim.eu/petr/cpaior2015-results.pdf).
 
 - Mu2015 (1 bound - swv08) : Personal communication to optimizizer, probably based on **Murovec, B.** (2015). Job-shop local-search move evaluation without direct consideration of the criterion’s value. European Journal of Operational Research, 241(2), 320-329.
 
