@@ -783,16 +783,16 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>tai_j100_m10_9</td><td>100 x 10</td><td>jobshop</td><td>54210</td><td>54210</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j100_m10_10</td><td>100 x 10</td><td>jobshop</td><td>55464</td><td>55464</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 
-<tr><td>tai_j100_m100_1</td><td>100 x 100</td><td>jobshop</td><td>62703</td><td>79253</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_2</td><td>100 x 100</td><td>jobshop</td><td>62814</td><td>78714</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_3</td><td>100 x 100</td><td>jobshop</td><td>61533</td><td>77770</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_4</td><td>100 x 100</td><td>jobshop</td><td>64742</td><td>80167</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_5</td><td>100 x 100</td><td>jobshop</td><td>61766</td><td>79583</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_6</td><td>100 x 100</td><td>jobshop</td><td>61360</td><td>79522</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_7</td><td>100 x 100</td><td>jobshop</td><td>64040</td><td>79477</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_8</td><td>100 x 100</td><td>jobshop</td><td>63224</td><td>79303</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_9</td><td>100 x 100</td><td>jobshop</td><td>62631</td><td>80608</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_10</td><td>100 x 100</td><td>jobshop</td><td>64866</td><td>79018</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
+<tr><td>tai_j100_m100_1</td><td>100 x 100</td><td>jobshop</td><td>62843</td><td>77127</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
+<tr><td>tai_j100_m100_2</td><td>100 x 100</td><td>jobshop</td><td>62814</td><td>77322</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
+<tr><td>tai_j100_m100_3</td><td>100 x 100</td><td>jobshop</td><td>61533</td><td>76910</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
+<tr><td>tai_j100_m100_4</td><td>100 x 100</td><td>jobshop</td><td>64742</td><td>78604</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
+<tr><td>tai_j100_m100_5</td><td>100 x 100</td><td>jobshop</td><td>61766</td><td>78023</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
+<tr><td>tai_j100_m100_6</td><td>100 x 100</td><td>jobshop</td><td>61360</td><td>77895</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
+<tr><td>tai_j100_m100_7</td><td>100 x 100</td><td>jobshop</td><td>64040</td><td>77670</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
+<tr><td>tai_j100_m100_8</td><td>100 x 100</td><td>jobshop</td><td>63224</td><td>78031</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
+<tr><td>tai_j100_m100_9</td><td>100 x 100</td><td>jobshop</td><td>62631</td><td>79419</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
+<tr><td>tai_j100_m100_10</td><td>100 x 100</td><td>jobshop</td><td>64866</td><td>77837</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
 
 <tr><td>tai_j100_m1000_1</td><td>100 x 1000</td><td>jobshop</td><td>522298</td><td>544732</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
 <tr><td>tai_j100_m1000_2</td><td>100 x 1000</td><td>jobshop</td><td>530375</td><td>546598</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
@@ -893,7 +893,6 @@ The upper and lower bounds come from
 
     - **Vilím, P., Laborie, P., & Shaw, P.** (2015). [Failure-directed search for constraint-based scheduling](https://vilim.eu/petr/cpaior2015.pdf). In Integration of AI and OR Techniques in Constraint Programming: 12th International Conference, CPAIOR 2015, Barcelona, Spain, May 18-22, 2015, Proceedings 12 (pp. 437-453). Springer International Publishing.
 
-    - **Vilım, P., Laborie, P., & Shaw, P**. [Failure-directed Search for Constraint-based Scheduling Detailed Experimental Results(https://vilim.eu/petr/cpaior2015-results.pdf)].
     - **Vilım, P., Laborie, P., & Shaw, P**. [Failure-directed Search for Constraint-based Scheduling Detailed Experimental Results](https://vilim.eu/petr/cpaior2015-results.pdf).
 
 - Mu2015 (1 bound - swv08) : Personal communication to optimizizer, probably based on **Murovec, B.** (2015). Job-shop local-search move evaluation without direct consideration of the criterion’s value. European Journal of Operational Research, 241(2), 320-329.
