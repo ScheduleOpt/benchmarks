@@ -928,7 +928,7 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 - CP-SAT V9.14.6206 with default configuration (its log reports running 8 workers)
 
 | Instance | OptalCP | CP-SAT |
-|:---------|--------:|-------:|
+|:--------:|--------:|-------:|
 | la01 |  666 in 0s |  666 in  0s |
 | la02 |  655 in 0s |  655 in  0s |
 | la03 |  597 in 0s |  597 in  0s |
@@ -977,7 +977,7 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 - CP-SAT V9.14.6206 with default configuration (its log reports running 8 workers)
 
 | Instance | OptalCP | CP-SAT |
-|:---------|--------:|-------:|
+|:--------:|--------:|-------:|
 | ta01js | 1231 in   0s | 1231 in   6s |
 | ta02js | 1244 in   2s | 1244 in  44s |
 | ta03js | 1218 in   2s | 1218 in  19s |
@@ -1066,7 +1066,7 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 - CP-SAT V9.14.6206 with default configuration (its log reports running 8 workers)
 
 | Instance | OptalCP | CP-SAT |
-|:---------|--------:|-------:|
+|:--------:|--------:|-------:|
 | yn1 |  860 .. 884 in 600s | 837 .. 889 in 600s |
 | yn2 |  871 .. 914 in 600s | 858 .. 917 in 600s |
 | yn3 |  853 .. 903 in 600s | 842 .. 918 in 600s |
@@ -1079,7 +1079,7 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 - CP-SAT V9.14.6206 with default configuration (its log reports running 8 workers)
 
 | Instance | OptalCP | CP-SAT |
-|:---------|--------:|-------:|
+|:--------:|--------:|-------:|
 | tai_j100_m100_1  |  62521 .. 79694 in 600s | 62303 .. 89932 in 601s |
 | tai_j100_m100_2  |  62741 .. 79265 in 600s | 62032 .. 89636 in 601s |
 | tai_j100_m100_3  |  61197 .. 78375 in 600s | 60201 .. 89282 in 601s |
@@ -1091,11 +1091,29 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 | tai_j100_m100_9  |  62379 .. 80599 in 600s | 60619 .. 92256 in 601s |
 | tai_j100_m100_10 |  64866 .. 79005 in 600s | 61008 .. 90217 in 601s |
 
-<!--
 #### TAI 1000 x 1000 instances
 
-On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Academic Version 2025.6.1 with 2 FDS, 1 FDSLB, 1 LNS
+On an Windows PC with an i7 4-core 3.0GHz 16GB ram in 600 seconds
+- OptalCP Academic Version 2025.8.15 with 1 FDSLB, 3 LNS with propagation level minimal 
+(because of the size of the problem we have to use low complexity propagation algorithms 
+in order to obtain solutions in a reasonable amount of time)
+
+
+| Instance | OptalCP |
+|:--------:|--------:|
+| tai_j1000_m1000_1  | 549392 .. 898223 in 600s |
+| tai_j1000_m1000_2  | 549043 .. 898785 in 600s |
+| tai_j1000_m1000_3  | 552580 .. 900202 in 600s |
+| tai_j1000_m1000_4  | 547670 .. 899568 in 600s |
+| tai_j1000_m1000_5  | 545193 .. 898803 in 600s |
+| tai_j1000_m0100_6  | 547286 .. 898669 in 600s |
+| tai_j1000_m1000_7  | 545877 .. 899770 in 600s |
+| tai_j1000_m1000_8  | 549220 .. 899411 in 600s |
+| tai_j1000_m1000_9  | 543559 .. 898609 in 600s |
+| tai_j1000_m1000_10 | 541530 .. 898256 in 600s |
+
+
+<!--
 - CP-SAT V9.14.6206 with default configuration (its log reports running 8 workers)
 
 | Instance | OptalCP | CP-SAT |
@@ -1110,4 +1128,19 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 | tai_j1000_m1000_8  | - in 600s | - in 604s |
 | tai_j1000_m1000_9  | - in 600s | - in 604s |
 | tai_j1000_m1000_10 | - in 600s | - in 604s |
+
+| Instance | OptalCP |
+|:---------|--------:|
+| tai_j1000_m1000_1  | 549392 .. 898223 in 600s |
+| tai_j1000_m1000_2  | 529859 .. 898785 in 600s |
+| tai_j1000_m1000_3  | 524979 .. 900383 in 600s |
+| tai_j1000_m1000_4  | 531646 .. 900202 in 600s |
+| tai_j1000_m1000_5  | 531646 .. 900310 in 600s |
+| tai_j1000_m0100_6  | 532426 .. 898669 in 600s |
+| tai_j1000_m1000_7  | 535423 .. 899770 in 600s |
+| tai_j1000_m1000_8  | 529753 .. 899726 in 600s |
+| tai_j1000_m1000_9  | 535770 .. 898609 in 600s |
+| tai_j1000_m1000_10 | 525833 .. 898256 in 600s |
+
+
 -->
