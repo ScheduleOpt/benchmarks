@@ -1093,54 +1093,24 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 
 #### TAI 1000 x 1000 instances
 
-On an Windows PC with an i7 4-core 3.0GHz 16GB ram in 600 seconds
-- OptalCP Academic Version 2025.8.15 with 1 FDSLB, 3 LNS with propagation level minimal 
+On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
+- OptalCP Academic Version 2025.11.0 with 1 FDSLB, 3 LNS with propagation level minimal 
 (because of the size of the problem we have to use low complexity propagation algorithms 
 in order to obtain solutions in a reasonable amount of time)
+- CP-SAT V9.14.6206 with default configuration with presolve disabled (otherwise there is no solution in 10 minutes)
 
-
-| Instance | OptalCP |
-|:--------:|--------:|
-| tai_j1000_m1000_1  | 549392 .. 898223 in 600s |
-| tai_j1000_m1000_2  | 549043 .. 898785 in 600s |
-| tai_j1000_m1000_3  | 552580 .. 900202 in 600s |
-| tai_j1000_m1000_4  | 547670 .. 899568 in 600s |
-| tai_j1000_m1000_5  | 545193 .. 898803 in 600s |
-| tai_j1000_m0100_6  | 547286 .. 898669 in 600s |
-| tai_j1000_m1000_7  | 545877 .. 899770 in 600s |
-| tai_j1000_m1000_8  | 549220 .. 899411 in 600s |
-| tai_j1000_m1000_9  | 543559 .. 898609 in 600s |
-| tai_j1000_m1000_10 | 541530 .. 898256 in 600s |
-
-
-<!--
-- CP-SAT V9.14.6206 with default configuration (its log reports running 8 workers)
 
 | Instance | OptalCP | CP-SAT |
-|:---------|--------:|-------:|
-| tai_j1000_m1000_1  | - in 600s | - in 604s |
-| tai_j1000_m1000_2  | - in 600s | - in 604s |
-| tai_j1000_m1000_3  | - in 600s | - in 604s |
-| tai_j1000_m1000_4  | - in 600s | - in 604s |
-| tai_j1000_m1000_5  | - in 600s | - in 604s |
-| tai_j1000_m0100_6  | - in 600s | - in 604s |
-| tai_j1000_m1000_7  | - in 600s | - in 604s |
-| tai_j1000_m1000_8  | - in 600s | - in 604s |
-| tai_j1000_m1000_9  | - in 600s | - in 604s |
-| tai_j1000_m1000_10 | - in 600s | - in 604s |
-
-| Instance | OptalCP |
-|:---------|--------:|
-| tai_j1000_m1000_1  | 549392 .. 898223 in 600s |
-| tai_j1000_m1000_2  | 529859 .. 898785 in 600s |
-| tai_j1000_m1000_3  | 524979 .. 900383 in 600s |
-| tai_j1000_m1000_4  | 531646 .. 900202 in 600s |
-| tai_j1000_m1000_5  | 531646 .. 900310 in 600s |
-| tai_j1000_m0100_6  | 532426 .. 898669 in 600s |
-| tai_j1000_m1000_7  | 535423 .. 899770 in 600s |
-| tai_j1000_m1000_8  | 529753 .. 899726 in 600s |
-| tai_j1000_m1000_9  | 535770 .. 898609 in 600s |
-| tai_j1000_m1000_10 | 525833 .. 898256 in 600s |
+|:--------:|--------:|-------:|
+| tai_j1000_m1000_1  | 549_392 .. 898_223 in 600s | 527_772 .. 500_517_330 in 743s |
+| tai_j1000_m1000_2  | 549_043 .. 898_785 in 600s | 529_859 .. 500_108_522 in 724s |
+| tai_j1000_m1000_3  | 552_580 .. 900_202 in 600s | 524_375 .. 500_961_143 in 729s |
+| tai_j1000_m1000_4  | 547_670 .. 899_568 in 600s | 531_646 .. 500_731_097 in 727s |
+| tai_j1000_m1000_5  | 545_193 .. 898_803 in 600s | 529_256 .. 500_801_456 in 713s |
+| tai_j1000_m0100_6  | 547_286 .. 898_669 in 600s | 532_426 .. 500_199_506 in 720s |
+| tai_j1000_m1000_7  | 545_877 .. 899_770 in 600s | 535_423 .. 500_514_434 in 728s |
+| tai_j1000_m1000_8  | 549_220 .. 899_411 in 600s | 529_450 .. 500_685_254 in 728s |
+| tai_j1000_m1000_9  | 543_559 .. 898_609 in 600s | 535_770 .. 500_301_012 in 738s |
+| tai_j1000_m1000_10 | 541_530 .. 898_256 in 600s | 525_263 .. 500_099_600 in 729s |
 
 
--->
