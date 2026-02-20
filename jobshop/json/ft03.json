@@ -1,0 +1,64 @@
+{
+  "instance": "ft03",
+  "family": "ft",
+  "family_long": "FisherThompson",
+  "year": "1963",
+  "machines": 3,
+  "jobs": 3,
+  "data": [
+    {
+      "job": 0,
+      "operation": 0,
+      "machine": 2,
+      "duration": 1
+    },
+    {
+      "job": 0,
+      "operation": 1,
+      "machine": 0,
+      "duration": 3
+    },
+    {
+      "job": 0,
+      "operation": 2,
+      "machine": 1,
+      "duration": 6
+    },
+    {
+      "job": 1,
+      "operation": 0,
+      "machine": 1,
+      "duration": 8
+    },
+    {
+      "job": 1,
+      "operation": 1,
+      "machine": 2,
+      "duration": 5
+    },
+    {
+      "job": 1,
+      "operation": 2,
+      "machine": 0,
+      "duration": 10
+    },
+    {
+      "job": 2,
+      "operation": 0,
+      "machine": 2,
+      "duration": 5
+    },
+    {
+      "job": 2,
+      "operation": 1,
+      "machine": 0,
+      "duration": 9
+    },
+    {
+      "job": 2,
+      "operation": 2,
+      "machine": 1,
+      "duration": 1
+    }
+  ]
+}

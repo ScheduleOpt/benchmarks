@@ -1,0 +1,226 @@
+{
+  "instance": "ft06",
+  "family": "ft",
+  "family_long": "FisherThompson",
+  "year": "1963",
+  "machines": 6,
+  "jobs": 6,
+  "data": [
+    {
+      "job": 0,
+      "operation": 0,
+      "machine": 2,
+      "duration": 1
+    },
+    {
+      "job": 0,
+      "operation": 1,
+      "machine": 0,
+      "duration": 3
+    },
+    {
+      "job": 0,
+      "operation": 2,
+      "machine": 1,
+      "duration": 6
+    },
+    {
+      "job": 0,
+      "operation": 3,
+      "machine": 3,
+      "duration": 7
+    },
+    {
+      "job": 0,
+      "operation": 4,
+      "machine": 5,
+      "duration": 3
+    },
+    {
+      "job": 0,
+      "operation": 5,
+      "machine": 4,
+      "duration": 6
+    },
+    {
+      "job": 1,
+      "operation": 0,
+      "machine": 1,
+      "duration": 8
+    },
+    {
+      "job": 1,
+      "operation": 1,
+      "machine": 2,
+      "duration": 5
+    },
+    {
+      "job": 1,
+      "operation": 2,
+      "machine": 4,
+      "duration": 10
+    },
+    {
+      "job": 1,
+      "operation": 3,
+      "machine": 5,
+      "duration": 10
+    },
+    {
+      "job": 1,
+      "operation": 4,
+      "machine": 0,
+      "duration": 10
+    },
+    {
+      "job": 1,
+      "operation": 5,
+      "machine": 3,
+      "duration": 4
+    },
+    {
+      "job": 2,
+      "operation": 0,
+      "machine": 2,
+      "duration": 5
+    },
+    {
+      "job": 2,
+      "operation": 1,
+      "machine": 3,
+      "duration": 4
+    },
+    {
+      "job": 2,
+      "operation": 2,
+      "machine": 5,
+      "duration": 8
+    },
+    {
+      "job": 2,
+      "operation": 3,
+      "machine": 0,
+      "duration": 9
+    },
+    {
+      "job": 2,
+      "operation": 4,
+      "machine": 1,
+      "duration": 1
+    },
+    {
+      "job": 2,
+      "operation": 5,
+      "machine": 4,
+      "duration": 7
+    },
+    {
+      "job": 3,
+      "operation": 0,
+      "machine": 1,
+      "duration": 5
+    },
+    {
+      "job": 3,
+      "operation": 1,
+      "machine": 0,
+      "duration": 5
+    },
+    {
+      "job": 3,
+      "operation": 2,
+      "machine": 2,
+      "duration": 5
+    },
+    {
+      "job": 3,
+      "operation": 3,
+      "machine": 3,
+      "duration": 3
+    },
+    {
+      "job": 3,
+      "operation": 4,
+      "machine": 4,
+      "duration": 8
+    },
+    {
+      "job": 3,
+      "operation": 5,
+      "machine": 5,
+      "duration": 9
+    },
+    {
+      "job": 4,
+      "operation": 0,
+      "machine": 2,
+      "duration": 9
+    },
+    {
+      "job": 4,
+      "operation": 1,
+      "machine": 1,
+      "duration": 3
+    },
+    {
+      "job": 4,
+      "operation": 2,
+      "machine": 4,
+      "duration": 5
+    },
+    {
+      "job": 4,
+      "operation": 3,
+      "machine": 5,
+      "duration": 4
+    },
+    {
+      "job": 4,
+      "operation": 4,
+      "machine": 0,
+      "duration": 3
+    },
+    {
+      "job": 4,
+      "operation": 5,
+      "machine": 3,
+      "duration": 1
+    },
+    {
+      "job": 5,
+      "operation": 0,
+      "machine": 1,
+      "duration": 3
+    },
+    {
+      "job": 5,
+      "operation": 1,
+      "machine": 3,
+      "duration": 3
+    },
+    {
+      "job": 5,
+      "operation": 2,
+      "machine": 5,
+      "duration": 9
+    },
+    {
+      "job": 5,
+      "operation": 3,
+      "machine": 0,
+      "duration": 10
+    },
+    {
+      "job": 5,
+      "operation": 4,
+      "machine": 4,
+      "duration": 4
+    },
+    {
+      "job": 5,
+      "operation": 5,
+      "machine": 2,
+      "duration": 1
+    }
+  ]
+}
