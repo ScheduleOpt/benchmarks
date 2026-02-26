@@ -82,7 +82,7 @@ Currently the instances divide as follows
 - `la` : 39 easy, 1 medium
 - `abz` : 2 easy, 2 medium, 1 hard
 - `orb` : 10 easy
-- `swv` : 7 easy, 4 medium, 6 hard, 3 open
+- `swv` : 7 easy, 7 medium, 3 hard, 3 open
 - `yn` : 4 hard
 - `ta` : 40 easy, 21 medium, 7 hard, 12 open
 - `dmu` : 17 easy, 13 medium, 5 hard, 45 open
@@ -537,10 +537,10 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>swv04</td><td>20 x 10</td><td>jobshop</td><td>1464</td><td>1464</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>swv05</td><td>20 x 10</td><td>jobshop</td><td>1424</td><td>1424</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>swv06</td><td>20 x 15</td><td>jobshop</td><td>1667</td><td>1667</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 40h</td></tr>
-<tr><td>swv07</td><td>20 x 15</td><td>jobshop</td><td>1541</td><td>1594</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>swv08</td><td>20 x 15</td><td>jobshop</td><td>1694</td><td>1751</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Mu2015</td></tr>
+<tr><td>swv07</td><td>20 x 15</td><td>jobshop</td><td>1541</td><td>1594</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub GR2014</td></tr>
+<tr><td>swv08</td><td>20 x 15</td><td>jobshop</td><td>1694</td><td>1751</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Mu2015</td></tr>
 <tr><td>swv09</td><td>20 x 15</td><td>jobshop</td><td>1655</td><td>1655</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 15h</td></tr>
-<tr><td>swv10</td><td>20 x 15</td><td>jobshop</td><td>1692</td><td>1743</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>swv10</td><td>20 x 15</td><td>jobshop</td><td>1692</td><td>1743</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
 <tr><td>swv11</td><td>50 x 10</td><td>jobshop</td><td>2983</td><td>2983</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>swv12</td><td>50 x 10</td><td>jobshop</td><td>2972</td><td>2972</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>swv13</td><td>50 x 10</td><td>jobshop</td><td>3104</td><td>3104</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
@@ -596,9 +596,9 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>ta27js</td><td>20 x 20</td><td>jobshop</td><td>1680</td><td>1680</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>ta28js</td><td>20 x 20</td><td>jobshop</td><td>1603</td><td>1603</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>ta29js</td><td>20 x 20</td><td>jobshop</td><td>1625</td><td>1625</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h</td></tr>
-<tr><td>ta30js</td><td>20 x 20</td><td>jobshop</td><td>1562</td><td>1584</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub NS2002</td></tr>
+<tr><td>ta30js</td><td>20 x 20</td><td>jobshop</td><td>1562</td><td>1584</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub NS2002</td></tr>
 <tr><td>ta31js</td><td>30 x 15</td><td>jobshop</td><td>1764</td><td>1764</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>CPO in < 1h</td></tr>
-<tr><td>ta32js</td><td>30 x 15</td><td>jobshop</td><td>1774</td><td>1784</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb CPO2015 / ub PSV2010</td></tr>
+<tr><td>ta32js</td><td>30 x 15</td><td>jobshop</td><td>1774</td><td>1784</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CPO2015 / ub PSV2010</td></tr>
 <tr><td>ta33js</td><td>30 x 15</td><td>jobshop</td><td>1791</td><td>1791</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 10h</td></tr>
 <tr><td>ta34js</td><td>30 x 15</td><td>jobshop</td><td>1828</td><td>1828</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>ta35js</td><td>30 x 15</td><td>jobshop</td><td>2007</td><td>2007</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
@@ -606,17 +606,17 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>ta37js</td><td>30 x 15</td><td>jobshop</td><td>1771</td><td>1771</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h</td></tr>
 <tr><td>ta38js</td><td>30 x 15</td><td>jobshop</td><td>1673</td><td>1673</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 7h</td></tr>
 <tr><td>ta39js</td><td>30 x 15</td><td>jobshop</td><td>1795</td><td>1795</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>ta40js</td><td>30 x 15</td><td>jobshop</td><td>1658</td><td>1669</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>ta41js</td><td>30 x 20</td><td>jobshop</td><td>1926</td><td>2005</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CPO2015</td></tr>
-<tr><td>ta42js</td><td>30 x 20</td><td>jobshop</td><td>1900</td><td>1937</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>ta43js</td><td>30 x 20</td><td>jobshop</td><td>1809</td><td>1846</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb CPO2015 / ub PLC2015</td></tr>
-<tr><td>ta44js</td><td>30 x 20</td><td>jobshop</td><td>1961</td><td>1979</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>ta40js</td><td>30 x 15</td><td>jobshop</td><td>1658</td><td>1669</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub GR2014</td></tr>
+<tr><td>ta41js</td><td>30 x 20</td><td>jobshop</td><td>1926</td><td>2005</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CPO2015</td></tr>
+<tr><td>ta42js</td><td>30 x 20</td><td>jobshop</td><td>1900</td><td>1937</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub GR2014</td></tr>
+<tr><td>ta43js</td><td>30 x 20</td><td>jobshop</td><td>1809</td><td>1846</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CPO2015 / ub PLC2015</td></tr>
+<tr><td>ta44js</td><td>30 x 20</td><td>jobshop</td><td>1961</td><td>1979</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
 <tr><td>ta45js</td><td>30 x 20</td><td>jobshop</td><td>1997</td><td>1997</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>ta46js</td><td>30 x 20</td><td>jobshop</td><td>1976</td><td>2004</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>ta47js</td><td>30 x 20</td><td>jobshop</td><td>1827</td><td>1889</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub PLC2015</td></tr>
-<tr><td>ta48js</td><td>30 x 20</td><td>jobshop</td><td>1921</td><td>1937</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>ta49js</td><td>30 x 20</td><td>jobshop</td><td>1938</td><td>1960</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
-<tr><td>ta50js</td><td>30 x 20</td><td>jobshop</td><td>1848</td><td>1923</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub PLC2015</td></tr>
+<tr><td>ta46js</td><td>30 x 20</td><td>jobshop</td><td>1976</td><td>2004</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub GR2014</td></tr>
+<tr><td>ta47js</td><td>30 x 20</td><td>jobshop</td><td>1827</td><td>1889</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub PLC2015</td></tr>
+<tr><td>ta48js</td><td>30 x 20</td><td>jobshop</td><td>1921</td><td>1937</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>ta49js</td><td>30 x 20</td><td>jobshop</td><td>1938</td><td>1960</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
+<tr><td>ta50js</td><td>30 x 20</td><td>jobshop</td><td>1848</td><td>1923</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub PLC2015</td></tr>
 <tr><td>ta51js</td><td>50 x 15</td><td>jobshop</td><td>2760</td><td>2760</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>ta52js</td><td>50 x 15</td><td>jobshop</td><td>2756</td><td>2756</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>ta53js</td><td>50 x 15</td><td>jobshop</td><td>2717</td><td>2717</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
@@ -663,16 +663,16 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>dmu08</td><td>20 x 20</td><td>jobshop</td><td>3188</td><td>3188</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>dmu09</td><td>20 x 20</td><td>jobshop</td><td>3092</td><td>3092</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>dmu10</td><td>20 x 20</td><td>jobshop</td><td>2984</td><td>2984</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dmu11</td><td>30 x 15</td><td>jobshop</td><td>3402</td><td>3430</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub PLC2015</td></tr>
-<tr><td>dmu12</td><td>30 x 15</td><td>jobshop</td><td>3481</td><td>3492</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu11</td><td>30 x 15</td><td>jobshop</td><td>3402</td><td>3430</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub PLC2015</td></tr>
+<tr><td>dmu12</td><td>30 x 15</td><td>jobshop</td><td>3481</td><td>3492</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
 <tr><td>dmu13</td><td>30 x 15</td><td>jobshop</td><td>3681</td><td>3681</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 3h</td></tr>
 <tr><td>dmu14</td><td>30 x 15</td><td>jobshop</td><td>3394</td><td>3394</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>dmu15</td><td>30 x 15</td><td>jobshop</td><td>3343</td><td>3343</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>dmu16</td><td>30 x 20</td><td>jobshop</td><td>3734</td><td>3750</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb CPO2015 / ub LHW2024</td></tr>
-<tr><td>dmu17</td><td>30 x 20</td><td>jobshop</td><td>3733</td><td>3812</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
+<tr><td>dmu16</td><td>30 x 20</td><td>jobshop</td><td>3734</td><td>3750</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CPO2015 / ub LHW2024</td></tr>
+<tr><td>dmu17</td><td>30 x 20</td><td>jobshop</td><td>3733</td><td>3812</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
 <tr><td>dmu18</td><td>30 x 20</td><td>jobshop</td><td>3844</td><td>3844</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 10h</td></tr>
-<tr><td>dmu19</td><td>30 x 20</td><td>jobshop</td><td>3707</td><td>3764</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu20</td><td>30 x 20</td><td>jobshop</td><td>3632</td><td>3699</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
+<tr><td>dmu19</td><td>30 x 20</td><td>jobshop</td><td>3707</td><td>3764</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu20</td><td>30 x 20</td><td>jobshop</td><td>3632</td><td>3699</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
 <tr><td>dmu21</td><td>40 x 15</td><td>jobshop</td><td>4380</td><td>4380</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>dmu22</td><td>40 x 15</td><td>jobshop</td><td>4725</td><td>4725</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>CPO in < 1 min</td></tr>
 <tr><td>dmu23</td><td>40 x 15</td><td>jobshop</td><td>4668</td><td>4668</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>CPO in < 1 min</td></tr>
@@ -693,46 +693,46 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>dmu38</td><td>50 x 20</td><td>jobshop</td><td>5713</td><td>5713</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>dmu39</td><td>50 x 20</td><td>jobshop</td><td>5747</td><td>5747</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>dmu40</td><td>50 x 20</td><td>jobshop</td><td>5577</td><td>5577</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>dmu41</td><td>20 x 15</td><td>jobshop</td><td>3176</td><td>3248</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub PLC2015</td></tr>
-<tr><td>dmu42</td><td>20 x 15</td><td>jobshop</td><td>3339</td><td>3390</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu41</td><td>20 x 15</td><td>jobshop</td><td>3176</td><td>3248</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub PLC2015</td></tr>
+<tr><td>dmu42</td><td>20 x 15</td><td>jobshop</td><td>3339</td><td>3390</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
 <tr><td>dmu43</td><td>20 x 15</td><td>jobshop</td><td>3441</td><td>3441</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 8h</td></tr>
-<tr><td>dmu44</td><td>20 x 15</td><td>jobshop</td><td>3414</td><td>3475</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu45</td><td>20 x 15</td><td>jobshop</td><td>3217</td><td>3266</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu46</td><td>20 x 20</td><td>jobshop</td><td>3780</td><td>4035</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>dmu47</td><td>20 x 20</td><td>jobshop</td><td>3714</td><td>3939</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub GR2014</td></tr>
-<tr><td>dmu48</td><td>20 x 20</td><td>jobshop</td><td>3628</td><td>3763</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu49</td><td>20 x 20</td><td>jobshop</td><td>3543</td><td>3706</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
-<tr><td>dmu50</td><td>20 x 20</td><td>jobshop</td><td>3618</td><td>3729</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub PLC2015</td></tr>
-<tr><td>dmu51</td><td>30 x 15</td><td>jobshop</td><td>4070</td><td>4156</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu52</td><td>30 x 15</td><td>jobshop</td><td>4203</td><td>4297</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
-<tr><td>dmu53</td><td>30 x 15</td><td>jobshop</td><td>4248</td><td>4378</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu54</td><td>30 x 15</td><td>jobshop</td><td>4277</td><td>4361</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu55</td><td>30 x 15</td><td>jobshop</td><td>4191</td><td>4258</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
-<tr><td>dmu56</td><td>30 x 20</td><td>jobshop</td><td>4755</td><td>4939</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub XLGG2022</td></tr>
-<tr><td>dmu57</td><td>30 x 20</td><td>jobshop</td><td>4462</td><td>4647</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub XLGG2022</td></tr>
-<tr><td>dmu58</td><td>30 x 20</td><td>jobshop</td><td>4484</td><td>4701</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu59</td><td>30 x 20</td><td>jobshop</td><td>4366</td><td>4607</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
-<tr><td>dmu60</td><td>30 x 20</td><td>jobshop</td><td>4468</td><td>4721</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu61</td><td>40 x 15</td><td>jobshop</td><td>5038</td><td>5169</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
-<tr><td>dmu62</td><td>40 x 15</td><td>jobshop</td><td>5176</td><td>5247</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
-<tr><td>dmu63</td><td>40 x 15</td><td>jobshop</td><td>5245</td><td>5312</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
-<tr><td>dmu64</td><td>40 x 15</td><td>jobshop</td><td>5155</td><td>5226</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu65</td><td>40 x 15</td><td>jobshop</td><td>5122</td><td>5173</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
-<tr><td>dmu66</td><td>40 x 20</td><td>jobshop</td><td>5526</td><td>5701</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu67</td><td>40 x 20</td><td>jobshop</td><td>5661</td><td>5779</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu68</td><td>40 x 20</td><td>jobshop</td><td>5513</td><td>5763</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu69</td><td>40 x 20</td><td>jobshop</td><td>5511</td><td>5688</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu70</td><td>40 x 20</td><td>jobshop</td><td>5633</td><td>5868</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu71</td><td>50 x 15</td><td>jobshop</td><td>6129</td><td>6207</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu72</td><td>50 x 15</td><td>jobshop</td><td>6434</td><td>6463</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb CdGKGC2025 / ub SS2018</td></tr>
-<tr><td>dmu73</td><td>50 x 15</td><td>jobshop</td><td>6107</td><td>6136</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu74</td><td>50 x 15</td><td>jobshop</td><td>6168</td><td>6196</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu75</td><td>50 x 15</td><td>jobshop</td><td>6123</td><td>6189</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
-<tr><td>dmu76</td><td>50 x 20</td><td>jobshop</td><td>6479</td><td>6718</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu77</td><td>50 x 20</td><td>jobshop</td><td>6520</td><td>6747</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu78</td><td>50 x 20</td><td>jobshop</td><td>6643</td><td>6755</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu79</td><td>50 x 20</td><td>jobshop</td><td>6720</td><td>6910</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
-<tr><td>dmu80</td><td>50 x 20</td><td>jobshop</td><td>6460</td><td>6634</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu44</td><td>20 x 15</td><td>jobshop</td><td>3414</td><td>3475</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu45</td><td>20 x 15</td><td>jobshop</td><td>3217</td><td>3266</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu46</td><td>20 x 20</td><td>jobshop</td><td>3780</td><td>4035</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub GR2014</td></tr>
+<tr><td>dmu47</td><td>20 x 20</td><td>jobshop</td><td>3714</td><td>3939</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub GR2014</td></tr>
+<tr><td>dmu48</td><td>20 x 20</td><td>jobshop</td><td>3628</td><td>3763</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu49</td><td>20 x 20</td><td>jobshop</td><td>3543</td><td>3706</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
+<tr><td>dmu50</td><td>20 x 20</td><td>jobshop</td><td>3618</td><td>3729</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub PLC2015</td></tr>
+<tr><td>dmu51</td><td>30 x 15</td><td>jobshop</td><td>4070</td><td>4156</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu52</td><td>30 x 15</td><td>jobshop</td><td>4203</td><td>4297</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
+<tr><td>dmu53</td><td>30 x 15</td><td>jobshop</td><td>4248</td><td>4378</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu54</td><td>30 x 15</td><td>jobshop</td><td>4277</td><td>4361</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu55</td><td>30 x 15</td><td>jobshop</td><td>4191</td><td>4258</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
+<tr><td>dmu56</td><td>30 x 20</td><td>jobshop</td><td>4755</td><td>4939</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub XLGG2022</td></tr>
+<tr><td>dmu57</td><td>30 x 20</td><td>jobshop</td><td>4462</td><td>4647</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub XLGG2022</td></tr>
+<tr><td>dmu58</td><td>30 x 20</td><td>jobshop</td><td>4484</td><td>4701</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu59</td><td>30 x 20</td><td>jobshop</td><td>4366</td><td>4607</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
+<tr><td>dmu60</td><td>30 x 20</td><td>jobshop</td><td>4468</td><td>4721</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu61</td><td>40 x 15</td><td>jobshop</td><td>5038</td><td>5169</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
+<tr><td>dmu62</td><td>40 x 15</td><td>jobshop</td><td>5176</td><td>5247</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
+<tr><td>dmu63</td><td>40 x 15</td><td>jobshop</td><td>5245</td><td>5312</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
+<tr><td>dmu64</td><td>40 x 15</td><td>jobshop</td><td>5155</td><td>5226</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu65</td><td>40 x 15</td><td>jobshop</td><td>5122</td><td>5173</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub LHW2024</td></tr>
+<tr><td>dmu66</td><td>40 x 20</td><td>jobshop</td><td>5526</td><td>5701</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu67</td><td>40 x 20</td><td>jobshop</td><td>5661</td><td>5779</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu68</td><td>40 x 20</td><td>jobshop</td><td>5513</td><td>5763</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu69</td><td>40 x 20</td><td>jobshop</td><td>5511</td><td>5688</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu70</td><td>40 x 20</td><td>jobshop</td><td>5633</td><td>5868</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu71</td><td>50 x 15</td><td>jobshop</td><td>6129</td><td>6207</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu72</td><td>50 x 15</td><td>jobshop</td><td>6434</td><td>6463</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CdGKGC2025 / ub SS2018</td></tr>
+<tr><td>dmu73</td><td>50 x 15</td><td>jobshop</td><td>6107</td><td>6136</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu74</td><td>50 x 15</td><td>jobshop</td><td>6168</td><td>6196</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu75</td><td>50 x 15</td><td>jobshop</td><td>6123</td><td>6189</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub SS2018</td></tr>
+<tr><td>dmu76</td><td>50 x 20</td><td>jobshop</td><td>6479</td><td>6718</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu77</td><td>50 x 20</td><td>jobshop</td><td>6520</td><td>6747</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu78</td><td>50 x 20</td><td>jobshop</td><td>6643</td><td>6755</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu79</td><td>50 x 20</td><td>jobshop</td><td>6720</td><td>6910</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
+<tr><td>dmu80</td><td>50 x 20</td><td>jobshop</td><td>6460</td><td>6634</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub CS2022</td></tr>
 </table>
 
 #### Da Col and Teppan (2022)
@@ -749,7 +749,6 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>tai_j10_m10_8</td><td>10 x 10</td><td>jobshop</td><td>7788</td><td>7788</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j10_m10_9</td><td>10 x 10</td><td>jobshop</td><td>8300</td><td>8300</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j10_m10_10</td><td>10 x 10</td><td>jobshop</td><td>8481</td><td>8481</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-
 <tr><td>tai_j10_m100_1</td><td>10 x 100</td><td>jobshop</td><td>56609</td><td>56609</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j10_m100_2</td><td>10 x 100</td><td>jobshop</td><td>52330</td><td>52330</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j10_m100_3</td><td>10 x 100</td><td>jobshop</td><td>56412</td><td>56412</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
@@ -760,7 +759,6 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>tai_j10_m100_8</td><td>10 x 100</td><td>jobshop</td><td>56466</td><td>56466</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j10_m100_9</td><td>10 x 100</td><td>jobshop</td><td>55096</td><td>55096</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j10_m100_10</td><td>10 x 100</td><td>jobshop</td><td>56661</td><td>56661</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-
 <tr><td>tai_j10_m1000_1</td><td>10 x 1000</td><td>jobshop</td><td>515370</td><td>515370</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j10_m1000_2</td><td>10 x 1000</td><td>jobshop</td><td>513525</td><td>513525</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j10_m1000_3</td><td>10 x 1000</td><td>jobshop</td><td>508161</td><td>508161</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
@@ -771,7 +769,6 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>tai_j10_m1000_8</td><td>10 x 1000</td><td>jobshop</td><td>522277</td><td>522277</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j10_m1000_9</td><td>10 x 1000</td><td>jobshop</td><td>511213</td><td>511213</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j10_m1000_10</td><td>10 x 1000</td><td>jobshop</td><td>509855</td><td>509855</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-
 <tr><td>tai_j100_m10_1</td><td>100 x 10</td><td>jobshop</td><td>54951</td><td>54951</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j100_m10_2</td><td>100 x 10</td><td>jobshop</td><td>57160</td><td>57160</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j100_m10_3</td><td>100 x 10</td><td>jobshop</td><td>54166</td><td>54166</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
@@ -782,29 +779,26 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>tai_j100_m10_8</td><td>100 x 10</td><td>jobshop</td><td>55624</td><td>55624</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j100_m10_9</td><td>100 x 10</td><td>jobshop</td><td>54210</td><td>54210</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j100_m10_10</td><td>100 x 10</td><td>jobshop</td><td>55464</td><td>55464</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-
-<tr><td>tai_j100_m100_1</td><td>100 x 100</td><td>jobshop</td><td>62843</td><td>77127</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_2</td><td>100 x 100</td><td>jobshop</td><td>62814</td><td>77322</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_3</td><td>100 x 100</td><td>jobshop</td><td>61533</td><td>76910</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_4</td><td>100 x 100</td><td>jobshop</td><td>64742</td><td>78604</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_5</td><td>100 x 100</td><td>jobshop</td><td>61766</td><td>78023</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_6</td><td>100 x 100</td><td>jobshop</td><td>61360</td><td>77895</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_7</td><td>100 x 100</td><td>jobshop</td><td>64040</td><td>77670</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_8</td><td>100 x 100</td><td>jobshop</td><td>63224</td><td>78031</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_9</td><td>100 x 100</td><td>jobshop</td><td>62631</td><td>79419</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m100_10</td><td>100 x 100</td><td>jobshop</td><td>64866</td><td>77837</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-
-<tr><td>tai_j100_m1000_1</td><td>100 x 1000</td><td>jobshop</td><td>522298</td><td>544732</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m1000_2</td><td>100 x 1000</td><td>jobshop</td><td>530375</td><td>546598</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m1000_3</td><td>100 x 1000</td><td>jobshop</td><td>530560</td><td>549372</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m1000_4</td><td>100 x 1000</td><td>jobshop</td><td>527101</td><td>545138</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m1000_5</td><td>100 x 1000</td><td>jobshop</td><td>517728</td><td>545535</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m1000_6</td><td>100 x 1000</td><td>jobshop</td><td>522907</td><td>545730</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m1000_7</td><td>100 x 1000</td><td>jobshop</td><td>522537</td><td>546899</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m1000_8</td><td>100 x 1000</td><td>jobshop</td><td>526428</td><td>549337</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m1000_9</td><td>100 x 1000</td><td>jobshop</td><td>528097</td><td>550693</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j100_m1000_10</td><td>100 x 1000</td><td>jobshop</td><td>521766</td><td>543797</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-
+<tr><td>tai_j100_m100_1</td><td>100 x 100</td><td>jobshop</td><td>62843</td><td>77127</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m100_2</td><td>100 x 100</td><td>jobshop</td><td>62814</td><td>77322</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m100_3</td><td>100 x 100</td><td>jobshop</td><td>61533</td><td>76910</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m100_4</td><td>100 x 100</td><td>jobshop</td><td>64742</td><td>78604</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m100_5</td><td>100 x 100</td><td>jobshop</td><td>61766</td><td>78023</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m100_6</td><td>100 x 100</td><td>jobshop</td><td>61360</td><td>77895</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m100_7</td><td>100 x 100</td><td>jobshop</td><td>64040</td><td>77670</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m100_8</td><td>100 x 100</td><td>jobshop</td><td>63224</td><td>78031</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m100_9</td><td>100 x 100</td><td>jobshop</td><td>62631</td><td>79419</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m100_10</td><td>100 x 100</td><td>jobshop</td><td>64866</td><td>77837</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m1000_1</td><td>100 x 1000</td><td>jobshop</td><td>522298</td><td>544732</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m1000_2</td><td>100 x 1000</td><td>jobshop</td><td>530375</td><td>546598</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m1000_3</td><td>100 x 1000</td><td>jobshop</td><td>530560</td><td>549372</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m1000_4</td><td>100 x 1000</td><td>jobshop</td><td>527101</td><td>545138</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m1000_5</td><td>100 x 1000</td><td>jobshop</td><td>517728</td><td>545535</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m1000_6</td><td>100 x 1000</td><td>jobshop</td><td>522907</td><td>545730</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m1000_7</td><td>100 x 1000</td><td>jobshop</td><td>522537</td><td>546899</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m1000_8</td><td>100 x 1000</td><td>jobshop</td><td>526428</td><td>549337</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m1000_9</td><td>100 x 1000</td><td>jobshop</td><td>528097</td><td>550693</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m1000_10</td><td>100 x 1000</td><td>jobshop</td><td>521766</td><td>543797</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 <tr><td>tai_j1000_m10_1</td><td>1000 x 10</td><td>jobshop</td><td>515334</td><td>515334</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j1000_m10_2</td><td>1000 x 10</td><td>jobshop</td><td>509226</td><td>509226</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j1000_m10_3</td><td>1000 x 10</td><td>jobshop</td><td>517493</td><td>517493</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
@@ -815,28 +809,26 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>tai_j1000_m10_8</td><td>1000 x 10</td><td>jobshop</td><td>513101</td><td>513101</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j1000_m10_9</td><td>1000 x 10</td><td>jobshop</td><td>508701</td><td>508701</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j1000_m10_10</td><td>1000 x 10</td><td>jobshop</td><td>521360</td><td>521360</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-
-<tr><td>tai_j1000_m100_1</td><td>1000 x 100</td><td>jobshop</td><td>525343</td><td>539120</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j1000_m100_2</td><td>1000 x 100</td><td>jobshop</td><td>528088</td><td>540895</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j1000_m100_3</td><td>1000 x 100</td><td>jobshop</td><td>522793</td><td>534794</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j1000_m100_4</td><td>1000 x 100</td><td>jobshop</td><td>524271</td><td>536317</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j1000_m100_5</td><td>1000 x 100</td><td>jobshop</td><td>531216</td><td>532016</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j1000_m100_6</td><td>1000 x 100</td><td>jobshop</td><td>518763</td><td>535189</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j1000_m100_7</td><td>1000 x 100</td><td>jobshop</td><td>527093</td><td>535894</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j1000_m100_8</td><td>1000 x 100</td><td>jobshop</td><td>519524</td><td>533985</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j1000_m100_9</td><td>1000 x 100</td><td>jobshop</td><td>520889</td><td>539511</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-<tr><td>tai_j1000_m100_10</td><td>1000 x 100</td><td>jobshop</td><td>529112</td><td>540884</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
-
-<tr><td>tai_j1000_m1000_1</td><td>1000 x 1000</td><td>jobshop</td><td>549392</td><td>877062</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_2</td><td>1000 x 1000</td><td>jobshop</td><td>549043</td><td>877115</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_3</td><td>1000 x 1000</td><td>jobshop</td><td>552580</td><td>878805</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_4</td><td>1000 x 1000</td><td>jobshop</td><td>547670</td><td>876363</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_5</td><td>1000 x 1000</td><td>jobshop</td><td>545193</td><td>877562</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_6</td><td>1000 x 1000</td><td>jobshop</td><td>547286</td><td>876067</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_7</td><td>1000 x 1000</td><td>jobshop</td><td>545877</td><td>875891</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_8</td><td>1000 x 1000</td><td>jobshop</td><td>549220</td><td>876456</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_9</td><td>1000 x 1000</td><td>jobshop</td><td>543559</td><td>875914</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_10</td><td>1000 x 1000</td><td>jobshop</td><td>541530</td><td>874820</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m100_1</td><td>1000 x 100</td><td>jobshop</td><td>525343</td><td>539120</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j1000_m100_2</td><td>1000 x 100</td><td>jobshop</td><td>528088</td><td>540895</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j1000_m100_3</td><td>1000 x 100</td><td>jobshop</td><td>522793</td><td>534794</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j1000_m100_4</td><td>1000 x 100</td><td>jobshop</td><td>524271</td><td>536317</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j1000_m100_5</td><td>1000 x 100</td><td>jobshop</td><td>531216</td><td>532016</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j1000_m100_6</td><td>1000 x 100</td><td>jobshop</td><td>518763</td><td>535189</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j1000_m100_7</td><td>1000 x 100</td><td>jobshop</td><td>527093</td><td>535894</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j1000_m100_8</td><td>1000 x 100</td><td>jobshop</td><td>519524</td><td>533985</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j1000_m100_9</td><td>1000 x 100</td><td>jobshop</td><td>520889</td><td>539511</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j1000_m100_10</td><td>1000 x 100</td><td>jobshop</td><td>529112</td><td>540884</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j1000_m1000_1</td><td>1000 x 1000</td><td>jobshop</td><td>549392</td><td>877062</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_2</td><td>1000 x 1000</td><td>jobshop</td><td>549043</td><td>877115</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_3</td><td>1000 x 1000</td><td>jobshop</td><td>552580</td><td>878805</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_4</td><td>1000 x 1000</td><td>jobshop</td><td>547670</td><td>876363</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_5</td><td>1000 x 1000</td><td>jobshop</td><td>545193</td><td>877562</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_6</td><td>1000 x 1000</td><td>jobshop</td><td>547286</td><td>876067</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_7</td><td>1000 x 1000</td><td>jobshop</td><td>545877</td><td>875891</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_8</td><td>1000 x 1000</td><td>jobshop</td><td>549220</td><td>876456</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_9</td><td>1000 x 1000</td><td>jobshop</td><td>543559</td><td>875914</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_j1000_m1000_10</td><td>1000 x 1000</td><td>jobshop</td><td>541530</td><td>874820</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
 </table>
 
 #### DaCol and Teppan - reentrant jobshop (2022)
@@ -846,34 +838,31 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>long-100-10000-1</td><td>103 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>long-100-10000-2</td><td>103 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>long-100-10000-3</td><td>103 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-
-<tr><td>long-1000-10000-1</td><td>1002 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>long-1000-10000-2</td><td>1002 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>long-1000-10000-3</td><td>1002 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-
 <tr><td>long-100-100000-1</td><td>109 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>long-100-100000-2</td><td>114 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>long-100-100000-3</td><td>109 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>long-1000-10000-1</td><td>1002 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>long-1000-10000-2</td><td>1002 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>long-1000-10000-3</td><td>1002 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>long-1000-100000-1</td><td>1002 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>long-1000-100000-2</td><td>1002 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>long-1000-100000-3</td><td>1003 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+</table>
 
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>short-100-10000-1</td><td>2162 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>short-100-10000-2</td><td>2192 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>short-100-10000-3</td><td>2169 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-
-<tr><td>short-1000-10000-1</td><td>2882 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>short-1000-10000-2</td><td>2863 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>short-1000-10000-3</td><td>2897 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-
 <tr><td>short-100-100000-1</td><td>20685 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>short-100-100000-2</td><td>20870 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>short-100-100000-3</td><td>20767 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-
-<tr><td>short-1000-100000-1</td><td>21280 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600038</td><td style="background-color:grey;color:white;font-weight:bold">open</td><td>lb OptalCP / ub OptalCP</td></tr>
+<tr><td>short-1000-10000-1</td><td>2882 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>short-1000-10000-2</td><td>2863 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>short-1000-10000-3</td><td>2897 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>short-1000-100000-1</td><td>21280 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600038</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 <tr><td>short-1000-100000-2</td><td>21349 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>short-1000-100000-3</td><td>21338 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-
 </table>
 
 *DaCol and Tepan report instance short-1000-100000-1 was solved to optimality by CP Optimizer in 6h which we haven't been able to reproduce (with CPO any other solver). We are still investigating*
@@ -887,29 +876,29 @@ The upper and lower bounds come from
 
 - PSV2010 (1 bound - ta32js) : **Pardalos, P. M., Shylo, O. V., & Vazacopoulos, A.** (2010). Solving job shop scheduling problems utilizing the properties of backbone and “big valley”. Computational Optimization and Applications, 47, 61-76.
 
-- GR2014 (6 bounds in dmu, tajs and swv) : **Gonçalves, J. F., & Resende, M. G.** (2014). An extended Akers graphical method with a biased random‐key genetic algorithm for job‐shop scheduling. International Transactions in Operational Research, 21(2), 215-246.
+- GR2014 (6 bounds in dmu, swv and ta) : **Gonçalves, J. F., & Resende, M. G.** (2014). An extended Akers graphical method with a biased random‐key genetic algorithm for job‐shop scheduling. International Transactions in Operational Research, 21(2), 215-246.
 
-- CPO2015 (4 bounds in dmu and tajs): 
+- CPO2015 (4 bounds in dmu and ta) : 
 
-    - **Vilím, P., Laborie, P., & Shaw, P.** (2015). [Failure-directed search for constraint-based scheduling](https://vilim.eu/petr/cpaior2015.pdf). In Integration of AI and OR Techniques in Constraint Programming: 12th International Conference, CPAIOR 2015, Barcelona, Spain, May 18-22, 2015, Proceedings 12 (pp. 437-453). Springer International Publishing.
+    - **Vilím, P., Laborie, P., & Shaw, P.** (2015). [Failure-directed search for constraint-based scheduling](https://vilim.eu/petr/cpaior2015.pdf). In CPAIOR 2015 proceedings.
 
-    - **Vilım, P., Laborie, P., & Shaw, P**. [Failure-directed Search for Constraint-based Scheduling Detailed Experimental Results](https://vilim.eu/petr/cpaior2015-results.pdf).
+    - **Vilím, P., Laborie, P., & Shaw, P.**. [Detailed experimental results](https://vilim.eu/petr/cpaior2015-results.pdf).
 
 - Mu2015 (1 bound - swv08) : Personal communication to optimizizer, probably based on **Murovec, B.** (2015). Job-shop local-search move evaluation without direct consideration of the criterion’s value. European Journal of Operational Research, 241(2), 320-329.
 
-- PLC2015 (6 bounds in dmu and tajs) : **Peng, B., Lü, Z., & Cheng, T. C. E.** (2015). [A tabu search/path relinking algorithm to solve the job shop scheduling problem](https://arxiv.org/abs/1402.5613). Computers & Operations Research, 53, 154-164.
+- PLC2015 (6 bounds in dmu and ta) : **Peng, B., Lü, Z., & Cheng, T. C. E.** (2015). [A tabu search/path relinking algorithm to solve the job shop scheduling problem](https://arxiv.org/abs/1402.5613). Computers & Operations Research, 53, 154-164.
 
-- SS2018 (11 bounds in dmu and swv) : **Shylo, O. V., & Shams, H.** (2018). [Boosting binary optimization via binary classification: A case study of job shop scheduling](https://arxiv.org/abs/1808.10813)
+- SS2018 (11 bounds in dmu, swv and ta) : **Shylo, O. V., & Shams, H.** (2018). [Boosting binary optimization via binary classification: A case study of job shop scheduling](https://arxiv.org/abs/1808.10813).
 
-- CS2022 (19 bounds in dmu and tajs) : **Constantino, O. H., & Segura, C.** (2022). A parallel memetic algorithm with explicit management of diversity for the job shop scheduling problem. Applied Intelligence, 52(1), 141-153.
+- CS2022 (19 bounds in dmu and ta) : **Constantino, O. H., & Segura, C.** (2022). A parallel memetic algorithm with explicit management of diversity for the job shop scheduling problem. Applied Intelligence, 52(1), 141-153.
 
 - XLGG2022 (2 bounds in dmu) : **Xie, J., Li, X., Gao, L., & Gui, L.** (2022). A hybrid algorithm with a new neighborhood structure for job shop scheduling problems. Computers & Industrial Engineering, 169, 108205.
 
-- Hexaly2024 (10 bounds - tai) : **Lea Blaise** (2014) [https://www.hexaly.com/benchmarks/hexaly-vs-cp-optimizer-vs-CP-SAT-on-the-job-shop-scheduling-problem-jssp](https://www.hexaly.com/benchmarks/hexaly-vs-cp-optimizer-vs-CP-SAT-on-the-job-shop-scheduling-problem-jssp)
+- Hexaly2024 (10 bounds in tai) : **Lea Blaise** (2014). [Hexaly benchmarks and comparisons](https://www.hexaly.com/benchmarks/hexaly-vs-cp-optimizer-vs-CP-SAT-on-the-job-shop-scheduling-problem-jssp).
 
-- LHW2024 (12 bounds - dmu, tajs) : **Mingjie Li, Jin-Kao Hao & Qinghua Wu** (2025). Combining Hash-based Tabu Search and Frequent Pattern Mining for Job-Shop Scheduling. IISE Transactions, 1–16.
+- LHW2024 (12 bounds in dmu and ta) : **Mingjie Li, Jin-Kao Hao & Qinghua Wu** (2025). Combining Hash-based Tabu Search and Frequent Pattern Mining for Job-Shop Scheduling. IISE Transactions.
 
-- CdGKGC2025 (1 bound dmu72) : **Marc-Emmanuel Coupvent des Graviers, Lotfi Kobrosly, Christophe Guettier, and Tristan Cazenave** (2025). [Updating Lower and Upper Bounds for the Job-Shop Scheduling Problem Test Instances](https://arxiv.org/abs/2504.16106) CoRR abs/2504.16106
+- CdGKGC2025 (1 bound - dmu72) : **Marc-Emmanuel Coupvent des Graviers, Lotfi Kobrosly, Christophe Guettier, and Tristan Cazenave** (2025). [Updating Lower and Upper Bounds for the Job-Shop Scheduling Problem Test Instances](https://arxiv.org/abs/2504.16106).
 
 All other bounds were found by OptalCP
 
