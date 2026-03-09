@@ -1,18 +1,10 @@
 import * as CP from '@scheduleopt/optalcp'
 import * as fs from 'node:fs/promises'
 
-const directory = "../../instances/testing"
-const instance = "../../instances/BarnesChambers1996/mt10c1.txt"
+const directory = "../../instances/Brandimarte1993"
+const instance = "../../instances/ChambersBarnes1996/mt10c1.txt"
 
-const params = {
-    timeLimit: 600,
-    workers: [
-        { searchType: "FDS",   noOverlapPropagationLevel: 4, cumulPropagationLevel: 3 },
-        { searchType: "FDS",   noOverlapPropagationLevel: 4, cumulPropagationLevel: 3 },
-        { searchType: "FDSLB", noOverlapPropagationLevel: 4, cumulPropagationLevel: 3, FDSLBStrategy: "Split" },
-        { searchType: "LNS",   noOverlapPropagationLevel: 2, cumulPropagationLevel: 2 },
-    ]
-}
+const params = { timeLimit: 600 }
 
 const create_model = async filename => {
     const lines = (await fs.readFile(filename, 'utf8')).split(/\r?\n/).map(l => l.trim().split(/\s+/).map(v => Number(v)))
@@ -66,7 +58,7 @@ const run_benchmark = async folder => {
 
 const run_once = async filename => {
     const model = await create_model(filename)
-    if (model) CP.solve(model, params)
+    if (model) model.solve(params)
 }
 
 //run_once(instance)
