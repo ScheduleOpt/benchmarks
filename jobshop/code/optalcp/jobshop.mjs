@@ -1,22 +1,8 @@
 import * as CP from '@scheduleopt/optalcp'
 import * as fs from 'node:fs/promises'
 
-const instance = "../../instances/Taillard1993/ta32js.txt"
-const directory = "../../instances//"
-
-
-const defaults = {  
-    "FDS" :   { searchType: "FDS",   noOverlapPropagationLevel: 4, cumulPropagationLevel: 3, reservoirPropagationLevel: 2 },
-    "FDSLB" : { searchType: "FDS",   noOverlapPropagationLevel: 4, cumulPropagationLevel: 3, reservoirPropagationLevel: 2, FDSLBStrategy: "Split"},
-    "LNS" :   { searchType: "LNS" },
-}
-
-const params = {
-    timeLimit: 600,
-    workers: [ "FDS", "FDSLB", "LNS", "LNS" ].map(v => defaults[v]),
-    usePrecedenceEnergy : 1,
-    packPropagationLevel : 2
-}
+const instance = "../../instances/StorerWuVaccari1992/swv07.txt"
+const directory = "../../instances/StorerWuVaccari1992"
 
 const create_model = async filename => {
     const lines = (await fs.readFile(filename, 'utf8')).split(/\r?\n/).map(l => l.trim().split(/\s+/).map(v => Number(v)))
@@ -54,16 +40,18 @@ const create_model = async filename => {
     return model
 }
 
+const params = {}
+
 const run_benchmark = async folder => {
     const files = (await fs.readdir (folder, { recursive : true }))
       .filter(v => v.endsWith("txt"))
       .map(v => folder + "/" + v)
-    CP.benchmark(create_model, files, params)
+    await CP.benchmark(create_model, files, params)
 }
 
 const run_once = async filename => {
     const model = await create_model(filename)
-    if (model) CP.solve(model, params)
+    if (model) model.solve(params)
 }
 
 //run_once(instance)
