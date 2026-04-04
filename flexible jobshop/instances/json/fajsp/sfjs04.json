@@ -1,0 +1,36 @@
+{
+  "instance": "sfjs04",
+  "family": "sfjs",
+  "family_long": "BFFMOR2012",
+  "year": "2012",
+  "variant": "fajsp",
+  "tasks": [
+    [
+      {"task":0,"option":0,"machine":0,"duration":54},
+      {"task":0,"option":1,"machine":1,"duration":63}
+    ],
+    [
+      {"task":1,"option":0,"machine":0,"duration":87},
+      {"task":1,"option":1,"machine":1,"duration":95}
+    ],
+    [
+      {"task":2,"option":0,"machine":1,"duration":120}
+    ],
+    [
+      {"task":3,"option":0,"machine":1,"duration":152}
+    ],
+    [
+      {"task":4,"option":0,"machine":0,"duration":125},
+      {"task":4,"option":1,"machine":1,"duration":135}
+    ],
+    [
+      {"task":5,"option":0,"machine":0,"duration":143},
+      {"task":5,"option":1,"machine":1,"duration":124}
+    ]
+  ],
+  "precedences": [
+    [0,1],
+    [2,3],
+    [4,5]
+  ]
+}

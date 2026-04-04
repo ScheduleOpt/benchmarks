@@ -1,10 +1,10 @@
 import * as CP from '@scheduleopt/optalcp'
 import * as fs from 'node:fs/promises'
 
-const directory = "../../instances/Brandimarte1993"
-const instance = "../../instances/ChambersBarnes1996/mt10c1.txt"
+const directory = "../../instances/text/Brandimarte1993"
+const instance = "../../instances/text/Brandimarte1993/mk02.txt"
 
-const params = { timeLimit: 600 }
+const params = { timeLimit: 600, cumulPropagationLevel : 4, usePrecedenceEnergy : 1 }
 
 const create_model = async filename => {
     const lines = (await fs.readFile(filename, 'utf8')).split(/\r?\n/).map(l => l.trim().split(/\s+/).map(v => Number(v)))
@@ -65,5 +65,5 @@ const run_once = async filename => {
     if (model) model.solve(params)
 }
 
-//run_once(instance)
-run_benchmark(directory)
+await run_once(instance)
+await run_benchmark(directory)

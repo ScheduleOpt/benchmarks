@@ -1,0 +1,28 @@
+{
+  "instance": "fattahi7",
+  "family": "fattahi",
+  "family_long": "FattahiMehrabadJolai2007",
+  "year": "2007",
+  "machines": 5,
+  "jobs": 3,
+  "data": [
+    {"job":0,"operation":0,"option":0,"machine":0,"duration":117},
+    {"job":0,"operation":0,"option":1,"machine":1,"duration":125},
+    {"job":0,"operation":1,"option":0,"machine":3,"duration":140},
+    {"job":0,"operation":1,"option":1,"machine":1,"duration":130},
+    {"job":0,"operation":2,"option":0,"machine":3,"duration":150},
+    {"job":0,"operation":2,"option":1,"machine":4,"duration":160},
+    {"job":1,"operation":0,"option":0,"machine":0,"duration":214},
+    {"job":1,"operation":0,"option":1,"machine":2,"duration":150},
+    {"job":1,"operation":1,"option":0,"machine":2,"duration":55},
+    {"job":1,"operation":1,"option":1,"machine":1,"duration":66},
+    {"job":1,"operation":2,"option":0,"machine":4,"duration":78},
+    {"job":1,"operation":2,"option":1,"machine":2,"duration":65},
+    {"job":2,"operation":0,"option":0,"machine":0,"duration":87},
+    {"job":2,"operation":0,"option":1,"machine":1,"duration":62},
+    {"job":2,"operation":1,"option":0,"machine":3,"duration":70},
+    {"job":2,"operation":1,"option":1,"machine":2,"duration":80},
+    {"job":2,"operation":2,"option":0,"machine":3,"duration":190},
+    {"job":2,"operation":2,"option":1,"machine":4,"duration":100}
+  ]
+}

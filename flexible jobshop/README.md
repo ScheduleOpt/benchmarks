@@ -74,12 +74,12 @@ Currently the instances divide as follows
 The flexible jobshop format is a variant of the standard jobshop format.
 
 First some terminology
-- a ***job*** is a sequence of ***operations*** done on an object
+- a **job** is a sequence of ***operations*** done on an object
 - each operation has multiple ***options*** (also called modes) 
     - in the case of the flexible jobshop a ***machine*** and a ***duration***
 
 Hence in a flexible jobshop file
-- each line represents a ***job**
+- each line represents a **job**
 - the first number of the line is the ***number of operations*** in the job
 - then for each operation is given the ***number of options*** and as many pairs ***machine*** ***duration*** as there are options
 
@@ -256,6 +256,8 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><td>ft20</td><td>20 x 5</td><td style="background-color:green;color:white;font-weight:bold">1165</td><td style="background-color:green;color:white;font-weight:bold">1088</td><td style="background-color:green;color:white;font-weight:bold">1022</td><td style="background-color:green;color:white;font-weight:bold">1022</td><td>OptalCP</td></tr>
 </table>
 
+*FT instances are also known as MT because the 1963 paper of Fisher and Thompson was published in the book "Industrial scheduling" by Muth and Thompson.*
+
 <table>
 <tr><th>Instance</th><th>Size</th><th>sdata</th><th>edata</th><th>rdata</th><th>vdata</th><td>Solved by</td></tr>
 <tr><td>orb1</td><td>10 x 10</td><td style="background-color:green;color:white;font-weight:bold">1059</td><td style="background-color:green;color:white;font-weight:bold">977</td><td style="background-color:green;color:white;font-weight:bold">746</td><td style="background-color:green;color:white;font-weight:bold">695</td><td>OptalCP</td></tr>
@@ -307,7 +309,7 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><td>mt10xxx</td><td>10 x 13</td><td>fjsp</td><td>918</td><td>918</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>mt10xy</td><td>10 x 12</td><td>fjsp</td><td>905</td><td>905</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>mt10xyz</td><td>10 x 13</td><td>fjsp</td><td>847</td><td>847</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mtb4c9</td><td>15 x 11</td><td>fjsp</td><td>914</td><td>914</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
+<tr><td>setb4c9</td><td>15 x 11</td><td>fjsp</td><td>914</td><td>914</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>setb4cc</td><td>15 x 12</td><td>fjsp</td><td>907</td><td>907</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>setb4x</td><td>15 x 11</td><td>fjsp</td><td>925</td><td>925</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>setb4xx</td><td>15 x 12</td><td>fjsp</td><td>925</td><td>925</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
