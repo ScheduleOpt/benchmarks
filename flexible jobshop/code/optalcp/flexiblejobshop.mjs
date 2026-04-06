@@ -1,8 +1,8 @@
 import * as CP from '@scheduleopt/optalcp'
 import * as fs from 'node:fs/promises'
 
-const directory = "../../instances/text/Brandimarte1993"
-const instance = "../../instances/text/Brandimarte1993/mk02.txt"
+const directory = "../../instances/text_fjsp_old_format/Brandimarte1993"
+const instance = "../../instances/text_fjsp_old_format/Brandimarte1993/mk02.txt"
 
 const params = { timeLimit: 600, cumulPropagationLevel : 4, usePrecedenceEnergy : 1 }
 
@@ -61,5 +61,5 @@ const run_once = async filename => {
     if (model) model.solve(params)
 }
 
-await run_once(instance)
+//await run_once(instance)
 await run_benchmark(directory)

@@ -28,7 +28,7 @@ This document is visible as a README.md in the Github folder [flexible jobshop](
 
 ### Overview of the flexible jobshop benchmark library
 
-Flexible jobshop instances (332)
+Flexible jobshop instances (382)
 - 10 instances `mk` from Brandimarte 1993
 - 4 x 66 instances `edata` `rdata` `sdata` and `vdata` from Hurink, Jurisch and Thole 1994
 - 18 instances `#a` from Dauzère-Pérès and Paulli 1994
@@ -36,6 +36,7 @@ Flexible jobshop instances (332)
 - 4 instances `kacem` from Kacem, Hammadi and Borne 2002
 - 20 instances `fattahi` from Fattahi, Mehrabad and Jolai 2007
 - 60 instances `behnke` from Behnke and Geiger 2012
+- 50 instances `dafjs` and `yfjs` from Birgin et al. 2014
 
 The Hurinkm Jurisch and Thole instances are classic jobshop problems modified into flexible jobshops
 
@@ -68,29 +69,58 @@ Currently the instances divide as follows
 - `kacem` : 4 easy
 - `fattahi` : 20 easy
 - `behnke` : 15 easy, 12 medium, 33 open
+- `dafjs` : [status unknown]
+- `yfjs` : [status unknown]
 
 ### Formats
 
-The flexible jobshop format is a variant of the standard jobshop format.
+There are now three format supported in the FJSPLib
+- the json format
+- the text fjasp format (***new format***)
+- the text fjsp format (***old format***)
 
-First some terminology
-- a **job** is a sequence of ***operations*** done on an object
-- each operation has multiple ***options*** (also called modes) 
-    - in the case of the flexible jobshop a ***machine*** and a ***duration***
+In the traditional text fjsp format precedences are implicit within the job for the consécutive operations.
+As a result all the operations of the same job, and all the options (or modes) for an operation need to be on the same line, creating very long lines.
+In the new format each operation and its different options (modes) appear on one line and the precedences appear later with the job number
+The new format is also more generic in that it accepts general precedence graphs, therefore also covering flexible jobshop variants like the ***flexible assembly jobshop problem*** and the ***jobshop problem with general precedences*** (which are essentially the same).
 
-Hence in a flexible jobshop file
+#### The new format (fajsp)
+
+The new format uses
+- the first line is the header with `#operations` `#precedences` `#machines`
+- `#precedences` lines of the form `x y j` where `x` and `y` are the indices of 2 operations, and `j` the number of the job that links them
+- `#operations` lines of the form `#options m1 d1 m2 d2 ... mk dk` where $k \in 0 .. \mathtt{\#options}-1$, $m_k$ is a machine between $0$ and $\mathtt{\#machines}-1$ and $d_k$ is a duration
+
+Notice that the format doesn't say how many jobs exist in the instance. That number needs to be deduced from the third column of the precedence data.
+
+For instance `fattahi1` is
+```
+4 2 2
+0 1 0
+2 3 1
+2 0 25 1 37
+2 0 32 1 24
+2 0 45 1 65
+2 0 21 1 65
+```
+
+There are 4 operations from 0 to 3 with 2 options in each operation.
+There are two jobs `0 -> 1` and `2 -> 3`
+
+
+
+#### The old format
+
+In the old format
 - each line represents a **job**
 - the first number of the line is the ***number of operations*** in the job
 - then for each operation is given the ***number of options*** and as many pairs ***machine*** ***duration*** as there are options
 
-
 ```
 #jobs #machines average_flexibility
 #operations (#options (duration machine) (duration machine)) (#options (duration machine))
+
 ```
-
-
-
 For instance `fattahi1` is
 ```
 2 2 2
@@ -102,6 +132,35 @@ meaning
 - (2 jobs) (2 machines) (average flexibility 2.0)
 - (2 operations) (2 options : (1,25) (2,37)) (2 options : (1,32) (2,24))
 - (2 operations) (2 options : (1,45) (2,65)) (2 options : (1,21) (2,65))
+
+#### The JSON format
+
+The JSON format follows closely the new format 
+
+For instance `fattahi1` is
+```json
+{
+  "instance": "fattahi1",
+  "family": "fattahi",
+  "family_long": "FattahiMehrabadJolai2007",
+  "year": "2007",
+  "format": "fajsp",
+  "operations": [
+    { "operation" : 0, "option" : 0, "machine" : 0, "duration" : 25 },
+    { "operation" : 0, "option" : 1, "machine" : 1, "duration" : 37 },
+    { "operation" : 1, "option" : 0, "machine" : 0, "duration" : 32 },
+    { "operation" : 1, "option" : 1, "machine" : 1, "duration" : 24 },
+    { "operation" : 2, "option" : 0, "machine" : 0, "duration" : 45 },
+    { "operation" : 2, "option" : 1, "machine" : 1, "duration" : 65 },
+    { "operation" : 3, "option" : 0, "machine" : 0, "duration" : 21 },
+    { "operation" : 3, "option" : 1, "machine" : 1, "duration" : 65 }
+  ],
+  "precedences": [
+    [0,1,0],
+    [2,3,1]
+  ]
+}
+```
 
 <br/>
 
@@ -124,6 +183,7 @@ The instances come from the following publications
 
 - **Behnke, D., & Geiger, M. J.** (2012). [Test instances for the flexible job shop scheduling problem with work centers](https://d-nb.info/1023241773/34) Technical report, Helmut-Schmidt-Universität, Lehrstuhl für Betriebswirtschaftslehre, insbes. Logistik-Management, RR 12-01-01.
 
+- **Birgin, E. G., Feofiloff, P., Fernandes, C. G., De Melo, E. L., Oshiro, M. T., & Ronconi, D. P.** (2014). A MILP model for an extended version of the flexible job shop problem. Optimization Letters, 8(4), 1417-1431.
 
 <br/>
 

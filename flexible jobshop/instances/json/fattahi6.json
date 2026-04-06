@@ -1,0 +1,32 @@
+{
+  "instance": "fattahi6",
+  "family": "fattahi",
+  "family_long": "FattahiMehrabadJolai2007",
+  "year": "2007",
+  "format": "fajsp",
+  "operations": [
+    {"operation":0,"option":0,"machine":0,"duration":17},
+    {"operation":1,"option":0,"machine":0,"duration":40},
+    {"operation":1,"option":1,"machine":1,"duration":130},
+    {"operation":2,"option":0,"machine":1,"duration":50},
+    {"operation":2,"option":1,"machine":2,"duration":60},
+    {"operation":3,"option":0,"machine":0,"duration":30},
+    {"operation":4,"option":0,"machine":0,"duration":150},
+    {"operation":4,"option":1,"machine":1,"duration":160},
+    {"operation":5,"option":0,"machine":2,"duration":70},
+    {"operation":6,"option":0,"machine":0,"duration":50},
+    {"operation":6,"option":1,"machine":1,"duration":60},
+    {"operation":7,"option":0,"machine":1,"duration":170},
+    {"operation":7,"option":1,"machine":2,"duration":180},
+    {"operation":8,"option":0,"machine":1,"duration":90},
+    {"operation":8,"option":1,"machine":2,"duration":100}
+  ],
+  "precedences": [
+    [0,1,0],
+    [1,2,0],
+    [3,4,1],
+    [4,5,1],
+    [6,7,2],
+    [7,8,2]
+  ]
+}

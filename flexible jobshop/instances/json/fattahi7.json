@@ -1,0 +1,35 @@
+{
+  "instance": "fattahi7",
+  "family": "fattahi",
+  "family_long": "FattahiMehrabadJolai2007",
+  "year": "2007",
+  "format": "fajsp",
+  "operations": [
+    {"operation":0,"option":0,"machine":0,"duration":117},
+    {"operation":0,"option":1,"machine":1,"duration":125},
+    {"operation":1,"option":0,"machine":3,"duration":140},
+    {"operation":1,"option":1,"machine":1,"duration":130},
+    {"operation":2,"option":0,"machine":3,"duration":150},
+    {"operation":2,"option":1,"machine":4,"duration":160},
+    {"operation":3,"option":0,"machine":0,"duration":214},
+    {"operation":3,"option":1,"machine":2,"duration":150},
+    {"operation":4,"option":0,"machine":2,"duration":55},
+    {"operation":4,"option":1,"machine":1,"duration":66},
+    {"operation":5,"option":0,"machine":4,"duration":78},
+    {"operation":5,"option":1,"machine":2,"duration":65},
+    {"operation":6,"option":0,"machine":0,"duration":87},
+    {"operation":6,"option":1,"machine":1,"duration":62},
+    {"operation":7,"option":0,"machine":3,"duration":70},
+    {"operation":7,"option":1,"machine":2,"duration":80},
+    {"operation":8,"option":0,"machine":3,"duration":190},
+    {"operation":8,"option":1,"machine":4,"duration":100}
+  ],
+  "precedences": [
+    [0,1,0],
+    [1,2,0],
+    [3,4,1],
+    [4,5,1],
+    [6,7,2],
+    [7,8,2]
+  ]
+}

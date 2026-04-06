@@ -1,0 +1,21 @@
+{
+  "instance": "fattahi1",
+  "family": "fattahi",
+  "family_long": "FattahiMehrabadJolai2007",
+  "year": "2007",
+  "format": "fajsp",
+  "operations": [
+    {"operation":0,"option":0,"machine":0,"duration":25},
+    {"operation":0,"option":1,"machine":1,"duration":37},
+    {"operation":1,"option":0,"machine":0,"duration":32},
+    {"operation":1,"option":1,"machine":1,"duration":24},
+    {"operation":2,"option":0,"machine":0,"duration":45},
+    {"operation":2,"option":1,"machine":1,"duration":65},
+    {"operation":3,"option":0,"machine":0,"duration":21},
+    {"operation":3,"option":1,"machine":1,"duration":65}
+  ],
+  "precedences": [
+    [0,1,0],
+    [2,3,1]
+  ]
+}
