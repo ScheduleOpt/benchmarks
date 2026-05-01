@@ -1,0 +1,484 @@
+solutionlist data/j90hrs.sm
+==================================================================================================
+Par	Inst	Makespan	Date			   Author
+==================================================================================================
+1	1	73		Mon Jun 22 12:00:18 1998  K. Nonobe and T. Ibaraki
+1	2	92		Tue Aug 12 04:00:59 1997  T.Baar, P.Brucker, S.Knust
+1	3	66		Sat Aug 30 04:00:08 1997  Soenke Hartmann
+1	4	86		Tue Aug 12 04:01:34 1997  T.Baar, P.Brucker, S.Knust
+1	5	87		Sat Aug 30 04:00:13 1997  Soenke Hartmann
+1	6	74		Mon Jun 22 12:00:30 1998  K. Nonobe and T. Ibaraki
+1	7	91		Sat Aug 30 04:00:23 1997  Soenke Hartmann
+1	8	95		Mon Jun 22 12:00:36 1998  K. Nonobe and T. Ibaraki
+1	9	72		Fri Sep 18 04:00:07 1998  K. Nonobe and T. Ibaraki
+1	10	90		Mon Jun 22 12:00:24 1998  K. Nonobe and T. Ibaraki
+2	1	96		Tue Aug 12 04:03:34 1997  T.Baar, P.Brucker, S.Knust
+2	2	114		Tue Aug 12 04:03:52 1997  T.Baar, P.Brucker, S.Knust
+2	3	75		Tue Aug 12 04:04:10 1997  T.Baar, P.Brucker, S.Knust
+2	4	70		Tue Aug 12 04:04:27 1997  T.Baar, P.Brucker, S.Knust
+2	5	100		Tue Aug 12 04:04:45 1997  T.Baar, P.Brucker, S.Knust
+2	6	67		Tue Aug 12 04:05:02 1997  T.Baar, P.Brucker, S.Knust
+2	7	92		Tue Aug 12 04:05:19 1997  T.Baar, P.Brucker, S.Knust
+2	8	82		Tue Aug 12 04:05:36 1997  T.Baar, P.Brucker, S.Knust
+2	9	79		Tue Aug 12 04:05:54 1997  T.Baar, P.Brucker, S.Knust
+2	10	80		Tue Aug 12 04:06:12 1997  T.Baar, P.Brucker, S.Knust
+3	1	81		Tue Aug 12 04:06:30 1997  T.Baar, P.Brucker, S.Knust
+3	2	84		Tue Aug 12 04:06:48 1997  T.Baar, P.Brucker, S.Knust
+3	3	71		Tue Aug 12 04:07:05 1997  T.Baar, P.Brucker, S.Knust
+3	4	104		Tue Aug 12 04:07:24 1997  T.Baar, P.Brucker, S.Knust
+3	5	75		Tue Aug 12 04:07:42 1997  T.Baar, P.Brucker, S.Knust
+3	6	68		Tue Aug 12 04:08:00 1997  T.Baar, P.Brucker, S.Knust
+3	7	87		Tue Aug 12 04:08:19 1997  T.Baar, P.Brucker, S.Knust
+3	8	86		Tue Aug 12 04:08:35 1997  T.Baar, P.Brucker, S.Knust
+3	9	61		Tue Aug 12 04:08:52 1997  T.Baar, P.Brucker, S.Knust
+3	10	65		Tue Aug 12 06:25:30 1997  T.Baar, P.Brucker, S.Knust
+4	1	93		Tue Aug 12 04:09:27 1997  T.Baar, P.Brucker, S.Knust
+4	2	89		Tue Aug 12 04:09:43 1997  T.Baar, P.Brucker, S.Knust
+4	3	67		Tue Aug 12 04:10:00 1997  T.Baar, P.Brucker, S.Knust
+4	4	92		Tue Aug 12 04:10:18 1997  T.Baar, P.Brucker, S.Knust
+4	5	88		Tue Aug 12 04:10:34 1997  T.Baar, P.Brucker, S.Knust
+4	6	78		Tue Aug 12 04:10:51 1997  T.Baar, P.Brucker, S.Knust
+4	7	80		Tue Aug 12 04:11:09 1997  T.Baar, P.Brucker, S.Knust
+4	8	69		Tue Aug 12 04:11:26 1997  T.Baar, P.Brucker, S.Knust
+4	9	79		Tue Aug 12 04:11:42 1997  T.Baar, P.Brucker, S.Knust
+4	10	68		Tue Aug 12 04:11:59 1997  T.Baar, P.Brucker, S.Knust
+5	1	78		Tue Mar 23 12:00:07 1999  V. Valls, M. Quintanilla, F. Ballestin
+5	2	93		Mon Sep 10 14:10:58 2001  V. Valls, M. Quintanilla, F. Ballestin
+5	3	87		Wed Nov 22 11:50:17 2006 	M. R.Ranjbar , F. Kianfar
+5	4	102		Mon Feb 25 17:49:24 2019 Philippe Laborie
+5	5	111		Wed Nov 22 11:50:17 2006 	M. R.Ranjbar , F. Kianfar
+5	6	86		Wed Oct 12 06:50:08 2005  F. Xiao, A. Lim and B. Rodrigues
+5	7	107		Wed Nov 22 11:50:17 2006 	M. R.Ranjbar , F. Kianfar
+5	8	102		Wed Oct 12 06:50:08 2005  F. Xiao, A. Lim and B. Rodrigues
+5	9	115		Wed Oct 12 06:50:08 2005  F. Xiao, A. Lim and B. Rodrigues
+5	10	96		Wed Oct 12 06:50:07 2005  F. Xiao, A. Lim and B. Rodrigues
+6	1	82		Tue Aug 12 04:15:06 1997  T.Baar, P.Brucker, S.Knust
+6	2	86		Tue Aug 12 04:15:23 1997  T.Baar, P.Brucker, S.Knust
+6	3	77		Mon Jun 22 12:03:04 1998  K. Nonobe and T. Ibaraki
+6	4	80		Tue Aug 12 04:15:56 1997  T.Baar, P.Brucker, S.Knust
+6	5	71		Sat Aug 30 04:01:31 1997  Soenke Hartmann
+6	6	98		Tue Aug 12 04:16:31 1997  T.Baar, P.Brucker, S.Knust
+6	7	71		Tue Aug 12 04:16:51 1997  T.Baar, P.Brucker, S.Knust
+6	8	68		Tue Mar 23 12:03:50 1999  V. Valls, M. Quintanilla, F. Ballestin
+6	9	68		Tue Aug 12 04:17:24 1997  T.Baar, P.Brucker, S.Knust
+6	10	94		Tue Aug 12 04:17:41 1997  T.Baar, P.Brucker, S.Knust
+7	1	88		Tue Aug 12 04:17:58 1997  T.Baar, P.Brucker, S.Knust
+7	2	77		Tue Aug 12 04:18:14 1997  T.Baar, P.Brucker, S.Knust
+7	3	80		Tue Aug 12 04:18:31 1997  T.Baar, P.Brucker, S.Knust
+7	4	86		Tue Aug 12 04:18:48 1997  T.Baar, P.Brucker, S.Knust
+7	5	79		Tue Aug 12 04:19:04 1997  T.Baar, P.Brucker, S.Knust
+7	6	90		Tue Aug 12 04:19:21 1997  T.Baar, P.Brucker, S.Knust
+7	7	90		Tue Aug 12 04:19:39 1997  T.Baar, P.Brucker, S.Knust
+7	8	60		Tue Aug 12 04:19:55 1997  T.Baar, P.Brucker, S.Knust
+7	9	83		Tue Aug 12 04:20:12 1997  T.Baar, P.Brucker, S.Knust
+7	10	98		Tue Aug 12 04:20:29 1997  T.Baar, P.Brucker, S.Knust
+8	1	96		Tue Aug 12 04:20:47 1997  T.Baar, P.Brucker, S.Knust
+8	2	78		Tue Aug 12 04:21:03 1997  T.Baar, P.Brucker, S.Knust
+8	3	70		Tue Aug 12 04:21:20 1997  T.Baar, P.Brucker, S.Knust
+8	4	77		Tue Aug 12 04:21:36 1997  T.Baar, P.Brucker, S.Knust
+8	5	63		Tue Aug 12 04:21:53 1997  T.Baar, P.Brucker, S.Knust
+8	6	70		Tue Aug 12 04:22:10 1997  T.Baar, P.Brucker, S.Knust
+8	7	77		Tue Aug 12 04:22:26 1997  T.Baar, P.Brucker, S.Knust
+8	8	68		Tue Aug 12 04:22:43 1997  T.Baar, P.Brucker, S.Knust
+8	9	97		Tue Aug 12 04:23:00 1997  T.Baar, P.Brucker, S.Knust
+8	10	88		Tue Aug 12 04:23:17 1997  T.Baar, P.Brucker, S.Knust
+9	1	104		Wed Oct 12 06:50:08 2005  F. Xiao, A. Lim and B. Rodrigues
+9	2	128		Fri Apr 19 13:44:00 2002  V. Valls, M. Quintanilla, F. Ballestin
+9	3	102		Wed Oct 12 06:50:08 2005  F. Xiao, A. Lim and B. Rodrigues
+9	4	127		Wed Nov 22 11:50:17 2006 	M. R.Ranjbar , F. Kianfar
+9	5	139		Wed Jul 12 12:55:10 2017 M. Vanhoucke and J. Coelho
+9	6	118		Wed Jul 12 12:55:10 2017 M. Vanhoucke and J. Coelho
+9	7	108		Wed Jul 12 12:55:10 2017 M. Vanhoucke and J. Coelho
+9	8	116		Thu Mar 10 21:48:16 2005  D. Debels and M. Vanhoucke           
+9	9	115		Wed Jul 12 12:55:10 2017 M. Vanhoucke and J. Coelho
+9	10	111		Wed Oct 12 06:50:08 2005  F. Xiao, A. Lim and B. Rodrigues
+10	1	77		Sat Aug 30 04:02:25 1997  Soenke Hartmann
+10	2	95		Tue Aug 12 04:26:45 1997  T.Baar, P.Brucker, S.Knust
+10	3	112		Tue Aug 12 04:27:03 1997  T.Baar, P.Brucker, S.Knust
+10	4	94		Tue Aug 12 04:27:20 1997  T.Baar, P.Brucker, S.Knust
+10	5	78		Tue Aug 12 04:27:37 1997  T.Baar, P.Brucker, S.Knust
+10	6	92		Tue Aug 12 04:27:55 1997  T.Baar, P.Brucker, S.Knust
+10	7	83		Tue Aug 12 04:28:13 1997  T.Baar, P.Brucker, S.Knust
+10	8	81		Tue Aug 12 04:28:30 1997  T.Baar, P.Brucker, S.Knust
+10	9	88		Tue Aug 12 04:28:48 1997  T.Baar, P.Brucker, S.Knust
+10	10	75		Tue Aug 12 04:29:05 1997  T.Baar, P.Brucker, S.Knust
+11	1	86		Tue Aug 12 04:29:22 1997  T.Baar, P.Brucker, S.Knust
+11	2	99		Tue Aug 12 04:29:38 1997  T.Baar, P.Brucker, S.Knust
+11	3	69		Tue Aug 12 04:29:55 1997  T.Baar, P.Brucker, S.Knust
+11	4	64		Tue Aug 12 04:30:12 1997  T.Baar, P.Brucker, S.Knust
+11	5	81		Tue Aug 12 04:30:29 1997  T.Baar, P.Brucker, S.Knust
+11	6	78		Tue Aug 12 04:30:49 1997  T.Baar, P.Brucker, S.Knust
+11	7	95		Tue Aug 12 04:31:06 1997  T.Baar, P.Brucker, S.Knust
+11	8	82		Tue Aug 12 04:31:22 1997  T.Baar, P.Brucker, S.Knust
+11	9	81		Tue Aug 12 04:31:39 1997  T.Baar, P.Brucker, S.Knust
+11	10	81		Tue Aug 12 04:31:55 1997  T.Baar, P.Brucker, S.Knust
+12	1	71		Tue Aug 12 04:32:12 1997  T.Baar, P.Brucker, S.Knust
+12	2	71		Tue Aug 12 04:32:29 1997  T.Baar, P.Brucker, S.Knust
+12	3	93		Tue Aug 12 04:32:46 1997  T.Baar, P.Brucker, S.Knust
+12	4	73		Tue Aug 12 04:33:04 1997  T.Baar, P.Brucker, S.Knust
+12	5	83		Tue Aug 12 04:33:21 1997  T.Baar, P.Brucker, S.Knust
+12	6	81		Tue Aug 12 04:33:38 1997  T.Baar, P.Brucker, S.Knust
+12	7	77		Tue Aug 12 04:33:57 1997  T.Baar, P.Brucker, S.Knust
+12	8	83		Tue Aug 12 04:34:13 1997  T.Baar, P.Brucker, S.Knust
+12	9	77		Tue Aug 12 04:34:30 1997  T.Baar, P.Brucker, S.Knust
+12	10	86		Tue Aug 12 04:34:46 1997  T.Baar, P.Brucker, S.Knust
+13	1	138		Thu Mar 10 21:48:16 2005  D. Debels and M. Vanhoucke           
+13	2	127		Wed Oct 12 06:50:05 2005  F. Xiao, A. Lim and B. Rodrigues
+13	3	108		Wed Oct 12 06:50:05 2005  F. Xiao, A. Lim and B. Rodrigues
+13	4	112		Wed Nov 22 11:50:17 2006 	M. R.Ranjbar , F. Kianfar
+13	5	115		Wed Oct 12 06:50:05 2005  F. Xiao, A. Lim and B. Rodrigues
+13	6	123		Wed Jul 12 12:55:09 2017 M. Vanhoucke and J. Coelho
+13	7	124		Fri Apr 19 13:44:31 2002  V. Valls, M. Quintanilla, F. Ballestin
+13	8	116		Wed Jul 12 12:55:09 2017 M. Vanhoucke and J. Coelho
+13	9	123		Wed Jul 12 12:55:09 2017 M. Vanhoucke and J. Coelho
+13	10	119		Wed Jul 12 12:55:09 2017 M. Vanhoucke and J. Coelho
+14	1	89		Tue Aug 12 04:37:47 1997  T.Baar, P.Brucker, S.Knust
+14	2	79		Tue Aug 12 04:38:04 1997  T.Baar, P.Brucker, S.Knust
+14	3	94		Tue Aug 12 04:38:21 1997  T.Baar, P.Brucker, S.Knust
+14	4	88		Tue Aug 12 04:38:41 1997  T.Baar, P.Brucker, S.Knust
+14	5	84		Tue Aug 12 04:38:58 1997  T.Baar, P.Brucker, S.Knust
+14	6	76		Thu Sep  3 04:01:59 1998  J. Alcaraz and C. Maroto
+14	7	86		Tue Aug 12 04:39:31 1997  T.Baar, P.Brucker, S.Knust
+14	8	80		Tue Aug 12 04:39:48 1997  T.Baar, P.Brucker, S.Knust
+14	9	112		Tue Aug 12 04:40:06 1997  T.Baar, P.Brucker, S.Knust
+14	10	85		Tue Aug 12 04:40:23 1997  T.Baar, P.Brucker, S.Knust
+15	1	76		Tue Aug 12 04:40:39 1997  T.Baar, P.Brucker, S.Knust
+15	2	71		Tue Aug 12 04:40:54 1997  T.Baar, P.Brucker, S.Knust
+15	3	82		Tue Aug 12 04:41:11 1997  T.Baar, P.Brucker, S.Knust
+15	4	92		Tue Aug 12 04:41:28 1997  T.Baar, P.Brucker, S.Knust
+15	5	93		Tue Aug 12 04:41:44 1997  T.Baar, P.Brucker, S.Knust
+15	6	61		Tue Aug 12 04:42:01 1997  T.Baar, P.Brucker, S.Knust
+15	7	82		Tue Aug 12 04:42:18 1997  T.Baar, P.Brucker, S.Knust
+15	8	82		Tue Aug 12 04:42:35 1997  T.Baar, P.Brucker, S.Knust
+15	9	83		Tue Aug 12 04:42:53 1997  T.Baar, P.Brucker, S.Knust
+15	10	78		Tue Aug 12 04:43:10 1997  T.Baar, P.Brucker, S.Knust
+16	1	85		Tue Aug 12 04:43:26 1997  T.Baar, P.Brucker, S.Knust
+16	2	71		Tue Aug 12 04:43:43 1997  T.Baar, P.Brucker, S.Knust
+16	3	73		Tue Aug 12 04:44:00 1997  T.Baar, P.Brucker, S.Knust
+16	4	69		Tue Aug 12 04:44:16 1997  T.Baar, P.Brucker, S.Knust
+16	5	71		Tue Aug 12 04:44:33 1997  T.Baar, P.Brucker, S.Knust
+16	6	74		Tue Aug 12 04:44:50 1997  T.Baar, P.Brucker, S.Knust
+16	7	65		Tue Aug 12 04:45:07 1997  T.Baar, P.Brucker, S.Knust
+16	8	71		Tue Aug 12 04:45:24 1997  T.Baar, P.Brucker, S.Knust
+16	9	66		Tue Aug 12 04:45:40 1997  T.Baar, P.Brucker, S.Knust
+16	10	71		Tue Aug 12 04:45:58 1997  T.Baar, P.Brucker, S.Knust
+17	1	92		Sat Aug 30 04:03:23 1997  Soenke Hartmann
+17	2	100		Sat Aug 30 04:03:29 1997  Soenke Hartmann
+17	3	89		Tue Aug 12 04:46:48 1997  T.Baar, P.Brucker, S.Knust
+17	4	94		Tue Aug 12 04:47:05 1997  T.Baar, P.Brucker, S.Knust
+17	5	113		Tue Aug 12 04:47:22 1997  T.Baar, P.Brucker, S.Knust
+17	6	94		Sat Aug 30 04:03:35 1997  Soenke Hartmann
+17	7	80		Tue Aug 12 07:04:31 1997  T.Baar, P.Brucker, S.Knust
+17	8	113		Tue Aug 12 04:48:14 1997  T.Baar, P.Brucker, S.Knust
+17	9	96		Sat Aug 30 04:03:40 1997  Soenke Hartmann
+17	10	89		Tue Aug 12 04:48:47 1997  T.Baar, P.Brucker, S.Knust
+18	1	101		Tue Aug 12 04:49:04 1997  T.Baar, P.Brucker, S.Knust
+18	2	94		Tue Aug 12 04:49:22 1997  T.Baar, P.Brucker, S.Knust
+18	3	83		Tue Aug 12 04:49:39 1997  T.Baar, P.Brucker, S.Knust
+18	4	98		Tue Aug 12 04:49:56 1997  T.Baar, P.Brucker, S.Knust
+18	5	90		Tue Aug 12 04:50:13 1997  T.Baar, P.Brucker, S.Knust
+18	6	83		Tue Aug 12 07:07:10 1997  T.Baar, P.Brucker, S.Knust
+18	7	73		Tue Aug 12 04:50:47 1997  T.Baar, P.Brucker, S.Knust
+18	8	92		Tue Aug 12 04:51:04 1997  T.Baar, P.Brucker, S.Knust
+18	9	79		Tue Aug 12 04:51:20 1997  T.Baar, P.Brucker, S.Knust
+18	10	94		Tue Aug 12 04:51:37 1997  T.Baar, P.Brucker, S.Knust
+19	1	98		Tue Aug 12 04:51:54 1997  T.Baar, P.Brucker, S.Knust
+19	2	83		Tue Aug 12 04:52:15 1997  T.Baar, P.Brucker, S.Knust
+19	3	89		Tue Aug 12 04:52:30 1997  T.Baar, P.Brucker, S.Knust
+19	4	77		Tue Aug 12 04:52:48 1997  T.Baar, P.Brucker, S.Knust
+19	5	66		Tue Aug 12 04:53:05 1997  T.Baar, P.Brucker, S.Knust
+19	6	136		Tue Aug 12 04:53:24 1997  T.Baar, P.Brucker, S.Knust
+19	7	66		Tue Aug 12 04:53:41 1997  T.Baar, P.Brucker, S.Knust
+19	8	91		Tue Aug 12 04:53:58 1997  T.Baar, P.Brucker, S.Knust
+19	9	121		Tue Aug 12 04:54:15 1997  T.Baar, P.Brucker, S.Knust
+19	10	85		Tue Aug 12 04:54:33 1997  T.Baar, P.Brucker, S.Knust
+20	1	85		Tue Aug 12 04:54:49 1997  T.Baar, P.Brucker, S.Knust
+20	2	76		Tue Aug 12 04:55:06 1997  T.Baar, P.Brucker, S.Knust
+20	3	86		Tue Aug 12 04:55:22 1997  T.Baar, P.Brucker, S.Knust
+20	4	86		Tue Aug 12 04:55:39 1997  T.Baar, P.Brucker, S.Knust
+20	5	88		Tue Aug 12 04:55:56 1997  T.Baar, P.Brucker, S.Knust
+20	6	83		Tue Aug 12 04:56:12 1997  T.Baar, P.Brucker, S.Knust
+20	7	82		Tue Aug 12 04:56:27 1997  T.Baar, P.Brucker, S.Knust
+20	8	85		Tue Aug 12 04:56:43 1997  T.Baar, P.Brucker, S.Knust
+20	9	76		Tue Aug 12 04:57:00 1997  T.Baar, P.Brucker, S.Knust
+20	10	89		Tue Aug 12 04:57:17 1997  T.Baar, P.Brucker, S.Knust
+21	1	110		Wed Oct 12 06:50:06 2005  F. Xiao, A. Lim and B. Rodrigues
+21	2	116		Fri Jan 31 20:17:16 2003  M. Palpant, C. Artigues, P. Michelon
+21	3	124		Thu Mar 10 21:48:17 2005  D. Debels and M. Vanhoucke           
+21	4	106		Tue Mar 23 12:02:06 1999  V. Valls, M. Quintanilla, F. Ballestin
+21	5	112		Wed Oct 16 23:07:07 2002  M. Palpant, C. Artigues, P. Michelon
+21	6	106		Thu Mar 10 21:48:17 2005  D. Debels and M. Vanhoucke           
+21	7	109		Fri Jul  6 18:51:03 2001  M. Palpant, C. Artigues, P. Michelon
+21	8	111		Wed Oct 12 06:50:06 2005  F. Xiao, A. Lim and B. Rodrigues
+21	9	121		Fri Apr 19 13:44:43 2002  V. Valls, M. Quintanilla, F. Ballestin
+21	10	109		Mon Sep 10 14:11:34 2001  V. Valls, M. Quintanilla, F. Ballestin
+22	1	108		Tue Aug 12 05:00:22 1997  T.Baar, P.Brucker, S.Knust
+22	2	85		Tue Aug 12 05:00:39 1997  T.Baar, P.Brucker, S.Knust
+22	3	83		Sat Aug 30 04:04:33 1997  Soenke Hartmann
+22	4	96		Tue Aug 12 07:18:05 1997  T.Baar, P.Brucker, S.Knust
+22	5	96		Tue Aug 12 05:01:28 1997  T.Baar, P.Brucker, S.Knust
+22	6	71		Tue Aug 12 05:01:45 1997  T.Baar, P.Brucker, S.Knust
+22	7	90		Tue Aug 12 05:02:02 1997  T.Baar, P.Brucker, S.Knust
+22	8	97		Tue Aug 12 05:02:18 1997  T.Baar, P.Brucker, S.Knust
+22	9	101		Mon Jun 22 12:01:33 1998  K. Nonobe and T. Ibaraki
+22	10	75		Mon Jun 22 12:01:27 1998  K. Nonobe and T. Ibaraki
+23	1	90		Tue Aug 12 05:03:09 1997  T.Baar, P.Brucker, S.Knust
+23	2	84		Tue Aug 12 05:03:26 1997  T.Baar, P.Brucker, S.Knust
+23	3	116		Tue Aug 12 05:03:42 1997  T.Baar, P.Brucker, S.Knust
+23	4	85		Tue Aug 12 05:04:00 1997  T.Baar, P.Brucker, S.Knust
+23	5	95		Tue Aug 12 05:04:17 1997  T.Baar, P.Brucker, S.Knust
+23	6	87		Tue Aug 12 05:04:34 1997  T.Baar, P.Brucker, S.Knust
+23	7	77		Tue Aug 12 05:04:52 1997  T.Baar, P.Brucker, S.Knust
+23	8	92		Tue Aug 12 05:05:09 1997  T.Baar, P.Brucker, S.Knust
+23	9	126		Tue Aug 12 05:05:26 1997  T.Baar, P.Brucker, S.Knust
+23	10	87		Tue Aug 12 05:05:45 1997  T.Baar, P.Brucker, S.Knust
+24	1	84		Tue Aug 12 05:06:01 1997  T.Baar, P.Brucker, S.Knust
+24	2	92		Tue Aug 12 05:06:18 1997  T.Baar, P.Brucker, S.Knust
+24	3	69		Tue Aug 12 05:06:34 1997  T.Baar, P.Brucker, S.Knust
+24	4	81		Tue Aug 12 05:06:52 1997  T.Baar, P.Brucker, S.Knust
+24	5	85		Tue Aug 12 05:07:10 1997  T.Baar, P.Brucker, S.Knust
+24	6	79		Tue Aug 12 05:07:28 1997  T.Baar, P.Brucker, S.Knust
+24	7	87		Tue Aug 12 05:07:45 1997  T.Baar, P.Brucker, S.Knust
+24	8	88		Tue Aug 12 05:08:02 1997  T.Baar, P.Brucker, S.Knust
+24	9	80		Tue Aug 12 05:08:19 1997  T.Baar, P.Brucker, S.Knust
+24	10	89		Tue Aug 12 05:08:36 1997  T.Baar, P.Brucker, S.Knust
+25	1	124		Thu Mar 10 21:48:17 2005  D. Debels and M. Vanhoucke           
+25	2	130		Wed Jul 12 12:55:09 2017 M. Vanhoucke and J. Coelho
+25	3	123		Wed Nov 22 11:50:17 2006 	M. R.Ranjbar , F. Kianfar
+25	4	137		Wed Jul 12 12:55:09 2017 M. Vanhoucke and J. Coelho
+25	5	114		Wed Oct 12 06:50:06 2005  F. Xiao, A. Lim and B. Rodrigues
+25	6	121		Wed Oct 12 06:50:06 2005  F. Xiao, A. Lim and B. Rodrigues
+25	7	129		Wed Jul 12 12:55:09 2017 M. Vanhoucke and J. Coelho
+25	8	140		Fri Apr 19 13:44:37 2002  V. Valls, M. Quintanilla, F. Ballestin
+25	9	106		Mon Sep 10 14:11:29 2001  V. Valls, M. Quintanilla, F. Ballestin
+25	10	129		Wed Jul 12 12:55:09 2017 M. Vanhoucke and J. Coelho
+26	1	90		Tue Aug 12 05:11:43 1997  T.Baar, P.Brucker, S.Knust
+26	2	85		Tue Mar 23 12:00:59 1999  V. Valls, M. Quintanilla, F. Ballestin
+26	3	80		Tue Aug 12 05:12:18 1997  T.Baar, P.Brucker, S.Knust
+26	4	97		Mon Aug 13 15:22:03 2001  M. Palpant, C. Artigues, P. Michelon
+26	5	85		Wed Oct 12 06:50:06 2005  F. Xiao, A. Lim and B. Rodrigues
+26	6	108		Tue Aug 12 05:13:10 1997  T.Baar, P.Brucker, S.Knust
+26	7	82		Tue Mar 23 12:03:26 1999  V. Valls, M. Quintanilla, F. Ballestin
+26	8	82		Wed Oct 12 06:50:06 2005  F. Xiao, A. Lim and B. Rodrigues
+26	9	87		Mon Jun 22 12:01:53 1998  K. Nonobe and T. Ibaraki
+26	10	92		Tue Aug 12 05:14:18 1997  T.Baar, P.Brucker, S.Knust
+27	1	96		Tue Aug 12 05:14:35 1997  T.Baar, P.Brucker, S.Knust
+27	2	81		Tue Aug 12 05:14:54 1997  T.Baar, P.Brucker, S.Knust
+27	3	91		Tue Aug 12 05:15:11 1997  T.Baar, P.Brucker, S.Knust
+27	4	79		Tue Aug 12 05:15:29 1997  T.Baar, P.Brucker, S.Knust
+27	5	99		Tue Aug 12 05:15:44 1997  T.Baar, P.Brucker, S.Knust
+27	6	87		Tue Aug 12 05:16:02 1997  T.Baar, P.Brucker, S.Knust
+27	7	73		Tue Aug 12 05:16:19 1997  T.Baar, P.Brucker, S.Knust
+27	8	72		Tue Aug 12 05:16:35 1997  T.Baar, P.Brucker, S.Knust
+27	9	84		Tue Aug 12 05:16:52 1997  T.Baar, P.Brucker, S.Knust
+27	10	97		Tue Aug 12 05:17:09 1997  T.Baar, P.Brucker, S.Knust
+28	1	80		Tue Aug 12 05:17:26 1997  T.Baar, P.Brucker, S.Knust
+28	2	76		Tue Aug 12 05:17:43 1997  T.Baar, P.Brucker, S.Knust
+28	3	86		Tue Aug 12 05:18:00 1997  T.Baar, P.Brucker, S.Knust
+28	4	78		Tue Aug 12 05:18:17 1997  T.Baar, P.Brucker, S.Knust
+28	5	88		Tue Aug 12 05:18:34 1997  T.Baar, P.Brucker, S.Knust
+28	6	102		Tue Aug 12 05:18:51 1997  T.Baar, P.Brucker, S.Knust
+28	7	97		Tue Aug 12 05:19:08 1997  T.Baar, P.Brucker, S.Knust
+28	8	110		Tue Aug 12 05:19:24 1997  T.Baar, P.Brucker, S.Knust
+28	9	120		Tue Aug 12 05:19:41 1997  T.Baar, P.Brucker, S.Knust
+28	10	68		Tue Aug 12 05:19:58 1997  T.Baar, P.Brucker, S.Knust
+29	1	135		Fri Apr 19 13:43:55 2002  V. Valls, M. Quintanilla, F. Ballestin
+29	2	126		Thu Mar 10 21:48:17 2005  D. Debels and M. Vanhoucke           
+29	3	144		Wed Oct 12 06:50:06 2005  F. Xiao, A. Lim and B. Rodrigues
+29	4	149		Wed Oct 12 06:50:06 2005  F. Xiao, A. Lim and B. Rodrigues
+29	5	121		Thu Mar 10 21:48:17 2005  D. Debels and M. Vanhoucke           
+29	6	123		Wed Jul 12 12:55:09 2017 M. Vanhoucke and J. Coelho
+29	7	169		Mon Mar 18 16:02:46 2019 E.Goncharov
+29	8	154		Thu Mar 10 21:48:17 2005  D. Debels and M. Vanhoucke           
+29	9	127		Thu Mar 10 21:48:17 2005  D. Debels and M. Vanhoucke           
+29	10	125		Thu Mar 10 21:48:17 2005  D. Debels and M. Vanhoucke           
+30	1	102		Tue Aug 12 05:23:06 1997  T.Baar, P.Brucker, S.Knust
+30	2	76		Tue Aug 12 05:23:22 1997  T.Baar, P.Brucker, S.Knust
+30	3	102		Tue Aug 12 05:23:38 1997  T.Baar, P.Brucker, S.Knust
+30	4	104		Tue Aug 12 05:23:54 1997  T.Baar, P.Brucker, S.Knust
+30	5	83		Wed Oct 12 06:50:06 2005  F. Xiao, A. Lim and B. Rodrigues
+30	6	90		Tue Aug 12 05:24:27 1997  T.Baar, P.Brucker, S.Knust
+30	7	84		Wed Oct 12 06:50:06 2005  F. Xiao, A. Lim and B. Rodrigues
+30	8	82		Tue Aug 12 05:25:00 1997  T.Baar, P.Brucker, S.Knust
+30	9	94		Wed Oct 12 06:50:06 2005  F. Xiao, A. Lim and B. Rodrigues
+30	10	90		Sat Aug 30 04:07:01 1997  Soenke Hartmann
+31	1	79		Tue Aug 12 05:25:53 1997  T.Baar, P.Brucker, S.Knust
+31	2	69		Tue Aug 12 05:26:09 1997  T.Baar, P.Brucker, S.Knust
+31	3	106		Tue Aug 12 05:26:26 1997  T.Baar, P.Brucker, S.Knust
+31	4	79		Tue Aug 12 05:26:43 1997  T.Baar, P.Brucker, S.Knust
+31	5	79		Tue Aug 12 05:27:00 1997  T.Baar, P.Brucker, S.Knust
+31	6	80		Tue Aug 12 05:27:18 1997  T.Baar, P.Brucker, S.Knust
+31	7	97		Tue Aug 12 05:27:35 1997  T.Baar, P.Brucker, S.Knust
+31	8	83		Tue Aug 12 05:27:52 1997  T.Baar, P.Brucker, S.Knust
+31	9	72		Tue Aug 12 05:28:09 1997  T.Baar, P.Brucker, S.Knust
+31	10	99		Tue Aug 12 05:28:26 1997  T.Baar, P.Brucker, S.Knust
+32	1	78		Tue Aug 12 05:28:44 1997  T.Baar, P.Brucker, S.Knust
+32	2	78		Tue Aug 12 05:29:02 1997  T.Baar, P.Brucker, S.Knust
+32	3	89		Tue Aug 12 05:29:20 1997  T.Baar, P.Brucker, S.Knust
+32	4	104		Tue Aug 12 05:29:37 1997  T.Baar, P.Brucker, S.Knust
+32	5	93		Tue Aug 12 05:29:57 1997  T.Baar, P.Brucker, S.Knust
+32	6	86		Tue Aug 12 05:30:14 1997  T.Baar, P.Brucker, S.Knust
+32	7	87		Tue Aug 12 05:30:31 1997  T.Baar, P.Brucker, S.Knust
+32	8	79		Tue Aug 12 05:30:48 1997  T.Baar, P.Brucker, S.Knust
+32	9	95		Tue Aug 12 05:31:05 1997  T.Baar, P.Brucker, S.Knust
+32	10	91		Tue Aug 12 05:31:21 1997  T.Baar, P.Brucker, S.Knust
+33	1	99		Sat Aug 30 04:07:06 1997  Soenke Hartmann
+33	2	112		Tue Aug 12 05:31:55 1997  T.Baar, P.Brucker, S.Knust
+33	3	108		Sat Aug 30 04:07:11 1997  Soenke Hartmann
+33	4	92		Tue Aug 12 05:32:29 1997  T.Baar, P.Brucker, S.Knust
+33	5	109		Tue Aug 12 05:32:47 1997  T.Baar, P.Brucker, S.Knust
+33	6	88		Tue Aug 12 07:49:55 1997  T.Baar, P.Brucker, S.Knust
+33	7	109		Tue Aug 12 05:33:20 1997  T.Baar, P.Brucker, S.Knust
+33	8	110		Sat Aug 30 04:07:15 1997  Soenke Hartmann
+33	9	95		Sat Aug 30 04:07:20 1997  Soenke Hartmann
+33	10	114		Mon Jun 22 12:01:59 1998  K. Nonobe and T. Ibaraki
+34	1	83		Tue Aug 12 05:34:33 1997  T.Baar, P.Brucker, S.Knust
+34	2	89		Tue Aug 12 05:34:49 1997  T.Baar, P.Brucker, S.Knust
+34	3	82		Tue Aug 12 05:35:07 1997  T.Baar, P.Brucker, S.Knust
+34	4	81		Tue Aug 12 05:35:24 1997  T.Baar, P.Brucker, S.Knust
+34	5	83		Sat Aug 30 04:07:31 1997  Soenke Hartmann
+34	6	89		Tue Aug 12 05:35:59 1997  T.Baar, P.Brucker, S.Knust
+34	7	92		Tue Aug 12 05:36:16 1997  T.Baar, P.Brucker, S.Knust
+34	8	81		Tue Aug 12 07:53:33 1997  T.Baar, P.Brucker, S.Knust
+34	9	109		Tue Aug 12 05:36:50 1997  T.Baar, P.Brucker, S.Knust
+34	10	101		Tue Aug 12 05:37:07 1997  T.Baar, P.Brucker, S.Knust
+35	1	98		Tue Aug 12 05:37:24 1997  T.Baar, P.Brucker, S.Knust
+35	2	92		Tue Aug 12 05:37:41 1997  T.Baar, P.Brucker, S.Knust
+35	3	96		Tue Aug 12 05:37:58 1997  T.Baar, P.Brucker, S.Knust
+35	4	86		Tue Aug 12 05:38:14 1997  T.Baar, P.Brucker, S.Knust
+35	5	103		Tue Aug 12 05:38:30 1997  T.Baar, P.Brucker, S.Knust
+35	6	72		Tue Aug 12 07:55:50 1997  T.Baar, P.Brucker, S.Knust
+35	7	78		Tue Aug 12 05:39:04 1997  T.Baar, P.Brucker, S.Knust
+35	8	85		Tue Aug 12 05:39:21 1997  T.Baar, P.Brucker, S.Knust
+35	9	76		Tue Aug 12 05:39:38 1997  T.Baar, P.Brucker, S.Knust
+35	10	82		Tue Aug 12 05:39:55 1997  T.Baar, P.Brucker, S.Knust
+36	1	97		Tue Aug 12 05:40:12 1997  T.Baar, P.Brucker, S.Knust
+36	2	114		Tue Aug 12 05:40:30 1997  T.Baar, P.Brucker, S.Knust
+36	3	84		Tue Aug 12 05:40:47 1997  T.Baar, P.Brucker, S.Knust
+36	4	79		Tue Aug 12 05:41:03 1997  T.Baar, P.Brucker, S.Knust
+36	5	98		Tue Aug 12 05:41:20 1997  T.Baar, P.Brucker, S.Knust
+36	6	99		Tue Aug 12 05:41:37 1997  T.Baar, P.Brucker, S.Knust
+36	7	89		Tue Aug 12 05:41:54 1997  T.Baar, P.Brucker, S.Knust
+36	8	84		Tue Aug 12 05:42:11 1997  T.Baar, P.Brucker, S.Knust
+36	9	102		Tue Aug 12 05:42:27 1997  T.Baar, P.Brucker, S.Knust
+36	10	109		Tue Aug 12 05:42:46 1997  T.Baar, P.Brucker, S.Knust
+37	1	110		Fri Apr 19 13:43:56 2002  V. Valls, M. Quintanilla, F. Ballestin
+37	2	115		Fri Apr 19 13:44:03 2002  V. Valls, M. Quintanilla, F. Ballestin
+37	3	132		Fri Jul  6 18:51:06 2001  M. Palpant, C. Artigues, P. Michelon
+37	4	123		Fri Jan 31 20:17:24 2003  M. Palpant, C. Artigues, P. Michelon
+37	5	126		Tue Nov 27 15:17:23 2001  M. Palpant, C. Artigues, P. Michelon
+37	6	131		Fri Apr 19 13:44:29 2002  V. Valls, M. Quintanilla, F. Ballestin
+37	7	123		Tue Mar 23 12:03:35 1999  V. Valls, M. Quintanilla, F. Ballestin
+37	8	119		Wed Oct 16 23:07:08 2002  M. Palpant, C. Artigues, P. Michelon
+37	9	123		Fri Apr 19 13:44:45 2002  V. Valls, M. Quintanilla, F. Ballestin
+37	10	123		Wed Oct 12 06:50:06 2005  F. Xiao, A. Lim and B. Rodrigues
+38	1	85		Mon Jun 22 12:02:24 1998  K. Nonobe and T. Ibaraki
+38	2	78		Tue Aug 12 05:46:09 1997  T.Baar, P.Brucker, S.Knust
+38	3	89		Sat Aug 30 04:08:29 1997  Soenke Hartmann
+38	4	89		Tue Aug 12 05:46:43 1997  T.Baar, P.Brucker, S.Knust
+38	5	86		Mon Jun 22 12:02:29 1998  K. Nonobe and T. Ibaraki
+38	6	88		Sat Aug 30 04:08:39 1997  Soenke Hartmann
+38	7	85		Tue Aug 12 05:47:34 1997  T.Baar, P.Brucker, S.Knust
+38	8	91		Sat Aug 30 04:08:44 1997  Soenke Hartmann
+38	9	95		Tue Aug 12 05:48:08 1997  T.Baar, P.Brucker, S.Knust
+38	10	108		Tue Aug 12 05:48:25 1997  T.Baar, P.Brucker, S.Knust
+39	1	106		Tue Aug 12 05:48:42 1997  T.Baar, P.Brucker, S.Knust
+39	2	119		Tue Aug 12 05:48:59 1997  T.Baar, P.Brucker, S.Knust
+39	3	83		Tue Aug 12 05:49:16 1997  T.Baar, P.Brucker, S.Knust
+39	4	81		Tue Aug 12 05:49:34 1997  T.Baar, P.Brucker, S.Knust
+39	5	85		Tue Aug 12 05:49:52 1997  T.Baar, P.Brucker, S.Knust
+39	6	102		Tue Aug 12 05:50:09 1997  T.Baar, P.Brucker, S.Knust
+39	7	85		Tue Aug 12 05:50:26 1997  T.Baar, P.Brucker, S.Knust
+39	8	81		Tue Aug 12 05:50:43 1997  T.Baar, P.Brucker, S.Knust
+39	9	79		Tue Aug 12 05:51:00 1997  T.Baar, P.Brucker, S.Knust
+39	10	100		Tue Aug 12 05:51:17 1997  T.Baar, P.Brucker, S.Knust
+40	1	95		Tue Aug 12 05:51:34 1997  T.Baar, P.Brucker, S.Knust
+40	2	91		Tue Aug 12 05:51:51 1997  T.Baar, P.Brucker, S.Knust
+40	3	77		Tue Aug 12 05:52:11 1997  T.Baar, P.Brucker, S.Knust
+40	4	106		Tue Aug 12 05:52:28 1997  T.Baar, P.Brucker, S.Knust
+40	5	92		Tue Aug 12 05:52:44 1997  T.Baar, P.Brucker, S.Knust
+40	6	86		Tue Aug 12 05:53:01 1997  T.Baar, P.Brucker, S.Knust
+40	7	87		Tue Aug 12 05:53:17 1997  T.Baar, P.Brucker, S.Knust
+40	8	79		Tue Aug 12 05:53:34 1997  T.Baar, P.Brucker, S.Knust
+40	9	98		Tue Aug 12 05:53:51 1997  T.Baar, P.Brucker, S.Knust
+40	10	86		Tue Aug 12 05:54:08 1997  T.Baar, P.Brucker, S.Knust
+41	1	142		Thu Mar 10 21:48:17 2005  D. Debels and M. Vanhoucke           
+41	2	168		Wed Oct 12 06:50:07 2005  F. Xiao, A. Lim and B. Rodrigues
+41	3	161		Wed Oct 12 06:50:07 2005  F. Xiao, A. Lim and B. Rodrigues
+41	4	154		Wed Oct 12 06:50:07 2005  F. Xiao, A. Lim and B. Rodrigues
+41	5	127		Wed Oct 12 06:50:07 2005  F. Xiao, A. Lim and B. Rodrigues
+41	6	135		Wed Oct 12 06:50:07 2005  F. Xiao, A. Lim and B. Rodrigues
+41	7	157		Wed Oct 12 06:50:07 2005  F. Xiao, A. Lim and B. Rodrigues
+41	8	162		Wed Jul 12 12:55:09 2017 M. Vanhoucke and J. Coelho
+41	9	118		Sat Feb  9 06:46:33 2019 E.Goncharov
+41	10	150		Wed Nov 22 11:50:17 2006 	M. R.Ranjbar , F. Kianfar
+42	1	106		Tue Aug 12 05:57:20 1997  T.Baar, P.Brucker, S.Knust
+42	2	102		Tue Mar 23 12:01:18 1999  V. Valls, M. Quintanilla, F. Ballestin
+42	3	94		Sat Aug 30 04:09:42 1997  Soenke Hartmann
+42	4	102		Tue Aug 12 05:58:14 1997  T.Baar, P.Brucker, S.Knust
+42	5	105		Tue Aug 12 05:58:32 1997  T.Baar, P.Brucker, S.Knust
+42	6	89		Sat Aug 30 04:09:47 1997  Soenke Hartmann
+42	7	87		Tue Mar 23 12:03:44 1999  V. Valls, M. Quintanilla, F. Ballestin
+42	8	105		Tue Aug 12 05:59:22 1997  T.Baar, P.Brucker, S.Knust
+42	9	83		Fri Apr 19 13:44:47 2002  V. Valls, M. Quintanilla, F. Ballestin
+42	10	90		Fri Apr 19 13:44:50 2002  V. Valls, M. Quintanilla, F. Ballestin
+43	1	99		Tue Aug 12 06:00:15 1997  T.Baar, P.Brucker, S.Knust
+43	2	91		Tue Aug 12 06:00:32 1997  T.Baar, P.Brucker, S.Knust
+43	3	102		Tue Aug 12 06:00:48 1997  T.Baar, P.Brucker, S.Knust
+43	4	94		Tue Aug 12 06:01:06 1997  T.Baar, P.Brucker, S.Knust
+43	5	98		Tue Aug 12 06:01:23 1997  T.Baar, P.Brucker, S.Knust
+43	6	114		Tue Aug 12 06:01:39 1997  T.Baar, P.Brucker, S.Knust
+43	7	88		Tue Aug 12 06:01:56 1997  T.Baar, P.Brucker, S.Knust
+43	8	100		Tue Aug 12 06:02:14 1997  T.Baar, P.Brucker, S.Knust
+43	9	88		Tue Aug 12 06:02:31 1997  T.Baar, P.Brucker, S.Knust
+43	10	92		Tue Aug 12 06:02:51 1997  T.Baar, P.Brucker, S.Knust
+44	1	100		Tue Aug 12 06:03:08 1997  T.Baar, P.Brucker, S.Knust
+44	2	92		Tue Aug 12 06:03:25 1997  T.Baar, P.Brucker, S.Knust
+44	3	110		Tue Aug 12 06:03:41 1997  T.Baar, P.Brucker, S.Knust
+44	4	89		Tue Aug 12 06:03:58 1997  T.Baar, P.Brucker, S.Knust
+44	5	84		Tue Aug 12 06:04:16 1997  T.Baar, P.Brucker, S.Knust
+44	6	96		Tue Aug 12 06:04:33 1997  T.Baar, P.Brucker, S.Knust
+44	7	93		Tue Aug 12 06:04:50 1997  T.Baar, P.Brucker, S.Knust
+44	8	99		Tue Aug 12 06:05:06 1997  T.Baar, P.Brucker, S.Knust
+44	9	96		Tue Aug 12 06:05:24 1997  T.Baar, P.Brucker, S.Knust
+44	10	86		Tue Aug 12 06:05:41 1997  T.Baar, P.Brucker, S.Knust
+45	1	146		Wed Oct 12 06:50:07 2005  F. Xiao, A. Lim and B. Rodrigues
+45	2	146		Wed Jul 12 12:55:09 2017 M. Vanhoucke and J. Coelho
+45	3	154		Wed Oct 12 06:50:07 2005  F. Xiao, A. Lim and B. Rodrigues
+45	4	135		Wed Oct 12 06:50:07 2005  F. Xiao, A. Lim and B. Rodrigues
+45	5	173		Wed Jul 12 12:55:10 2017 M. Vanhoucke and J. Coelho
+45	6	175		Wed Oct 12 06:50:07 2005  F. Xiao, A. Lim and B. Rodrigues
+45	7	136		Wed Oct 12 06:50:07 2005  F. Xiao, A. Lim and B. Rodrigues
+45	8	160		Wed Oct 12 06:50:07 2005  F. Xiao, A. Lim and B. Rodrigues
+45	9	158		Wed Oct 12 06:50:07 2005  F. Xiao, A. Lim and B. Rodrigues
+45	10	164		Thu Mar 10 21:48:18 2005  D. Debels and M. Vanhoucke           
+46	1	104		Fri Jul  6 18:51:11 2001  M. Palpant, C. Artigues, P. Michelon
+46	2	98		Tue Aug 12 06:08:58 1997  T.Baar, P.Brucker, S.Knust
+46	3	113		Sat Aug 30 04:11:02 1997  Soenke Hartmann
+46	4	93		Fri Apr 19 13:44:18 2002  V. Valls, M. Quintanilla, F. Ballestin
+46	5	91		Sat Aug 30 04:11:11 1997  Soenke Hartmann
+46	6	83		Sat Aug 30 04:11:16 1997  Soenke Hartmann
+46	7	89		Sat Aug 30 04:11:21 1997  Soenke Hartmann
+46	8	96		Wed Oct 12 06:50:07 2005  F. Xiao, A. Lim and B. Rodrigues
+46	9	89		Mon Sep 10 14:11:31 2001  V. Valls, M. Quintanilla, F. Ballestin
+46	10	114		Tue Aug 12 06:11:15 1997  T.Baar, P.Brucker, S.Knust
+47	1	82		Tue Aug 12 06:11:32 1997  T.Baar, P.Brucker, S.Knust
+47	2	90		Tue Aug 12 06:11:50 1997  T.Baar, P.Brucker, S.Knust
+47	3	102		Tue Aug 12 06:12:07 1997  T.Baar, P.Brucker, S.Knust
+47	4	93		Tue Aug 12 06:12:24 1997  T.Baar, P.Brucker, S.Knust
+47	5	93		Tue Aug 12 06:12:41 1997  T.Baar, P.Brucker, S.Knust
+47	6	98		Tue Aug 12 06:12:58 1997  T.Baar, P.Brucker, S.Knust
+47	7	94		Tue Aug 12 06:13:14 1997  T.Baar, P.Brucker, S.Knust
+47	8	98		Tue Aug 12 06:13:32 1997  T.Baar, P.Brucker, S.Knust
+47	9	86		Tue Aug 12 06:13:49 1997  T.Baar, P.Brucker, S.Knust
+47	10	65		Tue Aug 12 06:14:06 1997  T.Baar, P.Brucker, S.Knust
+48	1	83		Tue Aug 12 06:14:23 1997  T.Baar, P.Brucker, S.Knust
+48	2	89		Tue Aug 12 06:14:39 1997  T.Baar, P.Brucker, S.Knust
+48	3	86		Tue Aug 12 06:14:56 1997  T.Baar, P.Brucker, S.Knust
+48	4	91		Tue Aug 12 06:15:13 1997  T.Baar, P.Brucker, S.Knust
+48	5	75		Tue Aug 12 06:15:30 1997  T.Baar, P.Brucker, S.Knust
+48	6	114		Tue Aug 12 06:15:48 1997  T.Baar, P.Brucker, S.Knust
+48	7	103		Tue Aug 12 06:16:06 1997  T.Baar, P.Brucker, S.Knust
+48	8	74		Tue Aug 12 06:16:24 1997  T.Baar, P.Brucker, S.Knust
+48	9	89		Tue Aug 12 06:16:40 1997  T.Baar, P.Brucker, S.Knust
+48	10	93		Tue Aug 12 06:16:59 1997  T.Baar, P.Brucker, S.Knust
