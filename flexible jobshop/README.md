@@ -320,9 +320,9 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>mk08</td><td>20 x 10</td><td>fjsp</td><td>523</td><td>523</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>mk09</td><td>20 x 10</td><td>fjsp</td><td>307</td><td>307</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>mk10</td><td>20 x 15</td><td>fjsp</td><td>189</td><td>193</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>Quintiq</td></tr>
-<tr><td>mk11</td><td>30 x 5</td><td>fjsp</td><td>608</td><td>612</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>mk11</td><td>30 x 5</td><td>fjsp</td><td>608</td><td>609</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 <tr><td>mk12</td><td>30 x 10</td><td>fjsp</td><td>508</td><td>508</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
-<tr><td>mk13</td><td>30 x 10</td><td>fjsp</td><td>353</td><td>391</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>CPO / OptalCP</td></tr>
+<tr><td>mk13</td><td>30 x 10</td><td>fjsp</td><td>364</td><td>390</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 <tr><td>mk14</td><td>30 x 15</td><td>fjsp</td><td>694</td><td>694</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP < 1 min</td></tr>
 <tr><td>mk15</td><td>30 x 15</td><td>fjsp</td><td>333</td><td>333</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h</td></tr>
 </table>
