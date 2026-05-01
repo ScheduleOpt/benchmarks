@@ -10,37 +10,36 @@ permalink: /jsplib/
 
 ## The jobshop scheduling problem benchmark library
 
-The JSPLib is an informal group of instances (`ft`, `la`, `abz`, `orb`, `swv`, `yn`, `ta`, `dmu` to which we added `tai`, `long` and `short`) that have been used to investigate solution methods for the jobshop problem. On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
+JSPLib is a comprehensive benchmark library for the Job Shop Scheduling Problem (JSP). It serves as a centralized repository for standard instances (`ft`, `la`, `abz`, `orb`, `swv`, `yn`, `ta`, `dmu` and `tai`) and tracks the current State-of-the-Art (SOTA) by maintaining verified Best Known Solutions (BKS).
 
 The data and source code can be found in the [Github repository](https://github.com/ScheduleOpt/benchmarks)
-This document is visible as a README.md in the Github folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib). Instances and best known solutions are now available in [json format](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/json) 
+This document is visible as a README.md in the Github folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib). Instances and best known solutions are now available in [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/json) or text format
 
 ### Table of Contents
 
 - [Jobshop instances](#jobshop-benchmark-instances)
-    - [Overview of the jobshop benchmark](#overview-of-the-jobshop-benchmark)
+    - [Overview of the jobshop benchmark](#overview-of-the-jsplib)
     - [Classification of the jobshop instances](#classification-of-the-jobshop-instances)
+    - [Similar work](#similar-work)
     - [Formats](#formats)
     - [Publications](#publications-instances)
-- [Jobshop and variants using the standard format](#jobshop-variants)
+- [Jobshop and variants](#jobshop-variants)
     - [Jobshop](#jobshop)
     - [No buffer jobshop (blocking)](#no-buffer-jobshop-blocking-jobshop)
     - [No wait jobshop](#no-wait-jobshop)
     - [Cumulative jobshop](#cumulative-jobshop)
     - [Jobshop with operators](#jobshop-with-operators---workers)
-- [Jobshop variants that require extra data](#other-jobshop-variants)
     - [Jobshop with arbitrary precedences](#jobshop-with-arbitrary-precedences)
     - [Jobshop with setup times](#jobshop-with-sequence-dependent-setup-times)
     - [Flexible jobshop](#flexible-jobshop)
-- [Jobshop benchmark - JSPLib](#jobshop-benchmark---jsplib)
-    - [Similar work](#similar-work)
+- [JSPLib solutions - The State-Of-The-Art](#jsplib-solutions---the-state-of-the-art)
     - [Best known solutions](#best-known-solutions---jsplib)
     - [Publications](#publications-best-known-solutions)
-- [Test instances for algorithms](#test-instances)
+- [Comparison of reference engines](#comparison-of-reference-engines)
 
 <br/>
 
-### Overview of the jobshop benchmark library
+### Overview of the jsplib
 
 All instances in the benchmark follow the standard jobshop format. The DaColTeppan instances use a conservative extension of the existing jobshop format.
 
@@ -49,8 +48,8 @@ Jobshop instances (332)
 - 40 instances `la` from Lawrence 1984
 - 5 instances `abz` from Adams, Balas and Zawack 1988
 - 10 instances `orb` from Applegate and Cook 1991
-- 20 instances `swv` from Storer, Wu and Vaccari 1992
 - 4 instances `yn` from Yamada and Nakano 1992
+- 20 instances `swv` from Storer, Wu and Vaccari 1992
 - 80 instances `ta` from Taillard 1993
 - 80 instances `dmu` from Demirkol, Mehta and Uzsoy 1998
 - 90 instances `tai` from Da Col and Teppan 2022
@@ -59,15 +58,12 @@ Reentrant jobshop instances (24)
 - 12 instances `long` from Da Col and Teppan 2022
 - 12 instances `short` from Da Col and Teppan 2022
 
-
 ### Classification of the jobshop instances
 
-We use the following engines as references for the benchmark
-- [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : representative of the CP-scheduling family of engines
-- [**Google CP-SAT**](https://developers.google.com/optimization) : representative of the lazy clause generation family of engines
-- [**OptalCP**](https://optalcp.com) : representative of the lazy clause generation family of engines
-
-We have dropped Cplex from the jobshop tests due to poor performance of linear solvers as reported by multiple authors in the literature and confirmed by ourselves.
+We use the following engines as reference engines for the benchmark for they are widely considered the strongest engines for scheduling, and to provide a balanced benchmark across different solver technologies
+- [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : a classic CP-scheduling engine
+- [**Google CP-SAT**](https://developers.google.com/optimization) : a lazy clause generation + LP + local search engine
+- [**OptalCP**](https://optalcp.com) : a modern CP-scheduling engine
 
 
 Instances are divided into
@@ -77,20 +73,18 @@ Instances are divided into
 - <strong style="color:purple">closed</strong> : *allegedly* solved to optimality. Most of the time the optimal solution is known because 2 different methods independently found equal upper and lower bounds. The problem moves to `hard` only when the optimality proof can be reproduced by a reference engine.
 - <strong style="color:grey">open</strong> : no proof of optimality
 
-Currently the instances divide as follows
+Currently the instances are divided as follows
 - `ft` : 3 easy
 - `la` : 39 easy, 1 medium
 - `abz` : 2 easy, 2 medium, 1 hard
 - `orb` : 10 easy
-- `swv` : 7 easy, 7 medium, 3 hard, 3 open
 - `yn` : 4 hard
+- `swv` : 7 easy, 7 medium, 3 hard, 3 open
 - `ta` : 40 easy, 21 medium, 7 hard, 12 open
 - `dmu` : 17 easy, 13 medium, 5 hard, 45 open
 - `tai` : 50 easy, 40 open
 - `long` : 11 easy, 1 medium
 - `short` : 5 easy, 6 medium, 1 open
-
-Previous versions of these results had some `closed` instances which we proceed to solve with OptalCP running for longer times to confirm their status of solved
 
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="460" viewBox="0 0 800 460" role="img" aria-label="Status distribution by family"><style>
     .jssp-label { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; fill: gray; }
@@ -100,9 +94,28 @@ Previous versions of these results had some `closed` instances which we proceed 
   </style><g aria-hidden="true"><rect x="64" y="60" width="12" height="12" fill="green" /><text x="82" y="70" class="jssp-legend">easy</text><rect x="204" y="60" width="12" height="12" fill="orange" /><text x="222" y="70" class="jssp-legend">medium</text><rect x="344" y="60" width="12" height="12" fill="red" /><text x="362" y="70" class="jssp-legend">hard</text><rect x="64" y="80" width="12" height="12" fill="purple" /><text x="82" y="90" class="jssp-legend">closed</text><rect x="204" y="80" width="12" height="12" fill="gray" /><text x="222" y="90" class="jssp-legend">open</text></g><line x1="64" y1="320" x2="780" y2="320" class="jssp-grid" /><text x="56" y="324" text-anchor="end" class="jssp-label">0</text><line x1="64" y1="274" x2="780" y2="274" class="jssp-grid" /><text x="56" y="278" text-anchor="end" class="jssp-label">18</text><line x1="64" y1="228" x2="780" y2="228" class="jssp-grid" /><text x="56" y="232" text-anchor="end" class="jssp-label">36</text><line x1="64" y1="182" x2="780" y2="182" class="jssp-grid" /><text x="56" y="186" text-anchor="end" class="jssp-label">54</text><line x1="64" y1="136" x2="780" y2="136" class="jssp-grid" /><text x="56" y="140" text-anchor="end" class="jssp-label">72</text><line x1="64" y1="90" x2="780" y2="90" class="jssp-grid" /><text x="56" y="94" text-anchor="end" class="jssp-label">90</text><rect x="64" y="312" width="58" height="8" fill="green" /><g transform="translate(93, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">ft</text></g><text x="93" y="306" text-anchor="middle" class="jssp-label" font-weight="600">3</text><rect x="130" y="220" width="58" height="100" fill="green" /><rect x="130" y="218" width="58" height="3" fill="orange" /><g transform="translate(159, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">la</text></g><text x="159" y="212" text-anchor="middle" class="jssp-label" font-weight="600">40</text><rect x="196" y="315" width="58" height="5" fill="green" /><rect x="196" y="310" width="58" height="5" fill="orange" /><rect x="196" y="307" width="58" height="3" fill="red" /><g transform="translate(225, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">abz</text></g><text x="225" y="301" text-anchor="middle" class="jssp-label" font-weight="600">5</text><rect x="261" y="294" width="58" height="26" fill="green" /><g transform="translate(290, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">orb</text></g><text x="290" y="288" text-anchor="middle" class="jssp-label" font-weight="600">10</text><rect x="327" y="302" width="58" height="18" fill="green" /><rect x="327" y="284" width="58" height="18" fill="orange" /><rect x="327" y="277" width="58" height="8" fill="red" /><rect x="327" y="269" width="58" height="8" fill="gray" /><g transform="translate(356, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">swv</text></g><text x="356" y="263" text-anchor="middle" class="jssp-label" font-weight="600">20</text><rect x="393" y="310" width="58" height="10" fill="red" /><g transform="translate(422, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">yn</text></g><text x="422" y="304" text-anchor="middle" class="jssp-label" font-weight="600">4</text><rect x="459" y="218" width="58" height="102" fill="green" /><rect x="459" y="164" width="58" height="54" fill="orange" /><rect x="459" y="146" width="58" height="18" fill="red" /><rect x="459" y="116" width="58" height="31" fill="gray" /><g transform="translate(488, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">ta</text></g><text x="488" y="110" text-anchor="middle" class="jssp-label" font-weight="600">80</text><rect x="525" y="277" width="58" height="43" fill="green" /><rect x="525" y="243" width="58" height="33" fill="orange" /><rect x="525" y="231" width="58" height="13" fill="red" /><rect x="525" y="116" width="58" height="115" fill="gray" /><g transform="translate(554, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">dmu</text></g><text x="554" y="110" text-anchor="middle" class="jssp-label" font-weight="600">80</text><rect x="591" y="192" width="58" height="128" fill="green" /><rect x="591" y="90" width="58" height="102" fill="gray" /><g transform="translate(619, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">tai</text></g><text x="619" y="84" text-anchor="middle" class="jssp-label" font-weight="600">90</text><rect x="656" y="292" width="58" height="28" fill="green" /><rect x="656" y="289" width="58" height="3" fill="orange" /><g transform="translate(685, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">long</text></g><text x="685" y="283" text-anchor="middle" class="jssp-label" font-weight="600">12</text><rect x="722" y="307" width="58" height="13" fill="green" /><rect x="722" y="292" width="58" height="15" fill="orange" /><rect x="722" y="289" width="58" height="3" fill="gray" /><g transform="translate(751, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">short</text></g><text x="751" y="283" text-anchor="middle" class="jssp-label" font-weight="600">12</text><line x1="64" y1="320" x2="780" y2="320" class="jssp-axis" /></svg>
 <!-- End SVG -->
 
+### Similar work
+
+Our work was inspired by the ***outstanding*** work of Naderi, Ruiz and Roshanaei *Mixed-Integer Programming versus Constraint Programming for shop scheduling problems : New Results and Outlook* [**NRR2022**] which compares CPO, Cplex, Gurobi and OR-tools on a benchmark of 6623 instances over 17 benchmarks with a timeout of 1h. They have made all the [raw results available](http://soa.iti.es/problem-instances)
+
+We borrowed references for existing best known bounds from
+- [http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html](http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html)
+- [https://github.com/thomasWeise/jsspInstancesAndResults](https://github.com/thomasWeise/jsspInstancesAndResults)
+- [http://jobshop.jjvh.nl/](http://jobshop.jjvh.nl/)
+- [https://optimizizer.com/jobshop.php](https://optimizizer.com/jobshop.php)
+
+<br/>
+
+The upper bounds available in optimizizer are verified before publication (which we don't do directly - our verification is the fact that an engine achieves the same value). We encourage you to also visit his site.
+
+We also think [https://www.jobshoppuzzle.com/](https://www.jobshoppuzzle.com/) is a very cool site with interactive visualizations of jobshop heuristics and solutions.
+
+
 ### Formats
 
-There are three main formats, the ***standard***, the ***DaColTeppan*** and the ***taillard***
+There are four main formats, ***standard***, ***DaColTeppan***, ***taillard*** and json. 
+
+*The [flexible jobshop library](https://fjsplib.org) preferred format represents precedences explicitly. The jobshop problem being a special case of the flexible jobshop problem, this library may at some point in the future use that same format*
 
 
 #### Standard format
@@ -112,13 +125,7 @@ There are three main formats, the ***standard***, the ***DaColTeppan*** and the 
 ((machine duration ){m}\n){n}
 ```
 
-
-![Jobshop standard format](./img/instance.png)
-<small>Image from Da Col & Teppan</small>
-
-
-
-For instance `l01` on standard format is
+For instance `la01` on standard format is
 ```
 10	5	
 1	21	0	53	4	95	3	55	2	34
@@ -142,10 +149,6 @@ For instance `l01` on standard format is
 #n #m
 ((machine duration )+ -1 -1\n){n}
 ```
-
-![Jobshop DaColTeppan format](./img/instance2.png)
-<small>Image from Da Col & Teppan</small>
-
 
 In the DaColTeppan format
 - there can be any number of tasks per job
@@ -189,7 +192,7 @@ The taillard format first lists the machines, then the durations
 ((duration ){m}\n){n}
 ```
 
-For instance `l01` in taillard format is
+For instance `la01` in taillard format is
 ```
 10	5	
 1	0	4	3	2
@@ -214,6 +217,35 @@ For instance `l01` in taillard format is
 77	79	43	75	96
 ```
 
+<br/>
+
+#### JSON format
+
+The json format is more verbose but probably easier to use and contains meta-data about the instance that is useful for automating benchmarks
+
+```json
+{
+  "instance": "la01",
+  "family": "la",
+  "family_long": "Lawrence",
+  "year": "1984",
+  "machines": 5,
+  "jobs": 10,
+  "data": [
+  {"job": 0, "operation": 0, "machine": 1, "duration": 21},
+  {"job": 0, "operation": 1, "machine": 0, "duration": 53},
+  {"job": 0, "operation": 2, "machine": 4, "duration": 95},
+  {"job": 0, "operation": 3, "machine": 3, "duration": 55},
+  {"job": 0, "operation": 4, "machine": 2, "duration": 34},
+  {"job": 1, "operation": 0, "machine": 0, "duration": 21},
+  {"job": 1, "operation": 1, "machine": 3, "duration": 52},
+  {"job": 1, "operation": 2, "machine": 4, "duration": 16},
+  {"job": 1, "operation": 3, "machine": 2, "duration": 26},
+  ...
+    {"job": 9, "operation": 4, "machine": 0, "duration": 96}
+  ]
+}
+```
 
 <br/>
 
@@ -383,10 +415,6 @@ $$\forall m \in \mathrm{machines} \quad \mathrm{noOverlap} \ \lbrace \ [ \mathrm
 
 $$\sum_m \sum_j \mathrm{step}(\mathrm{start}_j^m) - \mathrm{step}(\mathrm{start}_j^m + \mathrm{Duration}_j^m) \leq \mathrm{Op}$$
 
-## Other jobshop variants
-
-Because these jobshop variants require extra data, we cannot run them
-over the standard benchmark
 
 ### Jobshop with arbitrary precedences
 
@@ -404,50 +432,29 @@ Notice that this variant is only interesting if the setup times are sequence-dep
 
 The tasks of a job can be processed by any machine in a predefined group of similar machines.
 
-***Please refer to the [flexible-jobshop section](https://scheduleopt.github.io/benchmarks/fjsplib/) of this benchmark for more information***
+***Please refer to the [flexible-jobshop section](https://fjsplib.org) of this benchmark for more information***
+
+<br/>
+## JSPLib - the State-Of-The-Art
+
+In this section are collected the best known solutions (upper bound and lower bound) for each problem in the benchmark. 
+
+The solutions may come from 
+- published papers in which case a reference is give (eg. NS2002) and the section [publications](#publications-best-known-solutions) gives the complete reference for the paper
+- an engine run by us (CPO, OptalCP, CPSAT)
+- an engine run by someone else (eg. CPO2015) which results have been published
+
+The type of hardware and time required to find the best known solution are difficult to track and compare, in particular for bounds coming from published papers. Which is why
+- every time a bound is equalled by a reference engine it is the reference engine that appears in the results
+- an approximative timing is given for reference engines whenever possible, in particular when the time to find the solution was unusually long
 
 <br/>
 
-## Jobshop benchmark - JSPLib
+> We ***do not*** systematically run the instances for very long times on large machines. Most of the instances that appear as having been solved after a large comptation time (eg. 40h) had peculiarities (e.g. `best lb + 1 == best ub`) that justified exploring how long it would take to solve them to optimality. We also devote more effort to solve instances which best known solutions are given by papers that are old and difficult to find. This allows verifying the paper claims and having a more accessible way of generating the result.
 
-The JSPLib is an informal group of instances (`ft`, `la`, `abz`, `orb`, `swv`, `yn`, `ta`, `dmu` to which we added `tai`, `short` and `long`) that have been used to investigate solution methods for the jobshop problem. On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
-
-An instance is considered
-- `easy` if it is solved to optimality by a reference engine in < 1 minute
-- `medium` if it is solved to optimality by a reference engine in < 1h
-- `hard` if it is solved to optimality by a reference engine in > 1h
-- `closed` if the combination of upper and lower bounds found in the literature allows concluding the value of the optimal solution is known
-- `open` otherwise
-
-<br/>
-
-For each instance we indicate the publication or engine that reaches that bound (lower or upper). When reporting the results:
-- we give priority to engines over publications because of reproductibility of the results
-- we give priority to the fastest engine to attain the bound
-- when an engine attains a bound previously reported in the literature, we attribute the bound to the engine and remove the correponding paper from the list of relevant references
-
-Other databases keep instead the ***first*** publication or method to have achieved that bound for historical reference. This work instead is meant for engine and algorithm developers to have means of reproducing the claimed results for comparison.
-
-### Similar work
-
-Our work was inspired by the ***outstanding*** work of Naderi, Ruiz and Roshanaei *Mixed-Integer Programming versus Constraint Programming for shop scheduling problems : New Results and Outlook* [**NRR2022**] which compares CPO, Cplex, Gurobi and OR-tools on a benchmark of 6623 instances over 17 benchmarks with a timeout of 1h. They have made all the [raw results available](http://soa.iti.es/problem-instances)
-
-We borrowed references for existing best known bounds from
-- [http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html](http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html)
-- [https://github.com/thomasWeise/jsspInstancesAndResults](https://github.com/thomasWeise/jsspInstancesAndResults)
-- [http://jobshop.jjvh.nl/](http://jobshop.jjvh.nl/)
-- [https://optimizizer.com/jobshop.php](https://optimizizer.com/jobshop.php)
-
-<br/>
-
-The upper bounds available in optimizizer are verified before publication (which we don't do directly - our verification is the fact that an engine achieves the same value). We encourage you to also visit his site.
-
-We also think [https://www.jobshoppuzzle.com/](https://www.jobshoppuzzle.com/) is a very cool site with interactive visualizations of jobshop heuristics and solutions.
 
 
 ### Best known solutions - JSPLib
-
-If you visualize the markdown in Visual Studio Code you will have colors !
 
 #### Fisher and Thompson (1963)
 
@@ -535,6 +542,16 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>orb10</td><td>10 x 10</td><td>jobshop</td><td>944</td><td>944</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>CPO in < 1 min</td></tr>
 </table>
 
+#### Yamada Nakano (1992)
+
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
+<tr><td>yn1</td><td>20 x 20</td><td>jobshop</td><td>884</td><td>884</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 6h</td></tr>
+<tr><td>yn2</td><td>20 x 20</td><td>jobshop</td><td>904</td><td>904</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 40h</td></tr>
+<tr><td>yn3</td><td>20 x 20</td><td>jobshop</td><td>892</td><td>892</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 40h</td></tr>
+<tr><td>yn4</td><td>20 x 20</td><td>jobshop</td><td>967</td><td>967</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 16h</td></tr>
+</table>
+
 #### Storer, Wu and Vaccari (1992)
 
 <table>
@@ -561,15 +578,6 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>swv20</td><td>50 x 10</td><td>jobshop</td><td>2823</td><td>2823</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>CPO in < 1 min</td></tr>
 </table>
 
-#### Yamada Nakano (1992)
-
-<table>
-<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>yn1</td><td>20 x 20</td><td>jobshop</td><td>884</td><td>884</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 6h</td></tr>
-<tr><td>yn2</td><td>20 x 20</td><td>jobshop</td><td>904</td><td>904</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 40h</td></tr>
-<tr><td>yn3</td><td>20 x 20</td><td>jobshop</td><td>892</td><td>892</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 40h</td></tr>
-<tr><td>yn4</td><td>20 x 20</td><td>jobshop</td><td>967</td><td>967</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 16h</td></tr>
-</table>
 
 #### Taillard (1993)
 
@@ -911,203 +919,135 @@ The upper and lower bounds come from
 All other bounds were found by OptalCP
 
 
-## Test instances
-
-### Reference tests
+## Comparison of reference engines
 
 We provide these tests as a reference, you should get something ***similar*** on your hardware (multi-core engines are inherently non-deterministic hence each run returns slightly different results) or find an explanation of why the engines don't behave as expected. We ***strongly*** encourage you to run all engines you want to compare against on your own hardware. 
 
+The instances used for the comparison may change on a regular basis
 
-#### LA instances
-
-On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Academic Version 2025.6.1 with 2 FDS, 1 FDSLB, 1 LNS (3 provers, 1 searcher)
-- CP-SAT V9.14.6206 with default configuration (its log reports running 8 workers)
-
-| Instance | OptalCP | CP-SAT |
-|:--------:|--------:|-------:|
-| la01 |  666 in 0s |  666 in  0s |
-| la02 |  655 in 0s |  655 in  0s |
-| la03 |  597 in 0s |  597 in  0s |
-| la04 |  590 in 0s |  590 in  0s |
-| la05 |  593 in 0s |  593 in  0s |
-| la06 |  926 in 0s |  926 in  0s |
-| la07 |  890 in 0s |  890 in  0s |
-| la08 |  863 in 0s |  863 in  0s |
-| la09 |  951 in 0s |  951 in  0s |
-| la10 |  958 in 0s |  958 in  0s |
-| la11 | 1222 in 0s | 1222 in  0s |
-| la12 | 1039 in 0s | 1039 in  0s |
-| la13 | 1150 in 0s | 1150 in  0s |
-| la14 | 1292 in 0s | 1292 in  0s |
-| la15 | 1207 in 0s | 1207 in  0s |
-| la16 |  945 in 0s |  945 in  0s |
-| la17 |  784 in 0s |  784 in  0s |
-| la18 |  848 in 0s |  848 in  0s |
-| la19 |  842 in 0s |  842 in  1s |
-| la20 |  902 in 0s |  902 in  0s |
-| la21 | 1046 in 2s | 1046 in 49s |
-| la22 |  927 in 0s |  927 in  3s |
-| la23 | 1032 in 0s | 1032 in  0s |
-| la24 |  935 in 1s |  935 in 12s |
-| la25 |  977 in 1s |  977 in 11s |
-| la26 | 1218 in 0s | 1218 in  2s |
-| la27 | 1235 in 9s | 1235 in  9s |
-| la28 | 1216 in 0s | 1216 in  3s |
-| la29 | 1152 in 217s | 1130 .. 1162 in 600s |
-| la30 | 1355 in 0s | 1355 in  1s |
-| la31 | 1784 in 0s | 1784 in  1s |
-| la32 | 1850 in 0s | 1850 in  0s |
-| la33 | 1719 in 0s | 1719 in  1s |
-| la34 | 1721 in 0s | 1721 in  1s |
-| la35 | 1888 in 0s | 1888 in  0s |
-| la36 | 1268 in 0s | 1268 in  6s |
-| la37 | 1397 in 0s | 1397 in  1s |
-| la38 | 1196 in 9s | 1196 in 148s |
-| la39 | 1233 in 0s | 1233 in  2s |
-| la40 | 1222 in 2s | 1222 in 23s |
-
-#### TA instances
+### ABZ instances
 
 On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Academic Version 2025.6.1 with 2 FDS, 1 FDSLB, 1 LNS (3 provers, 1 searcher)
-- CP-SAT V9.14.6206 with default configuration (its log reports running 8 workers)
+- OptalCP Academic Version 2026.6.2 default search
+- CP-SAT V9.15.6755 with default configuration
+- CPO 22.1.1.0
 
-| Instance | OptalCP | CP-SAT |
-|:--------:|--------:|-------:|
-| ta01js | 1231 in   0s | 1231 in   6s |
-| ta02js | 1244 in   2s | 1244 in  44s |
-| ta03js | 1218 in   2s | 1218 in  19s |
-| ta04js | 1175 in   2s | 1175 in  53s |
-| ta05js | 1224 in  12s | 1224 in 352s |
-| ta06js | 1238 in 163s | 1203 .. 1238 in 600s |
-| ta07js | 1227 in  14s | 1227 in 200s |
-| ta08js | 1217 in   8s | 1217 in 130s |
-| ta09js | 1274 in   7s | 1274 in  84s |
-| ta10js | 1241 in   2s | 1241 in  20s |
-| ta11js | 1326 .. 1365 in 600s | 1310 .. 1373 in 600s |
-| ta12js | 1367 in 231s | 1352 .. 1387 in 600s |
-| ta13js | 1325 .. 1342 in 600s | 1279 .. 1348 in 600s |
-| ta14js | 1345 in   0s | 1345 in   9s |
-| ta15js | 1331 .. 1339 in 600s | 1304 .. 1351 in 600s |
-| ta16js | 1343 .. 1363 in 600s | 1300 .. 1370 in 600s |
-| ta17js | 1462 in   3s | 1462 in  88s |
-| ta18js | 1389 .. 1398 in 600s | 1361 .. 1414 in 600s |
-| ta19js | 1327 .. 1343 in 600s | 1299 .. 1368 in 600s |
-| ta20js | 1338 .. 1351 in 600s | 1316 .. 1363 in 600s |
-| ta21js | 1625 .. 1653 in 600s | 1583 .. 1655 in 600s |
-| ta22js | 1544 .. 1616 in 600s | 1533 .. 1613 in 600s |
-| ta23js | 1513 .. 1564 in 600s | 1496 .. 1586 in 600s |
-| ta24js | 1644 in 282s | 1613 .. 1653 in 600s |
-| ta25js | 1543 .. 1608 in 600s | 1531 .. 1619 in 600s |
-| ta26js | 1577 .. 1659 in 600s | 1562 .. 1673 in 600s |
-| ta27js | 1639 .. 1691 in 600s | 1627 .. 1702 in 600s |
-| ta28js | 1603 in 183s | 1588 .. 1609 in 600s |
-| ta29js | 1553 .. 1635 in 600s | 1537 .. 1644 in 600s |
-| ta30js | 1513 .. 1605 in 600s | 1488 .. 1612 in 600s |
-| ta31js | 1764 .. 1766 in 600s | 1764 .. 1768 in 600s |
-| ta32js | 1774 .. 1817 in 600s | 1774 .. 1830 in 600s |
-| ta33js | 1774 .. 1824 in 600s | 1783 .. 1857 in 600s |
-| ta34js | 1828 .. 1849 in 600s | 1828 .. 1846 in 600s |
-| ta35js | 2007 in   2s | 2007 in 11s |
-| ta36js | 1819 .. 1826 in 600s | 1819 in 413s |
-| ta37js | 1771 .. 1796 in 600s | 1771 .. 1812 in 600s |
-| ta38js | 1673 .. 1688 in 600s | 1673 .. 1732 in 600s |
-| ta39js | 1795 in  51s | 1795 in 506s |
-| ta40js | 1632 .. 1709 in 600s | 1643 .. 1745 in 600s |
-| ta41js | 1858 .. 2073 in 600s | 1890 .. 2100 in 600s |
-| ta42js | 1867 .. 1969 in 600s | 1875 .. 1985 in 600s |
-| ta43js | 1809 .. 1890 in 600s | 1809 .. 1941 in 600s |
-| ta44js | 1923 .. 2022 in 600s | 1938 .. 2083 in 600s |
-| ta45js | 1991 .. 2016 in 600s | 1997 .. 2042 in 600s |
-| ta46js | 1940 .. 2060 in 600s | 1945 .. 2057 in 600s |
-| ta47js | 1782 .. 1936 in 600s | 1800 .. 1986 in 600s |
-| ta48js | 1905 .. 1983 in 600s | 1912 .. 2022 in 600s |
-| ta49js | 1903 .. 2016 in 600s | 1927 .. 2051 in 600s |
-| ta50js | 1806 .. 1982 in 600s | 1821 .. 2003 in 600s |
-| ta51js | 2760 in   6s | 2760 in 329s |
-| ta52js | 2756 in   6s | 2756 in 401s |
-| ta53js | 2717 in   2s | 2717 in 104s |
-| ta54js | 2839 in   2s | 2839 in  29s |
-| ta55js | 2679 in  10s | 2679 .. 2693 in 600s |
-| ta56js | 2781 in   4s | 2781 in 105s |
-| ta57js | 2943 in   2s | 2943 in  60s |
-| ta58js | 2885 in   2s | 2885 in 157s |
-| ta59js | 2655 in   7s | 2655 .. 2682 in 600s |
-| ta60js | 2723 in   5s | 2723 in 562s |
-| ta61js | 2868 in   8s | 2868 .. 2916 in 600s |
-| ta62js | 2869 .. 2877 in 600s |  2869 .. 3008 in 600s |
-| ta63js | 2755 in  45s | 2755 .. 2825 in 600s |
-| ta64js | 2702 in  12s | 2702 .. 2756 in 600s |
-| ta65js | 2725 in  30s | 2725 .. 2842 in 600s |
-| ta66js | 2845 in  16s | 2845 .. 2916 in 600s |
-| ta67js | 2825 .. 2826 in 600s | 2825 .. 2869 in 600s |
-| ta68js | 2784 in   6s | 2784 .. 2822 in 600s |
-| ta69js | 3071 in   7s | 3071 in 286s |
-| ta70js | 2995 in  28s | 2995 .. 3109 in 600s |
-| ta71js | 5464 in  17s | 5464 .. 5648 in 600s |
-| ta72js | 5181 in  15s | 5181 .. 5310 in 600s |
-| ta73js | 5568 in  17s | 5568 .. 5648 in 600s |
-| ta74js | 5339 in  13s | 5339 .. 5367 in 600s |
-| ta75js | 5392 in  31s | 5392 .. 5693 in 600s |
-| ta76js | 5342 in  19s | 5342 .. 5475 in 600s |
-| ta77js | 5436 in  11s | 5436 .. 5488 in 600s |
-| ta78js | 5394 in  15s | 5394 .. 5522 in 600s |
-| ta79js | 5358 in  21s | 5358 .. 5463 in 600s |
-| ta80js | 5183 in  15s | 5183 .. 5304 in 600s |
+| Instance | OptalCP | CP-SAT | CPO |
+|:--------:|--------:|-------:|----:|
+| abz5 | 1234 in 0s         | 1234 in 1s        |
+| abz6 | 943 in 0s          | 943 in 1s         |
+| abz7 | 656 in 224s        | 656..657 in 600s  |
+| abz8 | 642..674 in 600s   | 630..683 in 600s  | 
+| abz9 | 670..678 in 600s   | 655..689 in 600s  |
 
-#### YN instances
+### SWV instances
 
 On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Demo Version 2025.7.0 with 1 FDS, 1 FDSLB, 2 LNS (2 provers, 2 searchers)
-- CP-SAT V9.14.6206 with default configuration (its log reports running 8 workers)
+- OptalCP Academic Version 2026.6.2 default search
+- CP-SAT V9.15.6755 with default configuration
+- CPO 22.1.1.0
 
-| Instance | OptalCP | CP-SAT |
-|:--------:|--------:|-------:|
-| yn1 |  860 .. 884 in 600s | 837 .. 889 in 600s |
-| yn2 |  871 .. 914 in 600s | 858 .. 917 in 600s |
-| yn3 |  853 .. 903 in 600s | 842 .. 918 in 600s |
-| yn4 |  932 .. 977 in 600s | 910 .. 985 in 600s |
+| Instance | OptalCP | CP-SAT | CPO |
+|:--------:|--------:|-------:|----:|
+| swv01 | 1407 in 70s | 1402..1418 in 600s |
+| swv02 | 1475 in 12s | 1475 in 89s |
+| swv03 | 1398 in 213s | 1387..1413 in 600s |
+| swv04 | 1453..1478 in 600s | 1440..1510 in 600s |
+| swv05 | 1424 in 148s | 1414..1429 in 600s |
+| swv06 | 1619..1700 in 600s | 1601..1696 in 600s |
+| swv07 | 1479..1628 in 600s | 1470..1669 in 600s |
+| swv08 | 1640..1786 in 600s | 1640..1830 in 600s |
+| swv09 | 1622..1684 in 600s | 1611..1696 in 600s |
+| swv10 | 1649..1783 in 600s | 1631..1785 in 600s |
+| swv11 | 2983..2993 in 600s | 2983..3155 in 600s |
+| swv12 | 2972..3000 in 600s | 2972..3094 in 600s |
+| swv13 | 3104 in 37s | 3104..3142 in 600s |
+| swv14 | 2968 in 9s | 2968..3110 in 600s |
+| swv15 | 2885..2887 in 600s | 2885..3066 in 600s |
+| swv16 | 2924 in 0s | 2924 in 0s |
+| swv17 | 2794 in 0s | 2794 in 0s |
+| swv18 | 2852 in 0s | 2852 in 0s |
+| swv19 | 2843 in 0s | 2843 in 3s |
+| swv20 | 2823 in 0s | 2823 in 0s |
 
-#### TAI 100 x 100 instances
-
-On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Academic Version 2025.8.0 with 1 FDS, 3 LNS (1 prover, 3 searchers)
-- CP-SAT V9.14.6206 with default configuration (its log reports running 8 workers)
-
-| Instance | OptalCP | CP-SAT |
-|:--------:|--------:|-------:|
-| tai_j100_m100_1  |  62521 .. 79694 in 600s | 62303 .. 89932 in 601s |
-| tai_j100_m100_2  |  62741 .. 79265 in 600s | 62032 .. 89636 in 601s |
-| tai_j100_m100_3  |  61197 .. 78375 in 600s | 60201 .. 89282 in 601s |
-| tai_j100_m100_4  |  64449 .. 80653 in 600s | 60980 .. 92178 in 601s |
-| tai_j100_m100_5  |  61340 .. 79746 in 600s | 61165 .. 90602 in 601s |
-| tai_j100_m100_6  |  60932 .. 79567 in 600s | 59272 .. 92399 in 601s |
-| tai_j100_m100_7  |  63641 .. 78857 in 600s | 62755 .. 90905 in 601s |
-| tai_j100_m100_8  |  62989 .. 79131 in 600s | 61238 .. 90028 in 601s |
-| tai_j100_m100_9  |  62379 .. 80599 in 600s | 60619 .. 92256 in 601s |
-| tai_j100_m100_10 |  64866 .. 79005 in 600s | 61008 .. 90217 in 601s |
-
-#### TAI 1000 x 1000 instances
+### DMU instances 1-40
 
 On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Academic Version 2025.11.0 with 1 FDSLB, 3 LNS with propagation level minimal 
-(because of the size of the problem we have to use low complexity propagation algorithms 
-in order to obtain solutions in a reasonable amount of time)
-- CP-SAT V9.14.6206 with default configuration with presolve disabled (otherwise there is no solution in 10 minutes)
+- OptalCP Academic Version 2026.6.2 default search
+- CP-SAT V9.15.6755 with default configuration
+- CPO 22.1.1.0
+
+| Instance | OptalCP | CP-SAT | CPO |
+|:--------:|--------:|-------:|----:|
+| dmu01 | 2515..2563 in 600s | 2467..2634 in 600s 
+| dmu02 | 2706 in 416s | 2607..2706 in 600s 
+| dmu03 | 2731 in 162s | 2684..2753 in 600s 
+| dmu04 | 2603..2675 in 600s | 2563..2694 in 600s 
+| dmu05 | 2733..2749 in 600s | 2713..2779 in 600s 
+| dmu06 | 3121..3248 in 600s | 3087..3314 in 600s 
+| dmu07 | 2942..3098 in 600s | 2921..3094 in 600s 
+| dmu08 | 3188 in 595s | 3076..3197 in 600s 
+| dmu09 | 3092 in 346s | 3000..3092 in 600s 
+| dmu10 | 2972..2984 in 600s | 2914..2985 in 600s 
+| dmu11 | 3395..3466 in 600s | 3395..3491 in 600s 
+| dmu12 | 3481..3519 in 600s | 3481..3604 in 600s 
+| dmu13 | 3681..3718 in 600s | 3681..3758 in 600s 
+| dmu14 | 3394 in 131s | 3394 in 14s 
+| dmu15 | 3343 in 129s | 3343..3404 in 600s 
+| dmu16 | 3734..3784 in 600s | 3734..3836 in 600s 
+| dmu17 | 3709..3874 in 600s | 3709..3942 in 600s 
+| dmu18 | 3844..3882 in 600s | 3844..3927 in 600s 
+| dmu19 | 3683..3834 in 600s | 3678..3893 in 600s 
+| dmu20 | 3604..3749 in 600s | 3604..3893 in 600s 
+| dmu21 | 4380 in 1s   | 4380..4387 in 600s 
+| dmu22 | 4725 in 2s   | 4725 in 91s 
+| dmu23 | 4668 in 1s   | 4668 in 24s 
+| dmu24 | 4648 in 1s   | 4648 in 68s 
+| dmu25 | 4164 in 1s   | 4164 in 32s 
+| dmu26 | 4647..4673 in 600s | 4647..4851 in 600s 
+| dmu27 | 4848 in 17s  | 4848..4970 in 600s 
+| dmu28 | 4692 in 8s   | 4692..4786 in 600s 
+| dmu29 | 4691 in 5s   | 4691..4825 in 600s 
+| dmu30 | 4732..4741 in 600s | 4732..4842 in 600s 
+| dmu31 | 5640 in 2s   | 5640 in 174s 
+| dmu32 | 5927 in 0s   | 5927 in 1s 
+| dmu33 | 5728 in 1s   | 5728 in 26s 
+| dmu34 | 5385 in 1s   | 5385 in 102s 
+| dmu35 | 5635 in 1s   | 5635 in 68s 
+| dmu36 | 5621 in 11s  | 5621..5784 in 600s 
+| dmu37 | 5851 in 11s  | 5851 in 493s 
+| dmu38 | 5713 in 20s  | 5713..5871 in 600s 
+| dmu39 | 5747 in 10s  | 5747 in 563s 
+| dmu40 | 5577 in 6s   | 5577..5685 in 600s 
 
 
-| Instance | OptalCP | CP-SAT |
-|:--------:|--------:|-------:|
-| tai_j1000_m1000_1  | 549_392 .. 898_223 in 600s | 527_772 .. 500_517_330 in 743s |
-| tai_j1000_m1000_2  | 549_043 .. 898_785 in 600s | 529_859 .. 500_108_522 in 724s |
-| tai_j1000_m1000_3  | 552_580 .. 900_202 in 600s | 524_375 .. 500_961_143 in 729s |
-| tai_j1000_m1000_4  | 547_670 .. 899_568 in 600s | 531_646 .. 500_731_097 in 727s |
-| tai_j1000_m1000_5  | 545_193 .. 898_803 in 600s | 529_256 .. 500_801_456 in 713s |
-| tai_j1000_m0100_6  | 547_286 .. 898_669 in 600s | 532_426 .. 500_199_506 in 720s |
-| tai_j1000_m1000_7  | 545_877 .. 899_770 in 600s | 535_423 .. 500_514_434 in 728s |
-| tai_j1000_m1000_8  | 549_220 .. 899_411 in 600s | 529_450 .. 500_685_254 in 728s |
-| tai_j1000_m1000_9  | 543_559 .. 898_609 in 600s | 535_770 .. 500_301_012 in 738s |
-| tai_j1000_m1000_10 | 541_530 .. 898_256 in 600s | 525_263 .. 500_099_600 in 729s |
+### TA instances 1-21
 
+On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
+- OptalCP Academic Version 2026.6.2 default search
+- CP-SAT V9.15.6755 with default configuration
+- CPO 22.1.1.0
 
+| Instance | OptalCP | CP-SAT | CPO |
+|:--------:|--------:|-------:|----:|
+| ta01js | 1231 in 0s | 1231 in 11s |
+| ta02js | 1244 in 3s | 1244 in 80s |
+| ta03js | 1218 in 2s | 1218 in 20s |
+| ta04js | 1175 in 3s | 1175 in 19s |
+| ta05js | 1224 in 14s | 1224 in 120s |
+| ta06js | 1238 in 185s | 1201..1239 in 600s |
+| ta07js | 1227 in 18s | 1227 in 476s |
+| ta08js | 1217 in 12s | 1217 in 77s |
+| ta09js | 1274 in 8s | 1274 in 284s |
+| ta10js | 1241 in 4s | 1241 in 32s |
+| ta11js | 1337..1358 in 600s | 1307..1378 in 600s |
+| ta12js | 1367 in 333s | 1350..1367 in 600s |
+| ta13js | 1317..1344 in 600s | 1279..1359 in 600s |
+| ta14js | 1345 in 3s | 1345 in 13s |
+| ta15js | 1323..1349 in 600s | 1299..1358 in 600s |
+| ta16js | 1339..1360 in 600s | 1296..1364 in 600s |
+| ta17js | 1462 in 4s | 1462 in 62s |
+| ta18js | 1366..1402 in 600s | 1359..1414 in 600s |
+| ta19js | 1318..1334 in 600s | 1292..1364 in 600s |
+| ta20js | 1329..1350 in 600s | 1315..1357 in 600s |
+| ta21js | 1619..1651 in 600s | 1581..1656 in 600s |
