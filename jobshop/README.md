@@ -10,7 +10,7 @@ permalink: /jsplib/
 
 ## The jobshop scheduling problem benchmark library
 
-JSPLib is a comprehensive benchmark library for the Job Shop Scheduling Problem (JSP). It serves as a centralized repository for standard instances (`ft`, `la`, `abz`, `orb`, `swv`, `yn`, `ta`, `dmu` and `tai`) and tracks the current State-of-the-Art (SOTA) by maintaining verified Best Known Solutions (BKS).
+JSPLib is a comprehensive benchmark library for the Job Shop Scheduling Problem (JSP). It serves as a centralized repository for standard instances (`ft`, `la`, `abz`, `orb`, `yn`, `swv`, `ta`, `dmu` and `tai`) and tracks the current State-of-the-Art (SOTA) by maintaining verified Best Known Solutions (BKS).
 
 The data and source code can be found in the [Github repository](https://github.com/ScheduleOpt/benchmarks)
 This document is visible as a README.md in the Github folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib). Instances and best known solutions are now available in [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/json) or text format
@@ -40,8 +40,6 @@ This document is visible as a README.md in the Github folder [jobshop](https://g
 <br/>
 
 ### Overview of the jsplib
-
-All instances in the benchmark follow the standard jobshop format. The DaColTeppan instances use a conservative extension of the existing jobshop format.
 
 Jobshop instances (332)
 - 3 instances `ft` from Fischer and Thompson 1963 
@@ -73,7 +71,7 @@ Instances are divided into
 - <strong style="color:purple">closed</strong> : *allegedly* solved to optimality. Most of the time the optimal solution is known because 2 different methods independently found equal upper and lower bounds. The problem moves to `hard` only when the optimality proof can be reproduced by a reference engine.
 - <strong style="color:grey">open</strong> : no proof of optimality
 
-Currently the instances are divided as follows
+Currently the instances are distributed as follows
 - `ft` : 3 easy
 - `la` : 39 easy, 1 medium
 - `abz` : 2 easy, 2 medium, 1 hard
@@ -160,7 +158,7 @@ The DaColTeppan format is actually a format for the reentrant jobshop problem wh
 is a generalization of the jobshop, common in some industrial environments like semiconductors
 
 
-For instance
+A modified instance of `la01` would look like
 ```
 10	5	
 1	21	0	53	-1  -1
@@ -435,24 +433,25 @@ The tasks of a job can be processed by any machine in a predefined group of simi
 ***Please refer to the [flexible-jobshop section](https://fjsplib.org) of this benchmark for more information***
 
 <br/>
-## JSPLib - the State-Of-The-Art
+
+## JSPLib solutions - The State-Of-The-Art
 
 In this section are collected the best known solutions (upper bound and lower bound) for each problem in the benchmark. 
 
 The solutions may come from 
-- published papers in which case a reference is give (eg. NS2002) and the section [publications](#publications-best-known-solutions) gives the complete reference for the paper
-- an engine run by us (CPO, OptalCP, CPSAT)
-- an engine run by someone else (eg. CPO2015) which results have been published
+- Published papers (with reference eg. NS2002), the section [publications](#publications-best-known-solutions) gives the complete paper info
+- An engine run by someone else (eg. CPO2015) which results have been published
+- An engine run by us (CPO, OptalCP, CPSAT) with approximate resolution time
 
 The type of hardware and time required to find the best known solution are difficult to track and compare, in particular for bounds coming from published papers. Which is why
-- every time a bound is equalled by a reference engine it is the reference engine that appears in the results
-- an approximative timing is given for reference engines whenever possible, in particular when the time to find the solution was unusually long
+- Every time an engine equals a published result the engine appears in the table instead
+- An approximative timing for reference engines, in particular when the time to find the solution is unusually long
 
 <br/>
 
-> We ***do not*** systematically run the instances for very long times on large machines. Most of the instances that appear as having been solved after a large comptation time (eg. 40h) had peculiarities (e.g. `best lb + 1 == best ub`) that justified exploring how long it would take to solve them to optimality. We also devote more effort to solve instances which best known solutions are given by papers that are old and difficult to find. This allows verifying the paper claims and having a more accessible way of generating the result.
+> We ***do not*** systematically run the instances for very long times on large machines. Most of the instances that appear as having been solved after a large comptation time (eg. 40h) had peculiarities (e.g. `best lb + 1 == best ub`) that justified exploring how long it would take to solve them to optimality. We also devote more effort to solve instances which best known solutions are given by papers that are old, difficult to find and difficlt to reproduce. This allows verifying the paper claims and having a more accessible way of generating the result.
 
-
+<br/>
 
 ### Best known solutions - JSPLib
 
@@ -1051,3 +1050,123 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 | ta19js | 1318..1334 in 600s | 1292..1364 in 600s |
 | ta20js | 1329..1350 in 600s | 1315..1357 in 600s |
 | ta21js | 1619..1651 in 600s | 1581..1656 in 600s |
+
+
+     3 ta22js                             Solution        1555        1615      600.01      103.70          99     1437670         265   353371222
+ta22js 1529 1638 600
+     4 ta23js                             Solution        1512        1565      600.01      104.00         126     1298534         288   303508152
+ta23js 1496 1569 600
+     5 ta24js                              Optimum        1644        1644      323.47      234.64         116      852858         390   201886249
+ta24js 1610 1665 600
+     6 ta25js                             Solution        1561        1610      600.02      305.81          96     1445955         317   345608880
+ta25js 1528 1617 600  
+     7 ta26js                             Solution        1571        1670      600.01       82.66          75     1573525         247   387411478
+ta26js 1559 1672 600
+     8 ta27js                             Solution        1629        1699      600.01       75.32         134     1274325         329   268979196
+ta27js 1623 1685 600
+     9 ta28js                              Optimum        1603        1603      203.98       43.97         105      573055         261   137652853
+ta28js 1588 1609 600
+    10 ta29js                             Solution        1577        1625      600.02      196.94         100     1393405         317   341992249
+ta29js 1535 1656 600
+    11 ta30js                             Solution        1484        1607      600.01      376.07         120     1600840         257   365881392
+ta30js 1487 1608 600
+    12 ta31js                              Optimum        1764        1764       98.83       98.83         171      340219         135    88420278
+ta31js 1764 1778 600
+    13 ta32js                             Solution        1774        1824      600.00      261.80         163     1809590         447   466634616
+ta32js 1774 1850 600
+    14 ta33js                             Solution        1786        1801      600.01      288.08         229     1541064         435   406810289
+ta33js 1783 1859 600
+    15 ta34js                             Solution        1828        1846      600.01      343.72         127     1663399         346   444988873
+ta34js 1828 1869 600
+    16 ta35js                              Optimum        2007        2007        1.80        1.80          75        4268          64     1277078
+ta35js 2007 2007 7
+    17 ta36js                              Optimum        1819        1819        7.76        7.75         177       22872         141     6253066
+ta36js 1819 1832 600
+    18 ta37js                             Solution        1771        1779      600.01      236.38         145     1843673         424   454149059
+ta37js 1771 1813 600
+    19 ta38js                             Solution        1673        1682      600.01      316.06         166     1646062         252   421051723
+ta38js 1673 1710 600
+    20 ta39js                              Optimum        1795        1795       23.71       23.71         162       63581         225    17117970
+ta39js 1795 1795 75
+    21 ta40js                             Solution        1645        1695      600.01      194.42         205     1580151         411   404976661
+ta40js 1642 1732 600
+    22 ta41js                             Solution        1882        2038      600.01      200.58         263     1259948         336   438763772
+ta41js 1889 2094 600
+    23 ta42js                             Solution        1878        1968      600.02      533.07         201     1306713         478   460516338
+ta42js 1873 2006 600
+    24 ta43js                             Solution        1809        1894      600.01       67.40         183     1298442         296   466730530
+ta43js 1809 1969 600
+    25 ta44js                             Solution        1944        1993      600.01      300.41         226     1336784         431   458270021
+ta44js 1937 2061 600
+    26 ta45js                             Solution        1997        2005      600.01       95.11         219     1365262         325   489961143
+ta45js 1997 1997 424
+    27 ta46js                             Solution        1958        2047      600.02      353.49         210     1287017         317   449859606
+ta46js 1943 2074 600
+    28 ta47js                             Solution        1801        1937      600.00      535.46         180     1569400         351   541727949
+ta47js 1797 1981 600
+    29 ta48js                             Solution        1912        1975      600.02      347.79         176     1378617         318   482692554
+ta48js 1912 2007 600
+    30 ta49js                             Solution        1925        2012      600.00      522.40         188     1333308         379   469604139
+ta49js 1926 2017 600
+    31 ta50js                             Solution        1822        1970      600.01      319.70         249     1287801         450   447098966
+ta50js 1819 2001 600
+    32 ta51js                              Optimum        2760        2760        3.51        3.49         293        2180          81     1205760
+ta51js 2760 2760 196
+    33 ta52js                              Optimum        2756        2756        3.58        3.58         256        2864          67     1501622
+ta52js 2756 2756 141
+    34 ta53js                              Optimum        2717        2717        2.15        2.14         142        1001          46      574906
+ta53js 2717 2717 53
+    35 ta54js                              Optimum        2839        2839        1.79        1.78          91         505          49      317212
+ta54js 2839 2839 26
+    36 ta55js                              Optimum        2679        2679        3.26        3.25         247        2364          67     1271044
+ta55js 2679 2679 216
+    37 ta56js                              Optimum        2781        2781        2.43        2.42         130        1611          56      841699
+ta56js 2781 2781 69
+    38 ta57js                              Optimum        2943        2943        2.17        2.17         148        1194          53      657319
+ta57js 2943 2943 43
+    39 ta58js                              Optimum        2885        2885        2.26        2.25         196        1375          59      784278
+ta58js 2885 2885 114
+    40 ta59js                              Optimum        2655        2655        2.94        2.93         218        2060          64     1144826
+ta59js 2655 2655 131
+    41 ta60js                              Optimum        2723        2723        3.32        3.30         155        2556          66     1305970
+ta60js 2723 2723 184
+    42 ta61js                              Optimum        2868        2868        6.18        6.18         260        4144          90     2844303
+ta61js 2868 2873 600    
+    43 ta62js                             Solution        2869        2872      600.01       73.06         269      695018         336   393675478
+ta62js 2869 2984 600
+    44 ta63js                              Optimum        2755        2755        8.57        8.56         210        6944          95     4518649
+ta63js 2755 2777 600
+    45 ta64js                              Optimum        2702        2702        6.99        6.98         245        4378          95     2999102
+ta64js 2702 2745 600
+   46 ta65js                              Optimum        2725        2725        7.27        7.25         334        4810         102     3312848
+ta65js 2725 2789 600
+   47 ta66js                              Optimum        2845        2845        5.50        5.49         211        3403          76     2321991
+ta66js 2845 2919 600
+    48 ta67js                             Solution        2825        2826      600.01        8.06         241      730994         180   429693070
+ta67js 2825 2854 600
+    49 ta68js                              Optimum        2784        2784        4.61        4.61         182        2446          66     1693114
+ta68js 2784 2810 600
+    50 ta69js                              Optimum        3071        3071        4.60        4.59         210        2245          64     1650566
+ta69js 3071 3071 464
+    51 ta70js                              Optimum        2995        2995        7.38        7.37         290        5121         101     3473064
+ta70js 2995 3010 600
+    52 ta71js                              Optimum        5464        5464       20.82       20.82         210        1750         100     2563123
+ta71js 5464 5596 600
+    53 ta72js                              Optimum        5181        5181       18.24       18.23         134        1149          88     1693670
+ta72js 5181 5259 600
+    54 ta73js                              Optimum        5568        5568       18.95       18.95         229        1395          96     2092135
+ta73js 5568 5652 600
+    55 ta74js                              Optimum        5339        5339       17.43       17.43         126         877          80     1362985
+ta74js 5339 5357 600
+    56 ta75js                              Optimum        5392        5392       26.19       26.19         345        2892         114     4192775
+ta75js 5392 5639 600
+    57 ta76js                              Optimum        5342        5342       21.75       21.74         269        1861         100     2745549
+ta76js 5342 5426 600
+    58 ta77js                              Optimum        5436        5436       17.57       17.56         156         965          87     1510519
+ta77js 5436 5436 521
+    59 ta78js                              Optimum        5394        5394       17.26       17.26         148         834          84     1337924
+ta78js 5394 5463 600
+    60 ta79js                              Optimum        5358        5358       16.49       16.49         129         718          77     1150067
+ta79js 5358 5405 600
+    61 ta80js                              Optimum        5183        5183       19.28       19.26         150        1480          92     2077780
+ta80js 5183 5250 600
