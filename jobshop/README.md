@@ -927,7 +927,7 @@ The instances used for the comparison may change on a regular basis
 ### ABZ instances
 
 On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Academic Version 2026.6.2 default search
+- OptalCP Academic Version 2026.2.0 default search
 - CP-SAT V9.15.6755 with default configuration
 - CPO 22.1.1.0
 
@@ -942,7 +942,7 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 ### SWV instances
 
 On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Academic Version 2026.6.2 default search
+- OptalCP Academic Version 2026.2.0 default search
 - CP-SAT V9.15.6755 with default configuration
 - CPO 22.1.1.0
 
@@ -972,7 +972,7 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 ### DMU instances 1-40
 
 On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Academic Version 2026.6.2 default search
+- OptalCP Academic Version 2026.2.0 default search
 - CP-SAT V9.15.6755 with default configuration
 - CPO 22.1.1.0
 
@@ -1023,7 +1023,7 @@ On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
 ### TA instances 1-80
 
 On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Academic Version 2026.6.2 default search
+- OptalCP Academic Version 2026.2.0 default search
 - CP-SAT V9.15.6755 with default configuration
 - CPO 22.1.1.0
 
