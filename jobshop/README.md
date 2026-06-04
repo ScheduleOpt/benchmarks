@@ -71,26 +71,100 @@ Instances are divided into
 - <strong style="color:purple">closed</strong> : *allegedly* solved to optimality. Most of the time the optimal solution is known because 2 different methods independently found equal upper and lower bounds. The problem moves to `hard` only when the optimality proof can be reproduced by a reference engine.
 - <strong style="color:grey">open</strong> : no proof of optimality
 
-Currently the instances are distributed as follows
+jobshop
 - `ft` : 3 easy
 - `la` : 39 easy, 1 medium
 - `abz` : 2 easy, 2 medium, 1 hard
 - `orb` : 10 easy
-- `yn` : 4 hard
 - `swv` : 7 easy, 7 medium, 3 hard, 3 open
+- `yn` : 4 hard
 - `ta` : 40 easy, 21 medium, 7 hard, 12 open
 - `dmu` : 17 easy, 13 medium, 5 hard, 45 open
-- `tai` : 50 easy, 40 open
+- `tai` : 50 easy, 1 medium, 9 hard, 30 open
+
+reentrant jobshop
 - `long` : 11 easy, 1 medium
 - `short` : 5 easy, 6 medium, 1 open
 
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="460" viewBox="0 0 800 460" role="img" aria-label="Status distribution by family"><style>
-    .jssp-label { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; fill: gray; }
-    .jssp-legend { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; fill: gray; }
-    .jssp-axis { fill: gray }
-    .jssp-grid { fill: gray }
-  </style><g aria-hidden="true"><rect x="64" y="60" width="12" height="12" fill="green" /><text x="82" y="70" class="jssp-legend">easy</text><rect x="204" y="60" width="12" height="12" fill="orange" /><text x="222" y="70" class="jssp-legend">medium</text><rect x="344" y="60" width="12" height="12" fill="red" /><text x="362" y="70" class="jssp-legend">hard</text><rect x="64" y="80" width="12" height="12" fill="purple" /><text x="82" y="90" class="jssp-legend">closed</text><rect x="204" y="80" width="12" height="12" fill="gray" /><text x="222" y="90" class="jssp-legend">open</text></g><line x1="64" y1="320" x2="780" y2="320" class="jssp-grid" /><text x="56" y="324" text-anchor="end" class="jssp-label">0</text><line x1="64" y1="274" x2="780" y2="274" class="jssp-grid" /><text x="56" y="278" text-anchor="end" class="jssp-label">18</text><line x1="64" y1="228" x2="780" y2="228" class="jssp-grid" /><text x="56" y="232" text-anchor="end" class="jssp-label">36</text><line x1="64" y1="182" x2="780" y2="182" class="jssp-grid" /><text x="56" y="186" text-anchor="end" class="jssp-label">54</text><line x1="64" y1="136" x2="780" y2="136" class="jssp-grid" /><text x="56" y="140" text-anchor="end" class="jssp-label">72</text><line x1="64" y1="90" x2="780" y2="90" class="jssp-grid" /><text x="56" y="94" text-anchor="end" class="jssp-label">90</text><rect x="64" y="312" width="58" height="8" fill="green" /><g transform="translate(93, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">ft</text></g><text x="93" y="306" text-anchor="middle" class="jssp-label" font-weight="600">3</text><rect x="130" y="220" width="58" height="100" fill="green" /><rect x="130" y="218" width="58" height="3" fill="orange" /><g transform="translate(159, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">la</text></g><text x="159" y="212" text-anchor="middle" class="jssp-label" font-weight="600">40</text><rect x="196" y="315" width="58" height="5" fill="green" /><rect x="196" y="310" width="58" height="5" fill="orange" /><rect x="196" y="307" width="58" height="3" fill="red" /><g transform="translate(225, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">abz</text></g><text x="225" y="301" text-anchor="middle" class="jssp-label" font-weight="600">5</text><rect x="261" y="294" width="58" height="26" fill="green" /><g transform="translate(290, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">orb</text></g><text x="290" y="288" text-anchor="middle" class="jssp-label" font-weight="600">10</text><rect x="327" y="302" width="58" height="18" fill="green" /><rect x="327" y="284" width="58" height="18" fill="orange" /><rect x="327" y="277" width="58" height="8" fill="red" /><rect x="327" y="269" width="58" height="8" fill="gray" /><g transform="translate(356, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">swv</text></g><text x="356" y="263" text-anchor="middle" class="jssp-label" font-weight="600">20</text><rect x="393" y="310" width="58" height="10" fill="red" /><g transform="translate(422, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">yn</text></g><text x="422" y="304" text-anchor="middle" class="jssp-label" font-weight="600">4</text><rect x="459" y="218" width="58" height="102" fill="green" /><rect x="459" y="164" width="58" height="54" fill="orange" /><rect x="459" y="146" width="58" height="18" fill="red" /><rect x="459" y="116" width="58" height="31" fill="gray" /><g transform="translate(488, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">ta</text></g><text x="488" y="110" text-anchor="middle" class="jssp-label" font-weight="600">80</text><rect x="525" y="277" width="58" height="43" fill="green" /><rect x="525" y="243" width="58" height="33" fill="orange" /><rect x="525" y="231" width="58" height="13" fill="red" /><rect x="525" y="116" width="58" height="115" fill="gray" /><g transform="translate(554, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">dmu</text></g><text x="554" y="110" text-anchor="middle" class="jssp-label" font-weight="600">80</text><rect x="591" y="192" width="58" height="128" fill="green" /><rect x="591" y="90" width="58" height="102" fill="gray" /><g transform="translate(619, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">tai</text></g><text x="619" y="84" text-anchor="middle" class="jssp-label" font-weight="600">90</text><rect x="656" y="292" width="58" height="28" fill="green" /><rect x="656" y="289" width="58" height="3" fill="orange" /><g transform="translate(685, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">long</text></g><text x="685" y="283" text-anchor="middle" class="jssp-label" font-weight="600">12</text><rect x="722" y="307" width="58" height="13" fill="green" /><rect x="722" y="292" width="58" height="15" fill="orange" /><rect x="722" y="289" width="58" height="3" fill="gray" /><g transform="translate(751, 338) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">short</text></g><text x="751" y="283" text-anchor="middle" class="jssp-label" font-weight="600">12</text><line x1="64" y1="320" x2="780" y2="320" class="jssp-axis" /></svg>
-<!-- End SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="460" viewBox="0 0 800 460" role="img" aria-label="Status distribution by family">
+<title>Status distribution by family</title>
+<style>.jssp-title{font:16px system-ui,Arial;fill:gray}.jssp-label{font:12px system-ui,Arial;fill:gray}.jssp-legend{font:12px system-ui,Arial;fill:gray}</style>
+<text x="64" y="84" class="jssp-title">Status distribution by family</text>
+<rect x="64" y="100" width="12" height="12" fill="green" />
+<text x="82" y="110" text-anchor="start" class="jssp-legend">easy</text>
+<rect x="204" y="100" width="12" height="12" fill="orange" />
+<text x="222" y="110" text-anchor="start" class="jssp-legend">medium</text>
+<rect x="344" y="100" width="12" height="12" fill="red" />
+<text x="362" y="110" text-anchor="start" class="jssp-legend">hard</text>
+<rect x="64" y="126" width="12" height="12" fill="purple" />
+<text x="82" y="136" text-anchor="start" class="jssp-legend">closed</text>
+<rect x="204" y="126" width="12" height="12" fill="gray" />
+<text x="222" y="136" text-anchor="start" class="jssp-legend">open</text>
+<line x1="64" y1="300" x2="780" y2="300" stroke="#e0e0e0" />
+<text x="56" y="304" text-anchor="end" class="jssp-label">0</text>
+<line x1="64" y1="268" x2="780" y2="268" stroke="#e0e0e0" />
+<text x="56" y="272" text-anchor="end" class="jssp-label">18</text>
+<line x1="64" y1="236" x2="780" y2="236" stroke="#e0e0e0" />
+<text x="56" y="240" text-anchor="end" class="jssp-label">36</text>
+<line x1="64" y1="204" x2="780" y2="204" stroke="#e0e0e0" />
+<text x="56" y="208" text-anchor="end" class="jssp-label">54</text>
+<line x1="64" y1="172" x2="780" y2="172" stroke="#e0e0e0" />
+<text x="56" y="176" text-anchor="end" class="jssp-label">72</text>
+<line x1="64" y1="140" x2="780" y2="140" stroke="#e0e0e0" />
+<text x="56" y="144" text-anchor="end" class="jssp-label">90</text>
+<rect x="64" y="295" width="58" height="5" fill="green" />
+<g transform="translate(93, 322) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">ft</text></g>
+<text x="93" y="289" text-anchor="middle" class="jssp-label">3</text>
+<rect x="130" y="231" width="58" height="69" fill="green" />
+<rect x="130" y="229" width="58" height="2" fill="orange" />
+<g transform="translate(159, 322) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">la</text></g>
+<text x="159" y="223" text-anchor="middle" class="jssp-label">40</text>
+<rect x="196" y="296" width="58" height="4" fill="green" />
+<rect x="196" y="293" width="58" height="4" fill="orange" />
+<rect x="196" y="291" width="58" height="2" fill="red" />
+<g transform="translate(225, 322) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">abz</text></g>
+<text x="225" y="285" text-anchor="middle" class="jssp-label">5</text>
+<rect x="261" y="282" width="58" height="18" fill="green" />
+<g transform="translate(290, 322) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">orb</text></g>
+<text x="290" y="276" text-anchor="middle" class="jssp-label">10</text>
+<rect x="327" y="288" width="58" height="12" fill="green" />
+<rect x="327" y="275" width="58" height="12" fill="orange" />
+<rect x="327" y="270" width="58" height="5" fill="red" />
+<rect x="327" y="264" width="58" height="5" fill="gray" />
+<g transform="translate(356, 322) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">swv</text></g>
+<text x="356" y="258" text-anchor="middle" class="jssp-label">20</text>
+<rect x="393" y="293" width="58" height="7" fill="red" />
+<g transform="translate(422, 322) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">yn</text></g>
+<text x="422" y="287" text-anchor="middle" class="jssp-label">4</text>
+<rect x="459" y="229" width="58" height="71" fill="green" />
+<rect x="459" y="192" width="58" height="37" fill="orange" />
+<rect x="459" y="179" width="58" height="12" fill="red" />
+<rect x="459" y="158" width="58" height="21" fill="gray" />
+<g transform="translate(488, 322) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">ta</text></g>
+<text x="488" y="152" text-anchor="middle" class="jssp-label">80</text>
+<rect x="525" y="270" width="58" height="30" fill="green" />
+<rect x="525" y="247" width="58" height="23" fill="orange" />
+<rect x="525" y="238" width="58" height="9" fill="red" />
+<rect x="525" y="158" width="58" height="80" fill="gray" />
+<g transform="translate(554, 322) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">dmu</text></g>
+<text x="554" y="152" text-anchor="middle" class="jssp-label">80</text>
+<rect x="591" y="211" width="58" height="89" fill="green" />
+<rect x="591" y="209" width="58" height="2" fill="orange" />
+<rect x="591" y="193" width="58" height="16" fill="red" />
+<rect x="591" y="140" width="58" height="53" fill="gray" />
+<g transform="translate(619, 322) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">tai</text></g>
+<text x="619" y="134" text-anchor="middle" class="jssp-label">90</text>
+<rect x="656" y="280" width="58" height="20" fill="green" />
+<rect x="656" y="279" width="58" height="2" fill="orange" />
+<g transform="translate(685, 322) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">long</text></g>
+<text x="685" y="273" text-anchor="middle" class="jssp-label">12</text>
+<rect x="722" y="291" width="58" height="9" fill="green" />
+<rect x="722" y="280" width="58" height="11" fill="orange" />
+<rect x="722" y="279" width="58" height="2" fill="gray" />
+<g transform="translate(751, 322) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">short</text></g>
+<text x="751" y="273" text-anchor="middle" class="jssp-label">12</text>
+<line x1="64" y1="300" x2="780" y2="300" stroke="gray" />
+</svg>
 
 ### Similar work
 
@@ -804,16 +878,16 @@ The type of hardware and time required to find the best known solution are diffi
 <tr><td>tai_j100_m100_8</td><td>100 x 100</td><td>jobshop</td><td>63224</td><td>78031</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 <tr><td>tai_j100_m100_9</td><td>100 x 100</td><td>jobshop</td><td>62631</td><td>79419</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 <tr><td>tai_j100_m100_10</td><td>100 x 100</td><td>jobshop</td><td>64866</td><td>77837</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m1000_1</td><td>100 x 1000</td><td>jobshop</td><td>522298</td><td>544732</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m1000_2</td><td>100 x 1000</td><td>jobshop</td><td>530375</td><td>546598</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m1000_3</td><td>100 x 1000</td><td>jobshop</td><td>530560</td><td>549372</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m1000_4</td><td>100 x 1000</td><td>jobshop</td><td>527101</td><td>545138</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m1000_5</td><td>100 x 1000</td><td>jobshop</td><td>517728</td><td>545535</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m1000_6</td><td>100 x 1000</td><td>jobshop</td><td>522907</td><td>545730</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m1000_7</td><td>100 x 1000</td><td>jobshop</td><td>522537</td><td>546899</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m1000_8</td><td>100 x 1000</td><td>jobshop</td><td>526428</td><td>549337</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m1000_9</td><td>100 x 1000</td><td>jobshop</td><td>528097</td><td>550693</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m1000_10</td><td>100 x 1000</td><td>jobshop</td><td>521766</td><td>543797</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j100_m1000_1</td><td>100 x 1000</td><td>jobshop</td><td>522298</td><td>533080</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_j100_m1000_2</td><td>100 x 1000</td><td>jobshop</td><td>530375</td><td>538067</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_j100_m1000_3</td><td>100 x 1000</td><td>jobshop</td><td>530560</td><td>538757</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_j100_m1000_4</td><td>100 x 1000</td><td>jobshop</td><td>527101</td><td>534746</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_j100_m1000_5</td><td>100 x 1000</td><td>jobshop</td><td>517728</td><td>529580</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_j100_m1000_6</td><td>100 x 1000</td><td>jobshop</td><td>522907</td><td>534969</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_j100_m1000_7</td><td>100 x 1000</td><td>jobshop</td><td>522537</td><td>534974</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_j100_m1000_8</td><td>100 x 1000</td><td>jobshop</td><td>526428</td><td>535757</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_j100_m1000_9</td><td>100 x 1000</td><td>jobshop</td><td>528097</td><td>536993</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_j100_m1000_10</td><td>100 x 1000</td><td>jobshop</td><td>521766</td><td>529918</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
 <tr><td>tai_j1000_m10_1</td><td>1000 x 10</td><td>jobshop</td><td>515334</td><td>515334</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j1000_m10_2</td><td>1000 x 10</td><td>jobshop</td><td>509226</td><td>509226</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j1000_m10_3</td><td>1000 x 10</td><td>jobshop</td><td>517493</td><td>517493</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
@@ -824,16 +898,16 @@ The type of hardware and time required to find the best known solution are diffi
 <tr><td>tai_j1000_m10_8</td><td>1000 x 10</td><td>jobshop</td><td>513101</td><td>513101</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j1000_m10_9</td><td>1000 x 10</td><td>jobshop</td><td>508701</td><td>508701</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
 <tr><td>tai_j1000_m10_10</td><td>1000 x 10</td><td>jobshop</td><td>521360</td><td>521360</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j1000_m100_1</td><td>1000 x 100</td><td>jobshop</td><td>525343</td><td>539120</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j1000_m100_2</td><td>1000 x 100</td><td>jobshop</td><td>528088</td><td>540895</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j1000_m100_3</td><td>1000 x 100</td><td>jobshop</td><td>522793</td><td>534794</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j1000_m100_4</td><td>1000 x 100</td><td>jobshop</td><td>524271</td><td>536317</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j1000_m100_5</td><td>1000 x 100</td><td>jobshop</td><td>531216</td><td>532016</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j1000_m100_6</td><td>1000 x 100</td><td>jobshop</td><td>518763</td><td>535189</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j1000_m100_7</td><td>1000 x 100</td><td>jobshop</td><td>527093</td><td>535894</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j1000_m100_8</td><td>1000 x 100</td><td>jobshop</td><td>519524</td><td>533985</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j1000_m100_9</td><td>1000 x 100</td><td>jobshop</td><td>520889</td><td>539511</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j1000_m100_10</td><td>1000 x 100</td><td>jobshop</td><td>529112</td><td>540884</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_j1000_m100_1</td><td>1000 x 100</td><td>jobshop</td><td>525343</td><td>525343</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 1h 16cores</td></tr>
+<tr><td>tai_j1000_m100_2</td><td>1000 x 100</td><td>jobshop</td><td>528088</td><td>528088</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h 16 cores</td></tr>
+<tr><td>tai_j1000_m100_3</td><td>1000 x 100</td><td>jobshop</td><td>522793</td><td>522793</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h 16 cores</td></tr>
+<tr><td>tai_j1000_m100_4</td><td>1000 x 100</td><td>jobshop</td><td>524271</td><td>524271</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h 16 cores</td></tr>
+<tr><td>tai_j1000_m100_5</td><td>1000 x 100</td><td>jobshop</td><td>531216</td><td>531216</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 10 min 16 cores</td></tr>
+<tr><td>tai_j1000_m100_6</td><td>1000 x 100</td><td>jobshop</td><td>518763</td><td>518763</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 3h 16 cores</td></tr>
+<tr><td>tai_j1000_m100_7</td><td>1000 x 100</td><td>jobshop</td><td>527093</td><td>527093</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h 16 cores</td></tr>
+<tr><td>tai_j1000_m100_8</td><td>1000 x 100</td><td>jobshop</td><td>519524</td><td>519524</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 3h 16 cores</td></tr>
+<tr><td>tai_j1000_m100_9</td><td>1000 x 100</td><td>jobshop</td><td>520889</td><td>520889</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 3h 16 cores</td></tr>
+<tr><td>tai_j1000_m100_10</td><td>1000 x 100</td><td>jobshop</td><td>529112</td><td>529112</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 3h 16 cores</td></tr>
 <tr><td>tai_j1000_m1000_1</td><td>1000 x 1000</td><td>jobshop</td><td>549392</td><td>877062</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
 <tr><td>tai_j1000_m1000_2</td><td>1000 x 1000</td><td>jobshop</td><td>549043</td><td>877115</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
 <tr><td>tai_j1000_m1000_3</td><td>1000 x 1000</td><td>jobshop</td><td>552580</td><td>878805</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
@@ -845,6 +919,7 @@ The type of hardware and time required to find the best known solution are diffi
 <tr><td>tai_j1000_m1000_9</td><td>1000 x 1000</td><td>jobshop</td><td>543559</td><td>875914</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
 <tr><td>tai_j1000_m1000_10</td><td>1000 x 1000</td><td>jobshop</td><td>541530</td><td>874820</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
 </table>
+
 
 #### DaCol and Teppan - reentrant jobshop (2022)
 

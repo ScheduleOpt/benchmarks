@@ -3801,25 +3801,25 @@
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 522298,
-    "upper_bound": 544732,
+    "upper_bound": 533080,
     "status": "open",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "3h 16cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "3h 16cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
     "instance": "tai_j100_m1000_2",
     "size": "100 x 1000",
     "type": "jobshop",
-    "lower_bound": 530375,
-    "upper_bound": 546598,
+    "lower_bound": 530375, 
+    "upper_bound": 538067,
     "status": "open",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "3h 16cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "3h 16cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -3827,12 +3827,12 @@
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 530560,
-    "upper_bound": 549372,
+    "upper_bound": 538757,
     "status": "open",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "3h 16cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "3h 16cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -3840,12 +3840,12 @@
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 527101,
-    "upper_bound": 545138,
+    "upper_bound": 534746,
     "status": "open",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "3h 16cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "3h 16cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -3853,12 +3853,12 @@
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 517728,
-    "upper_bound": 545535,
+    "upper_bound": 529580,
     "status": "open",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "3h 16cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "3h 16cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -3866,12 +3866,12 @@
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 522907,
-    "upper_bound": 545730,
+    "upper_bound": 534969,
     "status": "open",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "3h 16cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "3h 16cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -3879,12 +3879,12 @@
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 522537,
-    "upper_bound": 546899,
+    "upper_bound": 534974,
     "status": "open",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "3h 16cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "3h 16cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -3892,12 +3892,12 @@
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 526428,
-    "upper_bound": 549337,
+    "upper_bound": 535757,
     "status": "open",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "3h 16cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "3h 16cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -3905,12 +3905,12 @@
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 528097,
-    "upper_bound": 550693,
+    "upper_bound": 536993,
     "status": "open",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "3h 16cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "3h 16cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -3918,12 +3918,12 @@
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 521766,
-    "upper_bound": 543797,
+    "upper_bound": 529918,
     "status": "open",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "3h 16cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "3h 16cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -4061,12 +4061,12 @@
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 525343,
-    "upper_bound": 539120,
-    "status": "open",
+    "upper_bound": 525343,
+    "status": "hard",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "1h 16cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "1h 16cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -4074,12 +4074,12 @@
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 528088,
-    "upper_bound": 540895,
-    "status": "open",
+    "upper_bound": 528088,
+    "status": "hard",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "2h 16 cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "2h 16 cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -4087,12 +4087,12 @@
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 522793,
-    "upper_bound": 534794,
-    "status": "open",
+    "upper_bound": 522793,
+    "status": "hard",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "2h 16 cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "2h 16 cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -4100,12 +4100,12 @@
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 524271,
-    "upper_bound": 536317,
-    "status": "open",
+    "upper_bound": 524271,
+    "status": "hard",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "2h 16 cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "2h 16 cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -4113,12 +4113,12 @@
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 531216,
-    "upper_bound": 532016,
-    "status": "open",
+    "upper_bound": 531216,
+    "status": "medium",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "< 10 min 16 cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "< 10 min 16 cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -4126,12 +4126,12 @@
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 518763,
-    "upper_bound": 535189,
-    "status": "open",
+    "upper_bound": 518763,
+    "status": "hard",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "3h 16 cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "3h 16 cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -4139,12 +4139,12 @@
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 527093,
-    "upper_bound": 535894,
-    "status": "open",
+    "upper_bound": 527093,
+    "status": "hard",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "2h 16 cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "2h 16 cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -4152,12 +4152,12 @@
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 519524,
-    "upper_bound": 533985,
-    "status": "open",
+    "upper_bound": 519524,
+    "status": "hard",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "3h 16 cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "3h 16 cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -4165,12 +4165,12 @@
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 520889,
-    "upper_bound": 539511,
-    "status": "open",
+    "upper_bound": 520889,
+    "status": "hard",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "3h 16 cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "3h 16 cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
@@ -4178,12 +4178,12 @@
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 529112,
-    "upper_bound": 540884,
-    "status": "open",
+    "upper_bound": 529112,
+    "status": "hard",
     "solver_lb": "OptalCP",
-    "solver_lb_time": null,
+    "solver_lb_time": "3h 16 cores",
     "solver_ub": "OptalCP",
-    "solver_ub_time": null
+    "solver_ub_time": "3h 16 cores"
   },
   {
     "family": "Da Col and Teppan (2022)",
