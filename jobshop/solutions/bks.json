@@ -1397,7 +1397,7 @@
     "type": "jobshop",
     "lower_bound": 1643,
     "upper_bound": 1643,
-    "status": "medium",
+    "status": "hard",
     "solver_lb": "OptalCP",
     "solver_lb_time": "7h",
     "solver_ub": "OptalCP",
@@ -3147,7 +3147,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m10_1",
+    "instance": "tai_10_10_1",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 8219,
@@ -3160,7 +3160,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m10_2",
+    "instance": "tai_10_10_2",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 7416,
@@ -3173,7 +3173,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m10_3",
+    "instance": "tai_10_10_3",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 8094,
@@ -3186,7 +3186,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m10_4",
+    "instance": "tai_10_10_4",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 8657,
@@ -3199,7 +3199,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m10_5",
+    "instance": "tai_10_10_5",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 7936,
@@ -3212,7 +3212,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m10_6",
+    "instance": "tai_10_10_6",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 8509,
@@ -3225,7 +3225,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m10_7",
+    "instance": "tai_10_10_7",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 8299,
@@ -3238,7 +3238,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m10_8",
+    "instance": "tai_10_10_8",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 7788,
@@ -3251,7 +3251,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m10_9",
+    "instance": "tai_10_10_9",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 8300,
@@ -3264,7 +3264,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m10_10",
+    "instance": "tai_10_10_10",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 8481,
@@ -3277,7 +3277,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m100_1",
+    "instance": "tai_10_100_1",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 56609,
@@ -3290,7 +3290,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m100_2",
+    "instance": "tai_10_100_2",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 52330,
@@ -3303,7 +3303,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m100_3",
+    "instance": "tai_10_100_3",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 56412,
@@ -3316,7 +3316,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m100_4",
+    "instance": "tai_10_100_4",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 54889,
@@ -3329,7 +3329,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m100_5",
+    "instance": "tai_10_100_5",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 54603,
@@ -3342,7 +3342,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m100_6",
+    "instance": "tai_10_100_6",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 53723,
@@ -3355,7 +3355,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m100_7",
+    "instance": "tai_10_100_7",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 55456,
@@ -3368,7 +3368,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m100_8",
+    "instance": "tai_10_100_8",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 56466,
@@ -3381,7 +3381,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m100_9",
+    "instance": "tai_10_100_9",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 55096,
@@ -3394,7 +3394,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m100_10",
+    "instance": "tai_10_100_10",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 56661,
@@ -3407,7 +3407,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m1000_1",
+    "instance": "tai_10_1000_1",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 515370,
@@ -3420,7 +3420,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m1000_2",
+    "instance": "tai_10_1000_2",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 513525,
@@ -3433,7 +3433,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m1000_3",
+    "instance": "tai_10_1000_3",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 508161,
@@ -3446,7 +3446,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m1000_4",
+    "instance": "tai_10_1000_4",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 513814,
@@ -3459,7 +3459,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m1000_5",
+    "instance": "tai_10_1000_5",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 517020,
@@ -3472,7 +3472,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m1000_6",
+    "instance": "tai_10_1000_6",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 517777,
@@ -3485,7 +3485,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m1000_7",
+    "instance": "tai_10_1000_7",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 514921,
@@ -3498,7 +3498,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m1000_8",
+    "instance": "tai_10_1000_8",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 522277,
@@ -3511,7 +3511,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m1000_9",
+    "instance": "tai_10_1000_9",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 511213,
@@ -3524,7 +3524,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j10_m1000_10",
+    "instance": "tai_10_1000_10",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 509855,
@@ -3537,7 +3537,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m10_1",
+    "instance": "tai_100_10_1",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 54951,
@@ -3550,7 +3550,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m10_2",
+    "instance": "tai_100_10_2",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 57160,
@@ -3563,7 +3563,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m10_3",
+    "instance": "tai_100_10_3",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 54166,
@@ -3576,7 +3576,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m10_4",
+    "instance": "tai_100_10_4",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 54371,
@@ -3589,7 +3589,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m10_5",
+    "instance": "tai_100_10_5",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 56142,
@@ -3602,7 +3602,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m10_6",
+    "instance": "tai_100_10_6",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 52447,
@@ -3615,7 +3615,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m10_7",
+    "instance": "tai_100_10_7",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 54051,
@@ -3628,7 +3628,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m10_8",
+    "instance": "tai_100_10_8",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 55624,
@@ -3641,7 +3641,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m10_9",
+    "instance": "tai_100_10_9",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 54210,
@@ -3654,7 +3654,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m10_10",
+    "instance": "tai_100_10_10",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 55464,
@@ -3667,7 +3667,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m100_1",
+    "instance": "tai_100_100_1",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 62843,
@@ -3680,7 +3680,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m100_2",
+    "instance": "tai_100_100_2",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 62814,
@@ -3693,7 +3693,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m100_3",
+    "instance": "tai_100_100_3",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 61533,
@@ -3706,7 +3706,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m100_4",
+    "instance": "tai_100_100_4",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 64742,
@@ -3719,7 +3719,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m100_5",
+    "instance": "tai_100_100_5",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 61766,
@@ -3732,7 +3732,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m100_6",
+    "instance": "tai_100_100_6",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 61360,
@@ -3745,7 +3745,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m100_7",
+    "instance": "tai_100_100_7",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 64040,
@@ -3758,7 +3758,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m100_8",
+    "instance": "tai_100_100_8",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 63224,
@@ -3771,7 +3771,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m100_9",
+    "instance": "tai_100_100_9",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 62631,
@@ -3784,7 +3784,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m100_10",
+    "instance": "tai_100_100_10",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 64866,
@@ -3797,7 +3797,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m1000_1",
+    "instance": "tai_100_1000_1",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 522298,
@@ -3810,7 +3810,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m1000_2",
+    "instance": "tai_100_1000_2",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 530375, 
@@ -3823,7 +3823,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m1000_3",
+    "instance": "tai_100_1000_3",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 530560,
@@ -3836,7 +3836,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m1000_4",
+    "instance": "tai_100_1000_4",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 527101,
@@ -3849,7 +3849,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m1000_5",
+    "instance": "tai_100_1000_5",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 517728,
@@ -3862,7 +3862,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m1000_6",
+    "instance": "tai_100_1000_6",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 522907,
@@ -3875,7 +3875,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m1000_7",
+    "instance": "tai_100_1000_7",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 522537,
@@ -3888,7 +3888,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m1000_8",
+    "instance": "tai_100_1000_8",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 526428,
@@ -3901,7 +3901,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m1000_9",
+    "instance": "tai_100_1000_9",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 528097,
@@ -3914,7 +3914,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j100_m1000_10",
+    "instance": "tai_100_1000_10",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 521766,
@@ -3927,7 +3927,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m10_1",
+    "instance": "tai_1000_10_1",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 515334,
@@ -3940,7 +3940,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m10_2",
+    "instance": "tai_1000_10_2",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 509226,
@@ -3953,7 +3953,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m10_3",
+    "instance": "tai_1000_10_3",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 517493,
@@ -3966,7 +3966,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m10_4",
+    "instance": "tai_1000_10_4",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 519369,
@@ -3979,7 +3979,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m10_5",
+    "instance": "tai_1000_10_5",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 513881,
@@ -3992,7 +3992,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m10_6",
+    "instance": "tai_1000_10_6",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 511932,
@@ -4005,7 +4005,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m10_7",
+    "instance": "tai_1000_10_7",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 523900,
@@ -4018,7 +4018,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m10_8",
+    "instance": "tai_1000_10_8",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 513101,
@@ -4031,7 +4031,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m10_9",
+    "instance": "tai_1000_10_9",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 508701,
@@ -4044,7 +4044,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m10_10",
+    "instance": "tai_1000_10_10",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 521360,
@@ -4057,7 +4057,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m100_1",
+    "instance": "tai_1000_100_1",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 525343,
@@ -4070,7 +4070,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m100_2",
+    "instance": "tai_1000_100_2",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 528088,
@@ -4083,7 +4083,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m100_3",
+    "instance": "tai_1000_100_3",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 522793,
@@ -4096,7 +4096,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m100_4",
+    "instance": "tai_1000_100_4",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 524271,
@@ -4109,20 +4109,20 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m100_5",
+    "instance": "tai_1000_100_5",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 531216,
     "upper_bound": 531216,
     "status": "medium",
     "solver_lb": "OptalCP",
-    "solver_lb_time": "< 10 min 16 cores",
+    "solver_lb_time": "< 1h",
     "solver_ub": "OptalCP",
-    "solver_ub_time": "< 10 min 16 cores"
+    "solver_ub_time": "< 1h"
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m100_6",
+    "instance": "tai_1000_100_6",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 518763,
@@ -4135,7 +4135,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m100_7",
+    "instance": "tai_1000_100_7",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 527093,
@@ -4148,7 +4148,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m100_8",
+    "instance": "tai_1000_100_8",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 519524,
@@ -4161,7 +4161,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m100_9",
+    "instance": "tai_1000_100_9",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 520889,
@@ -4174,7 +4174,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m100_10",
+    "instance": "tai_1000_100_10",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 529112,
@@ -4187,7 +4187,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m1000_1",
+    "instance": "tai_1000_1000_1",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 549392,
@@ -4200,7 +4200,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m1000_2",
+    "instance": "tai_1000_1000_2",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 549043,
@@ -4213,7 +4213,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m1000_3",
+    "instance": "tai_1000_1000_3",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 552580,
@@ -4226,7 +4226,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m1000_4",
+    "instance": "tai_1000_1000_4",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 547670,
@@ -4239,7 +4239,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m1000_5",
+    "instance": "tai_1000_1000_5",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 545193,
@@ -4252,7 +4252,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m1000_6",
+    "instance": "tai_1000_1000_6",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 547286,
@@ -4265,7 +4265,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m1000_7",
+    "instance": "tai_1000_1000_7",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 545877,
@@ -4278,7 +4278,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m1000_8",
+    "instance": "tai_1000_1000_8",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 549220,
@@ -4291,7 +4291,7 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m1000_9",
+    "instance": "tai_1000_1000_9",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 543559,
@@ -4304,13 +4304,13 @@
   },
   {
     "family": "Da Col and Teppan (2022)",
-    "instance": "tai_j1000_m1000_10",
+    "instance": "tai_1000_1000_10",
     "size": "1000 x 1000",
     "type": "jobshop",
-    "lower_bound": 541530,
+    "lower_bound": 549075,
     "upper_bound": 874820,
     "status": "open",
-    "solver_lb": "OptalCP",
+    "solver_lb": "Hexaly",
     "solver_lb_time": null,
     "solver_ub": "Hexaly2024",
     "solver_ub_time": null
