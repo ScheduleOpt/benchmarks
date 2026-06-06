@@ -47,8 +47,6 @@ We use the following engines as references for the benchmark
 - [**Google CP-SAT**](https://developers.google.com/optimization) : representative of the lazy clause generation family of engines
 - [**OptalCP**](https://optalcp.com) : representative of the lazy clause generation family of engines
 
-We have dropped Cplex from the flexible jobshop tests due to poor performance of linear solvers as reported by multiple authors in the literature and confirmed by ourselves.
-
 
 Instances are divided into
 - <strong style="color:green">easy</strong> : solved to optimality (with proof) in 1 minute by at least 1 reference engine
@@ -57,7 +55,7 @@ Instances are divided into
 - <strong style="color:purple">closed</strong> : *allegedly* solved to optimality. Most of the time the optimal solution is known because 2 different methods independently found equal upper and lower bounds. The problem moves to `hard` only when the optimality proof can be reproduced by a reference engine.
 - <strong style="color:grey">open</strong> : no proof of optimality
 
-Currently the instances divide as follows
+Currently the instances are distributed as follows
 - `mk` : 9 easy, 2 medium, 1 hard, 3 open
 - `abz` : 8 easy, 1 medium, 3 hard, 2 closed, 6 open
 - `car` : 27 easy, 2 medium, 3 closed
@@ -172,7 +170,7 @@ There are now three format supported in the FJSPLib
 - the text fjasp format (***new format***)
 - the text fjsp format (***old format***)
 
-In the traditional text fjsp format precedences are implicit within the job for the consécutive operations.
+In the traditional text fjsp format precedences are implicit within the job for the consecutive operations.
 As a result all the operations of the same job, and all the options (or modes) for an operation need to be on the same line, creating very long lines.
 In the new format each operation and its different options (modes) appear on one line and the precedences appear later with the job number
 The new format is also more generic in that it accepts general precedence graphs, therefore also covering flexible jobshop variants like the ***flexible assembly jobshop problem*** and the ***jobshop problem with general precedences*** (which are essentially the same).
@@ -282,29 +280,26 @@ The instances come from the following publications
 
 
 
-## Flexible jobshop benchmark
+## Flexible jobshop solutions - The State-Of-The-Art
 
-The flexible jobshop benchmark problems have been collected from the literature from 1993 to 2012. Some are modified versions of JSPLIB jobshop problems, but some instances come from industrial problems. On this page we keep track of the best known solutions (BKS) and classify the instances based on difficulty.
+In this section are collected the best known solutions (upper bound and lower bound) for each problem in the benchmark. 
 
-An instance is considered
-- `easy` if it is solved to optimality by a reference engine in < 1 minute
-- `medium` if it is solved to optimality by a reference engine in < 1h
-- `hard` if it is solved to optimality by a reference engine in > 1h
-- `closed` if the combination of upper and lower bounds found in the literature allows concluding the value of the optimal solution is known
-- `open` otherwise
+The solutions may come from 
+- Published papers (with reference eg. MG2000 ), the section [publications](#publications-best-known-solutions) gives the complete paper info
+- An engine run by someone else (eg. CPO2013) which results have been published
+- An engine run by us (CPO, OptalCP, CPSAT) with approximate resolution time
+
+The type of hardware and time required to find the best known solution are difficult to track and compare, in particular for bounds coming from published papers. Which is why
+- Every time an engine equals a published result the engine appears in the table instead
+- An approximative timing for reference engines, in particular when the time to find the solution is unusually long
 
 <br/>
 
-For each instance we indicate the publication or engine that reaches that bound (lower or upper). When reporting the results:
-- we give priority to engines over publications because of reproductibility of the results
-- we give priority to the fastest engine to attain the bound
-- when an engine attains a bound previously reported in the literature, we attribute the bound to the engine and remove the correponding paper from the list of relevant references
+> We ***do not*** systematically run the instances for very long times on large machines. Most of the instances that appear as having been solved after a large comptation time (eg. 40h) had peculiarities (e.g. `best lb + 1 == best ub`) that justified exploring how long it would take to solve them to optimality. We also devote more effort to solve instances which best known solutions are given by papers that are old, difficult to find and difficlt to reproduce. This allows verifying the paper claims and having a more accessible way of generating the result.
 
-Other databases keep instead the ***first*** publication or method to have achieved that bound for historical reference. This work instead is meant for engine and algorithm developers to have means of reproducing the claimed results for comparison.
+<br/>
 
 ### Best known solutions 
-
-If you visualize the markdown in Visual Studio Code you will have colors !
 
 #### Brandimarte (1993)
 
@@ -327,7 +322,7 @@ If you visualize the markdown in Visual Studio Code you will have colors !
 <tr><td>mk15</td><td>30 x 15</td><td>fjsp</td><td>333</td><td>333</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h</td></tr>
 </table>
 
-***Instances mk11 to mk15 are present in the supplementary material of Test Instances for the Flexible Job Shop Scheduling Problem with Work Centers but absent of other problem repositories***
+***Instances mk11 to mk15 are present in the supplementary material of Test Instances for the Flexible Job Shop Scheduling Problem with Work Centers but absent from other problem repositories***
 
 #### Hurink, Jurisch and Thole (1994)
 
