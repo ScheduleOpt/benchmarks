@@ -1,36 +1,37 @@
 import * as CP from '@scheduleopt/optalcp'
-import * as fs from 'node:fs/promises'
+import * as fs from 'node:fs'
 
-const instance = "../../instances/StorerWuVaccari1992/swv07.txt"
-const directory = "../../instances/StorerWuVaccari1992"
+const directory = "../../instances/json"
+const bks = JSON.parse(fs.readFileSync("../../solutions/bks.json"))
 
-const create_model = async filename => {
-    const lines = (await fs.readFile(filename, 'utf8')).split(/\r?\n/).map(l => l.trim().split(/\s+/).map(v => Number(v)))
-    const [nb_jobs, nb_machines] = lines.shift()
+const create_model = async file => {
+    const string = fs.readFileSync(file, { encoding: "utf-8"})
+    const json = JSON.parse(string)
+
+    const nb_machines = json.machines
+    const nb_jobs = json.jobs
 
     const machines = new Map()
     const last = []
 
-    const model = new CP.Model(filename)
- 
-    for (let j = 0; j < lines.length; j++) {
-        const data = lines[j]
-        const r_max = Math.round(data.length / 2)
-        let previous = null
-        let last_task = null
-        for (let r = 0; r < r_max; r++) {
-            const m = data[2 * r]
-            const d = data[2 * r + 1]
-            if (m >= 0 && d >= 0) { // some files end in -1 -1
-                const task = model.intervalVar({ length : d })
-                if (!machines.has(m)) machines.set(m, [])
-                machines.get(m).push(task)
-                if (previous) model.endBeforeStart(previous, task)
-                previous = task
-                last_task = task
-            }
-        }
-        if (last_task) last.push(last_task.end())
+    const tasks = []
+    for (let k = 0; k < json.data.length; k++) json.data[k].index = k
+
+    const model = new CP.Model(json.instance)
+
+    let job = null
+    let previous = null
+    for (const op of json.data) {
+        const task = model.intervalVar({ length : op.duration })           
+        task.duration = op.duration
+        const m = op.machine
+        if (!machines.has(m)) machines.set(m, [])
+        machines.get(m).push(task)
+        if (job == op.job) model.endBeforeStart(previous, task) 
+        if (op.operation == nb_machines - 1) last.push(task.end())   
+        previous = task
+        job = op.job
+        tasks[op.index] = task
     }
 
     for (let tasks of machines.values()) model.noOverlap(tasks)
@@ -40,19 +41,31 @@ const create_model = async filename => {
     return model
 }
 
-const params = {}
+const test = new Set([ "tai" ])
 
-const run_benchmark = async folder => {
-    const files = (await fs.readdir (folder, { recursive : true }))
-      .filter(v => v.endsWith("txt"))
-      .map(v => folder + "/" + v)
+const params = { timeLimit: 600 }
+
+const run_benchmark = async test => {
+    const files = fs.readdirSync (directory, { recursive : true })
+    .map(v => directory + "/" + v)
+    .filter(v => v.endsWith("json"))
+    .filter(v => {
+        const file = fs.readFileSync(directory + "/" + v, { encoding: "utf-8"})
+        const json = JSON.parse(file)
+        return test.has(json.family)
+    })
     await CP.benchmark(create_model, files, params)
 }
 
-const run_once = async filename => {
-    const model = await create_model(filename)
-    if (model) model.solve(params)
+const run_once = async instance => {
+    const model = await create_model (`${directory}/${instance}.json`)
+    model.solve (params)
 }
 
-//run_once(instance)
-run_benchmark(directory)
+const args = process.argv.slice(2);
+if (args.length < 1) {
+    console.error('Usage: node jobshop.mjs instance.json');
+    process.exit(1);
+}
+await run_once(args[0])
+//await run_benchmark(test)
