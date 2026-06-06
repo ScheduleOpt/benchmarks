@@ -78,7 +78,7 @@ jobshop
 - `orb` : 10 easy
 - `swv` : 7 easy, 7 medium, 3 hard, 3 open
 - `yn` : 4 hard
-- `ta` : 40 easy, 21 medium, 7 hard, 12 open
+- `ta` : 40 easy, 20 medium, 8 hard, 12 open
 - `dmu` : 17 easy, 13 medium, 5 hard, 45 open
 - `tai` : 50 easy, 1 medium, 9 hard, 30 open
 
@@ -137,8 +137,8 @@ reentrant jobshop
 <g transform="translate(422, 322) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">yn</text></g>
 <text x="422" y="287" text-anchor="middle" class="jssp-label">4</text>
 <rect x="459" y="229" width="58" height="71" fill="green" />
-<rect x="459" y="192" width="58" height="37" fill="orange" />
-<rect x="459" y="179" width="58" height="12" fill="red" />
+<rect x="459" y="193" width="58" height="36" fill="orange" />
+<rect x="459" y="179" width="58" height="14" fill="red" />
 <rect x="459" y="158" width="58" height="21" fill="gray" />
 <g transform="translate(488, 322) rotate(-45)"><text x="0" y="0" text-anchor="end" class="jssp-label">ta</text></g>
 <text x="488" y="152" text-anchor="middle" class="jssp-label">80</text>
@@ -681,7 +681,7 @@ The type of hardware and time required to find the best known solution are diffi
 <tr><td>ta23js</td><td>20 x 20</td><td>jobshop</td><td>1557</td><td>1557</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h</td></tr>
 <tr><td>ta24js</td><td>20 x 20</td><td>jobshop</td><td>1644</td><td>1644</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>ta25js</td><td>20 x 20</td><td>jobshop</td><td>1595</td><td>1595</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>ta26js</td><td>20 x 20</td><td>jobshop</td><td>1643</td><td>1643</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in 7h</td></tr>
+<tr><td>ta26js</td><td>20 x 20</td><td>jobshop</td><td>1643</td><td>1643</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 7h</td></tr>
 <tr><td>ta27js</td><td>20 x 20</td><td>jobshop</td><td>1680</td><td>1680</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>ta28js</td><td>20 x 20</td><td>jobshop</td><td>1603</td><td>1603</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>ta29js</td><td>20 x 20</td><td>jobshop</td><td>1625</td><td>1625</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h</td></tr>
@@ -739,7 +739,6 @@ The type of hardware and time required to find the best known solution are diffi
 </table>
 
 #### Demikol, Mehta and Uzsoy (1998)
-
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>dmu01</td><td>20 x 15</td><td>jobshop</td><td>2563</td><td>2563</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
@@ -828,96 +827,96 @@ The type of hardware and time required to find the best known solution are diffi
 
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>tai_j10_m10_1</td><td>10 x 10</td><td>jobshop</td><td>8219</td><td>8219</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m10_2</td><td>10 x 10</td><td>jobshop</td><td>7416</td><td>7416</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m10_3</td><td>10 x 10</td><td>jobshop</td><td>8094</td><td>8094</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m10_4</td><td>10 x 10</td><td>jobshop</td><td>8657</td><td>8657</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m10_5</td><td>10 x 10</td><td>jobshop</td><td>7936</td><td>7936</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m10_6</td><td>10 x 10</td><td>jobshop</td><td>8509</td><td>8509</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m10_7</td><td>10 x 10</td><td>jobshop</td><td>8299</td><td>8299</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m10_8</td><td>10 x 10</td><td>jobshop</td><td>7788</td><td>7788</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m10_9</td><td>10 x 10</td><td>jobshop</td><td>8300</td><td>8300</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m10_10</td><td>10 x 10</td><td>jobshop</td><td>8481</td><td>8481</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m100_1</td><td>10 x 100</td><td>jobshop</td><td>56609</td><td>56609</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m100_2</td><td>10 x 100</td><td>jobshop</td><td>52330</td><td>52330</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m100_3</td><td>10 x 100</td><td>jobshop</td><td>56412</td><td>56412</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m100_4</td><td>10 x 100</td><td>jobshop</td><td>54889</td><td>54889</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m100_5</td><td>10 x 100</td><td>jobshop</td><td>54603</td><td>54603</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m100_6</td><td>10 x 100</td><td>jobshop</td><td>53723</td><td>53723</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m100_7</td><td>10 x 100</td><td>jobshop</td><td>55456</td><td>55456</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m100_8</td><td>10 x 100</td><td>jobshop</td><td>56466</td><td>56466</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m100_9</td><td>10 x 100</td><td>jobshop</td><td>55096</td><td>55096</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m100_10</td><td>10 x 100</td><td>jobshop</td><td>56661</td><td>56661</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m1000_1</td><td>10 x 1000</td><td>jobshop</td><td>515370</td><td>515370</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m1000_2</td><td>10 x 1000</td><td>jobshop</td><td>513525</td><td>513525</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m1000_3</td><td>10 x 1000</td><td>jobshop</td><td>508161</td><td>508161</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m1000_4</td><td>10 x 1000</td><td>jobshop</td><td>513814</td><td>513814</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m1000_5</td><td>10 x 1000</td><td>jobshop</td><td>517020</td><td>517020</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m1000_6</td><td>10 x 1000</td><td>jobshop</td><td>517777</td><td>517777</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m1000_7</td><td>10 x 1000</td><td>jobshop</td><td>514921</td><td>514921</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m1000_8</td><td>10 x 1000</td><td>jobshop</td><td>522277</td><td>522277</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m1000_9</td><td>10 x 1000</td><td>jobshop</td><td>511213</td><td>511213</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j10_m1000_10</td><td>10 x 1000</td><td>jobshop</td><td>509855</td><td>509855</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j100_m10_1</td><td>100 x 10</td><td>jobshop</td><td>54951</td><td>54951</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j100_m10_2</td><td>100 x 10</td><td>jobshop</td><td>57160</td><td>57160</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j100_m10_3</td><td>100 x 10</td><td>jobshop</td><td>54166</td><td>54166</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j100_m10_4</td><td>100 x 10</td><td>jobshop</td><td>54371</td><td>54371</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j100_m10_5</td><td>100 x 10</td><td>jobshop</td><td>56142</td><td>56142</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j100_m10_6</td><td>100 x 10</td><td>jobshop</td><td>52447</td><td>52447</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j100_m10_7</td><td>100 x 10</td><td>jobshop</td><td>54051</td><td>54051</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j100_m10_8</td><td>100 x 10</td><td>jobshop</td><td>55624</td><td>55624</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j100_m10_9</td><td>100 x 10</td><td>jobshop</td><td>54210</td><td>54210</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j100_m10_10</td><td>100 x 10</td><td>jobshop</td><td>55464</td><td>55464</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j100_m100_1</td><td>100 x 100</td><td>jobshop</td><td>62843</td><td>77127</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m100_2</td><td>100 x 100</td><td>jobshop</td><td>62814</td><td>77322</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m100_3</td><td>100 x 100</td><td>jobshop</td><td>61533</td><td>76910</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m100_4</td><td>100 x 100</td><td>jobshop</td><td>64742</td><td>78604</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m100_5</td><td>100 x 100</td><td>jobshop</td><td>61766</td><td>78023</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m100_6</td><td>100 x 100</td><td>jobshop</td><td>61360</td><td>77895</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m100_7</td><td>100 x 100</td><td>jobshop</td><td>64040</td><td>77670</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m100_8</td><td>100 x 100</td><td>jobshop</td><td>63224</td><td>78031</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m100_9</td><td>100 x 100</td><td>jobshop</td><td>62631</td><td>79419</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m100_10</td><td>100 x 100</td><td>jobshop</td><td>64866</td><td>77837</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_j100_m1000_1</td><td>100 x 1000</td><td>jobshop</td><td>522298</td><td>533080</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
-<tr><td>tai_j100_m1000_2</td><td>100 x 1000</td><td>jobshop</td><td>530375</td><td>538067</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
-<tr><td>tai_j100_m1000_3</td><td>100 x 1000</td><td>jobshop</td><td>530560</td><td>538757</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
-<tr><td>tai_j100_m1000_4</td><td>100 x 1000</td><td>jobshop</td><td>527101</td><td>534746</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
-<tr><td>tai_j100_m1000_5</td><td>100 x 1000</td><td>jobshop</td><td>517728</td><td>529580</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
-<tr><td>tai_j100_m1000_6</td><td>100 x 1000</td><td>jobshop</td><td>522907</td><td>534969</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
-<tr><td>tai_j100_m1000_7</td><td>100 x 1000</td><td>jobshop</td><td>522537</td><td>534974</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
-<tr><td>tai_j100_m1000_8</td><td>100 x 1000</td><td>jobshop</td><td>526428</td><td>535757</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
-<tr><td>tai_j100_m1000_9</td><td>100 x 1000</td><td>jobshop</td><td>528097</td><td>536993</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
-<tr><td>tai_j100_m1000_10</td><td>100 x 1000</td><td>jobshop</td><td>521766</td><td>529918</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
-<tr><td>tai_j1000_m10_1</td><td>1000 x 10</td><td>jobshop</td><td>515334</td><td>515334</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j1000_m10_2</td><td>1000 x 10</td><td>jobshop</td><td>509226</td><td>509226</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j1000_m10_3</td><td>1000 x 10</td><td>jobshop</td><td>517493</td><td>517493</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j1000_m10_4</td><td>1000 x 10</td><td>jobshop</td><td>519369</td><td>519369</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j1000_m10_5</td><td>1000 x 10</td><td>jobshop</td><td>513881</td><td>513881</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j1000_m10_6</td><td>1000 x 10</td><td>jobshop</td><td>511932</td><td>511932</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j1000_m10_7</td><td>1000 x 10</td><td>jobshop</td><td>523900</td><td>523900</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j1000_m10_8</td><td>1000 x 10</td><td>jobshop</td><td>513101</td><td>513101</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j1000_m10_9</td><td>1000 x 10</td><td>jobshop</td><td>508701</td><td>508701</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j1000_m10_10</td><td>1000 x 10</td><td>jobshop</td><td>521360</td><td>521360</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
-<tr><td>tai_j1000_m100_1</td><td>1000 x 100</td><td>jobshop</td><td>525343</td><td>525343</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 1h 16cores</td></tr>
-<tr><td>tai_j1000_m100_2</td><td>1000 x 100</td><td>jobshop</td><td>528088</td><td>528088</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h 16 cores</td></tr>
-<tr><td>tai_j1000_m100_3</td><td>1000 x 100</td><td>jobshop</td><td>522793</td><td>522793</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h 16 cores</td></tr>
-<tr><td>tai_j1000_m100_4</td><td>1000 x 100</td><td>jobshop</td><td>524271</td><td>524271</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h 16 cores</td></tr>
-<tr><td>tai_j1000_m100_5</td><td>1000 x 100</td><td>jobshop</td><td>531216</td><td>531216</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 10 min 16 cores</td></tr>
-<tr><td>tai_j1000_m100_6</td><td>1000 x 100</td><td>jobshop</td><td>518763</td><td>518763</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 3h 16 cores</td></tr>
-<tr><td>tai_j1000_m100_7</td><td>1000 x 100</td><td>jobshop</td><td>527093</td><td>527093</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h 16 cores</td></tr>
-<tr><td>tai_j1000_m100_8</td><td>1000 x 100</td><td>jobshop</td><td>519524</td><td>519524</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 3h 16 cores</td></tr>
-<tr><td>tai_j1000_m100_9</td><td>1000 x 100</td><td>jobshop</td><td>520889</td><td>520889</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 3h 16 cores</td></tr>
-<tr><td>tai_j1000_m100_10</td><td>1000 x 100</td><td>jobshop</td><td>529112</td><td>529112</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 3h 16 cores</td></tr>
-<tr><td>tai_j1000_m1000_1</td><td>1000 x 1000</td><td>jobshop</td><td>549392</td><td>877062</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_2</td><td>1000 x 1000</td><td>jobshop</td><td>549043</td><td>877115</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_3</td><td>1000 x 1000</td><td>jobshop</td><td>552580</td><td>878805</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_4</td><td>1000 x 1000</td><td>jobshop</td><td>547670</td><td>876363</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_5</td><td>1000 x 1000</td><td>jobshop</td><td>545193</td><td>877562</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_6</td><td>1000 x 1000</td><td>jobshop</td><td>547286</td><td>876067</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_7</td><td>1000 x 1000</td><td>jobshop</td><td>545877</td><td>875891</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_8</td><td>1000 x 1000</td><td>jobshop</td><td>549220</td><td>876456</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_9</td><td>1000 x 1000</td><td>jobshop</td><td>543559</td><td>875914</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
-<tr><td>tai_j1000_m1000_10</td><td>1000 x 1000</td><td>jobshop</td><td>541530</td><td>874820</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_10_10_1</td><td>10 x 10</td><td>jobshop</td><td>8219</td><td>8219</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_10_2</td><td>10 x 10</td><td>jobshop</td><td>7416</td><td>7416</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_10_3</td><td>10 x 10</td><td>jobshop</td><td>8094</td><td>8094</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_10_4</td><td>10 x 10</td><td>jobshop</td><td>8657</td><td>8657</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_10_5</td><td>10 x 10</td><td>jobshop</td><td>7936</td><td>7936</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_10_6</td><td>10 x 10</td><td>jobshop</td><td>8509</td><td>8509</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_10_7</td><td>10 x 10</td><td>jobshop</td><td>8299</td><td>8299</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_10_8</td><td>10 x 10</td><td>jobshop</td><td>7788</td><td>7788</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_10_9</td><td>10 x 10</td><td>jobshop</td><td>8300</td><td>8300</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_10_10</td><td>10 x 10</td><td>jobshop</td><td>8481</td><td>8481</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_100_1</td><td>10 x 100</td><td>jobshop</td><td>56609</td><td>56609</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_100_2</td><td>10 x 100</td><td>jobshop</td><td>52330</td><td>52330</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_100_3</td><td>10 x 100</td><td>jobshop</td><td>56412</td><td>56412</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_100_4</td><td>10 x 100</td><td>jobshop</td><td>54889</td><td>54889</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_100_5</td><td>10 x 100</td><td>jobshop</td><td>54603</td><td>54603</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_100_6</td><td>10 x 100</td><td>jobshop</td><td>53723</td><td>53723</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_100_7</td><td>10 x 100</td><td>jobshop</td><td>55456</td><td>55456</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_100_8</td><td>10 x 100</td><td>jobshop</td><td>56466</td><td>56466</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_100_9</td><td>10 x 100</td><td>jobshop</td><td>55096</td><td>55096</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_100_10</td><td>10 x 100</td><td>jobshop</td><td>56661</td><td>56661</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_1000_1</td><td>10 x 1000</td><td>jobshop</td><td>515370</td><td>515370</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_1000_2</td><td>10 x 1000</td><td>jobshop</td><td>513525</td><td>513525</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_1000_3</td><td>10 x 1000</td><td>jobshop</td><td>508161</td><td>508161</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_1000_4</td><td>10 x 1000</td><td>jobshop</td><td>513814</td><td>513814</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_1000_5</td><td>10 x 1000</td><td>jobshop</td><td>517020</td><td>517020</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_1000_6</td><td>10 x 1000</td><td>jobshop</td><td>517777</td><td>517777</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_1000_7</td><td>10 x 1000</td><td>jobshop</td><td>514921</td><td>514921</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_1000_8</td><td>10 x 1000</td><td>jobshop</td><td>522277</td><td>522277</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_1000_9</td><td>10 x 1000</td><td>jobshop</td><td>511213</td><td>511213</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_10_1000_10</td><td>10 x 1000</td><td>jobshop</td><td>509855</td><td>509855</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_100_10_1</td><td>100 x 10</td><td>jobshop</td><td>54951</td><td>54951</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_100_10_2</td><td>100 x 10</td><td>jobshop</td><td>57160</td><td>57160</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_100_10_3</td><td>100 x 10</td><td>jobshop</td><td>54166</td><td>54166</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_100_10_4</td><td>100 x 10</td><td>jobshop</td><td>54371</td><td>54371</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_100_10_5</td><td>100 x 10</td><td>jobshop</td><td>56142</td><td>56142</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_100_10_6</td><td>100 x 10</td><td>jobshop</td><td>52447</td><td>52447</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_100_10_7</td><td>100 x 10</td><td>jobshop</td><td>54051</td><td>54051</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_100_10_8</td><td>100 x 10</td><td>jobshop</td><td>55624</td><td>55624</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_100_10_9</td><td>100 x 10</td><td>jobshop</td><td>54210</td><td>54210</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_100_10_10</td><td>100 x 10</td><td>jobshop</td><td>55464</td><td>55464</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_100_100_1</td><td>100 x 100</td><td>jobshop</td><td>62843</td><td>77127</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_100_100_2</td><td>100 x 100</td><td>jobshop</td><td>62814</td><td>77322</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_100_100_3</td><td>100 x 100</td><td>jobshop</td><td>61533</td><td>76910</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_100_100_4</td><td>100 x 100</td><td>jobshop</td><td>64742</td><td>78604</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_100_100_5</td><td>100 x 100</td><td>jobshop</td><td>61766</td><td>78023</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_100_100_6</td><td>100 x 100</td><td>jobshop</td><td>61360</td><td>77895</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_100_100_7</td><td>100 x 100</td><td>jobshop</td><td>64040</td><td>77670</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_100_100_8</td><td>100 x 100</td><td>jobshop</td><td>63224</td><td>78031</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_100_100_9</td><td>100 x 100</td><td>jobshop</td><td>62631</td><td>79419</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_100_100_10</td><td>100 x 100</td><td>jobshop</td><td>64866</td><td>77837</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_100_1000_1</td><td>100 x 1000</td><td>jobshop</td><td>522298</td><td>533080</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_100_1000_2</td><td>100 x 1000</td><td>jobshop</td><td>530375</td><td>538067</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_100_1000_3</td><td>100 x 1000</td><td>jobshop</td><td>530560</td><td>538757</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_100_1000_4</td><td>100 x 1000</td><td>jobshop</td><td>527101</td><td>534746</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_100_1000_5</td><td>100 x 1000</td><td>jobshop</td><td>517728</td><td>529580</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_100_1000_6</td><td>100 x 1000</td><td>jobshop</td><td>522907</td><td>534969</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_100_1000_7</td><td>100 x 1000</td><td>jobshop</td><td>522537</td><td>534974</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_100_1000_8</td><td>100 x 1000</td><td>jobshop</td><td>526428</td><td>535757</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_100_1000_9</td><td>100 x 1000</td><td>jobshop</td><td>528097</td><td>536993</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_100_1000_10</td><td>100 x 1000</td><td>jobshop</td><td>521766</td><td>529918</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP in 3h 16cores</td></tr>
+<tr><td>tai_1000_10_1</td><td>1000 x 10</td><td>jobshop</td><td>515334</td><td>515334</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_1000_10_2</td><td>1000 x 10</td><td>jobshop</td><td>509226</td><td>509226</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_1000_10_3</td><td>1000 x 10</td><td>jobshop</td><td>517493</td><td>517493</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_1000_10_4</td><td>1000 x 10</td><td>jobshop</td><td>519369</td><td>519369</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_1000_10_5</td><td>1000 x 10</td><td>jobshop</td><td>513881</td><td>513881</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_1000_10_6</td><td>1000 x 10</td><td>jobshop</td><td>511932</td><td>511932</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_1000_10_7</td><td>1000 x 10</td><td>jobshop</td><td>523900</td><td>523900</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_1000_10_8</td><td>1000 x 10</td><td>jobshop</td><td>513101</td><td>513101</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_1000_10_9</td><td>1000 x 10</td><td>jobshop</td><td>508701</td><td>508701</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_1000_10_10</td><td>1000 x 10</td><td>jobshop</td><td>521360</td><td>521360</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 1 min</td></tr>
+<tr><td>tai_1000_100_1</td><td>1000 x 100</td><td>jobshop</td><td>525343</td><td>525343</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 1h 16cores</td></tr>
+<tr><td>tai_1000_100_2</td><td>1000 x 100</td><td>jobshop</td><td>528088</td><td>528088</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h 16 cores</td></tr>
+<tr><td>tai_1000_100_3</td><td>1000 x 100</td><td>jobshop</td><td>522793</td><td>522793</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h 16 cores</td></tr>
+<tr><td>tai_1000_100_4</td><td>1000 x 100</td><td>jobshop</td><td>524271</td><td>524271</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h 16 cores</td></tr>
+<tr><td>tai_1000_100_5</td><td>1000 x 100</td><td>jobshop</td><td>531216</td><td>531216</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tai_1000_100_6</td><td>1000 x 100</td><td>jobshop</td><td>518763</td><td>518763</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 3h 16 cores</td></tr>
+<tr><td>tai_1000_100_7</td><td>1000 x 100</td><td>jobshop</td><td>527093</td><td>527093</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 2h 16 cores</td></tr>
+<tr><td>tai_1000_100_8</td><td>1000 x 100</td><td>jobshop</td><td>519524</td><td>519524</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 3h 16 cores</td></tr>
+<tr><td>tai_1000_100_9</td><td>1000 x 100</td><td>jobshop</td><td>520889</td><td>520889</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 3h 16 cores</td></tr>
+<tr><td>tai_1000_100_10</td><td>1000 x 100</td><td>jobshop</td><td>529112</td><td>529112</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in 3h 16 cores</td></tr>
+<tr><td>tai_1000_1000_1</td><td>1000 x 1000</td><td>jobshop</td><td>549392</td><td>877062</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_1000_1000_2</td><td>1000 x 1000</td><td>jobshop</td><td>549043</td><td>877115</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_1000_1000_3</td><td>1000 x 1000</td><td>jobshop</td><td>552580</td><td>878805</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_1000_1000_4</td><td>1000 x 1000</td><td>jobshop</td><td>547670</td><td>876363</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_1000_1000_5</td><td>1000 x 1000</td><td>jobshop</td><td>545193</td><td>877562</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_1000_1000_6</td><td>1000 x 1000</td><td>jobshop</td><td>547286</td><td>876067</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_1000_1000_7</td><td>1000 x 1000</td><td>jobshop</td><td>545877</td><td>875891</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_1000_1000_8</td><td>1000 x 1000</td><td>jobshop</td><td>549220</td><td>876456</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_1000_1000_9</td><td>1000 x 1000</td><td>jobshop</td><td>543559</td><td>875914</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP / ub Hexaly2024</td></tr>
+<tr><td>tai_1000_1000_10</td><td>1000 x 1000</td><td>jobshop</td><td>549075</td><td>874820</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb Hexaly / ub Hexaly2024</td></tr>
 </table>
 
 
