@@ -1,7 +1,8 @@
 [
   {
-    "family": "Fisher and Thompson (1963)",
-    "instance": "ft06",
+    "family_long": "Fisher and Thompson (1963)",
+    "family": "ft",
+    "instance":"ft06",
     "size": "6 x 6",
     "type": "jobshop",
     "lower_bound": 55,
@@ -13,8 +14,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Fisher and Thompson (1963)",
-    "instance": "ft10",
+    "family_long": "Fisher and Thompson (1963)",
+    "family": "ft",
+    "instance":"ft10",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 930,
@@ -26,8 +28,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Fisher and Thompson (1963)",
-    "instance": "ft20",
+    "family_long": "Fisher and Thompson (1963)",
+    "family": "ft",
+    "instance":"ft20",
     "size": "20 x 5",
     "type": "jobshop",
     "lower_bound": 1165,
@@ -39,8 +42,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la01",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la01",
     "size": "10 x 5",
     "type": "jobshop",
     "lower_bound": 666,
@@ -52,8 +56,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la02",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la02",
     "size": "10 x 5",
     "type": "jobshop",
     "lower_bound": 655,
@@ -65,8 +70,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la03",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la03",
     "size": "10 x 5",
     "type": "jobshop",
     "lower_bound": 597,
@@ -78,8 +84,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la04",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la04",
     "size": "10 x 5",
     "type": "jobshop",
     "lower_bound": 590,
@@ -91,8 +98,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la05",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la05",
     "size": "10 x 5",
     "type": "jobshop",
     "lower_bound": 593,
@@ -104,8 +112,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la06",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la06",
     "size": "15 x 5",
     "type": "jobshop",
     "lower_bound": 926,
@@ -117,8 +126,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la07",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la07",
     "size": "15 x 5",
     "type": "jobshop",
     "lower_bound": 890,
@@ -130,8 +140,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la08",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la08",
     "size": "15 x 5",
     "type": "jobshop",
     "lower_bound": 863,
@@ -143,8 +154,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la09",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la09",
     "size": "15 x 5",
     "type": "jobshop",
     "lower_bound": 951,
@@ -156,8 +168,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la10",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la10",
     "size": "15 x 5",
     "type": "jobshop",
     "lower_bound": 958,
@@ -169,8 +182,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la11",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la11",
     "size": "20 x 5",
     "type": "jobshop",
     "lower_bound": 1222,
@@ -182,8 +196,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la12",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la12",
     "size": "20 x 5",
     "type": "jobshop",
     "lower_bound": 1039,
@@ -195,8 +210,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la13",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la13",
     "size": "20 x 5",
     "type": "jobshop",
     "lower_bound": 1150,
@@ -208,8 +224,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la14",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la14",
     "size": "20 x 5",
     "type": "jobshop",
     "lower_bound": 1292,
@@ -221,8 +238,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la15",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la15",
     "size": "20 x 5",
     "type": "jobshop",
     "lower_bound": 1207,
@@ -234,8 +252,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la16",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la16",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 945,
@@ -247,8 +266,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la17",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la17",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 784,
@@ -260,8 +280,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la18",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la18",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 848,
@@ -273,8 +294,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la19",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la19",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 842,
@@ -286,8 +308,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la20",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la20",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 902,
@@ -299,8 +322,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la21",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la21",
     "size": "15 x 10",
     "type": "jobshop",
     "lower_bound": 1046,
@@ -312,8 +336,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la22",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la22",
     "size": "15 x 10",
     "type": "jobshop",
     "lower_bound": 927,
@@ -325,8 +350,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la23",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la23",
     "size": "15 x 10",
     "type": "jobshop",
     "lower_bound": 1032,
@@ -338,8 +364,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la24",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la24",
     "size": "15 x 10",
     "type": "jobshop",
     "lower_bound": 935,
@@ -351,8 +378,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la25",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la25",
     "size": "15 x 10",
     "type": "jobshop",
     "lower_bound": 977,
@@ -364,8 +392,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la26",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la26",
     "size": "20 x 10",
     "type": "jobshop",
     "lower_bound": 1218,
@@ -377,8 +406,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la27",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la27",
     "size": "20 x 10",
     "type": "jobshop",
     "lower_bound": 1235,
@@ -390,8 +420,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la28",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la28",
     "size": "20 x 10",
     "type": "jobshop",
     "lower_bound": 1216,
@@ -403,8 +434,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la29",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la29",
     "size": "20 x 10",
     "type": "jobshop",
     "lower_bound": 1152,
@@ -416,8 +448,9 @@
     "solver_ub_time": "5 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la30",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la30",
     "size": "20 x 10",
     "type": "jobshop",
     "lower_bound": 1355,
@@ -429,8 +462,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la31",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la31",
     "size": "30 x 10",
     "type": "jobshop",
     "lower_bound": 1784,
@@ -442,8 +476,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la32",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la32",
     "size": "30 x 10",
     "type": "jobshop",
     "lower_bound": 1850,
@@ -455,8 +490,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la33",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la33",
     "size": "30 x 10",
     "type": "jobshop",
     "lower_bound": 1719,
@@ -468,8 +504,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la34",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la34",
     "size": "30 x 10",
     "type": "jobshop",
     "lower_bound": 1721,
@@ -481,8 +518,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la35",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la35",
     "size": "30 x 10",
     "type": "jobshop",
     "lower_bound": 1888,
@@ -494,8 +532,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la36",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la36",
     "size": "15 x 15",
     "type": "jobshop",
     "lower_bound": 1268,
@@ -507,8 +546,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la37",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la37",
     "size": "15 x 15",
     "type": "jobshop",
     "lower_bound": 1397,
@@ -520,8 +560,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la38",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la38",
     "size": "15 x 15",
     "type": "jobshop",
     "lower_bound": 1196,
@@ -533,8 +574,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la39",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la39",
     "size": "15 x 15",
     "type": "jobshop",
     "lower_bound": 1233,
@@ -546,8 +588,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Lawrence (1984)",
-    "instance": "la40",
+    "family_long": "Lawrence (1984)",
+    "family": "la",
+    "instance":"la40",
     "size": "15 x 15",
     "type": "jobshop",
     "lower_bound": 1222,
@@ -559,8 +602,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Adams, Balas and Zawack (1988)",
-    "instance": "abz5",
+    "family_long": "Adams, Balas and Zawack (1988)",
+    "family": "abz",
+    "instance":"abz5",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 1234,
@@ -572,8 +616,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Adams, Balas and Zawack (1988)",
-    "instance": "abz6",
+    "family_long": "Adams, Balas and Zawack (1988)",
+    "family": "abz",
+    "instance":"abz6",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 943,
@@ -585,8 +630,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Adams, Balas and Zawack (1988)",
-    "instance": "abz7",
+    "family_long": "Adams, Balas and Zawack (1988)",
+    "family": "abz",
+    "instance":"abz7",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 656,
@@ -598,8 +644,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Adams, Balas and Zawack (1988)",
-    "instance": "abz8",
+    "family_long": "Adams, Balas and Zawack (1988)",
+    "family": "abz",
+    "instance":"abz8",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 667,
@@ -611,8 +658,9 @@
     "solver_ub_time": "10h"
   },
   {
-    "family": "Adams, Balas and Zawack (1988)",
-    "instance": "abz9",
+    "family_long": "Adams, Balas and Zawack (1988)",
+    "family": "abz",
+    "instance":"abz9",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 678,
@@ -624,8 +672,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Applegate and Cook (1991)",
-    "instance": "orb01",
+    "family_long": "Applegate and Cook (1991)",
+    "family": "orb",
+    "instance":"orb01",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 1059,
@@ -637,8 +686,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Applegate and Cook (1991)",
-    "instance": "orb02",
+    "family_long": "Applegate and Cook (1991)",
+    "family": "orb",
+    "instance":"orb02",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 888,
@@ -650,8 +700,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Applegate and Cook (1991)",
-    "instance": "orb03",
+    "family_long": "Applegate and Cook (1991)",
+    "family": "orb",
+    "instance":"orb03",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 1005,
@@ -663,8 +714,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Applegate and Cook (1991)",
-    "instance": "orb04",
+    "family_long": "Applegate and Cook (1991)",
+    "family": "orb",
+    "instance":"orb04",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 1005,
@@ -676,8 +728,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Applegate and Cook (1991)",
-    "instance": "orb05",
+    "family_long": "Applegate and Cook (1991)",
+    "family": "orb",
+    "instance":"orb05",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 887,
@@ -689,8 +742,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Applegate and Cook (1991)",
-    "instance": "orb06",
+    "family_long": "Applegate and Cook (1991)",
+    "family": "orb",
+    "instance":"orb06",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 1010,
@@ -702,8 +756,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Applegate and Cook (1991)",
-    "instance": "orb07",
+    "family_long": "Applegate and Cook (1991)",
+    "family": "orb",
+    "instance":"orb07",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 397,
@@ -715,8 +770,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Applegate and Cook (1991)",
-    "instance": "orb08",
+    "family_long": "Applegate and Cook (1991)",
+    "family": "orb",
+    "instance":"orb08",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 899,
@@ -728,8 +784,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Applegate and Cook (1991)",
-    "instance": "orb09",
+    "family_long": "Applegate and Cook (1991)",
+    "family": "orb",
+    "instance":"orb09",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 934,
@@ -741,8 +798,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Applegate and Cook (1991)",
-    "instance": "orb10",
+    "family_long": "Applegate and Cook (1991)",
+    "family": "orb",
+    "instance":"orb10",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 944,
@@ -754,8 +812,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv01",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv01",
     "size": "20 x 10",
     "type": "jobshop",
     "lower_bound": 1407,
@@ -767,8 +826,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv02",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv02",
     "size": "20 x 10",
     "type": "jobshop",
     "lower_bound": 1475,
@@ -780,8 +840,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv03",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv03",
     "size": "20 x 10",
     "type": "jobshop",
     "lower_bound": 1398,
@@ -793,8 +854,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv04",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv04",
     "size": "20 x 10",
     "type": "jobshop",
     "lower_bound": 1464,
@@ -806,8 +868,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv05",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv05",
     "size": "20 x 10",
     "type": "jobshop",
     "lower_bound": 1424,
@@ -819,8 +882,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv06",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv06",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 1667,
@@ -832,8 +896,9 @@
     "solver_ub_time": "40h"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv07",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv07",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 1541,
@@ -845,8 +910,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv08",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv08",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 1694,
@@ -858,8 +924,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv09",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv09",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 1655,
@@ -871,8 +938,9 @@
     "solver_ub_time": "15h"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv10",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv10",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 1692,
@@ -884,8 +952,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv11",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv11",
     "size": "50 x 10",
     "type": "jobshop",
     "lower_bound": 2983,
@@ -897,8 +966,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv12",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv12",
     "size": "50 x 10",
     "type": "jobshop",
     "lower_bound": 2972,
@@ -910,8 +980,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv13",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv13",
     "size": "50 x 10",
     "type": "jobshop",
     "lower_bound": 3104,
@@ -923,8 +994,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv14",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv14",
     "size": "50 x 10",
     "type": "jobshop",
     "lower_bound": 2968,
@@ -936,8 +1008,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv15",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv15",
     "size": "50 x 10",
     "type": "jobshop",
     "lower_bound": 2885,
@@ -949,8 +1022,9 @@
     "solver_ub_time": "9h"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv16",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv16",
     "size": "50 x 10",
     "type": "jobshop",
     "lower_bound": 2924,
@@ -962,8 +1036,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv17",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv17",
     "size": "50 x 10",
     "type": "jobshop",
     "lower_bound": 2794,
@@ -975,8 +1050,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv18",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv18",
     "size": "50 x 10",
     "type": "jobshop",
     "lower_bound": 2852,
@@ -988,8 +1064,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv19",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv19",
     "size": "50 x 10",
     "type": "jobshop",
     "lower_bound": 2843,
@@ -1001,8 +1078,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Storer, Wu and Vaccari (1992)",
-    "instance": "swv20",
+    "family_long": "Storer, Wu and Vaccari (1992)",
+    "family": "swv",
+    "instance":"swv20",
     "size": "50 x 10",
     "type": "jobshop",
     "lower_bound": 2823,
@@ -1014,8 +1092,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Yamada Nakano (1992)",
-    "instance": "yn1",
+    "family_long": "Yamada Nakano (1992)",
+    "family": "yn",
+    "instance":"yn1",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 884,
@@ -1027,8 +1106,9 @@
     "solver_ub_time": "6h"
   },
   {
-    "family": "Yamada Nakano (1992)",
-    "instance": "yn2",
+    "family_long": "Yamada Nakano (1992)",
+    "family": "yn",
+    "instance":"yn2",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 904,
@@ -1040,8 +1120,9 @@
     "solver_ub_time": "40h"
   },
   {
-    "family": "Yamada Nakano (1992)",
-    "instance": "yn3",
+    "family_long": "Yamada Nakano (1992)",
+    "family": "yn",
+    "instance":"yn3",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 892,
@@ -1053,8 +1134,9 @@
     "solver_ub_time": "40h"
   },
   {
-    "family": "Yamada Nakano (1992)",
-    "instance": "yn4",
+    "family_long": "Yamada Nakano (1992)",
+    "family": "yn",
+    "instance":"yn4",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 967,
@@ -1066,8 +1148,9 @@
     "solver_ub_time": "16h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta01js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta01js",
     "size": "15 x 15",
     "type": "jobshop",
     "lower_bound": 1231,
@@ -1079,8 +1162,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta02js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta02js",
     "size": "15 x 15",
     "type": "jobshop",
     "lower_bound": 1244,
@@ -1092,8 +1176,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta03js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta03js",
     "size": "15 x 15",
     "type": "jobshop",
     "lower_bound": 1218,
@@ -1105,8 +1190,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta04js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta04js",
     "size": "15 x 15",
     "type": "jobshop",
     "lower_bound": 1175,
@@ -1118,8 +1204,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta05js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta05js",
     "size": "15 x 15",
     "type": "jobshop",
     "lower_bound": 1224,
@@ -1131,8 +1218,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta06js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta06js",
     "size": "15 x 15",
     "type": "jobshop",
     "lower_bound": 1238,
@@ -1144,8 +1232,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta07js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta07js",
     "size": "15 x 15",
     "type": "jobshop",
     "lower_bound": 1227,
@@ -1157,8 +1246,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta08js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta08js",
     "size": "15 x 15",
     "type": "jobshop",
     "lower_bound": 1217,
@@ -1170,8 +1260,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta09js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta09js",
     "size": "15 x 15",
     "type": "jobshop",
     "lower_bound": 1274,
@@ -1183,8 +1274,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta10js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta10js",
     "size": "15 x 15",
     "type": "jobshop",
     "lower_bound": 1241,
@@ -1196,8 +1288,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta11js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta11js",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 1357,
@@ -1209,8 +1302,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta12js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta12js",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 1367,
@@ -1222,8 +1316,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta13js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta13js",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 1342,
@@ -1235,8 +1330,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta14js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta14js",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 1345,
@@ -1248,8 +1344,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta15js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta15js",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 1339,
@@ -1261,8 +1358,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta16js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta16js",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 1360,
@@ -1274,8 +1372,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta17js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta17js",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 1462,
@@ -1287,8 +1386,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta18js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta18js",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 1396,
@@ -1300,8 +1400,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta19js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta19js",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 1332,
@@ -1313,8 +1414,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta20js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta20js",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 1348,
@@ -1326,8 +1428,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta21js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta21js",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 1642,
@@ -1339,8 +1442,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta22js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta22js",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 1600,
@@ -1352,8 +1456,9 @@
     "solver_ub_time": "2h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta23js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta23js",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 1557,
@@ -1365,8 +1470,9 @@
     "solver_ub_time": "2h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta24js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta24js",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 1644,
@@ -1378,8 +1484,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta25js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta25js",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 1595,
@@ -1391,8 +1498,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta26js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta26js",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 1643,
@@ -1404,8 +1512,9 @@
     "solver_ub_time": "7h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta27js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta27js",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 1680,
@@ -1417,8 +1526,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta28js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta28js",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 1603,
@@ -1430,8 +1540,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta29js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta29js",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 1625,
@@ -1443,8 +1554,9 @@
     "solver_ub_time": "2h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta30js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta30js",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 1562,
@@ -1456,8 +1568,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta31js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta31js",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 1764,
@@ -1469,8 +1582,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta32js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta32js",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 1774,
@@ -1482,8 +1596,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta33js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta33js",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 1791,
@@ -1495,8 +1610,9 @@
     "solver_ub_time": "10h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta34js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta34js",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 1828,
@@ -1508,8 +1624,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta35js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta35js",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 2007,
@@ -1521,8 +1638,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta36js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta36js",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 1819,
@@ -1534,8 +1652,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta37js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta37js",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 1771,
@@ -1547,8 +1666,9 @@
     "solver_ub_time": "2h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta38js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta38js",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 1673,
@@ -1560,8 +1680,9 @@
     "solver_ub_time": "7h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta39js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta39js",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 1795,
@@ -1573,8 +1694,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta40js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta40js",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 1658,
@@ -1586,8 +1708,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta41js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta41js",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 1926,
@@ -1599,8 +1722,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta42js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta42js",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 1900,
@@ -1612,8 +1736,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta43js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta43js",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 1809,
@@ -1625,8 +1750,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta44js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta44js",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 1961,
@@ -1638,8 +1764,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta45js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta45js",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 1997,
@@ -1651,8 +1778,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta46js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta46js",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 1976,
@@ -1664,8 +1792,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta47js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta47js",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 1827,
@@ -1677,8 +1806,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta48js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta48js",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 1921,
@@ -1690,8 +1820,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta49js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta49js",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 1938,
@@ -1703,8 +1834,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta50js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta50js",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 1848,
@@ -1716,8 +1848,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta51js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta51js",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 2760,
@@ -1729,8 +1862,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta52js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta52js",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 2756,
@@ -1742,8 +1876,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta53js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta53js",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 2717,
@@ -1755,8 +1890,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta54js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta54js",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 2839,
@@ -1768,8 +1904,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta55js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta55js",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 2679,
@@ -1781,8 +1918,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta56js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta56js",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 2781,
@@ -1794,8 +1932,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta57js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta57js",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 2943,
@@ -1807,8 +1946,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta58js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta58js",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 2885,
@@ -1820,8 +1960,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta59js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta59js",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 2655,
@@ -1833,8 +1974,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta60js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta60js",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 2723,
@@ -1846,8 +1988,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta61js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta61js",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 2868,
@@ -1859,8 +2002,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta62js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta62js",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 2869,
@@ -1872,8 +2016,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta63js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta63js",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 2755,
@@ -1885,8 +2030,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta64js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta64js",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 2702,
@@ -1898,8 +2044,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta65js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta65js",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 2725,
@@ -1911,8 +2058,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta66js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta66js",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 2845,
@@ -1924,8 +2072,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta67js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta67js",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 2825,
@@ -1937,8 +2086,9 @@
     "solver_ub_time": "4h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta68js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta68js",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 2784,
@@ -1950,8 +2100,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta69js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta69js",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 3071,
@@ -1963,8 +2114,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta70js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta70js",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 2995,
@@ -1976,8 +2128,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta71js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta71js",
     "size": "100 x 20",
     "type": "jobshop",
     "lower_bound": 5464,
@@ -1989,8 +2142,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta72js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta72js",
     "size": "100 x 20",
     "type": "jobshop",
     "lower_bound": 5181,
@@ -2002,8 +2156,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta73js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta73js",
     "size": "100 x 20",
     "type": "jobshop",
     "lower_bound": 5568,
@@ -2015,8 +2170,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta74js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta74js",
     "size": "100 x 20",
     "type": "jobshop",
     "lower_bound": 5339,
@@ -2028,8 +2184,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta75js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta75js",
     "size": "100 x 20",
     "type": "jobshop",
     "lower_bound": 5392,
@@ -2041,8 +2198,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta76js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta76js",
     "size": "100 x 20",
     "type": "jobshop",
     "lower_bound": 5342,
@@ -2054,8 +2212,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta77js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta77js",
     "size": "100 x 20",
     "type": "jobshop",
     "lower_bound": 5436,
@@ -2067,8 +2226,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta78js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta78js",
     "size": "100 x 20",
     "type": "jobshop",
     "lower_bound": 5394,
@@ -2080,8 +2240,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta79js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta79js",
     "size": "100 x 20",
     "type": "jobshop",
     "lower_bound": 5358,
@@ -2093,8 +2254,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Taillard (1993)",
-    "instance": "ta80js",
+    "family_long": "Taillard (1993)",
+    "family": "ta",
+    "instance":"ta80js",
     "size": "100 x 20",
     "type": "jobshop",
     "lower_bound": 5183,
@@ -2106,8 +2268,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu01",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu01",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 2563,
@@ -2119,8 +2282,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu02",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu02",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 2706,
@@ -2132,8 +2296,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu03",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu03",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 2731,
@@ -2145,8 +2310,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu04",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu04",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 2669,
@@ -2158,8 +2324,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu05",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu05",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 2749,
@@ -2171,8 +2338,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu06",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu06",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 3244,
@@ -2184,8 +2352,9 @@
     "solver_ub_time": "2h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu07",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu07",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 3046,
@@ -2197,8 +2366,9 @@
     "solver_ub_time": "3h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu08",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu08",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 3188,
@@ -2210,8 +2380,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu09",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu09",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 3092,
@@ -2223,8 +2394,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu10",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu10",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 2984,
@@ -2236,8 +2408,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu11",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu11",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 3402,
@@ -2249,8 +2422,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu12",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu12",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 3481,
@@ -2262,8 +2436,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu13",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu13",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 3681,
@@ -2275,8 +2450,9 @@
     "solver_ub_time": "3h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu14",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu14",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 3394,
@@ -2288,8 +2464,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu15",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu15",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 3343,
@@ -2301,8 +2478,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu16",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu16",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 3734,
@@ -2314,8 +2492,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu17",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu17",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 3733,
@@ -2327,8 +2506,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu18",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu18",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 3844,
@@ -2340,8 +2520,9 @@
     "solver_ub_time": "10h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu19",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu19",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 3707,
@@ -2353,8 +2534,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu20",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu20",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 3632,
@@ -2366,8 +2548,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu21",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu21",
     "size": "40 x 15",
     "type": "jobshop",
     "lower_bound": 4380,
@@ -2379,8 +2562,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu22",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu22",
     "size": "40 x 15",
     "type": "jobshop",
     "lower_bound": 4725,
@@ -2392,8 +2576,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu23",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu23",
     "size": "40 x 15",
     "type": "jobshop",
     "lower_bound": 4668,
@@ -2405,8 +2590,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu24",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu24",
     "size": "40 x 15",
     "type": "jobshop",
     "lower_bound": 4648,
@@ -2418,8 +2604,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu25",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu25",
     "size": "40 x 15",
     "type": "jobshop",
     "lower_bound": 4164,
@@ -2431,8 +2618,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu26",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu26",
     "size": "40 x 20",
     "type": "jobshop",
     "lower_bound": 4647,
@@ -2444,8 +2632,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu27",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu27",
     "size": "40 x 20",
     "type": "jobshop",
     "lower_bound": 4848,
@@ -2457,8 +2646,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu28",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu28",
     "size": "40 x 20",
     "type": "jobshop",
     "lower_bound": 4692,
@@ -2470,8 +2660,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu29",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu29",
     "size": "40 x 20",
     "type": "jobshop",
     "lower_bound": 4691,
@@ -2483,8 +2674,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu30",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu30",
     "size": "40 x 20",
     "type": "jobshop",
     "lower_bound": 4732,
@@ -2496,8 +2688,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu31",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu31",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 5640,
@@ -2509,8 +2702,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu32",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu32",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 5927,
@@ -2522,8 +2716,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu33",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu33",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 5728,
@@ -2535,8 +2730,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu34",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu34",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 5385,
@@ -2548,8 +2744,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu35",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu35",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 5635,
@@ -2561,8 +2758,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu36",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu36",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 5621,
@@ -2574,8 +2772,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu37",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu37",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 5851,
@@ -2587,8 +2786,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu38",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu38",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 5713,
@@ -2600,8 +2800,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu39",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu39",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 5747,
@@ -2613,8 +2814,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu40",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu40",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 5577,
@@ -2626,8 +2828,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu41",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu41",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 3176,
@@ -2639,8 +2842,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu42",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu42",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 3339,
@@ -2652,8 +2856,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu43",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu43",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 3441,
@@ -2665,8 +2870,9 @@
     "solver_ub_time": "8h"
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu44",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu44",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 3414,
@@ -2678,8 +2884,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu45",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu45",
     "size": "20 x 15",
     "type": "jobshop",
     "lower_bound": 3217,
@@ -2691,8 +2898,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu46",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu46",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 3780,
@@ -2704,8 +2912,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu47",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu47",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 3714,
@@ -2717,8 +2926,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu48",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu48",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 3628,
@@ -2730,8 +2940,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu49",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu49",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 3543,
@@ -2743,8 +2954,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu50",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu50",
     "size": "20 x 20",
     "type": "jobshop",
     "lower_bound": 3618,
@@ -2756,8 +2968,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu51",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu51",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 4070,
@@ -2769,8 +2982,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu52",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu52",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 4203,
@@ -2782,8 +2996,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu53",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu53",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 4248,
@@ -2795,8 +3010,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu54",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu54",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 4277,
@@ -2808,8 +3024,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu55",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu55",
     "size": "30 x 15",
     "type": "jobshop",
     "lower_bound": 4191,
@@ -2821,8 +3038,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu56",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu56",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 4755,
@@ -2834,8 +3052,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu57",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu57",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 4462,
@@ -2847,8 +3066,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu58",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu58",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 4484,
@@ -2860,8 +3080,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu59",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu59",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 4366,
@@ -2873,8 +3094,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu60",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu60",
     "size": "30 x 20",
     "type": "jobshop",
     "lower_bound": 4468,
@@ -2886,8 +3108,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu61",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu61",
     "size": "40 x 15",
     "type": "jobshop",
     "lower_bound": 5038,
@@ -2899,8 +3122,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu62",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu62",
     "size": "40 x 15",
     "type": "jobshop",
     "lower_bound": 5176,
@@ -2912,8 +3136,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu63",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu63",
     "size": "40 x 15",
     "type": "jobshop",
     "lower_bound": 5245,
@@ -2925,8 +3150,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu64",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu64",
     "size": "40 x 15",
     "type": "jobshop",
     "lower_bound": 5155,
@@ -2938,8 +3164,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu65",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu65",
     "size": "40 x 15",
     "type": "jobshop",
     "lower_bound": 5122,
@@ -2951,8 +3178,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu66",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu66",
     "size": "40 x 20",
     "type": "jobshop",
     "lower_bound": 5526,
@@ -2964,8 +3192,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu67",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu67",
     "size": "40 x 20",
     "type": "jobshop",
     "lower_bound": 5661,
@@ -2977,8 +3206,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu68",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu68",
     "size": "40 x 20",
     "type": "jobshop",
     "lower_bound": 5513,
@@ -2990,8 +3220,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu69",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu69",
     "size": "40 x 20",
     "type": "jobshop",
     "lower_bound": 5511,
@@ -3003,8 +3234,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu70",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu70",
     "size": "40 x 20",
     "type": "jobshop",
     "lower_bound": 5633,
@@ -3016,8 +3248,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu71",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu71",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 6129,
@@ -3029,8 +3262,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu72",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu72",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 6434,
@@ -3042,8 +3276,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu73",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu73",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 6107,
@@ -3055,8 +3290,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu74",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu74",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 6168,
@@ -3068,8 +3304,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu75",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu75",
     "size": "50 x 15",
     "type": "jobshop",
     "lower_bound": 6123,
@@ -3081,8 +3318,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu76",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu76",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 6479,
@@ -3094,8 +3332,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu77",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu77",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 6520,
@@ -3107,8 +3346,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu78",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu78",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 6643,
@@ -3120,8 +3360,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu79",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu79",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 6720,
@@ -3133,8 +3374,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Demikol, Mehta and Uzsoy (1998)",
-    "instance": "dmu80",
+    "family_long": "Demikol, Mehta and Uzsoy (1998)",
+    "family": "dmu",
+    "instance":"dmu80",
     "size": "50 x 20",
     "type": "jobshop",
     "lower_bound": 6460,
@@ -3146,8 +3388,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_10_1",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_10_1",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 8219,
@@ -3159,8 +3402,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_10_2",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_10_2",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 7416,
@@ -3172,8 +3416,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_10_3",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_10_3",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 8094,
@@ -3185,8 +3430,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_10_4",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_10_4",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 8657,
@@ -3198,8 +3444,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_10_5",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_10_5",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 7936,
@@ -3211,8 +3458,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_10_6",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_10_6",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 8509,
@@ -3224,8 +3472,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_10_7",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_10_7",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 8299,
@@ -3237,8 +3486,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_10_8",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_10_8",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 7788,
@@ -3250,8 +3500,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_10_9",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_10_9",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 8300,
@@ -3263,8 +3514,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_10_10",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_10_10",
     "size": "10 x 10",
     "type": "jobshop",
     "lower_bound": 8481,
@@ -3276,8 +3528,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_100_1",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_100_1",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 56609,
@@ -3289,8 +3542,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_100_2",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_100_2",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 52330,
@@ -3302,8 +3556,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_100_3",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_100_3",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 56412,
@@ -3315,8 +3570,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_100_4",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_100_4",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 54889,
@@ -3328,8 +3584,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_100_5",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_100_5",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 54603,
@@ -3341,8 +3598,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_100_6",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_100_6",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 53723,
@@ -3354,8 +3612,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_100_7",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_100_7",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 55456,
@@ -3367,8 +3626,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_100_8",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_100_8",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 56466,
@@ -3380,8 +3640,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_100_9",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_100_9",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 55096,
@@ -3393,8 +3654,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_100_10",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_100_10",
     "size": "10 x 100",
     "type": "jobshop",
     "lower_bound": 56661,
@@ -3406,8 +3668,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_1000_1",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_1000_1",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 515370,
@@ -3419,8 +3682,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_1000_2",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_1000_2",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 513525,
@@ -3432,8 +3696,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_1000_3",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_1000_3",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 508161,
@@ -3445,8 +3710,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_1000_4",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_1000_4",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 513814,
@@ -3458,8 +3724,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_1000_5",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_1000_5",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 517020,
@@ -3471,8 +3738,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_1000_6",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_1000_6",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 517777,
@@ -3484,8 +3752,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_1000_7",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_1000_7",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 514921,
@@ -3497,8 +3766,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_1000_8",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_1000_8",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 522277,
@@ -3510,8 +3780,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_1000_9",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_1000_9",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 511213,
@@ -3523,8 +3794,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_10_1000_10",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_10_1000_10",
     "size": "10 x 1000",
     "type": "jobshop",
     "lower_bound": 509855,
@@ -3536,8 +3808,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_10_1",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_10_1",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 54951,
@@ -3549,8 +3822,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_10_2",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_10_2",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 57160,
@@ -3562,8 +3836,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_10_3",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_10_3",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 54166,
@@ -3575,8 +3850,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_10_4",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_10_4",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 54371,
@@ -3588,8 +3864,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_10_5",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_10_5",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 56142,
@@ -3601,8 +3878,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_10_6",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_10_6",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 52447,
@@ -3614,8 +3892,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_10_7",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_10_7",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 54051,
@@ -3627,8 +3906,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_10_8",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_10_8",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 55624,
@@ -3640,8 +3920,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_10_9",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_10_9",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 54210,
@@ -3653,8 +3934,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_10_10",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_10_10",
     "size": "100 x 10",
     "type": "jobshop",
     "lower_bound": 55464,
@@ -3666,8 +3948,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_100_1",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_100_1",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 62843,
@@ -3679,8 +3962,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_100_2",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_100_2",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 62814,
@@ -3692,8 +3976,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_100_3",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_100_3",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 61533,
@@ -3705,8 +3990,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_100_4",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_100_4",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 64742,
@@ -3718,8 +4004,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_100_5",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_100_5",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 61766,
@@ -3731,8 +4018,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_100_6",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_100_6",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 61360,
@@ -3744,8 +4032,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_100_7",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_100_7",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 64040,
@@ -3757,8 +4046,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_100_8",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_100_8",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 63224,
@@ -3770,8 +4060,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_100_9",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_100_9",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 62631,
@@ -3783,8 +4074,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_100_10",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_100_10",
     "size": "100 x 100",
     "type": "jobshop",
     "lower_bound": 64866,
@@ -3796,8 +4088,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_1000_1",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_1000_1",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 522298,
@@ -3809,8 +4102,9 @@
     "solver_ub_time": "3h 16cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_1000_2",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_1000_2",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 530375, 
@@ -3822,8 +4116,9 @@
     "solver_ub_time": "3h 16cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_1000_3",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_1000_3",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 530560,
@@ -3835,8 +4130,9 @@
     "solver_ub_time": "3h 16cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_1000_4",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_1000_4",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 527101,
@@ -3848,8 +4144,9 @@
     "solver_ub_time": "3h 16cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_1000_5",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_1000_5",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 517728,
@@ -3861,8 +4158,9 @@
     "solver_ub_time": "3h 16cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_1000_6",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_1000_6",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 522907,
@@ -3874,8 +4172,9 @@
     "solver_ub_time": "3h 16cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_1000_7",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_1000_7",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 522537,
@@ -3887,8 +4186,9 @@
     "solver_ub_time": "3h 16cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_1000_8",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_1000_8",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 526428,
@@ -3900,8 +4200,9 @@
     "solver_ub_time": "3h 16cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_1000_9",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_1000_9",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 528097,
@@ -3913,8 +4214,9 @@
     "solver_ub_time": "3h 16cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_100_1000_10",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_100_1000_10",
     "size": "100 x 1000",
     "type": "jobshop",
     "lower_bound": 521766,
@@ -3926,8 +4228,9 @@
     "solver_ub_time": "3h 16cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_10_1",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_10_1",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 515334,
@@ -3939,8 +4242,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_10_2",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_10_2",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 509226,
@@ -3952,8 +4256,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_10_3",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_10_3",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 517493,
@@ -3965,8 +4270,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_10_4",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_10_4",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 519369,
@@ -3978,8 +4284,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_10_5",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_10_5",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 513881,
@@ -3991,8 +4298,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_10_6",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_10_6",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 511932,
@@ -4004,8 +4312,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_10_7",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_10_7",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 523900,
@@ -4017,8 +4326,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_10_8",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_10_8",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 513101,
@@ -4030,8 +4340,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_10_9",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_10_9",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 508701,
@@ -4043,8 +4354,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_10_10",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_10_10",
     "size": "1000 x 10",
     "type": "jobshop",
     "lower_bound": 521360,
@@ -4056,8 +4368,9 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_100_1",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_100_1",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 525343,
@@ -4069,8 +4382,9 @@
     "solver_ub_time": "1h 16cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_100_2",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_100_2",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 528088,
@@ -4082,8 +4396,9 @@
     "solver_ub_time": "2h 16 cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_100_3",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_100_3",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 522793,
@@ -4095,8 +4410,9 @@
     "solver_ub_time": "2h 16 cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_100_4",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_100_4",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 524271,
@@ -4108,8 +4424,9 @@
     "solver_ub_time": "2h 16 cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_100_5",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_100_5",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 531216,
@@ -4121,8 +4438,9 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_100_6",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_100_6",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 518763,
@@ -4134,8 +4452,9 @@
     "solver_ub_time": "3h 16 cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_100_7",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_100_7",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 527093,
@@ -4147,8 +4466,9 @@
     "solver_ub_time": "2h 16 cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_100_8",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_100_8",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 519524,
@@ -4160,8 +4480,9 @@
     "solver_ub_time": "3h 16 cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_100_9",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_100_9",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 520889,
@@ -4173,8 +4494,9 @@
     "solver_ub_time": "3h 16 cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_100_10",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_100_10",
     "size": "1000 x 100",
     "type": "jobshop",
     "lower_bound": 529112,
@@ -4186,8 +4508,9 @@
     "solver_ub_time": "3h 16 cores"
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_1000_1",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_1000_1",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 549392,
@@ -4199,8 +4522,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_1000_2",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_1000_2",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 549043,
@@ -4212,8 +4536,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_1000_3",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_1000_3",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 552580,
@@ -4225,8 +4550,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_1000_4",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_1000_4",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 547670,
@@ -4238,8 +4564,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_1000_5",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_1000_5",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 545193,
@@ -4251,8 +4578,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_1000_6",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_1000_6",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 547286,
@@ -4264,8 +4592,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_1000_7",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_1000_7",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 545877,
@@ -4277,8 +4606,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_1000_8",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_1000_8",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 549220,
@@ -4290,8 +4620,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_1000_9",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_1000_9",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 543559,
@@ -4303,8 +4634,9 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
-    "instance": "tai_1000_1000_10",
+    "family_long": "Da Col and Teppan (2022)",
+    "family": "tai",
+    "instance":"tai_1000_1000_10",
     "size": "1000 x 1000",
     "type": "jobshop",
     "lower_bound": 549075,
@@ -4316,7 +4648,7 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "long-100-10000-1",
     "size": "103 x 100",
     "type": "reentrant jobshop",
@@ -4329,7 +4661,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "long-100-10000-2",
     "size": "103 x 100",
     "type": "reentrant jobshop",
@@ -4342,7 +4674,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "long-100-10000-3",
     "size": "103 x 100",
     "type": "reentrant jobshop",
@@ -4355,7 +4687,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "long-1000-10000-1",
     "size": "1002 x 1000",
     "type": "reentrant jobshop",
@@ -4368,7 +4700,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "long-1000-10000-2",
     "size": "1002 x 1000",
     "type": "reentrant jobshop",
@@ -4381,7 +4713,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "long-1000-10000-3",
     "size": "1002 x 1000",
     "type": "reentrant jobshop",
@@ -4394,7 +4726,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "long-100-100000-1",
     "size": "109 x 100",
     "type": "reentrant jobshop",
@@ -4407,7 +4739,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "long-100-100000-2",
     "size": "114 x 100",
     "type": "reentrant jobshop",
@@ -4420,7 +4752,7 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "long-100-100000-3",
     "size": "109 x 100",
     "type": "reentrant jobshop",
@@ -4433,7 +4765,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "long-1000-100000-1",
     "size": "1002 x 1000",
     "type": "reentrant jobshop",
@@ -4446,7 +4778,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "long-1000-100000-2",
     "size": "1002 x 1000",
     "type": "reentrant jobshop",
@@ -4459,7 +4791,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "long-1000-100000-3",
     "size": "1003 x 1000",
     "type": "reentrant jobshop",
@@ -4472,7 +4804,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "short-100-10000-1",
     "size": "2162 x 100",
     "type": "reentrant jobshop",
@@ -4485,7 +4817,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "short-100-10000-2",
     "size": "2192 x 100",
     "type": "reentrant jobshop",
@@ -4498,7 +4830,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "short-100-10000-3",
     "size": "2169 x 100",
     "type": "reentrant jobshop",
@@ -4511,7 +4843,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "short-1000-10000-1",
     "size": "2882 x 1000",
     "type": "reentrant jobshop",
@@ -4524,7 +4856,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "short-1000-10000-2",
     "size": "2863 x 1000",
     "type": "reentrant jobshop",
@@ -4537,7 +4869,7 @@
     "solver_ub_time": "< 1 min"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "short-1000-10000-3",
     "size": "2897 x 1000",
     "type": "reentrant jobshop",
@@ -4550,7 +4882,7 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "short-100-100000-1",
     "size": "20685 x 100",
     "type": "reentrant jobshop",
@@ -4563,7 +4895,7 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "short-100-100000-2",
     "size": "20870 x 100",
     "type": "reentrant jobshop",
@@ -4576,7 +4908,7 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "short-100-100000-3",
     "size": "20767 x 100",
     "type": "reentrant jobshop",
@@ -4589,7 +4921,7 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "short-1000-100000-1",
     "size": "21280 x 1000",
     "type": "reentrant jobshop",
@@ -4602,7 +4934,7 @@
     "solver_ub_time": null
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "short-1000-100000-2",
     "size": "21349 x 1000",
     "type": "reentrant jobshop",
@@ -4615,7 +4947,7 @@
     "solver_ub_time": "< 1h"
   },
   {
-    "family": "Da Col and Teppan (2022)",
+    "family_long": "Da Col and Teppan (2022)",
     "instance": "short-1000-100000-3",
     "size": "21338 x 1000",
     "type": "reentrant jobshop",
