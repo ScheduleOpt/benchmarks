@@ -57,6 +57,21 @@ reentrant jobshop instances (43)
 - 12 instances `short` from Da Col and Teppan (2022)
 - 19 instances `bel` from Boveroux, Ernst and Louveaux (2025)
 
+#### The lack of industrial instances
+
+> There is a gap in the existing literature regarding job shop scheduling benchmarks. Most commonly referenced instances, such as those proposed by Taillard et al., Adams et al.  or Demirkol et al. , focus on small and rectangular configurations where the number of machines equals the number of operations for each job. This structure does not adequately represent the complexities of larger, unbalanced scenarios commonly encountered in real-world manufacturing.
+>
+> To address this gap, we first analyzed an industrial dataset from a real manufacturing facility that includes 51 machines, 828 jobs and a total of 6057 operations. In this instance, the workload distribution is unbalanced, with some machines heavily loaded while others are lightly used. Furthermore, the number of operations per job varies significantly, ranging from 1 to 20.
+>
+> Boveroux, Ernst and Louveaux (2025)
+
+All 332 classic instances are randomly generated which creates situations like `ta39` and `ta40` that are the same size (30 x 15) and generated with the same generator, but one is solved in < 1 minute while the other is still open, resisting all solution techniques. 
+
+We would like to augment the jsplib with more instances based on real data and have therefore included the `long` and `short` data from Teppan 2022 that while still random attempts to recreate the situation where jobs have different number of operations and can require multiple operations on a given machine (reentrancy). We have added the instances `bal` of Boveroux et al. that statistically reproduce the features of the real data they were working with.
+
+We strongly encourage anyone that has access to real jobshop instances to share them with us and the scheduling commmunity.
+
+
 ### Classification of the jobshop instances
 
 We use the following engines as reference engines for the benchmark for they are widely considered the strongest engines for scheduling, and to provide a balanced benchmark across different solver technologies
@@ -349,6 +364,8 @@ The instances come from the following publications
 - **Demirkol, E., Mehta, S., & Uzsoy, R.** (1998). Benchmarks for shop scheduling problems. European Journal of Operational Research, 109(1), 137-141.
 
 - **Da Col, G., & Teppan, E. C.** (2022). Industrial-size job shop scheduling with constraint programming. Operations Research Perspectives, 9, 100249.
+
+- **Boveroux, L., Ernst, D., & Louveaux, Q.** (2025). Investigating the Monte-Carlo Tree Search approach for the job shop scheduling problem. EURO Journal on Computational Optimization, 100118.
 
 <br/>
 
