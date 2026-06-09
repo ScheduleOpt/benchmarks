@@ -67,7 +67,7 @@ reentrant jobshop instances (43)
 
 All 332 classic instances are randomly generated which creates situations like `ta39` and `ta40` that are the same size (30 x 15) and generated with the same generator, but one is solved in < 1 minute while the other is still open, resisting all solution techniques. 
 
-We would like to augment the jsplib with more instances based on real data and have therefore included the `long` and `short` data from Teppan 2022 that while still random attempts to recreate the situation where jobs have different number of operations and can require multiple operations on a given machine (reentrancy). We have added the instances `bal` of Boveroux et al. that statistically reproduce the features of the real data they were working with.
+We would like to augment the jsplib with more instances based on real data and have therefore included the `long` and `short` data from Teppan 2022 that while still random attempts to recreate the situation where jobs have different number of operations and can require multiple operations on a given machine (reentrancy) mimiking metal fabrication and aircraft component machining problems. We have added the instances `bal` of Boveroux et al. that statistically reproduce the features of the manufavturing data they were working with.
 
 We strongly encourage anyone that has access to real jobshop instances to share them with us and the scheduling commmunity.
 
