@@ -4498,5 +4498,17 @@
         "upper_bound" : 347889,
         "lb_data" : [{ "value" : 347889, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : 1, "certificate" : null }],
         "ub_data" : [{ "value" : 347889, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : 1, "certificate" : null }]
+    },
+{
+        "instance" : "bel19",
+        "size" : "806 x 69",
+        "type" : "reentrant jobshop",
+        "family" : "bel",
+        "family_long" : "Boveroux, Ernst and Louveaux 2025",
+        "status" : "closed",
+        "lower_bound" : 529239,
+        "upper_bound" : 529239,
+        "lb_data" : [{ "value" : 529239, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : 1, "certificate" : null }],
+        "ub_data" : [{ "value" : 529239, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : 1, "certificate" : null }]
     }
 ]

@@ -4,68 +4,66 @@ import * as fs from 'node:fs'
 const directory = "../../instances/json"
 const bks = JSON.parse(fs.readFileSync("../../solutions/bks.json"))
 
-const create_model = async file => {
-    const string = fs.readFileSync(file, { encoding: "utf-8"})
+const create_model = async instance => {
+    const string = fs.readFileSync(`${directory}/${instance}`, { encoding: "utf-8"})
     const json = JSON.parse(string)
 
-    const nb_machines = json.machines
-    const nb_jobs = json.jobs
-
-    const machines = new Map()
-    const last = []
-
+    const model = new CP.Model(instance)
     const tasks = []
-    for (let k = 0; k < json.data.length; k++) json.data[k].index = k
-
-    const model = new CP.Model(json.instance)
+    const machines = new Map()
 
     let job = null
     let previous = null
     for (const op of json.data) {
-        const task = model.intervalVar({ length : op.duration })           
-        task.duration = op.duration
-        const m = op.machine
-        if (!machines.has(m)) machines.set(m, [])
-        machines.get(m).push(task)
-        if (job == op.job) model.endBeforeStart(previous, task) 
-        if (op.operation == nb_machines - 1) last.push(task.end())   
-        previous = task
+        const t = model.intervalVar({ length : op.duration })
+        if (previous && job == op.job) model.endBeforeStart(previous, t)
+        if (!machines.has(op.machine)) machines.set(op.machine, [])
+        machines.get(op.machine).push(t)
+        tasks.push(t)
+        previous = t
         job = op.job
-        tasks[op.index] = task
     }
-
     for (let tasks of machines.values()) model.noOverlap(tasks)
-
-    model.minimize(model.max(last))
-
+    model.minimize(model.max(tasks.map(t => t.end())))
     return model
 }
 
-const test = new Set([ "tai" ])
+const params = {  
+    // Default parameters are usually fine, but if you want to change some parameters
+    // You shouldn't need to change any other parameters that these
+    timeLimit: 1,
+    preset : "Default", // "Large" 
+    lnsMode : "Focused", // "Robust"
+    noOverlapPropagationLevel : 4, 
+    cumulPropagationLevel: 3,
+    integralPropagationLevel : 2,
+    positionPropagationLevel : 2,
+    reservoirPropagationLevel: 2,
+    usePrecedenceEnergy : 1, 
+    fdsDualStrategy : "split", // "minimum", "random"
+    workers: [{ searchType  : "LNS"}, { searchType  : "LNS"}, { searchType  : "LNS"}, { searchType  : "FDSDual" }] 
+}
 
-const params = { timeLimit: 600 }
+const test = { // refers to info in bks record
+    family : new Set(["dmu", "ta"]),
+    status : new Set(["open"])
+}
 
-const run_benchmark = async test => {
+const run_benchmark = async filter => {
     const files = fs.readdirSync (directory, { recursive : true })
-    .map(v => directory + "/" + v)
-    .filter(v => v.endsWith("json"))
     .filter(v => {
-        const file = fs.readFileSync(directory + "/" + v, { encoding: "utf-8"})
-        const json = JSON.parse(file)
-        return test.has(json.family)
-    })
-    await CP.benchmark(create_model, files, params)
+            const r = bks.find(t => `${t.instance}.json` == v)
+            let keep = true
+            if (r) for (const field in filter) if (!filter[field].has(r[field])) keep = false
+            return keep
+        })
+    await CP.benchmark(create_model, files, { timeLimit: 600 })
 }
 
 const run_once = async instance => {
     const model = await create_model (`${directory}/${instance}.json`)
-    model.solve (params)
+    model.solve ()
 }
 
-const args = process.argv.slice(2);
-if (args.length < 1) {
-    console.error('Usage: node jobshop.mjs instance.json');
-    process.exit(1);
-}
-await run_once(args[0])
+await run_once(process.argv[2])
 //await run_benchmark(test)
