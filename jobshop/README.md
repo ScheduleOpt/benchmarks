@@ -464,11 +464,11 @@ The solutions may come from
 
 The type of hardware and time required to find the best known solution are difficult to track and compare, in particular for bounds coming from published papers. Which is why
 - Every time an engine equals a published result the engine appears in the table instead
-- An approximative timing for reference engines, in particular when the time to find the solution is unusually long
+- An approximative timing for reference engines is provided, in particular when the time to find the solution is unusually long
 
 <br/>
 
-> We ***do not*** systematically run the instances for very long times on large machines. Most of the instances that appear as having been solved after a large comptation time (eg. 40h) had peculiarities (e.g. `best lb + 1 == best ub`) that justified exploring how long it would take to solve them to optimality. We also devote more effort to solve instances which best known solutions are given by papers that are old, difficult to find and difficlt to reproduce. This allows verifying the paper claims and having a more accessible way of generating the result.
+> We ***do not*** systematically run the instances for very long times on large machines. Most of the instances that appear as having been solved after a large computation time (eg. 40h) had peculiarities (e.g. `best lb + 1 == best ub`) that justified exploring how long it would take to solve them to optimality. We also devote more effort to solve instances which best known solutions are given by papers that are old, difficult to find and difficult to reproduce. This allows verifying the paper claims and having a more accessible way of generating the result.
 
 ### Best known solutions json format
 
@@ -892,7 +892,9 @@ For most of the best known solutions, the date, machine, running time and certif
 <tr><td>tai_1000_1000_10</td><td>1000 x 1000</td><td>jobshop</td><td>549075</td><td>874820</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb Hexaly | ub Hexaly2024</td></tr>
 </table>
 
-***We consider the tai 1000 x 1000 instances a curiosity, a benchmark to test the internals of the engines (memory allocation, complexity of internal algorithms and data structures, etc.) We don't believe this instances represent any reasonable industrial problem, less because of their size, and more because they are random, unstructured, square and non-reentrant : your manufacturing plant produces exactly 1000 different products, each one needs 1000 operations on exactly one of the 1000 machines in the plant, and for each product the operations need to be done in a completely different order !***
+***We consider the tai 1000 x 1000 instances a curiosity, a benchmark to test the internals of the engines (memory allocation, complexity of internal algorithms and data structures, etc.) We don't believe these instances represent any reasonable industrial problem, less because of their size, and more because they are random, unstructured, square and non-reentrant : your manufacturing plant produces exactly 1000 different products, each one needs 1000 operations on exactly one of the 1000 machines in the plant, and for each product the operations must be done in a completely different order !***
+
+<br/>
 
 #### Da Col and Teppan (2022) - reentrant jobshop
 <table>
@@ -985,7 +987,7 @@ The upper and lower bounds come from
 - CdGKGC2025 (1 bound - dmu72) : **Marc-Emmanuel Coupvent des Graviers, Lotfi Kobrosly, Christophe Guettier, and Tristan Cazenave** (2025). [Updating Lower and Upper Bounds for the Job-Shop Scheduling Problem Test Instances](https://arxiv.org/abs/2504.16106).
 
 
-All other bounds were found by OptalCP except 2 bounds by CP-SAT (equal but faster) and 3 bounds by Hexaly (strictly better than other solvers)
+All other bounds were found by OptalCP except 2 bounds by CP-SAT (equal but faster) and 3 bounds by Hexaly (strictly better than all other solvers). The cited papers also may use an engine directly like [CPO2015], [Hexaly2024] or as part of an algorithm like [CdGKGC2025] which uses CP-SAT.
 
 
 ## Comparison of reference engines

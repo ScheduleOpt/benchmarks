@@ -3392,8 +3392,8 @@
         "status" : "open",
         "lower_bound" : 62843,
         "upper_bound" : 76926,
-        "lb_data" : [{ "value" : 62843, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
-        "ub_data" : [{ "value" : 76926, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }]
+        "lb_data" : [{ "value" : 62843, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }],
+        "ub_data" : [{ "value" : 76926, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }]
     },
 {
         "instance" : "tai_100_100_2",
@@ -3404,8 +3404,8 @@
         "status" : "open",
         "lower_bound" : 62814,
         "upper_bound" : 77322,
-        "lb_data" : [{ "value" : 62814, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
-        "ub_data" : [{ "value" : 77322, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }]
+        "lb_data" : [{ "value" : 62814, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }],
+        "ub_data" : [{ "value" : 77322, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }]
     },
 {
         "instance" : "tai_100_100_3",
@@ -3416,8 +3416,8 @@
         "status" : "open",
         "lower_bound" : 61533,
         "upper_bound" : 76910,
-        "lb_data" : [{ "value" : 61533, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
-        "ub_data" : [{ "value" : 76910, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }]
+        "lb_data" : [{ "value" : 61533, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }],
+        "ub_data" : [{ "value" : 76910, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }]
     },
 {
         "instance" : "tai_100_100_4",
@@ -3428,8 +3428,8 @@
         "status" : "open",
         "lower_bound" : 64742,
         "upper_bound" : 78604,
-        "lb_data" : [{ "value" : 64742, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
-        "ub_data" : [{ "value" : 78604, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }]
+        "lb_data" : [{ "value" : 64742, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }],
+        "ub_data" : [{ "value" : 78604, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }]
     },
 {
         "instance" : "tai_100_100_5",
@@ -3440,8 +3440,8 @@
         "status" : "open",
         "lower_bound" : 61766,
         "upper_bound" : 78023,
-        "lb_data" : [{ "value" : 61766, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
-        "ub_data" : [{ "value" : 78023, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }]
+        "lb_data" : [{ "value" : 61766, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }],
+        "ub_data" : [{ "value" : 78023, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }]
     },
 {
         "instance" : "tai_100_100_6",
@@ -3452,8 +3452,8 @@
         "status" : "open",
         "lower_bound" : 61360,
         "upper_bound" : 77895,
-        "lb_data" : [{ "value" : 61360, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
-        "ub_data" : [{ "value" : 77895, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }]
+        "lb_data" : [{ "value" : 61360, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }],
+        "ub_data" : [{ "value" : 77895, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }]
     },
 {
         "instance" : "tai_100_100_7",
@@ -3464,8 +3464,8 @@
         "status" : "open",
         "lower_bound" : 64040,
         "upper_bound" : 77670,
-        "lb_data" : [{ "value" : 64040, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
-        "ub_data" : [{ "value" : 77670, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }]
+        "lb_data" : [{ "value" : 64040, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }],
+        "ub_data" : [{ "value" : 77670, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }]
     },
 {
         "instance" : "tai_100_100_8",
@@ -3476,8 +3476,8 @@
         "status" : "open",
         "lower_bound" : 63224,
         "upper_bound" : 78031,
-        "lb_data" : [{ "value" : 63224, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
-        "ub_data" : [{ "value" : 78031, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }]
+        "lb_data" : [{ "value" : 63224, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }],
+        "ub_data" : [{ "value" : 78031, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }]
     },
 {
         "instance" : "tai_100_100_9",
@@ -3488,8 +3488,8 @@
         "status" : "open",
         "lower_bound" : 62631,
         "upper_bound" : 79419,
-        "lb_data" : [{ "value" : 62631, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
-        "ub_data" : [{ "value" : 79419, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }]
+        "lb_data" : [{ "value" : 62631, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }],
+        "ub_data" : [{ "value" : 79419, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }]
     },
 {
         "instance" : "tai_100_100_10",
@@ -3500,8 +3500,8 @@
         "status" : "open",
         "lower_bound" : 64866,
         "upper_bound" : 77837,
-        "lb_data" : [{ "value" : 64866, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
-        "ub_data" : [{ "value" : 77837, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }]
+        "lb_data" : [{ "value" : 64866, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }],
+        "ub_data" : [{ "value" : 77837, "date" : "2026-03-15", "solver" : "OptalCP", "machine" : "AMD Ryzen 9 5950X", "time" : 30, "certificate" : null }]
     },
 {
         "instance" : "tai_100_1000_1",
@@ -3512,8 +3512,8 @@
         "status" : "open",
         "lower_bound" : 522298,
         "upper_bound" : 533080,
-        "lb_data" : [{ "value" : 522298, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }],
-        "ub_data" : [{ "value" : 533080, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }]
+        "lb_data" : [{ "value" : 522298, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }],
+        "ub_data" : [{ "value" : 533080, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }]
     },
 {
         "instance" : "tai_100_1000_2",
@@ -3524,8 +3524,8 @@
         "status" : "open",
         "lower_bound" : 530375,
         "upper_bound" : 538067,
-        "lb_data" : [{ "value" : 530375, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }],
-        "ub_data" : [{ "value" : 538067, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }]
+        "lb_data" : [{ "value" : 530375, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }],
+        "ub_data" : [{ "value" : 538067, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }]
     },
 {
         "instance" : "tai_100_1000_3",
@@ -3536,8 +3536,8 @@
         "status" : "open",
         "lower_bound" : 530560,
         "upper_bound" : 538757,
-        "lb_data" : [{ "value" : 530560, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }],
-        "ub_data" : [{ "value" : 538757, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }]
+        "lb_data" : [{ "value" : 530560, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }],
+        "ub_data" : [{ "value" : 538757, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }]
     },
 {
         "instance" : "tai_100_1000_4",
@@ -3548,8 +3548,8 @@
         "status" : "open",
         "lower_bound" : 527101,
         "upper_bound" : 534746,
-        "lb_data" : [{ "value" : 527101, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }],
-        "ub_data" : [{ "value" : 534746, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }]
+        "lb_data" : [{ "value" : 527101, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }],
+        "ub_data" : [{ "value" : 534746, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }]
     },
 {
         "instance" : "tai_100_1000_5",
@@ -3560,8 +3560,8 @@
         "status" : "open",
         "lower_bound" : 517728,
         "upper_bound" : 529580,
-        "lb_data" : [{ "value" : 517728, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }],
-        "ub_data" : [{ "value" : 529580, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }]
+        "lb_data" : [{ "value" : 517728, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }],
+        "ub_data" : [{ "value" : 529580, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }]
     },
 {
         "instance" : "tai_100_1000_6",
@@ -3572,8 +3572,8 @@
         "status" : "open",
         "lower_bound" : 522907,
         "upper_bound" : 534969,
-        "lb_data" : [{ "value" : 522907, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }],
-        "ub_data" : [{ "value" : 534969, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }]
+        "lb_data" : [{ "value" : 522907, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }],
+        "ub_data" : [{ "value" : 534969, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }]
     },
 {
         "instance" : "tai_100_1000_7",
@@ -3584,8 +3584,8 @@
         "status" : "open",
         "lower_bound" : 522537,
         "upper_bound" : 534974,
-        "lb_data" : [{ "value" : 522537, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }],
-        "ub_data" : [{ "value" : 534974, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }]
+        "lb_data" : [{ "value" : 522537, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }],
+        "ub_data" : [{ "value" : 534974, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }]
     },
 {
         "instance" : "tai_100_1000_8",
@@ -3596,8 +3596,8 @@
         "status" : "open",
         "lower_bound" : 526428,
         "upper_bound" : 535757,
-        "lb_data" : [{ "value" : 526428, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }],
-        "ub_data" : [{ "value" : 535757, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }]
+        "lb_data" : [{ "value" : 526428, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }],
+        "ub_data" : [{ "value" : 535757, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }]
     },
 {
         "instance" : "tai_100_1000_9",
@@ -3608,8 +3608,8 @@
         "status" : "open",
         "lower_bound" : 528097,
         "upper_bound" : 536993,
-        "lb_data" : [{ "value" : 528097, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }],
-        "ub_data" : [{ "value" : 536993, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }]
+        "lb_data" : [{ "value" : 528097, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }],
+        "ub_data" : [{ "value" : 536993, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }]
     },
 {
         "instance" : "tai_100_1000_10",
@@ -3620,8 +3620,8 @@
         "status" : "open",
         "lower_bound" : 521766,
         "upper_bound" : 529918,
-        "lb_data" : [{ "value" : 521766, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }],
-        "ub_data" : [{ "value" : 529918, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }]
+        "lb_data" : [{ "value" : 521766, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }],
+        "ub_data" : [{ "value" : 529918, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }]
     },
 {
         "instance" : "tai_1000_10_1",
@@ -3752,8 +3752,8 @@
         "status" : "closed",
         "lower_bound" : 525343,
         "upper_bound" : 525343,
-        "lb_data" : [{ "value" : 525343, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 60, "certificate" : null }],
-        "ub_data" : [{ "value" : 525343, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 60, "certificate" : null }]
+        "lb_data" : [{ "value" : 525343, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 60, "certificate" : null }],
+        "ub_data" : [{ "value" : 525343, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 60, "certificate" : null }]
     },
 {
         "instance" : "tai_1000_100_2",
@@ -3764,8 +3764,8 @@
         "status" : "closed",
         "lower_bound" : 528088,
         "upper_bound" : 528088,
-        "lb_data" : [{ "value" : 528088, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 120, "certificate" : null }],
-        "ub_data" : [{ "value" : 528088, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 120, "certificate" : null }]
+        "lb_data" : [{ "value" : 528088, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 120, "certificate" : null }],
+        "ub_data" : [{ "value" : 528088, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 120, "certificate" : null }]
     },
 {
         "instance" : "tai_1000_100_3",
@@ -3776,8 +3776,8 @@
         "status" : "closed",
         "lower_bound" : 522793,
         "upper_bound" : 522793,
-        "lb_data" : [{ "value" : 522793, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 120, "certificate" : null }],
-        "ub_data" : [{ "value" : 522793, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 120, "certificate" : null }]
+        "lb_data" : [{ "value" : 522793, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 120, "certificate" : null }],
+        "ub_data" : [{ "value" : 522793, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 120, "certificate" : null }]
     },
 {
         "instance" : "tai_1000_100_4",
@@ -3788,8 +3788,8 @@
         "status" : "closed",
         "lower_bound" : 524271,
         "upper_bound" : 524271,
-        "lb_data" : [{ "value" : 524271, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 120, "certificate" : null }],
-        "ub_data" : [{ "value" : 524271, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 120, "certificate" : null }]
+        "lb_data" : [{ "value" : 524271, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 120, "certificate" : null }],
+        "ub_data" : [{ "value" : 524271, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 120, "certificate" : null }]
     },
 {
         "instance" : "tai_1000_100_5",
@@ -3812,8 +3812,8 @@
         "status" : "closed",
         "lower_bound" : 518763,
         "upper_bound" : 518763,
-        "lb_data" : [{ "value" : 518763, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }],
-        "ub_data" : [{ "value" : 518763, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }]
+        "lb_data" : [{ "value" : 518763, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }],
+        "ub_data" : [{ "value" : 518763, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }]
     },
 {
         "instance" : "tai_1000_100_7",
@@ -3824,8 +3824,8 @@
         "status" : "closed",
         "lower_bound" : 527093,
         "upper_bound" : 527093,
-        "lb_data" : [{ "value" : 527093, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 120, "certificate" : null }],
-        "ub_data" : [{ "value" : 527093, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 120, "certificate" : null }]
+        "lb_data" : [{ "value" : 527093, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 120, "certificate" : null }],
+        "ub_data" : [{ "value" : 527093, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 120, "certificate" : null }]
     },
 {
         "instance" : "tai_1000_100_8",
@@ -3836,8 +3836,8 @@
         "status" : "closed",
         "lower_bound" : 519524,
         "upper_bound" : 519524,
-        "lb_data" : [{ "value" : 519524, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }],
-        "ub_data" : [{ "value" : 519524, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }]
+        "lb_data" : [{ "value" : 519524, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }],
+        "ub_data" : [{ "value" : 519524, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }]
     },
 {
         "instance" : "tai_1000_100_9",
@@ -3848,8 +3848,8 @@
         "status" : "closed",
         "lower_bound" : 520889,
         "upper_bound" : 520889,
-        "lb_data" : [{ "value" : 520889, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }],
-        "ub_data" : [{ "value" : 520889, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }]
+        "lb_data" : [{ "value" : 520889, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }],
+        "ub_data" : [{ "value" : 520889, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }]
     },
 {
         "instance" : "tai_1000_100_10",
@@ -3860,8 +3860,8 @@
         "status" : "closed",
         "lower_bound" : 529112,
         "upper_bound" : 529112,
-        "lb_data" : [{ "value" : 529112, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }],
-        "ub_data" : [{ "value" : 529112, "date" : "undefined-01-01", "solver" : "OptalCP 16 cores", "machine" : null, "time" : 180, "certificate" : null }]
+        "lb_data" : [{ "value" : 529112, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }],
+        "ub_data" : [{ "value" : 529112, "date" : "2026-03-15", "solver" : "OptalCP 16 cores", "machine" : "AMD Ryzen 9 5950X", "time" : 180, "certificate" : null }]
     },
 {
         "instance" : "tai_1000_1000_1",
@@ -3872,7 +3872,7 @@
         "status" : "open",
         "lower_bound" : 549392,
         "upper_bound" : 877052,
-        "lb_data" : [{ "value" : 549392, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
+        "lb_data" : [{ "value" : 549392, "date" : "2025-08-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
         "ub_data" : [{ "value" : 877052, "date" : "2026-06-01", "solver" : "Hexaly", "machine" : null, "time" : null, "certificate" : null }]
     },
 {
@@ -3884,7 +3884,7 @@
         "status" : "open",
         "lower_bound" : 549043,
         "upper_bound" : 877115,
-        "lb_data" : [{ "value" : 549043, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
+        "lb_data" : [{ "value" : 549043, "date" : "2025-08-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
         "ub_data" : [{ "value" : 877115, "date" : "2024-01-01", "solver" : "Hexaly2024", "machine" : null, "time" : null, "certificate" : null }]
     },
 {
@@ -3896,7 +3896,7 @@
         "status" : "open",
         "lower_bound" : 552580,
         "upper_bound" : 878296,
-        "lb_data" : [{ "value" : 552580, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
+        "lb_data" : [{ "value" : 552580, "date" : "2025-08-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
         "ub_data" : [{ "value" : 878296, "date" : "2026-06-01", "solver" : "Hexaly", "machine" : null, "time" : null, "certificate" : null }]
     },
 {
@@ -3908,7 +3908,7 @@
         "status" : "open",
         "lower_bound" : 547670,
         "upper_bound" : 876363,
-        "lb_data" : [{ "value" : 547670, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
+        "lb_data" : [{ "value" : 547670, "date" : "2025-08-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
         "ub_data" : [{ "value" : 876363, "date" : "2024-01-01", "solver" : "Hexaly2024", "machine" : null, "time" : null, "certificate" : null }]
     },
 {
@@ -3920,7 +3920,7 @@
         "status" : "open",
         "lower_bound" : 545193,
         "upper_bound" : 877562,
-        "lb_data" : [{ "value" : 545193, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
+        "lb_data" : [{ "value" : 545193, "date" : "2025-08-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
         "ub_data" : [{ "value" : 877562, "date" : "2024-01-01", "solver" : "Hexaly2024", "machine" : null, "time" : null, "certificate" : null }]
     },
 {
@@ -3932,7 +3932,7 @@
         "status" : "open",
         "lower_bound" : 547286,
         "upper_bound" : 876067,
-        "lb_data" : [{ "value" : 547286, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
+        "lb_data" : [{ "value" : 547286, "date" : "2025-08-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
         "ub_data" : [{ "value" : 876067, "date" : "2024-01-01", "solver" : "Hexaly2024", "machine" : null, "time" : null, "certificate" : null }]
     },
 {
@@ -3944,7 +3944,7 @@
         "status" : "open",
         "lower_bound" : 545877,
         "upper_bound" : 875891,
-        "lb_data" : [{ "value" : 545877, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
+        "lb_data" : [{ "value" : 545877, "date" : "2025-08-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
         "ub_data" : [{ "value" : 875891, "date" : "2024-01-01", "solver" : "Hexaly2024", "machine" : null, "time" : null, "certificate" : null }]
     },
 {
@@ -3956,7 +3956,7 @@
         "status" : "open",
         "lower_bound" : 549220,
         "upper_bound" : 876456,
-        "lb_data" : [{ "value" : 549220, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
+        "lb_data" : [{ "value" : 549220, "date" : "2025-08-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
         "ub_data" : [{ "value" : 876456, "date" : "2024-01-01", "solver" : "Hexaly2024", "machine" : null, "time" : null, "certificate" : null }]
     },
 {
@@ -3968,7 +3968,7 @@
         "status" : "open",
         "lower_bound" : 543559,
         "upper_bound" : 875914,
-        "lb_data" : [{ "value" : 543559, "date" : "2026-06-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
+        "lb_data" : [{ "value" : 543559, "date" : "2025-08-01", "solver" : "OptalCP", "machine" : "i7-1185G7 @ 3.00GHz", "time" : null, "certificate" : null }],
         "ub_data" : [{ "value" : 875914, "date" : "2024-01-01", "solver" : "Hexaly2024", "machine" : null, "time" : null, "certificate" : null }]
     },
 {
