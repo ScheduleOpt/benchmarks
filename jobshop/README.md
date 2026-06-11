@@ -470,6 +470,8 @@ The type of hardware and time required to find the best known solution are diffi
 
 > We ***do not*** systematically run the instances for very long times on large machines. Most of the instances that appear as having been solved after a large computation time (eg. 40h) had peculiarities (e.g. `best lb + 1 == best ub`) that justified exploring how long it would take to solve them to optimality. We also devote more effort to solve instances which best known solutions are given by papers that are old, difficult to find and difficult to reproduce. This allows verifying the paper claims and having a more accessible way of generating the result.
 
+<br/>
+
 ### Best known solutions json format
 
 The best known solutions are now collected in a [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) file with the following syntax
@@ -920,12 +922,12 @@ For most of the best known solutions, the date, machine, running time and certif
 <tr><td>dct-short-100-100000-1</td><td>20685 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>dct-short-100-100000-2</td><td>20870 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>dct-short-100-100000-3</td><td>20767 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dct-short-1000-100000-1</td><td>21280 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600038</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>dct-short-1000-100000-1</td><td>21280 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600019</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 <tr><td>dct-short-1000-100000-2</td><td>21349 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>dct-short-1000-100000-3</td><td>21338 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 </table>
 
-*DaCol and Tepan report instance dct-short-1000-100000-1 was solved to optimality by CP Optimizer in 6h which we haven't been able to reproduce (with CPO any other solver). We are still investigating*
+*DaCol and Teppan report instance dct-short-1000-100000-1 was solved to optimality by CP Optimizer in 6h which we haven't been able to reproduce (with CPO any other solver). We have noticed however that some engines stop at a value that is different from optimality due to "tolerance" parameters. We suspect the 6h proof was only up to tolerance - OptalCP finds in 1h with solution of value 600054 which would be "optimal up to tolerance", and that is consistent wit DaCol Teppan report. Therefore we believe that's what happened with their CPO tests.*
 
 #### Boveroux, Ernst and Louveaux 2025
 <table>
