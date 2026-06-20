@@ -927,7 +927,7 @@ For most of the best known solutions, the date, machine, running time and certif
 <tr><td>dct-short-1000-100000-3</td><td>21338 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 </table>
 
-*DaCol and Teppan report instance dct-short-1000-100000-1 was solved to optimality by CP Optimizer in 6h which we haven't been able to reproduce (with CPO any other solver). We have noticed however that some engines stop at a value that is different from optimality due to "tolerance" parameters. We suspect the 6h proof was only up to tolerance - OptalCP finds in 1h with solution of value 600054 which would be "optimal up to tolerance", and that is consistent wit DaCol Teppan report. Therefore we believe that's what happened with their CPO tests.*
+*DaCol and Tepan report instance dct-short-1000-100000-1 was solved to optimality by CP Optimizer in 6h which we haven't been able to reproduce (with CPO any other solver). We are still investigating*
 
 #### Boveroux, Ernst and Louveaux 2025
 <table>
