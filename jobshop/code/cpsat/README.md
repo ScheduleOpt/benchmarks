@@ -16,7 +16,7 @@ The file `jobshop.py` contains all what is needed for the benchmark
 - generation of results.json and solutions.json files
 
 The parameters to be adjusted are
-```json
+```python
 solver.parameters.max_time_in_seconds = 600
 solver.parameters.log_search_progress = False
 hardware = "Intel 11th Gen Core i7-1185G7"
