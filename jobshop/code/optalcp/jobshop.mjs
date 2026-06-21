@@ -4,6 +4,23 @@ import * as fs from 'node:fs'
 const directory = "../../instances/json"
 const bks = JSON.parse(fs.readFileSync("../../solutions/bks.json"))
 
+const params = {  
+    // Default parameters are usually fine, but if you want to change some parameters
+    // You shouldn't need to change any other parameters than these
+    timeLimit: 600,
+    logLevel: 0,
+    //preset : "Default", // "Large" 
+    //lnsMode : "Robust", // "Focused"
+    noOverlapPropagationLevel : 4, 
+    cumulPropagationLevel: 3,
+    integralPropagationLevel : 2,
+    positionPropagationLevel : 2,
+    reservoirPropagationLevel: 2,
+    usePrecedenceEnergy : 1, 
+    //fdsDualStrategy : "Split", // "Minimum", "Random"
+    //workers: [{ searchType  : "LNS"}, { searchType  : "LNS"}, { searchType  : "LNS"}, { searchType  : "FDSDual" }] 
+}
+
 const create_model = async instance => {
 
     const string = fs.readFileSync(`${directory}/${instance}`, { encoding: "utf-8"})
@@ -32,23 +49,6 @@ const create_model = async instance => {
     model.minimize(model.max(a))
 
     return { model, machines }
-}
-
-const params = {  
-    // Default parameters are usually fine, but if you want to change some parameters
-    // You shouldn't need to change any other parameters that these
-    timeLimit: 600,
-    logLevel: 0,
-    //preset : "Default", // "Large" 
-    //lnsMode : "Robust", // "Focused"
-    noOverlapPropagationLevel : 4, 
-    cumulPropagationLevel: 3,
-    integralPropagationLevel : 2,
-    positionPropagationLevel : 2,
-    reservoirPropagationLevel: 2,
-    usePrecedenceEnergy : 1, 
-    //fdsDualStrategy : "Split", // "Minimum", "Random"
-    //workers: [{ searchType  : "LNS"}, { searchType  : "LNS"}, { searchType  : "LNS"}, { searchType  : "FDSDual" }] 
 }
 
 function getCurrentDate() {
@@ -103,7 +103,7 @@ const run_benchmark = async filter => {
             lb : { value : lb, date, solver, hardware, time, certificate : "no" },
             ub : { value : ub, date, solver, hardware, time, certificate : "no" }
         }
-        write(`result_${solver}_${date}.json`, r)
+        write(`results_${solver}_${date}.json`, r)
 
         if (ub != undefined) {
             const solution = { instance, makespan: ub, solver, date }
@@ -113,7 +113,7 @@ const run_benchmark = async filter => {
                 const jobs = (tasks.map(v => [result.solution.getStart(v), v.job])).sort()
                 solution[`machine_${m}`] = jobs.map(([_,j]) => j)
             }
-            write(`solution_${solver}_${date}.json`, solution)
+            write(`solutions_${solver}_${date}.json`, solution)
         }
     }
 }
