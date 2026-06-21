@@ -7,12 +7,11 @@ from ortools.sat.python import cp_model
 solver = cp_model.CpSolver()
 solver.parameters.max_time_in_seconds = 600
 solver.parameters.log_search_progress = False
+hardware = "Intel 11th Gen Core i7-1185G7"
 
 solver_name = "CP-SAT"
-hardware = "Intel 11th Gen Core i7-1185G7"
-date = datetime.now().strftime("%Y-%m-%d")
-
 path = "../../instances/json/"
+date = datetime.now().strftime("%Y-%m-%d")
 
 task_info = []
 
