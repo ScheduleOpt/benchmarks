@@ -60,8 +60,8 @@ main {
     	file.write("}");			  
     }
     
-  	var resultsFile = new IloOplOutputFile("results.json");
-  	var solutionsFile = new IloOplOutputFile("solutions.json");
+  	var resultsFile = new IloOplOutputFile("results_CPO_" + date + ".json");
+  	var solutionsFile = new IloOplOutputFile("solutions_CPO_" + date + ".json");
 
 	var solver = new IloCP()
     var source = new IloOplModelSource ("jobshop.mod")

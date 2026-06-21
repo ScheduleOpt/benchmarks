@@ -19,14 +19,14 @@ Before launching transform.mjs
 
 The filters are based on the content of bks.json
 
-```json
+```js
 const filter = {
     family : new Set(["dmu", "ta"]),
 }
 ```
 Generates all the instances from families `dmu` and `ta`
 
-```json
+```js
 const filter = {
     status : new Set(["open"])
 }
@@ -61,7 +61,7 @@ The file `jobshop.mod` is the OPL model for the jobshop. It can be tested indepe
 
 ### results.json
 
-The benchmark script creates for each problem solved an entry of the form
+The benchmark script creates a file `results_CPO_{date}.json` and for each problem solved an entry of the form
 
 ```json
 {
@@ -85,9 +85,9 @@ The benchmark script creates for each problem solved an entry of the form
 }
 ```
 
-### solution.json
+### solutions.json
 
-The benchmark scripts writes the best solution found for instance in `solutions.json` with the following format
+The benchmark scripts writes the best solution found for each instance in `solutions_CPO_{date}.json` with the following format
 
 ```json
 {

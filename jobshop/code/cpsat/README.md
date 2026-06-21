@@ -49,14 +49,14 @@ The benchmark script creates a file `results_CP-SAT_{date}` and for each problem
         "time": 1, 
         "certificate": "yes"
     }
-},
+}
 ```
 
 The field `certificate` becomes `yes` when the solution is validated by the validation function
 
-### solution.json
+### solutions.json
 
-The benchmark scripts creates a file `solution_CP-SAT_{date}` and writes the best solution found for instance solved, in the following format
+The benchmark scripts creates a file `solutions_CP-SAT_{date}` and writes the best solution found for instance solved, in the following format
 
 ```json
 {

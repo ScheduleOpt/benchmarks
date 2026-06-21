@@ -230,4 +230,4 @@ def benchmark(results_file, solution_file):
         
         update_json_file(results_file, result) # if solution valid, certificate field is updated
 
-benchmark (f'results_{solver_name}_{date}.json', f'solution_{solver_name}_{date}.json')
+benchmark (f'results_{solver_name}_{date}.json', f'solutions_{solver_name}_{date}.json')
