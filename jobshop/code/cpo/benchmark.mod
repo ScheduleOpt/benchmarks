@@ -90,10 +90,10 @@ main {
 
 		var lb = solver.getObjBound();
 		var ub = status ? solver.getObjValue() : -1;
-		var time = Math.ceil(solver.info.SolveTime / 60);
+		var time = Math.round(solver.info.SolveTime / 60);
 		writeln(instance, " ", lb, " .. ", ub, " ", time);
 		if (!first_result) resultsFile.writeln(",");
-		writeResult (resultsFile, ub, lb, instance, time)
+		writeResult (resultsFile, lb, ub, instance, time)
 		first_result = false;
 
   		model.end();
