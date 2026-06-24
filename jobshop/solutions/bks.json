@@ -1366,7 +1366,7 @@
         "upper_bound" : 1783,
         "lb_data" : [{ "value" : 1774, "date" : "2015-01-01", "solver" : "CPO2015", "hardware" : null, "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 1783, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 1783, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 1784, "date" : "2010-01-01", "solver" : "PSV2010", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -1513,7 +1513,7 @@
         "upper_bound" : 1978,
         "lb_data" : [{ "value" : 1961, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 1978, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 1978, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 1979, "date" : "2022-01-01", "solver" : "CS2022", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -1540,7 +1540,7 @@
         "upper_bound" : 2002,
         "lb_data" : [{ "value" : 1976, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 2002, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 2002, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 2004, "date" : "2014-01-01", "solver" : "GR2014", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2563,7 +2563,7 @@
         "upper_bound" : 4151,
         "lb_data" : [{ "value" : 4070, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 4151, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 4151, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 4156, "date" : "2018-01-01", "solver" : "SS2018", "hardware" : null, "time" : null, "certificate" : "no" }]
     },
 {
@@ -2601,7 +2601,7 @@
         "upper_bound" : 4360,
         "lb_data" : [{ "value" : 4277, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 4360, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 4360, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 4361, "date" : "2022-01-01", "solver" : "CS2022", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2628,7 +2628,7 @@
         "upper_bound" : 4934,
         "lb_data" : [{ "value" : 4755, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 4934, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 4934, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 4939, "date" : "2022-01-01", "solver" : "XLGG2022", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2643,7 +2643,7 @@
         "upper_bound" : 4643,
         "lb_data" : [{ "value" : 4462, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 4643, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 4643, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 4647, "date" : "2022-01-01", "solver" : "XLGG2022", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2694,7 +2694,7 @@
         "upper_bound" : 5167,
         "lb_data" : [{ "value" : 5038, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 5167, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 5167, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 5169, "date" : "2024-01-01", "solver" : "LHW2024", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2709,7 +2709,7 @@
         "upper_bound" : 5244,
         "lb_data" : [{ "value" : 5176, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 5244, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 5244, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 5247, "date" : "2024-01-01", "solver" : "LHW2024", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2724,7 +2724,7 @@
         "upper_bound" : 5296,
         "lb_data" : [{ "value" : 5245, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 5296, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 5296, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 5312, "date" : "2024-01-01", "solver" : "LHW2024", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2739,7 +2739,7 @@
         "upper_bound" : 5225,
         "lb_data" : [{ "value" : 5155, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 5225, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 5225, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 5226, "date" : "2022-01-01", "solver" : "CS2022", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2754,7 +2754,7 @@
         "upper_bound" : 5168,
         "lb_data" : [{ "value" : 5122, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 5168, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 5168, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 5173, "date" : "2024-01-01", "solver" : "LHW2024", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2769,7 +2769,7 @@
         "upper_bound" : 5700,
         "lb_data" : [{ "value" : 5526, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 5700, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 5700, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 5701, "date" : "2022-01-01", "solver" : "CS2022", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2784,7 +2784,7 @@
         "upper_bound" : 5774,
         "lb_data" : [{ "value" : 5661, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 5774, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 5774, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 5779, "date" : "2018-01-01", "solver" : "SS2018", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2799,7 +2799,7 @@
         "upper_bound" : 5758,
         "lb_data" : [{ "value" : 5513, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 5758, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 5758, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 5763, "date" : "2022-01-01", "solver" : "CS2022", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2814,7 +2814,7 @@
         "upper_bound" : 5687,
         "lb_data" : [{ "value" : 5511, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 5687, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 5687, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 5688, "date" : "2022-01-01", "solver" : "CS2022", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2841,7 +2841,7 @@
         "upper_bound" : 6206,
         "lb_data" : [{ "value" : 6129, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 6206, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 6206, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 6207, "date" : "2022-01-01", "solver" : "CS2022", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2856,7 +2856,7 @@
         "upper_bound" : 6448,
         "lb_data" : [{ "value" : 6434, "date" : "2025-01-01", "solver" : "CdGKGC2025", "hardware" : null, "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 6448, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 6448, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 6463, "date" : "2018-01-01", "solver" : "SS2018", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2871,7 +2871,7 @@
         "upper_bound" : 6132,
         "lb_data" : [{ "value" : 6107, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 6132, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 6132, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 6136, "date" : "2022-01-01", "solver" : "CS2022", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2885,7 +2885,7 @@
         "lower_bound" : 6168,
         "upper_bound" : 6196,
         "lb_data" : [{ "value" : 6168, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 6196, "date" : "2017-01-01", "solver" : "GTA2017", "hardware" : null, "time" : null, "certificate" : "no" }]
+        "ub_data" : [{ "value" : 6196, "date" : "2017-01-01", "solver" : "SS2018", "hardware" : null, "time" : null, "certificate" : "no" }]
     },
 {
         "instance" : "dmu75",
@@ -2898,7 +2898,7 @@
         "upper_bound" : 6187,
         "lb_data" : [{ "value" : 6123, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 6187, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 6187, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 6189, "date" : "2018-01-01", "solver" : "SS2018", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2912,7 +2912,7 @@
         "lower_bound" : 6479,
         "upper_bound" : 6718,
         "lb_data" : [{ "value" : 6479, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 6718, "date" : "2019-01-01", "solver" : "PMAEDC2019", "hardware" : null, "time" : null, "certificate" : "no" }]
+        "ub_data" : [{ "value" : 6718, "date" : "2019-01-01", "solver" : "CS2022", "hardware" : null, "time" : null, "certificate" : "no" }]
     },
 {
         "instance" : "dmu77",
@@ -2925,7 +2925,7 @@
         "upper_bound" : 6739,
         "lb_data" : [{ "value" : 6520, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 6739, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 6739, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 6747, "date" : "2022-01-01", "solver" : "CS2022", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2940,7 +2940,7 @@
         "upper_bound" : 6744,
         "lb_data" : [{ "value" : 6643, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 6744, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 6744, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 6755, "date" : "2022-01-01", "solver" : "CS2022", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2955,7 +2955,7 @@
         "upper_bound" : 6899,
         "lb_data" : [{ "value" : 6720, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 6899, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 6899, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 6910, "date" : "2022-01-01", "solver" : "CS2022", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
@@ -2970,7 +2970,7 @@
         "upper_bound" : 6633,
         "lb_data" : [{ "value" : 6460, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
-            { "value" : 6633, "date" : "2026-06-22", "solver" : "HUSTLLG2026", "hardware" : null, "time" : null, "certificate" : "yes" },
+            { "value" : 6633, "date" : "2026-06-22", "solver" : "QXL2026", "hardware" : null, "time" : null, "certificate" : "yes" },
             { "value" : 6634, "date" : "2022-01-01", "solver" : "CS2022", "hardware" : null, "time" : null, "certificate" : "no" }
         ]
     },
