@@ -8,14 +8,6 @@ timeLimit = 600;
 hardware = "Intel 11th Gen Core i7-1185G7";
 
 instances = {
-"abz5", "abz6", "abz7", "abz8", "abz9",
-
-"bel00", "bel01", "bel02", "bel03", "bel04", "bel05", "bel06", "bel07", "bel08", "bel09", "bel10", "bel11", "bel12", "bel13", "bel14", "bel15", "bel16", "bel17", "bel18", "bel19",
-
-"dmu01", "dmu02", "dmu03", "dmu04", "dmu05", "dmu06", "dmu07", "dmu08", "dmu09", "dmu10", "dmu11", "dmu12", "dmu13", "dmu14", "dmu15", "dmu16", "dmu17", "dmu18", "dmu19", "dmu20", 
-"dmu21", "dmu22", "dmu23", "dmu24", "dmu25", "dmu26", "dmu27", "dmu28", "dmu29", "dmu30", "dmu31", "dmu32", "dmu33", "dmu34", "dmu35", "dmu36", "dmu37", "dmu38", "dmu39", "dmu40",
-"dmu41", "dmu42", "dmu43", "dmu44", "dmu45", "dmu46", "dmu47", "dmu48", "dmu49", "dmu50", "dmu51", "dmu52", "dmu53", "dmu54", "dmu55", "dmu56", "dmu57", "dmu58", "dmu59", "dmu60",
-"dmu61", "dmu62", "dmu63", "dmu64", "dmu65", "dmu66", "dmu67", "dmu68", "dmu69", "dmu70", "dmu71", "dmu72", "dmu73", "dmu74", "dmu75", "dmu76", "dmu77", "dmu78", "dmu79", "dmu80",
 
 "ft06", "ft10", "ft20",
 
@@ -24,15 +16,33 @@ instances = {
 
 "orb01", "orb02", "orb03", "orb04", "orb05", "orb06", "orb07", "orb08", "orb09", "orb10", 
 
+"abz5", "abz6", "abz7", "abz8", "abz9",
+
+"yn1", "yn2", "yn3", "yn4",
+
 "swv01", "swv02", "swv03", "swv04", "swv05", "swv06", "swv07", "swv08", "swv09", "swv10", 
 "swv11", "swv12", "swv13", "swv14", "swv15", "swv16", "swv17", "swv18", "swv19", "swv20",
+
+"dmu01", "dmu02", "dmu03", "dmu04", "dmu05", "dmu06", "dmu07", "dmu08", "dmu09", "dmu10", "dmu11", "dmu12", "dmu13", "dmu14", "dmu15", "dmu16", "dmu17", "dmu18", "dmu19", "dmu20", 
+"dmu21", "dmu22", "dmu23", "dmu24", "dmu25", "dmu26", "dmu27", "dmu28", "dmu29", "dmu30", "dmu31", "dmu32", "dmu33", "dmu34", "dmu35", "dmu36", "dmu37", "dmu38", "dmu39", "dmu40",
+"dmu41", "dmu42", "dmu43", "dmu44", "dmu45", "dmu46", "dmu47", "dmu48", "dmu49", "dmu50", "dmu51", "dmu52", "dmu53", "dmu54", "dmu55", "dmu56", "dmu57", "dmu58", "dmu59", "dmu60",
+"dmu61", "dmu62", "dmu63", "dmu64", "dmu65", "dmu66", "dmu67", "dmu68", "dmu69", "dmu70", "dmu71", "dmu72", "dmu73", "dmu74", "dmu75", "dmu76", "dmu77", "dmu78", "dmu79", "dmu80",
 
 "ta01js", "ta02js", "ta03js", "ta04js", "ta05js", "ta06js", "ta07js", "ta08js", "ta09js", "ta10js", "ta11js", "ta12js", "ta13js", "ta14js", "ta15js", "ta16js", "ta17js", "ta18js", "ta19js", "ta20js",
 "ta21js", "ta22js", "ta23js", "ta24js", "ta25js", "ta26js", "ta27js", "ta28js", "ta29js", "ta30js", "ta31js", "ta32js", "ta33js", "ta34js", "ta35js", "ta36js", "ta37js", "ta38js", "ta39js", "ta40js",
 "ta41js", "ta42js", "ta43js", "ta44js", "ta45js", "ta46js", "ta47js", "ta48js", "ta49js", "ta50js", "ta51js", "ta52js", "ta53js", "ta54js", "ta55js", "ta56js", "ta57js", "ta58js", "ta59js", "ta60js",
 "ta61js", "ta62js", "ta63js", "ta64js", "ta65js", "ta66js", "ta67js", "ta68js", "ta69js", "ta70js", "ta71js", "ta72js", "ta73js", "ta74js", "ta75js", "ta76js", "ta77js", "ta78js", "ta79js", "ta80js",
 
-"yn1", "yn2", "yn3", "yn4",
+"bel00", "bel01", "bel02", "bel03", "bel04", "bel05", "bel06", "bel07", "bel08", "bel09", "bel10", "bel11", "bel12", "bel13", "bel14", "bel15", "bel16", "bel17", "bel18", "bel19",
+
+"dct-long-100-10000-1", "dct-long-100-10000-2", "dct-long-100-10000-3",
+"dct-long-100-100000-1", "dct-long-100-100000-2", "dct-long-100-100000-3",
+"dct-long-1000-10000-1", "dct-long-1000-10000-2", "dct-long-1000-10000-3",
+"dct-long-1000-100000-1", "dct-long-1000-100000-2", "dct-long-1000-100000-3",
+"dct-short-100-10000-1", "dct-short-100-10000-2", "dct-short-100-10000-3",
+"dct-short-100-100000-1", "dct-short-100-100000-2", "dct-short-100-100000-3",
+"dct-short-1000-10000-1", "dct-short-1000-10000-2", "dct-short-1000-10000-3",
+"dct-short-1000-100000-1", "dct-short-1000-100000-2", "dct-short-1000-100000-3",
 
 "tai_10_10_1", "tai_10_10_2", "tai_10_10_3", "tai_10_10_4", "tai_10_10_5", "tai_10_10_6", "tai_10_10_7", "tai_10_10_8", "tai_10_10_9", "tai_10_10_10",
 "tai_10_100_1", "tai_10_100_2", "tai_10_100_3", "tai_10_100_4", "tai_10_100_5", "tai_10_100_6", "tai_10_100_7", "tai_10_100_8", "tai_10_100_9", "tai_10_100_10",

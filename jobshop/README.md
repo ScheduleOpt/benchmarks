@@ -490,15 +490,15 @@ The best known solutions are now collected in a [json](https://github.com/Schedu
             "value" : 6460, 
             "date" : "2026-06-01", 
             "solver" : "OptalCP", 
-            "machine" : "i7-1185G7 @ 3.00GHz", 
-            "time" : null, 
-            "certificate" : null 
+            "hardware" : "Intel 11th Gen Core i7-1185G7", 
+            "time" : 10, 
+            "certificate" : "no" 
             }],
         "ub_data" : [{ 
             "value" : 6634, 
             "date" : "2022-01-01", 
             "solver" : "CS2022", 
-            "machine" : null, 
+            "hardware" : null, 
             "time" : null, 
             "certificate" : null 
         }]
