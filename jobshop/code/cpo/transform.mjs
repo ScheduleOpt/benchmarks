@@ -14,6 +14,7 @@ const filter = { // refers to info in bks record
 
 const json_to_dat = async () => {
     const files = fs.readdirSync (directory, { recursive : true })
+    .filter(v => v.endsWith("json"))
     .filter(v => {
             const r = bks.find(t => `${t.instance}.json` == v)
             let keep = true

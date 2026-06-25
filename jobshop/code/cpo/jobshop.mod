@@ -6,7 +6,7 @@
 
 using CP;
 
-execute { cp.param.logPeriod = 100000000; }
+execute { cp.param.logPeriod = 100000000; cp.param.OptimalityTolerance = 0; cp.param.RelativeOptimalityTolerance = 0; }
 
 tuple top { key int job; key int rank; int machine; int duration; }
 
