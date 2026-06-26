@@ -10,7 +10,8 @@ permalink: /jsplib/
 
 ## The jobshop scheduling problem benchmark library
 
-JSPLib is a comprehensive benchmark library for the Job Shop Scheduling Problem (JSP). It serves as a centralized repository for standard instances (`ft`, `la`, `abz`, `orb`, `yn`, `swv`, `ta`, `dmu` and `tai`), industrial instances (`dct` and `bel`) and tracks the current State-of-the-Art (SOTA) by maintaining verified Best Known Solutions (BKS).
+JSPLib is a comprehensive benchmark library for the Job Shop Scheduling Problem (JSP). It serves as a centralized repository for both classic synthetic instances (`ft`, `la`, `abz`, `orb`, `yn`, `swv`, `ta`, `dmu`, and `tai`) and more industrial instances (`dct` and `bel`). 
+JSPLib tracks the engines State-of-the-Art (SOTA) through a standardized 10-minute benchmark of reference solvers (CPO, CP-SAT, OptalCP), comparing their optimality gaps and deviations from best known bounds across all instance families. In addition, JSPLib maintains an archive verified Best Known Solutions (BKS).
 
 The data and source code can be found in the [Github repository](https://github.com/ScheduleOpt/benchmarks)
 This document is visible as a README.md in the Github folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib). Instances are now available in [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/json) or [text](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/text) formats. A json file of [best known solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) is also provided.
@@ -23,22 +24,14 @@ This document is visible as a README.md in the Github folder [jobshop](https://g
     - [Similar work](#similar-work)
     - [Formats](#formats)
     - [Publications](#publications-instances)
-- [Jobshop and variants](#jobshop-variants)
-    - [Jobshop](#jobshop)
-    - [No buffer jobshop (blocking)](#no-buffer-jobshop-blocking-jobshop)
-    - [No wait jobshop](#no-wait-jobshop)
-    - [Cumulative jobshop](#cumulative-jobshop)
-    - [Jobshop with operators](#jobshop-with-operators---workers)
-    - [Jobshop with arbitrary precedences](#jobshop-with-arbitrary-precedences)
-    - [Jobshop with setup times](#jobshop-with-sequence-dependent-setup-times)
-    - [Flexible jobshop](#flexible-jobshop)
-- [JSPLib solutions - The State-Of-The-Art](#jsplib-solutions---the-state-of-the-art)
+- [Standardized benchmark of engines](#standardized-benchmark-of-engines)
+    - [A short history of the reference engines](#a-short-history-of-the-reference-engines)
+    - [Incorrect best-known solutions used in publications and better metrics](#incorrect-best-known-solutions-used-in-publications-and-better-metrics)
+    - [Comparison of reference solvers](#comparison-of-reference-solvers)
+- [Best known solutions](#jsplib-solutions---the-state-of-the-art)
     - [JSON bks format](#best-known-solutions-json-format)
     - [Best known solutions](#best-known-solutions---jsplib)
     - [Publications](#publications-best-known-solutions)
-- [Comparison of engines and heuristics](#comparison-of-engines-and-heuristics)
-    - [Incorrect best-known solutions used in publications](#incorrect-best-known-solutions-used-in-publications)
-    - [Comparison of reference solvers](#comparison-of-reference-solvers)
 
 <br/>
 
@@ -131,7 +124,7 @@ Our work was inspired by the ***outstanding*** work of Naderi, Ruiz and Roshanae
 
 #### Jelke J. van Hoorn (2017)
 
-Jelke J. van Hoorn collected and verified in 2017 all available upper and lower bounds for jobshop problems and published them in *The Current state of bounds on benchmark instances of the job-shop scheduling problem*. The online [Appendix](https://static-content.springer.com/esm/art%3A10.1007%2Fs10951-017-0547-8/MediaObjects/10951_2017_547_MOESM_ESM.pdf) contains the data.
+Jelke J. van Hoorn collected and verified in 2017 all available upper and lower bounds for jobshop problems and published them in *The Current state of bounds on benchmark instances of the job-shop scheduling problem. J Sched 21, 127–128 (2018)*. The online [Appendix](https://static-content.springer.com/esm/art%3A10.1007%2Fs10951-017-0547-8/MediaObjects/10951_2017_547_MOESM_ESM.pdf) contains the data.
 
 #### Oleg V. Shylo (2014 - present)
 
@@ -308,169 +301,209 @@ The instances come from the following publications
 <br/>
 
 
-## Jobshop variants
+## Standardized benchmark of engines
 
-Many variants of the jobshop problem can be solved with the same data
-or simple addition of parameters
+We track the State-Of-The-Art (SOTA) of optimization engines for scheduling with a standardized 10 minutes benchmark of the reference engines
 
-### Jobshop
-
-The classical jobshop problem has 2 constraints
-
-- intrajob precedences 
-
-$$\forall j \in \mathrm{jobs}, \forall r \in \mathrm{ranks} \quad \mathrm{start}_j^r + \mathrm{Duration}_j^r \leq \mathrm{start}_j^{r+1}$$
-
-- no overlap per machine 
-
-$$
-\forall m \in \mathrm{machines}, \forall j_1,j_2 \in \mathrm{jobs} \quad
-\left( \mathrm{start}\_{j_1}^m + \mathrm{Duration}\_{j_1}^m \leq \mathrm{start}\_{j_2}^m \right) \vee \left( \mathrm{start}\_{j_2}^m + \mathrm{Duration}\_{j_2}^m \leq \mathrm{start}\_{j_1}^m \right )
-$$
-
-For commodity the later constraint can be written
-
-$$\forall m \in \mathrm{machines} \quad \mathrm{noOverlap} \ \lbrace \ [ \mathrm{start}_j^m \dots \ \mathrm{start}_j^m + \mathrm{Duration}_j^m ] \mid j \in \mathrm{jobs} \ \rbrace$$
+The engines that are benchmarked are
+- **IBM ILOG CP Optimizer** : representative of the CP-scheduling family of engines
+- **Google CP-SAT** : representative of the lazy clause generation family of engines
+- **OptalCP** : representative of the CP-scheduling family of engines
 
 <br/>
 
-### No buffer jobshop (blocking jobshop)
+### A short history of the reference engines
 
-In the classic jobshop there is implicitly a buffer area in front of each machine where tasks can wait to be processed. In the non-buffer jobshop, also called blocking jobshop this area doesn't exist, as a result a job `(j,r)`processed on machine `m` blocks this machine until `(j,r+1)` starts being processed on the next machine.
+#### IBM CP Optimizer (2007 - present)
 
+IBM ILOG CP Optimizer is a descendant of ILOG Solver (architectured over the years by Jean-François Puget, Jean-Charles Régin and later Laurent Perron) and ILOG Scheduler (architectured by Claude Le Pape, then Philippe Laborie). CP Optimizer (led by Paul Shaw, Laurent Perron and Philippe Laborie) merged the general CP engine and the specific scheduling add-on in a single engine, promoted the model-and-run approach and pioneered a new scheduling language (optional intervals, `noOverlap`, cumulative functions, etc.) that has become an industry standard.
 
-From this problem we introduce a new variable $\mathrm{end}_j^m$
+From a technical perspective CP Optimizer interleaves the following search methods
+- LNS (Shaw and al.) : tree-search based local search
+- Iterative deepening (designed by Philppe Laborie) : a quick diving heuristic for "simple" scheduling problems that often provides fast and good initial solutions
+- Failure Directed Search (designed by Petr Vilim) : a generalization of the fail-first principle that reduces the search space by eliminating unlikely assignments to succeed
+- Genetic algorithms on top of the scheduling engine (not on by default)
 
-- the tasks are variable length with a minimum length of $\mathrm{Duration}_j^m$
+Because CP Optimizer was designed in a time where multi-core computers weren't common, the engine alternates the different strategies on the same core. And replicates itself over various cores with different parameters if more cores are available
 
-$$\forall j \in \mathrm{jobs}, \forall r \in \mathrm{machines} \quad \mathrm{start}_j^m + \mathrm{Duration}_j^m \leq \mathrm{end}_j^m$$
+The main propagation algorithms in CP optimizer are
+- Time tabling and edge-finding (Claude LePape, Wim Nuijten, Philippe Baptiste) later improved by Petr Vilim 
+- Precedence-energy (Philippe Laborie)
 
-- for each job, the task of rank $r+1$ starts as soon as the task of rank $r$ ends
+References
+- [20+ years of scheduling with constraints at IBM/ILOG](https://link.springer.com/content/pdf/10.1007/s10601-018-9281-x.pdf) (Philippe Laborie, Jérôme Rogerie, Paul Shaw and Petr Vilim - 2018)
+- [Reasoning with Conditional Time-intervals](https://cdn.aaai.org/FLAIRS/2008/FLAIRS08-126.pdf) (Philippe Laborie and Jérôme Rogerie - 2008)
+- [Reasoning with Conditional Time-intervals Part II](https://cdn.aaai.org/ocs/60/60-2374-1-PB.pdf) (Phillipe Laborie, Jérôme Rogerie, Paul Shaw and Petr Vilim - 2009)
+- [Failure-Directed Search for Constraint-Based Scheduling](https://link.springer.com/chapter/10.1007/978-3-319-18008-3_30) (Petr Vilim, Philippe Laborie and Paul Shaw - 2015)
+- [Introduction to CP Optimizer](https://cp2019.a4cp.org/PDFs/P-Laborie.pdf) (Philippe Laborie - 2019)
 
-$$\forall j \in \mathrm{jobs}, \forall r \in \mathrm{ranks} \quad \mathrm{end}_j^r = \mathrm{start}_j^{r+1}$$
+#### Google ORTools CP-SAT (2009 - present)
 
-- no overlap per machine 
+CP-SAT is an open-source lazy clause generation engine augmented with an LP, MIP-style cuts and CP-style propagators designed by Laurent Perron, Frédéric Didier and Steven Gay. CP-SAT includes
+- LP-based lower bounds + MIP style cuts
+- CP-style propagation algorithms
+- SAT-style conflict analysis
+- synchronization of MIP and CP style reasonings
+- LNS : tree-based local search
+- LS with infeasible moves
 
-$$
-\forall m \in \mathrm{machines}, \forall j_1,j_2 \in \mathrm{jobs}\quad \left( \mathrm{end}\_{j_1}^m \leq \mathrm{start}\_{j_2}^m \right) \vee \left( \mathrm{end}\_{j_2}^m \leq \mathrm{start}\_{j_1}^m \right )
-$$
+CP-SAT follows the work done on a more traditional CP + LS engine by Laurent Perron and Vincent Furnon, focusing more on VRP problems.
 
-or
+CP-SAT has won every year the MiniZinc competition since 2013
 
-$$\forall m \in \mathrm{machines} \quad \mathrm{noOverlap} \ \lbrace \ [ \mathrm{start}_j^m \dots \ \mathrm{end}_j^m ] \mid j \in \mathrm{jobs} \ \rbrace$$
-
-<br/>
-
-The extra variables $\mathrm{end}$ can be pre-processed out of the equations
-
-<br/>
-
-### No-wait jobshop
-
-In the no-wait jobshop variant, once the processing of a job has started, it has to go through all machines without interruption.
-
-
-The equations are reminiscent of the blocking jobshop but without the variable length activities
-
-- for each job, the task of rank $r+1$ starts as soon as the task of rank $r$ ends
-
-$$\forall j \in \mathrm{jobs}, \forall r \in \mathrm{ranks} \quad \mathrm{end}_j^r = \mathrm{start}_j^{r+1}$$
-
-- no overlap per machine 
-
-$$
-\forall m \in \mathrm{machines}, \forall j_1,j_2 \in \mathrm{jobs}\quad \left( \mathrm{end}\_{j_1}^m \leq \mathrm{start}\_{j_2}^m \right) \vee \left( \mathrm{end}\_{j_2}^m \leq \mathrm{start}\_{j_1}^m \right )
-$$
-
-or
-
-$$\forall m \in \mathrm{machines} \quad \mathrm{noOverlap} \ \lbrace \ [ \mathrm{start}_j^m \dots \ \mathrm{end}_j^m ] \mid j \in \mathrm{jobs} \ \rbrace$$
-
-<br/>
-
-### Cumulative jobshop
-
-In the cumulative jobshop, the capacity of the capacity of the machines is not unitary anymore. In other words there is a limit $C_m$ on the number of tasks that can be simultaneously processed by machine $m$
-
-The constraints of the problem are
-
-- intrajob precedences 
-
-$$\forall j \in \mathrm{jobs}, \forall r \in \mathrm{ranks} \quad \mathrm{start}_j^r + \mathrm{Duration}_j^r \leq \mathrm{start}_j^{r+1}$$
-
-- capacity per machine 
-
-$$\forall m \in \mathrm{machines}, \forall t \in \mathrm{time} \quad \sum_j \left( \mathrm{start}^m_j \leq t \lt \mathrm{start}^m_j + \mathrm{Duration}^m_j \right) \leq C_m$$
-
-It is advisable to avoid having an unlimited number of equations, in this case
-because of the explicit dependency on time, even if it just for notation. We therefore introduce the functional notation for cumulative constraints
-
-$$
-\forall m \in \mathrm{machines}\quad \mathrm{cumul}_m(t) = \sum_j \mathrm{step}(\mathrm{start}_j^m) - \mathrm{step}(\mathrm{start}_j^m + \mathrm{Duration}_j^m)
-$$
-
-Here $\mathrm{step}(t)$ is the function that has value 1 at time $t$ and 0 otherwise, as a result $\mathrm{cumul}$ is a function of time. Each configuration of $\mathrm{start}_j^m$ values defines a different cumulative function.
+References
+- [CP-SAT at scheduling seminar](https://schedulingseminar.com/presentations/SchedulingSeminar_LaurentPerron.pdf)
 
 
-The constraints of the problem become
+#### OptalCP (2021 - present)
 
-- intrajob precedences 
+OptalCP was architectured by Petr Vilim, Nicolas Bonifas and Diego Olivier Fernandez Pons (initially with input from Philippe Laborie). Compared to CPO the parallelism is done with one strategy per core instead of interleaving. The strategies used are
+- LNS : tree-search based local search
+- FDS : generalizes first-fail principle
+- FDSDual : generalizes destructive lower bounds
 
-$$\forall j \in \mathrm{jobs}, \forall r \in \mathrm{ranks} \quad \mathrm{start}_j^r + \mathrm{Duration}_j^r \leq \mathrm{start}_j^{r+1}$$
+OptalCP continues the legacy of CP Optimizer (engine style, modeling language)
 
-- capacity per machine 
-
-$$
-\forall m \in \mathrm{machines}\quad \sum_j \mathrm{step}(\mathrm{start}_j^m) - \mathrm{step}(\mathrm{start}_j^m + \mathrm{Duration}_j^m) \leq C_m
-$$
+References
+- [OptalCP at scheduling seminar](https://schedulingseminar.com/presentations/schedulingseminar_petrvilim_vilemheinz.pdf)
 
 <br/>
 
-### Jobshop with operators - workers
-
-In the jobshop with operators, workers have to be assigned to the machines while the tasks are being performed. 
-- when the operator assignment can be interrupted (preemptive operators) the problem becomes a jobshop with maximum number of simultaneous jobs.
-- when the operator assignment cannot be interrupted (non-preemptive operators) the operators need to be assigned to jobs individually and they cannot be assigned to simultaneous jobs
-
-
-#### Jobshop with preemptive operators 
-
-The constraints of the problem become
-
-- intrajob precedences 
-
-$$\forall j \in \mathrm{jobs}, \forall r \in \mathrm{ranks} \quad \mathrm{start}_j^r + \mathrm{Duration}_j^r \leq \mathrm{start}_j^{r+1}$$
-
-- no overlap per machine 
-
-$$\forall m \in \mathrm{machines} \quad \mathrm{noOverlap} \ \lbrace \ [ \mathrm{start}_j^m \dots \ \mathrm{start}_j^m + \mathrm{Duration}_j^m ] \mid j \in \mathrm{jobs} \ \rbrace$$
-
-- maximum number of simultaneous tasks
-
-$$\sum_m \sum_j \mathrm{step}(\mathrm{start}_j^m) - \mathrm{step}(\mathrm{start}_j^m + \mathrm{Duration}_j^m) \leq \mathrm{Op}$$
-
-
-### Jobshop with arbitrary precedences
-
-Instead of having precedences only within the tasks of a job, there is a more general precedence graph
-
-![Precedence graph](./img/js_arbitrary_precedences.png)
-
-### Jobshop with sequence dependent setup times
-
-There are setup times in the machines to switch from one job to another
-
-Notice that this variant is only interesting if the setup times are sequence-dependent. Otherwise it is equivalent to increase each task by the length of the setup time and to solve an usual jobshop
-
-### Flexible jobshop
-
-The tasks of a job can be processed by any machine in a predefined group of similar machines.
-
-***Please refer to the [flexible-jobshop section](https://fjsplib.org) of this benchmark for more information***
+>
+> If your name appears in this section and you notice an     error contact me
+>
 
 <br/>
 
-## JSPLib solutions - The State-Of-The-Art
+### Incorrect best-known solutions used in publications and better metrics
+
+> Scheduling problems have received considerable attention over the last decade. Several sets of benchmark instances are available for comparing the quality of the different methods developed. A large number of publications achieve either the current best known or improved bounds for a subset of these instances. It is unfortunate, however, that several publications erroneously reference the current state of these bounds. 
+>
+> Jelke J. van Hoorn, The Current state of bounds on benchmark instances of the job-shop scheduling problem (2017)
+
+While the effort of van Hoorn is commendable, having accurate best-known solutions does not solve the problem of poorly reported results in publications. Announcing a best-known solution while having little scientific interest in itself (e.g. a random solution) has sadly become a central "contribution" of papers.
+
+By giving to much importance to best-known solutions we miss what really matters:
+- An approach that finds a best known solution for a single problem but is unable to provide good results for other problems is totally unusable in practice (e.g. a random solution)
+- An approach that systematically gets close to the best known solutions in a short time may not improve any best known bound but be of significant practical interest
+
+
+We therefore adopt the following metrics instead
+- Average deviation with respect to best-known lower-bound 
+$$UB_{deviation} = \frac{UB - UB_{best}}{UB_{best}}$$
+- Average deviation with respect to best-known upper-bound
+$$LB_{deviation} = \frac{UL_{best} - LB}{LB_{best}}$$
+- Average gap
+$$GAP = \frac{UB - LB}{UB}$$
+
+***The MIP community uses geometric averages instead of arithmetic averages to correct against methods that solve extremely well a single instance and perform poorly on others. We may adopt geometric averages in the future, for the moment we use arithmetic ones***
+
+<br/>
+
+### Comparison of reference solvers
+
+Comparisons done on an Windows PC with an i7 4-core 3GHz 32GB ram in 600 seconds
+- **OptalCP** Academic Version 2026.4.0 
+    - with maximum propagation instead of default, gap tolerance = 0 and some other parameter changes
+    - we may benchmark with default parameters later
+- **CP-SAT** V9.15.6755 with default configuration
+- **CPO** 22.1.1.0
+    - with gap tolerance = T0
+    
+    he raw data is in the [solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) folder
+
+We recommend to run your own benchmarks on your own machines. All required [code](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/code) is provided with HOWTO instructions in each README file.
+
+
+Important caveats
+- Engines have **relative** and **absolute optimality tolerances** (CPO, OptalCP) which can lead to reporting sub-optimal solutions as optimal (for the tolerance). For this test the tolerances have been set to zero
+- Engines are very **non-deterministic** (results between two runs of the same engine on the same machine differ significantly) due to parallelism. As a result it makes no sense to consider very accurate values for average deviations or gap.
+- Engines have different **bottlenecks** (CPU, memory) that are due to their internal architecture and trade-offs made by their designers. An engine doesn't behave in the same way with 2, 4, 8, 16, 32 or 64 cores, doesn't behave the same in machines with fast / slow memory, etc.
+
+<br/>
+
+#### Per types of instances
+
+The types are defined as follows
+- *outdated* : `ft`, `la`, `orb`
+- *classic* : `abz`, `swv`, `yn`, `dmu`, `ta`
+- *challenge* : classic + still open
+- *large* : `tai`
+- *reentrant*: `bel`, `dct`
+- *open* : all instances still open
+
+<br/>
+
+Averages are made on instances solved. Outlier solutions returned by the engine (e.g. a schedule of makespan equal to the sum of processing times - all tasks scheduled one at the time) have been manually removed as they distort the arithmetic average, instead the engine is considered as having not solved. We may formalize this in the future (e.g. only solutions better than a left-to-right greedy are accepted).
+
+<table>
+<tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb dev</th><th>ub dev</th><th>gap</th></tr>
+<tr><td rowspan="3">all</td><td>CPO</td><td>376</td><td>376</td><td>144</td><td>38%</td><td>5%</td><td>3%</td><td>9%</td></tr>
+<tr><td>CP-SAT</td><td>376</td><td style="color:red">350</td><td>165</td><td>44%</td><td>7%</td><td>3%</td><td>5%</td></tr>
+<tr><td>OptalCP</td><td>376</td><td>376</td><td>223</td><td>59%</td><td>0%</td><td>1%</td><td>3%</td></tr>
+<tr><td rowspan="3">outdated</td><td>CPO</td><td>53</td><td>53</td><td>51</td><td>96%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>CP-SAT</td><td>53</td><td>53</td><td>52</td><td>98%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>OptalCP</td><td>53</td><td>53</td><td>53</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td rowspan="3">classic</td><td>CPO</td><td>189</td><td>189</td><td>65</td><td>34%</td><td>2%</td><td>2%</td><td>5%</td></tr>
+<tr><td>CP-SAT</td><td>189</td><td>189</td><td>41</td><td>22%</td><td>1%</td><td>3%</td><td>5%</td></tr>
+<tr><td>OptalCP</td><td>189</td><td>189</td><td>82</td><td>43%</td><td>1%</td><td>1%</td><td>3%</td></tr>
+<tr><td rowspan="3">challenge</td><td>CPO</td><td>60</td><td>60</td><td>0</td><td>0%</td><td>3%</td><td>6%</td><td>10%</td></tr>
+<tr><td>CP-SAT</td><td>60</td><td>60</td><td>0</td><td>0%</td><td>2%</td><td>7%</td><td>10%</td></tr>
+<tr><td>OptalCP</td><td>60</td><td>60</td><td>0</td><td>0%</td><td>1%</td><td>3%</td><td>7%</td></tr>
+<tr><td rowspan="3">large</td><td>CPO</td><td>90</td><td>90</td><td>27</td><td>30%</td><td>10%</td><td>4%</td><td>19%</td></tr>
+<tr><td>CP-SAT</td><td>90</td><td>70</td><td>46</td><td>51%</td><td>25%</td><td>3%</td><td>10%</td></tr>
+<tr><td>OptalCP</td><td>90</td><td>90</td><td>50</td><td>56%</td><td>0%</td><td>1%</td><td>7%</td></tr>
+<tr><td rowspan="3">reentrant</td><td>CPO</td><td>44</td><td>44</td><td>1</td><td>2%</td><td>12%</td><td>11%</td><td>19%</td></tr>
+<tr><td>CP-SAT</td><td>44</td><td style="color:red">38</td><td>26</td><td>59%</td><td>3%</td><td>9%</td><td>6%</td></tr>
+<tr><td>OptalCP</td><td>44</td><td>44</td><td>38</td><td>86%</td><td>0%</td><td>5%</td><td>3%</td></tr>
+<tr><td rowspan="3">open</td><td>CPO</td><td>90</td><td>90</td><td>0</td><td>0%</td><td>2%</td><td>7%</td><td>16%</td></tr>
+<tr><td>CP-SAT</td><td>90</td><td>80</td><td>0</td><td>0%</td><td>12%</td><td>8%</td><td>12%</td></tr>
+<tr><td>OptalCP</td><td>90</td><td>90</td><td>0</td><td>0%</td><td>1%</td><td>3%</td><td>12%</td></tr>
+</table>
+
+#### Per family
+
+<table>
+<tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb dev</th><th>ub dev</th><th>gap</th></tr>
+<tr><td rowspan="3">ft</td><td>CPO</td><td>3</td><td>3</td><td>3</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>CP-SAT</td><td>3</td><td>3</td><td>3</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>OptalCP</td><td>3</td><td>3</td><td>3</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td rowspan="3">la</td><td>CPO</td><td>40</td><td>40</td><td>38</td><td>95%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>CP-SAT</td><td>40</td><td>40</td><td>39</td><td>98%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>OptalCP</td><td>40</td><td>40</td><td>40</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td rowspan="3">orb</td><td>CPO</td><td>10</td><td>10</td><td>10</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>CP-SAT</td><td>10</td><td>10</td><td>10</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>OptalCP</td><td>10</td><td>10</td><td>10</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td rowspan="3">abz</td><td>CPO</td><td>5</td><td>5</td><td>2</td><td>40%</td><td>3%</td><td>1%</td><td>4%</td></tr>
+<tr><td>CP-SAT</td><td>5</td><td>5</td><td>2</td><td>40%</td><td>2%</td><td>1%</td><td>3%</td></tr>
+<tr><td>OptalCP</td><td>5</td><td>5</td><td>3</td><td>60%</td><td>1%</td><td>0%</td><td>1%</td></tr>
+<tr><td rowspan="3">swv</td><td>CPO</td><td>20</td><td>20</td><td>7</td><td>35%</td><td>2%</td><td>2%</td><td>4%</td></tr>
+<tr><td>CP-SAT</td><td>20</td><td>20</td><td>6</td><td>30%</td><td>1%</td><td>2%</td><td>4%</td></tr>
+<tr><td>OptalCP</td><td>20</td><td>20</td><td>10</td><td>50%</td><td>1%</td><td>1%</td><td>2%</td></tr>
+<tr><td rowspan="3">yn</td><td>CPO</td><td>4</td><td>4</td><td>0</td><td>0%</td><td>10%</td><td>2%</td><td>11%</td></tr>
+<tr><td>CP-SAT</td><td>4</td><td>4</td><td>0</td><td>0%</td><td>6%</td><td>3%</td><td>8%</td></tr>
+<tr><td>OptalCP</td><td>4</td><td>4</td><td>0</td><td>0%</td><td>5%</td><td>1%</td><td>6%</td></tr>
+<tr><td rowspan="3">dmu</td><td>CPO</td><td>80</td><td>80</td><td>16</td><td>20%</td><td>2%</td><td>4%</td><td>7%</td></tr>
+<tr><td>CP-SAT</td><td>80</td><td>80</td><td>10</td><td>13%</td><td>1%</td><td>5%</td><td>7%</td></tr>
+<tr><td>OptalCP</td><td>80</td><td>80</td><td>23</td><td>29%</td><td>1%</td><td>2%</td><td>4%</td></tr>
+<tr><td rowspan="3">ta</td><td>CPO</td><td>80</td><td>80</td><td>40</td><td>50%</td><td>2%</td><td>1%</td><td>3%</td></tr>
+<tr><td>CP-SAT</td><td>80</td><td>80</td><td>23</td><td>29%</td><td>1%</td><td>2%</td><td>3%</td></tr>
+<tr><td>OptalCP</td><td>80</td><td>80</td><td>46</td><td>58%</td><td>1%</td><td>0%</td><td>1%</td></tr>
+<tr><td rowspan="3">tai</td><td>CPO</td><td>90</td><td>90</td><td>27</td><td>30%</td><td>10%</td><td>4%</td><td>19%</td></tr>
+<tr><td>CP-SAT</td><td>90</td><td style="color:red">70</td><td>46</td><td>51%</td><td>25%</td><td>3%</td><td>10%</td></tr>
+<tr><td>OptalCP</td><td>90</td><td>90</td><td>50</td><td>56%</td><td>0%</td><td>1%</td><td>7%</td></tr>
+<tr><td rowspan="3">dct</td><td>CPO</td><td>24</td><td>24</td><td>1</td><td>4%</td><td>22%</td><td>21%</td><td>35%</td></tr>
+<tr><td>CP-SAT</td><td>24</td><td style="color:red">18</td><td>6</td><td>25%</td><td>5%</td><td>18%</td><td>12%</td></tr>
+<tr><td>OptalCP</td><td>24</td><td>24</td><td>18</td><td>75%</td><td>0%</td><td>9%</td><td>5%</td></tr>
+<tr><td rowspan="3">bel</td><td>CPO</td><td>20</td><td>20</td><td>0</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>CP-SAT</td><td>20</td><td>20</td><td>20</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>OptalCP</td><td>20</td><td>20</td><td>20</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+</table>
+
+
+<br/>
+
+## Best known solutions
 
 In this section are collected the best known solutions (upper and lower bounds) for each problem in the benchmark. 
 
@@ -525,8 +558,6 @@ The best known solutions are now collected in a [json](https://github.com/Schedu
 For most of the best known solutions, the date, hardware, running time and certificate (valid primal or valid dual solution) are not known. The data will be progressively updated to the best of our knowledge.
 
 <br/>
-
-### Best known solutions - JSPLib
 
 #### Fisher and Thompson 1963
 
@@ -1009,124 +1040,3 @@ The upper and lower bounds come from
 All other bounds were found by OptalCP except 2 bounds by CP-SAT (equal but faster) and 3 bounds by Hexaly (strictly better than all other solvers). The cited papers also may use an engine directly like [CPO2015], [Hexaly2024] or as part of an algorithm like [CdGKGC2025] which uses CP-SAT.
 
 <br/>
-
-## Comparison of engines and heuristics
-
-
-### Incorrect best-known solutions used in publications
-
-> Scheduling problems have received considerable attention over the last decade. Several sets of benchmark instances are available for comparing the quality of the different methods developed. A large number of publications achieve either the current best known or improved bounds for a subset of these instances. It is unfortunate, however, that several publications erroneously reference the current state of these bounds. 
->
-> Jelke J. van Hoorn, The Current state of bounds on benchmark instances of the job-shop scheduling problem (2017)
-
-While the effort of van Hoorn is commendable, having accurate best-known solutions does not solve the problem of poorly reported results in publications. Announcing a best-known solution while having little scientific interest in itself (e.g. a random solution) has sadly become a central "contribution" of papers.
-
-By giving to much importance to best-known solutions we miss what really matters:
-- An approach that finds a best known solution for a single problem but is unable to provide good results for other problems is totally unusable in practice (e.g. a random solution)
-- An approach that systematically gets close to the best known solutions in a short time may not improve any best known bound but be of significant practical interest
-
-We therefore adopt the following metrics instead
-- Average deviation with respect to best-known lower-bound
-- Average deviation with respect to best-known upper-bound
-- Average gap
-
-***The MIP community uses geometric averages instead of arithmetic averages to correct against methods that solve extremely well a single instance and perform poorly on others. We may adopt geometric averages in the future, for the moment we use arithmetic ones***
-
-<br/>
-
-### Comparison of reference solvers
-
-Comparisons done on an Windows PC with an i7 4-core 3GHz 32GB ram in 600 seconds
-- OptalCP Academic Version 2026.4.0 (with maximum propagation instead of default, gap tolerance = 0 and some other parameter changes, we may benchmark with default parameters later)
-- CP-SAT V9.15.6755 with default configuration
-- CPO 22.1.1.0 (with gap tolerance = 0)
-
-The raw data is in the [solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) folder
-
-We recommend to run your own benchmarks on your own machines. All required [code](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/code) is provided with HOWTO instructions in each README file.
-
-
-Important caveats
-- Engines have **relative** and **absolute optimality tolerances** (CPO, OptalCP) which can lead to reporting sub-optimal solutions as optimal (for the tolerance). For this test the tolerances have been set to zero
-- Engines are very **non-deterministic** (results between two runs of the same engine on the same machine differ significantly) due to parallelism. As a result it makes no sense to consider very accurate values for average deviations or gap.
-- Engines have different **bottlenecks** (CPU, memory) that are due to their internal architecture and trade-offs made by their designers. An engine doesn't behave in the same way with 2, 4, 8, 16, 32 or 64 cores, doesn't behave the same in machines with fast / slow memory, etc.
-
-
-#### Per types of instances
-
-The types are defined as follows
-- *outdated* : `ft`, `la`, `orb`
-- *classic* : `abz`, `swv`, `yn`, `dmu`, `ta`
-- *challenge* : classic + still open
-- *large* : `tai`
-- *reentrant*: `bel`, `dct`
-- *open* : all instances still open
-
-<br/>
-
-Averages are made on instances solved. Outlier solutions returned by the engine (e.g. a schedule of makespan equal to the sum of processing times - all tasks scheduled one at the time) have been manually removed as they distort the arithmetic average, instead the engine is considered as having not solved. We may formalize this in the future (e.g. only solutions better than a left-to-right greedy are accepted).
-
-<table>
-<tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb dev</th><th>ub dev</th><th>gap</th></tr>
-<tr><td rowspan="3">all</td><td>CPO</td><td>376</td><td>376</td><td>144</td><td>38%</td><td>5%</td><td>3%</td><td>9%</td></tr>
-<tr><td>CP-SAT</td><td>376</td><td style="color:red">350</td><td>165</td><td>44%</td><td>7%</td><td>3%</td><td>5%</td></tr>
-<tr><td>OptalCP</td><td>376</td><td>376</td><td>223</td><td>59%</td><td>0%</td><td>1%</td><td>3%</td></tr>
-<tr><td rowspan="3">outdated</td><td>CPO</td><td>53</td><td>53</td><td>51</td><td>96%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>CP-SAT</td><td>53</td><td>53</td><td>52</td><td>98%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>OptalCP</td><td>53</td><td>53</td><td>53</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td rowspan="3">classic</td><td>CPO</td><td>189</td><td>189</td><td>65</td><td>34%</td><td>2%</td><td>2%</td><td>5%</td></tr>
-<tr><td>CP-SAT</td><td>189</td><td>189</td><td>41</td><td>22%</td><td>1%</td><td>3%</td><td>5%</td></tr>
-<tr><td>OptalCP</td><td>189</td><td>189</td><td>82</td><td>43%</td><td>1%</td><td>1%</td><td>3%</td></tr>
-<tr><td rowspan="3">challenge</td><td>CPO</td><td>60</td><td>60</td><td>0</td><td>0%</td><td>3%</td><td>6%</td><td>10%</td></tr>
-<tr><td>CP-SAT</td><td>60</td><td>60</td><td>0</td><td>0%</td><td>2%</td><td>7%</td><td>10%</td></tr>
-<tr><td>OptalCP</td><td>60</td><td>60</td><td>0</td><td>0%</td><td>1%</td><td>3%</td><td>7%</td></tr>
-<tr><td rowspan="3">large</td><td>CPO</td><td>90</td><td>90</td><td>27</td><td>30%</td><td>10%</td><td>4%</td><td>19%</td></tr>
-<tr><td>CP-SAT</td><td>90</td><td>70</td><td>46</td><td>51%</td><td>25%</td><td>3%</td><td>10%</td></tr>
-<tr><td>OptalCP</td><td>90</td><td>90</td><td>50</td><td>56%</td><td>0%</td><td>1%</td><td>7%</td></tr>
-<tr><td rowspan="3">reentrant</td><td>CPO</td><td>44</td><td>44</td><td>1</td><td>2%</td><td>12%</td><td>11%</td><td>19%</td></tr>
-<tr><td>CP-SAT</td><td>44</td><td style="color:red">38</td><td>26</td><td>59%</td><td>3%</td><td>9%</td><td>6%</td></tr>
-<tr><td>OptalCP</td><td>44</td><td>44</td><td>38</td><td>86%</td><td>0%</td><td>5%</td><td>3%</td></tr>
-<tr><td rowspan="3">open</td><td>CPO</td><td>90</td><td>90</td><td>0</td><td>0%</td><td>2%</td><td>7%</td><td>16%</td></tr>
-<tr><td>CP-SAT</td><td>90</td><td>80</td><td>0</td><td>0%</td><td>12%</td><td>8%</td><td>12%</td></tr>
-<tr><td>OptalCP</td><td>90</td><td>90</td><td>0</td><td>0%</td><td>1%</td><td>3%</td><td>12%</td></tr>
-</table>
-
-#### Per family
-
-<table>
-<tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb dev</th><th>ub dev</th><th>gap</th></tr>
-<tr><td rowspan="3">ft</td><td>CPO</td><td>3</td><td>3</td><td>3</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>CP-SAT</td><td>3</td><td>3</td><td>3</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>OptalCP</td><td>3</td><td>3</td><td>3</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td rowspan="3">la</td><td>CPO</td><td>40</td><td>40</td><td>38</td><td>95%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>CP-SAT</td><td>40</td><td>40</td><td>39</td><td>98%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>OptalCP</td><td>40</td><td>40</td><td>40</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td rowspan="3">orb</td><td>CPO</td><td>10</td><td>10</td><td>10</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>CP-SAT</td><td>10</td><td>10</td><td>10</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>OptalCP</td><td>10</td><td>10</td><td>10</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td rowspan="3">abz</td><td>CPO</td><td>5</td><td>5</td><td>2</td><td>40%</td><td>3%</td><td>1%</td><td>4%</td></tr>
-<tr><td>CP-SAT</td><td>5</td><td>5</td><td>2</td><td>40%</td><td>2%</td><td>1%</td><td>3%</td></tr>
-<tr><td>OptalCP</td><td>5</td><td>5</td><td>3</td><td>60%</td><td>1%</td><td>0%</td><td>1%</td></tr>
-<tr><td rowspan="3">swv</td><td>CPO</td><td>20</td><td>20</td><td>7</td><td>35%</td><td>2%</td><td>2%</td><td>4%</td></tr>
-<tr><td>CP-SAT</td><td>20</td><td>20</td><td>6</td><td>30%</td><td>1%</td><td>2%</td><td>4%</td></tr>
-<tr><td>OptalCP</td><td>20</td><td>20</td><td>10</td><td>50%</td><td>1%</td><td>1%</td><td>2%</td></tr>
-<tr><td rowspan="3">yn</td><td>CPO</td><td>4</td><td>4</td><td>0</td><td>0%</td><td>10%</td><td>2%</td><td>11%</td></tr>
-<tr><td>CP-SAT</td><td>4</td><td>4</td><td>0</td><td>0%</td><td>6%</td><td>3%</td><td>8%</td></tr>
-<tr><td>OptalCP</td><td>4</td><td>4</td><td>0</td><td>0%</td><td>5%</td><td>1%</td><td>6%</td></tr>
-<tr><td rowspan="3">dmu</td><td>CPO</td><td>80</td><td>80</td><td>16</td><td>20%</td><td>2%</td><td>4%</td><td>7%</td></tr>
-<tr><td>CP-SAT</td><td>80</td><td>80</td><td>10</td><td>13%</td><td>1%</td><td>5%</td><td>7%</td></tr>
-<tr><td>OptalCP</td><td>80</td><td>80</td><td>23</td><td>29%</td><td>1%</td><td>2%</td><td>4%</td></tr>
-<tr><td rowspan="3">ta</td><td>CPO</td><td>80</td><td>80</td><td>40</td><td>50%</td><td>2%</td><td>1%</td><td>3%</td></tr>
-<tr><td>CP-SAT</td><td>80</td><td>80</td><td>23</td><td>29%</td><td>1%</td><td>2%</td><td>3%</td></tr>
-<tr><td>OptalCP</td><td>80</td><td>80</td><td>46</td><td>58%</td><td>1%</td><td>0%</td><td>1%</td></tr>
-<tr><td rowspan="3">tai</td><td>CPO</td><td>90</td><td>90</td><td>27</td><td>30%</td><td>10%</td><td>4%</td><td>19%</td></tr>
-<tr><td>CP-SAT</td><td>90</td><td style="color:red">70</td><td>46</td><td>51%</td><td>25%</td><td>3%</td><td>10%</td></tr>
-<tr><td>OptalCP</td><td>90</td><td>90</td><td>50</td><td>56%</td><td>0%</td><td>1%</td><td>7%</td></tr>
-<tr><td rowspan="3">dct</td><td>CPO</td><td>24</td><td>24</td><td>1</td><td>4%</td><td>22%</td><td>21%</td><td>35%</td></tr>
-<tr><td>CP-SAT</td><td>24</td><td style="color:red">18</td><td>6</td><td>25%</td><td>5%</td><td>18%</td><td>12%</td></tr>
-<tr><td>OptalCP</td><td>24</td><td>24</td><td>18</td><td>75%</td><td>0%</td><td>9%</td><td>5%</td></tr>
-<tr><td rowspan="3">bel</td><td>CPO</td><td>20</td><td>20</td><td>0</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>CP-SAT</td><td>20</td><td>20</td><td>20</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>OptalCP</td><td>20</td><td>20</td><td>20</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-</table>
-
