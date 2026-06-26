@@ -36,7 +36,9 @@ This document is visible as a README.md in the Github folder [jobshop](https://g
     - [JSON bks format](#best-known-solutions-json-format)
     - [Best known solutions](#best-known-solutions---jsplib)
     - [Publications](#publications-best-known-solutions)
-- [Comparison of reference engines](#comparison-of-reference-engines)
+- [Comparison of engines and heuristics](#comparison-of-engines-and-heuristics)
+    - [Incorrect best-known solutions used in publications](#incorrect-best-known-solutions-used-in-publications)
+    - [Comparison of reference solvers](#comparison-of-reference-solvers)
 
 <br/>
 
@@ -57,7 +59,8 @@ reentrant jobshop instances (44)
 - 24 instances `dct` from Da Col and Teppan 2022
 - 20 instances `bel` from Boveroux, Ernst and Louveaux 2025
 
-#### The lack of industrial instances
+
+### The lack of industrial instances
 
 > There is a gap in the existing literature regarding job shop scheduling benchmarks. Most commonly referenced instances, such as those proposed by Taillard et al., Adams et al.  or Demirkol et al. , focus on small and rectangular configurations where the number of machines equals the number of operations for each job. This structure does not adequately represent the complexities of larger, unbalanced scenarios commonly encountered in real-world manufacturing.
 >
@@ -114,21 +117,28 @@ reentrant jobshop
 
 ### Similar work
 
+We have borrowed data and ideas from the following sources
+
+#### Naderi, Ruiz and Roshanei (2022)
+
 Our work was inspired by the ***outstanding*** work of Naderi, Ruiz and Roshanaei *Mixed-Integer Programming versus Constraint Programming for shop scheduling problems : New Results and Outlook* [**NRR2022**] which compares CPO, Cplex, Gurobi and OR-tools on a benchmark of 6623 instances over 17 benchmarks with a timeout of 1h. They have made all the [raw results available](http://soa.iti.es/problem-instances)
 
-We borrowed references for existing best known bounds from
-- [http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html](http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html)
-- [https://github.com/thomasWeise/jsspInstancesAndResults](https://github.com/thomasWeise/jsspInstancesAndResults)
-- [http://jobshop.jjvh.nl/](http://jobshop.jjvh.nl/)
-- [https://optimizizer.com/jobshop.php](https://optimizizer.com/jobshop.php)
+#### Jelke J. van Hoorn (2017)
 
-<br/>
+Jelke J.van Hoorn collected and verified in 2017 all available upper and lower bounds for jobshop problems and published them in *The Current state of bounds on benchmark instances of the job-shop scheduling problem*. The online [Appendix] (https://static-content.springer.com/esm/art%3A10.1007%2Fs10951-017-0547-8/MediaObjects/10951_2017_547_MOESM_ESM.pdf) contains the data.
 
-We also think [https://www.jobshoppuzzle.com/](https://www.jobshoppuzzle.com/) is a very cool site with interactive visualizations of jobshop heuristics and solutions. And we invite you to also check [SchedulingLab](https://github.com/SchedulingLab/jsp-instances) and their different repositories.
+#### Oleg V. Shylo (2014 - present)
+
+Since 2014 [Optimizizer](https://optimizizer.com/jobshop.php) has been the reference in terms of published upper and lower bounds for jobshop problems. For each problem is given the publication that explains the method used to find the upper or lower bound, and upper bounds are explicitly provided and verified.
+
+#### Scheduling Lab
+
+[SchedulingLab](https://github.com/SchedulingLab/jsp-instances) has collects instances of various types of scheduling problems.
+
 
 ### Formats
 
-There are four main formats, ***standard***, ***DaColTeppan***, ***taillard*** and json. 
+There are four main formats, ***standard***, ***DaColTeppan***, ***taillard*** and ***json***. 
 
 *The [flexible jobshop library](https://fjsplib.org) preferred format represents precedences explicitly. The jobshop problem being a special case of the flexible jobshop problem, this library may at some point in the future use that same format*
 
@@ -577,7 +587,8 @@ For most of the best known solutions, the date, machine, running time and certif
 <tr><td>abz9</td><td>20 x 15</td><td>jobshop</td><td>678</td><td>678</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 </table>
 
-*Various places report that "Henning A (2002). Praktische Job-Shop Scheduling-Probleme. Ph.D. thesis, Friedrich-Schiller-Universität Jena, Jena, Germany" as having found a solution of 665 for abz8, but the original document says their solution is 667 and 665 is a "solution from the literature". We believe it is just a typing mistake in the sources they used. In any case OptalCP proves a lower bound of 667.*
+*Various places report that "Henning A (2002). Praktische Job-Shop Scheduling-Probleme. Ph.D. thesis, Friedrich-Schiller-Universität Jena, Jena, Germany" as having found a solution of 665 for abz8, but the original document says their solution is 667 and 665 is a "solution from the literature". Jelke J. van Hoorn attributes the 665 bond to "Paul Douglas Martin. A time-oriented approach to computing optimal schedules for the job-shop scheduling problem. PhD thesis. 1996".
+However OptalCP proves a lower bound of 667 and Optimizizer only provides a verified solution for 667. We advise caution until this result is confirmed by independent means.*
 
 #### Applegate and Cook 1991
 
@@ -904,30 +915,32 @@ For most of the best known solutions, the date, machine, running time and certif
 <tr><td>dct-long-100-10000-1</td><td>103 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>dct-long-100-10000-2</td><td>103 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>dct-long-100-10000-3</td><td>103 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-long-100-100000-1</td><td>109 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-long-100-100000-2</td><td>114 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-long-100-100000-3</td><td>109 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>dct-long-1000-10000-1</td><td>1002 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>dct-long-1000-10000-2</td><td>1002 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>dct-long-1000-10000-3</td><td>1002 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-long-100-100000-1</td><td>109 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-long-100-100000-2</td><td>114 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dct-long-100-100000-3</td><td>109 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>dct-long-1000-100000-1</td><td>1002 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>dct-long-1000-100000-2</td><td>1002 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>dct-long-1000-100000-3</td><td>1003 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>dct-short-100-10000-1</td><td>2162 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>dct-short-100-10000-2</td><td>2192 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>dct-short-100-10000-3</td><td>2169 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-short-100-100000-1</td><td>20685 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-short-100-100000-2</td><td>20870 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-short-100-100000-3</td><td>20767 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>dct-short-1000-10000-1</td><td>2882 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>dct-short-1000-10000-2</td><td>2863 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-short-1000-10000-3</td><td>2897 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dct-short-100-100000-1</td><td>20685 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dct-short-100-100000-2</td><td>20870 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dct-short-100-100000-3</td><td>20767 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dct-short-1000-10000-3</td><td>2897 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>dct-short-1000-100000-1</td><td>21280 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600019</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 <tr><td>dct-short-1000-100000-2</td><td>21349 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>dct-short-1000-100000-3</td><td>21338 x 1000</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 </table>
 
-*DaCol and Tepan report instance dct-short-1000-100000-1 was solved to optimality by CP Optimizer in 6h which we haven't been able to reproduce (with CPO any other solver). We are still investigating*
+*DaCol and Tepan report instance dct-short-1000-100000-1 was solved to optimality by CP Optimizer in 6h which we haven't been able to reproduce (with CPO any other solver). We are still investigating*. 
+We have recently noticed some regression in OptalCP on two of these instances hence you may need specific parameters to reach the solution in the time announced.
+
 
 #### Boveroux, Ernst and Louveaux 2025
 <table>
@@ -989,195 +1002,121 @@ The upper and lower bounds come from
 All other bounds were found by OptalCP except 2 bounds by CP-SAT (equal but faster) and 3 bounds by Hexaly (strictly better than all other solvers). The cited papers also may use an engine directly like [CPO2015], [Hexaly2024] or as part of an algorithm like [CdGKGC2025] which uses CP-SAT.
 
 
-## Comparison of reference engines
+## Comparison of engines and heuristics
 
-We provide these tests as a reference, you should get something ***similar*** on your hardware (multi-core engines are inherently non-deterministic hence each run returns slightly different results) or find an explanation of why the engines don't behave as expected. We ***strongly*** encourage you to run all engines you want to compare against on your own hardware. 
 
-The instances used for the comparison may change on a regular basis
+### Incorrect best-known solutions used in publications
 
-### ABZ instances
+> Scheduling problems have received considerable attention over the last decade. Several sets of benchmark instances are available for comparing the quality of the different methods developed. A large number of publications achieve either the current best known or improved bounds for a subset of these instances. It is unfortunate, however, that several publications erroneously reference the current state of these bounds. 
+>
+> Jelke J. van Hoorn, The Current state of bounds on benchmark instances of the job-shop scheduling problem (2017)
 
-On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Academic Version 2026.2.0 default search
+While the effort of van Horn is commendable, having accurate best-known solutions does not solve the problem of poorly reported results in publications. Announcing a best-known solution while having little scientific interest in itself (e.g. a random solution) has sadly become a central "contribution" of papers.
+
+By giving to much importance to best-known solutions we miss what really matters:
+- An approach that finds a best known solution for a single problem but is unable to provide good results for other problems is totally unusable in practice (e.g. a random solution)
+- An approach that systematically gets close to the best known solutions in a short time may not improve any best known bound but be of significant practical interest
+
+We therefore adopt the following metrics instead
+- average deviation with respect to best-known lower-bound
+- average deviation with respect to best-known upper-bound
+- average gap
+
+<br/>
+
+***The MIP community uses geometric averages instead of arithmetic averages to correct against methods that solve extremely well a single instance and perform poorly on others. We may adopt geometric averages in the future, for the moment we use arithmetic ones***
+
+### Comparison of reference solvers
+
+Comparisons done on an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
+- OptalCP Academic Version 2026.4.0 (with maximum propagation instead of default)
 - CP-SAT V9.15.6755 with default configuration
 - CPO 22.1.1.0
 
-| Instance | OptalCP | CP-SAT | CPO |
-|:--------:|--------:|-------:|----:|
-| abz5 | 1234 in 0s         | 1234 in 1s        |
-| abz6 | 943 in 0s          | 943 in 1s         |
-| abz7 | 656 in 224s        | 656..657 in 600s  |
-| abz8 | 642..674 in 600s   | 630..683 in 600s  | 
-| abz9 | 670..678 in 600s   | 655..689 in 600s  |
+Important caveats
+- Engines have **relative** and **absolute optimality tolerances** (CPO, OptalCP) which can lead to reporting sub-optimal solutions as optimal (for the tolerance). For this test the tolerances have been set to zero
+- Engines are very **non-deterministic** (results between two runs of the same engine on the same machine differ significantly) due to parallelism. As a result it makes no sense to consider very accurate values for average deviations or gap.
+- Engines have different **bottlenecks** (CPU, memory) that are due to their internal architecture and trade-offs made by their designers. An engine doesn't behave in the same way with 2, 4, 8, 16, 32 or 64 cores, doesn't behave the same in machines with fast / slow memory, etc.
 
-### SWV instances
+The raw data is in the [solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) folder
 
-On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Academic Version 2026.2.0 default search
-- CP-SAT V9.15.6755 with default configuration
-- CPO 22.1.1.0
+We recommend to run your own benchmarks on your own machines (we provide all the [code](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/code) with HOWTO instructions in each README.md file)
 
-| Instance | OptalCP | CP-SAT | CPO |
-|:--------:|--------:|-------:|----:|
-| swv01 | 1407 in 70s | 1402..1418 in 600s |
-| swv02 | 1475 in 12s | 1475 in 89s |
-| swv03 | 1398 in 213s | 1387..1413 in 600s |
-| swv04 | 1453..1478 in 600s | 1440..1510 in 600s |
-| swv05 | 1424 in 148s | 1414..1429 in 600s |
-| swv06 | 1619..1700 in 600s | 1601..1696 in 600s |
-| swv07 | 1479..1628 in 600s | 1470..1669 in 600s |
-| swv08 | 1640..1786 in 600s | 1640..1830 in 600s |
-| swv09 | 1622..1684 in 600s | 1611..1696 in 600s |
-| swv10 | 1649..1783 in 600s | 1631..1785 in 600s |
-| swv11 | 2983..2993 in 600s | 2983..3155 in 600s |
-| swv12 | 2972..3000 in 600s | 2972..3094 in 600s |
-| swv13 | 3104 in 37s | 3104..3142 in 600s |
-| swv14 | 2968 in 9s | 2968..3110 in 600s |
-| swv15 | 2885..2887 in 600s | 2885..3066 in 600s |
-| swv16 | 2924 in 0s | 2924 in 0s |
-| swv17 | 2794 in 0s | 2794 in 0s |
-| swv18 | 2852 in 0s | 2852 in 0s |
-| swv19 | 2843 in 0s | 2843 in 3s |
-| swv20 | 2823 in 0s | 2823 in 0s |
+#### Per types of instances
 
-### DMU instances 1-40
+The types are defined as follows
+- `outdated` : ft, la, orb
+- `classic` : abz, swv, yn, dmu, ta
+- `challenge` : classic + still open
+- `large` : tai
+- `reentrant`: bel, dct
+- `open` : all instances still open
 
-On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Academic Version 2026.2.0 default search
-- CP-SAT V9.15.6755 with default configuration
-- CPO 22.1.1.0
+</br>
 
-| Instance | OptalCP | CP-SAT | CPO |
-|:--------:|--------:|-------:|----:|
-| dmu01 | 2515..2563 in 600s | 2467..2634 in 600s 
-| dmu02 | 2706 in 416s | 2607..2706 in 600s 
-| dmu03 | 2731 in 162s | 2684..2753 in 600s 
-| dmu04 | 2603..2675 in 600s | 2563..2694 in 600s 
-| dmu05 | 2733..2749 in 600s | 2713..2779 in 600s 
-| dmu06 | 3121..3248 in 600s | 3087..3314 in 600s 
-| dmu07 | 2942..3098 in 600s | 2921..3094 in 600s 
-| dmu08 | 3188 in 595s | 3076..3197 in 600s 
-| dmu09 | 3092 in 346s | 3000..3092 in 600s 
-| dmu10 | 2972..2984 in 600s | 2914..2985 in 600s 
-| dmu11 | 3395..3466 in 600s | 3395..3491 in 600s 
-| dmu12 | 3481..3519 in 600s | 3481..3604 in 600s 
-| dmu13 | 3681..3718 in 600s | 3681..3758 in 600s 
-| dmu14 | 3394 in 131s | 3394 in 14s 
-| dmu15 | 3343 in 129s | 3343..3404 in 600s 
-| dmu16 | 3734..3784 in 600s | 3734..3836 in 600s 
-| dmu17 | 3709..3874 in 600s | 3709..3942 in 600s 
-| dmu18 | 3844..3882 in 600s | 3844..3927 in 600s 
-| dmu19 | 3683..3834 in 600s | 3678..3893 in 600s 
-| dmu20 | 3604..3749 in 600s | 3604..3893 in 600s 
-| dmu21 | 4380 in 1s   | 4380..4387 in 600s 
-| dmu22 | 4725 in 2s   | 4725 in 91s 
-| dmu23 | 4668 in 1s   | 4668 in 24s 
-| dmu24 | 4648 in 1s   | 4648 in 68s 
-| dmu25 | 4164 in 1s   | 4164 in 32s 
-| dmu26 | 4647..4673 in 600s | 4647..4851 in 600s 
-| dmu27 | 4848 in 17s  | 4848..4970 in 600s 
-| dmu28 | 4692 in 8s   | 4692..4786 in 600s 
-| dmu29 | 4691 in 5s   | 4691..4825 in 600s 
-| dmu30 | 4732..4741 in 600s | 4732..4842 in 600s 
-| dmu31 | 5640 in 2s   | 5640 in 174s 
-| dmu32 | 5927 in 0s   | 5927 in 1s 
-| dmu33 | 5728 in 1s   | 5728 in 26s 
-| dmu34 | 5385 in 1s   | 5385 in 102s 
-| dmu35 | 5635 in 1s   | 5635 in 68s 
-| dmu36 | 5621 in 11s  | 5621..5784 in 600s 
-| dmu37 | 5851 in 11s  | 5851 in 493s 
-| dmu38 | 5713 in 20s  | 5713..5871 in 600s 
-| dmu39 | 5747 in 10s  | 5747 in 563s 
-| dmu40 | 5577 in 6s   | 5577..5685 in 600s 
+Averages are made on instances solved
 
+<table>
+<tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb dev</th><th>ub dev</th><th>gap</th></tr>
+<tr><td rowspan="3">all</td><td>CPO</td><td>376</td><td>376</td><td>144</td><td>38%</td><td>5%</td><td>3%</td><td>9%</td></tr>
+<tr><td>CP-SAT</td><td>376</td><td style="color:red">350</td><td>165</td><td>44%</td><td>7%</td><td>3%</td><td>5%</td></tr>
+<tr><td>OptalCP</td><td>376</td><td>376</td><td>223</td><td>59%</td><td>0%</td><td>1%</td><td>3%</td></tr>
+<tr><td rowspan="3">outdated</td><td>CPO</td><td>53</td><td>53</td><td>51</td><td>96%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>CP-SAT</td><td>53</td><td>53</td><td>52</td><td>98%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>OptalCP</td><td>53</td><td>53</td><td>53</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td rowspan="3">classic</td><td>CPO</td><td>189</td><td>189</td><td>65</td><td>34%</td><td>2%</td><td>2%</td><td>5%</td></tr>
+<tr><td>CP-SAT</td><td>189</td><td>189</td><td>41</td><td>22%</td><td>1%</td><td>3%</td><td>5%</td></tr>
+<tr><td>OptalCP</td><td>189</td><td>189</td><td>82</td><td>43%</td><td>1%</td><td>1%</td><td>3%</td></tr>
+<tr><td rowspan="3">challenge</td><td>CPO</td><td>60</td><td>60</td><td>0</td><td>0%</td><td>3%</td><td>6%</td><td>10%</td></tr>
+<tr><td>CP-SAT</td><td>60</td><td>60</td><td>0</td><td>0%</td><td>2%</td><td>7%</td><td>10%</td></tr>
+<tr><td>OptalCP</td><td>60</td><td>60</td><td>0</td><td>0%</td><td>1%</td><td>3%</td><td>7%</td></tr>
+<tr><td rowspan="3">large</td><td>CPO</td><td>90</td><td>90</td><td>27</td><td>30%</td><td>10%</td><td>4%</td><td>19%</td></tr>
+<tr><td>CP-SAT</td><td>90</td><td>70</td><td>46</td><td>51%</td><td>25%</td><td>3%</td><td>10%</td></tr>
+<tr><td>OptalCP</td><td>90</td><td>90</td><td>50</td><td>56%</td><td>0%</td><td>1%</td><td>7%</td></tr>
+<tr><td rowspan="3">reentrant</td><td>CPO</td><td>44</td><td>44</td><td>1</td><td>2%</td><td>12%</td><td>11%</td><td>19%</td></tr>
+<tr><td>CP-SAT</td><td>44</td><td>38</td><td>26</td><td>59%</td><td>3%</td><td>9%</td><td>6%</td></tr>
+<tr><td>OptalCP</td><td>44</td><td>44</td><td>38</td><td>86%</td><td>0%</td><td>5%</td><td>3%</td></tr>
+<tr><td rowspan="3">open</td><td>CPO</td><td>90</td><td>90</td><td>0</td><td>0%</td><td>2%</td><td>7%</td><td>16%</td></tr>
+<tr><td>CP-SAT</td><td>90</td><td>80</td><td>0</td><td>0%</td><td>12%</td><td>8%</td><td>12%</td></tr>
+<tr><td>OptalCP</td><td>90</td><td>90</td><td>0</td><td>0%</td><td>1%</td><td>3%</td><td>12%</td></tr>
+</table>
 
-### TA instances 1-80
+#### Per family
 
-On an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Academic Version 2026.2.0 default search
-- CP-SAT V9.15.6755 with default configuration
-- CPO 22.1.1.0
-
-| Instance | OptalCP | CP-SAT | CPO |
-|:--------:|--------:|-------:|----:|
-| ta01js | 1231 in 0s | 1231 in 11s |
-| ta02js | 1244 in 3s | 1244 in 80s |
-| ta03js | 1218 in 2s | 1218 in 20s |
-| ta04js | 1175 in 3s | 1175 in 19s |
-| ta05js | 1224 in 14s | 1224 in 120s |
-| ta06js | 1238 in 185s | 1201..1239 in 600s |
-| ta07js | 1227 in 18s | 1227 in 476s |
-| ta08js | 1217 in 12s | 1217 in 77s |
-| ta09js | 1274 in 8s | 1274 in 284s |
-| ta10js | 1241 in 4s | 1241 in 32s |
-| ta11js | 1337..1358 in 600s | 1307..1378 in 600s |
-| ta12js | 1367 in 333s | 1350..1367 in 600s |
-| ta13js | 1317..1344 in 600s | 1279..1359 in 600s |
-| ta14js | 1345 in 3s | 1345 in 13s |
-| ta15js | 1323..1349 in 600s | 1299..1358 in 600s |
-| ta16js | 1339..1360 in 600s | 1296..1364 in 600s |
-| ta17js | 1462 in 4s | 1462 in 62s |
-| ta18js | 1366..1402 in 600s | 1359..1414 in 600s |
-| ta19js | 1318..1334 in 600s | 1292..1364 in 600s |
-| ta20js | 1329..1350 in 600s | 1315..1357 in 600s |
-| ta21js | 1619..1651 in 600s | 1581..1656 in 600s |
-| ta22js | 1555..1615 in 600s | 1529..1638 in 600s |
-| ta23js | 1512..1565 in 600s | 1496..1569 in 600s |
-| ta24js | 1644 in 323s | 1610..1665 in 600s |
-| ta25js | 1561..1610 in 600s | 1528..1617 in 600s |
-| ta26js | 1571..1670 in 600s | 1559..1672 in 600s |
-| ta27js | 1629..1699 in 600s | 1623..1685 in 600s |
-| ta28js | 1603 in 203s | 1588..1609 in 600s |
-| ta29js | 1577..1625 in 600s | 1535..1656 in 600s |
-| ta30js | 1484..1607 in 600s | 1487..1608 in 600s |
-| ta31js | 1764 in 98s | 1764..1778 in 600s |
-| ta32js | 1774..1824 in 600s | 1774..1850 in 600s |
-| ta33js | 1786..1801 in 600s | 1783..1859 in 600s |
-| ta34js | 1828..1846 in 600s | 1828..1869 in 600s |
-| ta35js | 2007 in 1s | 2007 in 7s |
-| ta36js | 1819 in 7s | 1819..1832 in 600s |
-| ta37js | 1771..1779 in 600s | 1771..1813 in 600s |
-| ta38js | 1673..1682 in 600s | 1673..1710 in 600s |
-| ta39js | 1795 in 23s | 1795 in 75s |
-| ta40js | 1645..1695 in 600s | 1642..1732 in 600s |
-| ta41js | 1882..2038 in 600s | 1889..2094 in 600s |
-| ta42js | 1878..1968 in 600s | 1873..2006 in 600s |
-| ta43js | 1809..1894 in 600s | 1809..1969 in 600s |
-| ta44js | 1944..1993 in 600s | 1937..2061 in 600s |
-| ta45js | 1997..2005 in 600s | 1997 in 424s |
-| ta46js | 1958..2047 in 600s | 1943..2074 in 600s |
-| ta47js | 1801..1937 in 600s | 1797..1981 in 600s |
-| ta48js | 1912..1975 in 600s | 1912..2007 in 600s |
-| ta49js | 1925..2012 in 600s | 1926..2017 in 600s |
-| ta50js | 1822..1970 in 600s | 1819..2001 in 600s |
-| ta51js | 2760 in 3s | 2760 in 196s |
-| ta52js | 2756 in 3s | 2756 in 141s |
-| ta53js | 2717 in 2s | 2717 in 53s |
-| ta54js | 2839 in 1s | 2839 in 26s |
-| ta55js | 2679 in 3s | 2679 in 216s |
-| ta56js | 2781 in 2s | 2781 in 69s |
-| ta57js | 2943 in 2s | 2943 in 43s |
-| ta58js | 2885 in 2s | 2885 in 114s |
-| ta59js | 2655 in 2s | 2655 in 131s |
-| ta60js | 2723 in 3s | 2723 in 184s |
-| ta61js | 2868 in 6s | 2868..2873 in 600s |
-| ta62js | 2869..2872 in 600s | 2869..2984 in 600s |
-| ta63js | 2755 in 8s | 2755..2777 in 600s |
-| ta64js | 2702 in 6s | 2702..2745 in 600s |
-| ta65js | 2725 in 7s | 2725..2789 in 600s |
-| ta66js | 2845 in 5s | 2845..2919 in 600s |
-| ta67js | 2825..2826 in 600s | 2825..2854 in 600s |
-| ta68js | 2784 in 4s | 2784..2810 in 600s |
-| ta69js | 3071 in 4s | 3071 in 464s |
-| ta70js | 2995 in 7s | 2995..3010 in 600s |
-| ta71js | 5464 in 20s | 5464..5596 in 600s |
-| ta72js | 5181 in 18s | 5181..5259 in 600s |
-| ta73js | 5568 in 18s | 5568..5652 in 600s |
-| ta74js | 5339 in 17s | 5339..5357 in 600s |
-| ta75js | 5392 in 26s | 5392..5639 in 600s |
-| ta76js | 5342 in 21s | 5342..5426 in 600s |
-| ta77js | 5436 in 17s | 5436 in 521s |
-| ta78js | 5394 in 17s | 5394..5463 in 600s |
-| ta79js | 5358 in 16s | 5358..5405 in 600s |
-| ta80js | 5183 in 19s | 5183..5250 in 600s |
+<table>
+<tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb dev</th><th>ub dev</th><th>gap</th></tr>
+<tr><td rowspan="3">ft</td><td>CPO</td><td>3</td><td>3</td><td>3</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>CP-SAT</td><td>3</td><td>3</td><td>3</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>OptalCP</td><td>3</td><td>3</td><td>3</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td rowspan="3">la</td><td>CPO</td><td>40</td><td>40</td><td>38</td><td>95%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>CP-SAT</td><td>40</td><td>40</td><td>39</td><td>98%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>OptalCP</td><td>40</td><td>40</td><td>40</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td rowspan="3">orb</td><td>CPO</td><td>10</td><td>10</td><td>10</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>CP-SAT</td><td>10</td><td>10</td><td>10</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>OptalCP</td><td>10</td><td>10</td><td>10</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td rowspan="3">abz</td><td>CPO</td><td>5</td><td>5</td><td>2</td><td>40%</td><td>3%</td><td>1%</td><td>4%</td></tr>
+<tr><td>CP-SAT</td><td>5</td><td>5</td><td>2</td><td>40%</td><td>2%</td><td>1%</td><td>3%</td></tr>
+<tr><td>OptalCP</td><td>5</td><td>5</td><td>3</td><td>60%</td><td>1%</td><td>0%</td><td>1%</td></tr>
+<tr><td rowspan="3">swv</td><td>CPO</td><td>20</td><td>20</td><td>7</td><td>35%</td><td>2%</td><td>2%</td><td>4%</td></tr>
+<tr><td>CP-SAT</td><td>20</td><td>20</td><td>6</td><td>30%</td><td>1%</td><td>2%</td><td>4%</td></tr>
+<tr><td>OptalCP</td><td>20</td><td>20</td><td>10</td><td>50%</td><td>1%</td><td>1%</td><td>2%</td></tr>
+<tr><td rowspan="3">yn</td><td>CPO</td><td>4</td><td>4</td><td>0</td><td>0%</td><td>10%</td><td>2%</td><td>11%</td></tr>
+<tr><td>CP-SAT</td><td>4</td><td>4</td><td>0</td><td>0%</td><td>6%</td><td>3%</td><td>8%</td></tr>
+<tr><td>OptalCP</td><td>4</td><td>4</td><td>0</td><td>0%</td><td>5%</td><td>1%</td><td>6%</td></tr>
+<tr><td rowspan="3">dmu</td><td>CPO</td><td>80</td><td>80</td><td>16</td><td>20%</td><td>2%</td><td>4%</td><td>7%</td></tr>
+<tr><td>CP-SAT</td><td>80</td><td>80</td><td>10</td><td>13%</td><td>1%</td><td>5%</td><td>7%</td></tr>
+<tr><td>OptalCP</td><td>80</td><td>80</td><td>23</td><td>29%</td><td>1%</td><td>2%</td><td>4%</td></tr>
+<tr><td rowspan="3">ta</td><td>CPO</td><td>80</td><td>80</td><td>40</td><td>50%</td><td>2%</td><td>1%</td><td>3%</td></tr>
+<tr><td>CP-SAT</td><td>80</td><td>80</td><td>23</td><td>29%</td><td>1%</td><td>2%</td><td>3%</td></tr>
+<tr><td>OptalCP</td><td>80</td><td>80</td><td>46</td><td>58%</td><td>1%</td><td>0%</td><td>1%</td></tr>
+<tr><td rowspan="3">tai</td><td>CPO</td><td>90</td><td>90</td><td>27</td><td>30%</td><td>10%</td><td>4%</td><td>19%</td></tr>
+<tr><td>CP-SAT</td><td>90</td><td style="color:red">70</td><td>46</td><td>51%</td><td>25%</td><td>3%</td><td>10%</td></tr>
+<tr><td>OptalCP</td><td>90</td><td>90</td><td>50</td><td>56%</td><td>0%</td><td>1%</td><td>7%</td></tr>
+<tr><td rowspan="3">dct</td><td>CPO</td><td>24</td><td>24</td><td>1</td><td>4%</td><td>22%</td><td>21%</td><td>35%</td></tr>
+<tr><td>CP-SAT</td><td>24</td><td style="color:red">18</td><td>6</td><td>25%</td><td>5%</td><td>18%</td><td>12%</td></tr>
+<tr><td>OptalCP</td><td>24</td><td>24</td><td>18</td><td>75%</td><td>0%</td><td>9%</td><td>5%</td></tr>
+<tr><td rowspan="3">bel</td><td>CPO</td><td>20</td><td>20</td><td>0</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>CP-SAT</td><td>20</td><td>20</td><td>20</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td>OptalCP</td><td>20</td><td>20</td><td>20</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+</table>
 

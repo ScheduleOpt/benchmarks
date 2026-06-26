@@ -1,0 +1,1882 @@
+[
+{
+    "instance": "abz5",
+    "lb": {"value": 1234, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1234, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "abz6",
+    "lb": {"value": 943, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 943, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "abz7",
+    "lb": {"value": 656, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 662, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "abz8",
+    "lb": {"value": 629, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 678, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "abz9",
+    "lb": {"value": 655, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 687, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "bel00",
+    "lb": {"value": 766329, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "no"},
+    "ub": {"value": 766329, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "yes"}
+},
+{
+    "instance": "bel01",
+    "lb": {"value": 428900, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 428900, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "bel02",
+    "lb": {"value": 270437, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 270437, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "bel03",
+    "lb": {"value": 670943, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 670943, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "bel04",
+    "lb": {"value": 408633, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 408633, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "bel05",
+    "lb": {"value": 620171, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 620171, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "bel06",
+    "lb": {"value": 502510, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 502510, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "bel07",
+    "lb": {"value": 750360, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 750360, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "bel08",
+    "lb": {"value": 484451, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 484451, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "bel09",
+    "lb": {"value": 534811, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 534811, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "bel10",
+    "lb": {"value": 468304, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 468304, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "bel11",
+    "lb": {"value": 509503, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 509503, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "bel12",
+    "lb": {"value": 388715, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 388715, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "bel13",
+    "lb": {"value": 420576, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 420576, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "bel14",
+    "lb": {"value": 1115063, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1115063, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "bel15",
+    "lb": {"value": 610946, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 610946, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "bel16",
+    "lb": {"value": 575843, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 575843, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "bel17",
+    "lb": {"value": 520426, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 520426, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "bel18",
+    "lb": {"value": 347889, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 347889, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "bel19",
+    "lb": {"value": 529239, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 529239, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "dmu01",
+    "lb": {"value": 2463, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2582, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu02",
+    "lb": {"value": 2603, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2710, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu03",
+    "lb": {"value": 2684, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2755, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu04",
+    "lb": {"value": 2562, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2679, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu05",
+    "lb": {"value": 2712, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2756, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu06",
+    "lb": {"value": 3082, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3272, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu07",
+    "lb": {"value": 2914, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3137, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu08",
+    "lb": {"value": 3070, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3197, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu09",
+    "lb": {"value": 2992, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3103, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu10",
+    "lb": {"value": 2907, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2985, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu11",
+    "lb": {"value": 3395, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3537, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu12",
+    "lb": {"value": 3481, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3570, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu13",
+    "lb": {"value": 3681, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3746, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu14",
+    "lb": {"value": 3394, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 3394, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "dmu15",
+    "lb": {"value": 3343, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3381, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu16",
+    "lb": {"value": 3734, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3921, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu17",
+    "lb": {"value": 3709, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3952, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu18",
+    "lb": {"value": 3844, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3939, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu19",
+    "lb": {"value": 3678, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3924, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu20",
+    "lb": {"value": 3604, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3786, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu21",
+    "lb": {"value": 4380, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 4383, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu22",
+    "lb": {"value": 4725, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 4725, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "dmu23",
+    "lb": {"value": 4668, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 4668, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "dmu24",
+    "lb": {"value": 4648, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 4648, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "dmu25",
+    "lb": {"value": 4164, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 4164, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "dmu26",
+    "lb": {"value": 4647, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 4850, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu27",
+    "lb": {"value": 4848, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5088, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu28",
+    "lb": {"value": 4692, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 4741, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu29",
+    "lb": {"value": 4691, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 4807, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu30",
+    "lb": {"value": 4732, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 4846, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu31",
+    "lb": {"value": 5640, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 5, "certificate": "no"},
+    "ub": {"value": 5640, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 5, "certificate": "yes"}
+},
+{
+    "instance": "dmu32",
+    "lb": {"value": 5927, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 5927, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "dmu33",
+    "lb": {"value": 5728, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 5728, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "dmu34",
+    "lb": {"value": 5385, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "no"},
+    "ub": {"value": 5385, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "yes"}
+},
+{
+    "instance": "dmu35",
+    "lb": {"value": 5635, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 5635, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "dmu36",
+    "lb": {"value": 5621, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5784, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu37",
+    "lb": {"value": 5851, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5974, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu38",
+    "lb": {"value": 5713, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5808, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dmu39",
+    "lb": {"value": 5747, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5787, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu40",
+    "lb": {"value": 5577, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5760, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu41",
+    "lb": {"value": 3012, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3318, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu42",
+    "lb": {"value": 3226, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3515, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu43",
+    "lb": {"value": 3307, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3560, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu44",
+    "lb": {"value": 3306, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3635, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu45",
+    "lb": {"value": 3077, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3421, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu46",
+    "lb": {"value": 3587, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 4248, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu47",
+    "lb": {"value": 3560, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 4090, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu48",
+    "lb": {"value": 3483, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3880, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu49",
+    "lb": {"value": 3450, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3811, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu50",
+    "lb": {"value": 3485, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3888, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu51",
+    "lb": {"value": 3989, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 4418, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu52",
+    "lb": {"value": 4121, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 4650, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu53",
+    "lb": {"value": 4196, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 4676, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu54",
+    "lb": {"value": 4245, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 4733, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu55",
+    "lb": {"value": 4152, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 4522, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu56",
+    "lb": {"value": 4553, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5374, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu57",
+    "lb": {"value": 4349, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5023, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu58",
+    "lb": {"value": 4343, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5071, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu59",
+    "lb": {"value": 4272, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 4920, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu60",
+    "lb": {"value": 4350, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5177, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu61",
+    "lb": {"value": 4959, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5630, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu62",
+    "lb": {"value": 5096, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5858, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu63",
+    "lb": {"value": 5159, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5749, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu64",
+    "lb": {"value": 5131, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5760, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu65",
+    "lb": {"value": 5121, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5651, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu66",
+    "lb": {"value": 5455, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 6225, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu67",
+    "lb": {"value": 5629, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 6387, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dmu68",
+    "lb": {"value": 5443, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 6298, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu69",
+    "lb": {"value": 5463, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 6385, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu70",
+    "lb": {"value": 5574, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 6540, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu71",
+    "lb": {"value": 6116, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 7033, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu72",
+    "lb": {"value": 6408, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 7163, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu73",
+    "lb": {"value": 6064, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 6869, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dmu74",
+    "lb": {"value": 6150, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 6981, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu75",
+    "lb": {"value": 6101, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 7042, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu76",
+    "lb": {"value": 6392, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 7617, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu77",
+    "lb": {"value": 6502, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 7588, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu78",
+    "lb": {"value": 6615, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 7643, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "dmu79",
+    "lb": {"value": 6671, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 7794, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dmu80",
+    "lb": {"value": 6459, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 7622, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ft06",
+    "lb": {"value": 55, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 55, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "ft10",
+    "lb": {"value": 930, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 930, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "ft20",
+    "lb": {"value": 1165, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1165, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la01",
+    "lb": {"value": 666, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 666, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la02",
+    "lb": {"value": 655, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 655, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la03",
+    "lb": {"value": 597, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 597, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la04",
+    "lb": {"value": 590, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 590, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la05",
+    "lb": {"value": 593, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 593, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la06",
+    "lb": {"value": 926, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 926, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la07",
+    "lb": {"value": 890, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 890, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la08",
+    "lb": {"value": 863, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 863, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la09",
+    "lb": {"value": 951, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 951, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la10",
+    "lb": {"value": 958, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 958, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la11",
+    "lb": {"value": 1222, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1222, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la12",
+    "lb": {"value": 1039, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1039, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la13",
+    "lb": {"value": 1150, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1150, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la14",
+    "lb": {"value": 1292, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1292, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la15",
+    "lb": {"value": 1207, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1207, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la16",
+    "lb": {"value": 945, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 945, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la17",
+    "lb": {"value": 784, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 784, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la18",
+    "lb": {"value": 848, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 848, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la19",
+    "lb": {"value": 842, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 842, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la20",
+    "lb": {"value": 902, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 902, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la21",
+    "lb": {"value": 1046, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 1046, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "la22",
+    "lb": {"value": 927, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 927, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la23",
+    "lb": {"value": 1032, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1032, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la24",
+    "lb": {"value": 935, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 935, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la25",
+    "lb": {"value": 977, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 977, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la26",
+    "lb": {"value": 1218, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1218, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la27",
+    "lb": {"value": 1235, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 1235, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "la28",
+    "lb": {"value": 1216, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1216, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la29",
+    "lb": {"value": 1126, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1168, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "la30",
+    "lb": {"value": 1355, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1355, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la31",
+    "lb": {"value": 1784, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1784, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la32",
+    "lb": {"value": 1850, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1850, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la33",
+    "lb": {"value": 1719, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1719, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la34",
+    "lb": {"value": 1721, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1721, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la35",
+    "lb": {"value": 1888, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1888, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la36",
+    "lb": {"value": 1268, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1268, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la37",
+    "lb": {"value": 1397, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1397, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la38",
+    "lb": {"value": 1196, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "no"},
+    "ub": {"value": 1196, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "yes"}
+},
+{
+    "instance": "la39",
+    "lb": {"value": 1233, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1233, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "la40",
+    "lb": {"value": 1222, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1222, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "orb01",
+    "lb": {"value": 1059, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1059, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "orb02",
+    "lb": {"value": 888, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 888, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "orb03",
+    "lb": {"value": 1005, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1005, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "orb04",
+    "lb": {"value": 1005, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1005, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "orb05",
+    "lb": {"value": 887, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 887, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "orb06",
+    "lb": {"value": 1010, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1010, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "orb07",
+    "lb": {"value": 397, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 397, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "orb08",
+    "lb": {"value": 899, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 899, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "orb09",
+    "lb": {"value": 934, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 934, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "orb10",
+    "lb": {"value": 944, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 944, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "swv01",
+    "lb": {"value": 1402, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1411, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "swv02",
+    "lb": {"value": 1475, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1475, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "swv03",
+    "lb": {"value": 1387, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1414, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "swv04",
+    "lb": {"value": 1440, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1483, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "swv05",
+    "lb": {"value": 1414, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1445, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "swv06",
+    "lb": {"value": 1599, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1700, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "swv07",
+    "lb": {"value": 1465, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1674, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "swv08",
+    "lb": {"value": 1639, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1822, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "swv09",
+    "lb": {"value": 1610, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1741, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "swv10",
+    "lb": {"value": 1631, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1799, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "swv11",
+    "lb": {"value": 2983, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3195, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "swv12",
+    "lb": {"value": 2972, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3131, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "swv13",
+    "lb": {"value": 3104, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3147, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "swv14",
+    "lb": {"value": 2968, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3070, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "swv15",
+    "lb": {"value": 2885, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3085, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "swv16",
+    "lb": {"value": 2924, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 2924, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "swv17",
+    "lb": {"value": 2794, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 2794, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "swv18",
+    "lb": {"value": 2852, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 2852, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "swv19",
+    "lb": {"value": 2843, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 2843, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "swv20",
+    "lb": {"value": 2823, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 2823, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "ta01js",
+    "lb": {"value": 1231, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1231, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "ta02js",
+    "lb": {"value": 1244, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 1244, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "ta03js",
+    "lb": {"value": 1218, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1218, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "ta04js",
+    "lb": {"value": 1175, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1175, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "ta05js",
+    "lb": {"value": 1224, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "no"},
+    "ub": {"value": 1224, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "yes"}
+},
+{
+    "instance": "ta06js",
+    "lb": {"value": 1198, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1244, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta07js",
+    "lb": {"value": 1227, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 9, "certificate": "no"},
+    "ub": {"value": 1227, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 9, "certificate": "yes"}
+},
+{
+    "instance": "ta08js",
+    "lb": {"value": 1217, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "no"},
+    "ub": {"value": 1217, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "yes"}
+},
+{
+    "instance": "ta09js",
+    "lb": {"value": 1274, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "no"},
+    "ub": {"value": 1274, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "yes"}
+},
+{
+    "instance": "ta10js",
+    "lb": {"value": 1241, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1241, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "ta11js",
+    "lb": {"value": 1307, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1374, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta12js",
+    "lb": {"value": 1350, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1384, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta13js",
+    "lb": {"value": 1276, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1347, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta14js",
+    "lb": {"value": 1345, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 1345, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "ta15js",
+    "lb": {"value": 1299, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1339, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta16js",
+    "lb": {"value": 1294, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1360, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta17js",
+    "lb": {"value": 1462, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 1462, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "ta18js",
+    "lb": {"value": 1359, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1425, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta19js",
+    "lb": {"value": 1294, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1335, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta20js",
+    "lb": {"value": 1314, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1372, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta21js",
+    "lb": {"value": 1577, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1667, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta22js",
+    "lb": {"value": 1527, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1609, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta23js",
+    "lb": {"value": 1494, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1580, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta24js",
+    "lb": {"value": 1608, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1646, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta25js",
+    "lb": {"value": 1525, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1625, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta26js",
+    "lb": {"value": 1558, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1691, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta27js",
+    "lb": {"value": 1620, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1709, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta28js",
+    "lb": {"value": 1586, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1620, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta29js",
+    "lb": {"value": 1532, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1647, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta30js",
+    "lb": {"value": 1482, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1603, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta31js",
+    "lb": {"value": 1764, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1766, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta32js",
+    "lb": {"value": 1774, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1852, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta33js",
+    "lb": {"value": 1783, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1841, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta34js",
+    "lb": {"value": 1828, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1855, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta35js",
+    "lb": {"value": 2007, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 2007, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "ta36js",
+    "lb": {"value": 1819, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1823, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta37js",
+    "lb": {"value": 1771, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1820, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta38js",
+    "lb": {"value": 1673, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1720, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta39js",
+    "lb": {"value": 1795, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "no"},
+    "ub": {"value": 1795, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "yes"}
+},
+{
+    "instance": "ta40js",
+    "lb": {"value": 1642, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1717, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta41js",
+    "lb": {"value": 1888, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2082, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta42js",
+    "lb": {"value": 1873, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2002, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta43js",
+    "lb": {"value": 1809, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1944, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta44js",
+    "lb": {"value": 1937, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2056, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta45js",
+    "lb": {"value": 1997, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2019, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta46js",
+    "lb": {"value": 1942, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2082, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta47js",
+    "lb": {"value": 1797, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1991, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta48js",
+    "lb": {"value": 1912, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2002, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta49js",
+    "lb": {"value": 1925, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2043, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta50js",
+    "lb": {"value": 1818, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2023, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta51js",
+    "lb": {"value": 2760, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "no"},
+    "ub": {"value": 2760, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "yes"}
+},
+{
+    "instance": "ta52js",
+    "lb": {"value": 2756, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "no"},
+    "ub": {"value": 2756, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "yes"}
+},
+{
+    "instance": "ta53js",
+    "lb": {"value": 2717, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 2717, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "ta54js",
+    "lb": {"value": 2839, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 2839, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "ta55js",
+    "lb": {"value": 2679, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 6, "certificate": "no"},
+    "ub": {"value": 2679, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 6, "certificate": "yes"}
+},
+{
+    "instance": "ta56js",
+    "lb": {"value": 2781, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 5, "certificate": "no"},
+    "ub": {"value": 2781, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 5, "certificate": "yes"}
+},
+{
+    "instance": "ta57js",
+    "lb": {"value": 2943, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 2943, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "ta58js",
+    "lb": {"value": 2885, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "no"},
+    "ub": {"value": 2885, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 3, "certificate": "yes"}
+},
+{
+    "instance": "ta59js",
+    "lb": {"value": 2655, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "no"},
+    "ub": {"value": 2655, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "yes"}
+},
+{
+    "instance": "ta60js",
+    "lb": {"value": 2723, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 5, "certificate": "no"},
+    "ub": {"value": 2723, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 5, "certificate": "yes"}
+},
+{
+    "instance": "ta61js",
+    "lb": {"value": 2868, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2897, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta62js",
+    "lb": {"value": 2869, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2985, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta63js",
+    "lb": {"value": 2755, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2806, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta64js",
+    "lb": {"value": 2702, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2765, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta65js",
+    "lb": {"value": 2725, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2769, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta66js",
+    "lb": {"value": 2845, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2953, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta67js",
+    "lb": {"value": 2825, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2860, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta68js",
+    "lb": {"value": 2784, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 2832, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta69js",
+    "lb": {"value": 3071, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3128, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta70js",
+    "lb": {"value": 2995, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 3044, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta71js",
+    "lb": {"value": 5464, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5658, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta72js",
+    "lb": {"value": 5181, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5306, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta73js",
+    "lb": {"value": 5568, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5684, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta74js",
+    "lb": {"value": 5339, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5394, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta75js",
+    "lb": {"value": 5392, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5671, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta76js",
+    "lb": {"value": 5342, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5496, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta77js",
+    "lb": {"value": 5436, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5511, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta78js",
+    "lb": {"value": 5394, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5486, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta79js",
+    "lb": {"value": 5358, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5456, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "ta80js",
+    "lb": {"value": 5183, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 5312, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "yn4",
+    "lb": {"value": 909, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 997, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "yn3",
+    "lb": {"value": 838, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 921, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "yn2",
+    "lb": {"value": 853, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 921, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "yn1",
+    "lb": {"value": 834, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 900, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_10_9",
+    "lb": {"value": 8300, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 8300, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_10_8",
+    "lb": {"value": 7788, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 7788, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_10_7",
+    "lb": {"value": 8299, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 8299, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_10_6",
+    "lb": {"value": 8509, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 8509, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_10_5",
+    "lb": {"value": 7936, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 7936, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_10_4",
+    "lb": {"value": 8657, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 8657, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_10_3",
+    "lb": {"value": 8094, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 8094, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_10_2",
+    "lb": {"value": 7416, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 7416, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_10_10",
+    "lb": {"value": 8481, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 8481, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_10_1",
+    "lb": {"value": 8219, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 8219, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_100_9",
+    "lb": {"value": 55096, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 55096, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_100_8",
+    "lb": {"value": 56466, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 56466, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_100_7",
+    "lb": {"value": 55456, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 55456, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_100_6",
+    "lb": {"value": 53723, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 53723, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_100_5",
+    "lb": {"value": 54603, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 54603, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_100_4",
+    "lb": {"value": 54889, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 54889, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_100_3",
+    "lb": {"value": 56412, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 56412, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_100_2",
+    "lb": {"value": 52330, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 52330, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_100_10",
+    "lb": {"value": 56661, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 56661, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_100_1",
+    "lb": {"value": 56609, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 56609, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_1000_9",
+    "lb": {"value": 511213, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 511213, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_1000_8",
+    "lb": {"value": 522277, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 522277, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_1000_7",
+    "lb": {"value": 514921, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 514921, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_1000_6",
+    "lb": {"value": 517777, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 517777, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_1000_5",
+    "lb": {"value": 517020, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 517020, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_1000_4",
+    "lb": {"value": 513814, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 513814, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_1000_3",
+    "lb": {"value": 508161, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 508161, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_1000_2",
+    "lb": {"value": 513525, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 513525, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_1000_10",
+    "lb": {"value": 509855, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 509855, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "tai_10_1000_1",
+    "lb": {"value": 515370, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 515370, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_10_9",
+    "lb": {"value": 54210, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 54210, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_10_8",
+    "lb": {"value": 55624, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 55624, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_10_7",
+    "lb": {"value": 54051, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 54051, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_10_6",
+    "lb": {"value": 52447, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "no"},
+    "ub": {"value": 52447, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 2, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_10_5",
+    "lb": {"value": 56142, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 56142, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_10_4",
+    "lb": {"value": 54371, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 54371, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_10_3",
+    "lb": {"value": 54166, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 54166, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_10_2",
+    "lb": {"value": 57160, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 57160, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_10_10",
+    "lb": {"value": 55464, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 55464, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_10_1",
+    "lb": {"value": 54951, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 54951, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_100_9",
+    "lb": {"value": 60826, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 92650, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_100_8",
+    "lb": {"value": 61651, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 89495, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_100_100_7",
+    "lb": {"value": 62987, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 91431, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_100_100_6",
+    "lb": {"value": 60057, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 91627, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_100_5",
+    "lb": {"value": 61340, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 90469, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_100_4",
+    "lb": {"value": 62907, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 91588, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_100_100_3",
+    "lb": {"value": 60458, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 89281, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_100_100_2",
+    "lb": {"value": 62527, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 89431, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_100_100_10",
+    "lb": {"value": 62125, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 90312, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_100_100_1",
+    "lb": {"value": 62521, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 88640, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_1000_9",
+    "lb": {"value": 528097, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 557912, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_1000_8",
+    "lb": {"value": 526428, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 565202, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_1000_7",
+    "lb": {"value": 522537, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 554500, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_1000_6",
+    "lb": {"value": 522907, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 551991, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_1000_5",
+    "lb": {"value": 517728, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 548418, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_1000_4",
+    "lb": {"value": 527101, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 556801, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_1000_3",
+    "lb": {"value": 530560, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 566764, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_1000_2",
+    "lb": {"value": 530375, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 558362, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_1000_10",
+    "lb": {"value": 521766, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 562085, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "tai_100_1000_1",
+    "lb": {"value": 522298, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 554381, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "yes"}
+},
+{
+    "instance": "tai_1000_10_9",
+    "lb": {"value": 508701, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "no"},
+    "ub": {"value": 508701, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "yes"}
+},
+{
+    "instance": "tai_1000_10_8",
+    "lb": {"value": 62700, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 12, "certificate": "no"},
+    "ub": {"value": 513101, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 12, "certificate": "yes"}
+},
+{
+    "instance": "tai_1000_10_7",
+    "lb": {"value": 58896, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 13, "certificate": "no"},
+    "ub": {"value": 523900, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 13, "certificate": "yes"}
+},
+{
+    "instance": "tai_1000_10_6",
+    "lb": {"value": 64051, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 13, "certificate": "no"},
+    "ub": {"value": 511932, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 13, "certificate": "yes"}
+},
+{
+    "instance": "tai_1000_10_5",
+    "lb": {"value": 513881, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "no"},
+    "ub": {"value": 513881, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "yes"}
+},
+{
+    "instance": "tai_1000_10_4",
+    "lb": {"value": 519369, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "no"},
+    "ub": {"value": 519369, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "yes"}
+},
+{
+    "instance": "tai_1000_10_3",
+    "lb": {"value": 59168, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 14, "certificate": "no"},
+    "ub": {"value": 517493, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 14, "certificate": "yes"}
+},
+{
+    "instance": "tai_1000_10_2",
+    "lb": {"value": 509226, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "no"},
+    "ub": {"value": 509226, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "yes"}
+},
+{
+    "instance": "tai_1000_10_10",
+    "lb": {"value": 521360, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "no"},
+    "ub": {"value": 521360, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "yes"}
+},
+{
+    "instance": "tai_1000_10_1",
+    "lb": {"value": 515334, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "no"},
+    "ub": {"value": 515334, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 4, "certificate": "yes"}
+},
+{
+    "instance": "tai_1000_100_9",
+    "lb": {"value": 59476, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_100_8",
+    "lb": {"value": 60791, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_100_7",
+    "lb": {"value": 59220, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_100_6",
+    "lb": {"value": 59268, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_100_5",
+    "lb": {"value": 60666, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_100_4",
+    "lb": {"value": 59292, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_100_3",
+    "lb": {"value": 58276, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_100_2",
+    "lb": {"value": 59566, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_100_10",
+    "lb": {"value": 59405, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_100_1",
+    "lb": {"value": 60211, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_1000_9",
+    "lb": {"value": 0, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_1000_8",
+    "lb": {"value": 0, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_1000_7",
+    "lb": {"value": 0, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_1000_6",
+    "lb": {"value": 0, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_1000_5",
+    "lb": {"value": 0, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_1000_4",
+    "lb": {"value": 0, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_1000_3",
+    "lb": {"value": 0, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_1000_2",
+    "lb": {"value": 0, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_1000_10",
+    "lb": {"value": 0, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "tai_1000_1000_1",
+    "lb": {"value": 0, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-21", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-long-100-10000-1",
+    "lb": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "dct-long-100-10000-2",
+    "lb": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "dct-long-100-10000-3",
+    "lb": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "no"},
+    "ub": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 1, "certificate": "yes"}
+},
+{
+    "instance": "dct-long-100-100000-1",
+    "lb": {"value": 586166, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-long-100-100000-2",
+    "lb": {"value": 575365, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-long-100-100000-3",
+    "lb": {"value": 584416, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-long-1000-10000-1",
+    "lb": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "dct-long-1000-10000-2",
+    "lb": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "dct-long-1000-10000-3",
+    "lb": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "no"},
+    "ub": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 0, "certificate": "yes"}
+},
+{
+    "instance": "dct-long-1000-100000-1",
+    "lb": {"value": 599682, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1097121, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-long-1000-100000-2",
+    "lb": {"value": 599697, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1046187, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-long-1000-100000-3",
+    "lb": {"value": 599661, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 1080483, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-short-100-10000-1",
+    "lb": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 628075, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-short-100-10000-2",
+    "lb": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 630432, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-short-100-10000-3",
+    "lb": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 621177, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-short-100-100000-1",
+    "lb": {"value": 359428, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-short-100-100000-2",
+    "lb": {"value": 363299, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-short-100-100000-3",
+    "lb": {"value": 359829, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": null, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-short-1000-10000-1",
+    "lb": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 683064, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-short-1000-10000-2",
+    "lb": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 683817, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-short-1000-10000-3",
+    "lb": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 685902, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-short-1000-100000-1",
+    "lb": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 663130, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-short-1000-100000-2",
+    "lb": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 659715, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+},
+{
+    "instance": "dct-short-1000-100000-3",
+    "lb": {"value": 600000, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"},
+    "ub": {"value": 697285, "date": "2026-06-25", "solver": "CP-SAT", "hardware": "Intel 11th Gen Core i7-1185G7", "time": 10, "certificate": "no"}
+}
+]

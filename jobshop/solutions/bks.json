@@ -4157,6 +4157,42 @@
         "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }]
     },
 {
+        "instance" : "dct-long-100-100000-1",
+        "size" : "109 x 100",
+        "type" : "reentrant jobshop",
+        "family" : "dct",
+        "family_long" : "Da Col and Teppan 2022",
+        "status" : "closed",
+        "lower_bound" : 600000,
+        "upper_bound" : 600000,
+        "lb_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }],
+        "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }]
+    },
+{
+        "instance" : "dct-long-100-100000-2",
+        "size" : "114 x 100",
+        "type" : "reentrant jobshop",
+        "family" : "dct",
+        "family_long" : "Da Col and Teppan 2022",
+        "status" : "closed",
+        "lower_bound" : 600000,
+        "upper_bound" : 600000,
+        "lb_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }],
+        "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }]
+    },
+{
+        "instance" : "dct-long-100-100000-3",
+        "size" : "109 x 100",
+        "type" : "reentrant jobshop",
+        "family" : "dct",
+        "family_long" : "Da Col and Teppan 2022",
+        "status" : "closed",
+        "lower_bound" : 600000,
+        "upper_bound" : 600000,
+        "lb_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }],
+        "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }]
+    },
+{
         "instance" : "dct-long-1000-10000-1",
         "size" : "1002 x 1000",
         "type" : "reentrant jobshop",
@@ -4183,42 +4219,6 @@
 {
         "instance" : "dct-long-1000-10000-3",
         "size" : "1002 x 1000",
-        "type" : "reentrant jobshop",
-        "family" : "dct",
-        "family_long" : "Da Col and Teppan 2022",
-        "status" : "closed",
-        "lower_bound" : 600000,
-        "upper_bound" : 600000,
-        "lb_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }]
-    },
-{
-        "instance" : "dct-long-100-100000-1",
-        "size" : "109 x 100",
-        "type" : "reentrant jobshop",
-        "family" : "dct",
-        "family_long" : "Da Col and Teppan 2022",
-        "status" : "closed",
-        "lower_bound" : 600000,
-        "upper_bound" : 600000,
-        "lb_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }]
-    },
-{
-        "instance" : "dct-long-100-100000-2",
-        "size" : "114 x 100",
-        "type" : "reentrant jobshop",
-        "family" : "dct",
-        "family_long" : "Da Col and Teppan 2022",
-        "status" : "closed",
-        "lower_bound" : 600000,
-        "upper_bound" : 600000,
-        "lb_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 60, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 60, "certificate" : "no" }]
-    },
-{
-        "instance" : "dct-long-100-100000-3",
-        "size" : "109 x 100",
         "type" : "reentrant jobshop",
         "family" : "dct",
         "family_long" : "Da Col and Teppan 2022",
@@ -4301,6 +4301,42 @@
         "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }]
     },
 {
+        "instance" : "dct-short-100-100000-1",
+        "size" : "20685 x 100",
+        "type" : "reentrant jobshop",
+        "family" : "dct",
+        "family_long" : "Da Col and Teppan 2022",
+        "status" : "closed",
+        "lower_bound" : 600000,
+        "upper_bound" : 600000,
+        "lb_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }],
+        "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }]
+    },
+{
+        "instance" : "dct-short-100-100000-2",
+        "size" : "20870 x 100",
+        "type" : "reentrant jobshop",
+        "family" : "dct",
+        "family_long" : "Da Col and Teppan 2022",
+        "status" : "closed",
+        "lower_bound" : 600000,
+        "upper_bound" : 600000,
+        "lb_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }],
+        "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }]
+    },
+{
+        "instance" : "dct-short-100-100000-3",
+        "size" : "20767 x 100",
+        "type" : "reentrant jobshop",
+        "family" : "dct",
+        "family_long" : "Da Col and Teppan 2022",
+        "status" : "closed",
+        "lower_bound" : 600000,
+        "upper_bound" : 600000,
+        "lb_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }],
+        "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }]
+    },
+{
         "instance" : "dct-short-1000-10000-1",
         "size" : "2882 x 1000",
         "type" : "reentrant jobshop",
@@ -4333,44 +4369,8 @@
         "status" : "closed",
         "lower_bound" : 600000,
         "upper_bound" : 600000,
-        "lb_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 60, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 60, "certificate" : "no" }]
-    },
-{
-        "instance" : "dct-short-100-100000-1",
-        "size" : "20685 x 100",
-        "type" : "reentrant jobshop",
-        "family" : "dct",
-        "family_long" : "Da Col and Teppan 2022",
-        "status" : "closed",
-        "lower_bound" : 600000,
-        "upper_bound" : 600000,
-        "lb_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 60, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 60, "certificate" : "no" }]
-    },
-{
-        "instance" : "dct-short-100-100000-2",
-        "size" : "20870 x 100",
-        "type" : "reentrant jobshop",
-        "family" : "dct",
-        "family_long" : "Da Col and Teppan 2022",
-        "status" : "closed",
-        "lower_bound" : 600000,
-        "upper_bound" : 600000,
-        "lb_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 60, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 60, "certificate" : "no" }]
-    },
-{
-        "instance" : "dct-short-100-100000-3",
-        "size" : "20767 x 100",
-        "type" : "reentrant jobshop",
-        "family" : "dct",
-        "family_long" : "Da Col and Teppan 2022",
-        "status" : "closed",
-        "lower_bound" : 600000,
-        "upper_bound" : 600000,
-        "lb_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 60, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 60, "certificate" : "no" }]
+        "lb_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }],
+        "ub_data" : [{ "value" : 600000, "date" : "2026-06-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : 1, "certificate" : "no" }]
     },
 {
         "instance" : "dct-short-1000-100000-1",
