@@ -30,7 +30,7 @@ This document is visible as a README.md in the Github folder [jobshop](https://g
     - [Comparison of reference solvers](#comparison-of-reference-solvers)
 - [Best known solutions](#jsplib-solutions---the-state-of-the-art)
     - [JSON bks format](#best-known-solutions-json-format)
-    - [Best known solutions](#best-known-solutions)
+    - [Best known solutions](#best-known-solutions---jsplib)
     - [Publications](#publications-best-known-solutions)
 
 <br/>
@@ -337,7 +337,7 @@ References
 - [Failure-Directed Search for Constraint-Based Scheduling](https://link.springer.com/chapter/10.1007/978-3-319-18008-3_30) (Petr Vilim, Philippe Laborie and Paul Shaw - 2015)
 - [Introduction to CP Optimizer](https://cp2019.a4cp.org/PDFs/P-Laborie.pdf) (Philippe Laborie - 2019)
 
-#### Google ORTools CP-SAT (2009 - present)
+#### Google ORTools CP-SAT (2017 - present)
 
 CP-SAT is an open-source lazy clause generation engine augmented with an LP, MIP-style cuts and CP-style propagators designed by Laurent Perron, Frédéric Didier and Steven Gay. CP-SAT includes
 - LP-based lower bounds + MIP style cuts
@@ -349,7 +349,7 @@ CP-SAT is an open-source lazy clause generation engine augmented with an LP, MIP
 
 CP-SAT follows the work done on a more traditional CP + LS engine by Laurent Perron and Vincent Furnon, focusing more on VRP problems.
 
-CP-SAT has won every year the MiniZinc competition since 2013
+ORTools (CP-SAT and its FD predecessor) has won every year the MiniZinc competition since 2013
 
 References
 - [CP-SAT at scheduling seminar](https://schedulingseminar.com/presentations/SchedulingSeminar_LaurentPerron.pdf)
@@ -452,13 +452,13 @@ Averages are made on instances solved. Outlier solutions returned by the engine 
 <tr><td>CP-SAT</td><td>60</td><td>60</td><td>0</td><td>0%</td><td>2%</td><td>7%</td><td>10%</td></tr>
 <tr><td>OptalCP</td><td>60</td><td>60</td><td>0</td><td>0%</td><td>1%</td><td>3%</td><td>7%</td></tr>
 <tr><td rowspan="3">large</td><td>CPO</td><td>90</td><td>90</td><td>27</td><td>30%</td><td>10%</td><td>4%</td><td>19%</td></tr>
-<tr><td>CP-SAT</td><td>90</td><td>70</td><td>46</td><td>51%</td><td>25%</td><td>3%</td><td>10%</td></tr>
+<tr><td>CP-SAT</td><td>90</td><td style="color:red">70</td><td>46</td><td>51%</td><td>25%</td><td>3%</td><td>10%</td></tr>
 <tr><td>OptalCP</td><td>90</td><td>90</td><td>50</td><td>56%</td><td>0%</td><td>1%</td><td>7%</td></tr>
 <tr><td rowspan="3">reentrant</td><td>CPO</td><td>44</td><td>44</td><td>1</td><td>2%</td><td>12%</td><td>11%</td><td>19%</td></tr>
 <tr><td>CP-SAT</td><td>44</td><td style="color:red">38</td><td>26</td><td>59%</td><td>3%</td><td>9%</td><td>6%</td></tr>
 <tr><td>OptalCP</td><td>44</td><td>44</td><td>38</td><td>86%</td><td>0%</td><td>5%</td><td>3%</td></tr>
 <tr><td rowspan="3">open</td><td>CPO</td><td>90</td><td>90</td><td>0</td><td>0%</td><td>2%</td><td>7%</td><td>16%</td></tr>
-<tr><td>CP-SAT</td><td>90</td><td>80</td><td>0</td><td>0%</td><td>12%</td><td>8%</td><td>12%</td></tr>
+<tr><td>CP-SAT</td><td>90</td><td style="color:red">80</td><td>0</td><td>0%</td><td>12%</td><td>8%</td><td>12%</td></tr>
 <tr><td>OptalCP</td><td>90</td><td>90</td><td>0</td><td>0%</td><td>1%</td><td>3%</td><td>12%</td></tr>
 </table>
 
