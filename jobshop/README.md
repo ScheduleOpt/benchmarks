@@ -76,6 +76,7 @@ We would like to augment the jsplib with more instances based on real data and h
 
 We strongly encourage anyone that has access to real jobshop instances to share them with us and the scheduling commmunity.
 
+<br/>
 
 ### Classification of the jobshop instances
 
@@ -97,6 +98,7 @@ Instances are divided into
 
 > 2026-06-10: We have introduced the <strong style="color:cornflowerblue">toy</strong> category for < 1 minute, and moved the <strong style="color:green">easy</strong> category to < 10 minutes, making official that we consider 10 minutes the standard benchmarking time unlike 1h in [NRR2022]
 
+<br/>
 
 
 Currently there are
@@ -117,6 +119,8 @@ reentrant jobshop
 - `dct` : 16 toy, 7 medium, 1 open
 - `bel` : 20 toy
 
+<br/>
+
 ### Similar work
 
 We have borrowed data and ideas from the following sources
@@ -135,8 +139,7 @@ Since 2014 [Optimizizer](https://optimizizer.com/jobshop.php) has been the refer
 
 #### Scheduling Lab
 
-[SchedulingLab](https://github.com/SchedulingLab/jsp-instances) has collects instances of various types of scheduling problems, including instances not referenced here.
-
+[SchedulingLab](https://github.com/SchedulingLab/jsp-instances) collects instances of various types of scheduling problems, including instances not referenced here.
 
 <br/>
 
@@ -469,10 +472,10 @@ The tasks of a job can be processed by any machine in a predefined group of simi
 
 ## JSPLib solutions - The State-Of-The-Art
 
-In this section are collected the best known solutions (upper bound and lower bound) for each problem in the benchmark. 
+In this section are collected the best known solutions (upper and lower bounds) for each problem in the benchmark. 
 
 The solutions may come from 
-- Published papers (with reference eg. NS2002), the section [publications](#publications-best-known-solutions) gives the complete paper info
+- Published papers (eg. NS2002), the section [publications](#publications-best-known-solutions) provides references
 - An engine run by someone else (eg. CPO2015) which results have been published
 - An engine run by us (CPO, OptalCP, CP-SAT) with approximate resolution time
 
@@ -519,7 +522,7 @@ The best known solutions are now collected in a [json](https://github.com/Schedu
     }
 ```
 
-For most of the best known solutions, the date, machine, running time and certificate (valid primal or valid dual solution) are not known. The data will be progressively updated to the best of our knowledge.
+For most of the best known solutions, the date, hardware, running time and certificate (valid primal or valid dual solution) are not known. The data will be progressively updated to the best of our knowledge.
 
 <br/>
 
@@ -911,9 +914,7 @@ However OptalCP proves a lower bound of 667 and Optimizizer only provides a veri
 <tr><td>tai_1000_1000_10</td><td>1000 x 1000</td><td>jobshop</td><td>549075</td><td>874820</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb Hexaly | ub Hexaly2024</td></tr>
 </table>
 
-***We consider the tai 1000 x 1000 instances a curiosity, a benchmark to test the internals of the engines (memory allocation, complexity of internal algorithms and data structures, etc.) We don't believe these instances represent any reasonable industrial problem, less because of their size, and more because they are random, unstructured, square and non-reentrant : your manufacturing plant produces exactly 1000 different products, each one needs 1000 operations on exactly one of the 1000 machines in the plant, and for each product the operations must be done in a completely different order !***
-
-<br/>
+*We consider the tai 1000 x 1000 instances a curiosity, a benchmark to test the internals of the engines (memory allocation, complexity of internal algorithms and data structures, etc.) We don't believe these instances represent any reasonable industrial problem, less because of their size, and more because they are random, unstructured, square and non-reentrant : your manufacturing plant produces exactly 1000 different products, each one needs 1000 operations on exactly one of the 1000 machines in the plant, and for each product the operations must be done in a completely different order !*
 
 #### Da Col and Teppan (2022) - reentrant jobshop
 <table>
@@ -1083,7 +1084,7 @@ Averages are made on instances solved. Outlier solutions returned by the engine 
 <tr><td>CP-SAT</td><td>90</td><td>70</td><td>46</td><td>51%</td><td>25%</td><td>3%</td><td>10%</td></tr>
 <tr><td>OptalCP</td><td>90</td><td>90</td><td>50</td><td>56%</td><td>0%</td><td>1%</td><td>7%</td></tr>
 <tr><td rowspan="3">reentrant</td><td>CPO</td><td>44</td><td>44</td><td>1</td><td>2%</td><td>12%</td><td>11%</td><td>19%</td></tr>
-<tr><td>CP-SAT</td><td>44</td><td>38</td><td>26</td><td>59%</td><td>3%</td><td>9%</td><td>6%</td></tr>
+<tr><td>CP-SAT</td><td>44</td><td style="color:red">38</td><td>26</td><td>59%</td><td>3%</td><td>9%</td><td>6%</td></tr>
 <tr><td>OptalCP</td><td>44</td><td>44</td><td>38</td><td>86%</td><td>0%</td><td>5%</td><td>3%</td></tr>
 <tr><td rowspan="3">open</td><td>CPO</td><td>90</td><td>90</td><td>0</td><td>0%</td><td>2%</td><td>7%</td><td>16%</td></tr>
 <tr><td>CP-SAT</td><td>90</td><td>80</td><td>0</td><td>0%</td><td>12%</td><td>8%</td><td>12%</td></tr>
