@@ -1011,7 +1011,7 @@ All other bounds were found by OptalCP except 2 bounds by CP-SAT (equal but fast
 >
 > Jelke J. van Hoorn, The Current state of bounds on benchmark instances of the job-shop scheduling problem (2017)
 
-While the effort of van Horn is commendable, having accurate best-known solutions does not solve the problem of poorly reported results in publications. Announcing a best-known solution while having little scientific interest in itself (e.g. a random solution) has sadly become a central "contribution" of papers.
+While the effort of van Hoorn is commendable, having accurate best-known solutions does not solve the problem of poorly reported results in publications. Announcing a best-known solution while having little scientific interest in itself (e.g. a random solution) has sadly become a central "contribution" of papers.
 
 By giving to much importance to best-known solutions we miss what really matters:
 - An approach that finds a best known solution for a single problem but is unable to provide good results for other problems is totally unusable in practice (e.g. a random solution)
