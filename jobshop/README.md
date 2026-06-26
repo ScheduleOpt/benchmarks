@@ -14,7 +14,7 @@ JSPLib is a comprehensive benchmark library for the Job Shop Scheduling Problem 
 JSPLib tracks the engines State-of-the-Art (SOTA) through a standardized 10-minute benchmark of reference solvers (CPO, CP-SAT, OptalCP), comparing their optimality gaps and deviations from best known bounds across all instance families. In addition, JSPLib maintains an archive verified Best Known Solutions (BKS).
 
 The data and source code can be found in the [Github repository](https://github.com/ScheduleOpt/benchmarks)
-This document is visible as a README.md in the Github folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib). Instances are now available in [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/json) or [text](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/text) formats. A json file of [best known solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) is also provided.
+This document is visible as a README.md in the Github folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib). Instances are now available in [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/json) or [text](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/text) formats. The [raw data](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) of the performance benchmark is available. A json file of [best known solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) is also provided.
 
 ### Table of Contents
 
@@ -306,9 +306,9 @@ The instances come from the following publications
 We track the State-Of-The-Art (SOTA) of optimization engines for scheduling with a standardized 10 minutes benchmark of the reference engines
 
 The engines that are benchmarked are
-- **IBM ILOG CP Optimizer** : representative of the CP-scheduling family of engines
-- **Google CP-SAT** : representative of the lazy clause generation family of engines
-- **OptalCP** : representative of the CP-scheduling family of engines
+- [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : representative of the ***CP-scheduling*** family of engines
+- [**Google CP-SAT**](https://developers.google.com/optimization) : representative of the ***lazy clause generation*** family of engines
+- [**OptalCP**](https://optalcp.com) : representative of the ***CP-scheduling*** family of engines
 
 <br/>
 
@@ -316,13 +316,13 @@ The engines that are benchmarked are
 
 #### IBM CP Optimizer (2007 - present)
 
-IBM ILOG CP Optimizer is a descendant of ILOG Solver (architectured over the years by Jean-François Puget, Jean-Charles Régin and later Laurent Perron) and ILOG Scheduler (architectured by Claude Le Pape, then Philippe Laborie). CP Optimizer (led by Paul Shaw, Laurent Perron and Philippe Laborie) merged the general CP engine and the specific scheduling add-on in a single engine, promoted the model-and-run approach and pioneered a new scheduling language (optional intervals, `noOverlap`, cumulative functions, etc.) that has become an industry standard.
+**IBM ILOG CP Optimizer** is a descendant of **ILOG Solver** (architectured over the years by Jean-François Puget, Jean-Charles Régin and later Laurent Perron) and **ILOG Scheduler** (architectured by Claude Le Pape, then Philippe Laborie). CP Optimizer (led by Paul Shaw, Laurent Perron and Philippe Laborie) merged the general CP engine and the specific scheduling add-on in a single engine, promoted the model-and-run approach and pioneered a new scheduling language (optional intervals, noOverlap, cumulative functions, etc.) that has become an industry standard.
 
 From a technical perspective CP Optimizer interleaves the following search methods
-- LNS (Shaw and al.) : tree-search based local search
-- Iterative deepening (designed by Philppe Laborie) : a quick diving heuristic for "simple" scheduling problems that often provides fast and good initial solutions
-- Failure Directed Search (designed by Petr Vilim) : a generalization of the fail-first principle that reduces the search space by eliminating unlikely assignments to succeed
-- Genetic algorithms on top of the scheduling engine (not on by default)
+- **LNS** (Shaw and al.) : tree-search based local search
+- **Iterative deepening** (designed by Philppe Laborie) : a quick diving heuristic for "simple" scheduling problems that often provides fast and good initial solutions
+- **Failure Directed Search** (designed by Petr Vilim) : a generalization of the fail-first principle that reduces the search space by eliminating unlikely assignments to succeed
+- **Genetic algorithms** on top of the scheduling engine (not on by default)
 
 Because CP Optimizer was designed in a time where multi-core computers weren't common, the engine alternates the different strategies on the same core. And replicates itself over various cores with different parameters if more cores are available
 
@@ -358,11 +358,11 @@ References
 #### OptalCP (2021 - present)
 
 OptalCP was architectured by Petr Vilim, Nicolas Bonifas and Diego Olivier Fernandez Pons (initially with input from Philippe Laborie). Compared to CPO the parallelism is done with one strategy per core instead of interleaving. The strategies used are
-- LNS : tree-search based local search
-- FDS : generalizes first-fail principle
-- FDSDual : generalizes destructive lower bounds
+- **LNS** : tree-search based local search
+- **FDS** : generalizes first-fail principle
+- **FDSDual** : generalizes destructive lower bounds
 
-OptalCP continues the legacy of CP Optimizer (engine style, modeling language)
+OptalCP continues the legacy of CP Optimizer (engine style, modeling language). The hybridization of OptalCP with heuristics and meta-heuristics is done outside by communicating upper and lower bounds in real time (during search)
 
 References
 - [OptalCP at scheduling seminar](https://schedulingseminar.com/presentations/schedulingseminar_petrvilim_vilemheinz.pdf)
@@ -408,9 +408,10 @@ Comparisons done on an Windows PC with an i7 4-core 3GHz 32GB ram in 600 seconds
     - we may benchmark with default parameters later
 - **CP-SAT** V9.15.6755 with default configuration
 - **CPO** 22.1.1.0
-    - with gap tolerance = T0
+    - with gap tolerance = 0
     
-    he raw data is in the [solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) folder
+
+The raw data is in the [solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) folder
 
 We recommend to run your own benchmarks on your own machines. All required [code](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/code) is provided with HOWTO instructions in each README file.
 
