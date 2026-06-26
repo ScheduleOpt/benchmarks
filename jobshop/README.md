@@ -60,6 +60,8 @@ reentrant jobshop instances (44)
 - 20 instances `bel` from Boveroux, Ernst and Louveaux 2025
 
 
+<br/>
+
 ### The lack of industrial instances
 
 > There is a gap in the existing literature regarding job shop scheduling benchmarks. Most commonly referenced instances, such as those proposed by Taillard et al., Adams et al.  or Demirkol et al. , focus on small and rectangular configurations where the number of machines equals the number of operations for each job. This structure does not adequately represent the complexities of larger, unbalanced scenarios commonly encountered in real-world manufacturing.
@@ -125,7 +127,7 @@ Our work was inspired by the ***outstanding*** work of Naderi, Ruiz and Roshanae
 
 #### Jelke J. van Hoorn (2017)
 
-Jelke J.van Hoorn collected and verified in 2017 all available upper and lower bounds for jobshop problems and published them in *The Current state of bounds on benchmark instances of the job-shop scheduling problem*. The online [Appendix] (https://static-content.springer.com/esm/art%3A10.1007%2Fs10951-017-0547-8/MediaObjects/10951_2017_547_MOESM_ESM.pdf) contains the data.
+Jelke J. van Hoorn collected and verified in 2017 all available upper and lower bounds for jobshop problems and published them in *The Current state of bounds on benchmark instances of the job-shop scheduling problem*. The online [Appendix](https://static-content.springer.com/esm/art%3A10.1007%2Fs10951-017-0547-8/MediaObjects/10951_2017_547_MOESM_ESM.pdf) contains the data.
 
 #### Oleg V. Shylo (2014 - present)
 
@@ -133,8 +135,10 @@ Since 2014 [Optimizizer](https://optimizizer.com/jobshop.php) has been the refer
 
 #### Scheduling Lab
 
-[SchedulingLab](https://github.com/SchedulingLab/jsp-instances) has collects instances of various types of scheduling problems.
+[SchedulingLab](https://github.com/SchedulingLab/jsp-instances) has collects instances of various types of scheduling problems, including instances not referenced here.
 
+
+<br/>
 
 ### Formats
 
@@ -516,6 +520,8 @@ The best known solutions are now collected in a [json](https://github.com/Schedu
 ```
 
 For most of the best known solutions, the date, machine, running time and certificate (valid primal or valid dual solution) are not known. The data will be progressively updated to the best of our knowledge.
+
+<br/>
 
 ### Best known solutions - JSPLib
 
@@ -967,7 +973,7 @@ We have recently noticed some regression in OptalCP on two of these instances he
 <tr><td>bel19</td><td>806 x 69</td><td>reentrant jobshop</td><td>529239</td><td>529239</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 </table>
 
-
+<br/>
 
 ### Publications (best known solutions)
 
@@ -1001,6 +1007,7 @@ The upper and lower bounds come from
 
 All other bounds were found by OptalCP except 2 bounds by CP-SAT (equal but faster) and 3 bounds by Hexaly (strictly better than all other solvers). The cited papers also may use an engine directly like [CPO2015], [Hexaly2024] or as part of an algorithm like [CdGKGC2025] which uses CP-SAT.
 
+<br/>
 
 ## Comparison of engines and heuristics
 
@@ -1018,43 +1025,45 @@ By giving to much importance to best-known solutions we miss what really matters
 - An approach that systematically gets close to the best known solutions in a short time may not improve any best known bound but be of significant practical interest
 
 We therefore adopt the following metrics instead
-- average deviation with respect to best-known lower-bound
-- average deviation with respect to best-known upper-bound
-- average gap
-
-<br/>
+- Average deviation with respect to best-known lower-bound
+- Average deviation with respect to best-known upper-bound
+- Average gap
 
 ***The MIP community uses geometric averages instead of arithmetic averages to correct against methods that solve extremely well a single instance and perform poorly on others. We may adopt geometric averages in the future, for the moment we use arithmetic ones***
 
+<br/>
+
 ### Comparison of reference solvers
 
-Comparisons done on an Windows PC with an i7 4-core 3.3GHz 32GB ram in 600 seconds
-- OptalCP Academic Version 2026.4.0 (with maximum propagation instead of default)
+Comparisons done on an Windows PC with an i7 4-core 3GHz 32GB ram in 600 seconds
+- OptalCP Academic Version 2026.4.0 (with maximum propagation instead of default, gap tolerance = 0 and some other parameter changes, we may benchmark with default parameters later)
 - CP-SAT V9.15.6755 with default configuration
-- CPO 22.1.1.0
+- CPO 22.1.1.0 (with gap tolerance = 0)
+
+The raw data is in the [solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) folder
+
+We recommend to run your own benchmarks on your own machines. All required [code](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/code) is provided with HOWTO instructions in each README file.
+
 
 Important caveats
 - Engines have **relative** and **absolute optimality tolerances** (CPO, OptalCP) which can lead to reporting sub-optimal solutions as optimal (for the tolerance). For this test the tolerances have been set to zero
 - Engines are very **non-deterministic** (results between two runs of the same engine on the same machine differ significantly) due to parallelism. As a result it makes no sense to consider very accurate values for average deviations or gap.
 - Engines have different **bottlenecks** (CPU, memory) that are due to their internal architecture and trade-offs made by their designers. An engine doesn't behave in the same way with 2, 4, 8, 16, 32 or 64 cores, doesn't behave the same in machines with fast / slow memory, etc.
 
-The raw data is in the [solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) folder
-
-We recommend to run your own benchmarks on your own machines (we provide all the [code](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/code) with HOWTO instructions in each README.md file)
 
 #### Per types of instances
 
 The types are defined as follows
-- `outdated` : ft, la, orb
-- `classic` : abz, swv, yn, dmu, ta
-- `challenge` : classic + still open
-- `large` : tai
-- `reentrant`: bel, dct
-- `open` : all instances still open
+- *outdated* : `ft`, `la`, `orb`
+- *classic* : `abz`, `swv`, `yn`, `dmu`, `ta`
+- *challenge* : classic + still open
+- *large* : `tai`
+- *reentrant*: `bel`, `dct`
+- *open* : all instances still open
 
-</br>
+<br/>
 
-Averages are made on instances solved
+Averages are made on instances solved. Outlier solutions returned by the engine (e.g. a schedule of makespan equal to the sum of processing times - all tasks scheduled one at the time) have been manually removed as they distort the arithmetic average, instead the engine is considered as having not solved. We may formalize this in the future (e.g. only solutions better than a left-to-right greedy are accepted).
 
 <table>
 <tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb dev</th><th>ub dev</th><th>gap</th></tr>
