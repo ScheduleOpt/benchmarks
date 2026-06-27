@@ -128,7 +128,9 @@ Jelke J. van Hoorn collected and verified in 2017 all available upper and lower 
 
 #### Oleg V. Shylo (2014 - present)
 
-Since 2014 [Optimizizer](https://optimizizer.com/jobshop.php) has been the reference in terms of published upper and lower bounds for jobshop problems. For each problem is given the publication that explains the method used to find the upper or lower bound, and upper bounds are explicitly provided and verified.
+Since 2014 [Optimizizer](https://optimizizer.com/jobshop.php) has been the reference in terms of published upper and lower bounds for jobshop problems. For each problem is given the publication that explains the method used to find the upper or lower bound, and upper bounds are explicitly provided and verified. Optimizizer is a repository of ***published*** results, while jsplib.org is a repository of ***engine*** results. JSPLib is interested in  non-engine results (meta-heuristics, etc) only to investigate what changes are needed for engines to surpass them! We do not report improved bounds to optimizizer (there are no peer-reviewed publications supporting them and we don't consider "I ran an engine for a while because I am very patient" a scientific contribution). The authors of the benchmarked engines are invited to write papers about how their engines work, submit them for peer-review and report the bounds to Optimizizer.
+
+***There may be some lag between jsplib.org and optimizizer, always check both.***
 
 #### Scheduling Lab
 
