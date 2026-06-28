@@ -322,7 +322,7 @@ The engines that are benchmarked are
 
 From a technical perspective CP Optimizer interleaves the following search methods
 - **LNS** (Shaw and al.) : tree-search based local search
-- **Iterative deepening** (designed by Philppe Laborie) : a quick diving heuristic for "simple" scheduling problems that often provides fast and good initial solutions
+- **Iterative diving** (designed by Philppe Laborie) : a quick diving heuristic for "simple" scheduling problems that often provides fast and good initial solutions
 - **Failure Directed Search** (designed by Petr Vilim) : a generalization of the fail-first principle that reduces the search space by eliminating unlikely assignments to succeed
 - **Genetic algorithms** on top of the scheduling engine (not on by default)
 
@@ -391,14 +391,14 @@ By giving to much importance to best-known solutions we miss what really matters
 
 
 We therefore adopt the following metrics instead
-- Average deviation with respect to best-known lower-bound 
-$$UB_{deviation} = \frac{UB - UB_{best}}{UB_{best}}$$
-- Average deviation with respect to best-known upper-bound
-$$LB_{deviation} = \frac{UL_{best} - LB}{LB_{best}}$$
-- Average gap
-$$GAP = \frac{UB - LB}{UB}$$
+- Geometric average of the ratio lower bound to best known lower bound
+$$LB_{avg} = \exp\left(\sum_k\log\frac{LB}{LB_{best}}\right)$$
+- Geometric average of the ratio upper bound to best known upper bound
+$$UB_{avg} = \exp\left(\sum_k\log\frac{UB}{UB_{best}}\right)$$
+- Geometric sifted average of the gap
+$$GAP = \exp\left(\sum_k\log\left(1 + \frac{UB - LB}{UB}\right)\right) - 1$$
 
-***The MIP community uses geometric averages instead of arithmetic averages to correct against methods that solve extremely well a single instance and perform poorly on others. We may adopt geometric averages in the future, for the moment we use arithmetic ones***
+***Similar to the MIP community (Mittelman benchmarks), we use geometric averages to reduce the influence of outliers.***
 
 <br/>
 
@@ -422,6 +422,7 @@ Important caveats
 - Engines have **relative** and **absolute optimality tolerances** (CPO, OptalCP) which can lead to reporting sub-optimal solutions as optimal (for the tolerance). For this test the tolerances have been set to zero
 - Engines are very **non-deterministic** (results between two runs of the same engine on the same machine differ significantly) due to parallelism. As a result it makes no sense to consider very accurate values for average deviations or gap.
 - Engines have different **bottlenecks** (CPU, memory) that are due to their internal architecture and trade-offs made by their designers. An engine doesn't behave in the same way with 2, 4, 8, 16, 32 or 64 cores, doesn't behave the same in machines with fast / slow memory, etc.
+- Engines recommend different **configurations** : CP-SAT recommends a minimum of 8 cores and ideally 16 (due to the high number of strategies that need to be interleaved with less cores). CPO on the other hand gives most of its performance on 1 or 2 cores (refer for instance to the comparison of DaCol Teppan 2022). The 4 core configuration was chosen because it is a usual laptop configuration, but commercial users will probably run on a larger server.
 
 <br/>
 
@@ -440,67 +441,67 @@ The types are defined as follows
 Averages are made on instances solved. Outlier solutions returned by the engine (e.g. a schedule of makespan equal to the sum of processing times - all tasks scheduled one at the time) have been manually removed as they distort the arithmetic average, instead the engine is considered as having not solved. We may formalize this in the future (e.g. only solutions better than a left-to-right greedy are accepted).
 
 <table>
-<tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb dev</th><th>ub dev</th><th>gap</th></tr>
-<tr><td rowspan="3">all</td><td>CPO</td><td>376</td><td>376</td><td>144</td><td>38%</td><td>5%</td><td>3%</td><td>9%</td></tr>
-<tr><td>CP-SAT</td><td>376</td><td style="color:red">350</td><td>165</td><td>44%</td><td>7%</td><td>3%</td><td>5%</td></tr>
-<tr><td>OptalCP</td><td>376</td><td>376</td><td>223</td><td>59%</td><td>0%</td><td>1%</td><td>3%</td></tr>
-<tr><td rowspan="3">outdated</td><td>CPO</td><td>53</td><td>53</td><td>51</td><td>96%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>CP-SAT</td><td>53</td><td>53</td><td>52</td><td>98%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>OptalCP</td><td>53</td><td>53</td><td>53</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td rowspan="3">classic</td><td>CPO</td><td>189</td><td>189</td><td>65</td><td>34%</td><td>2%</td><td>2%</td><td>5%</td></tr>
-<tr><td>CP-SAT</td><td>189</td><td>189</td><td>41</td><td>22%</td><td>1%</td><td>3%</td><td>5%</td></tr>
-<tr><td>OptalCP</td><td>189</td><td>189</td><td>82</td><td>43%</td><td>1%</td><td>1%</td><td>3%</td></tr>
-<tr><td rowspan="3">challenge</td><td>CPO</td><td>60</td><td>60</td><td>0</td><td>0%</td><td>3%</td><td>6%</td><td>10%</td></tr>
-<tr><td>CP-SAT</td><td>60</td><td>60</td><td>0</td><td>0%</td><td>2%</td><td>7%</td><td>10%</td></tr>
-<tr><td>OptalCP</td><td>60</td><td>60</td><td>0</td><td>0%</td><td>1%</td><td>3%</td><td>7%</td></tr>
-<tr><td rowspan="3">large</td><td>CPO</td><td>90</td><td>90</td><td>27</td><td>30%</td><td>10%</td><td>4%</td><td>19%</td></tr>
-<tr><td>CP-SAT</td><td>90</td><td style="color:red">70</td><td>46</td><td>51%</td><td>25%</td><td>3%</td><td>10%</td></tr>
-<tr><td>OptalCP</td><td>90</td><td>90</td><td>50</td><td>56%</td><td>0%</td><td>1%</td><td>7%</td></tr>
-<tr><td rowspan="3">reentrant</td><td>CPO</td><td>44</td><td>44</td><td>1</td><td>2%</td><td>12%</td><td>11%</td><td>19%</td></tr>
-<tr><td>CP-SAT</td><td>44</td><td style="color:red">38</td><td>26</td><td>59%</td><td>3%</td><td>9%</td><td>6%</td></tr>
-<tr><td>OptalCP</td><td>44</td><td>44</td><td>38</td><td>86%</td><td>0%</td><td>5%</td><td>3%</td></tr>
-<tr><td rowspan="3">open</td><td>CPO</td><td>90</td><td>90</td><td>0</td><td>0%</td><td>2%</td><td>7%</td><td>16%</td></tr>
-<tr><td>CP-SAT</td><td>90</td><td style="color:red">80</td><td>0</td><td>0%</td><td>12%</td><td>8%</td><td>12%</td></tr>
-<tr><td>OptalCP</td><td>90</td><td>90</td><td>0</td><td>0%</td><td>1%</td><td>3%</td><td>12%</td></tr>
+<tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb</th><th>ub</th><th>gap</th></tr>
+<tr><td rowspan="3">all</td><td>CPO</td><td>376</td><td >376</td><td>192</td><td>51%</td><td >0.89</td><td >1.03</td><td >8%</td></tr>
+<tr><td>CP-SAT</td><td>376</td><td style="color:red">350</td><td>165</td><td>44%</td><td style="color:red">0.91</td><td style="color:red">1.03</td><td style="color:red">5%</td></tr>
+<tr><td>OptalCP</td><td>376</td><td >376</td><td>223</td><td>59%</td><td >1.00</td><td >1.01</td><td >3%</td></tr>
+<tr><td rowspan="3">outdated</td><td>CPO</td><td>53</td><td >53</td><td>51</td><td>96%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td>CP-SAT</td><td>53</td><td >53</td><td>52</td><td>98%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td>OptalCP</td><td>53</td><td >53</td><td>53</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td rowspan="3">classic</td><td>CPO</td><td>189</td><td >189</td><td>65</td><td>34%</td><td >0.98</td><td >1.02</td><td >5%</td></tr>
+<tr><td>CP-SAT</td><td>189</td><td >189</td><td>41</td><td>22%</td><td >0.99</td><td >1.03</td><td >5%</td></tr>
+<tr><td>OptalCP</td><td>189</td><td >189</td><td>82</td><td>43%</td><td >0.99</td><td >1.01</td><td >3%</td></tr>
+<tr><td rowspan="3">challenge</td><td>CPO</td><td>60</td><td >60</td><td>0</td><td>0%</td><td >0.97</td><td >1.06</td><td >10%</td></tr>
+<tr><td>CP-SAT</td><td>60</td><td >60</td><td>0</td><td>0%</td><td >0.98</td><td >1.07</td><td >10%</td></tr>
+<tr><td>OptalCP</td><td>60</td><td >60</td><td>0</td><td>0%</td><td >0.99</td><td >1.03</td><td >7%</td></tr>
+<tr><td rowspan="3">large</td><td>CPO</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >0.78</td><td >1.04</td><td >16%</td></tr>
+<tr><td>CP-SAT</td><td>90</td><td style="color:red">70</td><td>46</td><td>51%</td><td style="color:red">0.68</td><td style="color:red">1.03</td><td style="color:red">9%</td></tr>
+<tr><td>OptalCP</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >1.00</td><td >1.01</td><td >7%</td></tr>
+<tr><td rowspan="3">reentrant</td><td>CPO</td><td>44</td><td >44</td><td>26</td><td>59%</td><td >0.70</td><td >1.10</td><td >16%</td></tr>
+<tr><td>CP-SAT</td><td>44</td><td style="color:red">38</td><td>26</td><td>59%</td><td style="color:red">0.96</td><td style="color:red">1.07</td><td style="color:red">5%</td></tr>
+<tr><td>OptalCP</td><td>44</td><td >44</td><td>38</td><td>86%</td><td >1.00</td><td >1.04</td><td >2%</td></tr>
+<tr><td rowspan="3">open</td><td>CPO</td><td>90</td><td >90</td><td>0</td><td>0%</td><td >0.98</td><td >1.07</td><td >15%</td></tr>
+<tr><td>CP-SAT</td><td>90</td><td style="color:red">80</td><td>0</td><td>0%</td><td style="color:red">0.98</td><td style="color:red">1.08</td><td style="color:red">12%</td></tr>
+<tr><td>OptalCP</td><td>90</td><td >90</td><td>0</td><td>0%</td><td >0.99</td><td >1.03</td><td >11%</td></tr>
 </table>
 
 #### Per family
 
 <table>
 <tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb dev</th><th>ub dev</th><th>gap</th></tr>
-<tr><td rowspan="3">ft</td><td>CPO</td><td>3</td><td>3</td><td>3</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>CP-SAT</td><td>3</td><td>3</td><td>3</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>OptalCP</td><td>3</td><td>3</td><td>3</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td rowspan="3">la</td><td>CPO</td><td>40</td><td>40</td><td>38</td><td>95%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>CP-SAT</td><td>40</td><td>40</td><td>39</td><td>98%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>OptalCP</td><td>40</td><td>40</td><td>40</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td rowspan="3">orb</td><td>CPO</td><td>10</td><td>10</td><td>10</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>CP-SAT</td><td>10</td><td>10</td><td>10</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>OptalCP</td><td>10</td><td>10</td><td>10</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td rowspan="3">abz</td><td>CPO</td><td>5</td><td>5</td><td>2</td><td>40%</td><td>3%</td><td>1%</td><td>4%</td></tr>
-<tr><td>CP-SAT</td><td>5</td><td>5</td><td>2</td><td>40%</td><td>2%</td><td>1%</td><td>3%</td></tr>
-<tr><td>OptalCP</td><td>5</td><td>5</td><td>3</td><td>60%</td><td>1%</td><td>0%</td><td>1%</td></tr>
-<tr><td rowspan="3">swv</td><td>CPO</td><td>20</td><td>20</td><td>7</td><td>35%</td><td>2%</td><td>2%</td><td>4%</td></tr>
-<tr><td>CP-SAT</td><td>20</td><td>20</td><td>6</td><td>30%</td><td>1%</td><td>2%</td><td>4%</td></tr>
-<tr><td>OptalCP</td><td>20</td><td>20</td><td>10</td><td>50%</td><td>1%</td><td>1%</td><td>2%</td></tr>
-<tr><td rowspan="3">yn</td><td>CPO</td><td>4</td><td>4</td><td>0</td><td>0%</td><td>10%</td><td>2%</td><td>11%</td></tr>
-<tr><td>CP-SAT</td><td>4</td><td>4</td><td>0</td><td>0%</td><td>6%</td><td>3%</td><td>8%</td></tr>
-<tr><td>OptalCP</td><td>4</td><td>4</td><td>0</td><td>0%</td><td>5%</td><td>1%</td><td>6%</td></tr>
-<tr><td rowspan="3">dmu</td><td>CPO</td><td>80</td><td>80</td><td>16</td><td>20%</td><td>2%</td><td>4%</td><td>7%</td></tr>
-<tr><td>CP-SAT</td><td>80</td><td>80</td><td>10</td><td>13%</td><td>1%</td><td>5%</td><td>7%</td></tr>
-<tr><td>OptalCP</td><td>80</td><td>80</td><td>23</td><td>29%</td><td>1%</td><td>2%</td><td>4%</td></tr>
-<tr><td rowspan="3">ta</td><td>CPO</td><td>80</td><td>80</td><td>40</td><td>50%</td><td>2%</td><td>1%</td><td>3%</td></tr>
-<tr><td>CP-SAT</td><td>80</td><td>80</td><td>23</td><td>29%</td><td>1%</td><td>2%</td><td>3%</td></tr>
-<tr><td>OptalCP</td><td>80</td><td>80</td><td>46</td><td>58%</td><td>1%</td><td>0%</td><td>1%</td></tr>
-<tr><td rowspan="3">tai</td><td>CPO</td><td>90</td><td>90</td><td>27</td><td>30%</td><td>10%</td><td>4%</td><td>19%</td></tr>
-<tr><td>CP-SAT</td><td>90</td><td style="color:red">70</td><td>46</td><td>51%</td><td>25%</td><td>3%</td><td>10%</td></tr>
-<tr><td>OptalCP</td><td>90</td><td>90</td><td>50</td><td>56%</td><td>0%</td><td>1%</td><td>7%</td></tr>
-<tr><td rowspan="3">dct</td><td>CPO</td><td>24</td><td>24</td><td>1</td><td>4%</td><td>22%</td><td>21%</td><td>35%</td></tr>
-<tr><td>CP-SAT</td><td>24</td><td style="color:red">18</td><td>6</td><td>25%</td><td>5%</td><td>18%</td><td>12%</td></tr>
-<tr><td>OptalCP</td><td>24</td><td>24</td><td>18</td><td>75%</td><td>0%</td><td>9%</td><td>5%</td></tr>
-<tr><td rowspan="3">bel</td><td>CPO</td><td>20</td><td>20</td><td>0</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>CP-SAT</td><td>20</td><td>20</td><td>20</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
-<tr><td>OptalCP</td><td>20</td><td>20</td><td>20</td><td>100%</td><td>0%</td><td>0%</td><td>0%</td></tr>
+<tr><td rowspan="3">ft</td><td>CPO</td><td>3</td><td >3</td><td>3</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td>CP-SAT</td><td>3</td><td >3</td><td>3</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td>OptalCP</td><td>3</td><td >3</td><td>3</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td rowspan="3">la</td><td>CPO</td><td>40</td><td >40</td><td>38</td><td>95%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td>CP-SAT</td><td>40</td><td >40</td><td>39</td><td>98%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td>OptalCP</td><td>40</td><td >40</td><td>40</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td rowspan="3">orb</td><td>CPO</td><td>10</td><td >10</td><td>10</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td>CP-SAT</td><td>10</td><td >10</td><td>10</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td>OptalCP</td><td>10</td><td >10</td><td>10</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td rowspan="3">abz</td><td>CPO</td><td>5</td><td >5</td><td>2</td><td>40%</td><td >0.97</td><td >1.01</td><td >4%</td></tr>
+<tr><td>CP-SAT</td><td>5</td><td >5</td><td>2</td><td>40%</td><td >0.98</td><td >1.01</td><td >3%</td></tr>
+<tr><td>OptalCP</td><td>5</td><td >5</td><td>3</td><td>60%</td><td >0.99</td><td >1.00</td><td >1%</td></tr>
+<tr><td rowspan="3">swv</td><td>CPO</td><td>20</td><td >20</td><td>7</td><td>35%</td><td >0.98</td><td >1.02</td><td >4%</td></tr>
+<tr><td>CP-SAT</td><td>20</td><td >20</td><td>6</td><td>30%</td><td >0.99</td><td >1.02</td><td >4%</td></tr>
+<tr><td>OptalCP</td><td>20</td><td >20</td><td>10</td><td>50%</td><td >0.99</td><td >1.01</td><td >2%</td></tr>
+<tr><td rowspan="3">yn</td><td>CPO</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.90</td><td >1.02</td><td >11%</td></tr>
+<tr><td>CP-SAT</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.94</td><td >1.03</td><td >8%</td></tr>
+<tr><td>OptalCP</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.95</td><td >1.01</td><td >6%</td></tr>
+<tr><td rowspan="3">dmu</td><td>CPO</td><td>80</td><td >80</td><td>16</td><td>20%</td><td >0.97</td><td >1.04</td><td >7%</td></tr>
+<tr><td>CP-SAT</td><td>80</td><td >80</td><td>10</td><td>13%</td><td >0.99</td><td >1.05</td><td >7%</td></tr>
+<tr><td>OptalCP</td><td>80</td><td >80</td><td>23</td><td>29%</td><td >0.99</td><td >1.02</td><td >4%</td></tr>
+<tr><td rowspan="3">ta</td><td>CPO</td><td>80</td><td >80</td><td>40</td><td>50%</td><td >0.98</td><td >1.01</td><td >3%</td></tr>
+<tr><td>CP-SAT</td><td>80</td><td >80</td><td>23</td><td>29%</td><td >0.99</td><td >1.02</td><td >3%</td></tr>
+<tr><td>OptalCP</td><td>80</td><td >80</td><td>46</td><td>58%</td><td >0.99</td><td >1.00</td><td >1%</td></tr>
+<tr><td rowspan="3">tai</td><td>CPO</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >0.78</td><td >1.04</td><td >16%</td></tr>
+<tr><td>CP-SAT</td><td>90</td><td style="color:red">70</td><td>46</td><td>51%</td><td style="color:red">0.68</td><td style="color:red">1.03</td><td style="color:red">9%</td></tr>
+<tr><td>OptalCP</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >1.00</td><td >1.01</td><td >7%</td></tr>
+<tr><td rowspan="3">dct</td><td>CPO</td><td>24</td><td >24</td><td>6</td><td>25%</td><td >0.52</td><td >1.19</td><td >32%</td></tr>
+<tr><td>CP-SAT</td><td>24</td><td style="color:red">18</td><td>6</td><td>25%</td><td style="color:red">0.93</td><td style="color:red">1.16</td><td style="color:red">11%</td></tr>
+<tr><td>OptalCP</td><td>24</td><td >24</td><td>18</td><td>75%</td><td >1.00</td><td >1.07</td><td >5%</td></tr>
+<tr><td rowspan="3">bel</td><td>CPO</td><td>20</td><td >20</td><td>20</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td>CP-SAT</td><td>20</td><td >20</td><td>20</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td>OptalCP</td><td>20</td><td >20</td><td>20</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
 </table>
 
 
