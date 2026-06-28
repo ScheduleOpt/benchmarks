@@ -392,10 +392,15 @@ By giving to much importance to best-known solutions we miss what really matters
 
 We therefore adopt the following metrics instead
 - Geometric average of the ratio lower bound to best known lower bound
+
 $$LB_{avg} = \exp\left(\sum_k\log\frac{LB}{LB_{best}}\right)$$
+
 - Geometric average of the ratio upper bound to best known upper bound
+
 $$UB_{avg} = \exp\left(\sum_k\log\frac{UB}{UB_{best}}\right)$$
+
 - Geometric sifted average of the gap
+
 $$GAP = \exp\left(\sum_k\log\left(1 + \frac{UB - LB}{UB}\right)\right) - 1$$
 
 ***Similar to the MIP community (Mittelman benchmarks), we use geometric averages to reduce the influence of outliers.***
