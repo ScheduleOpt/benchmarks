@@ -109,7 +109,7 @@ jobshop
 - `tai` : 50 toy, 2 medium, 8 hard, 30 open
 
 reentrant jobshop
-- `dct` : 16 toy, 7 medium, 1 open
+- `dct` : 21 toy, 2 medium, 1 open
 - `bel` : 20 toy
 
 <br/>
