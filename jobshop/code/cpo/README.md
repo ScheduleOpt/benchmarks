@@ -54,6 +54,11 @@ it takes as input the files `instances.dat` and requires `jobshop.mod` to be pre
 Run `benchmark.mod` either by
 - creating in OPL Studio a "run configuration" (in an existing OPL project) containing `benchmark.mod` and `instances.dat` and running it via the UI
 - running OPL from the command line
+```
+oplrun benchmark.mod instances.dat
+```
+Edit `instances.dat` as desired. The instances in .dat format shall be in the `./data` folder. 
+
 
 ### jobshop.mod
 
