@@ -30,7 +30,7 @@ This document is visible as a README.md in the Github folder [jobshop](https://g
     - [Comparison of reference solvers](#comparison-of-reference-solvers)
 - [Best known solutions](#jsplib-solutions---the-state-of-the-art)
     - [JSON bks format](#best-known-solutions-json-format)
-    - [Best known solutions](#best-known-solutions---jsplib)
+    - [Best known solutions](#best-known-solutions)
     - [Publications](#publications-best-known-solutions)
 
 <br/>
