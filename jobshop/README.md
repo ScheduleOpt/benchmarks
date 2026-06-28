@@ -403,7 +403,7 @@ $$UB_{avg} = \exp\left(\sum_k\log\frac{UB}{UB_{best}}\right)$$
 
 $$GAP = \exp\left(\sum_k\log\left(1 + \frac{UB - LB}{UB}\right)\right) - 1$$
 
-***Similar to the MIP community (Mittelman benchmarks), we use geometric averages to reduce the influence of outliers.***
+***Similar to the MIP community (Mittelmann benchmarks), we use geometric averages to reduce the influence of outliers.***
 
 <br/>
 
