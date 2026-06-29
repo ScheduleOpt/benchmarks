@@ -793,7 +793,7 @@ However OptalCP proves a lower bound of 667 and Optimizizer only provides a veri
 <tr><td>dmu14</td><td>30 x 15</td><td>jobshop</td><td>3394</td><td>3394</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>CP-SAT in < 1m</td></tr>
 <tr><td>dmu15</td><td>30 x 15</td><td>jobshop</td><td>3343</td><td>3343</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
 <tr><td>dmu16</td><td>30 x 20</td><td>jobshop</td><td>3734</td><td>3750</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CPO2015 | ub LHW2024</td></tr>
-<tr><td>dmu17</td><td>30 x 20</td><td>jobshop</td><td>3733</td><td>3812</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
+<tr><td>dmu17</td><td>30 x 20</td><td>jobshop</td><td>3733</td><td>3811</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
 <tr><td>dmu18</td><td>30 x 20</td><td>jobshop</td><td>3844</td><td>3844</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 10h</td></tr>
 <tr><td>dmu19</td><td>30 x 20</td><td>jobshop</td><td>3707</td><td>3764</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
 <tr><td>dmu20</td><td>30 x 20</td><td>jobshop</td><td>3632</td><td>3699</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
@@ -827,36 +827,36 @@ However OptalCP proves a lower bound of 667 and Optimizizer only provides a veri
 <tr><td>dmu48</td><td>20 x 20</td><td>jobshop</td><td>3628</td><td>3763</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
 <tr><td>dmu49</td><td>20 x 20</td><td>jobshop</td><td>3543</td><td>3706</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
 <tr><td>dmu50</td><td>20 x 20</td><td>jobshop</td><td>3618</td><td>3729</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub PLC2015</td></tr>
-<tr><td>dmu51</td><td>30 x 15</td><td>jobshop</td><td>4070</td><td>4151</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
+<tr><td>dmu51</td><td>30 x 15</td><td>jobshop</td><td>4070</td><td>4151</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026</td></tr>
 <tr><td>dmu52</td><td>30 x 15</td><td>jobshop</td><td>4203</td><td>4297</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
 <tr><td>dmu53</td><td>30 x 15</td><td>jobshop</td><td>4248</td><td>4378</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
-<tr><td>dmu54</td><td>30 x 15</td><td>jobshop</td><td>4277</td><td>4360</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
+<tr><td>dmu54</td><td>30 x 15</td><td>jobshop</td><td>4277</td><td>4360</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026</td></tr>
 <tr><td>dmu55</td><td>30 x 15</td><td>jobshop</td><td>4191</td><td>4258</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
-<tr><td>dmu56</td><td>30 x 20</td><td>jobshop</td><td>4755</td><td>4934</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
-<tr><td>dmu57</td><td>30 x 20</td><td>jobshop</td><td>4462</td><td>4643</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
+<tr><td>dmu56</td><td>30 x 20</td><td>jobshop</td><td>4755</td><td>4934</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026</td></tr>
+<tr><td>dmu57</td><td>30 x 20</td><td>jobshop</td><td>4462</td><td>4643</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026</td></tr>
 <tr><td>dmu58</td><td>30 x 20</td><td>jobshop</td><td>4484</td><td>4701</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
 <tr><td>dmu59</td><td>30 x 20</td><td>jobshop</td><td>4366</td><td>4607</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
 <tr><td>dmu60</td><td>30 x 20</td><td>jobshop</td><td>4468</td><td>4721</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
-<tr><td>dmu61</td><td>40 x 15</td><td>jobshop</td><td>5038</td><td>5167</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
-<tr><td>dmu62</td><td>40 x 15</td><td>jobshop</td><td>5176</td><td>5244</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
-<tr><td>dmu63</td><td>40 x 15</td><td>jobshop</td><td>5245</td><td>5296</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
-<tr><td>dmu64</td><td>40 x 15</td><td>jobshop</td><td>5155</td><td>5225</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
-<tr><td>dmu65</td><td>40 x 15</td><td>jobshop</td><td>5122</td><td>5168</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
-<tr><td>dmu66</td><td>40 x 20</td><td>jobshop</td><td>5526</td><td>5700</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
-<tr><td>dmu67</td><td>40 x 20</td><td>jobshop</td><td>5661</td><td>5774</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
-<tr><td>dmu68</td><td>40 x 20</td><td>jobshop</td><td>5513</td><td>5758</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
-<tr><td>dmu69</td><td>40 x 20</td><td>jobshop</td><td>5511</td><td>5687</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
+<tr><td>dmu61</td><td>40 x 15</td><td>jobshop</td><td>5038</td><td>5166</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>dmu62</td><td>40 x 15</td><td>jobshop</td><td>5176</td><td>5244</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026</td></tr>
+<tr><td>dmu63</td><td>40 x 15</td><td>jobshop</td><td>5245</td><td>5296</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026</td></tr>
+<tr><td>dmu64</td><td>40 x 15</td><td>jobshop</td><td>5155</td><td>5225</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026</td></tr>
+<tr><td>dmu65</td><td>40 x 15</td><td>jobshop</td><td>5122</td><td>5158</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>dmu66</td><td>40 x 20</td><td>jobshop</td><td>5526</td><td>5692</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>dmu67</td><td>40 x 20</td><td>jobshop</td><td>5661</td><td>5774</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026</td></tr>
+<tr><td>dmu68</td><td>40 x 20</td><td>jobshop</td><td>5513</td><td>5749</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>dmu69</td><td>40 x 20</td><td>jobshop</td><td>5511</td><td>5682</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
 <tr><td>dmu70</td><td>40 x 20</td><td>jobshop</td><td>5633</td><td>5868</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
-<tr><td>dmu71</td><td>50 x 15</td><td>jobshop</td><td>6129</td><td>6206</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
-<tr><td>dmu72</td><td>50 x 15</td><td>jobshop</td><td>6434</td><td>6448</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CdGKGC2025 | ub QXL2026 </td></tr>
-<tr><td>dmu73</td><td>50 x 15</td><td>jobshop</td><td>6107</td><td>6132</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
-<tr><td>dmu74</td><td>50 x 15</td><td>jobshop</td><td>6168</td><td>6196</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub GTA2017</td></tr>
-<tr><td>dmu75</td><td>50 x 15</td><td>jobshop</td><td>6123</td><td>6187</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
-<tr><td>dmu76</td><td>50 x 20</td><td>jobshop</td><td>6479</td><td>6718</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub PMAEDC2019</td></tr>
-<tr><td>dmu77</td><td>50 x 20</td><td>jobshop</td><td>6520</td><td>6739</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
-<tr><td>dmu78</td><td>50 x 20</td><td>jobshop</td><td>6643</td><td>6744</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
-<tr><td>dmu79</td><td>50 x 20</td><td>jobshop</td><td>6720</td><td>6899</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
-<tr><td>dmu80</td><td>50 x 20</td><td>jobshop</td><td>6460</td><td>6633</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026 </td></tr>
+<tr><td>dmu71</td><td>50 x 15</td><td>jobshop</td><td>6129</td><td>6206</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026</td></tr>
+<tr><td>dmu72</td><td>50 x 15</td><td>jobshop</td><td>6434</td><td>6448</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CdGKGC2025 | ub QXL2026</td></tr>
+<tr><td>dmu73</td><td>50 x 15</td><td>jobshop</td><td>6107</td><td>6132</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026</td></tr>
+<tr><td>dmu74</td><td>50 x 15</td><td>jobshop</td><td>6168</td><td>6196</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
+<tr><td>dmu75</td><td>50 x 15</td><td>jobshop</td><td>6123</td><td>6186</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>dmu76</td><td>50 x 20</td><td>jobshop</td><td>6479</td><td>6708</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>dmu77</td><td>50 x 20</td><td>jobshop</td><td>6520</td><td>6739</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026</td></tr>
+<tr><td>dmu78</td><td>50 x 20</td><td>jobshop</td><td>6643</td><td>6744</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026</td></tr>
+<tr><td>dmu79</td><td>50 x 20</td><td>jobshop</td><td>6720</td><td>6899</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub QXL2026</td></tr>
+<tr><td>dmu80</td><td>50 x 20</td><td>jobshop</td><td>6460</td><td>6621</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
 </table>
 
 #### Da Col and Teppan 2022
@@ -1017,7 +1017,6 @@ We have recently noticed some regression in OptalCP on two of these instances he
 <br/>
 
 ### Publications (best known solutions)
-
 The upper and lower bounds come from
 
 - NS2002 (1 bound - ta30js) : **Nowicki, E., & Smutnicki, C.** (2002). Some new tools to solve the job shop problem. Raport serii: Preprinty, 60.
@@ -1025,9 +1024,7 @@ The upper and lower bounds come from
 - GR2014 (5 bounds in swv, ta and dmu) : **Gonçalves, J. F., & Resende, M. G.** (2014). An extended Akers graphical method with a biased random‐key genetic algorithm for job‐shop scheduling. International Transactions in Operational Research, 21(2), 215-246.
 
 - CPO2015 (4 bounds in ta and dmu) : 
-
     - **Vilím, P., Laborie, P., & Shaw, P.** (2015). [Failure-directed search for constraint-based scheduling](https://vilim.eu/petr/cpaior2015.pdf). In CPAIOR 2015 proceedings.
-
     - **Vilím, P., Laborie, P., & Shaw, P.**. [Detailed experimental results](https://vilim.eu/petr/cpaior2015-results.pdf).
 
 - Mu2015 (1 bound - swv08) : Personal communication to Optimizizer probably based on **Murovec, B.** (2015). Job-shop local-search move evaluation without direct consideration of the criterion’s value. European Journal of Operational Research, 241(2), 320-329.
@@ -1036,16 +1033,18 @@ The upper and lower bounds come from
 
 - SS2018 (7 bounds in swv, ta and dmu) : **Shylo, O. V., & Shams, H.** (2018). [Boosting binary optimization via binary classification: A case study of job shop scheduling](https://arxiv.org/abs/1808.10813).
 
-- CS2022 (7 bounds in dmu) : **Constantino, O. H., & Segura, C.** (2022). A parallel memetic algorithm with explicit management of diversity for the job shop scheduling problem. Applied Intelligence, 52(1), 141-153. [available online](https://doi.org/10.1007/s10489-021-02406-2)
+- CS2022 (6 bounds in dmu) : **Constantino, O. H., & Segura, C.** (2022). A parallel memetic algorithm with explicit management of diversity for the job shop scheduling problem. Applied Intelligence, 52(1), 141-153. [available online](https://doi.org/10.1007/s10489-021-02406-2)
 
-- LHW2024 (8 bounds in ta and dmu) : **Mingjie Li, Jin-Kao Hao & Qinghua Wu** (2025). Combining Hash-based Tabu Search and Frequent Pattern Mining for Job-Shop Scheduling. IISE Transactions.
+- LHW2024 (7 bounds in ta and dmu) : **Mingjie Li, Jin-Kao Hao & Qinghua Wu** (2025). Combining Hash-based Tabu Search and Frequent Pattern Mining for Job-Shop Scheduling. IISE Transactions.
 
 - Hexaly2024 (8 bounds in tai) : **Lea Blaise** (2014). [Hexaly benchmarks and comparisons](https://www.hexaly.com/benchmarks/hexaly-vs-cp-optimizer-vs-CP-SAT-on-the-job-shop-scheduling-problem-jssp).
 
-- CdGKGC2025 (1 bound - dmu72) : **Marc-Emmanuel Coupvent des Graviers, Lotfi Kobrosly, Christophe Guettier, and Tristan Cazenave** (2025). [Updating Lower and Upper Bounds for the Job-Shop Scheduling Problem Test Instances](https://arxiv.org/abs/2504.16106).
+- CdGKGC2025 (1 bounds - dmu72) : **Marc-Emmanuel Coupvent des Graviers, Lotfi Kobrosly, Christophe Guettier, and Tristan Cazenave** (2025). [Updating Lower and Upper Bounds for the Job-Shop Scheduling Problem Test Instances](https://arxiv.org/abs/2504.16106).
 
-- QXL2026 (24 bounds in ta and dmu) : **Qihao Liu, Xinyu Li, and Liang Gao** (2026) A Knowledge-Driven Decoupling and Coordinated Optimization Framework Based on Decision-Variable Parameterization and Release for the Job-Shop Scheduling Problem
+- QXL2026 (17 bounds in ta and dmu) : **Qihao Liu, Xinyu Li, and Liang Gao** (2026) A Knowledge-Driven Decoupling and Coordinated Optimization Framework Based on Decision-Variable Parameterization and Release for the Job-Shop Scheduling Problem
 
-All other bounds were found by OptalCP except 2 bounds by CP-SAT (equal but faster) and 3 bounds by Hexaly (strictly better than all other solvers). The cited papers also may use an engine directly like [CPO2015], [Hexaly2024] or as part of an algorithm like [CdGKGC2025] which uses CP-SAT.
+- DOFP2026 (9 bounds in dmu) : **Diego Olivier Fernandez Pons** (2026) [Personal communication : upper-bounds given by optimizizer were given as starting solution to OptalCP, and ran for 10 minutes]
+
+All other bounds were found by OptalCP except 2 bounds by CP-SAT (equal but faster) and 3 bounds by Hexaly (strictly better than all other solvers). The cited papers also may use an engine directly like [CPO2015], [Hexaly2024] or as part of an algorithm like [CdGKGC2025] which uses CP-SAT. [DOFP2026] uses OptalCP.
 
 <br/>
