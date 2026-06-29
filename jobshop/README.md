@@ -328,9 +328,7 @@ From a technical perspective CP Optimizer interleaves the following search metho
 
 Because CP Optimizer was designed in a time where multi-core computers weren't common, the engine alternates the different strategies on the same core. And replicates itself over various cores with different parameters if more cores are available
 
-The main propagation algorithms in CP optimizer are
-- Time tabling and edge-finding (Claude LePape, Wim Nuijten, Philippe Baptiste) later improved by Petr Vilim 
-- Precedence-energy (Philippe Laborie)
+The main propagation algorithms in CP optimizer are time tabling and edge-finding (Claude LePape, Wim Nuijten, Philippe Baptiste) later improved by Petr Vilim 
 
 References
 - [20+ years of scheduling with constraints at IBM/ILOG](https://link.springer.com/content/pdf/10.1007/s10601-018-9281-x.pdf) (Philippe Laborie, Jérôme Rogerie, Paul Shaw and Petr Vilim - 2018)
