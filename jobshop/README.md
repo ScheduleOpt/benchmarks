@@ -1023,9 +1023,7 @@ The upper and lower bounds come from
 
 - GR2014 (5 bounds in swv, ta and dmu) : **Gonçalves, J. F., & Resende, M. G.** (2014). An extended Akers graphical method with a biased random‐key genetic algorithm for job‐shop scheduling. International Transactions in Operational Research, 21(2), 215-246.
 
-- CPO2015 (4 bounds in ta and dmu) : 
-    - **Vilím, P., Laborie, P., & Shaw, P.** (2015). [Failure-directed search for constraint-based scheduling](https://vilim.eu/petr/cpaior2015.pdf). In CPAIOR 2015 proceedings.
-    - **Vilím, P., Laborie, P., & Shaw, P.**. [Detailed experimental results](https://vilim.eu/petr/cpaior2015-results.pdf).
+- CPO2015 (4 bounds in ta and dmu) : **Vilím, P., Laborie, P., & Shaw, P.** (2015). [Failure-directed search for constraint-based scheduling](https://vilim.eu/petr/cpaior2015.pdf). In CPAIOR 2015 proceedings. [Detailed experimental results](https://vilim.eu/petr/cpaior2015-results.pdf).
 
 - Mu2015 (1 bound - swv08) : Personal communication to Optimizizer probably based on **Murovec, B.** (2015). Job-shop local-search move evaluation without direct consideration of the criterion’s value. European Journal of Operational Research, 241(2), 320-329.
 
@@ -1043,7 +1041,7 @@ The upper and lower bounds come from
 
 - QXL2026 (17 bounds in ta and dmu) : **Qihao Liu, Xinyu Li, and Liang Gao** (2026) A Knowledge-Driven Decoupling and Coordinated Optimization Framework Based on Decision-Variable Parameterization and Release for the Job-Shop Scheduling Problem
 
-- DOFP2026 (9 bounds in dmu) : **Diego Olivier Fernandez Pons** (2026) [Personal communication : upper-bounds given by optimizizer were given as starting solution to OptalCP, and ran for 10 minutes]
+- DOFP2026 (9 bounds in dmu) : **Diego Olivier Fernandez Pons** (2026) [Personal communication] : upper-bounds provided by optimizizer were given as starting solution to OptalCP, and ran for 10 minutes
 
 All other bounds were found by OptalCP except 2 bounds by CP-SAT (equal but faster) and 3 bounds by Hexaly (strictly better than all other solvers). The cited papers also may use an engine directly like [CPO2015], [Hexaly2024] or as part of an algorithm like [CdGKGC2025] which uses CP-SAT. [DOFP2026] uses OptalCP.
 
