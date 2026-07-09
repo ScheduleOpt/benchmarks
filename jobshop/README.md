@@ -457,15 +457,15 @@ Averages are made on instances solved. Outlier solutions returned by the engine 
 <tr><td rowspan="3">challenge</td><td>CPO</td><td>60</td><td >60</td><td>0</td><td>0%</td><td >0.97</td><td >1.06</td><td >10%</td></tr>
 <tr><td>CP-SAT</td><td>60</td><td >60</td><td>0</td><td>0%</td><td >0.98</td><td >1.07</td><td >10%</td></tr>
 <tr><td>OptalCP</td><td>60</td><td >60</td><td>0</td><td>0%</td><td >0.99</td><td >1.03</td><td >7%</td></tr>
-<tr><td rowspan="3">large</td><td>CPO</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >0.78</td><td >1.04</td><td >16%</td></tr>
+<tr><td rowspan="3">large</td><td>CPO</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >0.78</td><td >1.05</td><td >16%</td></tr>
 <tr><td>CP-SAT</td><td>90</td><td style="color:red">70</td><td>46</td><td>51%</td><td style="color:red">0.68</td><td style="color:red">1.03</td><td style="color:red">9%</td></tr>
-<tr><td>OptalCP</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >1.00</td><td >1.01</td><td >7%</td></tr>
+<tr><td>OptalCP</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >1.00</td><td >1.02</td><td >7%</td></tr>
 <tr><td rowspan="3">reentrant</td><td>CPO</td><td>44</td><td >44</td><td>26</td><td>59%</td><td >0.70</td><td >1.10</td><td >16%</td></tr>
 <tr><td>CP-SAT</td><td>44</td><td style="color:red">38</td><td>26</td><td>59%</td><td style="color:red">0.96</td><td style="color:red">1.07</td><td style="color:red">5%</td></tr>
 <tr><td>OptalCP</td><td>44</td><td >44</td><td>38</td><td>86%</td><td >1.00</td><td >1.04</td><td >2%</td></tr>
-<tr><td rowspan="3">open</td><td>CPO</td><td>90</td><td >90</td><td>0</td><td>0%</td><td >0.98</td><td >1.07</td><td >15%</td></tr>
+<tr><td rowspan="3">open</td><td>CPO</td><td>90</td><td >90</td><td>0</td><td>0%</td><td >0.98</td><td >1.08</td><td >15%</td></tr>
 <tr><td>CP-SAT</td><td>90</td><td style="color:red">80</td><td>0</td><td>0%</td><td style="color:red">0.98</td><td style="color:red">1.08</td><td style="color:red">12%</td></tr>
-<tr><td>OptalCP</td><td>90</td><td >90</td><td>0</td><td>0%</td><td >0.99</td><td >1.03</td><td >11%</td></tr>
+<tr><td>OptalCP</td><td>90</td><td >90</td><td>0</td><td>0%</td><td >0.99</td><td >1.04</td><td >11%</td></tr>
 </table>
 
 #### Per family
@@ -496,9 +496,9 @@ Averages are made on instances solved. Outlier solutions returned by the engine 
 <tr><td rowspan="3">ta</td><td>CPO</td><td>80</td><td >80</td><td>40</td><td>50%</td><td >0.98</td><td >1.01</td><td >3%</td></tr>
 <tr><td>CP-SAT</td><td>80</td><td >80</td><td>23</td><td>29%</td><td >0.99</td><td >1.02</td><td >3%</td></tr>
 <tr><td>OptalCP</td><td>80</td><td >80</td><td>46</td><td>58%</td><td >0.99</td><td >1.00</td><td >1%</td></tr>
-<tr><td rowspan="3">tai</td><td>CPO</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >0.78</td><td >1.04</td><td >16%</td></tr>
+<tr><td rowspan="3">tai</td><td>CPO</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >0.78</td><td >1.05</td><td >16%</td></tr>
 <tr><td>CP-SAT</td><td>90</td><td style="color:red">70</td><td>46</td><td>51%</td><td style="color:red">0.68</td><td style="color:red">1.03</td><td style="color:red">9%</td></tr>
-<tr><td>OptalCP</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >1.00</td><td >1.01</td><td >7%</td></tr>
+<tr><td>OptalCP</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >1.00</td><td >1.02</td><td >7%</td></tr>
 <tr><td rowspan="3">dct</td><td>CPO</td><td>24</td><td >24</td><td>6</td><td>25%</td><td >0.52</td><td >1.19</td><td >32%</td></tr>
 <tr><td>CP-SAT</td><td>24</td><td style="color:red">18</td><td>6</td><td>25%</td><td style="color:red">0.93</td><td style="color:red">1.16</td><td style="color:red">11%</td></tr>
 <tr><td>OptalCP</td><td>24</td><td >24</td><td>18</td><td>75%</td><td >1.00</td><td >1.07</td><td >5%</td></tr>
@@ -940,16 +940,16 @@ However OptalCP proves a lower bound of 667 and Optimizizer only provides a veri
 <tr><td>tai_1000_100_8</td><td>1000 x 100</td><td>jobshop</td><td>519524</td><td>519524</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
 <tr><td>tai_1000_100_9</td><td>1000 x 100</td><td>jobshop</td><td>520889</td><td>520889</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
 <tr><td>tai_1000_100_10</td><td>1000 x 100</td><td>jobshop</td><td>529112</td><td>529112</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
-<tr><td>tai_1000_1000_1</td><td>1000 x 1000</td><td>jobshop</td><td>549392</td><td>877052</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Hexaly</td></tr>
-<tr><td>tai_1000_1000_2</td><td>1000 x 1000</td><td>jobshop</td><td>549043</td><td>877115</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Hexaly2024</td></tr>
-<tr><td>tai_1000_1000_3</td><td>1000 x 1000</td><td>jobshop</td><td>552580</td><td>878296</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Hexaly</td></tr>
-<tr><td>tai_1000_1000_4</td><td>1000 x 1000</td><td>jobshop</td><td>547670</td><td>876363</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Hexaly2024</td></tr>
-<tr><td>tai_1000_1000_5</td><td>1000 x 1000</td><td>jobshop</td><td>545193</td><td>877562</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Hexaly2024</td></tr>
-<tr><td>tai_1000_1000_6</td><td>1000 x 1000</td><td>jobshop</td><td>547286</td><td>876067</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Hexaly2024</td></tr>
-<tr><td>tai_1000_1000_7</td><td>1000 x 1000</td><td>jobshop</td><td>545877</td><td>875891</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Hexaly2024</td></tr>
-<tr><td>tai_1000_1000_8</td><td>1000 x 1000</td><td>jobshop</td><td>549220</td><td>876456</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Hexaly2024</td></tr>
-<tr><td>tai_1000_1000_9</td><td>1000 x 1000</td><td>jobshop</td><td>543559</td><td>875914</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Hexaly2024</td></tr>
-<tr><td>tai_1000_1000_10</td><td>1000 x 1000</td><td>jobshop</td><td>549075</td><td>874820</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb Hexaly | ub Hexaly2024</td></tr>
+<tr><td>tai_1000_1000_1</td><td>1000 x 1000</td><td>jobshop</td><td>549392</td><td>811195</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_1000_1000_2</td><td>1000 x 1000</td><td>jobshop</td><td>549043</td><td>813044</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_1000_1000_3</td><td>1000 x 1000</td><td>jobshop</td><td>552580</td><td>811269</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_1000_1000_4</td><td>1000 x 1000</td><td>jobshop</td><td>547670</td><td>876363</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_1000_1000_5</td><td>1000 x 1000</td><td>jobshop</td><td>545193</td><td>811467</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_1000_1000_6</td><td>1000 x 1000</td><td>jobshop</td><td>547286</td><td>813117</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_1000_1000_7</td><td>1000 x 1000</td><td>jobshop</td><td>545877</td><td>809043</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_1000_1000_8</td><td>1000 x 1000</td><td>jobshop</td><td>549220</td><td>812442</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_1000_1000_9</td><td>1000 x 1000</td><td>jobshop</td><td>543559</td><td>810111</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_1000_1000_10</td><td>1000 x 1000</td><td>jobshop</td><td>549075</td><td>809421</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb Hexaly | ub OptalCP</td></tr>
 </table>
 
 *We consider the tai 1000 x 1000 instances a curiosity, a benchmark to test the internals of the engines (memory allocation, complexity of internal algorithms and data structures, etc.) We don't believe these instances represent any reasonable industrial problem, less because of their size, and more because they are random, unstructured, square and non-reentrant : your manufacturing plant produces exactly 1000 different products, each one needs 1000 operations on exactly one of the 1000 machines in the plant, and for each product the operations must be done in a completely different order !*
@@ -1033,14 +1033,12 @@ The upper and lower bounds come from
 
 - LHW2024 (7 bounds in ta and dmu) : **Mingjie Li, Jin-Kao Hao & Qinghua Wu** (2025). Combining Hash-based Tabu Search and Frequent Pattern Mining for Job-Shop Scheduling. IISE Transactions.
 
-- Hexaly2024 (8 bounds in tai) : **Lea Blaise** (2014). [Hexaly benchmarks and comparisons](https://www.hexaly.com/benchmarks/hexaly-vs-cp-optimizer-vs-CP-SAT-on-the-job-shop-scheduling-problem-jssp).
-
 - CdGKGC2025 (1 bounds - dmu72) : **Marc-Emmanuel Coupvent des Graviers, Lotfi Kobrosly, Christophe Guettier, and Tristan Cazenave** (2025). [Updating Lower and Upper Bounds for the Job-Shop Scheduling Problem Test Instances](https://arxiv.org/abs/2504.16106).
 
 - QXL2026 (17 bounds in ta and dmu) : **Qihao Liu, Xinyu Li, and Liang Gao** (2026) A Knowledge-Driven Decoupling and Coordinated Optimization Framework Based on Decision-Variable Parameterization and Release for the Job-Shop Scheduling Problem
 
 - DOFP2026 (9 bounds in dmu) : **Diego Olivier Fernandez Pons** (2026) [Personal communication] : upper-bounds provided by optimizizer were given as starting solution to OptalCP, and ran for 10 minutes
 
-All other bounds were found by OptalCP except 2 bounds by CP-SAT (equal but faster) and 3 bounds by Hexaly (strictly better than all other solvers). The cited papers also may use an engine directly like [CPO2015], [Hexaly2024] or as part of an algorithm like [CdGKGC2025] which uses CP-SAT. [DOFP2026] uses OptalCP.
+All other bounds were found by OptalCP except 4 bounds by CP-SAT (equal but faster) and 1 bounds by Hexaly (strictly better than all other solvers). The cited papers also may use an engine directly like [CPO2015] or as part of an algorithm like [CdGKGC2025] which uses CP-SAT. [DOFP2026] uses OptalCP.
 
 <br/>

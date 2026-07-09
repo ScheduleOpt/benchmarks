@@ -4015,9 +4015,10 @@
         "family_long" : "Da Col and Teppan 2022",
         "status" : "open",
         "lower_bound" : 549392,
-        "upper_bound" : 877052,
+        "upper_bound" : 811195,
         "lb_data" : [{ "value" : 549392, "date" : "2025-08-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
+            { "value" : 811195 , "date" : "2026-07-10", "solver" : "OptalCP", "hardware" : "AMD Ryzen 9 5950X", "time" : null, "certificate" : "no" },
             { "value" : 877052, "date" : "2026-06-01", "solver" : "Hexaly", "hardware" : "Intel Core i7-10750H 16GB RAM", "time" : 10, "certificate" : "no" },
             { "value" : 877062, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }        
         ]
@@ -4030,9 +4031,11 @@
         "family_long" : "Da Col and Teppan 2022",
         "status" : "open",
         "lower_bound" : 549043,
-        "upper_bound" : 877115,
+        "upper_bound" : 813044,
         "lb_data" : [{ "value" : 549043, "date" : "2025-08-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 877115, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
+        "ub_data" : [
+            { "value" : 813044, "date" : "2026-07-10", "solver" : "OptalCP", "hardware" : "AMD Ryzen 9 5950X", "time" : null, "certificate" : "no" },
+            { "value" : 877115, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
     },
 {
         "instance" : "tai_1000_1000_3",
@@ -4042,9 +4045,10 @@
         "family_long" : "Da Col and Teppan 2022",
         "status" : "open",
         "lower_bound" : 552580,
-        "upper_bound" : 878296,
+        "upper_bound" : 811269,
         "lb_data" : [{ "value" : 552580, "date" : "2025-08-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
         "ub_data" : [
+            { "value" : 811269, "date" : "2026-07-10", "solver" : "OptalCP", "hardware" : "AMD Ryzen 9 5950X", "time" : null, "certificate" : "no" },
             { "value" : 878296, "date" : "2026-06-01", "solver" : "Hexaly", "hardware" : "Intel Core i7-10750H 16GB RAM", "time" : 10, "certificate" : "no" },
             { "value" : 878805, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }        
         ]
@@ -4059,7 +4063,9 @@
         "lower_bound" : 547670,
         "upper_bound" : 876363,
         "lb_data" : [{ "value" : 547670, "date" : "2025-08-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 876363, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
+        "ub_data" : [
+            { "value" : 809549, "date" : "2026-07-10", "solver" : "OptalCP", "hardware" : "AMD Ryzen 9 5950X", "time" : null, "certificate" : "no" },
+            { "value" : 876363, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
     },
 {
         "instance" : "tai_1000_1000_5",
@@ -4069,9 +4075,11 @@
         "family_long" : "Da Col and Teppan 2022",
         "status" : "open",
         "lower_bound" : 545193,
-        "upper_bound" : 877562,
+        "upper_bound" : 811467,
         "lb_data" : [{ "value" : 545193, "date" : "2025-08-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 877562, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
+        "ub_data" : [
+            { "value" : 811467, "date" : "2026-07-10", "solver" : "OptalCP", "hardware" : "AMD Ryzen 9 5950X", "time" : null, "certificate" : "no" },
+            { "value" : 877562, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
     },
 {
         "instance" : "tai_1000_1000_6",
@@ -4081,9 +4089,11 @@
         "family_long" : "Da Col and Teppan 2022",
         "status" : "open",
         "lower_bound" : 547286,
-        "upper_bound" : 876067,
+        "upper_bound" : 813117,
         "lb_data" : [{ "value" : 547286, "date" : "2025-08-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 876067, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
+        "ub_data" : [
+            { "value" : 813117, "date" : "2026-07-10", "solver" : "OptalCP", "hardware" : "AMD Ryzen 9 5950X", "time" : null, "certificate" : "no" },
+            { "value" : 876067, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
     },
 {
         "instance" : "tai_1000_1000_7",
@@ -4093,9 +4103,11 @@
         "family_long" : "Da Col and Teppan 2022",
         "status" : "open",
         "lower_bound" : 545877,
-        "upper_bound" : 875891,
+        "upper_bound" : 809043,
         "lb_data" : [{ "value" : 545877, "date" : "2025-08-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 875891, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
+        "ub_data" : [
+            { "value" : 809043, "date" : "2026-07-10", "solver" : "OptalCP", "hardware" : "AMD Ryzen 9 5950X", "time" : null, "certificate" : "no" },
+            { "value" : 875891, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
     },
 {
         "instance" : "tai_1000_1000_8",
@@ -4105,9 +4117,11 @@
         "family_long" : "Da Col and Teppan 2022",
         "status" : "open",
         "lower_bound" : 549220,
-        "upper_bound" : 876456,
+        "upper_bound" : 812442,
         "lb_data" : [{ "value" : 549220, "date" : "2025-08-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 876456, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
+        "ub_data" : [
+            { "value" : 812442, "date" : "2026-07-10", "solver" : "OptalCP", "hardware" : "AMD Ryzen 9 5950X", "time" : null, "certificate" : "no" },
+            { "value" : 876456, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
     },
 {
         "instance" : "tai_1000_1000_9",
@@ -4117,9 +4131,11 @@
         "family_long" : "Da Col and Teppan 2022",
         "status" : "open",
         "lower_bound" : 543559,
-        "upper_bound" : 875914,
+        "upper_bound" : 810111,
         "lb_data" : [{ "value" : 543559, "date" : "2025-08-01", "solver" : "OptalCP", "hardware" : "Intel 11th Gen Core i7-1185G7", "time" : null, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 875914, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
+        "ub_data" : [
+            { "value" : 810111, "date" : "2026-07-10", "solver" : "OptalCP", "hardware" : "AMD Ryzen 9 5950X", "time" : null, "certificate" : "no" },
+            { "value" : 875914, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
     },
 {
         "instance" : "tai_1000_1000_10",
@@ -4129,9 +4145,11 @@
         "family_long" : "Da Col and Teppan 2022",
         "status" : "open",
         "lower_bound" : 549075,
-        "upper_bound" : 874820,
+        "upper_bound" : 809421,
         "lb_data" : [{ "value" : 549075, "date" : "2026-06-01", "solver" : "Hexaly", "hardware" : "Intel Core i7-10750H 16GB RAM", "time" : 10, "certificate" : "no" }],
-        "ub_data" : [{ "value" : 874820, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
+        "ub_data" : [
+            { "value" : 809421, "date" : "2026-07-10", "solver" : "OptalCP", "hardware" : "AMD Ryzen 9 5950X", "time" : null, "certificate" : "no" },
+            { "value" : 874820, "date" : "2024-01-01", "solver" : "Hexaly2024", "hardware" : "AMD Ryzen 7 7700 32GB RAM", "time" : 10, "certificate" : "no" }]
     },
 {
         "instance" : "dct-long-100-10000-1",
