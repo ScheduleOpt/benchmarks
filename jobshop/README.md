@@ -397,7 +397,7 @@ $$LB_{avg} = \exp\left(\sum_k\log\frac{LB}{LB_{best}}\right)$$
 
 $$UB_{avg} = \exp\left(\sum_k\log\frac{UB}{UB_{best}}\right)$$
 
-- Geometric sifted average of the gap
+- Geometric shifted average of the gap
 
 $$GAP = \exp\left(\sum_k\log\left(1 + \frac{UB - LB}{UB}\right)\right) - 1$$
 
