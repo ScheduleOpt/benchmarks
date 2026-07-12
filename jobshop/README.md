@@ -323,12 +323,16 @@ The engines that are benchmarked are
 From a technical perspective CP Optimizer interleaves the following search methods
 - **LNS** (Shaw and al.) : tree-search based local search
 - **Iterative diving** (designed by Philppe Laborie) : a quick diving heuristic for "simple" scheduling problems that often provides fast and good initial solutions
-- **Failure Directed Search** (designed by Petr Vilim) : a generalization of the fail-first principle that reduces the search space by eliminating unlikely assignments to succeed
-- **Genetic algorithms** on top of the scheduling engine (not on by default)
+- **Failure Directed Search** (designed by Petr Vilim) : a generalization of the fail-first principle that reduces the search space by eliminating assignments unlikely to succeed
+- **Genetic algorithms** non top of the scheduling engine : named "multi-point" search, they are not on by default unless a large number of cores are available
+The **temporal linear relaxation** solved by an LP and **objective landscapes** act like a reduced cost / impact based oracle but for scheduling problems.
 
 Because CP Optimizer was designed in a time where multi-core computers weren't common, the engine alternates the different strategies on the same core. And replicates itself over various cores with different parameters if more cores are available
 
-The main propagation algorithms in CP optimizer are time tabling and edge-finding (Claude LePape, Wim Nuijten, Philippe Baptiste) later improved by Petr Vilim 
+The main propagation algorithms in CP optimizer are 
+- **time tabling** and **edge-finding** for disjunctive and cumulative resources (Claude LePape, Wim Nuijten, Philippe Baptiste) later improved by Petr Vilim 
+- **logical network** for implications and (dis)equalities between boolean variables
+- **simple temporal networks** for precedences
 
 References
 - [20+ years of scheduling with constraints at IBM/ILOG](https://link.springer.com/content/pdf/10.1007/s10601-018-9281-x.pdf) (Philippe Laborie, Jérôme Rogerie, Paul Shaw and Petr Vilim - 2018)
@@ -340,16 +344,14 @@ References
 #### Google ORTools CP-SAT (2017 - present)
 
 CP-SAT is an open-source lazy clause generation engine augmented with an LP, MIP-style cuts and CP-style propagators designed by Laurent Perron, Frédéric Didier and Steven Gay. CP-SAT includes
-- LP-based lower bounds + MIP style cuts
-- CP-style propagation algorithms
+- LP-based lower bounds + MIP style cuts, in particular MIP cuts specialized for scheduling
+- CP-style propagation algorithms (time-tabling, edge-finding)
 - SAT-style conflict analysis
 - synchronization of MIP and CP style reasonings
 - LNS : tree-based local search
 - LS with infeasible moves
 
-CP-SAT follows the work done on a more traditional CP + LS engine by Laurent Perron and Vincent Furnon, focusing more on VRP problems.
-
-ORTools (CP-SAT and its FD predecessor) has won every year the MiniZinc competition since 2013
+CP-SAT follows a more traditional CP + LS engine by Laurent Perron and Vincent Furnon, focusing more on VRP problems.
 
 References
 - [CP-SAT at scheduling seminar](https://schedulingseminar.com/presentations/SchedulingSeminar_LaurentPerron.pdf)
@@ -370,7 +372,7 @@ References
 <br/>
 
 >
-> If your name appears in this section and you notice an     error contact me
+> If your name appears in this section and you notice an error contact me
 >
 
 <br/>
@@ -389,11 +391,11 @@ By giving to much importance to best-known solutions we miss what really matters
 
 
 We therefore adopt the following metrics instead
-- Geometric average of the ratio lower bound to best known lower bound
+- Geometric average of lower bound ratio to best known lower bound
 
 $$LB_{avg} = \exp\left(\sum_k\log\frac{LB}{LB_{best}}\right)$$
 
-- Geometric average of the ratio upper bound to best known upper bound
+- Geometric average of the upper bound ratio to best known upper bound
 
 $$UB_{avg} = \exp\left(\sum_k\log\frac{UB}{UB_{best}}\right)$$
 
