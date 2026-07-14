@@ -325,6 +325,7 @@ From a technical perspective CP Optimizer interleaves the following search metho
 - **Iterative diving** (designed by Philppe Laborie) : a quick diving heuristic for "simple" scheduling problems that often provides fast and good initial solutions
 - **Failure Directed Search** (designed by Petr Vilim) : a generalization of the fail-first principle that reduces the search space by eliminating assignments unlikely to succeed
 - **Genetic algorithms** non top of the scheduling engine : named "multi-point" search, they are not on by default unless a large number of cores are available
+
 The **temporal linear relaxation** solved by an LP and **objective landscapes** act like a reduced cost / impact based oracle but for scheduling problems.
 
 Because CP Optimizer was designed in a time where multi-core computers weren't common, the engine alternates the different strategies on the same core. And replicates itself over various cores with different parameters if more cores are available
@@ -336,14 +337,18 @@ The main propagation algorithms in CP optimizer are
 
 References
 - [20+ years of scheduling with constraints at IBM/ILOG](https://link.springer.com/content/pdf/10.1007/s10601-018-9281-x.pdf) (Philippe Laborie, Jérôme Rogerie, Paul Shaw and Petr Vilim - 2018)
+- [Introduction to CP Optimizer](https://cp2019.a4cp.org/PDFs/P-Laborie.pdf) (Philippe Laborie - 2019)
 - [Reasoning with Conditional Time-intervals](https://cdn.aaai.org/FLAIRS/2008/FLAIRS08-126.pdf) (Philippe Laborie and Jérôme Rogerie - 2008)
 - [Reasoning with Conditional Time-intervals Part II](https://cdn.aaai.org/ocs/60/60-2374-1-PB.pdf) (Phillipe Laborie, Jérôme Rogerie, Paul Shaw and Petr Vilim - 2009)
+- [Temporal linear relaxation in IBM ILOG CP Optimizer](https://link.springer.com/article/10.1007/s10951-014-0408-7) (Philippe Laborie and Jérôme Rogerie - 2014)
 - [Failure-Directed Search for Constraint-Based Scheduling](https://link.springer.com/chapter/10.1007/978-3-319-18008-3_30) (Petr Vilim, Philippe Laborie and Paul Shaw - 2015)
-- [Introduction to CP Optimizer](https://cp2019.a4cp.org/PDFs/P-Laborie.pdf) (Philippe Laborie - 2019)
+- [Objective landscapes for constraint programming](https://link.springer.com/chapter/10.1007/978-3-319-93031-2_28) (Philippe Laborie - 2018)
 
 #### Google ORTools CP-SAT (2017 - present)
 
-CP-SAT is an open-source lazy clause generation engine augmented with an LP, MIP-style cuts and CP-style propagators designed by Laurent Perron, Frédéric Didier and Steven Gay. CP-SAT includes
+CP-SAT is an open-source lazy clause generation engine augmented with an LP, MIP-style cuts and CP-style propagators designed by Laurent Perron, Frédéric Didier and Steven Gay. 
+
+CP-SAT includes
 - LP-based lower bounds + MIP style cuts, in particular MIP cuts specialized for scheduling
 - CP-style propagation algorithms (time-tabling, edge-finding)
 - SAT-style conflict analysis
@@ -353,21 +358,44 @@ CP-SAT is an open-source lazy clause generation engine augmented with an LP, MIP
 
 CP-SAT follows a more traditional CP + LS engine by Laurent Perron and Vincent Furnon, focusing more on VRP problems.
 
+CP-SAT team doesn't publish much about how CP SAT works, but maintains very informative comments in the source code.
+Here is an overview of the files and what they contain
+
+| Constraint	| Main source files	| Implemented algorithms |
+----------------|-------------------|------------------------|
+| NoOverlap	    | disjunctive.cc	| Detectable precedences, Edge Finding, Not-First/Not-Last, overload checking |
+| Cumulative    | cumulative.cc, timetable.cc, timetable_edgefinding.cc	    | Time-table propagation, Edge Finding, energetic reasoning |
+| NoOverlap2D	| diffn.cc	        | DiffN filtering, energetic reasoning |
+| Circuit	    | circuit.cc	    | SCC detection, subtour elimination |
+| AllDifferent	| all_different.cc	| Matching-based filtering, binary decomposition in some cases
+| Linear	    | integer_expr.cc, linear_constraint.cc	| Integer propagation, pseudo-Boolean reasoning
+| Element	    | element.cc    	| Bounds consistency
+| Automaton	    | table.cc, automaton.cc	| DFA propagation
+| Table	        | table.cc	        | Compact table propagation
+| Reservoir	    | reservoir.cc	    | Specialized cumulative reasoning
+
+The paper **From Literals to Atomic Constraints: Generalising Conflict-Driven Clause Learning for Constraint Programming** contains  a comparison of the implementation of various LCG-based CP solvers.
+
+> OR-Tools only creates literals for decisions. However, OR-Tools often decomposes constraints into a SAT representation, leading to more existing literals than only decision literals. During conflict analysis, an atomic constraint with no associated literal is repeatedly replaced with its reason until only existing literals are left. OR-Tools’s approach has the benefits that 1) it only creates literals that are “important” enough to be decisions, and 2) decomposed constraints ensure that there are enough literals for conflict analysis. However, OR-Tools suffers from the fact that 1) limiting created literals can lead to less general nogoods, and 2) since explanations are resolved until consisting of existing literals, explanation lifting and nogood minimisation can have less impact
+
+
+
 References
-- [CP-SAT at scheduling seminar](https://schedulingseminar.com/presentations/SchedulingSeminar_LaurentPerron.pdf)
+- [CP-SAT at scheduling seminar](https://schedulingseminar.com/presentations/SchedulingSeminar_LaurentPerron.pdf) (Laurent Perron - 2024)
+- [From Literals to Atomic Constraints: Generalising Conflict-Driven Clause Learning for Constraint Programming](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CP.2026.42) (Imko Marijnissen, Maarten Flippo, Emir Demirović - CP2026) 
 
 
 #### OptalCP (2021 - present)
 
 OptalCP was architectured by Petr Vilim, Nicolas Bonifas and Diego Olivier Fernandez Pons (initially with input from Philippe Laborie). Compared to CPO the parallelism is done with one strategy per core instead of interleaving. The strategies used are
-- **LNS** : tree-search based local search
-- **FDS** : generalizes first-fail principle
+- **Large Neighbourhood Search** (LNS) : tree-search based local search
+- **Failure Directed Search** (FDS) : generalizes first-fail principle
 - **FDSDual** : generalizes destructive lower bounds
 
 OptalCP continues the legacy of CP Optimizer (engine style, modeling language). The hybridization of OptalCP with heuristics and meta-heuristics is done outside by communicating upper and lower bounds in real time (during search)
 
 References
-- [OptalCP at scheduling seminar](https://schedulingseminar.com/presentations/schedulingseminar_petrvilim_vilemheinz.pdf)
+- [OptalCP at scheduling seminar](https://schedulingseminar.com/presentations/schedulingseminar_petrvilim_vilemheinz.pdf) (Petr Vilim - 2026)
 
 <br/>
 
