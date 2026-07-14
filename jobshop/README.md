@@ -344,9 +344,11 @@ References
 - [Failure-Directed Search for Constraint-Based Scheduling](https://link.springer.com/chapter/10.1007/978-3-319-18008-3_30) (Petr Vilim, Philippe Laborie and Paul Shaw - 2015)
 - [Objective landscapes for constraint programming](https://link.springer.com/chapter/10.1007/978-3-319-93031-2_28) (Philippe Laborie - 2018)
 
+<br/>
+
 #### Google ORTools CP-SAT (2017 - present)
 
-CP-SAT is an open-source lazy clause generation engine augmented with an LP, MIP-style cuts and CP-style propagators designed by Laurent Perron, Frédéric Didier and Steven Gay. 
+**CP-SAT** is an open-source lazy clause generation engine augmented with an LP, MIP-style cuts and CP-style propagators designed by Laurent Perron, Frédéric Didier and Steven Gay. 
 
 CP-SAT includes
 - LP-based lower bounds + MIP style cuts, in particular MIP cuts specialized for scheduling
@@ -360,6 +362,7 @@ CP-SAT follows a more traditional CP + LS engine by Laurent Perron and Vincent F
 
 CP-SAT team doesn't publish much about how CP SAT works, but maintains very informative comments in the source code.
 Here is an overview of the files and what they contain
+
 
 | Constraint	| Main source files	| Implemented algorithms |
 ----------------|-------------------|------------------------|
@@ -378,16 +381,30 @@ The paper **From Literals to Atomic Constraints: Generalising Conflict-Driven Cl
 
 > OR-Tools only creates literals for decisions. However, OR-Tools often decomposes constraints into a SAT representation, leading to more existing literals than only decision literals. During conflict analysis, an atomic constraint with no associated literal is repeatedly replaced with its reason until only existing literals are left. OR-Tools’s approach has the benefits that 1) it only creates literals that are “important” enough to be decisions, and 2) decomposed constraints ensure that there are enough literals for conflict analysis. However, OR-Tools suffers from the fact that 1) limiting created literals can lead to less general nogoods, and 2) since explanations are resolved until consisting of existing literals, explanation lifting and nogood minimisation can have less impact
 
+The presolver of CP-SAT does a significant amount of work, closer to a MIP than a typical CP engine
+- variable fixing
+- domain tightening
+- affine relation detection
+- duplicate constraint elimination
+- implied bound computation
+- linear simplification
+- clique extraction
+- symmetry detection (limited)
+- interval simplification
+- objective simplification
+
+Moreover some of the classic scheduling algorithms have been transformed into cutting planes (`scheduling_cuts.cc`) : energetic reasoning, time-table propagation, cumulative precedence, cumulative completion time, energetic reasoning for disjunctive resources.
 
 
 References
 - [CP-SAT at scheduling seminar](https://schedulingseminar.com/presentations/SchedulingSeminar_LaurentPerron.pdf) (Laurent Perron - 2024)
 - [From Literals to Atomic Constraints: Generalising Conflict-Driven Clause Learning for Constraint Programming](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CP.2026.42) (Imko Marijnissen, Maarten Flippo, Emir Demirović - CP2026) 
 
+<br/>
 
 #### OptalCP (2021 - present)
 
-OptalCP was architectured by Petr Vilim, Nicolas Bonifas and Diego Olivier Fernandez Pons (initially with input from Philippe Laborie). Compared to CPO the parallelism is done with one strategy per core instead of interleaving. The strategies used are
+**OptalCP** was architectured by Petr Vilim, Nicolas Bonifas and Diego Olivier Fernandez Pons (initially with input from Philippe Laborie). Compared to CPO the parallelism is done with one strategy per core instead of interleaving. The strategies used are
 - **Large Neighbourhood Search** (LNS) : tree-search based local search
 - **Failure Directed Search** (FDS) : generalizes first-fail principle
 - **FDSDual** : generalizes destructive lower bounds
