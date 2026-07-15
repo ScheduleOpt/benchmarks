@@ -14,7 +14,7 @@ JSPLib is a comprehensive benchmark library for the Job Shop Scheduling Problem 
 JSPLib tracks the engines State-of-the-Art (SOTA) through a standardized 10-minute benchmark of reference solvers (CPO, CP-SAT, OptalCP), comparing their optimality gaps and deviations from best known bounds across all instance families. In addition, JSPLib maintains an archive verified Best Known Solutions (BKS).
 
 The data and source code can be found in the [Github repository](https://github.com/ScheduleOpt/benchmarks)
-This document is visible as a README.md in the Github folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib). Instances are now available in [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/json) or [text](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/text) formats. The [raw data](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) of the performance benchmark is available. A json file of [best known solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) is also provided.
+This document is visible as a README.md in the Github folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib). Instances are now available in [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/json) or [text](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/text) formats. The [results](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) of the standardized benchmark for each engine on each instance is available in json format. And a json file of [best known solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) is also provided with a trace of the evolution of the bounds.
 
 ### Table of Contents
 
@@ -78,8 +78,9 @@ We use the following engines as reference engines for the benchmark for they are
 - [**Google CP-SAT**](https://developers.google.com/optimization) : a lazy clause generation + LP + local search engine
 - [**OptalCP**](https://optalcp.com) : a modern CP-scheduling engine
 
+The engines are benchmared in 10 minutes because the 10-minute time limit reflects a common industrial workflow in which schedules are repeatedly regenerated after manual adjustments, parameter tuning, or changes in production data. This iterative `solve-and-adjust` process requires turnaround times of the order of minutes rather than hours. Furthermore, problems that can be solved to optimality in less than 10 minutes are suitable as subproblems in decomposition methods: Benders decomposition, Pareto frontier generation or rolling-horizon optimization.
 
-Instances are divided into
+This justifies the categorization of instances into
 - <strong style="color:cornflowerblue">toy</strong> : solved to optimality (with proof) in 1 minute by at least 1 reference engine
 - <strong style="color:green">easy</strong> : solved to optimality (with proof) in 10 minute by at least 1 reference engine
 - <strong style="color:orange">medium</strong> : solved to optimality (with proof) in 1 hour by at least 1 reference engine
@@ -89,10 +90,13 @@ Instances are divided into
 
 <br/>
 
-> 2026-06-10: We have introduced the <strong style="color:cornflowerblue">toy</strong> category for < 1 minute, and moved the <strong style="color:green">easy</strong> category to < 10 minutes, making official that we consider 10 minutes the standard benchmarking time unlike 1h in [NRR2022]
+The objectives of a scheduling engine are: 
+- prove optimality for as many instances as possible within the standardized 10-minute limit
+- for instances that cannot be closed in 10 minutes, to minimize the deviation to the best known upper and lower bounds
+
+Why upper and lower bounds ? Because a decomposition may use the scheduling problem as a dual certificate, not only a primal one.
 
 <br/>
-
 
 Currently there are
 
@@ -132,7 +136,7 @@ Since 2014 [Optimizizer](https://optimizizer.com/jobshop.php) has been the refer
 
 ***There may be some lag between jsplib.org and optimizizer, always check both.***
 
-#### Scheduling Lab
+#### Scheduling Lab (2022 - present)
 
 [SchedulingLab](https://github.com/SchedulingLab/jsp-instances) collects instances of various types of scheduling problems, including instances not referenced here.
 
@@ -389,7 +393,7 @@ The presolver of CP-SAT does a significant amount of work, closer to a MIP than 
 - implied bound computation
 - linear simplification
 - clique extraction
-- symmetry detection (limited)
+- symmetry detection
 - interval simplification
 - objective simplification
 
@@ -436,15 +440,15 @@ By giving to much importance to best-known solutions we miss what really matters
 
 
 We therefore adopt the following metrics instead
-- Geometric average of lower bound ratio to best known lower bound
+- **Geometric average of lower bound to best known lower bound ratio**
 
 $$LB_{avg} = \exp\left(\sum_k\log\frac{LB}{LB_{best}}\right)$$
 
-- Geometric average of the upper bound ratio to best known upper bound
+- **Geometric average of the upper bound to best known upper bound ratio**
 
 $$UB_{avg} = \exp\left(\sum_k\log\frac{UB}{UB_{best}}\right)$$
 
-- Geometric shifted average of the gap
+- **Geometric shifted average of the gap**
 
 $$GAP = \exp\left(\sum_k\log\left(1 + \frac{UB - LB}{UB}\right)\right) - 1$$
 
