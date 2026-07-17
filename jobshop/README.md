@@ -10,8 +10,11 @@ permalink: /jsplib/
 
 ## The jobshop scheduling problem benchmark library
 
-JSPLib is a comprehensive benchmark library for the Job Shop Scheduling Problem (JSP). It serves as a centralized repository for both classic synthetic instances (`ft`, `la`, `abz`, `orb`, `yn`, `swv`, `ta`, `dmu`, and `tai`) and more industrial instances (`dct` and `bel`). 
-JSPLib tracks the engines State-of-the-Art (SOTA) through a standardized 10-minute benchmark of reference solvers (CPO, CP-SAT, OptalCP), comparing their optimality gaps and deviations from best known bounds across all instance families. In addition, JSPLib maintains an archive verified Best Known Solutions (BKS).
+
+JSPLib is a comprehensive benchmark library for the Job Shop Scheduling Problem (JSP), with three components:
+- **Instance repository** — a centralized set of classic synthetic instances (ft, la, abz, orb, yn, swv, ta, dmu, tai) and industrial reentrant instances (dct, bel).
+- **Engine benchmark** — a standardized 10-minute comparison of reference solvers (CPO, CP-SAT, OptalCP), measuring each engine's optimality gap and deviation from the best known bounds.
+- **Best-known-solutions archive** — a running record of the best upper/lower bounds ever found for each instance, from any source (published papers, meta-heuristics, or engine runs) — not limited to the three reference engines above.
 
 The data and source code can be found in the [Github repository](https://github.com/ScheduleOpt/benchmarks)
 This document is visible as a README.md in the Github folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib). Instances are now available in [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/json) or [text](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/text) formats. The [results](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) of the standardized benchmark for each engine on each instance is available in json format. And a json file of [best known solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) is also provided with a trace of the evolution of the bounds.
@@ -65,7 +68,7 @@ reentrant jobshop instances (44)
 
 All 332 classic instances are randomly generated which creates situations like `ta39` and `ta40` that are the same size (30 x 15) and generated with the same generator, but one is solved in < 1 minute while the other is still open, resisting all solution techniques. 
 
-We would like to augment the jsplib with more instances based on real data and have therefore included the `long` and `short` data from Teppan 2022 that while still random attempts to recreate the situation where jobs have different number of operations and can require multiple operations on a given machine (reentrancy) mimiking metal fabrication and aircraft component machining problems. We have added the instances `bal` of Boveroux et al. that statistically reproduce the features of the manufavturing data they were working with.
+We would like to augment the jsplib with more instances based on real data and have therefore included the `long` and `short` data from Teppan 2022 that while still random attempts to recreate the situation where jobs have different number of operations and can require multiple operations on a given machine (reentrancy) mimicking metal fabrication and aircraft component machining problems. We have added the instances `bal` of Boveroux et al. that statistically reproduce the features of the manufacturing data they were working with.
 
 We strongly encourage anyone that has access to real jobshop instances to share them with us and the scheduling commmunity.
 
@@ -73,19 +76,19 @@ We strongly encourage anyone that has access to real jobshop instances to share 
 
 ### Classification of the jobshop instances
 
-We use the following engines as reference engines for the benchmark for they are widely considered the strongest engines for scheduling, and to provide a balanced benchmark across different solver technologies
+We use the following engines as reference engines for the benchmark
 - [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : a classic CP-scheduling engine
 - [**Google CP-SAT**](https://developers.google.com/optimization) : a lazy clause generation + LP + local search engine
 - [**OptalCP**](https://optalcp.com) : a modern CP-scheduling engine
 
-The engines are benchmared in 10 minutes because the 10-minute time limit reflects a common industrial workflow in which schedules are repeatedly regenerated after manual adjustments, parameter tuning, or changes in production data. This iterative `solve-and-adjust` process requires turnaround times of the order of minutes rather than hours. Furthermore, problems that can be solved to optimality in less than 10 minutes are suitable as subproblems in decomposition methods: Benders decomposition, Pareto frontier generation or rolling-horizon optimization.
+The engines are benchmarked in 10 minutes to reflects industrial workflows in which schedules are repeatedly regenerated after manual adjustments, parameter tuning, or changes in production data. Furthermore, problems that can be solved to optimality in less than 10 minutes are suitable as sub-problems in decomposition methods like Benders decomposition, Pareto frontier generation or rolling-horizon optimization.
 
 This justifies the categorization of instances into
 - <strong style="color:cornflowerblue">toy</strong> : solved to optimality (with proof) in 1 minute by at least 1 reference engine
 - <strong style="color:green">easy</strong> : solved to optimality (with proof) in 10 minute by at least 1 reference engine
 - <strong style="color:orange">medium</strong> : solved to optimality (with proof) in 1 hour by at least 1 reference engine
 - <strong style="color:red">hard</strong> : solved to optimality (with proof) in > 1h by at least 1 reference engine
-- <strong style="color:purple">closed</strong> : *allegedly* solved to optimality. Most of the time the optimal solution is known because 2 different methods independently found equal upper and lower bounds. The problem moves to <span style="color:red">hard</span> only when the optimality proof can be reproduced by a reference engine.
+- <strong style="color:purple">closed</strong> : *allegedly* solved to optimality. Most of the time the optimal solution is known because 2 different methods independently found equal upper and lower bounds. The problem is reclassified into toy, easy, medium or hard when a reference engine is able to reproduce the results.
 - <strong style="color:grey">open</strong> : no proof of optimality
 
 <br/>
@@ -215,7 +218,7 @@ accepts both.
 
 #### Taillard format
 
-The taillard format first lists the machines, then the durations
+The Taillard format first lists the machines, then the durations
 
 ```
 #n #m
@@ -223,7 +226,7 @@ The taillard format first lists the machines, then the durations
 ((duration ){m}\n){n}
 ```
 
-For instance `la01` in taillard format is
+For instance `la01` in Taillard format is
 ```
 10	5	
 1	0	4	3	2
@@ -290,7 +293,7 @@ The instances come from the following publications
 
 - **Adams, J., Balas, E., & Zawack, D.** (1988). The shifting bottleneck procedure for job shop scheduling. Management science, 34(3), 391-401.
 
-- **Applagate, D., & Cook, W.** (1991). A computational study of the job-shop scheduling instance. ORSA J. Comput, 3, 49-51.
+- **Applegate, D., & Cook, W.** (1991). A computational study of the job-shop scheduling instance. ORSA J. Comput, 3, 49-51.
 
 - **Storer, R. H., Wu, S. D., & Vaccari, R.** (1992). New search spaces for sequencing instances with application to job shop 38 (1992) 1495–1509 Manage. Sci, 38, 1495-1509.
 
@@ -325,10 +328,10 @@ The engines that are benchmarked are
 **IBM ILOG CP Optimizer** is a descendant of **ILOG Solver** (architectured over the years by Jean-François Puget, Jean-Charles Régin and later Laurent Perron) and **ILOG Scheduler** (architectured by Claude Le Pape, then Philippe Laborie). CP Optimizer (led by Paul Shaw, Laurent Perron and Philippe Laborie) merged the general CP engine and the specific scheduling add-on in a single engine, promoted the model-and-run approach and pioneered a new scheduling language (optional intervals, noOverlap, cumulative functions, etc.) that has become an industry standard.
 
 From a technical perspective CP Optimizer interleaves the following search methods
-- **LNS** (Shaw and al.) : tree-search based local search
+- **Large Neighbourhood Search** (Shaw and al.) : tree-search based local search
 - **Iterative diving** (designed by Philppe Laborie) : a quick diving heuristic for "simple" scheduling problems that often provides fast and good initial solutions
 - **Failure Directed Search** (designed by Petr Vilim) : a generalization of the fail-first principle that reduces the search space by eliminating assignments unlikely to succeed
-- **Genetic algorithms** non top of the scheduling engine : named "multi-point" search, they are not on by default unless a large number of cores are available
+- **Genetic algorithms** on top of the scheduling engine : named "multi-point" search, they are not on by default unless a large number of cores are available
 
 The **temporal linear relaxation** solved by an LP and **objective landscapes** act like a reduced cost / impact based oracle but for scheduling problems.
 
@@ -342,6 +345,7 @@ The main propagation algorithms in CP optimizer are
 References
 - [20+ years of scheduling with constraints at IBM/ILOG](https://link.springer.com/content/pdf/10.1007/s10601-018-9281-x.pdf) (Philippe Laborie, Jérôme Rogerie, Paul Shaw and Petr Vilim - 2018)
 - [Introduction to CP Optimizer](https://cp2019.a4cp.org/PDFs/P-Laborie.pdf) (Philippe Laborie - 2019)
+- [Self-adapting large neighborhood search: Application to single-mode scheduling problems](http://ppcro.free.fr/pres/070605/Laborie_SelfAdaptingLNS.pdf) (Philippe Laborie and Daniel Godard - 2007)
 - [Reasoning with Conditional Time-intervals](https://cdn.aaai.org/FLAIRS/2008/FLAIRS08-126.pdf) (Philippe Laborie and Jérôme Rogerie - 2008)
 - [Reasoning with Conditional Time-intervals Part II](https://cdn.aaai.org/ocs/60/60-2374-1-PB.pdf) (Phillipe Laborie, Jérôme Rogerie, Paul Shaw and Petr Vilim - 2009)
 - [Temporal linear relaxation in IBM ILOG CP Optimizer](https://link.springer.com/article/10.1007/s10951-014-0408-7) (Philippe Laborie and Jérôme Rogerie - 2014)
@@ -362,7 +366,7 @@ CP-SAT includes
 - LNS : tree-based local search
 - LS with infeasible moves
 
-CP-SAT follows a more traditional CP + LS engine by Laurent Perron and Vincent Furnon, focusing more on VRP problems.
+CP-SAT is the "successor" of a more traditional CP + LS engine by Laurent Perron and Vincent Furnon, focusing more on VRP problems.
 
 CP-SAT team doesn't publish much about how CP SAT works, but maintains very informative comments in the source code.
 Here is an overview of the files and what they contain
@@ -571,7 +575,7 @@ The solutions may come from
 - An engine run by us (CPO, OptalCP, CP-SAT) with approximate resolution time
 
 The type of hardware and time required to find the best known solution are difficult to track and compare, in particular for bounds coming from published papers. Which is why
-- Every time an engine equals a published result the engine appears in the table instead
+- When a reference engine reproduces a published bound, the table credits the engine because of the reproductibility advantage
 - An approximative timing for reference engines is provided, in particular when the time to find the solution is unusually long
 
 <br/>
