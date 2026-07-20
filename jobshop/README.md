@@ -77,11 +77,12 @@ We strongly encourage anyone that has access to real jobshop instances to share 
 ### Classification of the jobshop instances
 
 We use the following engines as reference engines for the benchmark
+- [**IBM ILOG Cplex**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : a state-of-the-art ***MIP*** engine
 - [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : a classic CP-scheduling engine
 - [**Google CP-SAT**](https://developers.google.com/optimization) : a lazy clause generation + LP + local search engine
 - [**OptalCP**](https://optalcp.com) : a modern CP-scheduling engine
 
-The engines are benchmarked in 10 minutes to reflects industrial workflows in which schedules are repeatedly regenerated after manual adjustments, parameter tuning, or changes in production data. Furthermore, problems that can be solved to optimality in less than 10 minutes are suitable as sub-problems in decomposition methods like Benders decomposition, Pareto frontier generation or rolling-horizon optimization.
+The 10 minutes time limit reflects industrial workflows in which schedules are repeatedly regenerated after manual adjustments, parameter tuning, or changes in production data. Furthermore, problems that can be solved to optimality in less than 10 minutes are suitable as sub-problems in decomposition methods like Benders decomposition, Pareto frontier generation or rolling-horizon optimization.
 
 This justifies the categorization of instances into
 - <strong style="color:cornflowerblue">toy</strong> : solved to optimality (with proof) in 1 minute by at least 1 reference engine
@@ -315,6 +316,7 @@ The instances come from the following publications
 We track the State-Of-The-Art (SOTA) of optimization engines for scheduling with a standardized 10 minutes benchmark of the reference engines
 
 The engines that are benchmarked are
+- [**IBM ILOG Cplex**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : a state-of-the-art ***MIP*** engine
 - [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : representative of the ***CP-scheduling*** family of engines
 - [**Google CP-SAT**](https://developers.google.com/optimization) : representative of the ***lazy clause generation*** family of engines
 - [**OptalCP**](https://optalcp.com) : representative of the ***CP-scheduling*** family of engines
@@ -323,9 +325,36 @@ The engines that are benchmarked are
 
 ### A short history of the reference engines
 
-#### IBM CP Optimizer (2007 - present)
+#### IBM ILOG Cplex (1988 - present)
 
-**IBM ILOG CP Optimizer** is a descendant of **ILOG Solver** (architectured over the years by Jean-François Puget, Jean-Charles Régin and later Laurent Perron) and **ILOG Scheduler** (architectured by Claude Le Pape, then Philippe Laborie). CP Optimizer (led by Paul Shaw, Laurent Perron and Philippe Laborie) merged the general CP engine and the specific scheduling add-on in a single engine, promoted the model-and-run approach and pioneered a new scheduling language (optional intervals, noOverlap, cumulative functions, etc.) that has become an industry standard.
+**Cplex** is a MIP engine founded by Robert Bixby in 1987, and acquired in 1997 by ILOG, subsequently acquired by IBM in 2009.
+
+Like similar state-of-the-art MIP engines, Cplex features
+- a presolve
+- various LP algorithms (simplex, dual simplex, barrier)
+- search strategies with learning (branching, restarts)
+- a large collection of cuts
+- primal heuristics
+- conflict analysis adapted from SAT
+- solution polishing before the time-limit
+
+Improvements in a complex software like Cplex are incremental, but we can broardly divide its evolution as follows
+- Cplex 1-3 [**1987-1994**] LP improvements (simplex, dual simplex, interior points), basic presolve and branch-and-cut. Cplex 3.0 is a performance milestone due to its mature dual simplex.
+- Cplex 6-7 [**1998-2001**] established what we would recognize today as a modern MIP (presolve + branch-and-cut + heuristics + learning) with a particular emphasis on cuts. Cplex 6.5 (1999) is considered by practitioners as a performance milestone.
+- Cplex 9-11 [**2003-2007**] more emphasis on primal approaches : heuristics (RINS, Feasibility pump), search strategies (restart + node presolve), solution polishing, SAT-like conflict analysis. Cplex 11 is considered as a performance milestone.
+- Cplex 11/12- [**2007-**] more cuts (GCD-based cuts, multi-commodity flow) sometimes mixed with heuristics (pump reduce) or search (conflict analysis), and systematic cutting plane filtering allowing a more aggressive usage of cuts
+
+From 2008, Bixby, Rothberg and Gu created Gurobi.
+
+References
+- [Solving Real-World linear programs: a decade and more of progress](https://pubsonline.informs.org/doi/epdf/10.1287/opre.50.1.3.17780) (Robert Bixby - 2002)
+- [Mixed Integer Programming: Analyzing 12 Years of Progress." In Facets of Combinatorial Optimization](https://link.springer.com/chapter/10.1007/978-3-642-38189-8_18) (Tobias Achterberg, Roland Wunderling - 2013)
+
+<br/>
+
+#### IBM ILOG CP Optimizer (2007 - present)
+
+**CP Optimizer** is a descendant of **ILOG Solver** (architectured over the years by Jean-François Puget, Jean-Charles Régin and later Laurent Perron) and **ILOG Scheduler** (architectured by Claude Le Pape, then Philippe Laborie). CP Optimizer (led by Paul Shaw, Laurent Perron and Philippe Laborie) merged the general CP engine and the specific scheduling add-on in a single engine, promoted the model-and-run approach and pioneered a new scheduling language (optional intervals, noOverlap, cumulative functions, etc.) that has become an industry standard.
 
 From a technical perspective CP Optimizer interleaves the following search methods
 - **Large Neighbourhood Search** (Shaw and al.) : tree-search based local search
@@ -463,12 +492,13 @@ $$GAP = \exp\left(\sum_k\log\left(1 + \frac{UB - LB}{UB}\right)\right) - 1$$
 ### Comparison of reference solvers
 
 Comparisons done on an Windows PC with an i7 4-core 3GHz 32GB ram in 600 seconds
+- **Cplex** 22.1.1.0
+- **CPO** 22.1.1.0
+    - with gap tolerance = 0
+- **CP-SAT** V9.15.6755 with default configuration
 - **OptalCP** Academic Version 2026.4.0 
     - with maximum propagation instead of default, gap tolerance = 0 and some other parameter changes
     - we may benchmark with default parameters later
-- **CP-SAT** V9.15.6755 with default configuration
-- **CPO** 22.1.1.0
-    - with gap tolerance = 0
     
 
 The raw data is in the [solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) folder
@@ -500,25 +530,32 @@ Averages are made on instances solved. Outlier solutions returned by the engine 
 
 <table>
 <tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb</th><th>ub</th><th>gap</th></tr>
-<tr><td rowspan="3">all</td><td>CPO</td><td>376</td><td >376</td><td>192</td><td>51%</td><td >0.89</td><td >1.03</td><td >8%</td></tr>
+<tr><td rowspan="4">all</td><td>Cplex</td><td>352</td><td style="color:red">258</td><td>27</td><td>8%</td><td style="color:red">0.49</td><td style="color:red">1.27</td><td style="color:red">43%</td></tr>
+<tr><td>CPO</td><td>376</td><td >376</td><td>192</td><td>51%</td><td >0.89</td><td >1.03</td><td >8%</td></tr>
 <tr><td>CP-SAT</td><td>376</td><td style="color:red">350</td><td>165</td><td>44%</td><td style="color:red">0.91</td><td style="color:red">1.03</td><td style="color:red">5%</td></tr>
 <tr><td>OptalCP</td><td>376</td><td >376</td><td>223</td><td>59%</td><td >1.00</td><td >1.01</td><td >3%</td></tr>
-<tr><td rowspan="3">outdated</td><td>CPO</td><td>53</td><td >53</td><td>51</td><td>96%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td rowspan="4">outdated</td><td>Cplex</td><td>53</td><td >53</td><td>10</td><td>19%</td><td >0.70</td><td >1.03</td><td >26%</td></tr>
+<tr><td>CPO</td><td>53</td><td >53</td><td>51</td><td>96%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
 <tr><td>CP-SAT</td><td>53</td><td >53</td><td>52</td><td>98%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
 <tr><td>OptalCP</td><td>53</td><td >53</td><td>53</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td rowspan="3">classic</td><td>CPO</td><td>189</td><td >189</td><td>65</td><td>34%</td><td >0.98</td><td >1.02</td><td >5%</td></tr>
+<tr><td rowspan="4">classic</td><td>Cplex</td><td>189</td><td style="color:red">179</td><td>1</td><td>1%</td><td style="color:red">0.52</td><td style="color:red">1.33</td><td style="color:red">54%</td></tr>
+<tr><td>CPO</td><td>189</td><td >189</td><td>65</td><td>34%</td><td >0.98</td><td >1.02</td><td >5%</td></tr>
 <tr><td>CP-SAT</td><td>189</td><td >189</td><td>41</td><td>22%</td><td >0.99</td><td >1.03</td><td >5%</td></tr>
 <tr><td>OptalCP</td><td>189</td><td >189</td><td>82</td><td>43%</td><td >0.99</td><td >1.01</td><td >3%</td></tr>
-<tr><td rowspan="3">challenge</td><td>CPO</td><td>60</td><td >60</td><td>0</td><td>0%</td><td >0.97</td><td >1.06</td><td >10%</td></tr>
+<tr><td rowspan="4">challenge</td><td>Cplex</td><td>60</td><td >60</td><td>0</td><td>0%</td><td >0.54</td><td >1.41</td><td >61%</td></tr>
+<tr><td>CPO</td><td>60</td><td >60</td><td>0</td><td>0%</td><td >0.97</td><td >1.06</td><td >10%</td></tr>
 <tr><td>CP-SAT</td><td>60</td><td >60</td><td>0</td><td>0%</td><td >0.98</td><td >1.07</td><td >10%</td></tr>
 <tr><td>OptalCP</td><td>60</td><td >60</td><td>0</td><td>0%</td><td >0.99</td><td >1.03</td><td >7%</td></tr>
-<tr><td rowspan="3">large</td><td>CPO</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >0.78</td><td >1.05</td><td >16%</td></tr>
+<tr><td rowspan="4">large</td><td>Cplex</td><td>90</td><td style="color:red">26</td><td>16</td><td>18%</td><td style="color:red">0.66</td><td style="color:red">1.45</td><td style="color:red">15%</td></tr>
+<tr><td>CPO</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >0.78</td><td >1.05</td><td >16%</td></tr>
 <tr><td>CP-SAT</td><td>90</td><td style="color:red">70</td><td>46</td><td>51%</td><td style="color:red">0.68</td><td style="color:red">1.03</td><td style="color:red">9%</td></tr>
 <tr><td>OptalCP</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >1.00</td><td >1.02</td><td >7%</td></tr>
-<tr><td rowspan="3">reentrant</td><td>CPO</td><td>44</td><td >44</td><td>26</td><td>59%</td><td >0.70</td><td >1.10</td><td >16%</td></tr>
+<tr><td rowspan="4">reentrant</td><td>Cplex</td><td>20</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">0.02</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
+<tr><td>CPO</td><td>44</td><td >44</td><td>26</td><td>59%</td><td >0.70</td><td >1.10</td><td >16%</td></tr>
 <tr><td>CP-SAT</td><td>44</td><td style="color:red">38</td><td>26</td><td>59%</td><td style="color:red">0.96</td><td style="color:red">1.07</td><td style="color:red">5%</td></tr>
 <tr><td>OptalCP</td><td>44</td><td >44</td><td>38</td><td>86%</td><td >1.00</td><td >1.04</td><td >2%</td></tr>
-<tr><td rowspan="3">open</td><td>CPO</td><td>90</td><td >90</td><td>0</td><td>0%</td><td >0.98</td><td >1.08</td><td >15%</td></tr>
+<tr><td rowspan="4">open</td><td>Cplex</td><td>90</td><td style="color:red">60</td><td>0</td><td>0%</td><td style="color:red">0.58</td><td style="color:red">1.41</td><td style="color:red">61%</td></tr>
+<tr><td>CPO</td><td>90</td><td >90</td><td>0</td><td>0%</td><td >0.98</td><td >1.08</td><td >15%</td></tr>
 <tr><td>CP-SAT</td><td>90</td><td style="color:red">80</td><td>0</td><td>0%</td><td style="color:red">0.98</td><td style="color:red">1.08</td><td style="color:red">12%</td></tr>
 <tr><td>OptalCP</td><td>90</td><td >90</td><td>0</td><td>0%</td><td >0.99</td><td >1.04</td><td >11%</td></tr>
 </table>
@@ -527,37 +564,48 @@ Averages are made on instances solved. Outlier solutions returned by the engine 
 
 <table>
 <tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb dev</th><th>ub dev</th><th>gap</th></tr>
-<tr><td rowspan="3">ft</td><td>CPO</td><td>3</td><td >3</td><td>3</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td rowspan="4">ft</td><td>Cplex</td><td>3</td><td >3</td><td>1</td><td>33%</td><td >0.70</td><td >1.02</td><td >22%</td></tr>
+<tr><td>CPO</td><td>3</td><td >3</td><td>3</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
 <tr><td>CP-SAT</td><td>3</td><td >3</td><td>3</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
 <tr><td>OptalCP</td><td>3</td><td >3</td><td>3</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td rowspan="3">la</td><td>CPO</td><td>40</td><td >40</td><td>38</td><td>95%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td rowspan="4">la</td><td>Cplex</td><td>40</td><td >40</td><td>8</td><td>20%</td><td >0.67</td><td >1.03</td><td >30%</td></tr>
+<tr><td>CPO</td><td>40</td><td >40</td><td>38</td><td>95%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
 <tr><td>CP-SAT</td><td>40</td><td >40</td><td>39</td><td>98%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
 <tr><td>OptalCP</td><td>40</td><td >40</td><td>40</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td rowspan="3">orb</td><td>CPO</td><td>10</td><td >10</td><td>10</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td rowspan="4">orb</td><td>Cplex</td><td>10</td><td >10</td><td>1</td><td>10%</td><td >0.87</td><td >1.01</td><td >13%</td></tr>
+<tr><td>CPO</td><td>10</td><td >10</td><td>10</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
 <tr><td>CP-SAT</td><td>10</td><td >10</td><td>10</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
 <tr><td>OptalCP</td><td>10</td><td >10</td><td>10</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td rowspan="3">abz</td><td>CPO</td><td>5</td><td >5</td><td>2</td><td>40%</td><td >0.97</td><td >1.01</td><td >4%</td></tr>
+<tr><td rowspan="4">abz</td><td>Cplex</td><td>5</td><td >5</td><td>1</td><td>20%</td><td >0.79</td><td >1.08</td><td >24%</td></tr>
+<tr><td>CPO</td><td>5</td><td >5</td><td>2</td><td>40%</td><td >0.97</td><td >1.01</td><td >4%</td></tr>
 <tr><td>CP-SAT</td><td>5</td><td >5</td><td>2</td><td>40%</td><td >0.98</td><td >1.01</td><td >3%</td></tr>
 <tr><td>OptalCP</td><td>5</td><td >5</td><td>3</td><td>60%</td><td >0.99</td><td >1.00</td><td >1%</td></tr>
-<tr><td rowspan="3">swv</td><td>CPO</td><td>20</td><td >20</td><td>7</td><td>35%</td><td >0.98</td><td >1.02</td><td >4%</td></tr>
+<tr><td rowspan="4">swv</td><td>Cplex</td><td>20</td><td >20</td><td>0</td><td>0%</td><td >0.38</td><td >1.22</td><td >65%</td></tr>
+<tr><td>CPO</td><td>20</td><td >20</td><td>7</td><td>35%</td><td >0.98</td><td >1.02</td><td >4%</td></tr>
 <tr><td>CP-SAT</td><td>20</td><td >20</td><td>6</td><td>30%</td><td >0.99</td><td >1.02</td><td >4%</td></tr>
 <tr><td>OptalCP</td><td>20</td><td >20</td><td>10</td><td>50%</td><td >0.99</td><td >1.01</td><td >2%</td></tr>
-<tr><td rowspan="3">yn</td><td>CPO</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.90</td><td >1.02</td><td >11%</td></tr>
+<tr><td rowspan="4">yn</td><td>Cplex</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.79</td><td >1.13</td><td >30%</td></tr>
+<tr><td>CPO</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.90</td><td >1.02</td><td >11%</td></tr>
 <tr><td>CP-SAT</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.94</td><td >1.03</td><td >8%</td></tr>
 <tr><td>OptalCP</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.95</td><td >1.01</td><td >6%</td></tr>
-<tr><td rowspan="3">dmu</td><td>CPO</td><td>80</td><td >80</td><td>16</td><td>20%</td><td >0.97</td><td >1.04</td><td >7%</td></tr>
+<tr><td rowspan="4">dmu</td><td>Cplex</td><td>80</td><td >80</td><td>0</td><td>0%</td><td >0.52</td><td >1.41</td><td >60%</td></tr>
+<tr><td>CPO</td><td>80</td><td >80</td><td>16</td><td>20%</td><td >0.97</td><td >1.04</td><td >7%</td></tr>
 <tr><td>CP-SAT</td><td>80</td><td >80</td><td>10</td><td>13%</td><td >0.99</td><td >1.05</td><td >7%</td></tr>
 <tr><td>OptalCP</td><td>80</td><td >80</td><td>23</td><td>29%</td><td >0.99</td><td >1.02</td><td >4%</td></tr>
-<tr><td rowspan="3">ta</td><td>CPO</td><td>80</td><td >80</td><td>40</td><td>50%</td><td >0.98</td><td >1.01</td><td >3%</td></tr>
+<tr><td rowspan="4">ta</td><td>Cplex</td><td>80</td><td style="color:red">70</td><td>0</td><td>0%</td><td style="color:red">0.54</td><td style="color:red">1.30</td><td style="color:red">48%</td></tr>
+<tr><td>CPO</td><td>80</td><td >80</td><td>40</td><td>50%</td><td >0.98</td><td >1.01</td><td >3%</td></tr>
 <tr><td>CP-SAT</td><td>80</td><td >80</td><td>23</td><td>29%</td><td >0.99</td><td >1.02</td><td >3%</td></tr>
 <tr><td>OptalCP</td><td>80</td><td >80</td><td>46</td><td>58%</td><td >0.99</td><td >1.00</td><td >1%</td></tr>
-<tr><td rowspan="3">tai</td><td>CPO</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >0.78</td><td >1.05</td><td >16%</td></tr>
+<tr><td rowspan="4">tai</td><td>Cplex</td><td>90</td><td style="color:red">26</td><td>16</td><td>18%</td><td style="color:red">0.66</td><td style="color:red">1.45</td><td style="color:red">15%</td></tr>
+<tr><td>CPO</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >0.78</td><td >1.05</td><td >16%</td></tr>
 <tr><td>CP-SAT</td><td>90</td><td style="color:red">70</td><td>46</td><td>51%</td><td style="color:red">0.68</td><td style="color:red">1.03</td><td style="color:red">9%</td></tr>
 <tr><td>OptalCP</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >1.00</td><td >1.02</td><td >7%</td></tr>
-<tr><td rowspan="3">dct</td><td>CPO</td><td>24</td><td >24</td><td>6</td><td>25%</td><td >0.52</td><td >1.19</td><td >32%</td></tr>
+<tr><td rowspan="4">dct</td><td>Cplex</td><td>0</td><td style="color:red">0</td><td>0</td><td>NaN%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
+<tr><td>CPO</td><td>24</td><td >24</td><td>6</td><td>25%</td><td >0.52</td><td >1.19</td><td >32%</td></tr>
 <tr><td>CP-SAT</td><td>24</td><td style="color:red">18</td><td>6</td><td>25%</td><td style="color:red">0.93</td><td style="color:red">1.16</td><td style="color:red">11%</td></tr>
 <tr><td>OptalCP</td><td>24</td><td >24</td><td>18</td><td>75%</td><td >1.00</td><td >1.07</td><td >5%</td></tr>
-<tr><td rowspan="3">bel</td><td>CPO</td><td>20</td><td >20</td><td>20</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td rowspan="4">bel</td><td>Cplex</td><td>20</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">0.02</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
+<tr><td>CPO</td><td>20</td><td >20</td><td>20</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
 <tr><td>CP-SAT</td><td>20</td><td >20</td><td>20</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
 <tr><td>OptalCP</td><td>20</td><td >20</td><td>20</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
 </table>
