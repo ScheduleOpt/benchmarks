@@ -48,7 +48,7 @@ jobshop instances (332)
 - 20 instances `swv` from Storer, Wu and Vaccari 1992
 - 4 instances `yn` from Yamada Nakano 1992
 - 80 instances `ta` from Taillard 1993
-- 80 instances `dmu` from Demikol, Mehta and Uzsoy 1998
+- 80 instances `dmu` from Demirkol, Mehta and Uzsoy 1998
 - 90 instances `tai` from Da Col and Teppan 2022
 
 reentrant jobshop instances (44)
@@ -70,7 +70,7 @@ All 332 classic instances are randomly generated which creates situations like `
 
 We would like to augment the jsplib with more instances based on real data and have therefore included the `long` and `short` data from Teppan 2022 that while still random attempts to recreate the situation where jobs have different number of operations and can require multiple operations on a given machine (reentrancy) mimicking metal fabrication and aircraft component machining problems. We have added the instances `bal` of Boveroux et al. that statistically reproduce the features of the manufacturing data they were working with.
 
-We strongly encourage anyone that has access to real jobshop instances to share them with us and the scheduling commmunity.
+We strongly encourage anyone that has access to real jobshop instances to share them with us and the scheduling community.
 
 <br/>
 
@@ -296,7 +296,7 @@ The instances come from the following publications
 
 - **Applegate, D., & Cook, W.** (1991). A computational study of the job-shop scheduling instance. ORSA J. Comput, 3, 49-51.
 
-- **Storer, R. H., Wu, S. D., & Vaccari, R.** (1992). New search spaces for sequencing instances with application to job shop 38 (1992) 1495–1509 Manage. Sci, 38, 1495-1509.
+- **Storer, R. H., Wu, S. D., & Vaccari, R.** (1992). New Search Spaces for Sequencing Problems with Application to Job Shop Scheduling. Management Science, 38(10), 1495–1509.
 
 - **T. Yamada, R. Nakano** (1992), A genetic algorithm applicable to large-scale job-shop instances, R. Manner, B. Manderick (eds.),Parallel instance solving from nature 2,    North-Holland, Amsterdam,  281-290
 
@@ -313,7 +313,7 @@ The instances come from the following publications
 
 ## Standardized benchmark of engines
 
-We track the State-Of-The-Art (SOTA) of optimization engines for scheduling with a standardized 10 minutes benchmark of the reference engines
+We track the State-Of-The-Art (SOTA) of optimization engines for scheduling with a standardized 10-minute benchmark of the reference engines
 
 The engines that are benchmarked are
 - [**IBM ILOG Cplex**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : a state-of-the-art ***MIP*** engine
@@ -338,7 +338,7 @@ Like similar state-of-the-art MIP engines, Cplex features
 - conflict analysis adapted from SAT
 - solution polishing before the time-limit
 
-Improvements in a complex software like Cplex are incremental, but we can broardly divide its evolution as follows
+Improvements in a complex software like Cplex are incremental, but we can broadly divide its evolution as follows
 - Cplex 1-3 [**1987-1994**] LP improvements (simplex, dual simplex, interior points), basic presolve and branch-and-cut. Cplex 3.0 is a performance milestone due to its mature dual simplex.
 - Cplex 6-7 [**1998-2001**] established what we would recognize today as a modern MIP (presolve + branch-and-cut + heuristics + learning) with a particular emphasis on cuts. Cplex 6.5 (1999) is considered by practitioners as a performance milestone.
 - Cplex 9-11 [**2003-2007**] more emphasis on primal approaches : heuristics (RINS, Feasibility pump), search strategies (restart + node presolve), solution polishing, SAT-like conflict analysis. Cplex 11 is considered as a performance milestone.
@@ -467,7 +467,7 @@ References
 
 While the effort of van Hoorn is commendable, having accurate best-known solutions does not solve the problem of poorly reported results in publications. Announcing a best-known solution while having little scientific interest in itself (e.g. a random solution) has sadly become a central "contribution" of papers.
 
-By giving to much importance to best-known solutions we miss what really matters:
+By giving too much importance to best-known solutions we miss what really matters:
 - An approach that finds a best known solution for a single problem but is unable to provide good results for other problems is totally unusable in practice (e.g. a random solution)
 - An approach that systematically gets close to the best known solutions in a short time may not improve any best known bound but be of significant practical interest
 
@@ -491,7 +491,7 @@ $$GAP = \exp\left(\sum_k\log\left(1 + \frac{UB - LB}{UB}\right)\right) - 1$$
 
 ### Comparison of reference solvers
 
-Comparisons done on an Windows PC with an i7 4-core 3GHz 32GB ram in 600 seconds
+Comparisons were performed on a Windows PC with an i7 4-core 3GHz 32GB ram in 600 seconds
 - **Cplex** 22.1.1.0
 - **CPO** 22.1.1.0
     - with gap tolerance = 0
@@ -623,7 +623,7 @@ The solutions may come from
 - An engine run by us (CPO, OptalCP, CP-SAT) with approximate resolution time
 
 The type of hardware and time required to find the best known solution are difficult to track and compare, in particular for bounds coming from published papers. Which is why
-- When a reference engine reproduces a published bound, the table credits the engine because of the reproductibility advantage
+- When a reference engine reproduces a published bound, the table credits the engine because of the reproducibility advantage
 - An approximative timing for reference engines is provided, in particular when the time to find the solution is unusually long
 
 <br/>
@@ -642,7 +642,7 @@ The best known solutions are now collected in a [json](https://github.com/Schedu
         "size" : "50 x 20",
         "type" : "jobshop",
         "family" : "dmu",
-        "family_long" : "Demikol, Mehta and Uzsoy 1998",
+        "family_long" : "Demirkol, Mehta and Uzsoy 1998",
         "status" : "open",
         "lower_bound" : 6460,
         "upper_bound" : 6634,
@@ -875,7 +875,7 @@ However OptalCP proves a lower bound of 667 and Optimizizer only provides a veri
 <tr><td>ta80js</td><td>100 x 20</td><td>jobshop</td><td>5183</td><td>5183</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 </table>
 
-#### Demikol, Mehta and Uzsoy 1998
+#### Demirkol, Mehta and Uzsoy 1998
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>dmu01</td><td>20 x 15</td><td>jobshop</td><td>2563</td><td>2563</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
