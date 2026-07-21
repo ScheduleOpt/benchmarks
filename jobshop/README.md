@@ -530,7 +530,7 @@ Averages are made on instances solved. Outlier solutions returned by the engine 
 
 <table>
 <tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb</th><th>ub</th><th>gap</th></tr>
-<tr><td rowspan="4">all</td><td>Cplex</td><td>352</td><td style="color:red">258</td><td>27</td><td>8%</td><td style="color:red">0.49</td><td style="color:red">1.27</td><td style="color:red">43%</td></tr>
+<tr><td rowspan="4">all</td><td>Cplex</td><td>376</td><td style="color:red">258</td><td>27</td><td>7%</td><td style="color:red">0.49</td><td style="color:red">1.27</td><td style="color:red">43%</td></tr>
 <tr><td>CPO</td><td>376</td><td >376</td><td>192</td><td>51%</td><td >0.89</td><td >1.03</td><td >8%</td></tr>
 <tr><td>CP-SAT</td><td>376</td><td style="color:red">350</td><td>165</td><td>44%</td><td style="color:red">0.91</td><td style="color:red">1.03</td><td style="color:red">5%</td></tr>
 <tr><td>OptalCP</td><td>376</td><td >376</td><td>223</td><td>59%</td><td >1.00</td><td >1.01</td><td >3%</td></tr>
@@ -550,7 +550,7 @@ Averages are made on instances solved. Outlier solutions returned by the engine 
 <tr><td>CPO</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >0.78</td><td >1.05</td><td >16%</td></tr>
 <tr><td>CP-SAT</td><td>90</td><td style="color:red">70</td><td>46</td><td>51%</td><td style="color:red">0.68</td><td style="color:red">1.03</td><td style="color:red">9%</td></tr>
 <tr><td>OptalCP</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >1.00</td><td >1.02</td><td >7%</td></tr>
-<tr><td rowspan="4">reentrant</td><td>Cplex</td><td>20</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">0.02</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
+<tr><td rowspan="4">reentrant</td><td>Cplex</td><td>44</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">0.04</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
 <tr><td>CPO</td><td>44</td><td >44</td><td>26</td><td>59%</td><td >0.70</td><td >1.10</td><td >16%</td></tr>
 <tr><td>CP-SAT</td><td>44</td><td style="color:red">38</td><td>26</td><td>59%</td><td style="color:red">0.96</td><td style="color:red">1.07</td><td style="color:red">5%</td></tr>
 <tr><td>OptalCP</td><td>44</td><td >44</td><td>38</td><td>86%</td><td >1.00</td><td >1.04</td><td >2%</td></tr>
@@ -600,7 +600,7 @@ Averages are made on instances solved. Outlier solutions returned by the engine 
 <tr><td>CPO</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >0.78</td><td >1.05</td><td >16%</td></tr>
 <tr><td>CP-SAT</td><td>90</td><td style="color:red">70</td><td>46</td><td>51%</td><td style="color:red">0.68</td><td style="color:red">1.03</td><td style="color:red">9%</td></tr>
 <tr><td>OptalCP</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >1.00</td><td >1.02</td><td >7%</td></tr>
-<tr><td rowspan="4">dct</td><td>Cplex</td><td>0</td><td style="color:red">0</td><td>0</td><td>NaN%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
+<tr><td rowspan="4">dct</td><td>Cplex</td><td>24</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">0.45</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
 <tr><td>CPO</td><td>24</td><td >24</td><td>6</td><td>25%</td><td >0.52</td><td >1.19</td><td >32%</td></tr>
 <tr><td>CP-SAT</td><td>24</td><td style="color:red">18</td><td>6</td><td>25%</td><td style="color:red">0.93</td><td style="color:red">1.16</td><td style="color:red">11%</td></tr>
 <tr><td>OptalCP</td><td>24</td><td >24</td><td>18</td><td>75%</td><td >1.00</td><td >1.07</td><td >5%</td></tr>

@@ -16,13 +16,13 @@
 },
 {
     "instance" : "abz8",
-    "lb" : {"value":642,"date":"2026-06-23","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":11,"certificate":"no"},
-    "ub" : {"value":670,"date":"2026-06-23","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":11,"certificate":"no"}
+    "lb" : {"value":642,"date":"2026-06-23","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":10,"certificate":"no"},
+    "ub" : {"value":670,"date":"2026-06-23","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":10,"certificate":"no"}
 },
 {
     "instance" : "abz9",
-    "lb" : {"value":665,"date":"2026-06-23","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":11,"certificate":"no"},
-    "ub" : {"value":678,"date":"2026-06-23","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":11,"certificate":"no"}
+    "lb" : {"value":665,"date":"2026-06-23","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":10,"certificate":"no"},
+    "ub" : {"value":678,"date":"2026-06-23","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":10,"certificate":"no"}
 },
 {
     "instance" : "bel00",
@@ -231,18 +231,18 @@
 },
 {
     "instance" : "dct-short-1000-100000-1",
-    "lb" : {"value":600000,"date":"2026-06-26","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":11,"certificate":"no"},
-    "ub" : {"value":600750,"date":"2026-06-26","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":11,"certificate":"no"}
+    "lb" : {"value":600000,"date":"2026-06-26","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":10,"certificate":"no"},
+    "ub" : {"value":600750,"date":"2026-06-26","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":10,"certificate":"no"}
 },
 {
     "instance" : "dct-short-1000-100000-2",
-    "lb" : {"value":600000,"date":"2026-06-26","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":11,"certificate":"no"},
-    "ub" : {"value":600433,"date":"2026-06-26","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":11,"certificate":"no"}
+    "lb" : {"value":600000,"date":"2026-06-26","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":10,"certificate":"no"},
+    "ub" : {"value":600433,"date":"2026-06-26","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":10,"certificate":"no"}
 },
 {
     "instance" : "dct-short-1000-100000-3",
-    "lb" : {"value":600000,"date":"2026-06-26","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":11,"certificate":"no"},
-    "ub" : {"value":600393,"date":"2026-06-26","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":11,"certificate":"no"}
+    "lb" : {"value":600000,"date":"2026-06-26","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":10,"certificate":"no"},
+    "ub" : {"value":600393,"date":"2026-06-26","solver":"OptalCP","hardware":"Intel 11th Gen Core i7-1185G7","time":10,"certificate":"no"}
 },
 {
     "instance" : "dmu01",
