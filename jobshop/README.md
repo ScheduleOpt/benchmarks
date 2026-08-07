@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: JSPLib
 permalink: /jsplib/
 ---
@@ -10,14 +10,13 @@ permalink: /jsplib/
 
 ## The jobshop scheduling problem benchmark library
 
-
 JSPLib is a comprehensive benchmark library for the Job Shop Scheduling Problem (JSP), with three components:
 - **Instance repository** — a centralized set of classic synthetic instances (ft, la, abz, orb, yn, swv, ta, dmu, tai) and industrial reentrant instances (dct, bel).
 - **Engine benchmark** — a standardized 10-minute comparison of reference solvers (CPO, CP-SAT, OptalCP), measuring each engine's optimality gap and deviation from the best known bounds.
 - **Best-known-solutions archive** — a running record of the best upper/lower bounds ever found for each instance, from any source (published papers, meta-heuristics, or engine runs) — not limited to the three reference engines above.
 
 The data and source code can be found in the [Github repository](https://github.com/ScheduleOpt/benchmarks)
-This document is visible as a README.md in the Github folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib). Instances are now available in [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/json) or [text](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/text) formats. The [results](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) of the standardized benchmark for each engine on each instance is available in json format. And a json file of [best known solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) is also provided with a trace of the evolution of the bounds.
+This document is visible as a README.md in the Github folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib). Instances are now available in [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/json) or [text](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/text) formats. The [standardized benchmark results](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) for each engine on each instance is available in json format. And a json file of [best known solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) is also provided with a trace of the evolution of the bounds.
 
 ### Table of Contents
 
@@ -33,7 +32,7 @@ This document is visible as a README.md in the Github folder [jobshop](https://g
     - [Comparison of reference solvers](#comparison-of-reference-solvers)
 - [Best known solutions](#jsplib-solutions---the-state-of-the-art)
     - [JSON bks format](#best-known-solutions-json-format)
-    - [Best known solutions](#best-known-solutions)
+    - [Best known solutions](#best-known-solutions-per-instance-family)
     - [Publications](#publications-best-known-solutions)
 
 <br/>
@@ -68,7 +67,7 @@ reentrant jobshop instances (44)
 
 All 332 classic instances are randomly generated which creates situations like `ta39` and `ta40` that are the same size (30 x 15) and generated with the same generator, but one is solved in < 1 minute while the other is still open, resisting all solution techniques. 
 
-We would like to augment the jsplib with more instances based on real data and have therefore included the `long` and `short` data from Teppan 2022 that while still random attempts to recreate the situation where jobs have different number of operations and can require multiple operations on a given machine (reentrancy) mimicking metal fabrication and aircraft component machining problems. We have added the instances `bal` of Boveroux et al. that statistically reproduce the features of the manufacturing data they were working with.
+We would like to augment the jsplib with more instances based on real data and have therefore included the `dct` reentrant instances from Teppan 2022 that while still random attempts to recreate the situation where jobs have different number of operations and can require multiple operations on a given machine (reentrancy) mimicking metal fabrication, aircraft component machining problems or semi-conductor. We have added the instances `bal` of Boveroux et al. that statistically reproduce the features of the manufacturing data they were working with.
 
 We strongly encourage anyone that has access to real jobshop instances to share them with us and the scheduling community.
 
@@ -76,15 +75,16 @@ We strongly encourage anyone that has access to real jobshop instances to share 
 
 ### Classification of the jobshop instances
 
-We use the following engines as reference engines for the benchmark
+The reference engines used are
+
 - [**IBM ILOG Cplex**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : a state-of-the-art ***MIP*** engine
-- [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : a classic CP-scheduling engine
-- [**Google CP-SAT**](https://developers.google.com/optimization) : a lazy clause generation + LP + local search engine
-- [**OptalCP**](https://optalcp.com) : a modern CP-scheduling engine
+- [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : representative of the ***CP-scheduling*** family of engines
+- [**Google CP-SAT**](https://developers.google.com/optimization) : representative of the ***lazy clause generation*** family of engines
+- [**OptalCP**](https://optalcp.com) : representative of the ***CP-scheduling*** family of engines
 
-The 10 minutes time limit reflects industrial workflows in which schedules are repeatedly regenerated after manual adjustments, parameter tuning, or changes in production data. Furthermore, problems that can be solved to optimality in less than 10 minutes are suitable as sub-problems in decomposition methods like Benders decomposition, Pareto frontier generation or rolling-horizon optimization.
 
-This justifies the categorization of instances into
+We use the following criteria to classify instances by difficulty
+
 - <strong style="color:cornflowerblue">toy</strong> : solved to optimality (with proof) in 1 minute by at least 1 reference engine
 - <strong style="color:green">easy</strong> : solved to optimality (with proof) in 10 minute by at least 1 reference engine
 - <strong style="color:orange">medium</strong> : solved to optimality (with proof) in 1 hour by at least 1 reference engine
@@ -92,10 +92,11 @@ This justifies the categorization of instances into
 - <strong style="color:purple">closed</strong> : *allegedly* solved to optimality. Most of the time the optimal solution is known because 2 different methods independently found equal upper and lower bounds. The problem is reclassified into toy, easy, medium or hard when a reference engine is able to reproduce the results.
 - <strong style="color:grey">open</strong> : no proof of optimality
 
-<br/>
 
-The objectives of a scheduling engine are: 
-- prove optimality for as many instances as possible within the standardized 10-minute limit
+The 10 minutes time limit reflects industrial workflows in which schedules are repeatedly regenerated after manual adjustments, parameter tuning, or changes in production data. Furthermore, problems that can be solved to optimality in less than 10 minutes are suitable as sub-problems in decomposition methods like Benders decomposition, Pareto frontier generation or rolling-horizon optimization.
+
+What we expect from a scheduling engine is: 
+- prove optimality for as many instances as possible within the 10 minute limit
 - for instances that cannot be closed in 10 minutes, to minimize the deviation to the best known upper and lower bounds
 
 Why upper and lower bounds ? Because a decomposition may use the scheduling problem as a dual certificate, not only a primal one.
@@ -148,111 +149,8 @@ Since 2014 [Optimizizer](https://optimizizer.com/jobshop.php) has been the refer
 
 ### Formats
 
-There are four main formats, ***standard***, ***DaColTeppan***, ***taillard*** and ***json***. 
+There are three main formats, ***json***, **standard***, ***DaColTeppan*** for reentrant instances. 
 
-*The [flexible jobshop library](https://fjsplib.org) preferred format represents precedences explicitly. The jobshop problem being a special case of the flexible jobshop problem, this library may at some point in the future use that same format*
-
-
-#### Standard format
-
-```
-#n #m
-((machine duration ){m}\n){n}
-```
-
-For instance `la01` on standard format is
-```
-10	5	
-1	21	0	53	4	95	3	55	2	34
-0	21	3	52	4	16	2	26	1	71
-3	39	4	98	1	42	2	31	0	12
-1	77	0	55	4	79	2	66	3	77
-0	83	3	34	2	64	1	19	4	37
-1	54	2	43	4	79	0	92	3	62
-3	69	4	77	1	87	2	87	0	93
-2	38	0	60	1	41	3	24	4	83
-3	17	1	49	4	25	0	44	2	98
-4	77	3	79	2	43	1	75	0	96
-```
-
-<br/>
-
-
-#### Da Col Teppan format
-
-```
-#n #m
-((machine duration )+ -1 -1\n){n}
-```
-
-In the DaColTeppan format
-- there can be any number of tasks per job
-- there can be various tasks in a job running on the same machine (reentrance)
-- the jobs end in a -1 -1
-
-
-The DaColTeppan format is actually a format for the reentrant jobshop problem which
-is a generalization of the jobshop, common in some industrial environments like semiconductors
-
-
-A modified instance of `la01` would look like
-```
-10	5	
-1	21	0	53	-1  -1
-0	21	3	52	 4	16	2	26	1	71   4	95	3	55	 2	34 -1 -1
-3	39	4	98	 1	42	2	31	0	12  79	 2	66	3	77  -1 -1
-1	77	0	55	 4  -1 -1
-0	83	-1 -1
-1	54	2	43	4	79	0	92	3	62   3	34	 2	64	 1	19	4	37 -1 -1
-3	69	4	77	1	87	2	87	0	93  41	 3	24	 4	83  -1 -1
-2	38	0	60	1	-1 -1
-3	17	1	49	4	25	0	44	2	98 -1 -1
-4	77	3	79	2	43	1	75	0	96 -1 -1
-```
-
-To be totally conservative, the format should remove the last two -1 -1 and consider
-the end of line is the separator between jobs. It is not hard to do a parser that 
-accepts both.
-
-<br/>
-
-
-#### Taillard format
-
-The Taillard format first lists the machines, then the durations
-
-```
-#n #m
-((machine ){m}\n){n}
-((duration ){m}\n){n}
-```
-
-For instance `la01` in Taillard format is
-```
-10	5	
-1	0	4	3	2
-0	3	4	2	1
-3	4	1	2	0
-1	0	4	2	3
-0	3	2	1	4
-1	2	4	0	3
-3	4	1	2	0
-2	0	1	3	4
-3	1	4	0	2
-4	3	2	1	0
-21	53	95	55	34
-21	52	16	26	71
-39	98	42	31	12
-77	55	79	66	77
-83	34	64	19	37
-54	43	79	92	62
-69	77	87	87	93
-38	60	41	24	83
-17	49	25	44	98
-77	79	43	75	96
-```
-
-<br/>
 
 #### JSON format
 
@@ -282,7 +180,60 @@ The json format is more verbose but probably easier to use and contains meta-dat
 }
 ```
 
+*The [flexible jobshop library](https://fjsplib.org) preferred format represents precedences explicitly. The jobshop problem being a special case of the flexible jobshop problem, this library may at some point in the future use that same format*
+
+
+#### Standard format
+
+```
+#n #m
+((machine duration ){m}\n){n}
+```
+
+For instance `la01` on standard format is
+```
+10	5	
+1	21	0	53	4	95	3	55	2	34
+0	21	3	52	4	16	2	26	1	71
+3	39	4	98	1	42	2	31	0	12
+1	77	0	55	4	79	2	66	3	77
+0	83	3	34	2	64	1	19	4	37
+1	54	2	43	4	79	0	92	3	62
+3	69	4	77	1	87	2	87	0	93
+2	38	0	60	1	41	3	24	4	83
+3	17	1	49	4	25	0	44	2	98
+4	77	3	79	2	43	1	75	0	96
+```
+
+#### Da Col Teppan format (reentrant)
+
+```
+#n #m
+((machine duration )+ -1 -1\n){n}
+```
+
+In the DaColTeppan format
+- there can be any number of tasks per job
+- there can be various tasks in a job running on the same machine (reentrance)
+- the jobs end in a -1 -1
+
+A modified instance of `la01` would look like
+```
+10	5	
+1	21	0	53	-1  -1
+0	21	3	52	 4	16	2	26	1	71   4	95	3	55	 2	34 -1 -1
+3	39	4	98	 1	42	2	31	0	12  79	 2	66	3	77  -1 -1
+1	77	0	55	 4  -1 -1
+0	83	-1 -1
+1	54	2	43	4	79	0	92	3	62   3	34	 2	64	 1	19	4	37 -1 -1
+3	69	4	77	1	87	2	87	0	93  41	 3	24	 4	83  -1 -1
+2	38	0	60	1	-1 -1
+3	17	1	49	4	25	0	44	2	98 -1 -1
+4	77	3	79	2	43	1	75	0	96 -1 -1
+```
+
 <br/>
+
 
 ### Publications (instances)
 
@@ -610,7 +561,6 @@ Averages are made on instances solved. Outlier solutions returned by the engine 
 <tr><td>OptalCP</td><td>20</td><td >20</td><td>20</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
 </table>
 
-
 <br/>
 
 ## Best known solutions
@@ -668,6 +618,8 @@ The best known solutions are now collected in a [json](https://github.com/Schedu
 For most of the best known solutions, the date, hardware, running time and certificate (valid primal or valid dual solution) are not known. The data will be progressively updated to the best of our knowledge.
 
 <br/>
+
+### Best known solutions per instance family
 
 #### Fisher and Thompson 1963
 
@@ -757,6 +709,7 @@ However OptalCP proves a lower bound of 667 and Optimizizer only provides a veri
 </table>
 
 #### Storer, Wu and Vaccari 1992
+
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>swv01</td><td>20 x 10</td><td>jobshop</td><td>1407</td><td>1407</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
@@ -782,6 +735,7 @@ However OptalCP proves a lower bound of 667 and Optimizizer only provides a veri
 </table>
 
 #### Yamada Nakano 1992
+
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>yn1</td><td>20 x 20</td><td>jobshop</td><td>884</td><td>884</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 6h</td></tr>
@@ -791,6 +745,7 @@ However OptalCP proves a lower bound of 667 and Optimizizer only provides a veri
 </table>
 
 #### Taillard 1993
+
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>ta01js</td><td>15 x 15</td><td>jobshop</td><td>1231</td><td>1231</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
@@ -876,6 +831,7 @@ However OptalCP proves a lower bound of 667 and Optimizizer only provides a veri
 </table>
 
 #### Demirkol, Mehta and Uzsoy 1998
+
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>dmu01</td><td>20 x 15</td><td>jobshop</td><td>2563</td><td>2563</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
@@ -960,7 +916,8 @@ However OptalCP proves a lower bound of 667 and Optimizizer only provides a veri
 <tr><td>dmu80</td><td>50 x 20</td><td>jobshop</td><td>6460</td><td>6621</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
 </table>
 
-#### Da Col and Teppan 2022
+#### Da Col and Teppan 2022 - taillard-like instances
+
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>tai_10_10_1</td><td>10 x 10</td><td>jobshop</td><td>8219</td><td>8219</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
@@ -1058,6 +1015,7 @@ However OptalCP proves a lower bound of 667 and Optimizizer only provides a veri
 *We consider the tai 1000 x 1000 instances a curiosity, a benchmark to test the internals of the engines (memory allocation, complexity of internal algorithms and data structures, etc.) We don't believe these instances represent any reasonable industrial problem, less because of their size, and more because they are random, unstructured, square and non-reentrant : your manufacturing plant produces exactly 1000 different products, each one needs 1000 operations on exactly one of the 1000 machines in the plant, and for each product the operations must be done in a completely different order !*
 
 #### Da Col and Teppan (2022) - reentrant jobshop
+
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>dct-long-100-10000-1</td><td>103 x 100</td><td>reentrant jobshop</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
@@ -1089,8 +1047,8 @@ However OptalCP proves a lower bound of 667 and Optimizizer only provides a veri
 *DaCol and Tepan report instance dct-short-1000-100000-1 was solved to optimality by CP Optimizer in 6h which we haven't been able to reproduce (with CPO any other solver). We are still investigating*. 
 We have recently noticed some regression in OptalCP on two of these instances hence you may need specific parameters to reach the solution in the time announced.
 
-
 #### Boveroux, Ernst and Louveaux 2025
+
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>bel00</td><td>792 x 48</td><td>reentrant jobshop</td><td>766329</td><td>766329</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
@@ -1118,6 +1076,7 @@ We have recently noticed some regression in OptalCP on two of these instances he
 <br/>
 
 ### Publications (best known solutions)
+
 The upper and lower bounds come from
 
 - NS2002 (1 bound - ta30js) : **Nowicki, E., & Smutnicki, C.** (2002). Some new tools to solve the job shop problem. Raport serii: Preprinty, 60.
@@ -1144,4 +1103,3 @@ The upper and lower bounds come from
 
 All other bounds were found by OptalCP except 4 bounds by CP-SAT (equal but faster) and 1 bounds by Hexaly (strictly better than all other solvers). The cited papers also may use an engine directly like [CPO2015] or as part of an algorithm like [CdGKGC2025] which uses CP-SAT. [DOFP2026] uses OptalCP.
 
-<br/>
