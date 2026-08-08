@@ -20,4 +20,4 @@ plugins:
 header_pages:
   - README.md
   - jobshop/README.md
-  - "flexible jobshop/README.md"
+  - flexible-jobshop/README.md
