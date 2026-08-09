@@ -627,7 +627,7 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><td>mk10</td><td>20 x 15</td><td>flexible jobshop</td><td>189</td><td>193</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub Quintiq</td></tr>
 <tr><td>mk11</td><td>30 x 5</td><td>flexible jobshop</td><td>609</td><td>609</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 24h</td></tr>
 <tr><td>mk12</td><td>30 x 10</td><td>flexible jobshop</td><td>508</td><td>508</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>mk13</td><td>30 x 10</td><td>flexible jobshop</td><td>381</td><td>390</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
+<tr><td>mk13</td><td>30 x 10</td><td>flexible jobshop</td><td>382</td><td>390</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
 <tr><td>mk14</td><td>30 x 15</td><td>flexible jobshop</td><td>694</td><td>694</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>mk15</td><td>30 x 15</td><td>flexible jobshop</td><td>333</td><td>333</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
 </table>
