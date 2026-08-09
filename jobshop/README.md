@@ -601,17 +601,17 @@ $$\max_m \max_{p,q} \mathrm{Carlier}_{p,q}$$
 
 ### Upper bounds
 
-We use 4 upper bounds for the moment
+We use 3 upper bounds for the moment
 - Giffler & Thompson with earliest-available-operation priority
 - Giffler & Thompson with"most work remaining priority
-- shifting Bottleneck
+- Shifting Bottleneck
 
 ### Results on classic instances
 
 The background is colored in green when the lower bound reaches the best known upper-bound
 
 <table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine+h/t</th><th>Carlier</th><th>BKS</th><th>GT1</th><th>GT2</th><th>Bottleneck</th></tr>
+<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th><th>GT1</th><th>GT2</th><th>Bottleneck</th></tr>
 <tr><td>abz5</td><td >859</td><td >868</td><td >1000</td><td >1028</td><td>1234</td><td>1451</td><td>1791</td><td>1625</td></tr>
 <tr><td>abz6</td><td >742</td><td >688</td><td >784</td><td >835</td><td>943</td><td>1175</td><td>1381</td><td>1317</td></tr>
 <tr><td>abz7</td><td >410</td><td >556</td><td >638</td><td >650</td><td>656</td><td>836</td><td>1006</td><td>1059</td></tr>
