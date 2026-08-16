@@ -612,6 +612,8 @@ Carlier's inequalities compute the length of the optimal preemptive schedule for
 - they allow tasks to be preempted
 - they ignore the interaction between machines
 
+<br/>
+
 $$\max_m \max_{p,q \in m} \left ( \mathrm{head}_p + \sum_{\mathrm{head}_r \geq \mathrm{head}_p \wedge \mathrm{tail}_r \geq \mathrm{tail}_q} p_r + \mathrm{tail}_q \right )$$
 
 
@@ -620,8 +622,7 @@ $$\max_m \max_{p,q \in m} \left ( \mathrm{head}_p + \sum_{\mathrm{head}_r \geq \
 The background is colored in green when the lower bound reaches the best known upper-bound
 
 <table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
+<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
 <tr><td>abz5</td><td >859</td><td >868</td><td >1000</td><td >1028</td><td>1234</td></tr>
 <tr><td>abz6</td><td >742</td><td >688</td><td >784</td><td >835</td><td>943</td></tr>
 <tr><td>abz7</td><td >410</td><td >556</td><td >638</td><td >650</td><td>656</td></tr>
@@ -630,7 +631,7 @@ The background is colored in green when the lower bound reaches the best known u
 </table>
 
 <table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
+<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
 <tr><td>dmu01</td><td >1753</td><td >2179</td><td >2268</td><td >2363</td><td>2563</td></tr>
 <tr><td>dmu02</td><td >2167</td><td >2277</td><td >2318</td><td >2452</td><td>2706</td></tr>
 <tr><td>dmu03</td><td >1872</td><td >2350</td><td >2540</td><td >2571</td><td>2731</td></tr>
@@ -714,14 +715,14 @@ The background is colored in green when the lower bound reaches the best known u
 </table>
 
 <table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
+<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
 <tr><td>ft06</td><td >47</td><td >43</td><td >52</td><td >52</td><td>55</td></tr>
 <tr><td>ft10</td><td >655</td><td >631</td><td >796</td><td >808</td><td>930</td></tr>
 <tr><td>ft20</td><td >387</td><td >1119</td><td >1164</td><td >1164</td><td>1165</td></tr>
 </table>
 
 <table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
+<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
 <tr><td>la01</td><td >413</td><td style="background-color:green;color:white">666</td><td style="background-color:green;color:white">666</td><td style="background-color:green;color:white">666</td><td>666</td></tr>
 <tr><td>la02</td><td >394</td><td >635</td><td style="background-color:green;color:white">655</td><td style="background-color:green;color:white">655</td><td>655</td></tr>
 <tr><td>la03</td><td >349</td><td >588</td><td >588</td><td >588</td><td>597</td></tr>
@@ -765,7 +766,7 @@ The background is colored in green when the lower bound reaches the best known u
 </table>
 
 <table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
+<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
 <tr><td>orb01</td><td >695</td><td >643</td><td >928</td><td >929</td><td>1059</td></tr>
 <tr><td>orb02</td><td >620</td><td >671</td><td >733</td><td >766</td><td>888</td></tr>
 <tr><td>orb03</td><td >648</td><td >624</td><td >851</td><td >865</td><td>1005</td></tr>
@@ -779,7 +780,7 @@ The background is colored in green when the lower bound reaches the best known u
 </table>
 
 <table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
+<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
 <tr><td>swv01</td><td >727</td><td >1219</td><td >1366</td><td >1366</td><td>1407</td></tr>
 <tr><td>swv02</td><td >664</td><td >1259</td><td style="background-color:green;color:white">1475</td><td style="background-color:green;color:white">1475</td><td>1475</td></tr>
 <tr><td>swv03</td><td >647</td><td >1178</td><td >1328</td><td >1328</td><td>1398</td></tr>
@@ -803,7 +804,7 @@ The background is colored in green when the lower bound reaches the best known u
 </table>
 
 <table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
+<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
 <tr><td>ta01js</td><td >963</td><td >977</td><td >1005</td><td >1168</td><td>1231</td></tr>
 <tr><td>ta02js</td><td >942</td><td >919</td><td >953</td><td >1143</td><td>1244</td></tr>
 <tr><td>ta03js</td><td >921</td><td >900</td><td >1036</td><td >1109</td><td>1218</td></tr>
@@ -877,7 +878,7 @@ The background is colored in green when the lower bound reaches the best known u
 </table>
 
 <table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
+<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
 <tr><td>yn1</td><td >694</td><td >643</td><td >689</td><td >763</td><td>884</td></tr>
 <tr><td>yn2</td><td >713</td><td >686</td><td >732</td><td >795</td><td>904</td></tr>
 <tr><td>yn3</td><td >680</td><td >659</td><td >733</td><td >793</td><td>892</td></tr>
