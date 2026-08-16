@@ -621,266 +621,267 @@ The background is colored in green when the lower bound reaches the best known u
 
 <table>
 <tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
-<tr><td>abz5</td><td >859</td><td >868</td><td >1000</td><td >1028</td><td>1234</td>
-<tr><td>abz6</td><td >742</td><td >688</td><td >784</td><td >835</td><td>943</td>
-<tr><td>abz7</td><td >410</td><td >556</td><td >638</td><td >650</td><td>656</td>
-<tr><td>abz8</td><td >443</td><td >566</td><td >566</td><td >597</td><td>667</td>
-<tr><td>abz9</td><td >467</td><td >563</td><td >606</td><td >616</td><td>678</td>
+<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
+<tr><td>abz5</td><td >859</td><td >868</td><td >1000</td><td >1028</td><td>1234</td></tr>
+<tr><td>abz6</td><td >742</td><td >688</td><td >784</td><td >835</td><td>943</td></tr>
+<tr><td>abz7</td><td >410</td><td >556</td><td >638</td><td >650</td><td>656</td></tr>
+<tr><td>abz8</td><td >443</td><td >566</td><td >566</td><td >597</td><td>667</td></tr>
+<tr><td>abz9</td><td >467</td><td >563</td><td >606</td><td >616</td><td>678</td></tr>
 </table>
 
 <table>
 <tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
-<tr><td>dmu01</td><td >1753</td><td >2179</td><td >2268</td><td >2363</td><td>2563</td>
-<tr><td>dmu02</td><td >2167</td><td >2277</td><td >2318</td><td >2452</td><td>2706</td>
-<tr><td>dmu03</td><td >1872</td><td >2350</td><td >2540</td><td >2571</td><td>2731</td>
-<tr><td>dmu04</td><td >1908</td><td >2332</td><td >2332</td><td >2486</td><td>2669</td>
-<tr><td>dmu05</td><td >1827</td><td >2455</td><td >2625</td><td >2654</td><td>2749</td>
-<tr><td>dmu06</td><td >2585</td><td >2533</td><td >2783</td><td >2834</td><td>3244</td>
-<tr><td>dmu07</td><td >2545</td><td >2354</td><td >2604</td><td >2677</td><td>3046</td>
-<tr><td>dmu08</td><td >2493</td><td >2642</td><td >2642</td><td >2901</td><td>3188</td>
-<tr><td>dmu09</td><td >2544</td><td >2466</td><td >2706</td><td >2739</td><td>3092</td>
-<tr><td>dmu10</td><td >2394</td><td >2488</td><td >2699</td><td >2716</td><td>2984</td>
-<tr><td>dmu11</td><td >1913</td><td >3395</td><td >3395</td><td >3395</td><td>3402 .. 3430</td>
-<tr><td>dmu12</td><td >1902</td><td >3465</td><td >3465</td><td >3481</td><td>3481 .. 3492</td>
-<tr><td>dmu13</td><td >1945</td><td >3450</td><td >3450</td><td style="background-color:green;color:white">3681</td><td>3681</td>
-<tr><td>dmu14</td><td >1798</td><td style="background-color:green;color:white">3394</td><td style="background-color:green;color:white">3394</td><td style="background-color:green;color:white">3394</td><td>3394</td>
-<tr><td>dmu15</td><td >1945</td><td >3296</td><td >3296</td><td >3332</td><td>3343</td>
-<tr><td>dmu16</td><td >2351</td><td >3491</td><td >3726</td><td >3726</td><td>3734 .. 3750</td>
-<tr><td>dmu17</td><td >2491</td><td >3670</td><td >3697</td><td >3697</td><td>3733 .. 3811</td>
-<tr><td>dmu18</td><td >2546</td><td style="background-color:green;color:white">3844</td><td style="background-color:green;color:white">3844</td><td style="background-color:green;color:white">3844</td><td>3844</td>
-<tr><td>dmu19</td><td >2315</td><td >3408</td><td >3408</td><td >3650</td><td>3707 .. 3764</td>
-<tr><td>dmu20</td><td >2586</td><td >3604</td><td >3604</td><td >3604</td><td>3632 .. 3699</td>
-<tr><td>dmu21</td><td >1873</td><td >4345</td><td >4345</td><td style="background-color:green;color:white">4380</td><td>4380</td>
-<tr><td>dmu22</td><td >1965</td><td >4712</td><td >4712</td><td style="background-color:green;color:white">4725</td><td>4725</td>
-<tr><td>dmu23</td><td >2038</td><td >4524</td><td >4524</td><td style="background-color:green;color:white">4668</td><td>4668</td>
-<tr><td>dmu24</td><td >2120</td><td >4554</td><td style="background-color:green;color:white">4648</td><td style="background-color:green;color:white">4648</td><td>4648</td>
-<tr><td>dmu25</td><td >1861</td><td style="background-color:green;color:white">4164</td><td style="background-color:green;color:white">4164</td><td style="background-color:green;color:white">4164</td><td>4164</td>
-<tr><td>dmu26</td><td >2627</td><td >4559</td><td >4632</td><td style="background-color:green;color:white">4647</td><td>4647</td>
-<tr><td>dmu27</td><td >2590</td><td style="background-color:green;color:white">4848</td><td style="background-color:green;color:white">4848</td><td style="background-color:green;color:white">4848</td><td>4848</td>
-<tr><td>dmu28</td><td >2537</td><td >4538</td><td style="background-color:green;color:white">4692</td><td style="background-color:green;color:white">4692</td><td>4692</td>
-<tr><td>dmu29</td><td >2505</td><td style="background-color:green;color:white">4691</td><td style="background-color:green;color:white">4691</td><td style="background-color:green;color:white">4691</td><td>4691</td>
-<tr><td>dmu30</td><td >2606</td><td >4670</td><td >4707</td><td style="background-color:green;color:white">4732</td><td>4732</td>
-<tr><td>dmu31</td><td >2159</td><td style="background-color:green;color:white">5640</td><td style="background-color:green;color:white">5640</td><td style="background-color:green;color:white">5640</td><td>5640</td>
-<tr><td>dmu32</td><td >2134</td><td style="background-color:green;color:white">5927</td><td style="background-color:green;color:white">5927</td><td style="background-color:green;color:white">5927</td><td>5927</td>
-<tr><td>dmu33</td><td >1828</td><td >5681</td><td >5681</td><td style="background-color:green;color:white">5728</td><td>5728</td>
-<tr><td>dmu34</td><td >2040</td><td style="background-color:green;color:white">5385</td><td style="background-color:green;color:white">5385</td><td style="background-color:green;color:white">5385</td><td>5385</td>
-<tr><td>dmu35</td><td >2241</td><td style="background-color:green;color:white">5635</td><td style="background-color:green;color:white">5635</td><td style="background-color:green;color:white">5635</td><td>5635</td>
-<tr><td>dmu36</td><td >2705</td><td style="background-color:green;color:white">5621</td><td style="background-color:green;color:white">5621</td><td style="background-color:green;color:white">5621</td><td>5621</td>
-<tr><td>dmu37</td><td >2616</td><td style="background-color:green;color:white">5851</td><td style="background-color:green;color:white">5851</td><td style="background-color:green;color:white">5851</td><td>5851</td>
-<tr><td>dmu38</td><td >2436</td><td style="background-color:green;color:white">5713</td><td style="background-color:green;color:white">5713</td><td style="background-color:green;color:white">5713</td><td>5713</td>
-<tr><td>dmu39</td><td >2607</td><td style="background-color:green;color:white">5747</td><td style="background-color:green;color:white">5747</td><td style="background-color:green;color:white">5747</td><td>5747</td>
-<tr><td>dmu40</td><td >2548</td><td style="background-color:green;color:white">5577</td><td style="background-color:green;color:white">5577</td><td style="background-color:green;color:white">5577</td><td>5577</td>
-<tr><td>dmu41</td><td >1842</td><td >2193</td><td >2839</td><td >2839</td><td>3176 .. 3248</td>
-<tr><td>dmu42</td><td >1810</td><td >2504</td><td >2897</td><td >3066</td><td>3339 .. 3390</td>
-<tr><td>dmu43</td><td >1915</td><td >2523</td><td >3121</td><td >3121</td><td>3441</td>
-<tr><td>dmu44</td><td >1975</td><td >2530</td><td >3112</td><td >3112</td><td>3414 .. 3475</td>
-<tr><td>dmu45</td><td >1768</td><td >2352</td><td >2930</td><td >2930</td><td>3217 .. 3266</td>
-<tr><td>dmu46</td><td >2664</td><td >2495</td><td >3394</td><td >3425</td><td>3780 .. 4035</td>
-<tr><td>dmu47</td><td >2689</td><td >2462</td><td >3268</td><td >3353</td><td>3714 .. 3939</td>
-<tr><td>dmu48</td><td >2516</td><td >2387</td><td >3268</td><td >3317</td><td>3628 .. 3763</td>
-<tr><td>dmu49</td><td >2403</td><td >2366</td><td >3369</td><td >3369</td><td>3543 .. 3706</td>
-<tr><td>dmu50</td><td >2494</td><td >2426</td><td >3312</td><td >3379</td><td>3618 .. 3729</td>
-<tr><td>dmu51</td><td >1825</td><td >3327</td><td >3827</td><td >3839</td><td>4070 .. 4151</td>
-<tr><td>dmu52</td><td >1989</td><td >3504</td><td >4006</td><td >4012</td><td>4203 .. 4297</td>
-<tr><td>dmu53</td><td >2229</td><td >3493</td><td >4108</td><td >4108</td><td>4248 .. 4378</td>
-<tr><td>dmu54</td><td >1990</td><td >3554</td><td >4165</td><td >4165</td><td>4277 .. 4360</td>
-<tr><td>dmu55</td><td >1959</td><td >3597</td><td >4099</td><td >4099</td><td>4191 .. 4258</td>
-<tr><td>dmu56</td><td >2778</td><td >3526</td><td >4366</td><td >4366</td><td>4755 .. 4934</td>
-<tr><td>dmu57</td><td >2529</td><td >3268</td><td >4182</td><td >4182</td><td>4462 .. 4643</td>
-<tr><td>dmu58</td><td >2625</td><td >3452</td><td >4133</td><td >4214</td><td>4484 .. 4701</td>
-<tr><td>dmu59</td><td >2546</td><td >3230</td><td >4009</td><td >4199</td><td>4366 .. 4607</td>
-<tr><td>dmu60</td><td >2547</td><td >3380</td><td >4098</td><td >4259</td><td>4468 .. 4721</td>
-<tr><td>dmu61</td><td >1995</td><td >4426</td><td >4850</td><td >4886</td><td>5038 .. 5166</td>
-<tr><td>dmu62</td><td >2079</td><td >4513</td><td >5004</td><td >5004</td><td>5176 .. 5244</td>
-<tr><td>dmu63</td><td >1877</td><td >4470</td><td >5049</td><td >5049</td><td>5245 .. 5296</td>
-<tr><td>dmu64</td><td >2134</td><td >4447</td><td >5130</td><td >5130</td><td>5155 .. 5225</td>
-<tr><td>dmu65</td><td >1892</td><td >4525</td><td >5072</td><td >5072</td><td>5122 .. 5158</td>
-<tr><td>dmu66</td><td >2416</td><td >4479</td><td >5206</td><td >5357</td><td>5526 .. 5692</td>
-<tr><td>dmu67</td><td >2668</td><td >4715</td><td >5454</td><td >5484</td><td>5661 .. 5774</td>
-<tr><td>dmu68</td><td >2542</td><td >4476</td><td >5423</td><td >5423</td><td>5513 .. 5749</td>
-<tr><td>dmu69</td><td >2453</td><td >4642</td><td >5384</td><td >5419</td><td>5511 .. 5682</td>
-<tr><td>dmu70</td><td >2518</td><td >4696</td><td >5365</td><td >5492</td><td>5633 .. 5868</td>
-<tr><td>dmu71</td><td >2029</td><td >5490</td><td >6050</td><td >6050</td><td>6129 .. 6206</td>
-<tr><td>dmu72</td><td >2061</td><td >5889</td><td >6216</td><td >6223</td><td>6434 .. 6448</td>
-<tr><td>dmu73</td><td >2071</td><td >5430</td><td >5935</td><td >5935</td><td>6107 .. 6132</td>
-<tr><td>dmu74</td><td >2017</td><td >5442</td><td >5993</td><td >6015</td><td>6168 .. 6196</td>
-<tr><td>dmu75</td><td >2087</td><td >5377</td><td >5915</td><td >6010</td><td>6123 .. 6186</td>
-<tr><td>dmu76</td><td >2729</td><td >5493</td><td >6297</td><td >6329</td><td>6479 .. 6708</td>
-<tr><td>dmu77</td><td >2542</td><td >5549</td><td >6247</td><td >6399</td><td>6520 .. 6739</td>
-<tr><td>dmu78</td><td >2727</td><td >5742</td><td >6447</td><td >6508</td><td>6643 .. 6744</td>
-<tr><td>dmu79</td><td >2717</td><td >5785</td><td >6593</td><td >6593</td><td>6720 .. 6899</td>
-<tr><td>dmu80</td><td >2642</td><td >5670</td><td >6435</td><td >6435</td><td>6460 .. 6621</td>
+<tr><td>dmu01</td><td >1753</td><td >2179</td><td >2268</td><td >2363</td><td>2563</td></tr>
+<tr><td>dmu02</td><td >2167</td><td >2277</td><td >2318</td><td >2452</td><td>2706</td></tr>
+<tr><td>dmu03</td><td >1872</td><td >2350</td><td >2540</td><td >2571</td><td>2731</td></tr>
+<tr><td>dmu04</td><td >1908</td><td >2332</td><td >2332</td><td >2486</td><td>2669</td></tr>
+<tr><td>dmu05</td><td >1827</td><td >2455</td><td >2625</td><td >2654</td><td>2749</td></tr>
+<tr><td>dmu06</td><td >2585</td><td >2533</td><td >2783</td><td >2834</td><td>3244</td></tr>
+<tr><td>dmu07</td><td >2545</td><td >2354</td><td >2604</td><td >2677</td><td>3046</td></tr>
+<tr><td>dmu08</td><td >2493</td><td >2642</td><td >2642</td><td >2901</td><td>3188</td></tr>
+<tr><td>dmu09</td><td >2544</td><td >2466</td><td >2706</td><td >2739</td><td>3092</td></tr>
+<tr><td>dmu10</td><td >2394</td><td >2488</td><td >2699</td><td >2716</td><td>2984</td></tr>
+<tr><td>dmu11</td><td >1913</td><td >3395</td><td >3395</td><td >3395</td><td>3402 .. 3430</td></tr>
+<tr><td>dmu12</td><td >1902</td><td >3465</td><td >3465</td><td >3481</td><td>3481 .. 3492</td></tr>
+<tr><td>dmu13</td><td >1945</td><td >3450</td><td >3450</td><td style="background-color:green;color:white">3681</td><td>3681</td></tr>
+<tr><td>dmu14</td><td >1798</td><td style="background-color:green;color:white">3394</td><td style="background-color:green;color:white">3394</td><td style="background-color:green;color:white">3394</td><td>3394</td></tr>
+<tr><td>dmu15</td><td >1945</td><td >3296</td><td >3296</td><td >3332</td><td>3343</td></tr>
+<tr><td>dmu16</td><td >2351</td><td >3491</td><td >3726</td><td >3726</td><td>3734 .. 3750</td></tr>
+<tr><td>dmu17</td><td >2491</td><td >3670</td><td >3697</td><td >3697</td><td>3733 .. 3811</td></tr>
+<tr><td>dmu18</td><td >2546</td><td style="background-color:green;color:white">3844</td><td style="background-color:green;color:white">3844</td><td style="background-color:green;color:white">3844</td><td>3844</td></tr>
+<tr><td>dmu19</td><td >2315</td><td >3408</td><td >3408</td><td >3650</td><td>3707 .. 3764</td></tr>
+<tr><td>dmu20</td><td >2586</td><td >3604</td><td >3604</td><td >3604</td><td>3632 .. 3699</td></tr>
+<tr><td>dmu21</td><td >1873</td><td >4345</td><td >4345</td><td style="background-color:green;color:white">4380</td><td>4380</td></tr>
+<tr><td>dmu22</td><td >1965</td><td >4712</td><td >4712</td><td style="background-color:green;color:white">4725</td><td>4725</td></tr>
+<tr><td>dmu23</td><td >2038</td><td >4524</td><td >4524</td><td style="background-color:green;color:white">4668</td><td>4668</td></tr>
+<tr><td>dmu24</td><td >2120</td><td >4554</td><td style="background-color:green;color:white">4648</td><td style="background-color:green;color:white">4648</td><td>4648</td></tr>
+<tr><td>dmu25</td><td >1861</td><td style="background-color:green;color:white">4164</td><td style="background-color:green;color:white">4164</td><td style="background-color:green;color:white">4164</td><td>4164</td></tr>
+<tr><td>dmu26</td><td >2627</td><td >4559</td><td >4632</td><td style="background-color:green;color:white">4647</td><td>4647</td></tr>
+<tr><td>dmu27</td><td >2590</td><td style="background-color:green;color:white">4848</td><td style="background-color:green;color:white">4848</td><td style="background-color:green;color:white">4848</td><td>4848</td></tr>
+<tr><td>dmu28</td><td >2537</td><td >4538</td><td style="background-color:green;color:white">4692</td><td style="background-color:green;color:white">4692</td><td>4692</td></tr>
+<tr><td>dmu29</td><td >2505</td><td style="background-color:green;color:white">4691</td><td style="background-color:green;color:white">4691</td><td style="background-color:green;color:white">4691</td><td>4691</td></tr>
+<tr><td>dmu30</td><td >2606</td><td >4670</td><td >4707</td><td style="background-color:green;color:white">4732</td><td>4732</td></tr>
+<tr><td>dmu31</td><td >2159</td><td style="background-color:green;color:white">5640</td><td style="background-color:green;color:white">5640</td><td style="background-color:green;color:white">5640</td><td>5640</td></tr>
+<tr><td>dmu32</td><td >2134</td><td style="background-color:green;color:white">5927</td><td style="background-color:green;color:white">5927</td><td style="background-color:green;color:white">5927</td><td>5927</td></tr>
+<tr><td>dmu33</td><td >1828</td><td >5681</td><td >5681</td><td style="background-color:green;color:white">5728</td><td>5728</td></tr>
+<tr><td>dmu34</td><td >2040</td><td style="background-color:green;color:white">5385</td><td style="background-color:green;color:white">5385</td><td style="background-color:green;color:white">5385</td><td>5385</td></tr>
+<tr><td>dmu35</td><td >2241</td><td style="background-color:green;color:white">5635</td><td style="background-color:green;color:white">5635</td><td style="background-color:green;color:white">5635</td><td>5635</td></tr>
+<tr><td>dmu36</td><td >2705</td><td style="background-color:green;color:white">5621</td><td style="background-color:green;color:white">5621</td><td style="background-color:green;color:white">5621</td><td>5621</td></tr>
+<tr><td>dmu37</td><td >2616</td><td style="background-color:green;color:white">5851</td><td style="background-color:green;color:white">5851</td><td style="background-color:green;color:white">5851</td><td>5851</td></tr>
+<tr><td>dmu38</td><td >2436</td><td style="background-color:green;color:white">5713</td><td style="background-color:green;color:white">5713</td><td style="background-color:green;color:white">5713</td><td>5713</td></tr>
+<tr><td>dmu39</td><td >2607</td><td style="background-color:green;color:white">5747</td><td style="background-color:green;color:white">5747</td><td style="background-color:green;color:white">5747</td><td>5747</td></tr>
+<tr><td>dmu40</td><td >2548</td><td style="background-color:green;color:white">5577</td><td style="background-color:green;color:white">5577</td><td style="background-color:green;color:white">5577</td><td>5577</td></tr>
+<tr><td>dmu41</td><td >1842</td><td >2193</td><td >2839</td><td >2839</td><td>3176 .. 3248</td></tr>
+<tr><td>dmu42</td><td >1810</td><td >2504</td><td >2897</td><td >3066</td><td>3339 .. 3390</td></tr>
+<tr><td>dmu43</td><td >1915</td><td >2523</td><td >3121</td><td >3121</td><td>3441</td></tr>
+<tr><td>dmu44</td><td >1975</td><td >2530</td><td >3112</td><td >3112</td><td>3414 .. 3475</td></tr>
+<tr><td>dmu45</td><td >1768</td><td >2352</td><td >2930</td><td >2930</td><td>3217 .. 3266</td></tr>
+<tr><td>dmu46</td><td >2664</td><td >2495</td><td >3394</td><td >3425</td><td>3780 .. 4035</td></tr>
+<tr><td>dmu47</td><td >2689</td><td >2462</td><td >3268</td><td >3353</td><td>3714 .. 3939</td></tr>
+<tr><td>dmu48</td><td >2516</td><td >2387</td><td >3268</td><td >3317</td><td>3628 .. 3763</td></tr>
+<tr><td>dmu49</td><td >2403</td><td >2366</td><td >3369</td><td >3369</td><td>3543 .. 3706</td></tr>
+<tr><td>dmu50</td><td >2494</td><td >2426</td><td >3312</td><td >3379</td><td>3618 .. 3729</td></tr>
+<tr><td>dmu51</td><td >1825</td><td >3327</td><td >3827</td><td >3839</td><td>4070 .. 4151</td></tr>
+<tr><td>dmu52</td><td >1989</td><td >3504</td><td >4006</td><td >4012</td><td>4203 .. 4297</td></tr>
+<tr><td>dmu53</td><td >2229</td><td >3493</td><td >4108</td><td >4108</td><td>4248 .. 4378</td></tr>
+<tr><td>dmu54</td><td >1990</td><td >3554</td><td >4165</td><td >4165</td><td>4277 .. 4360</td></tr>
+<tr><td>dmu55</td><td >1959</td><td >3597</td><td >4099</td><td >4099</td><td>4191 .. 4258</td></tr>
+<tr><td>dmu56</td><td >2778</td><td >3526</td><td >4366</td><td >4366</td><td>4755 .. 4934</td></tr>
+<tr><td>dmu57</td><td >2529</td><td >3268</td><td >4182</td><td >4182</td><td>4462 .. 4643</td></tr>
+<tr><td>dmu58</td><td >2625</td><td >3452</td><td >4133</td><td >4214</td><td>4484 .. 4701</td></tr>
+<tr><td>dmu59</td><td >2546</td><td >3230</td><td >4009</td><td >4199</td><td>4366 .. 4607</td></tr>
+<tr><td>dmu60</td><td >2547</td><td >3380</td><td >4098</td><td >4259</td><td>4468 .. 4721</td></tr>
+<tr><td>dmu61</td><td >1995</td><td >4426</td><td >4850</td><td >4886</td><td>5038 .. 5166</td></tr>
+<tr><td>dmu62</td><td >2079</td><td >4513</td><td >5004</td><td >5004</td><td>5176 .. 5244</td></tr>
+<tr><td>dmu63</td><td >1877</td><td >4470</td><td >5049</td><td >5049</td><td>5245 .. 5296</td></tr>
+<tr><td>dmu64</td><td >2134</td><td >4447</td><td >5130</td><td >5130</td><td>5155 .. 5225</td></tr>
+<tr><td>dmu65</td><td >1892</td><td >4525</td><td >5072</td><td >5072</td><td>5122 .. 5158</td></tr>
+<tr><td>dmu66</td><td >2416</td><td >4479</td><td >5206</td><td >5357</td><td>5526 .. 5692</td></tr>
+<tr><td>dmu67</td><td >2668</td><td >4715</td><td >5454</td><td >5484</td><td>5661 .. 5774</td></tr>
+<tr><td>dmu68</td><td >2542</td><td >4476</td><td >5423</td><td >5423</td><td>5513 .. 5749</td></tr>
+<tr><td>dmu69</td><td >2453</td><td >4642</td><td >5384</td><td >5419</td><td>5511 .. 5682</td></tr>
+<tr><td>dmu70</td><td >2518</td><td >4696</td><td >5365</td><td >5492</td><td>5633 .. 5868</td></tr>
+<tr><td>dmu71</td><td >2029</td><td >5490</td><td >6050</td><td >6050</td><td>6129 .. 6206</td></tr>
+<tr><td>dmu72</td><td >2061</td><td >5889</td><td >6216</td><td >6223</td><td>6434 .. 6448</td></tr>
+<tr><td>dmu73</td><td >2071</td><td >5430</td><td >5935</td><td >5935</td><td>6107 .. 6132</td></tr>
+<tr><td>dmu74</td><td >2017</td><td >5442</td><td >5993</td><td >6015</td><td>6168 .. 6196</td></tr>
+<tr><td>dmu75</td><td >2087</td><td >5377</td><td >5915</td><td >6010</td><td>6123 .. 6186</td></tr>
+<tr><td>dmu76</td><td >2729</td><td >5493</td><td >6297</td><td >6329</td><td>6479 .. 6708</td></tr>
+<tr><td>dmu77</td><td >2542</td><td >5549</td><td >6247</td><td >6399</td><td>6520 .. 6739</td></tr>
+<tr><td>dmu78</td><td >2727</td><td >5742</td><td >6447</td><td >6508</td><td>6643 .. 6744</td></tr>
+<tr><td>dmu79</td><td >2717</td><td >5785</td><td >6593</td><td >6593</td><td>6720 .. 6899</td></tr>
+<tr><td>dmu80</td><td >2642</td><td >5670</td><td >6435</td><td >6435</td><td>6460 .. 6621</td></tr>
 </table>
 
 <table>
 <tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
-<tr><td>ft06</td><td >47</td><td >43</td><td >52</td><td >52</td><td>55</td>
-<tr><td>ft10</td><td >655</td><td >631</td><td >796</td><td >808</td><td>930</td>
-<tr><td>ft20</td><td >387</td><td >1119</td><td >1164</td><td >1164</td><td>1165</td>
+<tr><td>ft06</td><td >47</td><td >43</td><td >52</td><td >52</td><td>55</td></tr>
+<tr><td>ft10</td><td >655</td><td >631</td><td >796</td><td >808</td><td>930</td></tr>
+<tr><td>ft20</td><td >387</td><td >1119</td><td >1164</td><td >1164</td><td>1165</td></tr>
 </table>
 
 <table>
 <tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
-<tr><td>la01</td><td >413</td><td style="background-color:green;color:white">666</td><td style="background-color:green;color:white">666</td><td style="background-color:green;color:white">666</td><td>666</td>
-<tr><td>la02</td><td >394</td><td >635</td><td style="background-color:green;color:white">655</td><td style="background-color:green;color:white">655</td><td>655</td>
-<tr><td>la03</td><td >349</td><td >588</td><td >588</td><td >588</td><td>597</td>
-<tr><td>la04</td><td >369</td><td >537</td><td >567</td><td >567</td><td>590</td>
-<tr><td>la05</td><td >380</td><td style="background-color:green;color:white">593</td><td style="background-color:green;color:white">593</td><td style="background-color:green;color:white">593</td><td>593</td>
-<tr><td>la06</td><td >413</td><td style="background-color:green;color:white">926</td><td style="background-color:green;color:white">926</td><td style="background-color:green;color:white">926</td><td>926</td>
-<tr><td>la07</td><td >376</td><td >869</td><td style="background-color:green;color:white">890</td><td style="background-color:green;color:white">890</td><td>890</td>
-<tr><td>la08</td><td >369</td><td style="background-color:green;color:white">863</td><td style="background-color:green;color:white">863</td><td style="background-color:green;color:white">863</td><td>863</td>
-<tr><td>la09</td><td >382</td><td style="background-color:green;color:white">951</td><td style="background-color:green;color:white">951</td><td style="background-color:green;color:white">951</td><td>951</td>
-<tr><td>la10</td><td >443</td><td style="background-color:green;color:white">958</td><td style="background-color:green;color:white">958</td><td style="background-color:green;color:white">958</td><td>958</td>
-<tr><td>la11</td><td >413</td><td style="background-color:green;color:white">1222</td><td style="background-color:green;color:white">1222</td><td style="background-color:green;color:white">1222</td><td>1222</td>
-<tr><td>la12</td><td >408</td><td style="background-color:green;color:white">1039</td><td style="background-color:green;color:white">1039</td><td style="background-color:green;color:white">1039</td><td>1039</td>
-<tr><td>la13</td><td >382</td><td style="background-color:green;color:white">1150</td><td style="background-color:green;color:white">1150</td><td style="background-color:green;color:white">1150</td><td>1150</td>
-<tr><td>la14</td><td >443</td><td style="background-color:green;color:white">1292</td><td style="background-color:green;color:white">1292</td><td style="background-color:green;color:white">1292</td><td>1292</td>
-<tr><td>la15</td><td >378</td><td style="background-color:green;color:white">1207</td><td style="background-color:green;color:white">1207</td><td style="background-color:green;color:white">1207</td><td>1207</td>
-<tr><td>la16</td><td >717</td><td >660</td><td >705</td><td >875</td><td>945</td>
-<tr><td>la17</td><td >646</td><td >683</td><td >730</td><td >739</td><td>784</td>
-<tr><td>la18</td><td >663</td><td >623</td><td >654</td><td >770</td><td>848</td>
-<tr><td>la19</td><td >617</td><td >685</td><td >685</td><td >709</td><td>842</td>
-<tr><td>la20</td><td >756</td><td >744</td><td >780</td><td >807</td><td>902</td>
-<tr><td>la21</td><td >717</td><td >935</td><td >954</td><td >995</td><td>1046</td>
-<tr><td>la22</td><td >619</td><td >830</td><td >913</td><td >913</td><td>927</td>
-<tr><td>la23</td><td >640</td><td style="background-color:green;color:white">1032</td><td style="background-color:green;color:white">1032</td><td style="background-color:green;color:white">1032</td><td>1032</td>
-<tr><td>la24</td><td >704</td><td >857</td><td >872</td><td >881</td><td>935</td>
-<tr><td>la25</td><td >723</td><td >864</td><td >872</td><td >894</td><td>977</td>
-<tr><td>la26</td><td >717</td><td style="background-color:green;color:white">1218</td><td style="background-color:green;color:white">1218</td><td style="background-color:green;color:white">1218</td><td>1218</td>
-<tr><td>la27</td><td >686</td><td >1188</td><td style="background-color:green;color:white">1235</td><td style="background-color:green;color:white">1235</td><td>1235</td>
-<tr><td>la28</td><td >756</td><td style="background-color:green;color:white">1216</td><td style="background-color:green;color:white">1216</td><td style="background-color:green;color:white">1216</td><td>1216</td>
-<tr><td>la29</td><td >723</td><td >1105</td><td >1105</td><td >1114</td><td>1152</td>
-<tr><td>la30</td><td >726</td><td style="background-color:green;color:white">1355</td><td style="background-color:green;color:white">1355</td><td style="background-color:green;color:white">1355</td><td>1355</td>
-<tr><td>la31</td><td >717</td><td style="background-color:green;color:white">1784</td><td style="background-color:green;color:white">1784</td><td style="background-color:green;color:white">1784</td><td>1784</td>
-<tr><td>la32</td><td >756</td><td style="background-color:green;color:white">1850</td><td style="background-color:green;color:white">1850</td><td style="background-color:green;color:white">1850</td><td>1850</td>
-<tr><td>la33</td><td >723</td><td style="background-color:green;color:white">1719</td><td style="background-color:green;color:white">1719</td><td style="background-color:green;color:white">1719</td><td>1719</td>
-<tr><td>la34</td><td >656</td><td style="background-color:green;color:white">1721</td><td style="background-color:green;color:white">1721</td><td style="background-color:green;color:white">1721</td><td>1721</td>
-<tr><td>la35</td><td >647</td><td style="background-color:green;color:white">1888</td><td style="background-color:green;color:white">1888</td><td style="background-color:green;color:white">1888</td><td>1888</td>
-<tr><td>la36</td><td >948</td><td >1028</td><td >1098</td><td >1224</td><td>1268</td>
-<tr><td>la37</td><td >986</td><td >980</td><td >1187</td><td >1355</td><td>1397</td>
-<tr><td>la38</td><td >943</td><td >876</td><td >914</td><td >1077</td><td>1196</td>
-<tr><td>la39</td><td >922</td><td >1012</td><td >1137</td><td >1221</td><td>1233</td>
-<tr><td>la40</td><td >955</td><td >1027</td><td >1069</td><td >1170</td><td>1222</td>
+<tr><td>la01</td><td >413</td><td style="background-color:green;color:white">666</td><td style="background-color:green;color:white">666</td><td style="background-color:green;color:white">666</td><td>666</td></tr>
+<tr><td>la02</td><td >394</td><td >635</td><td style="background-color:green;color:white">655</td><td style="background-color:green;color:white">655</td><td>655</td></tr>
+<tr><td>la03</td><td >349</td><td >588</td><td >588</td><td >588</td><td>597</td></tr>
+<tr><td>la04</td><td >369</td><td >537</td><td >567</td><td >567</td><td>590</td></tr>
+<tr><td>la05</td><td >380</td><td style="background-color:green;color:white">593</td><td style="background-color:green;color:white">593</td><td style="background-color:green;color:white">593</td><td>593</td></tr>
+<tr><td>la06</td><td >413</td><td style="background-color:green;color:white">926</td><td style="background-color:green;color:white">926</td><td style="background-color:green;color:white">926</td><td>926</td></tr>
+<tr><td>la07</td><td >376</td><td >869</td><td style="background-color:green;color:white">890</td><td style="background-color:green;color:white">890</td><td>890</td></tr>
+<tr><td>la08</td><td >369</td><td style="background-color:green;color:white">863</td><td style="background-color:green;color:white">863</td><td style="background-color:green;color:white">863</td><td>863</td></tr>
+<tr><td>la09</td><td >382</td><td style="background-color:green;color:white">951</td><td style="background-color:green;color:white">951</td><td style="background-color:green;color:white">951</td><td>951</td></tr>
+<tr><td>la10</td><td >443</td><td style="background-color:green;color:white">958</td><td style="background-color:green;color:white">958</td><td style="background-color:green;color:white">958</td><td>958</td></tr>
+<tr><td>la11</td><td >413</td><td style="background-color:green;color:white">1222</td><td style="background-color:green;color:white">1222</td><td style="background-color:green;color:white">1222</td><td>1222</td></tr>
+<tr><td>la12</td><td >408</td><td style="background-color:green;color:white">1039</td><td style="background-color:green;color:white">1039</td><td style="background-color:green;color:white">1039</td><td>1039</td></tr>
+<tr><td>la13</td><td >382</td><td style="background-color:green;color:white">1150</td><td style="background-color:green;color:white">1150</td><td style="background-color:green;color:white">1150</td><td>1150</td></tr>
+<tr><td>la14</td><td >443</td><td style="background-color:green;color:white">1292</td><td style="background-color:green;color:white">1292</td><td style="background-color:green;color:white">1292</td><td>1292</td></tr>
+<tr><td>la15</td><td >378</td><td style="background-color:green;color:white">1207</td><td style="background-color:green;color:white">1207</td><td style="background-color:green;color:white">1207</td><td>1207</td></tr>
+<tr><td>la16</td><td >717</td><td >660</td><td >705</td><td >875</td><td>945</td></tr>
+<tr><td>la17</td><td >646</td><td >683</td><td >730</td><td >739</td><td>784</td></tr>
+<tr><td>la18</td><td >663</td><td >623</td><td >654</td><td >770</td><td>848</td></tr>
+<tr><td>la19</td><td >617</td><td >685</td><td >685</td><td >709</td><td>842</td></tr>
+<tr><td>la20</td><td >756</td><td >744</td><td >780</td><td >807</td><td>902</td></tr>
+<tr><td>la21</td><td >717</td><td >935</td><td >954</td><td >995</td><td>1046</td></tr>
+<tr><td>la22</td><td >619</td><td >830</td><td >913</td><td >913</td><td>927</td></tr>
+<tr><td>la23</td><td >640</td><td style="background-color:green;color:white">1032</td><td style="background-color:green;color:white">1032</td><td style="background-color:green;color:white">1032</td><td>1032</td></tr>
+<tr><td>la24</td><td >704</td><td >857</td><td >872</td><td >881</td><td>935</td></tr>
+<tr><td>la25</td><td >723</td><td >864</td><td >872</td><td >894</td><td>977</td></tr>
+<tr><td>la26</td><td >717</td><td style="background-color:green;color:white">1218</td><td style="background-color:green;color:white">1218</td><td style="background-color:green;color:white">1218</td><td>1218</td></tr>
+<tr><td>la27</td><td >686</td><td >1188</td><td style="background-color:green;color:white">1235</td><td style="background-color:green;color:white">1235</td><td>1235</td></tr>
+<tr><td>la28</td><td >756</td><td style="background-color:green;color:white">1216</td><td style="background-color:green;color:white">1216</td><td style="background-color:green;color:white">1216</td><td>1216</td></tr>
+<tr><td>la29</td><td >723</td><td >1105</td><td >1105</td><td >1114</td><td>1152</td></tr>
+<tr><td>la30</td><td >726</td><td style="background-color:green;color:white">1355</td><td style="background-color:green;color:white">1355</td><td style="background-color:green;color:white">1355</td><td>1355</td></tr>
+<tr><td>la31</td><td >717</td><td style="background-color:green;color:white">1784</td><td style="background-color:green;color:white">1784</td><td style="background-color:green;color:white">1784</td><td>1784</td></tr>
+<tr><td>la32</td><td >756</td><td style="background-color:green;color:white">1850</td><td style="background-color:green;color:white">1850</td><td style="background-color:green;color:white">1850</td><td>1850</td></tr>
+<tr><td>la33</td><td >723</td><td style="background-color:green;color:white">1719</td><td style="background-color:green;color:white">1719</td><td style="background-color:green;color:white">1719</td><td>1719</td></tr>
+<tr><td>la34</td><td >656</td><td style="background-color:green;color:white">1721</td><td style="background-color:green;color:white">1721</td><td style="background-color:green;color:white">1721</td><td>1721</td></tr>
+<tr><td>la35</td><td >647</td><td style="background-color:green;color:white">1888</td><td style="background-color:green;color:white">1888</td><td style="background-color:green;color:white">1888</td><td>1888</td></tr>
+<tr><td>la36</td><td >948</td><td >1028</td><td >1098</td><td >1224</td><td>1268</td></tr>
+<tr><td>la37</td><td >986</td><td >980</td><td >1187</td><td >1355</td><td>1397</td></tr>
+<tr><td>la38</td><td >943</td><td >876</td><td >914</td><td >1077</td><td>1196</td></tr>
+<tr><td>la39</td><td >922</td><td >1012</td><td >1137</td><td >1221</td><td>1233</td></tr>
+<tr><td>la40</td><td >955</td><td >1027</td><td >1069</td><td >1170</td><td>1222</td></tr>
 </table>
 
 <table>
 <tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
-<tr><td>orb01</td><td >695</td><td >643</td><td >928</td><td >929</td><td>1059</td>
-<tr><td>orb02</td><td >620</td><td >671</td><td >733</td><td >766</td><td>888</td>
-<tr><td>orb03</td><td >648</td><td >624</td><td >851</td><td >865</td><td>1005</td>
-<tr><td>orb04</td><td >753</td><td >759</td><td >833</td><td >833</td><td>1005</td>
-<tr><td>orb05</td><td >584</td><td >630</td><td >801</td><td >801</td><td>887</td>
-<tr><td>orb06</td><td >715</td><td >659</td><td >930</td><td >930</td><td>1010</td>
-<tr><td>orb07</td><td >275</td><td >286</td><td >345</td><td >345</td><td>397</td>
-<tr><td>orb08</td><td >573</td><td >585</td><td >894</td><td >894</td><td>899</td>
-<tr><td>orb09</td><td >659</td><td >661</td><td >705</td><td >873</td><td>934</td>
-<tr><td>orb10</td><td >681</td><td >652</td><td >868</td><td >899</td><td>944</td>
+<tr><td>orb01</td><td >695</td><td >643</td><td >928</td><td >929</td><td>1059</td></tr>
+<tr><td>orb02</td><td >620</td><td >671</td><td >733</td><td >766</td><td>888</td></tr>
+<tr><td>orb03</td><td >648</td><td >624</td><td >851</td><td >865</td><td>1005</td></tr>
+<tr><td>orb04</td><td >753</td><td >759</td><td >833</td><td >833</td><td>1005</td></tr>
+<tr><td>orb05</td><td >584</td><td >630</td><td >801</td><td >801</td><td>887</td></tr>
+<tr><td>orb06</td><td >715</td><td >659</td><td >930</td><td >930</td><td>1010</td></tr>
+<tr><td>orb07</td><td >275</td><td >286</td><td >345</td><td >345</td><td>397</td></tr>
+<tr><td>orb08</td><td >573</td><td >585</td><td >894</td><td >894</td><td>899</td></tr>
+<tr><td>orb09</td><td >659</td><td >661</td><td >705</td><td >873</td><td>934</td></tr>
+<tr><td>orb10</td><td >681</td><td >652</td><td >868</td><td >899</td><td>944</td></tr>
 </table>
 
 <table>
 <tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
-<tr><td>swv01</td><td >727</td><td >1219</td><td >1366</td><td >1366</td><td>1407</td>
-<tr><td>swv02</td><td >664</td><td >1259</td><td style="background-color:green;color:white">1475</td><td style="background-color:green;color:white">1475</td><td>1475</td>
-<tr><td>swv03</td><td >647</td><td >1178</td><td >1328</td><td >1328</td><td>1398</td>
-<tr><td>swv04</td><td >642</td><td >1161</td><td >1366</td><td >1393</td><td>1464</td>
-<tr><td>swv05</td><td >720</td><td >1235</td><td >1411</td><td >1411</td><td>1424</td>
-<tr><td>swv06</td><td >974</td><td >1229</td><td >1477</td><td >1513</td><td>1667</td>
-<tr><td>swv07</td><td >947</td><td >1128</td><td >1394</td><td >1394</td><td>1541 .. 1594</td>
-<tr><td>swv08</td><td >1058</td><td >1330</td><td >1586</td><td >1586</td><td>1694 .. 1751</td>
-<tr><td>swv09</td><td >947</td><td >1266</td><td >1594</td><td >1594</td><td>1655</td>
-<tr><td>swv10</td><td >939</td><td >1159</td><td >1560</td><td >1560</td><td>1692 .. 1743</td>
-<tr><td>swv11</td><td >739</td><td >2808</td><td style="background-color:green;color:white">2983</td><td style="background-color:green;color:white">2983</td><td>2983</td>
-<tr><td>swv12</td><td >714</td><td >2829</td><td >2949</td><td >2955</td><td>2972</td>
-<tr><td>swv13</td><td >727</td><td >2977</td><td style="background-color:green;color:white">3104</td><td style="background-color:green;color:white">3104</td><td>3104</td>
-<tr><td>swv14</td><td >728</td><td >2842</td><td style="background-color:green;color:white">2968</td><td style="background-color:green;color:white">2968</td><td>2968</td>
-<tr><td>swv15</td><td >687</td><td >2762</td><td style="background-color:green;color:white">2885</td><td style="background-color:green;color:white">2885</td><td>2885</td>
-<tr><td>swv16</td><td >664</td><td style="background-color:green;color:white">2924</td><td style="background-color:green;color:white">2924</td><td style="background-color:green;color:white">2924</td><td>2924</td>
-<tr><td>swv17</td><td >683</td><td style="background-color:green;color:white">2794</td><td style="background-color:green;color:white">2794</td><td style="background-color:green;color:white">2794</td><td>2794</td>
-<tr><td>swv18</td><td >643</td><td style="background-color:green;color:white">2852</td><td style="background-color:green;color:white">2852</td><td style="background-color:green;color:white">2852</td><td>2852</td>
-<tr><td>swv19</td><td >684</td><td style="background-color:green;color:white">2843</td><td style="background-color:green;color:white">2843</td><td style="background-color:green;color:white">2843</td><td>2843</td>
-<tr><td>swv20</td><td >684</td><td style="background-color:green;color:white">2823</td><td style="background-color:green;color:white">2823</td><td style="background-color:green;color:white">2823</td><td>2823</td>
+<tr><td>swv01</td><td >727</td><td >1219</td><td >1366</td><td >1366</td><td>1407</td></tr>
+<tr><td>swv02</td><td >664</td><td >1259</td><td style="background-color:green;color:white">1475</td><td style="background-color:green;color:white">1475</td><td>1475</td></tr>
+<tr><td>swv03</td><td >647</td><td >1178</td><td >1328</td><td >1328</td><td>1398</td></tr>
+<tr><td>swv04</td><td >642</td><td >1161</td><td >1366</td><td >1393</td><td>1464</td></tr>
+<tr><td>swv05</td><td >720</td><td >1235</td><td >1411</td><td >1411</td><td>1424</td></tr>
+<tr><td>swv06</td><td >974</td><td >1229</td><td >1477</td><td >1513</td><td>1667</td></tr>
+<tr><td>swv07</td><td >947</td><td >1128</td><td >1394</td><td >1394</td><td>1541 .. 1594</td></tr>
+<tr><td>swv08</td><td >1058</td><td >1330</td><td >1586</td><td >1586</td><td>1694 .. 1751</td></tr>
+<tr><td>swv09</td><td >947</td><td >1266</td><td >1594</td><td >1594</td><td>1655</td></tr>
+<tr><td>swv10</td><td >939</td><td >1159</td><td >1560</td><td >1560</td><td>1692 .. 1743</td></tr>
+<tr><td>swv11</td><td >739</td><td >2808</td><td style="background-color:green;color:white">2983</td><td style="background-color:green;color:white">2983</td><td>2983</td></tr>
+<tr><td>swv12</td><td >714</td><td >2829</td><td >2949</td><td >2955</td><td>2972</td></tr>
+<tr><td>swv13</td><td >727</td><td >2977</td><td style="background-color:green;color:white">3104</td><td style="background-color:green;color:white">3104</td><td>3104</td></tr>
+<tr><td>swv14</td><td >728</td><td >2842</td><td style="background-color:green;color:white">2968</td><td style="background-color:green;color:white">2968</td><td>2968</td></tr>
+<tr><td>swv15</td><td >687</td><td >2762</td><td style="background-color:green;color:white">2885</td><td style="background-color:green;color:white">2885</td><td>2885</td></tr>
+<tr><td>swv16</td><td >664</td><td style="background-color:green;color:white">2924</td><td style="background-color:green;color:white">2924</td><td style="background-color:green;color:white">2924</td><td>2924</td></tr>
+<tr><td>swv17</td><td >683</td><td style="background-color:green;color:white">2794</td><td style="background-color:green;color:white">2794</td><td style="background-color:green;color:white">2794</td><td>2794</td></tr>
+<tr><td>swv18</td><td >643</td><td style="background-color:green;color:white">2852</td><td style="background-color:green;color:white">2852</td><td style="background-color:green;color:white">2852</td><td>2852</td></tr>
+<tr><td>swv19</td><td >684</td><td style="background-color:green;color:white">2843</td><td style="background-color:green;color:white">2843</td><td style="background-color:green;color:white">2843</td><td>2843</td></tr>
+<tr><td>swv20</td><td >684</td><td style="background-color:green;color:white">2823</td><td style="background-color:green;color:white">2823</td><td style="background-color:green;color:white">2823</td><td>2823</td></tr>
 </table>
 
 <table>
 <tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
-<tr><td>ta01js</td><td >963</td><td >977</td><td >1005</td><td >1168</td><td>1231</td>
-<tr><td>ta02js</td><td >942</td><td >919</td><td >953</td><td >1143</td><td>1244</td>
-<tr><td>ta03js</td><td >921</td><td >900</td><td >1036</td><td >1109</td><td>1218</td>
-<tr><td>ta04js</td><td >911</td><td >870</td><td >973</td><td >1059</td><td>1175</td>
-<tr><td>ta05js</td><td >940</td><td >902</td><td >914</td><td >1115</td><td>1224</td>
-<tr><td>ta06js</td><td >849</td><td >889</td><td >1134</td><td >1134</td><td>1238</td>
-<tr><td>ta07js</td><td >935</td><td >920</td><td >1103</td><td >1144</td><td>1227</td>
-<tr><td>ta08js</td><td >963</td><td >860</td><td >980</td><td >1096</td><td>1217</td>
-<tr><td>ta09js</td><td >982</td><td >966</td><td >1020</td><td >1136</td><td>1274</td>
-<tr><td>ta10js</td><td >896</td><td >911</td><td >940</td><td >1107</td><td>1241</td>
-<tr><td>ta11js</td><td >949</td><td >1139</td><td >1254</td><td >1254</td><td>1357</td>
-<tr><td>ta12js</td><td >1012</td><td >1251</td><td >1267</td><td >1284</td><td>1367</td>
-<tr><td>ta13js</td><td >919</td><td >1178</td><td >1243</td><td >1243</td><td>1342</td>
-<tr><td>ta14js</td><td >990</td><td >1130</td><td >1329</td><td >1341</td><td>1345</td>
-<tr><td>ta15js</td><td >880</td><td >1148</td><td >1163</td><td >1231</td><td>1339</td>
-<tr><td>ta16js</td><td >932</td><td >1181</td><td >1211</td><td >1238</td><td>1360</td>
-<tr><td>ta17js</td><td >979</td><td >1257</td><td >1306</td><td >1433</td><td>1462</td>
-<tr><td>ta18js</td><td >900</td><td >1153</td><td >1315</td><td >1315</td><td>1396</td>
-<tr><td>ta19js</td><td >920</td><td >1202</td><td >1202</td><td >1216</td><td>1332</td>
-<tr><td>ta20js</td><td >928</td><td >1186</td><td >1213</td><td >1279</td><td>1348</td>
-<tr><td>ta21js</td><td >1217</td><td >1182</td><td >1182</td><td >1435</td><td>1642</td>
-<tr><td>ta22js</td><td >1223</td><td >1240</td><td >1314</td><td >1385</td><td>1600</td>
-<tr><td>ta23js</td><td >1164</td><td >1185</td><td >1248</td><td >1422</td><td>1557</td>
-<tr><td>ta24js</td><td >1151</td><td >1271</td><td >1284</td><td >1466</td><td>1644</td>
-<tr><td>ta25js</td><td >1170</td><td >1256</td><td >1256</td><td >1473</td><td>1595</td>
-<tr><td>ta26js</td><td >1207</td><td >1205</td><td >1245</td><td >1445</td><td>1643</td>
-<tr><td>ta27js</td><td >1291</td><td >1331</td><td >1403</td><td >1567</td><td>1680</td>
-<tr><td>ta28js</td><td >1221</td><td >1269</td><td >1387</td><td >1529</td><td>1603</td>
-<tr><td>ta29js</td><td >1227</td><td >1267</td><td >1352</td><td >1413</td><td>1625</td>
-<tr><td>ta30js</td><td >1212</td><td >1159</td><td >1277</td><td >1363</td><td>1562 .. 1584</td>
-<tr><td>ta31js</td><td >990</td><td style="background-color:green;color:white">1764</td><td style="background-color:green;color:white">1764</td><td style="background-color:green;color:white">1764</td><td>1764</td>
-<tr><td>ta32js</td><td >972</td><td >1774</td><td >1774</td><td >1774</td><td>1774 .. 1783</td>
-<tr><td>ta33js</td><td >1056</td><td >1729</td><td >1733</td><td >1747</td><td>1791</td>
-<tr><td>ta34js</td><td >975</td><td style="background-color:green;color:white">1828</td><td style="background-color:green;color:white">1828</td><td style="background-color:green;color:white">1828</td><td>1828</td>
-<tr><td>ta35js</td><td >969</td><td >1729</td><td >1754</td><td >1997</td><td>2007</td>
-<tr><td>ta36js</td><td >988</td><td >1777</td><td >1777</td><td style="background-color:green;color:white">1819</td><td>1819</td>
-<tr><td>ta37js</td><td >1045</td><td style="background-color:green;color:white">1771</td><td style="background-color:green;color:white">1771</td><td style="background-color:green;color:white">1771</td><td>1771</td>
-<tr><td>ta38js</td><td >952</td><td style="background-color:green;color:white">1673</td><td style="background-color:green;color:white">1673</td><td style="background-color:green;color:white">1673</td><td>1673</td>
-<tr><td>ta39js</td><td >905</td><td >1641</td><td >1764</td><td >1791</td><td>1795</td>
-<tr><td>ta40js</td><td >961</td><td >1602</td><td >1608</td><td >1617</td><td>1658 .. 1669</td>
-<tr><td>ta41js</td><td >1232</td><td >1830</td><td >1850</td><td >1850</td><td>1926 .. 2005</td>
-<tr><td>ta42js</td><td >1192</td><td >1761</td><td >1761</td><td >1867</td><td>1900 .. 1937</td>
-<tr><td>ta43js</td><td >1230</td><td >1694</td><td >1710</td><td >1809</td><td>1809 .. 1846</td>
-<tr><td>ta44js</td><td >1204</td><td >1787</td><td >1820</td><td >1887</td><td>1961 .. 1978</td>
-<tr><td>ta45js</td><td >1253</td><td >1731</td><td >1785</td><td >1955</td><td>1997</td>
-<tr><td>ta46js</td><td >1290</td><td >1856</td><td >1940</td><td >1940</td><td>1976 .. 2002</td>
-<tr><td>ta47js</td><td >1334</td><td >1690</td><td >1751</td><td >1768</td><td>1827 .. 1889</td>
-<tr><td>ta48js</td><td >1282</td><td >1744</td><td >1770</td><td >1905</td><td>1921 .. 1937</td>
-<tr><td>ta49js</td><td >1190</td><td >1758</td><td >1758</td><td >1892</td><td>1938 .. 1960</td>
-<tr><td>ta50js</td><td >1251</td><td >1674</td><td >1678</td><td >1804</td><td>1848 .. 1923</td>
-<tr><td>ta51js</td><td >975</td><td style="background-color:green;color:white">2760</td><td style="background-color:green;color:white">2760</td><td style="background-color:green;color:white">2760</td><td>2760</td>
-<tr><td>ta52js</td><td >1007</td><td style="background-color:green;color:white">2756</td><td style="background-color:green;color:white">2756</td><td style="background-color:green;color:white">2756</td><td>2756</td>
-<tr><td>ta53js</td><td >942</td><td style="background-color:green;color:white">2717</td><td style="background-color:green;color:white">2717</td><td style="background-color:green;color:white">2717</td><td>2717</td>
-<tr><td>ta54js</td><td >1144</td><td >2797</td><td >2813</td><td style="background-color:green;color:white">2839</td><td>2839</td>
-<tr><td>ta55js</td><td >940</td><td style="background-color:green;color:white">2679</td><td style="background-color:green;color:white">2679</td><td style="background-color:green;color:white">2679</td><td>2679</td>
-<tr><td>ta56js</td><td >920</td><td style="background-color:green;color:white">2781</td><td style="background-color:green;color:white">2781</td><td style="background-color:green;color:white">2781</td><td>2781</td>
-<tr><td>ta57js</td><td >1137</td><td style="background-color:green;color:white">2943</td><td style="background-color:green;color:white">2943</td><td style="background-color:green;color:white">2943</td><td>2943</td>
-<tr><td>ta58js</td><td >1042</td><td style="background-color:green;color:white">2885</td><td style="background-color:green;color:white">2885</td><td style="background-color:green;color:white">2885</td><td>2885</td>
-<tr><td>ta59js</td><td >963</td><td style="background-color:green;color:white">2655</td><td style="background-color:green;color:white">2655</td><td style="background-color:green;color:white">2655</td><td>2655</td>
-<tr><td>ta60js</td><td >1061</td><td style="background-color:green;color:white">2723</td><td style="background-color:green;color:white">2723</td><td style="background-color:green;color:white">2723</td><td>2723</td>
-<tr><td>ta61js</td><td >1284</td><td style="background-color:green;color:white">2868</td><td style="background-color:green;color:white">2868</td><td style="background-color:green;color:white">2868</td><td>2868</td>
-<tr><td>ta62js</td><td >1318</td><td >2848</td><td >2848</td><td style="background-color:green;color:white">2869</td><td>2869</td>
-<tr><td>ta63js</td><td >1289</td><td style="background-color:green;color:white">2755</td><td style="background-color:green;color:white">2755</td><td style="background-color:green;color:white">2755</td><td>2755</td>
-<tr><td>ta64js</td><td >1229</td><td >2691</td><td >2697</td><td style="background-color:green;color:white">2702</td><td>2702</td>
-<tr><td>ta65js</td><td >1270</td><td style="background-color:green;color:white">2725</td><td style="background-color:green;color:white">2725</td><td style="background-color:green;color:white">2725</td><td>2725</td>
-<tr><td>ta66js</td><td >1297</td><td style="background-color:green;color:white">2845</td><td style="background-color:green;color:white">2845</td><td style="background-color:green;color:white">2845</td><td>2845</td>
-<tr><td>ta67js</td><td >1273</td><td >2812</td><td >2812</td><td >2821</td><td>2825</td>
-<tr><td>ta68js</td><td >1343</td><td >2764</td><td >2764</td><td style="background-color:green;color:white">2784</td><td>2784</td>
-<tr><td>ta69js</td><td >1416</td><td >3063</td><td style="background-color:green;color:white">3071</td><td style="background-color:green;color:white">3071</td><td>3071</td>
-<tr><td>ta70js</td><td >1225</td><td style="background-color:green;color:white">2995</td><td style="background-color:green;color:white">2995</td><td style="background-color:green;color:white">2995</td><td>2995</td>
+<tr><td>ta01js</td><td >963</td><td >977</td><td >1005</td><td >1168</td><td>1231</td></tr>
+<tr><td>ta02js</td><td >942</td><td >919</td><td >953</td><td >1143</td><td>1244</td></tr>
+<tr><td>ta03js</td><td >921</td><td >900</td><td >1036</td><td >1109</td><td>1218</td></tr>
+<tr><td>ta04js</td><td >911</td><td >870</td><td >973</td><td >1059</td><td>1175</td></tr>
+<tr><td>ta05js</td><td >940</td><td >902</td><td >914</td><td >1115</td><td>1224</td></tr>
+<tr><td>ta06js</td><td >849</td><td >889</td><td >1134</td><td >1134</td><td>1238</td></tr>
+<tr><td>ta07js</td><td >935</td><td >920</td><td >1103</td><td >1144</td><td>1227</td></tr>
+<tr><td>ta08js</td><td >963</td><td >860</td><td >980</td><td >1096</td><td>1217</td></tr>
+<tr><td>ta09js</td><td >982</td><td >966</td><td >1020</td><td >1136</td><td>1274</td></tr>
+<tr><td>ta10js</td><td >896</td><td >911</td><td >940</td><td >1107</td><td>1241</td></tr>
+<tr><td>ta11js</td><td >949</td><td >1139</td><td >1254</td><td >1254</td><td>1357</td></tr>
+<tr><td>ta12js</td><td >1012</td><td >1251</td><td >1267</td><td >1284</td><td>1367</td></tr>
+<tr><td>ta13js</td><td >919</td><td >1178</td><td >1243</td><td >1243</td><td>1342</td></tr>
+<tr><td>ta14js</td><td >990</td><td >1130</td><td >1329</td><td >1341</td><td>1345</td></tr>
+<tr><td>ta15js</td><td >880</td><td >1148</td><td >1163</td><td >1231</td><td>1339</td></tr>
+<tr><td>ta16js</td><td >932</td><td >1181</td><td >1211</td><td >1238</td><td>1360</td></tr>
+<tr><td>ta17js</td><td >979</td><td >1257</td><td >1306</td><td >1433</td><td>1462</td></tr>
+<tr><td>ta18js</td><td >900</td><td >1153</td><td >1315</td><td >1315</td><td>1396</td></tr>
+<tr><td>ta19js</td><td >920</td><td >1202</td><td >1202</td><td >1216</td><td>1332</td></tr>
+<tr><td>ta20js</td><td >928</td><td >1186</td><td >1213</td><td >1279</td><td>1348</td></tr>
+<tr><td>ta21js</td><td >1217</td><td >1182</td><td >1182</td><td >1435</td><td>1642</td></tr>
+<tr><td>ta22js</td><td >1223</td><td >1240</td><td >1314</td><td >1385</td><td>1600</td></tr>
+<tr><td>ta23js</td><td >1164</td><td >1185</td><td >1248</td><td >1422</td><td>1557</td></tr>
+<tr><td>ta24js</td><td >1151</td><td >1271</td><td >1284</td><td >1466</td><td>1644</td></tr>
+<tr><td>ta25js</td><td >1170</td><td >1256</td><td >1256</td><td >1473</td><td>1595</td></tr>
+<tr><td>ta26js</td><td >1207</td><td >1205</td><td >1245</td><td >1445</td><td>1643</td></tr>
+<tr><td>ta27js</td><td >1291</td><td >1331</td><td >1403</td><td >1567</td><td>1680</td></tr>
+<tr><td>ta28js</td><td >1221</td><td >1269</td><td >1387</td><td >1529</td><td>1603</td></tr>
+<tr><td>ta29js</td><td >1227</td><td >1267</td><td >1352</td><td >1413</td><td>1625</td></tr>
+<tr><td>ta30js</td><td >1212</td><td >1159</td><td >1277</td><td >1363</td><td>1562 .. 1584</td></tr>
+<tr><td>ta31js</td><td >990</td><td style="background-color:green;color:white">1764</td><td style="background-color:green;color:white">1764</td><td style="background-color:green;color:white">1764</td><td>1764</td></tr>
+<tr><td>ta32js</td><td >972</td><td >1774</td><td >1774</td><td >1774</td><td>1774 .. 1783</td></tr>
+<tr><td>ta33js</td><td >1056</td><td >1729</td><td >1733</td><td >1747</td><td>1791</td></tr>
+<tr><td>ta34js</td><td >975</td><td style="background-color:green;color:white">1828</td><td style="background-color:green;color:white">1828</td><td style="background-color:green;color:white">1828</td><td>1828</td></tr>
+<tr><td>ta35js</td><td >969</td><td >1729</td><td >1754</td><td >1997</td><td>2007</td></tr>
+<tr><td>ta36js</td><td >988</td><td >1777</td><td >1777</td><td style="background-color:green;color:white">1819</td><td>1819</td></tr>
+<tr><td>ta37js</td><td >1045</td><td style="background-color:green;color:white">1771</td><td style="background-color:green;color:white">1771</td><td style="background-color:green;color:white">1771</td><td>1771</td></tr>
+<tr><td>ta38js</td><td >952</td><td style="background-color:green;color:white">1673</td><td style="background-color:green;color:white">1673</td><td style="background-color:green;color:white">1673</td><td>1673</td></tr>
+<tr><td>ta39js</td><td >905</td><td >1641</td><td >1764</td><td >1791</td><td>1795</td></tr>
+<tr><td>ta40js</td><td >961</td><td >1602</td><td >1608</td><td >1617</td><td>1658 .. 1669</td></tr>
+<tr><td>ta41js</td><td >1232</td><td >1830</td><td >1850</td><td >1850</td><td>1926 .. 2005</td></tr>
+<tr><td>ta42js</td><td >1192</td><td >1761</td><td >1761</td><td >1867</td><td>1900 .. 1937</td></tr>
+<tr><td>ta43js</td><td >1230</td><td >1694</td><td >1710</td><td >1809</td><td>1809 .. 1846</td></tr>
+<tr><td>ta44js</td><td >1204</td><td >1787</td><td >1820</td><td >1887</td><td>1961 .. 1978</td></tr>
+<tr><td>ta45js</td><td >1253</td><td >1731</td><td >1785</td><td >1955</td><td>1997</td></tr>
+<tr><td>ta46js</td><td >1290</td><td >1856</td><td >1940</td><td >1940</td><td>1976 .. 2002</td></tr>
+<tr><td>ta47js</td><td >1334</td><td >1690</td><td >1751</td><td >1768</td><td>1827 .. 1889</td></tr>
+<tr><td>ta48js</td><td >1282</td><td >1744</td><td >1770</td><td >1905</td><td>1921 .. 1937</td></tr>
+<tr><td>ta49js</td><td >1190</td><td >1758</td><td >1758</td><td >1892</td><td>1938 .. 1960</td></tr>
+<tr><td>ta50js</td><td >1251</td><td >1674</td><td >1678</td><td >1804</td><td>1848 .. 1923</td></tr>
+<tr><td>ta51js</td><td >975</td><td style="background-color:green;color:white">2760</td><td style="background-color:green;color:white">2760</td><td style="background-color:green;color:white">2760</td><td>2760</td></tr>
+<tr><td>ta52js</td><td >1007</td><td style="background-color:green;color:white">2756</td><td style="background-color:green;color:white">2756</td><td style="background-color:green;color:white">2756</td><td>2756</td></tr>
+<tr><td>ta53js</td><td >942</td><td style="background-color:green;color:white">2717</td><td style="background-color:green;color:white">2717</td><td style="background-color:green;color:white">2717</td><td>2717</td></tr>
+<tr><td>ta54js</td><td >1144</td><td >2797</td><td >2813</td><td style="background-color:green;color:white">2839</td><td>2839</td></tr>
+<tr><td>ta55js</td><td >940</td><td style="background-color:green;color:white">2679</td><td style="background-color:green;color:white">2679</td><td style="background-color:green;color:white">2679</td><td>2679</td></tr>
+<tr><td>ta56js</td><td >920</td><td style="background-color:green;color:white">2781</td><td style="background-color:green;color:white">2781</td><td style="background-color:green;color:white">2781</td><td>2781</td></tr>
+<tr><td>ta57js</td><td >1137</td><td style="background-color:green;color:white">2943</td><td style="background-color:green;color:white">2943</td><td style="background-color:green;color:white">2943</td><td>2943</td></tr>
+<tr><td>ta58js</td><td >1042</td><td style="background-color:green;color:white">2885</td><td style="background-color:green;color:white">2885</td><td style="background-color:green;color:white">2885</td><td>2885</td></tr>
+<tr><td>ta59js</td><td >963</td><td style="background-color:green;color:white">2655</td><td style="background-color:green;color:white">2655</td><td style="background-color:green;color:white">2655</td><td>2655</td></tr>
+<tr><td>ta60js</td><td >1061</td><td style="background-color:green;color:white">2723</td><td style="background-color:green;color:white">2723</td><td style="background-color:green;color:white">2723</td><td>2723</td></tr>
+<tr><td>ta61js</td><td >1284</td><td style="background-color:green;color:white">2868</td><td style="background-color:green;color:white">2868</td><td style="background-color:green;color:white">2868</td><td>2868</td></tr>
+<tr><td>ta62js</td><td >1318</td><td >2848</td><td >2848</td><td style="background-color:green;color:white">2869</td><td>2869</td></tr>
+<tr><td>ta63js</td><td >1289</td><td style="background-color:green;color:white">2755</td><td style="background-color:green;color:white">2755</td><td style="background-color:green;color:white">2755</td><td>2755</td></tr>
+<tr><td>ta64js</td><td >1229</td><td >2691</td><td >2697</td><td style="background-color:green;color:white">2702</td><td>2702</td></tr>
+<tr><td>ta65js</td><td >1270</td><td style="background-color:green;color:white">2725</td><td style="background-color:green;color:white">2725</td><td style="background-color:green;color:white">2725</td><td>2725</td></tr>
+<tr><td>ta66js</td><td >1297</td><td style="background-color:green;color:white">2845</td><td style="background-color:green;color:white">2845</td><td style="background-color:green;color:white">2845</td><td>2845</td></tr>
+<tr><td>ta67js</td><td >1273</td><td >2812</td><td >2812</td><td >2821</td><td>2825</td></tr>
+<tr><td>ta68js</td><td >1343</td><td >2764</td><td >2764</td><td style="background-color:green;color:white">2784</td><td>2784</td></tr>
+<tr><td>ta69js</td><td >1416</td><td >3063</td><td style="background-color:green;color:white">3071</td><td style="background-color:green;color:white">3071</td><td>3071</td></tr>
+<tr><td>ta70js</td><td >1225</td><td style="background-color:green;color:white">2995</td><td style="background-color:green;color:white">2995</td><td style="background-color:green;color:white">2995</td><td>2995</td></tr>
 </table>
 
 <table>
 <tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>bks</th></tr>
-<tr><td>yn1</td><td >694</td><td >643</td><td >689</td><td >763</td><td>884</td>
-<tr><td>yn2</td><td >713</td><td >686</td><td >732</td><td >795</td><td>904</td>
-<tr><td>yn3</td><td >680</td><td >659</td><td >733</td><td >793</td><td>892</td>
-<tr><td>yn4</td><td >719</td><td >676</td><td >818</td><td >871</td><td>967</td>
+<tr><td>yn1</td><td >694</td><td >643</td><td >689</td><td >763</td><td>884</td></tr>
+<tr><td>yn2</td><td >713</td><td >686</td><td >732</td><td >795</td><td>904</td></tr>
+<tr><td>yn3</td><td >680</td><td >659</td><td >733</td><td >793</td><td>892</td></tr>
+<tr><td>yn4</td><td >719</td><td >676</td><td >818</td><td >871</td><td>967</td></tr>
 </table>
 
 <br/>
