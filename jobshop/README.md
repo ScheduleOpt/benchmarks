@@ -1250,8 +1250,6 @@ However OptalCP proves a lower bound of 667 and Optimizizer only provides a veri
 
 #### Da Col and Teppan 2022 - taillard-like instances
 
-*We consider the tai 1000 x 1000 instances a curiosity, a benchmark to test the internals of the engines (memory allocation, complexity of internal algorithms and data structures, etc.) We don't believe these instances represent any reasonable industrial problem, less because of their size, and more because they are random, unstructured, square and non-reentrant : a manufacturing plant doesn't produces exactly 1000 different products, each one needs 1000 operations on exactly one of the 1000 machines in the plant, and for each product the operations must be done in a completely different order !*
-
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>tai_10_10_1</td><td>10 x 10</td><td>jobshop</td><td>8219</td><td>8219</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
@@ -1346,17 +1344,27 @@ However OptalCP proves a lower bound of 667 and Optimizizer only provides a veri
 <tr><td>tai_1000_1000_10</td><td>1000 x 1000</td><td>jobshop</td><td>549075</td><td>809421</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb Hexaly | ub OptalCP</td></tr>
 </table>
 
+#### A note about `tai` best known solutions:
 
-A note about `tai` BKS:
 Most of the 22 BKS reported in **A Comprehensive Benchmark of Constraint Programming Solvers for the Makespan-Minimisation Job Shop Scheduling Problem** [YWR2026] were already known at the time of publication:
 - 6 better BKS had been reported by DaCol and Teppan (2022 cited in YWR2026) using CP Optimizer (tai_100_1000 problems 5,6,8,9,10 and tai_1000_100_5)
 - 1 BKS reported as found by Hexaly is defeated by the solution reported as found by CP Optimizer (tai_100_1000_3 unless there is a typo in the paper)
 - The 10 tai_1000_100 instances had already been closed by Petr Vilim using OptalCP and the 10 results for tai_100_1000 superseded the MDPI results (published on optalcp.com 2026/04/21)
-- The 2 BKS on tai_1000_1000 were unknown, superseded later by Petr Vilim with OptalCP (2026/07/09)
+- The 2 BKS on tai_1000_1000 were genuinely unknown, superseded later by Petr Vilim with OptalCP (2026/07/09)
 
 The BKS in JSPLIB were themselves outdated: we were aware of the CPO and OptalCP results, but had not updated the database because we hoped to find time to independently reproduce them. This issue has led us to shorten our publication cycle and to use "personal communications" whenever appropriate for unpublished results. We may also introduce a `validated` tag in the future to mark results we have independently validated ourselves.
 
 We have also tried to reconstruct, as accurately as possible, the correct chronology of the results in bks.json
+
+#### A note about the usefulness of `tai_1000_1000` instances:
+
+We consider the tai_1000_1000_* instances primarily as an engine-development stress test rather than as a meaningful job-shop benchmark. We included them in the jsplib, not for their industrial relevance — which is essentially nonexistent — but because their particular structure makes them exceptionally effective at stressing the memory bandwidth and internal data structures of CP engines.
+
+For example, the first version of OptalCP required around 10 minutes simply to reach the fixpoint of root propagation on these instances, and its first dive took around one hour to find a solution. After substantial work on the engine, these figures are now approximately 10 seconds and 1 minute respectively. Similarly, CP-SAT doesn't find any solution in 10 minutes because its preprocessor makes assumptions that are incompatible with a 1000 x 1000 instance and the engine never starts working. This illustrates that these instances are useful for measuring and improving the implementation of a solver: they expose the cost of memory accesses, data structures, propagation algorithms and other internal mechanisms.
+
+This is nevertheless very different from measuring the quality of a job-shop optimization engine. The tai_1000_1000_* instances are random, unstructured, square and non-reentrant. They don't represent any real manufacturing plant. They are not even the biggest instances available in the benchmark, the dct-short-1000-1000 and dct-short-1000-10000 are instances with 2000 jobs on 1000 machines and 20 000 jobs on 1000 machines respectively. Yet engines like OptalCP and CP Optimizer handle them just fine.
+
+Unless you are a CP-engine developer, we recommend you to ignore the tai_1000_1000 instances, they are just oversized Taillard-like instances. 
 
 
 #### Da Col and Teppan (2022) - reentrant jobshop
