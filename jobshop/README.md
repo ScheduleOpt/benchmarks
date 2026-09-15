@@ -1404,7 +1404,7 @@ However OptalCP proves a lower bound of 667 and Optimizizer only provides a veri
 <tr><td>tai_1000_1000_1</td><td>1000 x 1000</td><td>jobshop</td><td>549392</td><td>811195</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 <tr><td>tai_1000_1000_2</td><td>1000 x 1000</td><td>jobshop</td><td>549043</td><td>813044</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 <tr><td>tai_1000_1000_3</td><td>1000 x 1000</td><td>jobshop</td><td>552580</td><td>811269</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_1000_1000_4</td><td>1000 x 1000</td><td>jobshop</td><td>547670</td><td>876363</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>tai_1000_1000_4</td><td>1000 x 1000</td><td>jobshop</td><td>547670</td><td>809549</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 <tr><td>tai_1000_1000_5</td><td>1000 x 1000</td><td>jobshop</td><td>545193</td><td>811467</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 <tr><td>tai_1000_1000_6</td><td>1000 x 1000</td><td>jobshop</td><td>547286</td><td>813117</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 <tr><td>tai_1000_1000_7</td><td>1000 x 1000</td><td>jobshop</td><td>545877</td><td>809043</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
