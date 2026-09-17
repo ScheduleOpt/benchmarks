@@ -16,7 +16,7 @@ JSPLib is a comprehensive benchmark library for the Job Shop Scheduling Problem 
 - **Best-known-solutions archive** — a running record of the best upper/lower bounds ever found for each instance, from any source (published papers, meta-heuristics, or engine runs) — not limited to the three reference engines above.
 
 The data and source code can be found in the [GitHub repository](https://github.com/ScheduleOpt/benchmarks).
-This document is visible as a README.md in the GitHub folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib). Instances are now available in [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/json) or [text](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/text) formats. The [standardized benchmark results](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) for each engine on each instance are available in json format. And a json file of [best known solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) is also provided with a trace of the evolution of the bounds.
+This document is visible as a README.md in the GitHub folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib). Instances are now available in [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/json) or [text](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/text) formats. The [standardized benchmark results](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) for each engine on each instance are available in json format. And a json file of [best-known solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) is also provided with a trace of the evolution of the bounds.
 
 ### Table of Contents
 
@@ -31,9 +31,9 @@ This document is visible as a README.md in the GitHub folder [jobshop](https://g
     - [Incorrect best-known solutions used in publications and better metrics](#incorrect-best-known-solutions-used-in-publications-and-better-metrics)
     - [Comparison of reference solvers](#comparison-of-reference-solvers)
 - [Analysis of relaxations and their strength](#analysis-of-relaxations-and-their-strength)
-- [Best known solutions](#best-known-solutions)
+- [Best-known solutions](#best-known-solutions)
     - [JSON bks format](#best-known-solutions-json-format)
-    - [Best known solutions](#best-known-solutions-per-instance-family)
+    - [Best-known solutions](#best-known-solutions-per-instance-family)
     - [Publications](#publications-best-known-solutions)
 
 <br/>
@@ -48,7 +48,7 @@ Random (322)
 - 5 instances `abz` from Adams, Balas and Zawack 1988
 - 10 instances `orb` from Applegate and Cook 1991   
 - 20 instances `swv` from Storer, Wu and Vaccari 1992
-- 4 instances `yn` from Yamada Nakano 1992
+- 4 instances `yn` from Yamada and Nakano 1992
 - 80 instances `ta` from Taillard 1993
 - 80 instances `dmu` from Demirkol, Mehta and Uzsoy 1998
 - 80 instances `tai` from Da Col and Teppan 2022
@@ -89,7 +89,7 @@ In particular
 
 While both sets of instances reveal limitations in CP engines, we have classified the `tai_1000_1000` as instances that primarily stress the engine implementation (data structures, etc) but `tai_100_100` as instances that stress the optimization capabilities of the engine.
 
-#### Best known solutions for `tai`
+#### Best-known solutions for `tai`
 
 Most of the 22 BKS reported in **A Comprehensive Benchmark of Constraint Programming Solvers for the Makespan-Minimisation Job Shop Scheduling Problem** [YWR2026] were already known at the time of publication:
 - 6 better BKS had been reported by Da Col and Teppan (2022 cited in [YWR2026]) using CP Optimizer (tai_100_1000 problems 5,6,8,9,10 and tai_1000_100_5)
@@ -132,7 +132,7 @@ We use the following criteria to classify instances by difficulty:
 - <strong style="color:cornflowerblue">toy</strong>: solved to optimality (with proof) in 1 minute by at least 1 reference engine
 - <strong style="color:green">easy</strong>: solved to optimality (with proof) in 10 minute by at least 1 reference engine
 - <strong style="color:orange">medium</strong>: solved to optimality (with proof) in 1 hour by at least 1 reference engine
-- <strong style="color:red">hard</strong>: solved to optimality (with proof) in > 1h by at least 1 reference engine
+- <strong style="color:red">hard</strong>: solved to optimality (with proof) in more than 1 hour by at least 1 reference engine
 - <strong style="color:purple">closed</strong>: *allegedly* solved to optimality. Most of the time the optimal solution is known because 2 different methods independently found equal upper and lower bounds. The problem is reclassified into toy, easy, medium or hard when a reference engine is able to reproduce the results.
 - <strong style="color:grey">open</strong>: no proof of optimality
 
@@ -295,13 +295,13 @@ The instances come from the following publications
 
 - **Lawrence, S.** (1984). Resource constrained project scheduling: An experimental investigation of heuristic scheduling techniques (Supplement). Graduate School of Industrial Administration, Carnegie-Mellon University.
 
-- **Adams, J., Balas, E., & Zawack, D.** (1988). The shifting bottleneck procedure for job shop scheduling. Management science, 34(3), 391-401.
+- **Adams, J., Balas, E., & Zawack, D.** (1988). The shifting bottleneck procedure for job shop scheduling. Management Science, 34(3), 391-401.
 
-- **Applegate, D., & Cook, W.** (1991). A computational study of the job-shop scheduling instance. ORSA J. Comput, 3, 49-51.
+- **Applegate, D., & Cook, W.** (1991). A computational study of the job-shop scheduling problem. ORSA J. Comput, 3, 49-51.
 
 - **Storer, R. H., Wu, S. D., & Vaccari, R.** (1992). New Search Spaces for Sequencing Problems with Application to Job Shop Scheduling. Management Science, 38(10), 1495–1509.
 
-- **T. Yamada, R. Nakano** (1992), A genetic algorithm applicable to large-scale job-shop instances, R. Manner, B. Manderick (eds.), Parallel instance solving from nature 2,    North-Holland, Amsterdam,  281-290
+- **T. Yamada, R. Nakano** (1992), A genetic algorithm applicable to large-scale job-shop instances, R. Manner, B. Manderick (eds.), Parallel instance solving from nature 2, North-Holland, Amsterdam,  281-290
 
 - **Taillard, E.** (1993). Benchmarks for basic scheduling problems. European Journal of Operational Research, 64(2), 278-285.
 
@@ -359,7 +359,7 @@ References
 
 #### IBM ILOG CP Optimizer (2007 - present)
 
-**CP Optimizer** is a descendant of **ILOG Solver** (architected over the years by Jean-François Puget, Jean-Charles Régin and later Laurent Perron) and **ILOG Scheduler** (architected by Claude Le Pape, then Philippe Laborie). CP Optimizer (led by Paul Shaw, Laurent Perron and Philippe Laborie) merged the general CP engine and the specific scheduling add-on in a single engine, promoted the model-and-run approach and pioneered a new scheduling language (optional intervals, noOverlap, cumulative functions, etc.) that has become an industry standard.
+**CP Optimizer** is a descendant of **ILOG Solver** developed over the years by Jean-François Puget, Jean-Charles Régin and later Laurent Perron and **ILOG Scheduler** developed by Claude Le Pape, Wim Nuijten and later Philippe Laborie. CP Optimizer (led by Paul Shaw, Laurent Perron and Philippe Laborie) merged the general CP engine and the specific scheduling add-on in a single engine, promoted the model-and-run approach and pioneered a new scheduling language (optional intervals, noOverlap, cumulative functions, etc.) that has become an industry standard.
 
 From a technical perspective, CP Optimizer interleaves the following search methods
 - **Large Neighbourhood Search** (Shaw et al.): tree-search based local search
@@ -369,7 +369,7 @@ From a technical perspective, CP Optimizer interleaves the following search meth
 
 The **temporal linear relaxation** solved by an LP and **objective landscapes** act like a reduced cost / impact based oracle but for scheduling problems.
 
-Because CP Optimizer was designed in a time where multi-core computers weren't common, the engine alternates the different strategies on the same core, and replicates itself over various cores with different parameters if more cores are available.
+Because CP Optimizer was designed in a time where multi-core computers were not common, the engine alternates the different strategies on the same core, and replicates itself over various cores with different parameters if more cores are available.
 
 The main propagation algorithms in CP Optimizer are 
 - **time tabling** and **edge-finding** for disjunctive and cumulative resources (Claude Le Pape, Wim Nuijten, Philippe Baptiste) later improved by Petr Vilim 
@@ -393,10 +393,10 @@ References
 **CP-SAT** is an open-source lazy clause generation engine augmented with an LP, MIP-style cuts and CP-style propagators designed by Laurent Perron, Frédéric Didier and Steven Gay. 
 
 CP-SAT includes
-- LP-based lower bounds + MIP style cuts, in particular MIP cuts specialized for scheduling
+- LP-based lower bounds + MIP-style cuts, in particular MIP cuts specialized for scheduling
 - CP-style propagation algorithms (time-tabling, edge-finding)
 - SAT-style conflict analysis
-- synchronization of MIP and CP style reasonings
+- synchronization of MIP and CP-style reasoning
 - LNS: tree-based local search
 - LS with infeasible moves
 
@@ -446,8 +446,8 @@ References
 
 #### OptalCP (2021 - present)
 
-**OptalCP** was architected by Petr Vilim, Nicolas Bonifas and Diego Olivier Fernandez Pons (initially with input from Philippe Laborie). Compared to CPO, the parallelism is done with one strategy per core instead of interleaving. The strategies used are:
-- **Large Neighbourhood Search** (LNS): tree-search based local search
+**OptalCP** was designed by Petr Vilim, Nicolas Bonifas and Diego Olivier Fernandez Pons (initially with input from Philippe Laborie). Compared to CPO, the parallelism is done with one strategy per core instead of interleaving. The strategies used are:
+- **Large Neighbourhood Search** (LNS): tree-search-based local search
 - **Failure Directed Search** (FDS): generalizes first-fail principle
 - **FDSDual**: generalizes destructive lower bounds
 
@@ -474,7 +474,7 @@ While the effort of van Hoorn is commendable, having accurate best-known solutio
 
 By giving too much importance to best-known solutions we miss what really matters:
 - An approach that finds a best known solution for a single problem but is unable to provide good results for other problems is totally unusable in practice (e.g. a random solution)
-- An approach that systematically gets close to the best known solutions in a short time may not improve any best known bound but be of significant practical interest
+- An approach that systematically gets close to the best-known solutions in a short time may not improve any best known bound but be of significant practical interest
 
 
 We therefore adopt the following metrics instead
@@ -531,7 +531,7 @@ The types are defined as follows
 
 <br/>
 
-Averages are made on instances solved. Outlier solutions returned by the engine (e.g. a schedule of makespan equal to the sum of processing times - all tasks scheduled one at a time) have been manually removed as they distort the arithmetic average, instead the engine is considered as having not solved. We may formalize this in the future (e.g. only solutions better than a left-to-right greedy are accepted).
+Averages are made on instances solved. Outlier solutions returned by the engine (e.g. a schedule of makespan equal to the sum of processing times - all tasks scheduled one at a time) have been manually removed as they distort the arithmetic average. In such cases, the engine is considered as having not solved. We may formalize this in the future (e.g. only solutions better than a left-to-right greedy are accepted).
 
 <table>
 <tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb</th><th>ub</th><th>gap</th></tr>
@@ -945,14 +945,14 @@ The background is colored in green when the lower bound reaches the best known u
 
 <br/>
 
-## Best known solutions
+## Best-known solutions
 
-In this section are collected the best known solutions (upper and lower bounds) for each problem in the benchmark. 
+In this section are collected the best-known solutions (upper and lower bounds) for each problem in the benchmark. 
 
 The solutions may come from 
 - Published papers (eg. NS2002), the section [publications](#publications-best-known-solutions) provides references
-- An engine run by someone else (eg. CPO2015) which results have been published
-- An engine run by us (CPO, OptalCP, CP-SAT) with approximate resolution time
+- An engine run by someone else (eg. CPO2015) whose results have been published
+- An engine run by us (CPO, OptalCP, CP-SAT) with approximate running time
 
 The type of hardware and time required to find the best known solution are difficult to track and compare, in particular for bounds coming from published papers. Which is why
 - When a reference engine reproduces a published bound, the table credits the engine because of the reproducibility advantage
@@ -960,13 +960,13 @@ The type of hardware and time required to find the best known solution are diffi
 
 <br/>
 
-> We ***do not*** systematically run the instances for very long times on large machines. Most of the instances that appear as having been solved after a large computation time (eg. 40h) had peculiarities (e.g. `best lb + 1 == best ub`) that justified exploring how long it would take to solve them to optimality. We also devote more effort to solve instances which best known solutions are given by papers that are old, difficult to find and difficult to reproduce. This allows verifying the paper claims and having a more accessible way of generating the result.
+> We ***do not*** systematically run the instances for very long times on large machines. Most of the instances that appear as having been solved after a large computation time (eg. 40h) had peculiarities (e.g. `best lb + 1 == best ub`) that justified exploring how long it would take to solve them to optimality. We also devote more effort to solve instances which best-known solutions are given by papers that are old, difficult to find and difficult to reproduce. This allows verifying the paper claims and having a more accessible way of generating the result.
 
 <br/>
 
-### Best known solutions json format
+### Best-known solutions json format
 
-The best known solutions are now collected in a [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) file with the following syntax
+The best-known solutions are now collected in a [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) file with the following syntax
 
 ```json
 {
@@ -1015,13 +1015,13 @@ The best known solutions are now collected in a [json](https://github.com/Schedu
 }
 ```
 
-For most of the best known solutions, the date, hardware, running time and certificate (valid primal or valid dual solution) are not known. Even when some information is known things are usually "complicated". For instance the `dmu80` solution reported by DOFP2026 is the solution of QXL2026 used as a starting point in OptalCP running for 10 minutes. What time to attribute to that solution? And what solver?
+For most of the best-known solutions, the date, hardware, running time and certificate (valid primal or valid dual solution) are not known. Even when some information is known things are usually "complicated". For instance the `dmu80` solution reported by DOFP2026 is the solution of QXL2026 used as a starting point in OptalCP running for 10 minutes. What time to attribute to that solution? And what solver?
 
 The data will be progressively updated to the best of our knowledge.
 
 <br/>
 
-### Best known solutions per instance family
+### Best-known solutions per instance family
 
 #### Fisher and Thompson 1963
 
