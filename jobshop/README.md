@@ -71,7 +71,7 @@ Both random and industrial instances are synthetic, but industrial instances wer
 
 #### FT versus MT
 
-The FT instances are also known as MT instances because the 1963 paper by Fisher and Thompson was published in the book *Industrial Scheduling*, edited by Muth and Thompson. In particular, the problem `mt10` (today named `ft10`) is famous for having remained open for more than 20 years. It was eventually solved using Carlier-Pinson in 1989 combination of Jackson's preemptive schedule and branch-and-bound, an approach that can be seen as a predecessor of modern constraint-programming engines.
+The FT instances are also known as MT instances because the 1963 paper by Fisher and Thompson was published in the book *Industrial Scheduling*, edited by Muth and Thompson. In particular, the problem `mt10` (today named `ft10`) is famous for having remained open for more than 20 years. It was eventually solved by Carlier-Pinson in 1989 using a combination of Jackson's preemptive schedule and branch-and-bound, an approach that can be seen as a predecessor of modern constraint-programming engines.
 
 The current convention is to use, whenever possible, the names of the authors who introduced the instances. This is why the `ft` designation has been largely adopted, although older publications still use `mt`. Some problems derived from `ft` instances (for instance in flexible jobshop) still contain `mt` in their names.
 
@@ -84,8 +84,8 @@ All these instances were added to jsplib around 2024
 - `tai` instances because they stressed the CP engines in different ways
 
 In particular
-- `tai_100_100` exhibit **slow convergence**: improving solutions can be found quickly and regularly, but the optimality gap is so large relative to the typical improvement that convergence to the optimum is extremely slow
-- `tai_1000_1000` exposes scalability limitations in different parts of optimization engines. CP-SAT can spend its entire run in preprocessing without entering branch-and-bound, while CP Optimizer and OptalCP required approximately one hour to complete their first dive and find an initial solution. By comparison, a hand-written greedy algorithm produced an initial solution in approximately one minute.
+- `tai_100_100` instances exhibit **slow convergence**: improving solutions can be found quickly and regularly, but the optimality gap is so large relative to the typical improvement that convergence to the optimum is extremely slow
+- `tai_1000_1000` instances expose scalability limitations in different parts of optimization engines. CP-SAT can spend its entire run in preprocessing without entering branch-and-bound, while CP Optimizer and OptalCP required approximately one hour to complete their first dive and find an initial solution. By comparison, a hand-written greedy algorithm produced an initial solution in approximately one minute.
 
 While both sets of instances reveal limitations in CP engines, we have classified the `tai_1000_1000` as instances that primarily stress the engine implementation (data structures, etc) but `tai_100_100` as instances that stress the optimization capabilities of the engine.
 
