@@ -1508,7 +1508,7 @@ The upper and lower bounds come from:
 
 - DOFP2026 (9 bounds in dmu): **Diego Olivier Fernandez Pons** (2026) [Personal communication]: upper-bounds provided by optimizizer were given as a starting solution to OptalCP, and ran for 10 minutes
 
-- Diaz2026 (2 bounds in dmu) : a memetic algorithm with path-relinking crossover between elite schedules, tabu search on the N7 neighbourhood (Zhang et al. tenure) with GTA-style guided tenure, and restarts; The initial population holds good solutions already.
+- Diaz2026 (2 bounds in dmu) : **Hernan Diaz Rodriguez** (2026) [Personal communication]: a memetic algorithm with path-relinking crossover between elite schedules, tabu search on the N7 neighbourhood (Zhang et al. tenure) with GTA-style guided tenure, and restarts; The initial population holds good solutions already.
 
 All other bounds were found by OptalCP except 4 bounds by CP-SAT (equal but faster) and 1 bounds by Hexaly (strictly better than all other solvers). The cited papers also may use an engine directly like [CPO2015] or as part of an algorithm like [CdGKGC2025] which uses CP-SAT. [DOFP2026] uses OptalCP.
 
