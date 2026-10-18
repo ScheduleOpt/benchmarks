@@ -2202,7 +2202,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 10,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 656,
@@ -2218,7 +2218,7 @@
                "solver": "Martin1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -2258,7 +2258,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 600,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 667,
@@ -2266,7 +2266,7 @@
                "solver": "SS2018",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -2314,7 +2314,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 678,
@@ -2322,7 +2322,7 @@
                "solver": "ZLRG2008",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -2842,7 +2842,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1407,
@@ -2850,7 +2850,7 @@
                "solver": "Martin1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -2890,7 +2890,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1475,
@@ -2898,7 +2898,7 @@
                "solver": "Martin1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -2946,7 +2946,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 10,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1398,
@@ -2954,7 +2954,7 @@
                "solver": "Vaessens1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -2994,7 +2994,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1464,
@@ -3050,7 +3050,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 10,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1424,
@@ -3066,7 +3066,7 @@
                "solver": "Martin1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -3114,7 +3114,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 2400,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1667,
@@ -3234,7 +3234,7 @@
                "solver": "Murovec2015",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1752,
@@ -3282,7 +3282,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 900,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1655,
@@ -3290,7 +3290,7 @@
                "solver": "NT2009",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -3338,7 +3338,7 @@
                "solver": "SS2018",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1743,
@@ -3346,7 +3346,7 @@
                "solver": "GR2014",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -3386,7 +3386,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2983,
@@ -3394,7 +3394,7 @@
                "solver": "NS2005",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -3434,7 +3434,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2972,
@@ -3490,7 +3490,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3104,
@@ -3498,7 +3498,7 @@
                "solver": "Thomsen1997",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -3538,7 +3538,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2968,
@@ -3546,7 +3546,7 @@
                "solver": "BV1994",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -3586,7 +3586,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 540,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2885,
@@ -3594,7 +3594,7 @@
                "solver": "PLC2015",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -3874,7 +3874,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 360,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 884,
@@ -3882,7 +3882,7 @@
                "solver": "ZLRG2008",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -3922,7 +3922,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 2400,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 904,
@@ -3930,7 +3930,7 @@
                "solver": "GR2014",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -3970,7 +3970,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 2400,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 892,
@@ -3978,7 +3978,7 @@
                "solver": "NS2005",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4034,7 +4034,7 @@
                "solver": "Thomsen1997",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4074,7 +4074,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1231,
@@ -4082,7 +4082,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4122,7 +4122,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1244,
@@ -4130,7 +4130,7 @@
                "solver": "NS1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4170,7 +4170,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1218,
@@ -4178,7 +4178,7 @@
                "solver": "BV1994",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4218,7 +4218,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1175,
@@ -4226,7 +4226,7 @@
                "solver": "Wennink1995",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4266,7 +4266,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1224,
@@ -4274,7 +4274,7 @@
                "solver": "BB2001",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4314,7 +4314,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 10,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1238,
@@ -4322,7 +4322,7 @@
                "solver": "BB2001",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4362,7 +4362,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1227,
@@ -4370,7 +4370,7 @@
                "solver": "BB2001",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4410,7 +4410,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1217,
@@ -4418,7 +4418,7 @@
                "solver": "BV1994",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4458,7 +4458,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1274,
@@ -4466,7 +4466,7 @@
                "solver": "BV1994",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4506,7 +4506,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1241,
@@ -4514,7 +4514,7 @@
                "solver": "BV1994",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4554,7 +4554,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1357,
@@ -4562,7 +4562,7 @@
                "solver": "PS2006",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4602,7 +4602,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 10,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1367,
@@ -4610,7 +4610,7 @@
                "solver": "BV1994",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4650,7 +4650,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1342,
@@ -4658,7 +4658,7 @@
                "solver": "Henning2002",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4698,7 +4698,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1345,
@@ -4706,7 +4706,7 @@
                "solver": "NS1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4746,7 +4746,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1339,
@@ -4754,7 +4754,7 @@
                "solver": "PS2006",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4794,7 +4794,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1360,
@@ -4802,7 +4802,7 @@
                "solver": "Henning2002",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4842,7 +4842,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1462,
@@ -4850,7 +4850,7 @@
                "solver": "NS2005",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4890,7 +4890,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1396,
@@ -4898,7 +4898,7 @@
                "solver": "BV1994",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4938,7 +4938,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1332,
@@ -4946,7 +4946,7 @@
                "solver": "PS2006",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -4986,7 +4986,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1348,
@@ -4994,7 +4994,7 @@
                "solver": "PS2006",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5034,7 +5034,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1642,
@@ -5042,7 +5042,7 @@
                "solver": "BFW2011",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5082,7 +5082,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 120,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1600,
@@ -5090,7 +5090,7 @@
                "solver": "NS2005",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5130,7 +5130,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 120,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1557,
@@ -5138,7 +5138,7 @@
                "solver": "NS2005",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5178,7 +5178,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 10,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1644,
@@ -5186,7 +5186,7 @@
                "solver": "BFW2011",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5226,7 +5226,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1595,
@@ -5234,7 +5234,7 @@
                "solver": "NS2005",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5274,7 +5274,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 420,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1643,
@@ -5282,7 +5282,7 @@
                "solver": "BFW2011",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5322,7 +5322,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1680,
@@ -5330,7 +5330,7 @@
                "solver": "NS2005",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5370,7 +5370,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 10,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1603,
@@ -5378,7 +5378,7 @@
                "solver": "ZLRG2008",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5418,7 +5418,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 120,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1625,
@@ -5426,7 +5426,7 @@
                "solver": "Aarts1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5466,7 +5466,7 @@
                "solver": "NS2005",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1584,
@@ -5474,7 +5474,7 @@
                "solver": "NS2002",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5514,7 +5514,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 10,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1764,
@@ -5522,7 +5522,7 @@
                "solver": "Aarts1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5538,6 +5538,14 @@
       "upper_bound": 1783,
       "history": {
          "lb": [
+            {
+               "value": 1774,
+               "date": "2015-01-01",
+               "solver": "CPO2015",
+               "hardware": null,
+               "time": null,
+               "certificate": "machine load"
+            },
             {
                "value": 1774,
                "date": "1993-01-01",
@@ -5610,7 +5618,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 600,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1791,
@@ -5618,7 +5626,7 @@
                "solver": "PSV2010",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5658,7 +5666,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1828,
@@ -5714,7 +5722,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2007,
@@ -5722,7 +5730,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5762,7 +5770,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1819,
@@ -5770,7 +5778,7 @@
                "solver": "Aarts1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5810,7 +5818,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 120,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1771,
@@ -5818,7 +5826,7 @@
                "solver": "PLC2015",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5858,7 +5866,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 420,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1673,
@@ -5866,7 +5874,7 @@
                "solver": "Henning2000",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5906,7 +5914,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1795,
@@ -5914,7 +5922,7 @@
                "solver": "Aarts1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -5956,14 +5964,6 @@
             }
          ],
          "ub": [
-            {
-               "value": 1670,
-               "date": "2019-01-01",
-               "solver": "CS2022",
-               "hardware": null,
-               "time": null,
-               "certificate": "yes"
-            },
             {
                "value": 1669,
                "date": "2014-01-01",
@@ -6014,6 +6014,14 @@
          "ub": [
             {
                "value": 2005,
+               "date": "2015-01-01",
+               "solver": "CPO2015",
+               "hardware": null,
+               "time": null,
+               "certificate": "no"
+            },
+            {
+               "value": 2005,
                "date": "2013-01-01",
                "solver": "NO2013",
                "hardware": null,
@@ -6061,14 +6069,6 @@
          ],
          "ub": [
             {
-               "value": 1939,
-               "date": "2019-01-01",
-               "solver": "CS2022",
-               "hardware": null,
-               "time": null,
-               "certificate": "yes"
-            },
-            {
                "value": 1937,
                "date": "2014-01-01",
                "solver": "GR2014",
@@ -6092,6 +6092,14 @@
          "lb": [
             {
                "value": 1809,
+               "date": "2015-01-01",
+               "solver": "CPO2015",
+               "hardware": null,
+               "time": null,
+               "certificate": "carlier"
+            },
+            {
+               "value": 1809,
                "date": "1995-01-01",
                "solver": "Vaessens1995",
                "hardware": null,
@@ -6106,7 +6114,7 @@
                "solver": "PLC2015",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -6218,7 +6226,7 @@
                "solver": "CP-SAT",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 10,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1997,
@@ -6226,7 +6234,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2000,
@@ -6338,7 +6346,7 @@
                "solver": "PLC2015",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -6386,7 +6394,7 @@
                "solver": "SS2018",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1941,
@@ -6498,7 +6506,7 @@
                "solver": "PLC2015",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 1923,
@@ -6506,7 +6514,7 @@
                "solver": "Shylo2013",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -6546,7 +6554,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2760,
@@ -6554,7 +6562,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -6594,7 +6602,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2756,
@@ -6602,7 +6610,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -6642,7 +6650,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2717,
@@ -6650,7 +6658,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -6690,7 +6698,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2839,
@@ -6698,7 +6706,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -6738,7 +6746,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2679,
@@ -6746,7 +6754,7 @@
                "solver": "NS1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -6786,7 +6794,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2781,
@@ -6794,7 +6802,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -6834,7 +6842,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2943,
@@ -6842,7 +6850,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -6882,7 +6890,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2885,
@@ -6890,7 +6898,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -6930,7 +6938,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2655,
@@ -6938,7 +6946,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -6978,7 +6986,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2723,
@@ -6986,7 +6994,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7026,7 +7034,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2868,
@@ -7034,7 +7042,7 @@
                "solver": "NS1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7122,7 +7130,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2755,
@@ -7130,7 +7138,7 @@
                "solver": "NS1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7170,7 +7178,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2702,
@@ -7178,7 +7186,7 @@
                "solver": "NS1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7218,7 +7226,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2725,
@@ -7226,7 +7234,7 @@
                "solver": "NS1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7266,7 +7274,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2845,
@@ -7274,7 +7282,7 @@
                "solver": "NS1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7314,7 +7322,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 240,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2825,
@@ -7322,7 +7330,7 @@
                "solver": "JM1998",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7362,7 +7370,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2784,
@@ -7370,7 +7378,7 @@
                "solver": "NS1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7410,7 +7418,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3071,
@@ -7418,7 +7426,7 @@
                "solver": "NS1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7458,7 +7466,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2995,
@@ -7466,7 +7474,7 @@
                "solver": "NS1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7506,7 +7514,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5464,
@@ -7514,7 +7522,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7554,7 +7562,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5181,
@@ -7562,7 +7570,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7602,7 +7610,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5568,
@@ -7610,7 +7618,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7650,7 +7658,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5339,
@@ -7658,7 +7666,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7698,7 +7706,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5392,
@@ -7706,7 +7714,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7746,7 +7754,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5342,
@@ -7754,7 +7762,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7794,7 +7802,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5436,
@@ -7802,7 +7810,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7842,7 +7850,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5394,
@@ -7850,7 +7858,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7890,7 +7898,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5358,
@@ -7898,7 +7906,7 @@
                "solver": "Taillard1993",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7938,7 +7946,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5183,
@@ -7946,7 +7954,7 @@
                "solver": "NS1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -7955,7 +7963,7 @@
       "instance": "dmu01",
       "size": "20 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 2563,
@@ -7986,7 +7994,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2563,
@@ -7994,7 +8002,7 @@
                "solver": "Henning2002",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -8003,7 +8011,7 @@
       "instance": "dmu02",
       "size": "20 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 2706,
@@ -8013,17 +8021,17 @@
             {
                "value": 2706,
                "date": "2024-01-01",
-               "solver": "HHV2024",
-               "hardware": null,
-               "time": null,
+               "solver": "OptalCP",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": 10,
                "certificate": "no"
             },
             {
                "value": 2706,
-               "date": "2023-08-25",
-               "solver": "OptalCP",
-               "hardware": "Intel 11th Gen Core i7-1185G7",
-               "time": 10,
+               "date": "2024-01-01",
+               "solver": "HHV2024",
+               "hardware": null,
+               "time": null,
                "certificate": "no"
             },
             {
@@ -8038,11 +8046,11 @@
          "ub": [
             {
                "value": 2706,
-               "date": "2023-08-25",
+               "date": "2024-01-01",
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 10,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2706,
@@ -8050,7 +8058,7 @@
                "solver": "Henning2002",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -8059,7 +8067,7 @@
       "instance": "dmu03",
       "size": "20 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 2731,
@@ -8090,7 +8098,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 10,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2731,
@@ -8098,7 +8106,7 @@
                "solver": "BB2001",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -8107,7 +8115,7 @@
       "instance": "dmu04",
       "size": "20 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 2669,
@@ -8138,7 +8146,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2669,
@@ -8146,7 +8154,7 @@
                "solver": "BB2001",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -8155,7 +8163,7 @@
       "instance": "dmu05",
       "size": "20 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 2749,
@@ -8186,7 +8194,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2749,
@@ -8194,7 +8202,7 @@
                "solver": "BB2001",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -8203,7 +8211,7 @@
       "instance": "dmu06",
       "size": "20 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 3244,
@@ -8242,7 +8250,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 120,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3244,
@@ -8250,7 +8258,7 @@
                "solver": "PSV2010",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -8259,7 +8267,7 @@
       "instance": "dmu07",
       "size": "20 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 3046,
@@ -8298,7 +8306,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 180,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3046,
@@ -8306,7 +8314,7 @@
                "solver": "PSV2010",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -8315,7 +8323,7 @@
       "instance": "dmu08",
       "size": "20 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 3188,
@@ -8325,17 +8333,17 @@
             {
                "value": 3188,
                "date": "2024-01-01",
-               "solver": "HHV2024",
-               "hardware": null,
-               "time": null,
+               "solver": "OptalCP",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": 10,
                "certificate": "no"
             },
             {
                "value": 3188,
-               "date": "2023-08-25",
-               "solver": "OptalCP",
-               "hardware": "Intel 11th Gen Core i7-1185G7",
-               "time": 10,
+               "date": "2024-01-01",
+               "solver": "HHV2024",
+               "hardware": null,
+               "time": null,
                "certificate": "no"
             },
             {
@@ -8350,11 +8358,11 @@
          "ub": [
             {
                "value": 3188,
-               "date": "2023-08-25",
+               "date": "2024-01-01",
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 10,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3188,
@@ -8362,7 +8370,7 @@
                "solver": "PSV2010",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -8371,7 +8379,7 @@
       "instance": "dmu09",
       "size": "20 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 3092,
@@ -8381,17 +8389,17 @@
             {
                "value": 3092,
                "date": "2024-01-01",
-               "solver": "HHV2024",
-               "hardware": null,
-               "time": null,
+               "solver": "OptalCP",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": 10,
                "certificate": "no"
             },
             {
                "value": 3092,
-               "date": "2023-08-25",
-               "solver": "OptalCP",
-               "hardware": "Intel 11th Gen Core i7-1185G7",
-               "time": 10,
+               "date": "2024-01-01",
+               "solver": "HHV2024",
+               "hardware": null,
+               "time": null,
                "certificate": "no"
             },
             {
@@ -8406,11 +8414,11 @@
          "ub": [
             {
                "value": 3092,
-               "date": "2023-08-25",
+               "date": "2024-01-01",
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 10,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3092,
@@ -8418,7 +8426,7 @@
                "solver": "Henning2002",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -8427,7 +8435,7 @@
       "instance": "dmu10",
       "size": "20 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 2984,
@@ -8437,17 +8445,17 @@
             {
                "value": 2984,
                "date": "2024-01-01",
-               "solver": "HHV2024",
-               "hardware": null,
-               "time": null,
+               "solver": "OptalCP",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": 60,
                "certificate": "no"
             },
             {
                "value": 2984,
-               "date": "2023-08-25",
-               "solver": "OptalCP",
-               "hardware": "Intel 11th Gen Core i7-1185G7",
-               "time": 60,
+               "date": "2024-01-01",
+               "solver": "HHV2024",
+               "hardware": null,
+               "time": null,
                "certificate": "no"
             },
             {
@@ -8462,11 +8470,11 @@
          "ub": [
             {
                "value": 2984,
-               "date": "2023-08-25",
+               "date": "2024-01-01",
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 2984,
@@ -8474,7 +8482,7 @@
                "solver": "PS2006",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -8483,7 +8491,7 @@
       "instance": "dmu11",
       "size": "30 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 3402,
@@ -8522,7 +8530,7 @@
                "solver": "PLC2015",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -8531,7 +8539,7 @@
       "instance": "dmu12",
       "size": "30 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 3481,
@@ -8562,7 +8570,7 @@
                "solver": "SS2018",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3495,
@@ -8579,7 +8587,7 @@
       "instance": "dmu13",
       "size": "30 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 3681,
@@ -8610,7 +8618,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 180,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3681,
@@ -8618,7 +8626,7 @@
                "solver": "ZLRG2007",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -8627,7 +8635,7 @@
       "instance": "dmu14",
       "size": "30 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 3394,
@@ -8666,7 +8674,7 @@
                "solver": "CP-SAT",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3394,
@@ -8674,7 +8682,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3394,
@@ -8682,7 +8690,7 @@
                "solver": "NS2005",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -8691,7 +8699,7 @@
       "instance": "dmu15",
       "size": "30 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 3343,
@@ -8722,7 +8730,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 10,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3343,
@@ -8730,7 +8738,7 @@
                "solver": "JM1998",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -8739,23 +8747,39 @@
       "instance": "dmu16",
       "size": "30 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 3734,
-      "upper_bound": 3750,
+      "upper_bound": 3744,
       "history": {
          "lb": [
             {
                "value": 3734,
-               "date": "1996-01-01",
-               "solver": "DMU1996",
+               "date": "2015-01-01",
+               "solver": "CPO2015",
+               "hardware": null,
+               "time": null,
+               "certificate": "no"
+            },
+            {
+               "value": 3734,
+               "date": "2011-01-01",
+               "solver": "GL2011",
                "hardware": null,
                "time": null,
                "certificate": "no"
             }
          ],
          "ub": [
+            {
+               "value": 3744,
+               "date": "2026-10-12",
+               "solver": "Diaz2026",
+               "hardware": "Intel Xeon E5-2680 v4 (1 core)",
+               "time": 10,
+               "certificate": "yes"
+            },
             {
                "value": 3750,
                "date": "2024-01-01",
@@ -8779,7 +8803,7 @@
       "instance": "dmu17",
       "size": "30 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 3733,
@@ -8814,7 +8838,7 @@
          "ub": [
             {
                "value": 3811,
-               "date": "2026-01-01",
+               "date": "2026-06-28",
                "solver": "DOFP2026",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
@@ -8843,7 +8867,7 @@
       "instance": "dmu18",
       "size": "30 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 3844,
@@ -8874,7 +8898,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 600,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3844,
@@ -8882,7 +8906,7 @@
                "solver": "GR2014",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -8891,7 +8915,7 @@
       "instance": "dmu19",
       "size": "30 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 3707,
@@ -8947,7 +8971,7 @@
       "instance": "dmu20",
       "size": "30 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 3632,
@@ -9003,7 +9027,7 @@
       "instance": "dmu21",
       "size": "40 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 4380,
@@ -9034,7 +9058,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 4380,
@@ -9042,7 +9066,7 @@
                "solver": "JM1998",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9051,7 +9075,7 @@
       "instance": "dmu22",
       "size": "40 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 4725,
@@ -9082,7 +9106,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 4725,
@@ -9090,7 +9114,7 @@
                "solver": "JM1998",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9099,7 +9123,7 @@
       "instance": "dmu23",
       "size": "40 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 4668,
@@ -9130,7 +9154,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 4668,
@@ -9138,7 +9162,7 @@
                "solver": "JM1998",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9147,7 +9171,7 @@
       "instance": "dmu24",
       "size": "40 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 4648,
@@ -9178,7 +9202,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 4648,
@@ -9186,7 +9210,7 @@
                "solver": "JM1998",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9195,7 +9219,7 @@
       "instance": "dmu25",
       "size": "40 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 4164,
@@ -9226,7 +9250,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 4164,
@@ -9234,7 +9258,7 @@
                "solver": "JM1998",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9243,7 +9267,7 @@
       "instance": "dmu26",
       "size": "40 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 4647,
@@ -9274,7 +9298,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 4647,
@@ -9282,7 +9306,7 @@
                "solver": "ZLRG2007",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9291,7 +9315,7 @@
       "instance": "dmu27",
       "size": "40 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 4848,
@@ -9322,7 +9346,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 4848,
@@ -9330,7 +9354,7 @@
                "solver": "NS2005",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9339,7 +9363,7 @@
       "instance": "dmu28",
       "size": "40 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 4692,
@@ -9370,7 +9394,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 4692,
@@ -9378,7 +9402,7 @@
                "solver": "JM1998",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9387,7 +9411,7 @@
       "instance": "dmu29",
       "size": "40 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 4691,
@@ -9418,7 +9442,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 4691,
@@ -9426,7 +9450,7 @@
                "solver": "NS2005",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9435,7 +9459,7 @@
       "instance": "dmu30",
       "size": "40 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 4732,
@@ -9466,7 +9490,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 60,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 4732,
@@ -9474,7 +9498,7 @@
                "solver": "NS2005",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9483,7 +9507,7 @@
       "instance": "dmu31",
       "size": "50 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 5640,
@@ -9514,7 +9538,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5640,
@@ -9522,7 +9546,7 @@
                "solver": "JM1998",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9531,7 +9555,7 @@
       "instance": "dmu32",
       "size": "50 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 5927,
@@ -9562,7 +9586,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5927,
@@ -9570,7 +9594,7 @@
                "solver": "DMU1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9579,7 +9603,7 @@
       "instance": "dmu33",
       "size": "50 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 5728,
@@ -9610,7 +9634,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5728,
@@ -9618,7 +9642,7 @@
                "solver": "DMU1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9627,7 +9651,7 @@
       "instance": "dmu34",
       "size": "50 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 5385,
@@ -9658,7 +9682,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5385,
@@ -9666,7 +9690,7 @@
                "solver": "DMU1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9675,7 +9699,7 @@
       "instance": "dmu35",
       "size": "50 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 5635,
@@ -9706,7 +9730,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5635,
@@ -9714,7 +9738,7 @@
                "solver": "DMU1996",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9723,7 +9747,7 @@
       "instance": "dmu36",
       "size": "50 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 5621,
@@ -9754,7 +9778,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5621,
@@ -9762,7 +9786,7 @@
                "solver": "JM1998",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9771,7 +9795,7 @@
       "instance": "dmu37",
       "size": "50 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 5851,
@@ -9802,7 +9826,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5851,
@@ -9810,7 +9834,7 @@
                "solver": "NS2005",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9819,7 +9843,7 @@
       "instance": "dmu38",
       "size": "50 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 5713,
@@ -9850,7 +9874,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5713,
@@ -9858,7 +9882,7 @@
                "solver": "JM1998",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9867,7 +9891,7 @@
       "instance": "dmu39",
       "size": "50 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 5747,
@@ -9898,7 +9922,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5747,
@@ -9906,7 +9930,7 @@
                "solver": "JM1998",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9915,7 +9939,7 @@
       "instance": "dmu40",
       "size": "50 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 5577,
@@ -9946,7 +9970,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 1,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 5577,
@@ -9954,7 +9978,7 @@
                "solver": "JM1998",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -9963,7 +9987,7 @@
       "instance": "dmu41",
       "size": "20 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 3176,
@@ -10002,7 +10026,7 @@
                "solver": "PLC2015",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -10011,7 +10035,7 @@
       "instance": "dmu42",
       "size": "20 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 3339,
@@ -10050,7 +10074,7 @@
                "solver": "SS2018",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3390,
@@ -10058,7 +10082,7 @@
                "solver": "PLC2015",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -10067,7 +10091,7 @@
       "instance": "dmu43",
       "size": "20 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "closed",
       "lower_bound": 3441,
@@ -10098,7 +10122,7 @@
                "solver": "OptalCP",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": 420,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3441,
@@ -10106,7 +10130,7 @@
                "solver": "Shylo2013",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -10115,7 +10139,7 @@
       "instance": "dmu44",
       "size": "20 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 3414,
@@ -10154,7 +10178,7 @@
                "solver": "SS2018",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3488,
@@ -10171,7 +10195,7 @@
       "instance": "dmu45",
       "size": "20 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 3217,
@@ -10227,7 +10251,7 @@
       "instance": "dmu46",
       "size": "20 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 3780,
@@ -10266,7 +10290,7 @@
                "solver": "GR2014",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 4035,
@@ -10274,7 +10298,7 @@
                "solver": "Shylo2013",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -10283,7 +10307,7 @@
       "instance": "dmu47",
       "size": "20 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 3714,
@@ -10318,19 +10342,11 @@
          "ub": [
             {
                "value": 3939,
-               "date": "2024-01-01",
-               "solver": "LHW2024",
-               "hardware": null,
-               "time": null,
-               "certificate": "yes"
-            },
-            {
-               "value": 3939,
                "date": "2014-01-01",
                "solver": "GR2014",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -10339,7 +10355,7 @@
       "instance": "dmu48",
       "size": "20 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 3628,
@@ -10378,7 +10394,7 @@
                "solver": "SS2018",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             },
             {
                "value": 3763,
@@ -10386,7 +10402,7 @@
                "solver": "Shylo2013",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -10395,7 +10411,7 @@
       "instance": "dmu49",
       "size": "20 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 3543,
@@ -10451,7 +10467,7 @@
       "instance": "dmu50",
       "size": "20 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 3618,
@@ -10490,7 +10506,7 @@
                "solver": "PLC2015",
                "hardware": null,
                "time": null,
-               "certificate": "no"
+               "certificate": "yes"
             }
          ]
       }
@@ -10499,7 +10515,7 @@
       "instance": "dmu51",
       "size": "30 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 4070,
@@ -10563,7 +10579,7 @@
       "instance": "dmu52",
       "size": "30 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 4203,
@@ -10619,7 +10635,7 @@
       "instance": "dmu53",
       "size": "30 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 4248,
@@ -10675,7 +10691,7 @@
       "instance": "dmu54",
       "size": "30 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 4277,
@@ -10739,7 +10755,7 @@
       "instance": "dmu55",
       "size": "30 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 4191,
@@ -10795,7 +10811,7 @@
       "instance": "dmu56",
       "size": "30 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 4755,
@@ -10859,7 +10875,7 @@
       "instance": "dmu57",
       "size": "30 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 4462,
@@ -10923,7 +10939,7 @@
       "instance": "dmu58",
       "size": "30 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 4484,
@@ -10979,7 +10995,7 @@
       "instance": "dmu59",
       "size": "30 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 4366,
@@ -11035,7 +11051,7 @@
       "instance": "dmu60",
       "size": "30 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 4468,
@@ -11091,7 +11107,7 @@
       "instance": "dmu61",
       "size": "40 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 5038,
@@ -11125,18 +11141,26 @@
          ],
          "ub": [
             {
-               "value": 5167,
-               "date": "2026-06-22",
-               "solver": "LLG2026",
-               "hardware": null,
-               "time": null,
+               "value": 5159,
+               "date": "2026-10-18",
+               "solver": "Diaz2026",
+               "hardware": "Intel Xeon E5-2680 v4 (1 core)",
+               "time": 10,
                "certificate": "yes"
             },
             {
                "value": 5166,
-               "date": "2026-01-01",
+               "date": "2026-06-28",
                "solver": "DOFP2026",
                "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": null,
+               "certificate": "yes"
+            },
+            {
+               "value": 5167,
+               "date": "2026-06-22",
+               "solver": "LLG2026",
+               "hardware": null,
                "time": null,
                "certificate": "yes"
             },
@@ -11163,7 +11187,7 @@
       "instance": "dmu62",
       "size": "40 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 5176,
@@ -11227,7 +11251,7 @@
       "instance": "dmu63",
       "size": "40 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 5245,
@@ -11291,7 +11315,7 @@
       "instance": "dmu64",
       "size": "40 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 5155,
@@ -11355,7 +11379,7 @@
       "instance": "dmu65",
       "size": "40 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 5122,
@@ -11389,18 +11413,18 @@
          ],
          "ub": [
             {
-               "value": 5168,
-               "date": "2026-06-22",
-               "solver": "LLG2026",
-               "hardware": null,
+               "value": 5158,
+               "date": "2026-06-28",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
                "certificate": "yes"
             },
             {
-               "value": 5158,
-               "date": "2026-01-01",
-               "solver": "DOFP2026",
-               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "value": 5168,
+               "date": "2026-06-22",
+               "solver": "LLG2026",
+               "hardware": null,
                "time": null,
                "certificate": "yes"
             },
@@ -11427,7 +11451,7 @@
       "instance": "dmu66",
       "size": "40 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 5526,
@@ -11461,18 +11485,18 @@
          ],
          "ub": [
             {
-               "value": 5700,
-               "date": "2026-06-22",
-               "solver": "LLG2026",
-               "hardware": null,
+               "value": 5692,
+               "date": "2026-06-28",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
                "certificate": "yes"
             },
             {
-               "value": 5692,
-               "date": "2026-01-01",
-               "solver": "DOFP2026",
-               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "value": 5700,
+               "date": "2026-06-22",
+               "solver": "LLG2026",
+               "hardware": null,
                "time": null,
                "certificate": "yes"
             },
@@ -11499,7 +11523,7 @@
       "instance": "dmu67",
       "size": "40 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 5661,
@@ -11563,7 +11587,7 @@
       "instance": "dmu68",
       "size": "40 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 5513,
@@ -11597,18 +11621,18 @@
          ],
          "ub": [
             {
-               "value": 5758,
-               "date": "2026-06-22",
-               "solver": "LLG2026",
-               "hardware": null,
+               "value": 5749,
+               "date": "2026-06-28",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
                "certificate": "yes"
             },
             {
-               "value": 5749,
-               "date": "2026-01-01",
-               "solver": "DOFP2026",
-               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "value": 5758,
+               "date": "2026-06-22",
+               "solver": "LLG2026",
+               "hardware": null,
                "time": null,
                "certificate": "yes"
             },
@@ -11635,7 +11659,7 @@
       "instance": "dmu69",
       "size": "40 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 5511,
@@ -11669,18 +11693,18 @@
          ],
          "ub": [
             {
-               "value": 5687,
-               "date": "2026-06-22",
-               "solver": "LLG2026",
-               "hardware": null,
+               "value": 5682,
+               "date": "2026-06-28",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
                "certificate": "yes"
             },
             {
-               "value": 5682,
-               "date": "2026-01-01",
-               "solver": "DOFP2026",
-               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "value": 5687,
+               "date": "2026-06-22",
+               "solver": "LLG2026",
+               "hardware": null,
                "time": null,
                "certificate": "yes"
             },
@@ -11707,7 +11731,7 @@
       "instance": "dmu70",
       "size": "40 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 5633,
@@ -11763,7 +11787,7 @@
       "instance": "dmu71",
       "size": "50 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 6129,
@@ -11827,7 +11851,7 @@
       "instance": "dmu72",
       "size": "50 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 6434,
@@ -11891,7 +11915,7 @@
       "instance": "dmu73",
       "size": "50 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 6107,
@@ -11955,7 +11979,7 @@
       "instance": "dmu74",
       "size": "50 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 6168,
@@ -12011,7 +12035,7 @@
       "instance": "dmu75",
       "size": "50 x 15",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 6123,
@@ -12045,18 +12069,18 @@
          ],
          "ub": [
             {
-               "value": 6187,
-               "date": "2026-06-22",
-               "solver": "LLG2026",
-               "hardware": null,
+               "value": 6186,
+               "date": "2026-06-28",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
                "certificate": "yes"
             },
             {
-               "value": 6186,
-               "date": "2026-01-01",
-               "solver": "DOFP2026",
-               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "value": 6187,
+               "date": "2026-06-22",
+               "solver": "LLG2026",
+               "hardware": null,
                "time": null,
                "certificate": "yes"
             },
@@ -12083,7 +12107,7 @@
       "instance": "dmu76",
       "size": "50 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 6479,
@@ -12118,7 +12142,7 @@
          "ub": [
             {
                "value": 6708,
-               "date": "2026-01-01",
+               "date": "2026-06-28",
                "solver": "DOFP2026",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
@@ -12147,7 +12171,7 @@
       "instance": "dmu77",
       "size": "50 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 6520,
@@ -12211,7 +12235,7 @@
       "instance": "dmu78",
       "size": "50 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 6643,
@@ -12275,7 +12299,7 @@
       "instance": "dmu79",
       "size": "50 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 6720,
@@ -12339,7 +12363,7 @@
       "instance": "dmu80",
       "size": "50 x 20",
       "family": "dmu",
-      "family_long": "Demikol, Mehta and Uzsoy 1998",
+      "family_long": "Demirkol, Mehta and Uzsoy 1998",
       "type": "random",
       "status": "open",
       "lower_bound": 6460,
@@ -12365,18 +12389,18 @@
          ],
          "ub": [
             {
+               "value": 6621,
+               "date": "2026-06-28",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": null,
+               "certificate": "yes" 
+            },
+            {
                "value": 6633,
                "date": "2026-06-22",
                "solver": "LLG2026",
                "hardware": null,
-               "time": null,
-               "certificate": "yes"
-            },
-            {
-               "value": 6621,
-               "date": "2026-01-01",
-               "solver": "DOFP2026",
-               "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
                "certificate": "yes"
             },
@@ -16116,7 +16140,7 @@
       "size": "1000 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "stress-test",
       "status": "open",
       "lower_bound": 549392,
       "upper_bound": 811195,
@@ -16172,7 +16196,7 @@
       "size": "1000 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "stress-test",
       "status": "open",
       "lower_bound": 549043,
       "upper_bound": 813044,
@@ -16220,7 +16244,7 @@
       "size": "1000 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "stress-test",
       "status": "open",
       "lower_bound": 552580,
       "upper_bound": 811269,
@@ -16276,7 +16300,7 @@
       "size": "1000 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "stress-test",
       "status": "open",
       "lower_bound": 547670,
       "upper_bound": 809549,
@@ -16324,7 +16348,7 @@
       "size": "1000 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "stress-test",
       "status": "open",
       "lower_bound": 545193,
       "upper_bound": 811467,
@@ -16372,7 +16396,7 @@
       "size": "1000 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "stress-test",
       "status": "open",
       "lower_bound": 547286,
       "upper_bound": 813117,
@@ -16420,7 +16444,7 @@
       "size": "1000 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "stress-test",
       "status": "open",
       "lower_bound": 545877,
       "upper_bound": 809043,
@@ -16468,7 +16492,7 @@
       "size": "1000 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "stress-test",
       "status": "open",
       "lower_bound": 549220,
       "upper_bound": 812442,
@@ -16516,7 +16540,7 @@
       "size": "1000 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "stress-test",
       "status": "open",
       "lower_bound": 543559,
       "upper_bound": 810111,
@@ -16564,7 +16588,7 @@
       "size": "1000 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "stress-test",
       "status": "open",
       "lower_bound": 549075,
       "upper_bound": 809421,
