@@ -144,7 +144,7 @@ Why upper and lower bounds? Because a decomposition may use the scheduling probl
 
 <br/>
 
-Currently there are 462 instances
+Currently there are 376 instances
 
 Random (322)
 - `ft`: 3 toy
@@ -976,7 +976,7 @@ The best-known solutions are now collected in a [json](https://github.com/Schedu
    "instance": "dmu80",
    "size": "50 x 20",
    "family": "dmu",
-   "family_long": "Demikol, Mehta and Uzsoy 1998",
+   "family_long": "Demirkol, Mehta and Uzsoy 1998",
    "type": "synthetic",
    "status": "open",
    "lower_bound": 6460,
