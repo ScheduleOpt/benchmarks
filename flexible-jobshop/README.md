@@ -1,24 +1,22 @@
 ---
 layout: default
 title: FJSPLib
-permalink: /fjsplib/
+permalink: /fjsplib
 ---
 
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-
-## The flexible jobshop scheduling problem benchmark library
+## The flexible jobshop benchmark library
 
 FJSPLib is a comprehensive benchmark library for the Flexible Job Shop Scheduling Problem (FJSP), with three components:
 - **Instance repository** — a centralized set of classic instances (Brandimarte, Hurink, Dauzere-Perez, Chambers, Kacem, Fattahi, Behnke, Birgin)
 - **Engine benchmark** — a standardized 10-minute comparison of reference solvers (CPO, CP-SAT, OptalCP, Cplex), measuring each engine's optimality gap and deviation from the best known bounds.
 - **Best-known-solutions archive** — a running record of the best upper/lower bounds ever found for each instance, from any source (published papers, meta-heuristics, or engine runs) — not limited to the reference engines above.
 
-The data and source code can be found in the [Github repository](https://github.com/ScheduleOpt/benchmarks). This document is visible as a README.md in the Github folder [flexible jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/flexible-jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/fjsplib). Instances are now available in [json](https://github.com/ScheduleOpt/benchmarks/tree/main/flexible-jobshop/instances/json) or [text](https://github.com/ScheduleOpt/benchmarks/tree/main/flexible-jobshop/instances/text) formats. The [standardized benchmark results](https://github.com/ScheduleOpt/benchmarks/tree/main/flexible-jobshop/solutions) for each engine on each instance is available in json format. And a json file of [best known solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/flexible-jobshop/solutions/bks.json) is also provided with a trace of the evolution of the bounds.
+The data and source code can be found in the [GitHub repository](https://github.com/ScheduleOpt/benchmarks). This document is visible as a README.md in the Github folder [flexible jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/flexible-jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/fjsplib). Instances are now available in [json](https://github.com/ScheduleOpt/benchmarks/tree/main/flexible-jobshop/instances/json) or [text](https://github.com/ScheduleOpt/benchmarks/tree/main/flexible-jobshop/instances/text) formats. The [standardized benchmark results](https://github.com/ScheduleOpt/benchmarks/tree/main/flexible-jobshop/solutions) for each engine on each instance is available in json format. And a json file of [best known solutions](https://github.com/ScheduleOpt/benchmarks/blob/main/flexible-jobshop/solutions/bks.json) is also provided with a trace of the evolution of the bounds.
 
 ### Table of Contents
 
-- [Flexible jobshop instances](#flexible-jobshop-benchmark-instances)
-    - [Overview of the flexible jobshop benchmark](#overview-of-the-flexible-jobshop-benchmark)
+- [Flexible jobshop](#the-flexible-jobshop-benchmark-library)
+    - [Overview of the flexible jobshop benchmark library](#overview-of-the-flexible-jobshop-benchmark-library)
     - [Classification of the flexible jobshop instances](#classification-of-the-flexible-jobshop-instances)
     - [Similar work](#similar-work)
     - [Formats](#formats)
@@ -26,28 +24,33 @@ The data and source code can be found in the [Github repository](https://github.
 - [Standardized benchmark of engines](#standardized-benchmark-of-engines)
     - [A short history of the reference engines](#a-short-history-of-the-reference-engines)
     - [Comparison of reference solvers](#comparison-of-reference-solvers)
-- [Flexible jobshop benchmark](#flexible-jobshop-benchmark)
-    - [JSON bks format](#best-known-solutions-json-format)
-    - [Best known solutions](#best-known-solutions)
+- [Best-known solutions](#best-known-solutions)
+    - [JSON BKS format](#best-known-solutions-json-format)
+    - [Best known solutions per instance family](#best-known-solutions-per-instance-family)
     - [Publications](#publications-best-known-solutions)
 
 <br/>
 
 ### Overview of the flexible jobshop benchmark library
 
-Flexible jobshop with machine-independent processing times (264)
-- 66 x 4 instances : instances (`abz`, `car`, `la`, `ft` and `orb`) from the jsplib modified in 4 ways (`sdata` `edata` `rdata` and `vdata`) from Hurink, Jurisch and Thole (1994)
-
 Flexible jobshop instances (138)
-- 15 instances `mk` from Brandimarte (1993)
-- 18 instances `dpp` from Dauzère-Pérès and Paulli (1994)
+- 15 instances `mk` from Brandimarte 1993
+- 18 instances `dpp` from Dauzère-Pérès and Paulli 1994
 - 3 x 7 instances `mt`, `setb4` et `seti5` from Chambers and Barnes (1996)
-- 4 instances `kacem` from Kacem, Hammadi and Borne (2002)
-- 20 instances `fattahi` from Fattahi, Mehrabad and Jolai (2007)
-- 60 instances `behnke` from Behnke and Geiger (2012)
+- 4 instances `kacem` from Kacem, Hammadi and Borne 2002
+- 20 instances `fattahi` from Fattahi, Mehrabad and Jolai 2007
+- 60 instances `behnke` from Behnke and Geiger 2012
 
-Flexible assembly jobshop (50)
-- 50 instances `dafjs` and `yfjs` from Birgin et al. 2014
+Machine-independent flexible jobshop instances (264)
+-  5 x 4 instances `abz` from Hurink, Jurisch and Thole 1994
+-  8 x 4 instances `car` from Hurink, Jurisch and Thole 1994
+- 40 x 4 instances `la` from Hurink, Jurisch and Thole 1994
+-  3 x 4 instances `ft` from Hurink, Jurisch and Thole 1994
+- 10 x 4 instances `orb` from Hurink, Jurisch and Thole 1994
+
+Flexible assembly jobshop instances (50)
+- 20 instances `yfjs` from Birgin et al. 2014
+- 30 instances `dafjs` from Birgin et al. 2014
 
 
 <br/>
@@ -56,21 +59,19 @@ Flexible assembly jobshop (50)
 
 The reference engines used are
 
-- [**IBM ILOG Cplex**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : a state-of-the-art ***MIP*** engine
-- [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : representative of the ***CP-scheduling*** family of engines
-- [**Google CP-SAT**](https://developers.google.com/optimization) : representative of the ***lazy clause generation*** family of engines
-- [**OptalCP**](https://optalcp.com) : representative of the ***CP-scheduling*** family of engines
-
+- [**IBM ILOG Cplex**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer): a state-of-the-art ***MIP*** engine
+- [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer): representative of the ***CP-scheduling*** family of engines
+- [**Google CP-SAT**](https://developers.google.com/optimization): representative of the ***lazy clause generation*** family of engines
+- [**OptalCP**](https://optalcp.com): representative of the ***CP-scheduling*** family of engines
 
 We use the following criteria to classify instances by difficulty
 
-- <strong style="color:cornflowerblue">toy</strong> : solved to optimality (with proof) in 1 minute by at least 1 reference engine
-- <strong style="color:green">easy</strong> : solved to optimality (with proof) in 10 minute by at least 1 reference engine
-- <strong style="color:orange">medium</strong> : solved to optimality (with proof) in 1 hour by at least 1 reference engine
-- <strong style="color:red">hard</strong> : solved to optimality (with proof) in > 1h by at least 1 reference engine
-- <strong style="color:purple">closed</strong> : *allegedly* solved to optimality. Most of the time the optimal solution is known because 2 different methods independently found equal upper and lower bounds. The problem is reclassified into toy, easy, medium or hard when a reference engine is able to reproduce the results.
-- <strong style="color:grey">open</strong> : no proof of optimality
-
+- <strong style="color:cornflowerblue">toy</strong>: solved to optimality (with proof) in 1 minute by at least 1 reference engine
+- <strong style="color:green">easy</strong>: solved to optimality (with proof) in 10 minute by at least 1 reference engine
+- <strong style="color:orange">medium</strong>: solved to optimality (with proof) in 1 hour by at least 1 reference engine
+- <strong style="color:red">hard</strong>: solved to optimality (with proof) in more than 1 hour by at least 1 reference engine
+- <strong style="color:purple">closed</strong>: *allegedly* solved to optimality. Most of the time the optimal solution is known because 2 different methods independently found equal upper and lower bounds. The problem is reclassified into toy, easy, medium or hard when a reference engine is able to reproduce the results.
+- <strong style="color:grey">open</strong>: no proof of optimality
 
 The 10 minutes time limit reflects industrial workflows in which schedules are repeatedly regenerated after manual adjustments, parameter tuning, or changes in production data. Furthermore, problems that can be solved to optimality in less than 10 minutes are suitable as sub-problems in decomposition methods like Benders decomposition, Pareto frontier generation or rolling-horizon optimization.
 
@@ -84,26 +85,26 @@ Why upper and lower bounds ? Because a decomposition may use the scheduling prob
 
 Currently the instances are distributed as follows
 
-machine-independent flexible jobshop
-- `abz` : 8 toy, 1 medium, 3 hard, 2 closed, 6 open
-- `car` : 27 toy, 3 medium, 2 closed
-- `la` : 119 toy, 17 medium, 4 hard, 11 closed, 9 open
-- `ft` : 12 toy
-- `orb` : 40 toy
-
-flexible jobshop
-- `mk` : 9 toy, 2 medium, 2 hard, 2 open
+Flexible jobshop
+- `mk` : 9 toy, 2 medium, 2 hard, 1 closed, 1 open
 - `dpp` : 4 toy, 1 medium, 1 hard, 2 closed, 10 open
 - `mt` : 7 toy
 - `setb` : 7 toy
 - `seti` : 7 toy
 - `kacem` : 4 toy
 - `fattahi` : 20 toy
-- `behnke` : 15 toy, 12 medium, 1 closed, 32 open
+- `behnke` : 15 toy, 12 medium, 6 closed, 27 open
 
-Flexible jobshop with arbitrary precedence graphs / flexible assembly jobshop
-- `dafjs` : [status unknown]
-- `yfjs` : [status unknown]
+Machine-independent flexible jobshop
+- `abz` : 10 toy, 1 medium, 1 hard, 2 closed, 6 open
+- `car` : 27 toy, 3 medium, 2 closed
+- `la` : 120 toy, 17 medium, 3 hard, 11 closed, 9 open
+- `ft` : 12 toy
+- `orb` : 40 toy
+
+Flexible assembly jobshop
+- `yfjs` : 20 open
+- `dafjs` : 3 closed, 27 open
 
 
 <br/>
@@ -129,7 +130,7 @@ Time-limit	| %Opt	| #Improved LB	| #Improved UB	| #NewClosed
 JFP highlights the importance of clearly stated experimental protocols 
 > A direct comparison between Quintiq Optimizer and CP Optimizer is difficult to perform because (1) the Quintiq page does not describe the experimental protocol and (2) Quintiq results are only available for the instances that were improved by Quintiq Optimizer.  Nevertheless, on these instances improved by Quintiq optimizer, CP Optimizer is worse than Quintiq optimizer on 11 instances and is better on 24 instances.
 
-#### Naderi, Ruiz and Roshanei (2022)
+#### Naderi, Ruiz and Roshanaei (2022)
 
 Our work was inspired by the ***outstanding*** work of Naderi, Ruiz and Roshanaei *Mixed-Integer Programming versus Constraint Programming for shop scheduling problems : New Results and Outlook* [**NRR2022**] which compares CPO, Cplex, Gurobi and OR-tools on a benchmark of 6623 instances over 17 benchmarks with a timeout of 1h. They have made all the [raw results available](http://soa.iti.es/problem-instances)
 
@@ -137,17 +138,17 @@ Our work was inspired by the ***outstanding*** work of Naderi, Ruiz and Roshanae
 
 [SchedulingLab](https://github.com/SchedulingLab/jsp-instances) collects instances of various types of scheduling problems, including instances not referenced here.
 
-#### Dauzère-Perès, Ding, Shen and Tamssaouet and (2024)
+#### Dauzère-Pérès, Ding, Shen and Tamssaouet (2024)
 
-The paper *The flexible job shop scheduling problem: A review* is an in-depht overview of the state-of-the-art for flexible jobshop and its variants. The [supplementary material](https://ars.els-cdn.com/content/image/1-s2.0-S037722172300382X-mmc1.pdf) contains a summary of the best known solutions at the time of publication.
+The paper *The flexible job shop scheduling problem: A review* is an in-depth overview of the state-of-the-art for flexible jobshop and its variants. The [supplementary material](https://ars.els-cdn.com/content/image/1-s2.0-S037722172300382X-mmc1.pdf) contains a summary of the best known solutions at the time of publication.
 
 <br/>
 
 ### Formats
 
-There are now three format supported in the FJSPLib
+Three formats are supported in the FJSPLib
 - the json format
-- the text fjasp format
+- the text fajsp format
 - the text fjsp format
 
 #### The JSON format
@@ -188,7 +189,7 @@ In the fjsp format
 
 ```
 #jobs #machines average_flexibility
-#operations (#options (duration machine) (duration machine)) (#options (duration machine))
+#operations (#options (machine duration) (machine duration)) (#options (machine duration))
 
 ```
 For instance `fattahi1` is
@@ -206,7 +207,7 @@ meaning
 
 #### The fajsp format
 
-The fasp format uses
+The fajsp format uses
 - the first line is the header with `#operations` `#precedences` `#machines`
 - `#precedences` lines of the form `x y j` where `x` and `y` are the indices of 2 operations, and `j` the number of the job that links them
 - `#operations` lines of the form `#options m1 d1 m2 d2 ... mk dk` where $k \in 0 .. \mathtt{\#options}-1$, $m_k$ is a machine between $0$ and $\mathtt{\#machines}-1$ and $d_k$ is a duration
@@ -259,17 +260,16 @@ We track the State-Of-The-Art (SOTA) of optimization engines for scheduling with
 
 The engines that are benchmarked are
 
-- [**IBM ILOG Cplex**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : a state-of-the-art ***MIP*** engine
-- [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer) : representative of the ***CP-scheduling*** family of engines
-- [**Google CP-SAT**](https://developers.google.com/optimization) : representative of the ***lazy clause generation*** family of engines
-- [**OptalCP**](https://optalcp.com) : representative of the ***CP-scheduling*** family of engines
-
+- [**IBM ILOG Cplex**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer): a state-of-the-art ***MIP*** engine
+- [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer): representative of the ***CP-scheduling*** family of engines
+- [**Google CP-SAT**](https://developers.google.com/optimization): representative of the ***lazy clause generation*** family of engines
+- [**OptalCP**](https://optalcp.com): representative of the ***CP-scheduling*** family of engines
 
 <br/>
 
 ### A short history of the reference engines
 
-#### IBM ILOG Cplex (1988 - present)
+#### IBM ILOG Cplex (1987 - present)
 
 **Cplex** is a MIP engine founded by Robert Bixby in 1987, and acquired in 1997 by ILOG, subsequently acquired by IBM in 2009.
 
@@ -282,11 +282,11 @@ Like similar state-of-the-art MIP engines, Cplex features
 - conflict analysis adapted from SAT
 - solution polishing before the time-limit
 
-Improvements in a complex software like Cplex are incremental, but we can broadly divide its evolution as follows
+Improvements in complex software like Cplex are incremental, but we can broadly divide its evolution as follows
 - Cplex 1-3 [**1987-1994**] LP improvements (simplex, dual simplex, interior points), basic presolve and branch-and-cut. Cplex 3.0 is a performance milestone due to its mature dual simplex.
 - Cplex 6-7 [**1998-2001**] established what we would recognize today as a modern MIP (presolve + branch-and-cut + heuristics + learning) with a particular emphasis on cuts. Cplex 6.5 (1999) is considered by practitioners as a performance milestone.
-- Cplex 9-11 [**2003-2007**] more emphasis on primal approaches : heuristics (RINS, Feasibility pump), search strategies (restart + node presolve), solution polishing, SAT-like conflict analysis. Cplex 11 is considered as a performance milestone.
-- Cplex 11/12- [**2007-**] more cuts (GCD-based cuts, multi-commodity flow) sometimes mixed with heuristics (pump reduce) or search (conflict analysis), and systematic cutting plane filtering allowing a more aggressive usage of cuts
+- Cplex 9-11 [**2003-2007**] more emphasis on primal approaches: heuristics (RINS, Feasibility pump), search strategies (restart + node presolve), solution polishing, SAT-like conflict analysis. Cplex 11 is considered as a performance milestone.
+- Cplex 11/12- [**2007-**] more cuts (GCD-based cuts, multi-commodity flow) sometimes mixed with heuristics (pump reduce) or search (conflict analysis), and systematic cutting plane filtering allowing a more aggressive usage of cuts.
 
 From 2008, Bixby, Rothberg and Gu created Gurobi.
 
@@ -298,20 +298,20 @@ References
 
 #### IBM ILOG CP Optimizer (2007 - present)
 
-**CP Optimizer** is a descendant of **ILOG Solver** (architectured over the years by Jean-François Puget, Jean-Charles Régin and later Laurent Perron) and **ILOG Scheduler** (architectured by Claude Le Pape, then Philippe Laborie). CP Optimizer (led by Paul Shaw, Laurent Perron and Philippe Laborie) merged the general CP engine and the specific scheduling add-on in a single engine, promoted the model-and-run approach and pioneered a new scheduling language (optional intervals, noOverlap, cumulative functions, etc.) that has become an industry standard.
+**CP Optimizer** is a descendant of **ILOG Solver** developed over the years by Jean-François Puget, Jean-Charles Régin and later Laurent Perron and **ILOG Scheduler** developed by Claude Le Pape, Wim Nuijten and later Philippe Laborie. CP Optimizer (led by Paul Shaw, Laurent Perron and Philippe Laborie) merged the general CP engine and the specific scheduling add-on in a single engine, promoted the model-and-run approach and pioneered a new scheduling language (optional intervals, noOverlap, cumulative functions, etc.) that has become an industry standard.
 
-From a technical perspective CP Optimizer interleaves the following search methods
-- **Large Neighbourhood Search** (Shaw and al.) : tree-search based local search
-- **Iterative diving** (designed by Philppe Laborie) : a quick diving heuristic for "simple" scheduling problems that often provides fast and good initial solutions
-- **Failure Directed Search** (designed by Petr Vilim) : a generalization of the fail-first principle that reduces the search space by eliminating assignments unlikely to succeed
-- **Genetic algorithms** on top of the scheduling engine : named "multi-point" search, they are not on by default unless a large number of cores are available
+From a technical perspective, CP Optimizer interleaves the following search methods
+- **Large Neighbourhood Search** (Shaw et al.): tree-search based local search
+- **Iterative diving** (designed by Philippe Laborie): a quick diving heuristic for "simple" scheduling problems that often provides fast and good initial solutions
+- **Failure Directed Search** (designed by Petr Vilim): a generalization of the fail-first principle that reduces the search space by eliminating assignments unlikely to succeed
+- **Genetic algorithms** on top of the scheduling engine: named "multi-point" search, they are not on by default unless a large number of cores are available
 
 The **temporal linear relaxation** solved by an LP and **objective landscapes** act like a reduced cost / impact based oracle but for scheduling problems.
 
-Because CP Optimizer was designed in a time where multi-core computers weren't common, the engine alternates the different strategies on the same core. And replicates itself over various cores with different parameters if more cores are available
+Because CP Optimizer was designed in a time where multi-core computers were not common, the engine alternates the different strategies on the same core, and replicates itself over various cores with different parameters if more cores are available.
 
-The main propagation algorithms in CP optimizer are 
-- **time tabling** and **edge-finding** for disjunctive and cumulative resources (Claude LePape, Wim Nuijten, Philippe Baptiste) later improved by Petr Vilim 
+The main propagation algorithms in CP Optimizer are 
+- **time tabling** and **edge-finding** for disjunctive and cumulative resources (Claude Le Pape, Wim Nuijten, Philippe Baptiste) later improved by Petr Vilim 
 - **logical network** for implications and (dis)equalities between boolean variables
 - **simple temporal networks** for precedences
 
@@ -320,29 +320,29 @@ References
 - [Introduction to CP Optimizer](https://cp2019.a4cp.org/PDFs/P-Laborie.pdf) (Philippe Laborie - 2019)
 - [Self-adapting large neighborhood search: Application to single-mode scheduling problems](http://ppcro.free.fr/pres/070605/Laborie_SelfAdaptingLNS.pdf) (Philippe Laborie and Daniel Godard - 2007)
 - [Reasoning with Conditional Time-intervals](https://cdn.aaai.org/FLAIRS/2008/FLAIRS08-126.pdf) (Philippe Laborie and Jérôme Rogerie - 2008)
-- [Reasoning with Conditional Time-intervals Part II](https://cdn.aaai.org/ocs/60/60-2374-1-PB.pdf) (Phillipe Laborie, Jérôme Rogerie, Paul Shaw and Petr Vilim - 2009)
+- [Reasoning with Conditional Time-intervals Part II](https://cdn.aaai.org/ocs/60/60-2374-1-PB.pdf) (Philippe Laborie, Jérôme Rogerie, Paul Shaw and Petr Vilim - 2009)
 - [Temporal linear relaxation in IBM ILOG CP Optimizer](https://link.springer.com/article/10.1007/s10951-014-0408-7) (Philippe Laborie and Jérôme Rogerie - 2014)
 - [Failure-Directed Search for Constraint-Based Scheduling](https://link.springer.com/chapter/10.1007/978-3-319-18008-3_30) (Petr Vilim, Philippe Laborie and Paul Shaw - 2015)
 - [Objective landscapes for constraint programming](https://link.springer.com/chapter/10.1007/978-3-319-93031-2_28) (Philippe Laborie - 2018)
 
 <br/>
 
-#### Google ORTools CP-SAT (2017 - present)
+#### Google OR-Tools CP-SAT (2017 - present)
 
 **CP-SAT** is an open-source lazy clause generation engine augmented with an LP, MIP-style cuts and CP-style propagators designed by Laurent Perron, Frédéric Didier and Steven Gay. 
 
 CP-SAT includes
-- LP-based lower bounds + MIP style cuts, in particular MIP cuts specialized for scheduling
+- LP-based lower bounds + MIP-style cuts, in particular MIP cuts specialized for scheduling
 - CP-style propagation algorithms (time-tabling, edge-finding)
 - SAT-style conflict analysis
-- synchronization of MIP and CP style reasonings
-- LNS : tree-based local search
+- synchronization of MIP and CP-style reasoning
+- LNS: tree-based local search
 - LS with infeasible moves
 
 CP-SAT is the "successor" of a more traditional CP + LS engine by Laurent Perron and Vincent Furnon, focusing more on VRP problems.
 
-CP-SAT team doesn't publish much about how CP SAT works, but maintains very informative comments in the source code.
-Here is an overview of the files and what they contain
+The CP-SAT team doesn't publish much about how CP SAT works, but maintains comments in the source code.
+Here is an overview of the files and what they contain:
 
 
 | Constraint	| Main source files	| Implemented algorithms |
@@ -362,7 +362,7 @@ The paper **From Literals to Atomic Constraints: Generalising Conflict-Driven Cl
 
 > OR-Tools only creates literals for decisions. However, OR-Tools often decomposes constraints into a SAT representation, leading to more existing literals than only decision literals. During conflict analysis, an atomic constraint with no associated literal is repeatedly replaced with its reason until only existing literals are left. OR-Tools’s approach has the benefits that 1) it only creates literals that are “important” enough to be decisions, and 2) decomposed constraints ensure that there are enough literals for conflict analysis. However, OR-Tools suffers from the fact that 1) limiting created literals can lead to less general nogoods, and 2) since explanations are resolved until consisting of existing literals, explanation lifting and nogood minimisation can have less impact
 
-The presolver of CP-SAT does a significant amount of work, closer to a MIP than a typical CP engine
+The presolver of CP-SAT does a significant amount of work, closer to a MIP than a typical CP engine:
 - variable fixing
 - domain tightening
 - affine relation detection
@@ -374,7 +374,7 @@ The presolver of CP-SAT does a significant amount of work, closer to a MIP than 
 - interval simplification
 - objective simplification
 
-Moreover some of the classic scheduling algorithms have been transformed into cutting planes (`scheduling_cuts.cc`) : energetic reasoning, time-table propagation, cumulative precedence, cumulative completion time, energetic reasoning for disjunctive resources.
+Moreover, some of the classic scheduling algorithms have been transformed into cutting planes (`scheduling_cuts.cc`): energetic reasoning, time-table propagation, cumulative precedence, cumulative completion time, energetic reasoning for disjunctive resources.
 
 
 References
@@ -385,12 +385,12 @@ References
 
 #### OptalCP (2021 - present)
 
-**OptalCP** was architectured by Petr Vilim, Nicolas Bonifas and Diego Olivier Fernandez Pons (initially with input from Philippe Laborie). Compared to CPO the parallelism is done with one strategy per core instead of interleaving. The strategies used are
-- **Large Neighbourhood Search** (LNS) : tree-search based local search
-- **Failure Directed Search** (FDS) : generalizes first-fail principle
-- **FDSDual** : generalizes destructive lower bounds
+**OptalCP** was designed by Petr Vilim, Nicolas Bonifas and Diego Olivier Fernandez Pons (initially with input from Philippe Laborie). Compared to CPO, the parallelism is done with one strategy per core instead of interleaving. The strategies used are:
+- **Large Neighbourhood Search** (LNS): tree-search-based local search
+- **Failure Directed Search** (FDS): generalizes first-fail principle
+- **FDSDual**: generalizes destructive lower bounds
 
-OptalCP continues the legacy of CP Optimizer (engine style, modeling language). The hybridization of OptalCP with heuristics and meta-heuristics is done outside by communicating upper and lower bounds in real time (during search)
+OptalCP continues the legacy of CP Optimizer (engine style, modeling language). The hybridization of OptalCP with heuristics and meta-heuristics is done outside by communicating upper and lower bounds in real time (during search).
 
 References
 - [OptalCP at scheduling seminar](https://schedulingseminar.com/presentations/schedulingseminar_petrvilim_vilemheinz.pdf) (Petr Vilim - 2026)
@@ -398,7 +398,7 @@ References
 <br/>
 
 >
-> If your name appears in this section and you notice an error contact me
+> If your name appears in this section and you notice an error, contact me
 >
 
 <br/>
@@ -409,15 +409,15 @@ We adopt the following metrics to compare the engines
 
 - **Geometric average of lower bound to best known lower bound ratio**
 
-$$LB_{avg} = \exp\left(\sum_k\log\frac{LB}{LB_{best}}\right)$$
+$$LB_{avg} = \exp\left(\frac{1}{N} \sum_k\log\frac{LB}{LB_{best}}\right)$$
 
 - **Geometric average of the upper bound to best known upper bound ratio**
 
-$$UB_{avg} = \exp\left(\sum_k\log\frac{UB}{UB_{best}}\right)$$
+$$UB_{avg} = \exp\left(\frac{1}{N} \sum_k\log\frac{UB}{UB_{best}}\right)$$
 
 - **Geometric shifted average of the gap**
 
-$$GAP = \exp\left(\sum_k\log\left(1 + \frac{UB - LB}{UB}\right)\right) - 1$$
+$$GAP = \exp\left(\frac{1}{N} \sum_k\log\left(1 + \frac{UB - LB}{UB}\right)\right) - 1$$
 
 
 <br/>
@@ -461,40 +461,70 @@ The type of hardware and time required to find the best known solution are diffi
 
 <br/>
 
-> We ***do not*** systematically run the instances for very long times on large machines. Most of the instances that appear as having been solved after a large comptation time (eg. 40h) had peculiarities (e.g. `best lb + 1 == best ub`) that justified exploring how long it would take to solve them to optimality. We also devote more effort to solve instances which best known solutions are given by papers that are old, difficult to find and difficlt to reproduce. This allows verifying the paper claims and having a more accessible way of generating the result.
+> We ***do not*** systematically run the instances for very long times on large machines. Most of the instances that appear as having been solved after a large comptation time (eg. 40h) had peculiarities (e.g. `best lb + 1 == best ub`) that justified exploring how long it would take to solve them to optimality. We also devote more effort to solve instances which best known solutions are given by papers that are old, difficult to find and difficult to reproduce. This allows verifying the paper claims and having a more accessible way of generating the result.
 
 <br/>
 
 ### Best known solutions json format
 
-The best known solutions are now collected in a [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) file with the following syntax
+The best known solutions are now collected in a [json](https://github.com/ScheduleOpt/benchmarks/blob/main/flexible-jobshop/solutions/bks.json) file with the following syntax
 
 ```json
-{
-    "instance":"dpp06a",
-    "size":"10 x 5",
-    "type":"flexible jobshop",
-    "family":"dpp",
-    "family_long":"Dauzère-Pérès and Paulli (1994)",
-    "status":"open",
-    "lower_bound":2164,
-    "upper_bound":2169,
-    "lb_data":[{
-        "value":2164,
-        "date":"2026-01-01",
-        "solver":"CdGKGC2025",
-        "time":"?",
-        "hardware":"?",
-        "certificate":"no"
-    }],
-    "ub_data":[{
-        "value":2169,
-        "date":"2026-01-01",
-        "solver":"CdGKGC2025",
-        "time":"?",
-        "hardware":"?",
-        "certificate":"no"
-    }]
+ {
+      "instance": "dpp05a",
+      "size": "10 x 5",
+      "family": "dpp",
+      "family_long": "Dauzere-Peres and Paulli 1994",
+      "type": "flexible jobshop",
+      "status": "open",
+      "lower_bound": 2195,
+      "upper_bound": 2199,
+      "history": {
+         "lb": [
+            {
+               "value": 2195,
+               "date": "2025-01-01",
+               "solver": "CdGKGC2025",
+               "hardware": null,
+               "time": null,
+               "certificate": "no"
+            },
+            {
+               "value": 2192,
+               "date": "2014-01-01",
+               "solver": "Quintiq",
+               "hardware": null,
+               "time": null,
+               "certificate": "no"
+            }
+         ],
+         "ub": [
+            {
+               "value": 2199,
+               "date": "2025-01-01",
+               "solver": "CdGKGC2025",
+               "hardware": null,
+               "time": null,
+               "certificate": "no"
+            },
+            {
+               "value": 2203,
+               "date": "2015-01-01",
+               "solver": "DLLSXG2019",
+               "hardware": null,
+               "time": null,
+               "certificate": "no"
+            },
+            {
+               "value": 2205,
+               "date": "2014-05-01",
+               "solver": "Quintiq",
+               "hardware": null,
+               "time": null,
+               "certificate": "no"
+            }
+         ]
+      }
 }
 ```
 
@@ -518,8 +548,8 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><td>abz5</td><td>10 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1234</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1167</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">954</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">859</td><td>OptalCP</td></tr>
 <tr><td>abz6</td><td>10 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">943</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">925</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">807</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">742</td><td>OptalCP</td></tr>
 <tr><td>abz7</td><td>20 x 15</td><td style="background-color:orange;color:white;font-weight:bold">656</td><td style="background-color:gray;color:white;font-weight:bold">604 / 610</td><td style="background-color:gray;color:white;font-weight:bold">497 / 522</td><td style="background-color:purple;color:white;font-weight:bold">492</td><td>OptalCP | CPO2013 / Quintiq | CdGKGC2025 / DLLSXG2019 | Quintiq</td></tr>
-<tr><td>abz8</td><td>20 x 15</td><td style="background-color:red;color:white;font-weight:bold">667</td><td style="background-color:gray;color:white;font-weight:bold">625 / 636</td><td style="background-color:gray;color:white;font-weight:bold">509 / 535</td><td style="background-color:gray;color:white;font-weight:bold">506 / 507</td><td>OptalCP | Quintiq / CPO2013 | CdGKGC2025 / DLLSXG2019 | OptalCP / Quintiq</td></tr>
-<tr><td>abz9</td><td>20 x 15</td><td style="background-color:red;color:white;font-weight:bold">678</td><td style="background-color:red;color:white;font-weight:bold">644</td><td style="background-color:gray;color:white;font-weight:bold">517 / 536</td><td style="background-color:purple;color:white;font-weight:bold">497</td><td>OptalCP | CPO2013 | CPO2013 / Quintiq | OptalCP / Quintiq</td></tr>
+<tr><td>abz8</td><td>20 x 15</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">667</td><td style="background-color:gray;color:white;font-weight:bold">625 / 636</td><td style="background-color:gray;color:white;font-weight:bold">509 / 535</td><td style="background-color:gray;color:white;font-weight:bold">506 / 507</td><td>OptalCP | CPO2013 | CdGKGC2025 / DLLSXG2019 | OptalCP / Quintiq</td></tr>
+<tr><td>abz9</td><td>20 x 15</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">678</td><td style="background-color:red;color:white;font-weight:bold">644</td><td style="background-color:gray;color:white;font-weight:bold">517 / 536</td><td style="background-color:purple;color:white;font-weight:bold">497</td><td>OptalCP | CPO2013 | CPO2013 / Quintiq | OptalCP / Quintiq</td></tr>
 </table>
 
 <br/>
@@ -535,6 +565,7 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><td>car7</td><td>7 x 7</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">6558</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">6123</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">4425</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">4281</td><td>OptalCP</td></tr>
 <tr><td>car8</td><td>8 x 8</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">8264</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">7689</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">5692</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">4613</td><td>OptalCP</td></tr>
 </table>
+
 
 <br/>
 
@@ -563,24 +594,25 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><td>la21</td><td>15 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1046</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1009</td><td style="background-color:gray;color:white;font-weight:bold">809 / 825</td><td style="background-color:orange;color:white;font-weight:bold">800</td><td>OptalCP | CdGKGC2025 / Quintiq | OptalCP</td></tr>
 <tr><td>la22</td><td>15 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">927</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">880</td><td style="background-color:gray;color:white;font-weight:bold">745 / 753</td><td style="background-color:purple;color:white;font-weight:bold">733</td><td>OptalCP | CdGKGC2025 / DLLSXG2019 | OptalCP / CPO2013</td></tr>
 <tr><td>la23</td><td>15 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1032</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">950</td><td style="background-color:gray;color:white;font-weight:bold">820 / 831</td><td style="background-color:orange;color:white;font-weight:bold">809</td><td>OptalCP | CdGKGC2025 / DLLSXG2019 | OptalCP</td></tr>
-<tr><td>la24</td><td>15 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">935</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">908</td><td style="background-color:gray;color:white;font-weight:bold">780 / 795</td><td style="background-color:red;color:white;font-weight:bold">773</td><td>OptalCP | CdGKGC2025 / DLLSXG2019 | OptalCP</td></tr>
+<tr><td>la24</td><td>15 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">935</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">908</td><td style="background-color:gray;color:white;font-weight:bold">780 / 795</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">773</td><td>OptalCP | CdGKGC2025 / DLLSXG2019 | OptalCP</td></tr>
 <tr><td>la25</td><td>15 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">977</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">936</td><td style="background-color:gray;color:white;font-weight:bold">771 / 779</td><td style="background-color:purple;color:white;font-weight:bold">751</td><td>OptalCP | CdGKGC2025 / DLLSXG2019 | OptalCP / Quintiq</td></tr>
-<tr><td>la26</td><td>20 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1218</td><td style="background-color:orange;color:white;font-weight:bold">1106</td><td style="background-color:gray;color:white;font-weight:bold">1056 / 1057</td><td style="background-color:orange;color:white;font-weight:bold">1052</td><td>OptalCP | DOFP2026a / Quintiq | OptalCP</td></tr>
-<tr><td>la27</td><td>20 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1235</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1181</td><td style="background-color:purple;color:white;font-weight:bold">1085</td><td style="background-color:orange;color:white;font-weight:bold">1084</td><td>OptalCP | DOFP2026a / Quintiq | OptalCP</td></tr>
-<tr><td>la28</td><td>20 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1216</td><td style="background-color:red;color:white;font-weight:bold">1142</td><td style="background-color:gray;color:white;font-weight:bold">1075 / 1076</td><td style="background-color:orange;color:white;font-weight:bold">1069</td><td>OptalCP | CPO2013 | DOFP2026a / Quintiq | OptalCP</td></tr>
+<tr><td>la26</td><td>20 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1218</td><td style="background-color:orange;color:white;font-weight:bold">1106</td><td style="background-color:gray;color:white;font-weight:bold">1056 / 1057</td><td style="background-color:orange;color:white;font-weight:bold">1052</td><td>OptalCP | MG2000 / Quintiq | OptalCP</td></tr>
+<tr><td>la27</td><td>20 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1235</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1181</td><td style="background-color:purple;color:white;font-weight:bold">1085</td><td style="background-color:orange;color:white;font-weight:bold">1084</td><td>OptalCP | MG2000 / Quintiq | OptalCP</td></tr>
+<tr><td>la28</td><td>20 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1216</td><td style="background-color:red;color:white;font-weight:bold">1142</td><td style="background-color:gray;color:white;font-weight:bold">1075 / 1076</td><td style="background-color:orange;color:white;font-weight:bold">1069</td><td>OptalCP | CPO2013 | MG2000 / Quintiq | OptalCP</td></tr>
 <tr><td>la29</td><td>20 x 10</td><td style="background-color:orange;color:white;font-weight:bold">1152</td><td style="background-color:red;color:white;font-weight:bold">1107</td><td style="background-color:gray;color:white;font-weight:bold">993 / 994</td><td style="background-color:purple;color:white;font-weight:bold">993</td><td>OptalCP | CPO2013 | OptalCP / Quintiq</td></tr>
 <tr><td>la30</td><td>20 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1355</td><td style="background-color:red;color:white;font-weight:bold">1188</td><td style="background-color:gray;color:white;font-weight:bold">1068 / 1071</td><td style="background-color:purple;color:white;font-weight:bold">1068</td><td>OptalCP | CPO2013 | OptalCP / Quintiq</td></tr>
 <tr><td>la31</td><td>30 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1784</td><td style="background-color:orange;color:white;font-weight:bold">1532</td><td style="background-color:orange;color:white;font-weight:bold">1520</td><td style="background-color:orange;color:white;font-weight:bold">1520</td><td>OptalCP</td></tr>
 <tr><td>la32</td><td>30 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1850</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1698</td><td style="background-color:purple;color:white;font-weight:bold">1657</td><td style="background-color:purple;color:white;font-weight:bold">1657</td><td>OptalCP | OptalCP / Quintiq</td></tr>
 <tr><td>la33</td><td>30 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1719</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1547</td><td style="background-color:purple;color:white;font-weight:bold">1497</td><td style="background-color:purple;color:white;font-weight:bold">1497</td><td>OptalCP | OptalCP / Quintiq | OptalCP / MG2000</td></tr>
 <tr><td>la34</td><td>30 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1721</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1599</td><td style="background-color:purple;color:white;font-weight:bold">1535</td><td style="background-color:orange;color:white;font-weight:bold">1535</td><td>OptalCP | OptalCP / Quintiq | OptalCP</td></tr>
-<tr><td>la35</td><td>30 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1888</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1736</td><td style="background-color:purple;color:white;font-weight:bold">1549</td><td style="background-color:orange;color:white;font-weight:bold">1549</td><td>OptalCP | OptalCP / Quintiq | OptalCP</td></tr>
+<tr><td>la35</td><td>30 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1888</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1736</td><td style="background-color:purple;color:white;font-weight:bold">1549</td><td style="background-color:orange;color:white;font-weight:bold">1549</td><td>OptalCP | OptalCP / CPO2013 | OptalCP</td></tr>
 <tr><td>la36</td><td>15 x 15</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1268</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1160</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1023</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">948</td><td>OptalCP</td></tr>
 <tr><td>la37</td><td>15 x 15</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1397</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1397</td><td style="background-color:orange;color:white;font-weight:bold">1062</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">986</td><td>OptalCP</td></tr>
 <tr><td>la38</td><td>15 x 15</td><td style="background-color:orange;color:white;font-weight:bold">1196</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1141</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">954</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">943</td><td>OptalCP</td></tr>
 <tr><td>la39</td><td>15 x 15</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1233</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1184</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1011</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">922</td><td>OptalCP</td></tr>
 <tr><td>la40</td><td>15 x 15</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">1222</td><td style="background-color:orange;color:white;font-weight:bold">1144</td><td style="background-color:orange;color:white;font-weight:bold">955</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">955</td><td>OptalCP</td></tr>
 </table>
+
 
 <br/>
 
@@ -607,8 +639,6 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><td>orb10</td><td>10 x 10</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">944</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">933</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">742</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">681</td><td>OptalCP</td></tr>
 </table>
 
-<br/>
-
 *FT instances are also known as MT because the 1963 paper of Fisher and Thompson was published in the book "Industrial scheduling" by Muth and Thompson.*
 
 #### Brandimarte (1993)
@@ -624,13 +654,14 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><td>mk07</td><td>20 x 5</td><td>flexible jobshop</td><td>139</td><td>139</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>mk08</td><td>20 x 10</td><td>flexible jobshop</td><td>523</td><td>523</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>mk09</td><td>20 x 10</td><td>flexible jobshop</td><td>307</td><td>307</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>mk10</td><td>20 x 15</td><td>flexible jobshop</td><td>189</td><td>193</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub Quintiq</td></tr>
+<tr><td>mk10</td><td>20 x 15</td><td>flexible jobshop</td><td>189</td><td>193</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>Quintiq</td></tr>
 <tr><td>mk11</td><td>30 x 5</td><td>flexible jobshop</td><td>609</td><td>609</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 24h</td></tr>
 <tr><td>mk12</td><td>30 x 10</td><td>flexible jobshop</td><td>508</td><td>508</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>mk13</td><td>30 x 10</td><td>flexible jobshop</td><td>382</td><td>390</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
+<tr><td>mk13</td><td>30 x 10</td><td>flexible jobshop</td><td>383</td><td>383</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>ToukoUrsin2026[ab]</td></tr>
 <tr><td>mk14</td><td>30 x 15</td><td>flexible jobshop</td><td>694</td><td>694</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>mk15</td><td>30 x 15</td><td>flexible jobshop</td><td>333</td><td>333</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
 </table>
+
 
 ***Instances mk11 to mk15 are present in the supplementary material of Test Instances for the Flexible Job Shop Scheduling Problem with Work Centers but absent from other problem repositories***
 
@@ -739,10 +770,10 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><td>behnke10</td><td>20 x 20</td><td>flexible jobshop</td><td>127</td><td>127</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>behnke11</td><td>50 x 20</td><td>flexible jobshop</td><td>223</td><td>228</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
 <tr><td>behnke12</td><td>50 x 20</td><td>flexible jobshop</td><td>213</td><td>219</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
-<tr><td>behnke13</td><td>50 x 20</td><td>flexible jobshop</td><td>223</td><td>229</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
-<tr><td>behnke14</td><td>50 x 20</td><td>flexible jobshop</td><td>221</td><td>230</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
-<tr><td>behnke15</td><td>50 x 20</td><td>flexible jobshop</td><td>219</td><td>228</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
-<tr><td>behnke16</td><td>100 x 20</td><td>flexible jobshop</td><td>391</td><td>412</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
+<tr><td>behnke13</td><td>50 x 20</td><td>flexible jobshop</td><td>223</td><td>229</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CP-SAT | ub OptalCP</td></tr>
+<tr><td>behnke14</td><td>50 x 20</td><td>flexible jobshop</td><td>221</td><td>230</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CP-SAT | ub OptalCP</td></tr>
+<tr><td>behnke15</td><td>50 x 20</td><td>flexible jobshop</td><td>220</td><td>228</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CP-SAT | ub OptalCP</td></tr>
+<tr><td>behnke16</td><td>100 x 20</td><td>flexible jobshop</td><td>392</td><td>412</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CP-SAT | ub OptalCP</td></tr>
 <tr><td>behnke17</td><td>100 x 20</td><td>flexible jobshop</td><td>392</td><td>401</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
 <tr><td>behnke18</td><td>100 x 20</td><td>flexible jobshop</td><td>390</td><td>396</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
 <tr><td>behnke19</td><td>100 x 20</td><td>flexible jobshop</td><td>395</td><td>400</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
@@ -755,16 +786,16 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><td>behnke26</td><td>20 x 40</td><td>flexible jobshop</td><td>113</td><td>113</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>behnke27</td><td>20 x 40</td><td>flexible jobshop</td><td>122</td><td>122</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>behnke28</td><td>20 x 40</td><td>flexible jobshop</td><td>114</td><td>114</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>behnke29</td><td>20 x 40</td><td>flexible jobshop</td><td>116</td><td>117</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
+<tr><td>behnke29</td><td>20 x 40</td><td>flexible jobshop</td><td>117</td><td>117</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb CP-SAT | ub OptalCP</td></tr>
 <tr><td>behnke30</td><td>20 x 40</td><td>flexible jobshop</td><td>120</td><td>120</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>behnke31</td><td>50 x 40</td><td>flexible jobshop</td><td>226</td><td>226</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb DOFP2026a | ub OptalCP</td></tr>
 <tr><td>behnke32</td><td>50 x 40</td><td>flexible jobshop</td><td>220</td><td>224</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
-<tr><td>behnke33</td><td>50 x 40</td><td>flexible jobshop</td><td>223</td><td>224</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
+<tr><td>behnke33</td><td>50 x 40</td><td>flexible jobshop</td><td>224</td><td>224</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb CP-SAT | ub OptalCP</td></tr>
 <tr><td>behnke34</td><td>50 x 40</td><td>flexible jobshop</td><td>219</td><td>223</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
 <tr><td>behnke35</td><td>50 x 40</td><td>flexible jobshop</td><td>211</td><td>214</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
-<tr><td>behnke36</td><td>100 x 40</td><td>flexible jobshop</td><td>381</td><td>388</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
-<tr><td>behnke37</td><td>100 x 40</td><td>flexible jobshop</td><td>387</td><td>391</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
-<tr><td>behnke38</td><td>100 x 40</td><td>flexible jobshop</td><td>386</td><td>389</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
+<tr><td>behnke36</td><td>100 x 40</td><td>flexible jobshop</td><td>381</td><td>388</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CP-SAT | ub OptalCP</td></tr>
+<tr><td>behnke37</td><td>100 x 40</td><td>flexible jobshop</td><td>387</td><td>391</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CP-SAT | ub OptalCP</td></tr>
+<tr><td>behnke38</td><td>100 x 40</td><td>flexible jobshop</td><td>387</td><td>389</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CP-SAT | ub OptalCP</td></tr>
 <tr><td>behnke39</td><td>100 x 40</td><td>flexible jobshop</td><td>384</td><td>389</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
 <tr><td>behnke40</td><td>100 x 40</td><td>flexible jobshop</td><td>415</td><td>419</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
 <tr><td>behnke41</td><td>10 x 60</td><td>flexible jobshop</td><td>87</td><td>87</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
@@ -774,24 +805,24 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 <tr><td>behnke45</td><td>10 x 60</td><td>flexible jobshop</td><td>87</td><td>87</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
 <tr><td>behnke46</td><td>20 x 60</td><td>flexible jobshop</td><td>114</td><td>114</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>behnke47</td><td>20 x 60</td><td>flexible jobshop</td><td>117</td><td>117</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>behnke48</td><td>20 x 60</td><td>flexible jobshop</td><td>124</td><td>125</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
+<tr><td>behnke48</td><td>20 x 60</td><td>flexible jobshop</td><td>125</td><td>125</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb CP-SAT | ub OptalCP</td></tr>
 <tr><td>behnke49</td><td>20 x 60</td><td>flexible jobshop</td><td>113</td><td>113</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>behnke50</td><td>20 x 60</td><td>flexible jobshop</td><td>123</td><td>123</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>behnke51</td><td>50 x 60</td><td>flexible jobshop</td><td>215</td><td>218</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
-<tr><td>behnke52</td><td>50 x 60</td><td>flexible jobshop</td><td>210</td><td>212</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
-<tr><td>behnke53</td><td>50 x 60</td><td>flexible jobshop</td><td>211</td><td>215</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
-<tr><td>behnke54</td><td>50 x 60</td><td>flexible jobshop</td><td>221</td><td>223</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
+<tr><td>behnke51</td><td>50 x 60</td><td>flexible jobshop</td><td>215</td><td>218</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CP-SAT | ub OptalCP</td></tr>
+<tr><td>behnke52</td><td>50 x 60</td><td>flexible jobshop</td><td>211</td><td>211</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb CP-SAT | ub ToukoUrsin2026b</td></tr>
+<tr><td>behnke53</td><td>50 x 60</td><td>flexible jobshop</td><td>212</td><td>215</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CP-SAT | ub OptalCP</td></tr>
+<tr><td>behnke54</td><td>50 x 60</td><td>flexible jobshop</td><td>221</td><td>223</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CP-SAT | ub OptalCP</td></tr>
 <tr><td>behnke55</td><td>50 x 60</td><td>flexible jobshop</td><td>221</td><td>223</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
 <tr><td>behnke56</td><td>100 x 60</td><td>flexible jobshop</td><td>384</td><td>390</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
-<tr><td>behnke57</td><td>100 x 60</td><td>flexible jobshop</td><td>385</td><td>390</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
-<tr><td>behnke58</td><td>100 x 60</td><td>flexible jobshop</td><td>392</td><td>397</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
+<tr><td>behnke57</td><td>100 x 60</td><td>flexible jobshop</td><td>385</td><td>390</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CP-SAT | ub OptalCP</td></tr>
+<tr><td>behnke58</td><td>100 x 60</td><td>flexible jobshop</td><td>392</td><td>397</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CP-SAT | ub OptalCP</td></tr>
 <tr><td>behnke59</td><td>100 x 60</td><td>flexible jobshop</td><td>392</td><td>398</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
-<tr><td>behnke60</td><td>100 x 60</td><td>flexible jobshop</td><td>397</td><td>402</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb DOFP2026a | ub OptalCP</td></tr>
+<tr><td>behnke60</td><td>100 x 60</td><td>flexible jobshop</td><td>397</td><td>397</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb DOFP2026a | ub ToukoUrsin2026</td></tr>
 </table>
 
 #### Birgin et al. (2014) - arbitrary precedence DAGs
 
-[Results to be published soon]
+[Results to be published when issues with ub < lb from literature are verified]
 
 
 
@@ -799,17 +830,20 @@ The problems in this benchmark are modified versions of the corresponding jobsho
 
 The upper and lower bounds come from
 
- - MG2000 (1 bounds in la) : **M. Mastrolilli, L. Gambardella**, Effective neighbourhood functions for the flexible job shop problem, Journal of Scheduling 3 (2000) 3–20
+- MG2000 (4 bounds in la) : **M. Mastrolilli, L. Gambardella**, Effective neighbourhood functions for the flexible job shop problem, Journal of Scheduling 3 (2000) 3–20
 
- - Quintiq (31 bounds in  mk, dpp, abz, car and la) : **Quintiq** http://www.quintiq.com/optimization/fjssp-world-records.html (2013) - this site doesn't exist anymore
+- Quintiq (30 bounds in mk, dpp, abz, car and la) : **Quintiq** http://www.quintiq.com/optimization/fjssp-world-records.html (2013) - archived by the Internet Wayback Machine
 
- - CPO2013 (14 bounds in abz, la and dpp) : **Jean-François Puget** Solving flexible job shop scheduling problems (cp optimizer 12.6)  https://www.ibm.com/developerworks/community/blogs/jfp/entry/solving\_flexible\_job\_shop\_scheduling\_problems?lang=en (2013) - this site doesn't exist anymore
+- CPO2013 (16 bounds in abz, la and dpp) : **Jean-François Puget** Solving flexible job shop scheduling problems (cp optimizer 12.6)  https://www.ibm.com/developerworks/community/blogs/jfp/entry/solving\_flexible\_job\_shop\_scheduling\_problems?lang=en (2013) - archived by the Internet Wayback Machine
 
- - DLLSXG2019 (8 bounds in dpp, abz and la) : **J. Ding, Z. Lu, C.-M. Li, L. Shen, L. Xu, F. Glover** (2019) [A two-individual based evolutionary algorithm for the flexible job shop scheduling problem](https://dl.acm.org/doi/pdf/10.1609/aaai.v33i01.33012262), in: Proceedings of the AAAI Conference on Artificial Intelligence, Vol. 33, 2019, pp. 2262–2271
+- DLLSXG2019 (8 bounds in dpp, abz and la) : **J. Ding, Z. Lu, C.-M. Li, L. Shen, L. Xu, F. Glover** (2019) [A two-individual based evolutionary algorithm for the flexible job shop scheduling problem](https://dl.acm.org/doi/pdf/10.1609/aaai.v33i01.33012262), in: Proceedings of the AAAI Conference on Artificial Intelligence, Vol. 33, 2019, pp. 2262–2271
 
- - CdGKGC2025 (14 bounds in #a, abz, car, la) : **Marc-Emmanuel Coupvent des Graviers, Lotfi Kobrosly, Christophe Guettier, and Tristan Cazenave** (2025). [Updating Lower and Upper Bounds for the Job-Shop Scheduling Problem Test Instances](https://arxiv.org/abs/2504.16106) CoRR abs/2504.16106
+- CdGKGC2025 (16 bounds in dpp, car, abz and la) : **Marc-Emmanuel Coupvent des Graviers, Lotfi Kobrosly, Christophe Guettier, and Tristan Cazenave** (2025). [Updating Lower and Upper Bounds for the Job-Shop Scheduling Problem Test Instances](https://arxiv.org/abs/2504.16106) CoRR abs/2504.16106
 
-- DOFP2026a (36 bounds in mk, behnke and la) : **Diego Olivier Fernandez Pons** (2026) Personal communication, study / test to improve OptalCP
+- DOFP2026a (15 bounds in behnke) : **Diego Olivier Fernandez Pons** (2026) [Personal communication] : study / test to improve OptalCP
 
+- ToukoUrsin2026a (1 bound - mk13) : **Touko Ursin** (2026) [issue report #11] assignment relaxation of the flexible jobshop combined with one well chosen energy constraint
 
-All other bounds were found with OptalCP
+- ToukoUrsin2026b (3 bounds in mk and behnke) : **Touko Ursin** (2026) [issue report #10, #12, #13] method unknown
+
+There are 16 bounds found by CP-SAT (on behnke) and 695 bounds by OptalCP

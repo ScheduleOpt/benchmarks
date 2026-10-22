@@ -479,11 +479,11 @@ We therefore adopt the following metrics instead
 
 - **Geometric average of lower bound to best known lower bound ratio**
 
-$$LB_{avg} = \exp\left(\sum_k\log\frac{LB}{LB_{best}}\right)$$
+$$LB_{avg} = \exp\left(\frac{1}{N} \sum_k\log\frac{LB}{LB_{best}}\right)$$
 
 - **Geometric average of the upper bound to best known upper bound ratio**
 
-$$UB_{avg} = \exp\left(\sum_k\log\frac{UB}{UB_{best}}\right)$$
+$$UB_{avg} = \exp\left(\frac{1}{N} \sum_k\log\frac{UB}{UB_{best}}\right)$$
 
 - **Geometric shifted average of the gap**
 
@@ -1511,4 +1511,3 @@ The upper and lower bounds come from:
 - Diaz2026 (2 bounds in dmu) : **Hernan Diaz Rodriguez** (2026) [Personal communication]: a memetic algorithm with path-relinking crossover between elite schedules, tabu search on the N7 neighbourhood (Zhang et al. tenure) with GTA-style guided tenure, and restarts; The initial population holds good solutions already.
 
 All other bounds were found by OptalCP except 4 bounds by CP-SAT (equal but faster) and 1 bounds by Hexaly (strictly better than all other solvers). The cited papers also may use an engine directly like [CPO2015] or as part of an algorithm like [CdGKGC2025] which uses CP-SAT. [DOFP2026] uses OptalCP.
-
