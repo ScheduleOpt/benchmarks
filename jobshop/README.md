@@ -4,6 +4,14 @@ title: JSPLib
 permalink: /jsplib
 ---
 
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
 
@@ -92,7 +100,7 @@ $$GAP = \exp\left(\frac{1}{N} \sum_k\log\left(1 + \frac{UB_k - LB_k}{UB_k}\right
 | Google OR-Tools CP-SAT | Lazy clause generation | 9.15.6755 | 2026-01 |
 | OptalCP | CP scheduling | 2026.4.0 | 2026-04 |
 
-[Engine histories](#appendix-engine-histories) are in the appendix.
+[Engine history](#history-of-the-engines) in the appendix.
 
 ### Results
 
@@ -276,7 +284,9 @@ $$\max_m \left [ \min_{i \neq j \in m}\bigg(\mathrm{head}_i + \mathrm{tail}_j \b
 
 The Carlier inequalities describe the polytope of the preemptive relaxation for a single machine with release and due dates (authorized window). The preemptive relaxation can be either solved by Jackson algorithm ($n \log n$) or by maximization of the bound induced by Carlier inequalities ($n^3$)
 
-$$\max_m\ \max_{i,j\in m} \left [ \mathrm{head}_i + \sum_{o \in m\ h_o \geq h_i\ t_o\geq t_j} p_o + \mathrm{tail}_j \right ]$$
+
+$$\max_m\ \max_{i,j\in m} \Big[ \mathrm{head}_i + \sum_{\substack{o \in m \\ h_o \ge h_i,\ t_o \ge t_j}} p_o + \mathrm{tail}_j \Big]$$
+
 
 - **Two machines and two tasks per job relaxation**
 
@@ -874,7 +884,7 @@ The upper and lower bounds come from:
 
 - DOFP2026 (19 bounds in dmu and tai) : **Diego Olivier Fernandez Pons** (2026) [Personal communication] Best known so far upper-bounds were given as starting solution to OptalCP, and ran for 10 minutes
 
-- Diaz2026 (2 bounds - dmu16 and dmu61) : **Hernan Diaz Rodriguez** (2026) [Personal communication] A memetic algorithm with path-relinking crossover between elite schedules, tabu search on the N7 neighbourhood (Zhang et al. tenure) with GTA-style guided tenure, and restarts; The initial population holds good solutions already.
+- Diaz2026 (2 bounds - dmu16 and dmu61) : **Hernan Diaz Rodriguez** (2026) [Personal communication](https://github.com/ScheduleOpt/benchmarks/issues/9) A memetic algorithm with path-relinking crossover between elite schedules, tabu search on the N7 neighbourhood (Zhang et al. tenure) with GTA-style guided tenure, and restarts; The initial population holds good solutions already.
 
 - Schwemin2026 (11 bounds in dmu and tai) : **Marcel Schwemin** (2026) [Personal communication](https://github.com/ScheduleOpt/benchmarks/issues/15) N7 Tabu with time-slabs from initial population, on GPU
 
@@ -897,10 +907,8 @@ All other bounds were found by OptalCP except 4 bounds by CP-SAT and 1 by Hexaly
 
 ### History of the engines
 
-<details>
+<details markdown="1">
 <summary>IBM ILOG Cplex (1987 - present)</summary>
-
-<br/>
 
 **Cplex** is a MIP engine founded by Robert Bixby in 1987, and acquired in 1997 by ILOG, subsequently acquired by IBM in 2009.
 
@@ -925,14 +933,10 @@ References
 - [Solving Real-World linear programs: a decade and more of progress](https://pubsonline.informs.org/doi/epdf/10.1287/opre.50.1.3.17780) (Robert Bixby - 2002)
 - [Mixed Integer Programming: Analyzing 12 Years of Progress." In Facets of Combinatorial Optimization](https://link.springer.com/chapter/10.1007/978-3-642-38189-8_18) (Tobias Achterberg, Roland Wunderling - 2013)
 
-<br/>
-
 </details>
 
-<details>
+<details markdown="1">
 <summary>IBM ILOG CP Optimizer (2007 - present)</summary>
-
-<br/>
 
 **CP Optimizer** is a descendant of **ILOG Solver** developed over the years by Jean-François Puget, Jean-Charles Régin and later Laurent Perron and **ILOG Scheduler** developed by Claude Le Pape, Wim Nuijten and later Philippe Laborie. CP Optimizer (led by Paul Shaw, Laurent Perron and Philippe Laborie) merged the general CP engine and the specific scheduling add-on in a single engine, promoted the model-and-run approach and pioneered a new scheduling language (optional intervals, noOverlap, cumulative functions, etc.) that has become an industry standard.
 
@@ -965,7 +969,7 @@ References
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Google OR-Tools CP-SAT (2018–present)</summary>
 
 <br/>
@@ -1039,7 +1043,7 @@ The principal implementation files in OR-Tools v9.15 are:
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>OptalCP (2021 - present)</summary>
 
 <br/>
