@@ -4,7 +4,7 @@
       "size": "6 x 6",
       "family": "ft",
       "family_long": "Fisher and Thompson 1963",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 55,
       "upper_bound": 55,
@@ -52,7 +52,7 @@
       "size": "10 x 10",
       "family": "ft",
       "family_long": "Fisher and Thompson 1963",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 930,
       "upper_bound": 930,
@@ -100,7 +100,7 @@
       "size": "20 x 5",
       "family": "ft",
       "family_long": "Fisher and Thompson 1963",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1165,
       "upper_bound": 1165,
@@ -148,7 +148,7 @@
       "size": "10 x 5",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 666,
       "upper_bound": 666,
@@ -196,7 +196,7 @@
       "size": "10 x 5",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 655,
       "upper_bound": 655,
@@ -244,7 +244,7 @@
       "size": "10 x 5",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 597,
       "upper_bound": 597,
@@ -292,7 +292,7 @@
       "size": "10 x 5",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 590,
       "upper_bound": 590,
@@ -340,7 +340,7 @@
       "size": "10 x 5",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 593,
       "upper_bound": 593,
@@ -388,7 +388,7 @@
       "size": "15 x 5",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 926,
       "upper_bound": 926,
@@ -436,7 +436,7 @@
       "size": "15 x 5",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 890,
       "upper_bound": 890,
@@ -484,7 +484,7 @@
       "size": "15 x 5",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 863,
       "upper_bound": 863,
@@ -532,7 +532,7 @@
       "size": "15 x 5",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 951,
       "upper_bound": 951,
@@ -580,7 +580,7 @@
       "size": "15 x 5",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 958,
       "upper_bound": 958,
@@ -628,7 +628,7 @@
       "size": "20 x 5",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1222,
       "upper_bound": 1222,
@@ -676,7 +676,7 @@
       "size": "20 x 5",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1039,
       "upper_bound": 1039,
@@ -724,7 +724,7 @@
       "size": "20 x 5",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1150,
       "upper_bound": 1150,
@@ -772,7 +772,7 @@
       "size": "20 x 5",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1292,
       "upper_bound": 1292,
@@ -820,7 +820,7 @@
       "size": "20 x 5",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1207,
       "upper_bound": 1207,
@@ -868,7 +868,7 @@
       "size": "10 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 945,
       "upper_bound": 945,
@@ -916,7 +916,7 @@
       "size": "10 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 784,
       "upper_bound": 784,
@@ -964,7 +964,7 @@
       "size": "10 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 848,
       "upper_bound": 848,
@@ -1012,7 +1012,7 @@
       "size": "10 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 842,
       "upper_bound": 842,
@@ -1060,7 +1060,7 @@
       "size": "10 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 902,
       "upper_bound": 902,
@@ -1108,7 +1108,7 @@
       "size": "15 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1046,
       "upper_bound": 1046,
@@ -1156,7 +1156,7 @@
       "size": "15 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 927,
       "upper_bound": 927,
@@ -1204,7 +1204,7 @@
       "size": "15 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1032,
       "upper_bound": 1032,
@@ -1252,7 +1252,7 @@
       "size": "15 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 935,
       "upper_bound": 935,
@@ -1300,7 +1300,7 @@
       "size": "15 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 977,
       "upper_bound": 977,
@@ -1348,7 +1348,7 @@
       "size": "20 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1218,
       "upper_bound": 1218,
@@ -1396,7 +1396,7 @@
       "size": "20 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1235,
       "upper_bound": 1235,
@@ -1444,7 +1444,7 @@
       "size": "20 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1216,
       "upper_bound": 1216,
@@ -1492,7 +1492,7 @@
       "size": "20 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1152,
       "upper_bound": 1152,
@@ -1540,7 +1540,7 @@
       "size": "20 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1355,
       "upper_bound": 1355,
@@ -1588,7 +1588,7 @@
       "size": "30 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1784,
       "upper_bound": 1784,
@@ -1636,7 +1636,7 @@
       "size": "30 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1850,
       "upper_bound": 1850,
@@ -1684,7 +1684,7 @@
       "size": "30 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1719,
       "upper_bound": 1719,
@@ -1732,7 +1732,7 @@
       "size": "30 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1721,
       "upper_bound": 1721,
@@ -1780,7 +1780,7 @@
       "size": "30 x 10",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1888,
       "upper_bound": 1888,
@@ -1828,7 +1828,7 @@
       "size": "15 x 15",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1268,
       "upper_bound": 1268,
@@ -1876,7 +1876,7 @@
       "size": "15 x 15",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1397,
       "upper_bound": 1397,
@@ -1924,7 +1924,7 @@
       "size": "15 x 15",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1196,
       "upper_bound": 1196,
@@ -1972,7 +1972,7 @@
       "size": "15 x 15",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1233,
       "upper_bound": 1233,
@@ -2020,7 +2020,7 @@
       "size": "15 x 15",
       "family": "la",
       "family_long": "Lawrence 1984",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1222,
       "upper_bound": 1222,
@@ -2068,7 +2068,7 @@
       "size": "10 x 10",
       "family": "abz",
       "family_long": "Adams, Balas and Zawack 1988",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1234,
       "upper_bound": 1234,
@@ -2116,7 +2116,7 @@
       "size": "10 x 10",
       "family": "abz",
       "family_long": "Adams, Balas and Zawack 1988",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 943,
       "upper_bound": 943,
@@ -2332,7 +2332,7 @@
       "size": "10 x 10",
       "family": "orb",
       "family_long": "Applegate and Cook 1991",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1059,
       "upper_bound": 1059,
@@ -2380,7 +2380,7 @@
       "size": "10 x 10",
       "family": "orb",
       "family_long": "Applegate and Cook 1991",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 888,
       "upper_bound": 888,
@@ -2428,7 +2428,7 @@
       "size": "10 x 10",
       "family": "orb",
       "family_long": "Applegate and Cook 1991",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1005,
       "upper_bound": 1005,
@@ -2476,7 +2476,7 @@
       "size": "10 x 10",
       "family": "orb",
       "family_long": "Applegate and Cook 1991",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1005,
       "upper_bound": 1005,
@@ -2524,7 +2524,7 @@
       "size": "10 x 10",
       "family": "orb",
       "family_long": "Applegate and Cook 1991",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 887,
       "upper_bound": 887,
@@ -2572,7 +2572,7 @@
       "size": "10 x 10",
       "family": "orb",
       "family_long": "Applegate and Cook 1991",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1010,
       "upper_bound": 1010,
@@ -2620,7 +2620,7 @@
       "size": "10 x 10",
       "family": "orb",
       "family_long": "Applegate and Cook 1991",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 397,
       "upper_bound": 397,
@@ -2668,7 +2668,7 @@
       "size": "10 x 10",
       "family": "orb",
       "family_long": "Applegate and Cook 1991",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 899,
       "upper_bound": 899,
@@ -2716,7 +2716,7 @@
       "size": "10 x 10",
       "family": "orb",
       "family_long": "Applegate and Cook 1991",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 934,
       "upper_bound": 934,
@@ -2764,7 +2764,7 @@
       "size": "10 x 10",
       "family": "orb",
       "family_long": "Applegate and Cook 1991",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 944,
       "upper_bound": 944,
@@ -4044,7 +4044,7 @@
       "size": "15 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1231,
       "upper_bound": 1231,
@@ -4092,7 +4092,7 @@
       "size": "15 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1244,
       "upper_bound": 1244,
@@ -4140,7 +4140,7 @@
       "size": "15 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1218,
       "upper_bound": 1218,
@@ -4188,7 +4188,7 @@
       "size": "15 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1175,
       "upper_bound": 1175,
@@ -4236,7 +4236,7 @@
       "size": "15 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1224,
       "upper_bound": 1224,
@@ -4284,7 +4284,7 @@
       "size": "15 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1238,
       "upper_bound": 1238,
@@ -4332,7 +4332,7 @@
       "size": "15 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1227,
       "upper_bound": 1227,
@@ -4380,7 +4380,7 @@
       "size": "15 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1217,
       "upper_bound": 1217,
@@ -4428,7 +4428,7 @@
       "size": "15 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1274,
       "upper_bound": 1274,
@@ -4476,7 +4476,7 @@
       "size": "15 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 1241,
       "upper_bound": 1241,
@@ -6524,7 +6524,7 @@
       "size": "50 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2760,
       "upper_bound": 2760,
@@ -6572,7 +6572,7 @@
       "size": "50 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2756,
       "upper_bound": 2756,
@@ -6620,7 +6620,7 @@
       "size": "50 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2717,
       "upper_bound": 2717,
@@ -6668,7 +6668,7 @@
       "size": "50 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2839,
       "upper_bound": 2839,
@@ -6716,7 +6716,7 @@
       "size": "50 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2679,
       "upper_bound": 2679,
@@ -6764,7 +6764,7 @@
       "size": "50 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2781,
       "upper_bound": 2781,
@@ -6812,7 +6812,7 @@
       "size": "50 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2943,
       "upper_bound": 2943,
@@ -6860,7 +6860,7 @@
       "size": "50 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2885,
       "upper_bound": 2885,
@@ -6908,7 +6908,7 @@
       "size": "50 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2655,
       "upper_bound": 2655,
@@ -6956,7 +6956,7 @@
       "size": "50 x 15",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2723,
       "upper_bound": 2723,
@@ -7004,7 +7004,7 @@
       "size": "50 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2868,
       "upper_bound": 2868,
@@ -7052,7 +7052,7 @@
       "size": "50 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2869,
       "upper_bound": 2869,
@@ -7100,7 +7100,7 @@
       "size": "50 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2755,
       "upper_bound": 2755,
@@ -7148,7 +7148,7 @@
       "size": "50 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2702,
       "upper_bound": 2702,
@@ -7196,7 +7196,7 @@
       "size": "50 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2725,
       "upper_bound": 2725,
@@ -7244,7 +7244,7 @@
       "size": "50 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2845,
       "upper_bound": 2845,
@@ -7292,7 +7292,7 @@
       "size": "50 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2825,
       "upper_bound": 2825,
@@ -7340,7 +7340,7 @@
       "size": "50 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2784,
       "upper_bound": 2784,
@@ -7388,7 +7388,7 @@
       "size": "50 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 3071,
       "upper_bound": 3071,
@@ -7436,7 +7436,7 @@
       "size": "50 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 2995,
       "upper_bound": 2995,
@@ -7484,7 +7484,7 @@
       "size": "100 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 5464,
       "upper_bound": 5464,
@@ -7532,7 +7532,7 @@
       "size": "100 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 5181,
       "upper_bound": 5181,
@@ -7580,7 +7580,7 @@
       "size": "100 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 5568,
       "upper_bound": 5568,
@@ -7628,7 +7628,7 @@
       "size": "100 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 5339,
       "upper_bound": 5339,
@@ -7676,7 +7676,7 @@
       "size": "100 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 5392,
       "upper_bound": 5392,
@@ -7724,7 +7724,7 @@
       "size": "100 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 5342,
       "upper_bound": 5342,
@@ -7772,7 +7772,7 @@
       "size": "100 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 5436,
       "upper_bound": 5436,
@@ -7820,7 +7820,7 @@
       "size": "100 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 5394,
       "upper_bound": 5394,
@@ -7868,7 +7868,7 @@
       "size": "100 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 5358,
       "upper_bound": 5358,
@@ -7916,7 +7916,7 @@
       "size": "100 x 20",
       "family": "ta",
       "family_long": "Taillard 1993",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 5183,
       "upper_bound": 5183,
@@ -11455,7 +11455,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 5526,
-      "upper_bound": 5692,
+      "upper_bound": 5685,
       "history": {
          "lb": [
             {
@@ -11484,6 +11484,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 5685,
+               "date": "2026-11-13",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": null,
+               "certificate": "yes"
+            },
             {
                "value": 5692,
                "date": "2026-06-28",
@@ -11591,7 +11599,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 5513,
-      "upper_bound": 5749,
+      "upper_bound": 5733,
       "history": {
          "lb": [
             {
@@ -11620,6 +11628,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 5733,
+               "date": "2026-11-13",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": null,
+               "certificate": "yes"
+            },
             {
                "value": 5749,
                "date": "2026-06-28",
@@ -11791,7 +11807,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 6129,
-      "upper_bound": 6206,
+      "upper_bound": 6204,
       "history": {
          "lb": [
             {
@@ -11820,6 +11836,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 6204,
+               "date": "2026-11-13",
+               "solver": "Schwemin2026",
+               "hardware": "AMD Radeon RX 6700 XT",
+               "time": 30,
+               "certificate": "yes"
+            },
             {
                "value": 6206,
                "date": "2026-06-22",
@@ -12394,7 +12418,7 @@
                "solver": "DOFP2026",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
-               "certificate": "yes" 
+               "certificate": "yes"
             },
             {
                "value": 6633,
@@ -12428,7 +12452,7 @@
       "size": "10 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 8219,
       "upper_bound": 8219,
@@ -12476,7 +12500,7 @@
       "size": "10 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 7416,
       "upper_bound": 7416,
@@ -12524,7 +12548,7 @@
       "size": "10 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 8094,
       "upper_bound": 8094,
@@ -12572,7 +12596,7 @@
       "size": "10 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 8657,
       "upper_bound": 8657,
@@ -12620,7 +12644,7 @@
       "size": "10 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 7936,
       "upper_bound": 7936,
@@ -12668,7 +12692,7 @@
       "size": "10 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 8509,
       "upper_bound": 8509,
@@ -12716,7 +12740,7 @@
       "size": "10 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 8299,
       "upper_bound": 8299,
@@ -12764,7 +12788,7 @@
       "size": "10 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 7788,
       "upper_bound": 7788,
@@ -12812,7 +12836,7 @@
       "size": "10 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 8300,
       "upper_bound": 8300,
@@ -12860,7 +12884,7 @@
       "size": "10 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 8481,
       "upper_bound": 8481,
@@ -12908,7 +12932,7 @@
       "size": "10 x 100",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 56609,
       "upper_bound": 56609,
@@ -12956,7 +12980,7 @@
       "size": "10 x 100",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 52330,
       "upper_bound": 52330,
@@ -13004,7 +13028,7 @@
       "size": "10 x 100",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 56412,
       "upper_bound": 56412,
@@ -13052,7 +13076,7 @@
       "size": "10 x 100",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 54889,
       "upper_bound": 54889,
@@ -13100,7 +13124,7 @@
       "size": "10 x 100",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 54603,
       "upper_bound": 54603,
@@ -13148,7 +13172,7 @@
       "size": "10 x 100",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 53723,
       "upper_bound": 53723,
@@ -13196,7 +13220,7 @@
       "size": "10 x 100",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 55456,
       "upper_bound": 55456,
@@ -13244,7 +13268,7 @@
       "size": "10 x 100",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 56466,
       "upper_bound": 56466,
@@ -13292,7 +13316,7 @@
       "size": "10 x 100",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 55096,
       "upper_bound": 55096,
@@ -13340,7 +13364,7 @@
       "size": "10 x 100",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 56661,
       "upper_bound": 56661,
@@ -13388,7 +13412,7 @@
       "size": "10 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 515370,
       "upper_bound": 515370,
@@ -13436,7 +13460,7 @@
       "size": "10 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 513525,
       "upper_bound": 513525,
@@ -13484,7 +13508,7 @@
       "size": "10 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 508161,
       "upper_bound": 508161,
@@ -13532,7 +13556,7 @@
       "size": "10 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 513814,
       "upper_bound": 513814,
@@ -13580,7 +13604,7 @@
       "size": "10 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 517020,
       "upper_bound": 517020,
@@ -13628,7 +13652,7 @@
       "size": "10 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 517777,
       "upper_bound": 517777,
@@ -13676,7 +13700,7 @@
       "size": "10 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 514921,
       "upper_bound": 514921,
@@ -13724,7 +13748,7 @@
       "size": "10 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 522277,
       "upper_bound": 522277,
@@ -13772,7 +13796,7 @@
       "size": "10 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 511213,
       "upper_bound": 511213,
@@ -13820,7 +13844,7 @@
       "size": "10 x 1000",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 509855,
       "upper_bound": 509855,
@@ -13868,7 +13892,7 @@
       "size": "100 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 54951,
       "upper_bound": 54951,
@@ -13916,7 +13940,7 @@
       "size": "100 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 57160,
       "upper_bound": 57160,
@@ -13964,7 +13988,7 @@
       "size": "100 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 54166,
       "upper_bound": 54166,
@@ -14012,7 +14036,7 @@
       "size": "100 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 54371,
       "upper_bound": 54371,
@@ -14060,7 +14084,7 @@
       "size": "100 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 56142,
       "upper_bound": 56142,
@@ -14108,7 +14132,7 @@
       "size": "100 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 52447,
       "upper_bound": 52447,
@@ -14156,7 +14180,7 @@
       "size": "100 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 54051,
       "upper_bound": 54051,
@@ -14204,7 +14228,7 @@
       "size": "100 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 55624,
       "upper_bound": 55624,
@@ -14252,7 +14276,7 @@
       "size": "100 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 54210,
       "upper_bound": 54210,
@@ -14300,7 +14324,7 @@
       "size": "100 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 55464,
       "upper_bound": 55464,
@@ -14351,7 +14375,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 62843,
-      "upper_bound": 76926,
+      "upper_bound": 76118,
       "history": {
          "lb": [
             {
@@ -14364,6 +14388,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 76118,
+               "date": "2026-11-13",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": null,
+               "certificate": "no"
+            },
             {
                "value": 76926,
                "date": "2026-03-15",
@@ -14391,7 +14423,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 62814,
-      "upper_bound": 76613,
+      "upper_bound": 75478,
       "history": {
          "lb": [
             {
@@ -14405,9 +14437,17 @@
          ],
          "ub": [
             {
+               "value": 75478,
+               "date": "2026-11-13",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": null,
+               "certificate": "no"
+            },
+            {
                "value": 76613,
                "date": "2026-10-08",
-               "solver": "OptalCP",
+               "solver": "DOFP2026",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
                "certificate": "no"
@@ -14447,7 +14487,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 61533,
-      "upper_bound": 76607,
+      "upper_bound": 75366,
       "history": {
          "lb": [
             {
@@ -14461,9 +14501,17 @@
          ],
          "ub": [
             {
+               "value": 75366,
+               "date": "2026-11-13",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": null,
+               "certificate": "no"
+            },
+            {
                "value": 76607,
                "date": "2026-10-08",
-               "solver": "OptalCP",
+               "solver": "DOFP2026",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
                "certificate": "no"
@@ -14503,7 +14551,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 64742,
-      "upper_bound": 78604,
+      "upper_bound": 77307,
       "history": {
          "lb": [
             {
@@ -14516,6 +14564,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 77307,
+               "date": "2026-11-13",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": null,
+               "certificate": "no"
+            },
             {
                "value": 78604,
                "date": "2026-03-15",
@@ -14543,7 +14599,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 61766,
-      "upper_bound": 77297,
+      "upper_bound": 76403,
       "history": {
          "lb": [
             {
@@ -14557,9 +14613,17 @@
          ],
          "ub": [
             {
+               "value": 76403,
+               "date": "2026-11-13",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": null,
+               "certificate": "no"
+            },
+            {
                "value": 77297,
                "date": "2026-10-08",
-               "solver": "OptalCP",
+               "solver": "DOFP2026",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
                "certificate": "no"
@@ -14599,7 +14663,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 61360,
-      "upper_bound": 77258,
+      "upper_bound": 76060,
       "history": {
          "lb": [
             {
@@ -14613,9 +14677,17 @@
          ],
          "ub": [
             {
+               "value": 76060,
+               "date": "2026-11-13",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": null,
+               "certificate": "no"
+            },
+            {
                "value": 77258,
                "date": "2026-10-08",
-               "solver": "OptalCP",
+               "solver": "DOFP2026",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
                "certificate": "no"
@@ -14655,7 +14727,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 64040,
-      "upper_bound": 77670,
+      "upper_bound": 76713,
       "history": {
          "lb": [
             {
@@ -14668,6 +14740,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 76713,
+               "date": "2026-11-13",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": null,
+               "certificate": "no"
+            },
             {
                "value": 77670,
                "date": "2026-03-15",
@@ -14695,7 +14775,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 63224,
-      "upper_bound": 76956,
+      "upper_bound": 76767,
       "history": {
          "lb": [
             {
@@ -14709,9 +14789,17 @@
          ],
          "ub": [
             {
+               "value": 76767,
+               "date": "2026-11-13",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": null,
+               "certificate": "no"
+            },
+            {
                "value": 76956,
                "date": "2026-10-08",
-               "solver": "OptalCP",
+               "solver": "DOFP2026",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
                "certificate": "no"
@@ -14751,7 +14839,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 62631,
-      "upper_bound": 78219,
+      "upper_bound": 77337,
       "history": {
          "lb": [
             {
@@ -14765,9 +14853,17 @@
          ],
          "ub": [
             {
+               "value": 77337,
+               "date": "2026-11-13",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": null,
+               "certificate": "no"
+            },
+            {
                "value": 78219,
                "date": "2026-10-08",
-               "solver": "OptalCP",
+               "solver": "DOFP2026",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
                "certificate": "no"
@@ -14807,7 +14903,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 64866,
-      "upper_bound": 76869,
+      "upper_bound": 75827,
       "history": {
          "lb": [
             {
@@ -14821,9 +14917,17 @@
          ],
          "ub": [
             {
+               "value": 75827,
+               "date": "2026-11-13",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": null,
+               "certificate": "no"
+            },
+            {
                "value": 76869,
                "date": "2026-10-08",
-               "solver": "OptalCP",
+               "solver": "DOFP2026",
                "hardware": "Intel 11th Gen Core i7-1185G7",
                "time": null,
                "certificate": "no"
@@ -14863,7 +14967,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 522298,
-      "upper_bound": 533080,
+      "upper_bound": 525389,
       "history": {
          "lb": [
             {
@@ -14876,6 +14980,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 525389,
+               "date": "2026-11-15",
+               "solver": "AMFCV2026",
+               "hardware": "AMD Ryzen 9 5950X",
+               "time": 30,
+               "certificate": "yes"
+            },
             {
                "value": 533080,
                "date": "2026-04-21",
@@ -14901,9 +15013,9 @@
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
       "type": "random",
-      "status": "open",
+      "status": "closed",
       "lower_bound": 530375,
-      "upper_bound": 538067,
+      "upper_bound": 530375,
       "history": {
          "lb": [
             {
@@ -14916,6 +15028,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 530375,
+               "date": "2026-11-15",
+               "solver": "AMFCV2026",
+               "hardware": "AMD Ryzen 9 5950X",
+               "time": 30,
+               "certificate": "yes"
+            },
             {
                "value": 538067,
                "date": "2026-04-21",
@@ -14941,9 +15061,9 @@
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
       "type": "random",
-      "status": "open",
+      "status": "closed",
       "lower_bound": 530560,
-      "upper_bound": 538757,
+      "upper_bound": 530560,
       "history": {
          "lb": [
             {
@@ -14956,6 +15076,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 530560,
+               "date": "2026-11-15",
+               "solver": "AMFCV2026",
+               "hardware": "AMD Ryzen 9 5950X",
+               "time": 30,
+               "certificate": "yes"
+            },
             {
                "value": 538757,
                "date": "2026-04-21",
@@ -14981,9 +15109,9 @@
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
       "type": "random",
-      "status": "open",
+      "status": "closed",
       "lower_bound": 527101,
-      "upper_bound": 534746,
+      "upper_bound": 527101,
       "history": {
          "lb": [
             {
@@ -14996,6 +15124,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 527101,
+               "date": "2026-11-15",
+               "solver": "AMFCV2026",
+               "hardware": "AMD Ryzen 9 5950X",
+               "time": 30,
+               "certificate": "yes"
+            },
             {
                "value": 534746,
                "date": "2026-04-21",
@@ -15023,7 +15159,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 517728,
-      "upper_bound": 529580,
+      "upper_bound": 523876,
       "history": {
          "lb": [
             {
@@ -15036,6 +15172,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 523876,
+               "date": "2026-11-15",
+               "solver": "DOFP2026",
+               "hardware": "Intel 11th Gen Core i7-1185G7",
+               "time": null,
+               "certificate": "no"
+            },
             {
                "value": 529580,
                "date": "2026-04-21",
@@ -15063,7 +15207,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 522907,
-      "upper_bound": 534969,
+      "upper_bound": 523503,
       "history": {
          "lb": [
             {
@@ -15076,6 +15220,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 523503,
+               "date": "2026-11-15",
+               "solver": "AMFCV2026",
+               "hardware": "AMD Ryzen 9 5950X",
+               "time": 30,
+               "certificate": "yes"
+            },
             {
                "value": 534969,
                "date": "2026-04-21",
@@ -15103,7 +15255,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 522537,
-      "upper_bound": 534974,
+      "upper_bound": 525283,
       "history": {
          "lb": [
             {
@@ -15116,6 +15268,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 525283,
+               "date": "2026-11-15",
+               "solver": "AMFCV2026",
+               "hardware": "AMD Ryzen 9 5950X",
+               "time": 30,
+               "certificate": "yes"
+            },
             {
                "value": 534974,
                "date": "2026-04-21",
@@ -15141,9 +15301,9 @@
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
       "type": "random",
-      "status": "open",
+      "status": "closed",
       "lower_bound": 526428,
-      "upper_bound": 535757,
+      "upper_bound": 526428,
       "history": {
          "lb": [
             {
@@ -15156,6 +15316,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 526428,
+               "date": "2026-11-15",
+               "solver": "AMFCV2026",
+               "hardware": "AMD Ryzen 9 5950X",
+               "time": 30,
+               "certificate": "yes"
+            },
             {
                "value": 535757,
                "date": "2026-04-21",
@@ -15181,9 +15349,9 @@
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
       "type": "random",
-      "status": "open",
+      "status": "closed",
       "lower_bound": 528097,
-      "upper_bound": 536993,
+      "upper_bound": 528097,
       "history": {
          "lb": [
             {
@@ -15196,6 +15364,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 528097,
+               "date": "2026-11-15",
+               "solver": "AMFCV2026",
+               "hardware": "AMD Ryzen 9 5950X",
+               "time": 30,
+               "certificate": "yes"
+            },
             {
                "value": 536993,
                "date": "2026-04-21",
@@ -15223,7 +15399,7 @@
       "type": "random",
       "status": "open",
       "lower_bound": 521766,
-      "upper_bound": 529918,
+      "upper_bound": 524358,
       "history": {
          "lb": [
             {
@@ -15236,6 +15412,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 524358,
+               "date": "2026-11-15",
+               "solver": "AMFCV2026",
+               "hardware": "AMD Ryzen 9 5950X",
+               "time": 30,
+               "certificate": "yes"
+            },
             {
                "value": 529918,
                "date": "2026-04-21",
@@ -15260,7 +15444,7 @@
       "size": "1000 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 515334,
       "upper_bound": 515334,
@@ -15308,7 +15492,7 @@
       "size": "1000 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 509226,
       "upper_bound": 509226,
@@ -15356,7 +15540,7 @@
       "size": "1000 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 517493,
       "upper_bound": 517493,
@@ -15404,7 +15588,7 @@
       "size": "1000 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 519369,
       "upper_bound": 519369,
@@ -15452,7 +15636,7 @@
       "size": "1000 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 513881,
       "upper_bound": 513881,
@@ -15500,7 +15684,7 @@
       "size": "1000 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 511932,
       "upper_bound": 511932,
@@ -15548,7 +15732,7 @@
       "size": "1000 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 523900,
       "upper_bound": 523900,
@@ -15596,7 +15780,7 @@
       "size": "1000 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 513101,
       "upper_bound": 513101,
@@ -15644,7 +15828,7 @@
       "size": "1000 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 508701,
       "upper_bound": 508701,
@@ -15692,7 +15876,7 @@
       "size": "1000 x 10",
       "family": "tai",
       "family_long": "Da Col and Teppan 2022",
-      "type": "random",
+      "type": "legacy",
       "status": "closed",
       "lower_bound": 521360,
       "upper_bound": 521360,
@@ -16143,7 +16327,7 @@
       "type": "stress-test",
       "status": "open",
       "lower_bound": 549392,
-      "upper_bound": 811195,
+      "upper_bound": 796759,
       "history": {
          "lb": [
             {
@@ -16156,6 +16340,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 796759,
+               "date": "2026-11-07",
+               "solver": "Schwemin2026",
+               "hardware": "N7 Tabu with time-slabs on GPU NVIDIA Tesla p100",
+               "time": 120,
+               "certificate": "yes"
+            },
             {
                "value": 811195,
                "date": "2026-07-09",
@@ -16199,7 +16391,7 @@
       "type": "stress-test",
       "status": "open",
       "lower_bound": 549043,
-      "upper_bound": 813044,
+      "upper_bound": 797337,
       "history": {
          "lb": [
             {
@@ -16212,6 +16404,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 797337,
+               "date": "2026-11-07",
+               "solver": "Schwemin2026",
+               "hardware": "N7 Tabu with time-slabs on GPU NVIDIA Tesla p100",
+               "time": 120,
+               "certificate": "yes"
+            },
             {
                "value": 813044,
                "date": "2026-07-09",
@@ -16247,7 +16447,7 @@
       "type": "stress-test",
       "status": "open",
       "lower_bound": 552580,
-      "upper_bound": 811269,
+      "upper_bound": 798050,
       "history": {
          "lb": [
             {
@@ -16260,6 +16460,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 798050,
+               "date": "2026-11-07",
+               "solver": "Schwemin2026",
+               "hardware": "N7 Tabu with time-slabs on GPU NVIDIA Tesla p100",
+               "time": 120,
+               "certificate": "yes"
+            },
             {
                "value": 811269,
                "date": "2026-07-09",
@@ -16303,7 +16511,7 @@
       "type": "stress-test",
       "status": "open",
       "lower_bound": 547670,
-      "upper_bound": 809549,
+      "upper_bound": 795789,
       "history": {
          "lb": [
             {
@@ -16316,6 +16524,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 795789,
+               "date": "2026-11-07",
+               "solver": "Schwemin2026",
+               "hardware": "N7 Tabu with time-slabs on GPU NVIDIA Tesla p100",
+               "time": 120,
+               "certificate": "yes"
+            },
             {
                "value": 809549,
                "date": "2026-07-09",
@@ -16351,7 +16567,7 @@
       "type": "stress-test",
       "status": "open",
       "lower_bound": 545193,
-      "upper_bound": 811467,
+      "upper_bound": 798296,
       "history": {
          "lb": [
             {
@@ -16364,6 +16580,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 798296,
+               "date": "2026-11-07",
+               "solver": "Schwemin2026",
+               "hardware": "N7 Tabu with time-slabs on GPU NVIDIA Tesla p100",
+               "time": 120,
+               "certificate": "yes"
+            },
             {
                "value": 811467,
                "date": "2026-07-09",
@@ -16399,7 +16623,7 @@
       "type": "stress-test",
       "status": "open",
       "lower_bound": 547286,
-      "upper_bound": 813117,
+      "upper_bound": 795615,
       "history": {
          "lb": [
             {
@@ -16412,6 +16636,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 795615,
+               "date": "2026-11-07",
+               "solver": "Schwemin2026",
+               "hardware": "N7 Tabu with time-slabs on GPU NVIDIA Tesla p100",
+               "time": 120,
+               "certificate": "yes"
+            },
             {
                "value": 813117,
                "date": "2026-07-09",
@@ -16447,7 +16679,7 @@
       "type": "stress-test",
       "status": "open",
       "lower_bound": 545877,
-      "upper_bound": 809043,
+      "upper_bound": 796445,
       "history": {
          "lb": [
             {
@@ -16460,6 +16692,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 796445,
+               "date": "2026-11-07",
+               "solver": "Schwemin2026",
+               "hardware": "N7 Tabu with time-slabs on GPU NVIDIA Tesla p100",
+               "time": 120,
+               "certificate": "yes"
+            },
             {
                "value": 809043,
                "date": "2026-07-09",
@@ -16495,7 +16735,7 @@
       "type": "stress-test",
       "status": "open",
       "lower_bound": 549220,
-      "upper_bound": 812442,
+      "upper_bound": 797763,
       "history": {
          "lb": [
             {
@@ -16508,6 +16748,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 797763,
+               "date": "2026-11-07",
+               "solver": "Schwemin2026",
+               "hardware": "N7 Tabu with time-slabs on GPU NVIDIA Tesla p100",
+               "time": 120,
+               "certificate": "yes"
+            },
             {
                "value": 812442,
                "date": "2026-07-09",
@@ -16543,7 +16791,7 @@
       "type": "stress-test",
       "status": "open",
       "lower_bound": 543559,
-      "upper_bound": 810111,
+      "upper_bound": 796605,
       "history": {
          "lb": [
             {
@@ -16556,6 +16804,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 796605,
+               "date": "2026-11-07",
+               "solver": "Schwemin2026",
+               "hardware": "N7 Tabu with time-slabs on GPU NVIDIA Tesla p100",
+               "time": 120,
+               "certificate": "yes"
+            },
             {
                "value": 810111,
                "date": "2026-07-09",
@@ -16591,7 +16847,7 @@
       "type": "stress-test",
       "status": "open",
       "lower_bound": 549075,
-      "upper_bound": 809421,
+      "upper_bound": 795154,
       "history": {
          "lb": [
             {
@@ -16604,6 +16860,14 @@
             }
          ],
          "ub": [
+            {
+               "value": 795154,
+               "date": "2026-11-07",
+               "solver": "Schwemin2026",
+               "hardware": "N7 Tabu with time-slabs on GPU NVIDIA Tesla p100",
+               "time": 120,
+               "certificate": "yes"
+            },
             {
                "value": 809421,
                "date": "2026-07-09",

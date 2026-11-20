@@ -7,329 +7,900 @@ permalink: /jsplib
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
 
-## The jobshop scheduling problem benchmark library
+## Job shop benchmarks for the engine era
 
-JSPLib is a comprehensive benchmark library for the Job Shop Scheduling Problem (JSP), with three components:
-- **Instance repository** — a centralized set of classic synthetic instances (ft, la, abz, orb, yn, swv, ta, dmu, tai) and industrial reentrant instances (dct, bel).
-- **Engine benchmark** — a standardized 10-minute comparison of reference solvers (CPO, CP-SAT, OptalCP, Cplex), measuring each engine's optimality gap and deviation from the best known bounds.
-- **Best-known-solutions archive** — a running record of the best upper/lower bounds ever found for each instance, from any source (published papers, meta-heuristics, or engine runs) — not limited to the reference engines above.
+The old job shop problem is changing fast! 
+- **Optimization engines are transforming the field**. Modern engines are becoming increasingly robust across large collections of instances and problem variants.
+- **Benchmarks are becoming more industrial**. We are moving beyond square, random, non-reentrant instances towards instances that represent real industrial problems
+- **Lower bounds matter as much as upper bounds**. From decompositions to pruning and proofs of optimality, lower bounds are essential to performance.
 
-The data and source code can be found in the [GitHub repository](https://github.com/ScheduleOpt/benchmarks).
-This document is visible as a README.md in the GitHub folder [jobshop](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) or as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib). Instances are now available in [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/json) or [text](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/text) formats. The [standardized benchmark results](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) for each engine on each instance are available in json format. And a json file of [best-known solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) is also provided with a trace of the evolution of the bounds.
+What is in the JSPLib?
+- **Instances and results**: a repository of instances, best-known results with their history, primal and dual certificates
+- **Engine benchmarks**: a standardized 10-minute comparison of engines with deviations with respect to the best known results
+- **Lower bound analysis**: an analysis of lower bounds, their certificates and how they affect the instance difficulty 
+
+Everything is open: the code, the instances, the engine results, and the history of best-known bounds.
+
+- **Code:** [GitHub repository](https://github.com/ScheduleOpt/benchmarks), including the scripts to rerun the benchmarks
+- **Instances:** [JSON](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/json) or [text](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/instances/text) format
+- **Engine results:** [standardized benchmark results](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) for each engine on each instance, in JSON
+- **Best-known bounds:** a [JSON file](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) of upper and lower bounds, tracing how each one evolved
+
+This page is also the README.md of the [jobshop folder](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop) on GitHub, and is published as a [webpage](https://scheduleopt.github.io/benchmarks/jsplib).
 
 ### Table of Contents
 
-- [Jobshop instances](#jobshop-benchmark-instances)
-    - [Overview of the jobshop benchmark](#overview-of-the-jsplib)
-    - [Classification of the jobshop instances](#classification-of-the-jobshop-instances)
-    - [Similar work](#similar-work)
-    - [Formats](#formats)
-    - [Publications](#publications-instances)
-- [Standardized benchmark of engines](#standardized-benchmark-of-engines)
-    - [A short history of the reference engines](#a-short-history-of-the-reference-engines)
-    - [Incorrect best-known solutions used in publications and better metrics](#incorrect-best-known-solutions-used-in-publications-and-better-metrics)
-    - [Comparison of reference solvers](#comparison-of-reference-solvers)
-- [Analysis of relaxations and their strength](#analysis-of-relaxations-and-their-strength)
-- [Best-known solutions](#best-known-solutions)
-    - [JSON bks format](#best-known-solutions-json-format)
-    - [Best-known solutions](#best-known-solutions-per-instance-family)
-    - [Publications](#publications-best-known-solutions)
-
+- [Engines: the reproducible state of the art](#engines-the-reproducible-state-of-the-art)
+  - [What we measure](#what-we-measure)
+  - [The reference engines](#the-reference-engines)
+  - [Results](#results)
+  - [Caveats](#caveats)
+- [Instances: shift towards industrial representativity](#instances-shift-towards-industrial-representativity)
+  - [New instance organization](#new-instance-organization)
+  - [Beyond non-reentrancy](#beyond-non-reentrancy)
+  - [Difficulty classification of the jobshop instances](#difficulty-classification-of-the-jobshop-instances)
+- [Lower bounds: certification and analysis](#lower-bounds-certification-and-analysis)
+  - [Certificates for lower bounds](#certificates-for-lower-bounds)
+  - [Analytic Lower bounds](#analytic-lower-bounds)
+  - [Relaxation certificates](#relaxation-certificates)
+  - [Engine trace certificates](#engine-trace-certificates)
+- [Best-known bounds: provenance and history](#best-known-bounds-provenance-and-history)
+  - [Industrial instances](#industrial-instances)
+  - [Random instances](#random-instances)
+  - [Stress-test](#stress-test)
+  - [Publications (best known solutions)](#publications-best-known-solutions)
+- [Historical appendix](#historical-appendix)
+  - [History of jsplib instances](#history-of-jsplib-instances)
+  - [History of jsplib](#history-of-jsplib)
+  - [History of the engines](#history-of-the-engines)
+ 
 <br/>
 
-### Overview of the jsplib
+## Engines: the reproducible state of the art
 
-JSPLib doesn't make the distinction between jobshop and reentrant jobshop (anymore) because the jobshop is the sub-problem obtained when tasks are assigned to machines in a flexible-jobshop and those jobshops are intrinsically reentrant.
+Optimization engines have become the reference players in job shop scheduling for their ability to handle complex side constraints, refine heuristic solutions and prove optimality.
 
-Random instances (322)
-- 3 instances `ft` from Fisher and Thompson 1963
-- 40 instances `la` from Lawrence 1984
-- 5 instances `abz` from Adams, Balas and Zawack 1988
-- 10 instances `orb` from Applegate and Cook 1991
-- 20 instances `swv` from Storer, Wu and Vaccari 1992
-- 4 instances `yn` from Yamada and Nakano 1992
-- 80 instances `ta` from Taillard 1993
-- 80 instances `dmu` from Demirkol, Mehta and Uzsoy 1998
-- 80 instances `tai` from Da Col and Teppan 2022
+JSPLib tracks this with a standardized benchmark of four reference engines with a fixed 10-minute budget, and a record of best known upper and lower bounds. 
 
-Industrial instances (44)
-- 24 instances `dct` from Da Col and Teppan 2022
-- 20 instances `bel` from Boveroux, Ernst and Louveaux 2025
+### What we measure
 
-Stress-test instances (10)
-- 10 instances `tai` 1000 x 1000 from Da Col and Teppan 2022
+- **Proofs:** how many instances the engine solves to proven optimality within 10 minutes
+- **Upper bound deviation:** how close its best solution gets to the best known upper bound
+- **Lower bound deviation:** how close its proven bound gets to the best known lower bound
+
+We average geometrically, as the MIP community does in the Mittelmann benchmarks, to limit the influence of outliers.
+
+- **Geometric average of the lower bound to best known lower bound ratio**
+
+$$LB_{avg} = \exp\left(\frac{1}{N} \sum_k\log\frac{LB_k}{LB_{best,k}}\right)$$
+
+- **Geometric average of the upper bound to best known upper bound ratio**
+
+$$UB_{avg} = \exp\left(\frac{1}{N} \sum_k\log\frac{UB_k}{UB_{best,k}}\right)$$
+
+- **Geometric shifted average of the gap**
+
+$$GAP = \exp\left(\frac{1}{N} \sum_k\log\left(1 + \frac{UB_k - LB_k}{UB_k}\right)\right) - 1$$
 
 
-<br/>
+### The reference engines
 
-Both random and industrial instances are synthetic, but industrial instances were generated to mimic the features of manufacturing plants. The stress-test instances are a subset of the random Taillard-like instances that primarily stress implementation quality (memory usage, data structures, and $O(n\log n)$ versus $O(n^2)$ algorithms) rather than the combinatorial optimization capabilities of the optimization engine.
+| Engine | Family | Version tested | Release date |
+|---|---|---|---|
+| IBM ILOG Cplex | MIP | 22.1.1.0 | 2022-12 |
+| IBM ILOG CP Optimizer (CPO) | CP scheduling | 22.1.1.0 | 2022-12 |
+| Google OR-Tools CP-SAT | Lazy clause generation | 9.15.6755 | 2026-01 |
+| OptalCP | CP scheduling | 2026.4.0 | 2026-04 |
 
-<br/>
+[Engine histories](#appendix-engine-histories) are in the appendix.
 
-### Notes about the instances
+### Results
 
-#### FT versus MT
+Comparisons were performed on a Windows PC with an i7 4-core 3GHz 32GB RAM in 600 seconds.
 
-The FT instances are also known as MT instances because the 1963 paper by Fisher and Thompson was published in the book *Industrial Scheduling*, edited by Muth and Thompson. In particular, the problem `mt10` (today named `ft10`) is famous for having remained open for more than 20 years. It was eventually solved by Carlier-Pinson in 1989 using a combination of Jackson's preemptive schedule and branch-and-bound, an approach that can be seen as a predecessor of modern constraint-programming engines.
+When an engine provides upper and lower bounds for an instance, the instance is labelled `solved` and is counted in the geometric mean. Because deviations and gaps are done only counting those instances, engines that fail on the hardest instances have artificially better averages. When this is the case, the corresponding averages are colored in red to signal values should be taken with caution.
 
-The current convention is to use, whenever possible, the names of the authors who introduced the instances. This is why the `ft` designation has been largely adopted, although older publications still use `mt`. Some problems derived from `ft` instances (for instance in flexible jobshop) still contain `mt` in their names.
+<table>
+<tr><th>solver</th><th>ran</th><th>solved</th><th>optimal</th><th>opt</th><th>lb_dev</th><th>ub_dev</th><th>gap</th></tr>
+<tr><td>Cplex</td><td>231</td><td style="color:red">147</td><td>0</td><td>0%</td><td style="color:red">0.55</td><td style="color:red">1.33</td><td style="color:red">55%</td></tr>
+<tr><td>CPO</td><td>231</td><td >231</td><td>52</td><td>23%</td><td >0.83</td><td >1.06</td><td >13%</td></tr>
+<tr><td>CP-SAT</td><td>231</td><td style="color:red">205</td><td>46</td><td>20%</td><td style="color:red">0.99</td><td style="color:red">1.05</td><td style="color:red">7%</td></tr>
+<tr><td>OptalCP</td><td>231</td><td >231</td><td>80</td><td>35%</td><td >0.99</td><td >1.02</td><td >5%</td></tr>
+</table>
 
-#### History of the `tai` and `dct` instances
 
-The `tai` instances were generated by Da Col and Teppan in 2022 in conjunction with the `dct` instances. The aim of their work was to conduct a controlled experiment on the scalability of optimization engines toward "industrial-scale problems". The `dct` instances were designed to mimic features of manufacturing plants, whereas the `tai` instances were generated using the Taillard instance generator with $10^k$ jobs or machines. The investigation was mainly centered on the `dct` instances, and concluded that CP Optimizer scaled better than CP-SAT on this family. Results for the `tai` instances are available in the supplementary material of the 2022 paper.
+#### Detailed results
 
-All these instances were added to jsplib around 2024
-- `dct` instances for their industrial interest
-- `tai` instances because they stressed the CP engines in different ways
+<details>
+<summary>Per type</summary>
+<table>
+<tr><th>group</th><th>solver</th><th>ran</th><th>solved</th><th>optimal</th><th>opt</th><th>lb_dev</th><th>ub_dev</th><th>gap</th></tr>
+<tr><td rowspan="4">industrial</td><td>Cplex</td><td>44</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
+<tr><td>CPO</td><td>44</td><td >44</td><td>26</td><td>59%</td><td >0.70</td><td >1.10</td><td >16%</td></tr>
+<tr><td>CP-SAT</td><td>44</td><td style="color:red">38</td><td>26</td><td>59%</td><td style="color:red">1.00</td><td style="color:red">1.07</td><td style="color:red">5%</td></tr>
+<tr><td>OptalCP</td><td>44</td><td >44</td><td>38</td><td>86%</td><td >1.00</td><td >1.04</td><td >2%</td></tr>
+<tr><td rowspan="4">random</td><td>Cplex</td><td>177</td><td style="color:red">147</td><td>0</td><td>0%</td><td style="color:red">0.55</td><td style="color:red">1.33</td><td style="color:red">55%</td></tr>
+<tr><td>CPO</td><td>177</td><td >177</td><td>26</td><td>15%</td><td >0.86</td><td >1.04</td><td >11%</td></tr>
+<tr><td>CP-SAT</td><td>177</td><td style="color:red">167</td><td>20</td><td>11%</td><td style="color:red">0.98</td><td style="color:red">1.04</td><td style="color:red">7%</td></tr>
+<tr><td>OptalCP</td><td>177</td><td >177</td><td>42</td><td>24%</td><td >0.99</td><td >1.02</td><td >4%</td></tr>
+<tr><td rowspan="4">stress-test</td><td>Cplex</td><td>10</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
+<tr><td>CPO</td><td>10</td><td >10</td><td>0</td><td>0%</td><td >0.97</td><td >1.23</td><td >47%</td></tr>
+<tr><td>CP-SAT</td><td>10</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
+<tr><td>OptalCP</td><td>10</td><td >10</td><td>0</td><td>0%</td><td >1.00</td><td >1.11</td><td >39%</td></tr>
+</table>
+</details>
 
-In particular
-- `tai_100_100` instances exhibit **slow convergence**: improving solutions can be found quickly and regularly, but the optimality gap is so large relative to the typical improvement that convergence to the optimum is extremely slow
-- `tai_1000_1000` instances expose scalability limitations in different parts of optimization engines. CP-SAT can spend its entire run in preprocessing without entering branch-and-bound, while CP Optimizer and OptalCP required approximately one hour to complete their first dive and find an initial solution. By comparison, a hand-written greedy algorithm produced an initial solution in approximately one minute.
+<details>
+<summary>Per family</summary>
+<table>
+<tr><th>group</th><th>solver</th><th>ran</th><th>solved</th><th>optimal</th><th>opt</th><th>lb_dev</th><th>ub_dev</th><th>gap</th></tr>
+<tr><td rowspan="4">abz</td><td>Cplex</td><td>3</td><td >3</td><td>0</td><td>0%</td><td >0.71</td><td >1.13</td><td >38%</td></tr>
+<tr><td>CPO</td><td>3</td><td >3</td><td>0</td><td>0%</td><td >0.94</td><td >1.01</td><td >7%</td></tr>
+<tr><td>CP-SAT</td><td>3</td><td >3</td><td>0</td><td>0%</td><td >0.97</td><td >1.01</td><td >4%</td></tr>
+<tr><td>OptalCP</td><td>3</td><td >3</td><td>1</td><td>33%</td><td >0.98</td><td >1.00</td><td >2%</td></tr>
+<tr><td rowspan="4">swv</td><td>Cplex</td><td>20</td><td >20</td><td>0</td><td>0%</td><td >0.38</td><td >1.22</td><td >65%</td></tr>
+<tr><td>CPO</td><td>20</td><td >20</td><td>7</td><td>35%</td><td >0.98</td><td >1.02</td><td >4%</td></tr>
+<tr><td>CP-SAT</td><td>20</td><td >20</td><td>6</td><td>30%</td><td >0.99</td><td >1.02</td><td >4%</td></tr>
+<tr><td>OptalCP</td><td>20</td><td >20</td><td>10</td><td>50%</td><td >0.99</td><td >1.01</td><td >2%</td></tr>
+<tr><td rowspan="4">yn</td><td>Cplex</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.79</td><td >1.13</td><td >30%</td></tr>
+<tr><td>CPO</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.90</td><td >1.02</td><td >11%</td></tr>
+<tr><td>CP-SAT</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.94</td><td >1.03</td><td >8%</td></tr>
+<tr><td>OptalCP</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.95</td><td >1.01</td><td >6%</td></tr>
+<tr><td rowspan="4">dmu</td><td>Cplex</td><td>80</td><td >80</td><td>0</td><td>0%</td><td >0.52</td><td >1.41</td><td >60%</td></tr>
+<tr><td>CPO</td><td>80</td><td >80</td><td>16</td><td>20%</td><td >0.97</td><td >1.04</td><td >7%</td></tr>
+<tr><td>CP-SAT</td><td>80</td><td >80</td><td>10</td><td>13%</td><td >0.99</td><td >1.05</td><td >7%</td></tr>
+<tr><td>OptalCP</td><td>80</td><td >80</td><td>23</td><td>29%</td><td >0.99</td><td >1.02</td><td >4%</td></tr>
+<tr><td rowspan="4">ta</td><td>Cplex</td><td>40</td><td >40</td><td>0</td><td>0%</td><td >0.68</td><td >1.27</td><td >45%</td></tr>
+<tr><td>CPO</td><td>40</td><td >40</td><td>3</td><td>8%</td><td >0.96</td><td >1.02</td><td >6%</td></tr>
+<tr><td>CP-SAT</td><td>40</td><td >40</td><td>4</td><td>10%</td><td >0.98</td><td >1.02</td><td >4%</td></tr>
+<tr><td>OptalCP</td><td>40</td><td >40</td><td>8</td><td>20%</td><td >0.99</td><td >1.01</td><td >3%</td></tr>
+<tr><td rowspan="4">tai</td><td>Cplex</td><td>40</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
+<tr><td>CPO</td><td>40</td><td >40</td><td>0</td><td>0%</td><td >0.58</td><td >1.11</td><td >39%</td></tr>
+<tr><td>CP-SAT</td><td>40</td><td style="color:red">20</td><td>0</td><td>0%</td><td style="color:red">0.99</td><td style="color:red">1.10</td><td style="color:red">18%</td></tr>
+<tr><td>OptalCP</td><td>40</td><td >40</td><td>0</td><td>0%</td><td >1.00</td><td >1.04</td><td >15%</td></tr>
+<tr><td rowspan="4">dct</td><td>Cplex</td><td>24</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
+<tr><td>CPO</td><td>24</td><td >24</td><td>6</td><td>25%</td><td >0.52</td><td >1.19</td><td >32%</td></tr>
+<tr><td>CP-SAT</td><td>24</td><td style="color:red">18</td><td>6</td><td>25%</td><td style="color:red">1.00</td><td style="color:red">1.16</td><td style="color:red">11%</td></tr>
+<tr><td>OptalCP</td><td>24</td><td >24</td><td>18</td><td>75%</td><td >1.00</td><td >1.07</td><td >5%</td></tr>
+<tr><td rowspan="4">bel</td><td>Cplex</td><td>20</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
+<tr><td>CPO</td><td>20</td><td >20</td><td>20</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td>CP-SAT</td><td>20</td><td >20</td><td>20</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td>OptalCP</td><td>20</td><td >20</td><td>20</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+</table>
+</details>
 
-While both sets of instances reveal limitations in CP engines, we have classified the `tai_1000_1000` as instances that primarily stress the engine implementation (data structures, etc) but `tai_100_100` as instances that stress the optimization capabilities of the engine.
+<details>
+<summary>Legacy</summary>
+<table>
+<tr><th>group</th><th>solver</th><th>ran</th><th>solved</th><th>optimal</th><th>opt</th><th>lb_dev</th><th>ub_dev</th><th>gap</th></tr>
+<tr><td rowspan="4">legacy</td><td>Cplex</td><td>145</td><td style="color:red">111</td><td>27</td><td>19%</td><td style="color:red">0.71</td><td style="color:red">1.19</td><td style="color:red">29%</td></tr>
+<tr><td>CPO</td><td>145</td><td >145</td><td>140</td><td>97%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+<tr><td>CP-SAT</td><td>145</td><td >145</td><td>119</td><td>82%</td><td >0.94</td><td >1.00</td><td >2%</td></tr>
+<tr><td>OptalCP</td><td>145</td><td >145</td><td>143</td><td>99%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
+</table>
+</details>
 
-#### Best-known solutions for `tai`
 
-Most of the 22 BKS reported in **A Comprehensive Benchmark of Constraint Programming Solvers for the Makespan-Minimisation Job Shop Scheduling Problem** [YWR2026] were already known at the time of publication:
-- 6 better BKS had been reported by Da Col and Teppan (2022 cited in [YWR2026]) using CP Optimizer (tai_100_1000 problems 5,6,8,9,10 and tai_1000_100_5)
-- 1 BKS reported as found by Hexaly is dominated by the solution reported as found by CP Optimizer (tai_100_1000_3 unless there is a typo in the paper)
-- The 10 tai_1000_100 instances had already been closed by Petr Vilim using OptalCP, and the 10 results for tai_100_1000 superseded the MDPI results (published on optalcp.com 2026/04/21)
-- The 2 BKS on tai_1000_1000 were genuinely unknown, superseded later by Petr Vilim with OptalCP (2026/07/09)
+### Caveats
 
-The BKS previously listed in JSPLib were themselves outdated. We were aware of the CP Optimizer and OptalCP results, but had not updated the database because we hoped to independently reproduce them before incorporating them.
+- **Non-determinism.** Two runs of the same engine on the same machine can differ significantly. Do not read much into differences of a few percent.
+- **Hardware.** An engine's behavior changes with core count and memory speed. We use a 4-core 3 GHz i7 with 32 GB of RAM, which is a laptop-class machine. CP-SAT recommends 8 to 16 cores and CPO does most of its work on 1 or 2. 
 
-This experience has led us to shorten the publication cycle for BKS updates and to use personal communications when appropriate for unpublished results. We may also introduce a `validated` tag in the future to distinguish results that have been independently reproduced or validated by JSPLib.
+We recommend running the benchmark on your own machines. The [code and instructions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/code) are in the repository, and the raw results are in the [solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) folder.
 
-We have also tried to reconstruct, as accurately as possible, the correct chronology of the results in bks.json.
 
-<br/>
+## Instances: shift towards industrial representativity
 
-### The lack of industrial instances
+### New instance organization
 
-> There is a gap in the existing literature regarding job shop scheduling benchmarks. Most commonly referenced instances, such as those proposed by Taillard et al., Adams et al. or Demirkol et al., focus on small and rectangular configurations where the number of machines equals the number of operations for each job. This structure does not adequately represent the complexities of larger, unbalanced scenarios commonly encountered in real-world manufacturing.
->
-> To address this gap, we first analyzed an industrial dataset from a real manufacturing facility that includes 51 machines, 828 jobs and a total of 6057 operations. In this instance, the workload distribution is unbalanced, with some machines heavily loaded while others are lightly used. Furthermore, the number of operations per job varies significantly, ranging from 1 to 20.
->
-> Boveroux, Ernst and Louveaux (2025)
+We have reorganized the instances in new groups
+- ***Legacy***: all instances that are too easy for modern software
+    - `ft`,  `la`, `orb`, `abz[5-6]`,  `ta[01-10]`, `ta[51-80]` and the 50 easy `tai`
+    - `ta62` and `ta67` are not easy, just collateral victims
+    - updates on legacy instances will be discontinued
+- ***Industrial***: instances that were generated in a way that mimics real problems
+    - `bel` and `dct` 
+- ***Random***: randomly generated instances without any special structure
+    - `abz[7-9]`, `swv`, `yn`, `ta[11-50]`, `dmu`, `tai` 100 x 100, 1000 x 100 and 100 x 1000
+- ***Stress-test***: instances generated to test the limit of engines due to their sheer size but without any specific structure
+    - `tai` 1000 x 1000
 
-We strongly encourage anyone who has access to real jobshop instances to share them with us and the scheduling community.
+### Beyond non-reentrancy
 
-<br/>
+Not only are industrial instances reentrant but the reentrant-jobshop is a sub-problem of the flexible-jobshop after assignment of tasks to machines. Therefore JSPLib won't make the distinction between jobshop and reentrant jobshop anymore, all instances are considered potentially reentrant.
+We have generated jobshop subproblems of the Dauzère-Pérès flexible jobshop problems for users to start testing their algorithms on reentrant jobshops [WORK IN PROGRESS]
 
-### Classification of the jobshop instances
+### Difficulty classification of the jobshop instances
 
-The reference engines used are
+We use the following criteria for classification of the instances
 
-- [**IBM ILOG Cplex**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer): a state-of-the-art ***MIP*** engine
-- [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer): representative of the ***CP-scheduling*** family of engines
-- [**Google CP-SAT**](https://developers.google.com/optimization): representative of the ***lazy clause generation*** family of engines
-- [**OptalCP**](https://optalcp.com): representative of the ***CP-scheduling*** family of engines
-
-We use the following criteria to classify instances by difficulty:
-
-- <strong style="color:cornflowerblue">toy</strong>: solved to optimality (with proof) in 1 minute by at least 1 reference engine
+- <strong style="color:cornflowerblue">trivial</strong>: solved to optimality (with proof) in 1 minute by at least 1 reference engine
 - <strong style="color:green">easy</strong>: solved to optimality (with proof) in 10 minute by at least 1 reference engine
 - <strong style="color:orange">medium</strong>: solved to optimality (with proof) in 1 hour by at least 1 reference engine
 - <strong style="color:red">hard</strong>: solved to optimality (with proof) in more than 1 hour by at least 1 reference engine
-- <strong style="color:purple">closed</strong>: *allegedly* solved to optimality. Most of the time the optimal solution is known because 2 different methods independently found equal upper and lower bounds. The problem is reclassified into toy, easy, medium or hard when a reference engine is able to reproduce the results.
+- <strong style="color:purple">closed</strong>: *allegedly* solved to optimality. Most of the time the optimal solution is known because 2 different methods independently found equal upper and lower bounds. The problem is reclassified into trivial, easy, medium or hard when a reference engine is able to reproduce the results.
 - <strong style="color:grey">open</strong>: no proof of optimality
 
-The 10-minute time limit reflects industrial workflows in which schedules are repeatedly regenerated after manual adjustments, parameter tuning, or changes in production data. Furthermore, problems that can be solved to optimality in less than 10 minutes are suitable as sub-problems in decomposition methods like Benders decomposition, Pareto frontier generation or rolling-horizon optimization.
+[`toy` was changed to `trivial` because some commentators consider a toy instance to be a small instance for debugging, and some instances solved in < 1 min have hundreds of thousands of tasks]
 
-What we expect from a scheduling engine is: 
-- prove optimality for as many instances as possible within the 10-minute limit
-- for instances that cannot be closed in 10 minutes, to minimize the deviation from the best known upper and lower bounds
 
-Why upper and lower bounds? Because a decomposition may use the scheduling problem as a dual certificate, not only a primal one.
+Currently there are
 
-<br/>
-
-Currently there are 376 instances
-
-Random (322)
-- `ft`: 3 toy
-- `la`: 39 toy, 1 easy
-- `abz`: 2 toy, 1 easy, 1 medium, 1 hard
-- `orb`: 10 toy
-- `swv`: 9 toy, 2 easy, 3 medium, 3 hard, 3 open
+Random (177)
+- `abz`: 1 easy, 1 medium, 1 hard
+- `swv`: 9 trivial, 2 easy, 3 medium, 3 hard, 3 open
 - `yn`: 4 hard
-- `ta`: 42 toy, 6 easy, 12 medium, 8 hard, 12 open
-- `dmu`: 19 toy, 5 easy, 6 medium, 5 hard, 45 open
-- `tai`: 50 toy, 2 medium, 8 hard, 20 open
+- `ta`: 5 trivial, 5 easy, 11 medium, 7 hard, 12 open
+- `dmu`: 19 trivial, 5 easy, 6 medium, 5 hard, 45 open
+- `tai`: 2 medium, 8 hard, 20 open
 
 Industrial (44)
-- `dct`: 21 toy, 2 medium, 1 open
-- `bel`: 20 toy
+- `dct`: 21 trivial, 2 medium, 1 open
+- `bel`: 20 trivial
 
 Stress-test (10)
 - `tai`: 10 open
 
+Legacy (145) : 141 trivial, 2 easy, 1 medium, 1 hard
 
 <br/>
 
-### Similar work
+## Lower bounds: certification and analysis 
 
-We have borrowed data and ideas from the following sources
+### Certificates for lower bounds
 
-#### Naderi, Ruiz and Roshanaei (2022)
+Schedules are certificates for upper bounds that are easy to verify. Certifying the validity of lower bounds however is more complex. Certificates can come from various origins and depending on the certificate they are more or less difficult to verify.
+- **Analytic lower bounds** : Formulas and simple polynomial algorithms. The certification is provided by an external theorem that guarantees their validity. Anyone can easily compute their value to check the result. 
+- **Relaxations** : A sub-problem of the jobshop can be solved to optimality leading to a lower bound certificate. An external theorem supports the reduction but the computation relies on third party tools. Confidence in the result is provided by the agreement of the external tools and the trust we place in them. These tools may themselves provide independently verifiable certificates.
+- **Propagation strengthening** and **destructive lower bounds** : because lower bounds and relaxations often provide a support (a partial solution), they can be combined with propagation of the constraints in the original problem like precedences and no overlap, and be iterated till fixpoint. This can be seen as a mini-engine without search. While the relaxation is based on a theorem, the code required to embed and propagate requires care.
+- **Engine specific certificates** an engine can output a (logically compressed) trace of its deductions for external tools to verify that all the steps it took are correct. This is the case SAT engines that output certificates. While this is considered the golden standard in SAT communities, we see it as a certificate that is poorly informative / lacks minimality.
 
-Our work was inspired by the ***outstanding*** work of Naderi, Ruiz and Roshanaei *Mixed-Integer Programming versus Constraint Programming for shop scheduling problems: New Results and Outlook* [**NRR2022**] which compares CPO, Cplex, Gurobi and OR-tools on a benchmark of 6623 instances over 17 benchmarks with a timeout of 1h. They have made all the [raw results available](http://soa.iti.es/problem-instances).
+In the same way we favor reproducibility for solutions, we favor certificates that are easy to reproduce and do not depend on a specific engine.
 
-#### Jelke J. van Hoorn (2017)
+### Analytic Lower bounds
 
-Jelke J. van Hoorn collected and verified in 2017 all available upper and lower bounds for jobshop problems and published them in *The Current state of bounds on benchmark instances of the job-shop scheduling problem. J Sched 21, 127–128 (2018)*. The online [Appendix](https://static-content.springer.com/esm/art%3A10.1007%2Fs10951-017-0547-8/MediaObjects/10951_2017_547_MOESM_ESM.pdf) contains the data.
+We consider the following lower bounds 
 
-#### Oleg V. Shylo (2014 - present)
+- **Job length**
 
-Since 2014, [Optimizizer](https://optimizizer.com/jobshop.php) has been the reference in terms of published upper and lower bounds for jobshop problems. For each problem, the publication that explains the method used to find the upper or lower bound is given, and upper bounds are explicitly provided and verified. Optimizizer is a repository of ***published*** results, while jsplib.org is a repository of ***engine*** results. JSPLib is interested in  non-engine results (meta-heuristics, etc) only to investigate what changes are needed for engines to surpass them! We do not report improved bounds to optimizizer (there are no peer-reviewed publications supporting them and we don't consider "I ran an engine for a while because I am very patient" a scientific contribution). The authors of the benchmarked engines are invited to write papers about how their engines work, submit them for peer-review and report the bounds to Optimizizer.
+$$\max_j \left [ \sum_k p^j_k \right ]$$
 
-***There may be some lag between jsplib.org and optimizizer; always check both.***
+- **Machine length**
+    - refined with min heads and min tails $\sum_{i \prec j} p_i = head_j$ and $\sum_{i \prec j} p_j = tail_i$
 
-#### SchedulingLab (2022 - present)
+    - refined with the fact that the first and last task must be different (_almost no impact_)
 
-[SchedulingLab](https://github.com/SchedulingLab/jsp-instances) collects instances of various types of scheduling problems, including instances not referenced here.
+$$\max_m \left [ \min_{i \neq j \in m}\bigg(\mathrm{head}_i + \mathrm{tail}_j \bigg) + \sum_{o \in m} p_o \right ]$$
+
+- **Preemptive single machine relaxation with heads and tails** (Carlier)
+
+The Carlier inequalities describe the polytope of the preemptive relaxation for a single machine with release and due dates (authorized window). The preemptive relaxation can be either solved by Jackson algorithm ($n \log n$) or by maximization of the bound induced by Carlier inequalities ($n^3$)
+
+$$\max_m\ \max_{i,j\in m} \left [ \mathrm{head}_i + \sum_{o \in m\ h_o \geq h_i\ t_o\geq t_j} p_o + \mathrm{tail}_j \right ]$$
+
+- **Two machines and two tasks per job relaxation**
+
+This polynomial relaxation is obtained by considering only two machines $a$ and $b$, and for each job ignoring all the tasks on other machines. If the problem is not reentrant, that leaves at most two tasks per job. All heads, tails and delays between tasks are ignored. This problem can be solved optimally by a variant of Johnson's algorithm. A lower bound is obtained for the full jobshop by solving to optimality the problem for each pair of machines.
+
+
+- **Two jobs relaxation**
+
+The jobshop with two jobs is polynomial per reduction to the shortest path problem. A lower bound is obtained for the full jobshop by solving to optimality the problem for each pair of jobs.
+
+#### Overall results
+
+We check how many best known lower bounds can be certified with each algorithm out of the 231 instances in the benchmark
+
+<table>
+<tr><th>Method</th><th>Number of best LB reached</th></tr>
+<tr><td>Job</td><td >0</td></tr>
+<tr><td>Machine</td><td >31</td></tr>
+<tr><td>Carlier</td><td >41</td></tr>
+<tr><td>2-job</td><td >0</td></tr>
+<tr><td>2-machine</td><td >24</td></tr>
+</table>
+
+#### Lower bound certificates per family
+
+We call **certification gap** the difference between the best known lower bound and the best certified lower bound.
+
+<details>
+<summary>abz</summary>
+<table>
+<tr><th>Instance</th><th>Job</th><th>Machine</th><th>Carlier</th><th>2-job</th><th>2-mach</th><th>Cert Gap</th><th>LB</th></tr>
+<tr><td>abz7</td><td >410</td><td >638</td><td >650</td><td >459</td><td >556</td><td style="border-left: 2px solid black;"> -6</td><td>656</td></tr>
+<tr><td>abz8</td><td >443</td><td >566</td><td >597</td><td >462</td><td >566</td><td style="border-left: 2px solid black;"> -70</td><td>667</td></tr>
+<tr><td>abz9</td><td >467</td><td >606</td><td >616</td><td >495</td><td >563</td><td style="border-left: 2px solid black;"> -62</td><td>678</td></tr>
+</table>
+</details>
+
+<details>
+<summary>dmu</summary>
+<table>
+<tr><th>Instance</th><th>Job</th><th>Machine</th><th>Carlier</th><th>2-job</th><th>2-mach</th><th>Cert Gap</th><th>LB</th></tr>
+<tr><td>dmu01</td><td >1753</td><td >2268</td><td >2363</td><td >1878</td><td >2179</td><td style="border-left: 2px solid black;"> -200</td><td>2563</td></tr>
+<tr><td>dmu02</td><td >2167</td><td >2318</td><td >2452</td><td >2201</td><td >2277</td><td style="border-left: 2px solid black;"> -254</td><td>2706</td></tr>
+<tr><td>dmu03</td><td >1872</td><td >2540</td><td >2571</td><td >2005</td><td >2350</td><td style="border-left: 2px solid black;"> -160</td><td>2731</td></tr>
+<tr><td>dmu04</td><td >1908</td><td >2332</td><td >2486</td><td >2074</td><td >2332</td><td style="border-left: 2px solid black;"> -183</td><td>2669</td></tr>
+<tr><td>dmu05</td><td >1827</td><td >2625</td><td >2654</td><td >1972</td><td >2455</td><td style="border-left: 2px solid black;"> -95</td><td>2749</td></tr>
+<tr><td>dmu06</td><td >2585</td><td >2783</td><td >2834</td><td >2755</td><td >2533</td><td style="border-left: 2px solid black;"> -410</td><td>3244</td></tr>
+<tr><td>dmu07</td><td >2545</td><td >2604</td><td >2677</td><td >2652</td><td >2354</td><td style="border-left: 2px solid black;"> -369</td><td>3046</td></tr>
+<tr><td>dmu08</td><td >2493</td><td >2642</td><td >2901</td><td >2668</td><td >2642</td><td style="border-left: 2px solid black;"> -287</td><td>3188</td></tr>
+<tr><td>dmu09</td><td >2544</td><td >2706</td><td >2739</td><td >2643</td><td >2466</td><td style="border-left: 2px solid black;"> -353</td><td>3092</td></tr>
+<tr><td>dmu10</td><td >2394</td><td >2699</td><td >2716</td><td >2550</td><td >2488</td><td style="border-left: 2px solid black;"> -268</td><td>2984</td></tr>
+<tr><td>dmu11</td><td >1913</td><td >3395</td><td >3395</td><td >2011</td><td >3395</td><td style="border-left: 2px solid black;"> -7</td><td>3402</td></tr>
+<tr><td>dmu12</td><td >1902</td><td >3465</td><td style="background-color:green">3481</td><td >2044</td><td >3465</td><td style="border-left: 2px solid black;"> 0</td><td>3481</td></tr>
+<tr><td>dmu13</td><td >1945</td><td >3450</td><td style="background-color:green">3681</td><td >2048</td><td >3450</td><td style="border-left: 2px solid black;"> 0</td><td>3681</td></tr>
+<tr><td>dmu14</td><td >1798</td><td style="background-color:green">3394</td><td style="background-color:green">3394</td><td >1899</td><td style="background-color:green">3394</td><td style="border-left: 2px solid black;"> 0</td><td>3394</td></tr>
+<tr><td>dmu15</td><td >1945</td><td >3296</td><td >3332</td><td >2059</td><td >3296</td><td style="border-left: 2px solid black;"> -11</td><td>3343</td></tr>
+<tr><td>dmu16</td><td >2351</td><td >3726</td><td >3726</td><td >2466</td><td >3491</td><td style="border-left: 2px solid black;"> -8</td><td>3734</td></tr>
+<tr><td>dmu17</td><td >2491</td><td >3697</td><td >3697</td><td >2569</td><td >3670</td><td style="border-left: 2px solid black;"> -36</td><td>3733</td></tr>
+<tr><td>dmu18</td><td >2546</td><td style="background-color:green">3844</td><td style="background-color:green">3844</td><td >2652</td><td style="background-color:green">3844</td><td style="border-left: 2px solid black;"> 0</td><td>3844</td></tr>
+<tr><td>dmu19</td><td >2315</td><td >3408</td><td >3650</td><td >2462</td><td >3408</td><td style="border-left: 2px solid black;"> -57</td><td>3707</td></tr>
+<tr><td>dmu20</td><td >2586</td><td >3604</td><td >3604</td><td >2604</td><td >3604</td><td style="border-left: 2px solid black;"> -28</td><td>3632</td></tr>
+<tr><td>dmu21</td><td >1873</td><td >4345</td><td style="background-color:green">4380</td><td >2013</td><td >4345</td><td style="border-left: 2px solid black;"> 0</td><td>4380</td></tr>
+<tr><td>dmu22</td><td >1965</td><td >4712</td><td style="background-color:green">4725</td><td >2234</td><td >4712</td><td style="border-left: 2px solid black;"> 0</td><td>4725</td></tr>
+<tr><td>dmu23</td><td >2038</td><td >4524</td><td style="background-color:green">4668</td><td >2126</td><td >4524</td><td style="border-left: 2px solid black;"> 0</td><td>4668</td></tr>
+<tr><td>dmu24</td><td >2120</td><td style="background-color:green">4648</td><td style="background-color:green">4648</td><td >2182</td><td >4554</td><td style="border-left: 2px solid black;"> 0</td><td>4648</td></tr>
+<tr><td>dmu25</td><td >1861</td><td style="background-color:green">4164</td><td style="background-color:green">4164</td><td >2027</td><td style="background-color:green">4164</td><td style="border-left: 2px solid black;"> 0</td><td>4164</td></tr>
+<tr><td>dmu26</td><td >2627</td><td >4632</td><td style="background-color:green">4647</td><td >2688</td><td >4559</td><td style="border-left: 2px solid black;"> 0</td><td>4647</td></tr>
+<tr><td>dmu27</td><td >2590</td><td style="background-color:green">4848</td><td style="background-color:green">4848</td><td >2731</td><td style="background-color:green">4848</td><td style="border-left: 2px solid black;"> 0</td><td>4848</td></tr>
+<tr><td>dmu28</td><td >2537</td><td style="background-color:green">4692</td><td style="background-color:green">4692</td><td >2583</td><td >4538</td><td style="border-left: 2px solid black;"> 0</td><td>4692</td></tr>
+<tr><td>dmu29</td><td >2505</td><td style="background-color:green">4691</td><td style="background-color:green">4691</td><td >2666</td><td style="background-color:green">4691</td><td style="border-left: 2px solid black;"> 0</td><td>4691</td></tr>
+<tr><td>dmu30</td><td >2606</td><td >4707</td><td style="background-color:green">4732</td><td >2735</td><td >4670</td><td style="border-left: 2px solid black;"> 0</td><td>4732</td></tr>
+<tr><td>dmu31</td><td >2159</td><td style="background-color:green">5640</td><td style="background-color:green">5640</td><td >2241</td><td style="background-color:green">5640</td><td style="border-left: 2px solid black;"> 0</td><td>5640</td></tr>
+<tr><td>dmu32</td><td >2134</td><td style="background-color:green">5927</td><td style="background-color:green">5927</td><td >2264</td><td style="background-color:green">5927</td><td style="border-left: 2px solid black;"> 0</td><td>5927</td></tr>
+<tr><td>dmu33</td><td >1828</td><td >5681</td><td style="background-color:green">5728</td><td >2013</td><td >5681</td><td style="border-left: 2px solid black;"> 0</td><td>5728</td></tr>
+<tr><td>dmu34</td><td >2040</td><td style="background-color:green">5385</td><td style="background-color:green">5385</td><td >2134</td><td style="background-color:green">5385</td><td style="border-left: 2px solid black;"> 0</td><td>5385</td></tr>
+<tr><td>dmu35</td><td >2241</td><td style="background-color:green">5635</td><td style="background-color:green">5635</td><td >2426</td><td style="background-color:green">5635</td><td style="border-left: 2px solid black;"> 0</td><td>5635</td></tr>
+<tr><td>dmu36</td><td >2705</td><td style="background-color:green">5621</td><td style="background-color:green">5621</td><td >2745</td><td style="background-color:green">5621</td><td style="border-left: 2px solid black;"> 0</td><td>5621</td></tr>
+<tr><td>dmu37</td><td >2616</td><td style="background-color:green">5851</td><td style="background-color:green">5851</td><td >2733</td><td style="background-color:green">5851</td><td style="border-left: 2px solid black;"> 0</td><td>5851</td></tr>
+<tr><td>dmu38</td><td >2436</td><td style="background-color:green">5713</td><td style="background-color:green">5713</td><td >2526</td><td style="background-color:green">5713</td><td style="border-left: 2px solid black;"> 0</td><td>5713</td></tr>
+<tr><td>dmu39</td><td >2607</td><td style="background-color:green">5747</td><td style="background-color:green">5747</td><td >2695</td><td style="background-color:green">5747</td><td style="border-left: 2px solid black;"> 0</td><td>5747</td></tr>
+<tr><td>dmu40</td><td >2548</td><td style="background-color:green">5577</td><td style="background-color:green">5577</td><td >2670</td><td style="background-color:green">5577</td><td style="border-left: 2px solid black;"> 0</td><td>5577</td></tr>
+<tr><td>dmu41</td><td >1842</td><td >2839</td><td >2839</td><td >2019</td><td >2225</td><td style="border-left: 2px solid black;"> -337</td><td>3176</td></tr>
+<tr><td>dmu42</td><td >1810</td><td >2897</td><td >3066</td><td >2060</td><td >2520</td><td style="border-left: 2px solid black;"> -273</td><td>3339</td></tr>
+<tr><td>dmu43</td><td >1915</td><td >3121</td><td >3121</td><td >2113</td><td >2540</td><td style="border-left: 2px solid black;"> -320</td><td>3441</td></tr>
+<tr><td>dmu44</td><td >1975</td><td >3112</td><td >3112</td><td >2113</td><td >2577</td><td style="border-left: 2px solid black;"> -302</td><td>3414</td></tr>
+<tr><td>dmu45</td><td >1768</td><td >2930</td><td >2930</td><td >1972</td><td >2363</td><td style="border-left: 2px solid black;"> -287</td><td>3217</td></tr>
+<tr><td>dmu46</td><td >2664</td><td >3394</td><td >3425</td><td >2848</td><td >2508</td><td style="border-left: 2px solid black;"> -355</td><td>3780</td></tr>
+<tr><td>dmu47</td><td >2689</td><td >3268</td><td >3353</td><td >2782</td><td >2480</td><td style="border-left: 2px solid black;"> -361</td><td>3714</td></tr>
+<tr><td>dmu48</td><td >2516</td><td >3268</td><td >3317</td><td >2610</td><td >2405</td><td style="border-left: 2px solid black;"> -311</td><td>3628</td></tr>
+<tr><td>dmu49</td><td >2403</td><td >3369</td><td >3369</td><td >2613</td><td >2390</td><td style="border-left: 2px solid black;"> -174</td><td>3543</td></tr>
+<tr><td>dmu50</td><td >2494</td><td >3312</td><td >3379</td><td >2559</td><td >2444</td><td style="border-left: 2px solid black;"> -239</td><td>3618</td></tr>
+<tr><td>dmu51</td><td >1825</td><td >3827</td><td >3839</td><td >1984</td><td >3348</td><td style="border-left: 2px solid black;"> -231</td><td>4070</td></tr>
+<tr><td>dmu52</td><td >1989</td><td >4006</td><td >4012</td><td >2262</td><td >3515</td><td style="border-left: 2px solid black;"> -191</td><td>4203</td></tr>
+<tr><td>dmu53</td><td >2229</td><td >4108</td><td >4108</td><td >2408</td><td >3505</td><td style="border-left: 2px solid black;"> -140</td><td>4248</td></tr>
+<tr><td>dmu54</td><td >1990</td><td >4165</td><td >4165</td><td >2145</td><td >3567</td><td style="border-left: 2px solid black;"> -112</td><td>4277</td></tr>
+<tr><td>dmu55</td><td >1959</td><td >4099</td><td >4099</td><td >2119</td><td >3614</td><td style="border-left: 2px solid black;"> -92</td><td>4191</td></tr>
+<tr><td>dmu56</td><td >2778</td><td >4366</td><td >4366</td><td >2850</td><td >3555</td><td style="border-left: 2px solid black;"> -389</td><td>4755</td></tr>
+<tr><td>dmu57</td><td >2529</td><td >4182</td><td >4182</td><td >2656</td><td >3281</td><td style="border-left: 2px solid black;"> -280</td><td>4462</td></tr>
+<tr><td>dmu58</td><td >2625</td><td >4133</td><td >4214</td><td >2735</td><td >3465</td><td style="border-left: 2px solid black;"> -270</td><td>4484</td></tr>
+<tr><td>dmu59</td><td >2546</td><td >4009</td><td >4199</td><td >2773</td><td >3243</td><td style="border-left: 2px solid black;"> -167</td><td>4366</td></tr>
+<tr><td>dmu60</td><td >2547</td><td >4098</td><td >4259</td><td >2765</td><td >3399</td><td style="border-left: 2px solid black;"> -209</td><td>4468</td></tr>
+<tr><td>dmu61</td><td >1995</td><td >4850</td><td >4886</td><td >2216</td><td >4439</td><td style="border-left: 2px solid black;"> -152</td><td>5038</td></tr>
+<tr><td>dmu62</td><td >2079</td><td >5004</td><td >5004</td><td >2216</td><td >4528</td><td style="border-left: 2px solid black;"> -172</td><td>5176</td></tr>
+<tr><td>dmu63</td><td >1877</td><td >5049</td><td >5049</td><td >2030</td><td >4478</td><td style="border-left: 2px solid black;"> -196</td><td>5245</td></tr>
+<tr><td>dmu64</td><td >2134</td><td >5130</td><td >5130</td><td >2207</td><td >4456</td><td style="border-left: 2px solid black;"> -25</td><td>5155</td></tr>
+<tr><td>dmu65</td><td >1892</td><td >5072</td><td >5072</td><td >2202</td><td >4542</td><td style="border-left: 2px solid black;"> -50</td><td>5122</td></tr>
+<tr><td>dmu66</td><td >2416</td><td >5206</td><td >5357</td><td >2572</td><td >4488</td><td style="border-left: 2px solid black;"> -169</td><td>5526</td></tr>
+<tr><td>dmu67</td><td >2668</td><td >5454</td><td >5484</td><td >2838</td><td >4730</td><td style="border-left: 2px solid black;"> -177</td><td>5661</td></tr>
+<tr><td>dmu68</td><td >2542</td><td >5423</td><td >5423</td><td >2735</td><td >4495</td><td style="border-left: 2px solid black;"> -90</td><td>5513</td></tr>
+<tr><td>dmu69</td><td >2453</td><td >5384</td><td >5419</td><td >2614</td><td >4653</td><td style="border-left: 2px solid black;"> -92</td><td>5511</td></tr>
+<tr><td>dmu70</td><td >2518</td><td >5365</td><td >5492</td><td >2728</td><td >4708</td><td style="border-left: 2px solid black;"> -141</td><td>5633</td></tr>
+<tr><td>dmu71</td><td >2029</td><td >6050</td><td >6050</td><td >2328</td><td >5512</td><td style="border-left: 2px solid black;"> -79</td><td>6129</td></tr>
+<tr><td>dmu72</td><td >2061</td><td >6216</td><td >6223</td><td >2272</td><td >5897</td><td style="border-left: 2px solid black;"> -211</td><td>6434</td></tr>
+<tr><td>dmu73</td><td >2071</td><td >5935</td><td >5935</td><td >2219</td><td >5439</td><td style="border-left: 2px solid black;"> -172</td><td>6107</td></tr>
+<tr><td>dmu74</td><td >2017</td><td >5993</td><td >6015</td><td >2265</td><td >5451</td><td style="border-left: 2px solid black;"> -153</td><td>6168</td></tr>
+<tr><td>dmu75</td><td >2087</td><td >5915</td><td >6010</td><td >2225</td><td >5389</td><td style="border-left: 2px solid black;"> -113</td><td>6123</td></tr>
+<tr><td>dmu76</td><td >2729</td><td >6297</td><td >6329</td><td >2828</td><td >5506</td><td style="border-left: 2px solid black;"> -150</td><td>6479</td></tr>
+<tr><td>dmu77</td><td >2542</td><td >6247</td><td >6399</td><td >2708</td><td >5559</td><td style="border-left: 2px solid black;"> -121</td><td>6520</td></tr>
+<tr><td>dmu78</td><td >2727</td><td >6447</td><td >6508</td><td >2784</td><td >5753</td><td style="border-left: 2px solid black;"> -135</td><td>6643</td></tr>
+<tr><td>dmu79</td><td >2717</td><td >6593</td><td >6593</td><td >2958</td><td >5796</td><td style="border-left: 2px solid black;"> -127</td><td>6720</td></tr>
+<tr><td>dmu80</td><td >2642</td><td >6435</td><td >6435</td><td >2757</td><td >5679</td><td style="border-left: 2px solid black;"> -25</td><td>6460</td></tr>
+</table>
+</details>
+
+<details>
+<summary>swv</summary>
+<table>
+<tr><th>Instance</th><th>Job</th><th>Machine</th><th>Carlier</th><th>2-job</th><th>2-mach</th><th>Cert Gap</th><th>LB</th></tr>
+<tr><td>swv01</td><td >727</td><td >1366</td><td >1366</td><td >814</td><td >1226</td><td style="border-left: 2px solid black;"> -41</td><td>1407</td></tr>
+<tr><td>swv02</td><td >664</td><td style="background-color:green">1475</td><td style="background-color:green">1475</td><td >758</td><td >1273</td><td style="border-left: 2px solid black;"> 0</td><td>1475</td></tr>
+<tr><td>swv03</td><td >647</td><td >1328</td><td >1328</td><td >743</td><td >1189</td><td style="border-left: 2px solid black;"> -70</td><td>1398</td></tr>
+<tr><td>swv04</td><td >642</td><td >1366</td><td >1393</td><td >769</td><td >1172</td><td style="border-left: 2px solid black;"> -71</td><td>1464</td></tr>
+<tr><td>swv05</td><td >720</td><td >1411</td><td >1411</td><td >810</td><td >1247</td><td style="border-left: 2px solid black;"> -13</td><td>1424</td></tr>
+<tr><td>swv06</td><td >974</td><td >1477</td><td >1513</td><td >1079</td><td >1239</td><td style="border-left: 2px solid black;"> -154</td><td>1667</td></tr>
+<tr><td>swv07</td><td >947</td><td >1394</td><td >1394</td><td >1026</td><td >1139</td><td style="border-left: 2px solid black;"> -147</td><td>1541</td></tr>
+<tr><td>swv08</td><td >1058</td><td >1586</td><td >1586</td><td >1119</td><td >1339</td><td style="border-left: 2px solid black;"> -108</td><td>1694</td></tr>
+<tr><td>swv09</td><td >947</td><td >1594</td><td >1594</td><td >1087</td><td >1276</td><td style="border-left: 2px solid black;"> -61</td><td>1655</td></tr>
+<tr><td>swv10</td><td >939</td><td >1560</td><td >1560</td><td >1039</td><td >1179</td><td style="border-left: 2px solid black;"> -132</td><td>1692</td></tr>
+<tr><td>swv11</td><td >739</td><td style="background-color:green">2983</td><td style="background-color:green">2983</td><td >836</td><td >2812</td><td style="border-left: 2px solid black;"> 0</td><td>2983</td></tr>
+<tr><td>swv12</td><td >714</td><td >2949</td><td >2955</td><td >813</td><td >2836</td><td style="border-left: 2px solid black;"> -17</td><td>2972</td></tr>
+<tr><td>swv13</td><td >727</td><td style="background-color:green">3104</td><td style="background-color:green">3104</td><td >831</td><td >2981</td><td style="border-left: 2px solid black;"> 0</td><td>3104</td></tr>
+<tr><td>swv14</td><td >728</td><td style="background-color:green">2968</td><td style="background-color:green">2968</td><td >824</td><td >2847</td><td style="border-left: 2px solid black;"> 0</td><td>2968</td></tr>
+<tr><td>swv15</td><td >687</td><td style="background-color:green">2885</td><td style="background-color:green">2885</td><td >793</td><td >2771</td><td style="border-left: 2px solid black;"> 0</td><td>2885</td></tr>
+<tr><td>swv16</td><td >664</td><td style="background-color:green">2924</td><td style="background-color:green">2924</td><td >759</td><td style="background-color:green">2924</td><td style="border-left: 2px solid black;"> 0</td><td>2924</td></tr>
+<tr><td>swv17</td><td >683</td><td style="background-color:green">2794</td><td style="background-color:green">2794</td><td >764</td><td style="background-color:green">2794</td><td style="border-left: 2px solid black;"> 0</td><td>2794</td></tr>
+<tr><td>swv18</td><td >643</td><td style="background-color:green">2852</td><td style="background-color:green">2852</td><td >737</td><td style="background-color:green">2852</td><td style="border-left: 2px solid black;"> 0</td><td>2852</td></tr>
+<tr><td>swv19</td><td >684</td><td style="background-color:green">2843</td><td style="background-color:green">2843</td><td >794</td><td style="background-color:green">2843</td><td style="border-left: 2px solid black;"> 0</td><td>2843</td></tr>
+<tr><td>swv20</td><td >684</td><td style="background-color:green">2823</td><td style="background-color:green">2823</td><td >739</td><td style="background-color:green">2823</td><td style="border-left: 2px solid black;"> 0</td><td>2823</td></tr>
+</table>
+</details>
+
+<details>
+<summary>ta</summary>
+<table>
+<tr><th>Instance</th><th>Job</th><th>Machine</th><th>Carlier</th><th>2-job</th><th>2-mach</th><th>Cert Gap</th><th>LB</th></tr>
+<tr><td>ta11js</td><td >949</td><td >1254</td><td >1254</td><td >991</td><td >1139</td><td style="border-left: 2px solid black;"> -103</td><td>1357</td></tr>
+<tr><td>ta12js</td><td >1012</td><td >1267</td><td >1284</td><td >1046</td><td >1251</td><td style="border-left: 2px solid black;"> -83</td><td>1367</td></tr>
+<tr><td>ta13js</td><td >919</td><td >1243</td><td >1243</td><td >991</td><td >1178</td><td style="border-left: 2px solid black;"> -99</td><td>1342</td></tr>
+<tr><td>ta14js</td><td >990</td><td >1329</td><td >1341</td><td >1011</td><td >1130</td><td style="border-left: 2px solid black;"> -4</td><td>1345</td></tr>
+<tr><td>ta15js</td><td >880</td><td >1163</td><td >1231</td><td >948</td><td >1148</td><td style="border-left: 2px solid black;"> -108</td><td>1339</td></tr>
+<tr><td>ta16js</td><td >932</td><td >1211</td><td >1238</td><td >1031</td><td >1181</td><td style="border-left: 2px solid black;"> -122</td><td>1360</td></tr>
+<tr><td>ta17js</td><td >979</td><td >1306</td><td >1433</td><td >1061</td><td >1257</td><td style="border-left: 2px solid black;"> -29</td><td>1462</td></tr>
+<tr><td>ta18js</td><td >900</td><td >1315</td><td >1315</td><td >978</td><td >1153</td><td style="border-left: 2px solid black;"> -81</td><td>1396</td></tr>
+<tr><td>ta19js</td><td >920</td><td >1202</td><td >1216</td><td >951</td><td >1202</td><td style="border-left: 2px solid black;"> -116</td><td>1332</td></tr>
+<tr><td>ta20js</td><td >928</td><td >1213</td><td >1279</td><td >1025</td><td >1186</td><td style="border-left: 2px solid black;"> -69</td><td>1348</td></tr>
+<tr><td>ta21js</td><td >1217</td><td >1182</td><td >1435</td><td >1297</td><td >1182</td><td style="border-left: 2px solid black;"> -207</td><td>1642</td></tr>
+<tr><td>ta22js</td><td >1223</td><td >1314</td><td >1385</td><td >1274</td><td >1240</td><td style="border-left: 2px solid black;"> -215</td><td>1600</td></tr>
+<tr><td>ta23js</td><td >1164</td><td >1248</td><td >1422</td><td >1241</td><td >1185</td><td style="border-left: 2px solid black;"> -135</td><td>1557</td></tr>
+<tr><td>ta24js</td><td >1151</td><td >1284</td><td >1466</td><td >1226</td><td >1271</td><td style="border-left: 2px solid black;"> -178</td><td>1644</td></tr>
+<tr><td>ta25js</td><td >1170</td><td >1256</td><td >1473</td><td >1256</td><td >1256</td><td style="border-left: 2px solid black;"> -122</td><td>1595</td></tr>
+<tr><td>ta26js</td><td >1207</td><td >1245</td><td >1445</td><td >1272</td><td >1205</td><td style="border-left: 2px solid black;"> -198</td><td>1643</td></tr>
+<tr><td>ta27js</td><td >1291</td><td >1403</td><td >1567</td><td >1336</td><td >1331</td><td style="border-left: 2px solid black;"> -113</td><td>1680</td></tr>
+<tr><td>ta28js</td><td >1221</td><td >1387</td><td >1529</td><td >1276</td><td >1269</td><td style="border-left: 2px solid black;"> -74</td><td>1603</td></tr>
+<tr><td>ta29js</td><td >1227</td><td >1352</td><td >1413</td><td >1327</td><td >1267</td><td style="border-left: 2px solid black;"> -212</td><td>1625</td></tr>
+<tr><td>ta30js</td><td >1212</td><td >1277</td><td >1363</td><td >1245</td><td >1159</td><td style="border-left: 2px solid black;"> -199</td><td>1562</td></tr>
+<tr><td>ta31js</td><td >990</td><td style="background-color:green">1764</td><td style="background-color:green">1764</td><td >1026</td><td style="background-color:green">1764</td><td style="border-left: 2px solid black;"> 0</td><td>1764</td></tr>
+<tr><td>ta32js</td><td >972</td><td style="background-color:green">1774</td><td style="background-color:green">1774</td><td >1034</td><td style="background-color:green">1774</td><td style="border-left: 2px solid black;"> 0</td><td>1774</td></tr>
+<tr><td>ta33js</td><td >1056</td><td >1733</td><td >1747</td><td >1106</td><td >1729</td><td style="border-left: 2px solid black;"> -44</td><td>1791</td></tr>
+<tr><td>ta34js</td><td >975</td><td style="background-color:green">1828</td><td style="background-color:green">1828</td><td >1039</td><td style="background-color:green">1828</td><td style="border-left: 2px solid black;"> 0</td><td>1828</td></tr>
+<tr><td>ta35js</td><td >969</td><td >1754</td><td >1997</td><td >1021</td><td >1729</td><td style="border-left: 2px solid black;"> -10</td><td>2007</td></tr>
+<tr><td>ta36js</td><td >988</td><td >1777</td><td style="background-color:green">1819</td><td >1040</td><td >1777</td><td style="border-left: 2px solid black;"> 0</td><td>1819</td></tr>
+<tr><td>ta37js</td><td >1045</td><td style="background-color:green">1771</td><td style="background-color:green">1771</td><td >1076</td><td style="background-color:green">1771</td><td style="border-left: 2px solid black;"> 0</td><td>1771</td></tr>
+<tr><td>ta38js</td><td >952</td><td style="background-color:green">1673</td><td style="background-color:green">1673</td><td >1000</td><td style="background-color:green">1673</td><td style="border-left: 2px solid black;"> 0</td><td>1673</td></tr>
+<tr><td>ta39js</td><td >905</td><td >1764</td><td >1791</td><td >925</td><td >1641</td><td style="border-left: 2px solid black;"> -4</td><td>1795</td></tr>
+<tr><td>ta40js</td><td >961</td><td >1608</td><td >1617</td><td >1020</td><td >1602</td><td style="border-left: 2px solid black;"> -41</td><td>1658</td></tr>
+<tr><td>ta41js</td><td >1232</td><td >1850</td><td >1850</td><td >1297</td><td >1830</td><td style="border-left: 2px solid black;"> -76</td><td>1926</td></tr>
+<tr><td>ta42js</td><td >1192</td><td >1761</td><td >1867</td><td >1248</td><td >1761</td><td style="border-left: 2px solid black;"> -33</td><td>1900</td></tr>
+<tr><td>ta43js</td><td >1230</td><td >1710</td><td style="background-color:green">1809</td><td >1286</td><td >1694</td><td style="border-left: 2px solid black;"> 0</td><td>1809</td></tr>
+<tr><td>ta44js</td><td >1204</td><td >1820</td><td >1887</td><td >1290</td><td >1787</td><td style="border-left: 2px solid black;"> -74</td><td>1961</td></tr>
+<tr><td>ta45js</td><td >1253</td><td >1785</td><td >1955</td><td >1282</td><td >1731</td><td style="border-left: 2px solid black;"> -42</td><td>1997</td></tr>
+<tr><td>ta46js</td><td >1290</td><td >1940</td><td >1940</td><td >1355</td><td >1856</td><td style="border-left: 2px solid black;"> -36</td><td>1976</td></tr>
+<tr><td>ta47js</td><td >1334</td><td >1751</td><td >1768</td><td >1376</td><td >1690</td><td style="border-left: 2px solid black;"> -59</td><td>1827</td></tr>
+<tr><td>ta48js</td><td >1282</td><td >1770</td><td >1905</td><td >1314</td><td >1744</td><td style="border-left: 2px solid black;"> -16</td><td>1921</td></tr>
+<tr><td>ta49js</td><td >1190</td><td >1758</td><td >1892</td><td >1253</td><td >1758</td><td style="border-left: 2px solid black;"> -46</td><td>1938</td></tr>
+<tr><td>ta50js</td><td >1251</td><td >1678</td><td >1804</td><td >1297</td><td >1674</td><td style="border-left: 2px solid black;"> -44</td><td>1848</td></tr>
+</table>
+</details>
+
+<details>
+<summary>tai</summary>
+<table>
+<tr><th>Instance</th><th>Job</th><th>Machine</th><th>Carlier</th><th>2-job</th><th>2-mach</th><th>Cert Gap</th><th>LB</th></tr>
+<tr><td>tai_100_100_1</td><td >58175</td><td >61674</td><td >62485</td><td >58486</td><td >59162</td><td style="border-left: 2px solid black;"> -358</td><td>62843</td></tr>
+<tr><td>tai_100_100_2</td><td >55304</td><td >58160</td><td >62367</td><td >56161</td><td >57126</td><td style="border-left: 2px solid black;"> -447</td><td>62814</td></tr>
+<tr><td>tai_100_100_3</td><td >56728</td><td >57806</td><td >60958</td><td >57304</td><td >57806</td><td style="border-left: 2px solid black;"> -575</td><td>61533</td></tr>
+<tr><td>tai_100_100_4</td><td >59359</td><td >59383</td><td >64165</td><td >59359</td><td >57965</td><td style="border-left: 2px solid black;"> -577</td><td>64742</td></tr>
+<tr><td>tai_100_100_5</td><td >56381</td><td >57369</td><td >61003</td><td >56486</td><td >55764</td><td style="border-left: 2px solid black;"> -763</td><td>61766</td></tr>
+<tr><td>tai_100_100_6</td><td >56191</td><td >56270</td><td >60706</td><td >56924</td><td >55408</td><td style="border-left: 2px solid black;"> -654</td><td>61360</td></tr>
+<tr><td>tai_100_100_7</td><td >56064</td><td >57412</td><td >63353</td><td >56869</td><td >57317</td><td style="border-left: 2px solid black;"> -687</td><td>64040</td></tr>
+<tr><td>tai_100_100_8</td><td >58951</td><td >57570</td><td >62426</td><td >58951</td><td >57570</td><td style="border-left: 2px solid black;"> -798</td><td>63224</td></tr>
+<tr><td>tai_100_100_9</td><td >58494</td><td >57824</td><td >62220</td><td >58505</td><td >57148</td><td style="border-left: 2px solid black;"> -411</td><td>62631</td></tr>
+<tr><td>tai_100_100_10</td><td >57454</td><td >59747</td><td >64625</td><td >57480</td><td >56194</td><td style="border-left: 2px solid black;"> -241</td><td>64866</td></tr>
+</table>
+</details>
+
+<details>
+<summary>yn</summary>
+<table>
+<tr><th>Instance</th><th>Job</th><th>Machine</th><th>Carlier</th><th>2-job</th><th>2-mach</th><th>Cert Gap</th><th>LB</th></tr>
+<tr><td>yn1</td><td >694</td><td >689</td><td >763</td><td >736</td><td >643</td><td style="border-left: 2px solid black;"> -121</td><td>884</td></tr>
+<tr><td>yn2</td><td >713</td><td >732</td><td >795</td><td >730</td><td >686</td><td style="border-left: 2px solid black;"> -109</td><td>904</td></tr>
+<tr><td>yn3</td><td >680</td><td >733</td><td >793</td><td >715</td><td >659</td><td style="border-left: 2px solid black;"> -99</td><td>892</td></tr>
+<tr><td>yn4</td><td >719</td><td >818</td><td >871</td><td >739</td><td >676</td><td style="border-left: 2px solid black;"> -96</td><td>967</td></tr>
+</table>
+</details>
+
+### Relaxation certificates
+
+A relaxation certificate would be something like identifying the 2 most critical machines and ignoring all tasks but the tasks on these machines, and transforming all precedences into delays.
+
+[Work in progress]
+
+### Engine trace certificates
+
+An engine trace certificate is the search tree of an engine (logically) compressed to be verifiable externally. SAT engines have pioneered this approach.
+
+[Work in progress]
+
+### Understanding instance hardness
+
+Streeter and Smith ("How the Landscape of Random Job Shop Scheduling Instances Depends on the Ratio of Jobs to Machines" 2006) showed that random instances are hardest when the ratio of jobs to machines $n/m$ is close to one. Their statistical study shows that as size grows the best solutions become more and more distant from each other. Landscape statistics miss a lot, however: `ta39` and `ta40` have the same size (30 x 15) and the same generator, yet one is solved in under a minute and the other is still open.
+
+The lower bounds can be used to refine the understanding of instance difficulty: 
+- on `ta39`, Carlier's bound is 1791 for an optimum of 1795
+- on `ta40`, Carlier's bound is 1617 for an optimum between 1658 and 1669
+
+Any engine that embeds a Carlier bound into a propagation step is likely to quickly close the gap between 1791 and 1795, and with the help of heuristics close `ta39`.
+
 
 <br/>
 
-### Formats
+## Best-known bounds: provenance and history 
 
-There are three main formats, **JSON**, **standard**, and **DaColTeppan** for reentrant instances. 
+JSPLib records, for every instance, the best upper and lower bounds found by any method. We register date, solver, hardware, running time and certificate status, whenever these available.
+
+***We have done our best to retrospectively rebuild the history of the bounds for the jsplib instances*** from Hoorn 2018 and subsequent publications.
+
+The bounds come from various sources:
+
+- **Published papers**, referenced in the [publications](#publications-best-known-solutions) list
+- **Communications to JSPLib** (via GitHub issues, email, etc.) double checked by us
+- **Engines run by others**, whose results have been made public (e.g. CPO2015)
+- **Engines run by us** (CPO, OptalCP, CP-SAT), with approximate running times
+
+Hardware and running times are hard to compare. When a reference engine reproduces a published bound, the table credits the engine, because anyone can reproduce it.
+
+### Industrial instances
+
+<details>
+<summary>Da Col and Teppan 2022</summary>
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
+<tr><td>dct-long-100-10000-1</td><td>103 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-long-100-10000-2</td><td>103 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-long-100-10000-3</td><td>103 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-long-100-100000-1</td><td>109 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-long-100-100000-2</td><td>114 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-long-100-100000-3</td><td>109 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-long-1000-10000-1</td><td>1002 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-long-1000-10000-2</td><td>1002 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-long-1000-10000-3</td><td>1002 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-long-1000-100000-1</td><td>1002 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-long-1000-100000-2</td><td>1002 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-long-1000-100000-3</td><td>1003 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-short-100-10000-1</td><td>2162 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-short-100-10000-2</td><td>2192 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-short-100-10000-3</td><td>2169 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-short-100-100000-1</td><td>20685 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-short-100-100000-2</td><td>20870 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-short-100-100000-3</td><td>20767 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-short-1000-10000-1</td><td>2882 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-short-1000-10000-2</td><td>2863 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-short-1000-10000-3</td><td>2897 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dct-short-1000-100000-1</td><td>21280 x 1000</td><td>industrial</td><td>600000</td><td>600019</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
+<tr><td>dct-short-1000-100000-2</td><td>21349 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dct-short-1000-100000-3</td><td>21338 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+</table>
 
 
-#### JSON format
+*Da Col and Teppan report that instance dct-short-1000-100000-1 was solved to optimality by CP Optimizer in 6h which we haven't been able to reproduce (with CPO or any other solver). We are still investigating*. 
+We have recently noticed some regression in OptalCP on two of these instances, hence you may need specific parameters to reach the solution in the time announced.
 
-The json format is more verbose but probably easier to use and contains meta-data about the instance that is useful for automating benchmarks. It is common between jobshop, reentrant jobshop, flexible jobshop and (flexible) jobshop with arbitrary precedences.
+</details>
 
-```json
-{
-  "instance": "la01",
-  "family": "la",
-  "family_long": "Lawrence",
-  "year": "1984",
-  "jobs": 10,
-  "machines": 5,
-  "operations":[
-    {"operation":0,"job":0,"step":0,"option":0,"machine":1,"duration":21},
-    {"operation":1,"job":0,"step":1,"option":0,"machine":0,"duration":53},
-    {"operation":2,"job":0,"step":2,"option":0,"machine":4,"duration":95},
-    {"operation":3,"job":0,"step":3,"option":0,"machine":3,"duration":55},
-    {"operation":4,"job":0,"step":4,"option":0,"machine":2,"duration":34},
-    {"operation":5,"job":1,"step":0,"option":0,"machine":0,"duration":21},
-    {"operation":6,"job":1,"step":1,"option":0,"machine":3,"duration":52},
-    {"operation":7,"job":1,"step":2,"option":0,"machine":4,"duration":16},
-    {"operation":8,"job":1,"step":3,"option":0,"machine":2,"duration":26},
-  ...
-    {"operation":49,"job":9,"step":4,"option":0,"machine":0,"duration":96}
-],
-"precedences":[
-    {"before":0,"after":1,"label":0},
-    {"before":1,"after":2,"label":0},
-    {"before":2,"after":3,"label":0},
-  ...
-]
-}
-```
+<details>
+<summary>Boveroux, Ernst and Louveaux 2025</summary>
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
+<tr><td>bel00</td><td>792 x 48</td><td>industrial</td><td>766329</td><td>766329</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel01</td><td>627 x 52</td><td>industrial</td><td>428900</td><td>428900</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel02</td><td>660 x 59</td><td>industrial</td><td>270437</td><td>270437</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel03</td><td>691 x 52</td><td>industrial</td><td>670943</td><td>670943</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel04</td><td>952 x 63</td><td>industrial</td><td>408633</td><td>408633</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel05</td><td>929 x 59</td><td>industrial</td><td>620171</td><td>620171</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel06</td><td>678 x 57</td><td>industrial</td><td>502510</td><td>502510</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel07</td><td>968 x 55</td><td>industrial</td><td>750360</td><td>750360</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel08</td><td>822 x 65</td><td>industrial</td><td>484451</td><td>484451</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel09</td><td>651 x 53</td><td>industrial</td><td>534811</td><td>534811</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel10</td><td>733 x 61</td><td>industrial</td><td>468304</td><td>468304</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel11</td><td>761 x 66</td><td>industrial</td><td>509503</td><td>509503</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel12</td><td>897 x 64</td><td>industrial</td><td>388715</td><td>388715</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel13</td><td>836 x 54</td><td>industrial</td><td>420576</td><td>420576</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel14</td><td>935 x 57</td><td>industrial</td><td>1115063</td><td>1115063</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel15</td><td>818 x 48</td><td>industrial</td><td>610946</td><td>610946</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel16</td><td>855 x 59</td><td>industrial</td><td>575843</td><td>575843</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel17</td><td>662 x 47</td><td>industrial</td><td>520426</td><td>520426</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel18</td><td>677 x 50</td><td>industrial</td><td>347889</td><td>347889</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>bel19</td><td>806 x 69</td><td>industrial</td><td>529239</td><td>529239</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+</table>
+</details>
+
+### Random instances
+
+<details>
+<summary>Adams, Balas and Zawack 1988</summary>
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
+<tr><td>abz7</td><td>20 x 15</td><td>random</td><td>656</td><td>656</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
+<tr><td>abz8</td><td>20 x 15</td><td>random</td><td>667</td><td>667</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 10h</td></tr>
+<tr><td>abz9</td><td>20 x 15</td><td>random</td><td>678</td><td>678</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+</table>
+
+
+*Various places report "Henning A (2002). Praktische Job-Shop Scheduling-Probleme. Ph.D. thesis, Friedrich-Schiller-Universität Jena, Jena, Germany" as having found a solution of 665 for abz8, but the original document says their solution is 667 and 665 is a "solution from the literature". Jelke J. van Hoorn attributes the 665 bound to "Paul Douglas Martin. A time-oriented approach to computing optimal schedules for the job-shop scheduling problem. PhD thesis. 1996".
+However, OptalCP proves a lower bound of 667 and Optimizizer only provides a verified solution for 667. We advise caution until this result is confirmed by independent means.*
+
+</details>
+
+<details>
+<summary>Storer, Wu and Vaccari 1992</summary>
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
+<tr><td>swv01</td><td>20 x 10</td><td>random</td><td>1407</td><td>1407</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>swv02</td><td>20 x 10</td><td>random</td><td>1475</td><td>1475</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>swv03</td><td>20 x 10</td><td>random</td><td>1398</td><td>1398</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
+<tr><td>swv04</td><td>20 x 10</td><td>random</td><td>1464</td><td>1464</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>swv05</td><td>20 x 10</td><td>random</td><td>1424</td><td>1424</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
+<tr><td>swv06</td><td>20 x 15</td><td>random</td><td>1667</td><td>1667</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 40h</td></tr>
+<tr><td>swv07</td><td>20 x 15</td><td>random</td><td>1541</td><td>1594</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub GR2014</td></tr>
+<tr><td>swv08</td><td>20 x 15</td><td>random</td><td>1694</td><td>1751</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Murovec2015</td></tr>
+<tr><td>swv09</td><td>20 x 15</td><td>random</td><td>1655</td><td>1655</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 15h</td></tr>
+<tr><td>swv10</td><td>20 x 15</td><td>random</td><td>1692</td><td>1743</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
+<tr><td>swv11</td><td>50 x 10</td><td>random</td><td>2983</td><td>2983</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>swv12</td><td>50 x 10</td><td>random</td><td>2972</td><td>2972</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>swv13</td><td>50 x 10</td><td>random</td><td>3104</td><td>3104</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>swv14</td><td>50 x 10</td><td>random</td><td>2968</td><td>2968</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>swv15</td><td>50 x 10</td><td>random</td><td>2885</td><td>2885</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 9h</td></tr>
+<tr><td>swv16</td><td>50 x 10</td><td>random</td><td>2924</td><td>2924</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>swv17</td><td>50 x 10</td><td>random</td><td>2794</td><td>2794</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>swv18</td><td>50 x 10</td><td>random</td><td>2852</td><td>2852</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>swv19</td><td>50 x 10</td><td>random</td><td>2843</td><td>2843</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>swv20</td><td>50 x 10</td><td>random</td><td>2823</td><td>2823</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+</table>
+</details>
+
+<details>
+<summary>Yamada Nakano 1992</summary>
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
+<tr><td>yn1</td><td>20 x 20</td><td>random</td><td>884</td><td>884</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 6h</td></tr>
+<tr><td>yn2</td><td>20 x 20</td><td>random</td><td>904</td><td>904</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 40h</td></tr>
+<tr><td>yn3</td><td>20 x 20</td><td>random</td><td>892</td><td>892</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 40h</td></tr>
+<tr><td>yn4</td><td>20 x 20</td><td>random</td><td>967</td><td>967</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 16h</td></tr>
+</table>
+</details>
+
+<details>
+<summary>Taillard 1993</summary>
+
+*We add the suffix `js` to distinguish the instance from other instances generated by Taillard for other problems*
+
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
+<tr><td>ta11js</td><td>20 x 15</td><td>random</td><td>1357</td><td>1357</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta12js</td><td>20 x 15</td><td>random</td><td>1367</td><td>1367</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
+<tr><td>ta13js</td><td>20 x 15</td><td>random</td><td>1342</td><td>1342</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta14js</td><td>20 x 15</td><td>random</td><td>1345</td><td>1345</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>ta15js</td><td>20 x 15</td><td>random</td><td>1339</td><td>1339</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta16js</td><td>20 x 15</td><td>random</td><td>1360</td><td>1360</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta17js</td><td>20 x 15</td><td>random</td><td>1462</td><td>1462</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>ta18js</td><td>20 x 15</td><td>random</td><td>1396</td><td>1396</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta19js</td><td>20 x 15</td><td>random</td><td>1332</td><td>1332</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta20js</td><td>20 x 15</td><td>random</td><td>1348</td><td>1348</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta21js</td><td>20 x 20</td><td>random</td><td>1642</td><td>1642</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta22js</td><td>20 x 20</td><td>random</td><td>1600</td><td>1600</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
+<tr><td>ta23js</td><td>20 x 20</td><td>random</td><td>1557</td><td>1557</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
+<tr><td>ta24js</td><td>20 x 20</td><td>random</td><td>1644</td><td>1644</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
+<tr><td>ta25js</td><td>20 x 20</td><td>random</td><td>1595</td><td>1595</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta26js</td><td>20 x 20</td><td>random</td><td>1643</td><td>1643</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 7h</td></tr>
+<tr><td>ta27js</td><td>20 x 20</td><td>random</td><td>1680</td><td>1680</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta28js</td><td>20 x 20</td><td>random</td><td>1603</td><td>1603</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
+<tr><td>ta29js</td><td>20 x 20</td><td>random</td><td>1625</td><td>1625</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
+<tr><td>ta30js</td><td>20 x 20</td><td>random</td><td>1562</td><td>1584</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub NS2005</td></tr>
+<tr><td>ta31js</td><td>30 x 15</td><td>random</td><td>1764</td><td>1764</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
+<tr><td>ta32js</td><td>30 x 15</td><td>random</td><td>1774</td><td>1783</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CPO2015 | ub LLG2026</td></tr>
+<tr><td>ta33js</td><td>30 x 15</td><td>random</td><td>1791</td><td>1791</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 10h</td></tr>
+<tr><td>ta34js</td><td>30 x 15</td><td>random</td><td>1828</td><td>1828</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>ta35js</td><td>30 x 15</td><td>random</td><td>2007</td><td>2007</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>ta36js</td><td>30 x 15</td><td>random</td><td>1819</td><td>1819</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>ta37js</td><td>30 x 15</td><td>random</td><td>1771</td><td>1771</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
+<tr><td>ta38js</td><td>30 x 15</td><td>random</td><td>1673</td><td>1673</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 7h</td></tr>
+<tr><td>ta39js</td><td>30 x 15</td><td>random</td><td>1795</td><td>1795</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>ta40js</td><td>30 x 15</td><td>random</td><td>1658</td><td>1669</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub GR2014</td></tr>
+<tr><td>ta41js</td><td>30 x 20</td><td>random</td><td>1926</td><td>2005</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CPO2015</td></tr>
+<tr><td>ta42js</td><td>30 x 20</td><td>random</td><td>1900</td><td>1937</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub GR2014</td></tr>
+<tr><td>ta43js</td><td>30 x 20</td><td>random</td><td>1809</td><td>1846</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CPO2015 | ub PLC2015</td></tr>
+<tr><td>ta44js</td><td>30 x 20</td><td>random</td><td>1961</td><td>1978</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
+<tr><td>ta45js</td><td>30 x 20</td><td>random</td><td>1997</td><td>1997</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>CP-SAT in < 10m</td></tr>
+<tr><td>ta46js</td><td>30 x 20</td><td>random</td><td>1976</td><td>2002</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
+<tr><td>ta47js</td><td>30 x 20</td><td>random</td><td>1827</td><td>1889</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub PLC2015</td></tr>
+<tr><td>ta48js</td><td>30 x 20</td><td>random</td><td>1921</td><td>1937</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
+<tr><td>ta49js</td><td>30 x 20</td><td>random</td><td>1938</td><td>1960</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
+<tr><td>ta50js</td><td>30 x 20</td><td>random</td><td>1848</td><td>1923</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub PLC2015</td></tr>
+</table>
+</details>
+
+<details>
+<summary>Demirkol, Mehta and Uzsoy 1998</summary>
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
+<tr><td>dmu01</td><td>20 x 15</td><td>random</td><td>2563</td><td>2563</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dmu02</td><td>20 x 15</td><td>random</td><td>2706</td><td>2706</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
+<tr><td>dmu03</td><td>20 x 15</td><td>random</td><td>2731</td><td>2731</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
+<tr><td>dmu04</td><td>20 x 15</td><td>random</td><td>2669</td><td>2669</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dmu05</td><td>20 x 15</td><td>random</td><td>2749</td><td>2749</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dmu06</td><td>20 x 20</td><td>random</td><td>3244</td><td>3244</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
+<tr><td>dmu07</td><td>20 x 20</td><td>random</td><td>3046</td><td>3046</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
+<tr><td>dmu08</td><td>20 x 20</td><td>random</td><td>3188</td><td>3188</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
+<tr><td>dmu09</td><td>20 x 20</td><td>random</td><td>3092</td><td>3092</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
+<tr><td>dmu10</td><td>20 x 20</td><td>random</td><td>2984</td><td>2984</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dmu11</td><td>30 x 15</td><td>random</td><td>3402</td><td>3430</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub PLC2015</td></tr>
+<tr><td>dmu12</td><td>30 x 15</td><td>random</td><td>3481</td><td>3492</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
+<tr><td>dmu13</td><td>30 x 15</td><td>random</td><td>3681</td><td>3681</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
+<tr><td>dmu14</td><td>30 x 15</td><td>random</td><td>3394</td><td>3394</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>CP-SAT in < 1m</td></tr>
+<tr><td>dmu15</td><td>30 x 15</td><td>random</td><td>3343</td><td>3343</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
+<tr><td>dmu16</td><td>30 x 20</td><td>random</td><td>3734</td><td>3744</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CPO2015 | ub Diaz2026</td></tr>
+<tr><td>dmu17</td><td>30 x 20</td><td>random</td><td>3733</td><td>3811</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>dmu18</td><td>30 x 20</td><td>random</td><td>3844</td><td>3844</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 10h</td></tr>
+<tr><td>dmu19</td><td>30 x 20</td><td>random</td><td>3707</td><td>3764</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
+<tr><td>dmu20</td><td>30 x 20</td><td>random</td><td>3632</td><td>3699</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
+<tr><td>dmu21</td><td>40 x 15</td><td>random</td><td>4380</td><td>4380</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu22</td><td>40 x 15</td><td>random</td><td>4725</td><td>4725</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu23</td><td>40 x 15</td><td>random</td><td>4668</td><td>4668</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu24</td><td>40 x 15</td><td>random</td><td>4648</td><td>4648</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu25</td><td>40 x 15</td><td>random</td><td>4164</td><td>4164</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu26</td><td>40 x 20</td><td>random</td><td>4647</td><td>4647</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dmu27</td><td>40 x 20</td><td>random</td><td>4848</td><td>4848</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu28</td><td>40 x 20</td><td>random</td><td>4692</td><td>4692</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu29</td><td>40 x 20</td><td>random</td><td>4691</td><td>4691</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu30</td><td>40 x 20</td><td>random</td><td>4732</td><td>4732</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>dmu31</td><td>50 x 15</td><td>random</td><td>5640</td><td>5640</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu32</td><td>50 x 15</td><td>random</td><td>5927</td><td>5927</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu33</td><td>50 x 15</td><td>random</td><td>5728</td><td>5728</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu34</td><td>50 x 15</td><td>random</td><td>5385</td><td>5385</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu35</td><td>50 x 15</td><td>random</td><td>5635</td><td>5635</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu36</td><td>50 x 20</td><td>random</td><td>5621</td><td>5621</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu37</td><td>50 x 20</td><td>random</td><td>5851</td><td>5851</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu38</td><td>50 x 20</td><td>random</td><td>5713</td><td>5713</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu39</td><td>50 x 20</td><td>random</td><td>5747</td><td>5747</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu40</td><td>50 x 20</td><td>random</td><td>5577</td><td>5577</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
+<tr><td>dmu41</td><td>20 x 15</td><td>random</td><td>3176</td><td>3248</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub PLC2015</td></tr>
+<tr><td>dmu42</td><td>20 x 15</td><td>random</td><td>3339</td><td>3390</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
+<tr><td>dmu43</td><td>20 x 15</td><td>random</td><td>3441</td><td>3441</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 7h</td></tr>
+<tr><td>dmu44</td><td>20 x 15</td><td>random</td><td>3414</td><td>3475</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
+<tr><td>dmu45</td><td>20 x 15</td><td>random</td><td>3217</td><td>3266</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
+<tr><td>dmu46</td><td>20 x 20</td><td>random</td><td>3780</td><td>4035</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub GR2014</td></tr>
+<tr><td>dmu47</td><td>20 x 20</td><td>random</td><td>3714</td><td>3939</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub GR2014</td></tr>
+<tr><td>dmu48</td><td>20 x 20</td><td>random</td><td>3628</td><td>3763</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
+<tr><td>dmu49</td><td>20 x 20</td><td>random</td><td>3543</td><td>3706</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
+<tr><td>dmu50</td><td>20 x 20</td><td>random</td><td>3618</td><td>3729</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub PLC2015</td></tr>
+<tr><td>dmu51</td><td>30 x 15</td><td>random</td><td>4070</td><td>4151</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
+<tr><td>dmu52</td><td>30 x 15</td><td>random</td><td>4203</td><td>4297</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
+<tr><td>dmu53</td><td>30 x 15</td><td>random</td><td>4248</td><td>4378</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
+<tr><td>dmu54</td><td>30 x 15</td><td>random</td><td>4277</td><td>4360</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
+<tr><td>dmu55</td><td>30 x 15</td><td>random</td><td>4191</td><td>4258</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
+<tr><td>dmu56</td><td>30 x 20</td><td>random</td><td>4755</td><td>4934</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
+<tr><td>dmu57</td><td>30 x 20</td><td>random</td><td>4462</td><td>4643</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
+<tr><td>dmu58</td><td>30 x 20</td><td>random</td><td>4484</td><td>4701</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
+<tr><td>dmu59</td><td>30 x 20</td><td>random</td><td>4366</td><td>4607</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
+<tr><td>dmu60</td><td>30 x 20</td><td>random</td><td>4468</td><td>4721</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
+<tr><td>dmu61</td><td>40 x 15</td><td>random</td><td>5038</td><td>5166</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Diaz2026</td></tr>
+<tr><td>dmu62</td><td>40 x 15</td><td>random</td><td>5176</td><td>5244</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
+<tr><td>dmu63</td><td>40 x 15</td><td>random</td><td>5245</td><td>5296</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
+<tr><td>dmu64</td><td>40 x 15</td><td>random</td><td>5155</td><td>5225</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
+<tr><td>dmu65</td><td>40 x 15</td><td>random</td><td>5122</td><td>5158</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>dmu66</td><td>40 x 20</td><td>random</td><td>5526</td><td>5685</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>dmu67</td><td>40 x 20</td><td>random</td><td>5661</td><td>5774</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
+<tr><td>dmu68</td><td>40 x 20</td><td>random</td><td>5513</td><td>5733</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>dmu69</td><td>40 x 20</td><td>random</td><td>5511</td><td>5682</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>dmu70</td><td>40 x 20</td><td>random</td><td>5633</td><td>5868</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
+<tr><td>dmu71</td><td>50 x 15</td><td>random</td><td>6129</td><td>6204</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Schwemin2026</td></tr>
+<tr><td>dmu72</td><td>50 x 15</td><td>random</td><td>6434</td><td>6448</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CdGKGC2025 | ub LLG2026</td></tr>
+<tr><td>dmu73</td><td>50 x 15</td><td>random</td><td>6107</td><td>6132</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
+<tr><td>dmu74</td><td>50 x 15</td><td>random</td><td>6168</td><td>6196</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
+<tr><td>dmu75</td><td>50 x 15</td><td>random</td><td>6123</td><td>6186</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>dmu76</td><td>50 x 20</td><td>random</td><td>6479</td><td>6708</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>dmu77</td><td>50 x 20</td><td>random</td><td>6520</td><td>6739</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
+<tr><td>dmu78</td><td>50 x 20</td><td>random</td><td>6643</td><td>6744</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
+<tr><td>dmu79</td><td>50 x 20</td><td>random</td><td>6720</td><td>6899</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
+<tr><td>dmu80</td><td>50 x 20</td><td>random</td><td>6460</td><td>6621</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+</table>
+</details>
+
+### Stress-test
+
+<details>
+<summary>Da Col and Teppan 2022 - Taillard like instances `tai`</summary>
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
+<tr><td>tai_100_100_1</td><td>100 x 100</td><td>random</td><td>62843</td><td>76118</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_2</td><td>100 x 100</td><td>random</td><td>62814</td><td>75478</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_3</td><td>100 x 100</td><td>random</td><td>61533</td><td>75366</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_4</td><td>100 x 100</td><td>random</td><td>64742</td><td>77307</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_5</td><td>100 x 100</td><td>random</td><td>61766</td><td>76403</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_6</td><td>100 x 100</td><td>random</td><td>61360</td><td>76060</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_7</td><td>100 x 100</td><td>random</td><td>64040</td><td>76713</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_8</td><td>100 x 100</td><td>random</td><td>63224</td><td>76767</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_9</td><td>100 x 100</td><td>random</td><td>62631</td><td>77337</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_10</td><td>100 x 100</td><td>random</td><td>64866</td><td>75827</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_1000_1</td><td>100 x 1000</td><td>random</td><td>522298</td><td>525389</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_2</td><td>100 x 1000</td><td>random</td><td>530375</td><td>530375</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_3</td><td>100 x 1000</td><td>random</td><td>530560</td><td>530560</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_4</td><td>100 x 1000</td><td>random</td><td>527101</td><td>527101</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_5</td><td>100 x 1000</td><td>random</td><td>517728</td><td>523876</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_1000_6</td><td>100 x 1000</td><td>random</td><td>522907</td><td>523503</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_7</td><td>100 x 1000</td><td>random</td><td>522537</td><td>525283</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_8</td><td>100 x 1000</td><td>random</td><td>526428</td><td>526428</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_9</td><td>100 x 1000</td><td>random</td><td>528097</td><td>528097</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_10</td><td>100 x 1000</td><td>random</td><td>521766</td><td>524358</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_1000_100_1</td><td>1000 x 100</td><td>random</td><td>525343</td><td>525343</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tai_1000_100_2</td><td>1000 x 100</td><td>random</td><td>528088</td><td>528088</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
+<tr><td>tai_1000_100_3</td><td>1000 x 100</td><td>random</td><td>522793</td><td>522793</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
+<tr><td>tai_1000_100_4</td><td>1000 x 100</td><td>random</td><td>524271</td><td>524271</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
+<tr><td>tai_1000_100_5</td><td>1000 x 100</td><td>random</td><td>531216</td><td>531216</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
+<tr><td>tai_1000_100_6</td><td>1000 x 100</td><td>random</td><td>518763</td><td>518763</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
+<tr><td>tai_1000_100_7</td><td>1000 x 100</td><td>random</td><td>527093</td><td>527093</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
+<tr><td>tai_1000_100_8</td><td>1000 x 100</td><td>random</td><td>519524</td><td>519524</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
+<tr><td>tai_1000_100_9</td><td>1000 x 100</td><td>random</td><td>520889</td><td>520889</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
+<tr><td>tai_1000_100_10</td><td>1000 x 100</td><td>random</td><td>529112</td><td>529112</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
+<tr><td>tai_1000_1000_1</td><td>1000 x 1000</td><td>stress-test</td><td>549392</td><td>796759</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Schwemin2026</td></tr>
+<tr><td>tai_1000_1000_2</td><td>1000 x 1000</td><td>stress-test</td><td>549043</td><td>797337</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Schwemin2026</td></tr>
+<tr><td>tai_1000_1000_3</td><td>1000 x 1000</td><td>stress-test</td><td>552580</td><td>798050</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Schwemin2026</td></tr>
+<tr><td>tai_1000_1000_4</td><td>1000 x 1000</td><td>stress-test</td><td>547670</td><td>795789</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Schwemin2026</td></tr>
+<tr><td>tai_1000_1000_5</td><td>1000 x 1000</td><td>stress-test</td><td>545193</td><td>798296</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Schwemin2026</td></tr>
+<tr><td>tai_1000_1000_6</td><td>1000 x 1000</td><td>stress-test</td><td>547286</td><td>795615</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Schwemin2026</td></tr>
+<tr><td>tai_1000_1000_7</td><td>1000 x 1000</td><td>stress-test</td><td>545877</td><td>796445</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Schwemin2026</td></tr>
+<tr><td>tai_1000_1000_8</td><td>1000 x 1000</td><td>stress-test</td><td>549220</td><td>797763</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Schwemin2026</td></tr>
+<tr><td>tai_1000_1000_9</td><td>1000 x 1000</td><td>stress-test</td><td>543559</td><td>796605</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Schwemin2026</td></tr>
+<tr><td>tai_1000_1000_10</td><td>1000 x 1000</td><td>stress-test</td><td>549075</td><td>795154</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb Hexaly2026 | ub Schwemin2026</td></tr>
+</table>
+</details>
+
+### Publications (best known solutions)
+The upper and lower bounds come from: 
+
+- NS2005 (1 bounds - ta30js) : **Nowicki, E., & Smutnicki, C.** (2002). Some new tools to solve the job shop problem. Raport serii: Preprinty, 60.
+
+- GR2014 (5 bounds in swv, ta and dmu) : **Gonçalves, J. F., & Resende, M. G.** (2014). An extended Akers graphical method with a biased random‐key genetic algorithm for job‐shop scheduling. International Transactions in Operational Research, 21(2), 215-246.
+
+- Murovec2015 (1 bounds - swv08) : Personal communication to Optimizizer probably based on **Murovec, B.** (2015). Job-shop local-search move evaluation without direct consideration of the criterion’s value. European Journal of Operational Research, 241(2), 320-329.
+
+- CPO2015 (4 bounds in ta and dmu) : **Vilím, P., Laborie, P., & Shaw, P.** (2015). [Failure-directed search for constraint-based scheduling](https://vilim.eu/petr/cpaior2015.pdf). In CPAIOR 2015 proceedings. [Detailed experimental results](https://vilim.eu/petr/cpaior2015-results.pdf).
+
+- PLC2015 (6 bounds in ta and dmu) : **Peng, B., Lü, Z., & Cheng, T. C. E.** (2015). [A tabu search/path relinking algorithm to solve the job shop scheduling problem](https://arxiv.org/abs/1402.5613). Computers & Operations Research, 53, 154-164.
+
+- SS2018 (7 bounds in swv, ta and dmu) : **Shylo, O. V., & Shams, H.** (2018). [Boosting binary optimization via binary classification: A case study of job shop scheduling](https://arxiv.org/abs/1808.10813).
+
+- CS2022 (6 bounds in dmu) : **Constantino, O. H., & Segura, C.** (2022). A parallel memetic algorithm with explicit management of diversity for the job shop scheduling problem. Applied Intelligence, 52(1), 141-153. [available online](https://doi.org/10.1007/s10489-021-02406-2)
+
+- LHW2024 (6 bounds in ta and dmu) : **Mingjie Li, Jin-Kao Hao & Qinghua Wu** (2025). Combining Hash-based Tabu Search and Frequent Pattern Mining for Job-Shop Scheduling. IISE Transactions.
+
+- CdGKGC2025 (1 bounds - dmu72) : **Marc-Emmanuel Coupvent des Graviers, Lotfi Kobrosly, Christophe Guettier, and Tristan Cazenave** (2025). [Updating Lower and Upper Bounds for the Job-Shop Scheduling Problem Test Instances](https://arxiv.org/abs/2504.16106).
+
+- LLG2026 (16 bounds in ta and dmu) : **Qihao Liu, Xinyu Li, and Liang Gao** (2026) A Knowledge-Driven Decoupling and Coordinated Optimization Framework Based on Decision-Variable Parameterization and Release for the Job-Shop Scheduling Problem'
+
+- DOFP2026 (19 bounds in dmu and tai) : **Diego Olivier Fernandez Pons** (2026) [Personal communication] Best known so far upper-bounds were given as starting solution to OptalCP, and ran for 10 minutes
+
+- Diaz2026 (2 bounds - dmu16 and dmu61) : **Hernan Diaz Rodriguez** (2026) [Personal communication] A memetic algorithm with path-relinking crossover between elite schedules, tabu search on the N7 neighbourhood (Zhang et al. tenure) with GTA-style guided tenure, and restarts; The initial population holds good solutions already.
+
+- Schwemin2026 (11 bounds in dmu and tai) : **Marcel Schwemin** (2026) [Personal communication](https://github.com/ScheduleOpt/benchmarks/issues/15) N7 Tabu with time-slabs from initial population, on GPU
+
+- AMFCV2026 (9 bounds in tai) : **Andre Albrecht, Enzo Morosini Frazzon, Leandro C. Coelho and Bruno Vieira** (2026) [Personal communication](https://github.com/ScheduleOpt/benchmarks/issues/19) Corridor search + min-conflict repair + cp initial propagation + compaction
+
+
+All other bounds were found by OptalCP except 4 bounds by CP-SAT and 1 by Hexaly. The cited papers may use an engine directly like [CPO2015] or as part of an algorithm like [CdGKGC2025].
 
 <br/>
 
-#### Standard format
+## Historical appendix
 
-```
-#n #m
-((machine duration ){m}\n){n}
-```
+### History of jsplib instances
 
-For instance `la01` on standard format is
-```
-10	5	
-1	21	0	53	4	95	3	55	2	34
-0	21	3	52	4	16	2	26	1	71
-3	39	4	98	1	42	2	31	0	12
-1	77	0	55	4	79	2	66	3	77
-0	83	3	34	2	64	1	19	4	37
-1	54	2	43	4	79	0	92	3	62
-3	69	4	77	1	87	2	87	0	93
-2	38	0	60	1	41	3	24	4	83
-3	17	1	49	4	25	0	44	2	98
-4	77	3	79	2	43	1	75	0	96
-```
+[WORK IN PROGRESS]
+
+### History of jsplib
+
+[WORK IN PROGRESS]
+
+### History of the engines
+
+<details>
+<summary>IBM ILOG Cplex (1987 - present)</summary>
 
 <br/>
-
-
-#### DaColTeppan format (reentrant)
-
-```
-#n #m
-((machine duration )+ -1 -1\n){n}
-```
-
-In the DaColTeppan format
-- there can be any number of tasks per job
-- there can be various tasks in a job running on the same machine (reentrance)
-- the jobs end in a -1 -1
-
-A modified instance of `la01` would look like
-```
-10	5	
-1	21	0	53	-1  -1
-0	21	3	52	 4	16	2	26	1	71   4	95	3	55	 2	34 -1 -1
-3	39	4	98	 1	42	2	31	0	12  79	 2	66	3	77  -1 -1
-1	77	0	55	 4  -1 -1
-0	83	-1 -1
-1	54	2	43	4	79	0	92	3	62   3	34	 2	64	 1	19	4	37 -1 -1
-3	69	4	77	1	87	2	87	0	93  41	 3	24	 4	83  -1 -1
-2	38	0	60	1	-1 -1
-3	17	1	49	4	25	0	44	2	98 -1 -1
-4	77	3	79	2	43	1	75	0	96 -1 -1
-```
-
-<br/>
-
-
-### Publications (instances)
-
-The instances come from the following publications
-
-- **H. Fisher, G.L. Thompson** (1963), Probabilistic learning combinations of local job-shop scheduling rules, J.F. Muth, G.L. Thompson (eds.), Industrial Scheduling,  Prentice Hall, Englewood Cliffs, New Jersey, 225-251.
-
-- **Lawrence, S.** (1984). Resource constrained project scheduling: An experimental investigation of heuristic scheduling techniques (Supplement). Graduate School of Industrial Administration, Carnegie-Mellon University.
-
-- **Adams, J., Balas, E., & Zawack, D.** (1988). The shifting bottleneck procedure for job shop scheduling. Management Science, 34(3), 391-401.
-
-- **Applegate, D., & Cook, W.** (1991). A computational study of the job-shop scheduling problem. ORSA J. Comput, 3, 49-51.
-
-- **Storer, R. H., Wu, S. D., & Vaccari, R.** (1992). New Search Spaces for Sequencing Problems with Application to Job Shop Scheduling. Management Science, 38(10), 1495–1509.
-
-- **T. Yamada, R. Nakano** (1992), A genetic algorithm applicable to large-scale job-shop instances, R. Manner, B. Manderick (eds.), Parallel instance solving from nature 2, North-Holland, Amsterdam,  281-290
-
-- **Taillard, E.** (1993). Benchmarks for basic scheduling problems. European Journal of Operational Research, 64(2), 278-285.
-
-- **Demirkol, E., Mehta, S., & Uzsoy, R.** (1998). Benchmarks for shop scheduling problems. European Journal of Operational Research, 109(1), 137-141.
-
-- **Da Col, G., & Teppan, E. C.** (2022). Industrial-size job shop scheduling with constraint programming. Operations Research Perspectives, 9, 100249.
-
-- **Boveroux, L., Ernst, D., & Louveaux, Q.** (2025). Investigating the Monte-Carlo Tree Search approach for the job shop scheduling problem. EURO Journal on Computational Optimization, 100118.
-
-<br/>
-
-
-## Standardized benchmark of engines
-
-We track the State-Of-The-Art (SOTA) of optimization engines for scheduling with a standardized 10-minute benchmark of the reference engines
-
-The engines that are benchmarked are
-
-- [**IBM ILOG Cplex**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer): a state-of-the-art ***MIP*** engine
-- [**IBM ILOG CP Optimizer**](https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-cp-optimizer): representative of the ***CP-scheduling*** family of engines
-- [**Google CP-SAT**](https://developers.google.com/optimization): representative of the ***lazy clause generation*** family of engines
-- [**OptalCP**](https://optalcp.com): representative of the ***CP-scheduling*** family of engines
-
-<br/>
-
-### A short history of the reference engines
-
-#### IBM ILOG Cplex (1987 - present)
 
 **Cplex** is a MIP engine founded by Robert Bixby in 1987, and acquired in 1997 by ILOG, subsequently acquired by IBM in 2009.
 
@@ -356,7 +927,12 @@ References
 
 <br/>
 
-#### IBM ILOG CP Optimizer (2007 - present)
+</details>
+
+<details>
+<summary>IBM ILOG CP Optimizer (2007 - present)</summary>
+
+<br/>
 
 **CP Optimizer** is a descendant of **ILOG Solver** developed over the years by Jean-François Puget, Jean-Charles Régin and later Laurent Perron and **ILOG Scheduler** developed by Claude Le Pape, Wim Nuijten and later Philippe Laborie. CP Optimizer (led by Paul Shaw, Laurent Perron and Philippe Laborie) merged the general CP engine and the specific scheduling add-on in a single engine, promoted the model-and-run approach and pioneered a new scheduling language (optional intervals, noOverlap, cumulative functions, etc.) that has become an industry standard.
 
@@ -376,74 +952,97 @@ The main propagation algorithms in CP Optimizer are
 - **simple temporal networks** for precedences
 
 References
-- [20+ years of scheduling with constraints at IBM/ILOG](https://link.springer.com/content/pdf/10.1007/s10601-018-9281-x.pdf) (Philippe Laborie, Jérôme Rogerie, Paul Shaw and Petr Vilim - 2018)
+- [20+ years of scheduling with constraints at IBM/ILOG](https://link.springer.com/content/pdf/10.1007/s10601018-9281-x.pdf) (Philippe Laborie, Jérôme Rogerie, Paul Shaw and Petr Vilim - 2018)
 - [Introduction to CP Optimizer](https://cp2019.a4cp.org/PDFs/P-Laborie.pdf) (Philippe Laborie - 2019)
 - [Self-adapting large neighborhood search: Application to single-mode scheduling problems](http://ppcro.free.fr/pres/070605/Laborie_SelfAdaptingLNS.pdf) (Philippe Laborie and Daniel Godard - 2007)
 - [Reasoning with Conditional Time-intervals](https://cdn.aaai.org/FLAIRS/2008/FLAIRS08-126.pdf) (Philippe Laborie and Jérôme Rogerie - 2008)
 - [Reasoning with Conditional Time-intervals Part II](https://cdn.aaai.org/ocs/60/60-2374-1-PB.pdf) (Philippe Laborie, Jérôme Rogerie, Paul Shaw and Petr Vilim - 2009)
-- [Temporal linear relaxation in IBM ILOG CP Optimizer](https://link.springer.com/article/10.1007/s10951-014-0408-7) (Philippe Laborie and Jérôme Rogerie - 2014)
+- [Temporal linear relaxation in IBM ILOG CP Optimizer](https://link.springer.com/article/10.1007/s109510140408-7) (Philippe Laborie and Jérôme Rogerie - 2014)
 - [Failure-Directed Search for Constraint-Based Scheduling](https://link.springer.com/chapter/10.1007/978-3-319-18008-3_30) (Petr Vilim, Philippe Laborie and Paul Shaw - 2015)
 - [Objective landscapes for constraint programming](https://link.springer.com/chapter/10.1007/978-3-319-93031-2_28) (Philippe Laborie - 2018)
 
 <br/>
 
-#### Google OR-Tools CP-SAT (2017 - present)
+</details>
 
-**CP-SAT** is an open-source lazy clause generation engine augmented with an LP, MIP-style cuts and CP-style propagators designed by Laurent Perron, Frédéric Didier and Steven Gay. 
-
-CP-SAT includes
-- LP-based lower bounds + MIP-style cuts, in particular MIP cuts specialized for scheduling
-- CP-style propagation algorithms (time-tabling, edge-finding)
-- SAT-style conflict analysis
-- synchronization of MIP and CP-style reasoning
-- LNS: tree-based local search
-- LS with infeasible moves
-
-CP-SAT is the "successor" of a more traditional CP + LS engine by Laurent Perron and Vincent Furnon, focusing more on VRP problems.
-
-The CP-SAT team doesn't publish much about how CP SAT works, but maintains comments in the source code.
-Here is an overview of the files and what they contain:
-
-
-| Constraint	| Main source files	| Implemented algorithms |
-----------------|-------------------|------------------------|
-| NoOverlap	    | disjunctive.cc	| Detectable precedences, Edge Finding, Not-First/Not-Last, overload checking |
-| Cumulative    | cumulative.cc, timetable.cc, timetable_edgefinding.cc	    | Time-table propagation, Edge Finding, energetic reasoning |
-| NoOverlap2D	| diffn.cc	        | DiffN filtering, energetic reasoning |
-| Circuit	    | circuit.cc	    | SCC detection, subtour elimination |
-| AllDifferent	| all_different.cc	| Matching-based filtering, binary decomposition in some cases
-| Linear	    | integer_expr.cc, linear_constraint.cc	| Integer propagation, pseudo-Boolean reasoning
-| Element	    | element.cc    	| Bounds consistency
-| Automaton	    | table.cc, automaton.cc	| DFA propagation
-| Table	        | table.cc	        | Compact table propagation
-| Reservoir	    | reservoir.cc	    | Specialized cumulative reasoning
-
-The paper **From Literals to Atomic Constraints: Generalising Conflict-Driven Clause Learning for Constraint Programming** contains  a comparison of the implementation of various LCG-based CP solvers.
-
-> OR-Tools only creates literals for decisions. However, OR-Tools often decomposes constraints into a SAT representation, leading to more existing literals than only decision literals. During conflict analysis, an atomic constraint with no associated literal is repeatedly replaced with its reason until only existing literals are left. OR-Tools’s approach has the benefits that 1) it only creates literals that are “important” enough to be decisions, and 2) decomposed constraints ensure that there are enough literals for conflict analysis. However, OR-Tools suffers from the fact that 1) limiting created literals can lead to less general nogoods, and 2) since explanations are resolved until consisting of existing literals, explanation lifting and nogood minimisation can have less impact
-
-The presolver of CP-SAT does a significant amount of work, closer to a MIP than a typical CP engine:
-- variable fixing
-- domain tightening
-- affine relation detection
-- duplicate constraint elimination
-- implied bound computation
-- linear simplification
-- clique extraction
-- symmetry detection
-- interval simplification
-- objective simplification
-
-Moreover, some of the classic scheduling algorithms have been transformed into cutting planes (`scheduling_cuts.cc`): energetic reasoning, time-table propagation, cumulative precedence, cumulative completion time, energetic reasoning for disjunctive resources.
-
-
-References
-- [CP-SAT at scheduling seminar](https://schedulingseminar.com/presentations/SchedulingSeminar_LaurentPerron.pdf) (Laurent Perron - 2024)
-- [From Literals to Atomic Constraints: Generalising Conflict-Driven Clause Learning for Constraint Programming](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CP.2026.42) (Imko Marijnissen, Maarten Flippo, Emir Demirović - CP2026) 
+<details>
+<summary>Google OR-Tools CP-SAT (2018–present)</summary>
 
 <br/>
 
-#### OptalCP (2021 - present)
+CP-SAT is an open-source constraint-programming solver in Google [OR-Tools](https://developers.google.com/optimization) since July 2018. It is distinct from OR-Tools' older classic CP solver, which remains the foundation of the vehicle-routing library.
+
+CP-SAT combines lazy clause generation (LCG), specialized constraint propagation, linear programming (LP) relaxation, and mixed-integer programming (MIP) techniques within a parallel search architecture.
+
+#### Solver architecture
+
+The main components are:
+
+- **Lazy Clause Generation and SAT.** A SAT component handles boolean propagation, conflict analysis, and clause learning. Integer variables are lazily encoded as booleans with clauses linking them. Constraint propagators generate clauses or improve existing ones with the deductions they make.
+- **Constraint propagation.** Constraint propagators implement filtering algorithms which are translated into clauses that improve bounds (e.g. $x = 2 \vee x = 3$) or reify a more complex deduction (e.g. $y = 0 \vee x\geq 5$). Scheduling propagators include overload checking, detectable precedences, not-first/not-last reasoning, edge finding, time-table propagation, and energetic reasoning.
+- **LP relaxation and MIP techniques.** An LP relaxation is maintained. It incorporates cutting planes, reduced-cost reasoning, and dual information. The LP receives inequalities and bounds from constraints and cut generators.
+- **Portfolio search (MIP heuristics, large-neighborhood search and violationLS).** Multiple parallel workers run complementary search strategies. They share information including feasible solutions and objective bounds, as well as learned clauses and other search information.
+
+##### Scheduling reasoning: CP propagators and LP cuts
+
+CP-SAT has two types of "deduction generators":
+
+- **CP propagators**, which filter variable domains and provide explanations for their deductions.
+- **LP cut generators**, which add valid inequalities to strengthen the linear relaxation.
+
+While often exploiting the same underlying reasoning, the two types of generators don't always compute the same deductions.
+
+**NoOverlap (disjunctive resource)**
+
+| Reasoning | CP propagation | LP cut | Relationship |
+|---|---|---|---|
+| Overload checking | Theta-tree-based overload checker | Energy cuts | Both exploit the impossibility of packing required processing into an insufficient time span |
+| Detectable precedences | Pairwise and task-set detectable precedences | Mandatory-precedence and Balas disjunctive cuts | Pairwise analogues exist; the LP cuts do not reproduce the full task-set filtering algorithm |
+| Not-first / not-last | Dedicated task-set filtering | No dedicated cut family | No direct counterpart |
+| Edge finding | Theta-tree-based task-set edge finding | No dedicated edge-finding cut | Completion-time inequalities are related, but are not an equivalent implementation |
+| Completion time | No dedicated completion-time propagator | Queyranne area-based and exhaustive completion-time cuts | An LP-side polyhedral family |
+
+**Cumulative resource**
+
+| Reasoning | CP propagation | LP cut | Relationship |
+|---|---|---|---|
+| Time-table | Compulsory-part profile filtering | Time-table cuts | Closest correspondence: both exploit mandatory resource usage |
+| Energetic reasoning | Theta-tree-based energy propagation | Energy cuts | Same energy principle, different deductions |
+| Time-table edge finding | Combined compulsory-part and residual-energy filtering | Separate time-table and energy cuts | The LP generators use overlapping ingredients but do not implement the combined filtering algorithm |
+| Resource-induced precedences | Subset-based precedence reasoning | Mandatory-precedence cuts | Related deductions, but not one-to-one implementations |
+| Dual-feasible functions (DFF) | Conservative-scale overload checker | No dedicated DFF cut family | No direct counterpart |
+| Completion time | Partial overlap with other propagators | Cumulative completion-time cuts | The LP relaxation uses a transformation based on replacing a task of duration \(d\) and demand \(k\) by a disjunctive task of duration \(dk/C_{\max}\) |
+
+##### Implementation
+
+The principal implementation files in OR-Tools v9.15 are:
+
+| Component | Source files |
+|---|---|
+| Disjunctive propagation | `disjunctive.cc`, `disjunctive.h` |
+| Cumulative propagation | `cumulative.cc`, `cumulative.h` |
+| Time-table propagation | `timetable.cc`, `timetable_edgefinding.cc` |
+| Cumulative energy and DFF reasoning | `cumulative_energy.cc` |
+| Scheduling cut generators | `scheduling_cuts.cc`, `scheduling_cuts.h` |
+| LP integration | `linear_programming_constraint.h`, `linear_relaxation.cc` |
+| Solver parameters | `sat_parameters.proto` |
+
+##### References
+
+- Laurent Perron, Frédéric Didier, and Steven Gay. **The CP-SAT-LP Solver (Invited Talk)**. CP 2023. [DOI: 10.4230/LIPIcs.CP.2023.3](https://doi.org/10.4230/LIPIcs.CP.2023.3).
+- Laurent Perron. **CP-SAT for Scheduling**. Scheduling Seminar, 2024. [Presentation](https://schedulingseminar.com/presentations/SchedulingSeminar_LaurentPerron.pdf).
+- Google OR-Tools. [CP-SAT source code, v9.15](https://github.com/google/or-tools/tree/v9.15/ortools/sat).
+- Google OR-Tools. [Scheduling documentation](https://developers.google.com/optimization/scheduling).
+- Google OR-Tools. [Release notes](https://developers.google.com/optimization/support/release_notes).
+
+<br/>
+
+</details>
+
+<details>
+<summary>OptalCP (2021 - present)</summary>
+
+<br/>
 
 **OptalCP** was designed by Petr Vilim, Nicolas Bonifas and Diego Olivier Fernandez Pons (initially with input from Philippe Laborie). Compared to CPO, the parallelism is done with one strategy per core instead of interleaving. The strategies used are:
 - **Large Neighbourhood Search** (LNS): tree-search-based local search
@@ -457,1057 +1056,13 @@ References
 
 <br/>
 
+</details>
+
+<br/>
+
 >
 > If your name appears in this section and you notice an error, contact me
 >
 
 <br/>
 
-### Incorrect best-known solutions used in publications and better metrics
-
-> Scheduling problems have received considerable attention over the last decade. Several sets of benchmark instances are available for comparing the quality of the different methods developed. A large number of publications achieve either the current best known or improved bounds for a subset of these instances. It is unfortunate, however, that several publications erroneously reference the current state of these bounds. 
->
-> Jelke J. van Hoorn, The Current state of bounds on benchmark instances of the job-shop scheduling problem (2017)
-
-While the effort of van Hoorn is commendable, having accurate best-known solutions does not solve the problem of poorly reported results in publications. Announcing a best-known solution while having little scientific interest in itself (e.g. a random solution) has sadly become a central "contribution" of papers.
-
-By giving too much importance to best-known solutions we miss what really matters:
-- An approach that finds a best-known solution for a single problem but is unable to provide good results for other problems is totally unusable in practice (e.g. a random solution)
-- An approach that systematically gets close to the best known solutions in a short time may not improve any best known bound but be of significant practical interest
-
-We therefore adopt the following metrics instead
-
-- **Geometric average of lower bound to best known lower bound ratio**
-
-$$LB_{avg} = \exp\left(\frac{1}{N} \sum_k\log\frac{LB}{LB_{best}}\right)$$
-
-- **Geometric average of the upper bound to best known upper bound ratio**
-
-$$UB_{avg} = \exp\left(\frac{1}{N} \sum_k\log\frac{UB}{UB_{best}}\right)$$
-
-- **Geometric shifted average of the gap**
-
-$$GAP = \exp\left(\frac{1}{N} \sum_k\log\left(1 + \frac{UB - LB}{UB}\right)\right) - 1$$
-
-
-***Similar to the MIP community (Mittelmann benchmarks), we use geometric averages to reduce the influence of outliers.***
-
-<br/>
-
-### Comparison of reference solvers
-
-Comparisons were performed on a Windows PC with an i7 4-core 3GHz 32GB RAM in 600 seconds
-- **Cplex** 22.1.1.0
-- **CPO** 22.1.1.0
-    - with gap tolerance = 0
-- **CP-SAT** V9.15.6755 with default configuration
-- **OptalCP** Academic Version 2026.4.0 
-    - with maximum propagation instead of default, gap tolerance = 0 and some other parameter changes
-    - we may benchmark with default parameters later
-    
-
-The raw data is in the [solutions](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions) folder
-
-We recommend running your own benchmarks on your own machines. All required [code](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/code) is provided with HOWTO instructions in each README file.
-
-
-Important caveats:
-- Engines have **relative** and **absolute optimality tolerances** (CPO, OptalCP) which can lead to reporting sub-optimal solutions as optimal (for the tolerance). For this test, the tolerances have been set to zero
-- Engines are very **non-deterministic** (results between two runs of the same engine on the same machine differ significantly) due to parallelism. As a result, it makes no sense to consider very accurate values for average deviations or gap.
-- Engines have different **bottlenecks** (CPU, memory) that are due to their internal architecture and trade-offs made by their designers. An engine doesn't behave in the same way with 2, 4, 8, 16, 32 or 64 cores, doesn't behave the same in machines with fast/slow memory, etc.
-- Engines recommend different **configurations**: CP-SAT recommends a minimum of 8 cores and ideally 16 (due to the high number of strategies that need to be interleaved with fewer cores). CPO, on the other hand, gives most of its performance on 1 or 2 cores (refer for instance to the comparison of Da Col Teppan 2022). The 4-core configuration was chosen because it is a usual laptop configuration, but commercial users will probably run on a larger server.
-
-<br/>
-
-#### By type of instance
-
-The types are defined as follows
-- *outdated*: `ft`, `la`, `orb`
-- *random*: `abz`, `swv`, `yn`, `dmu`, `ta`, `tai` (except 10 stress-test tai)
-- *industrial*: `bel`, `dct`
-- *stress-test*: 10 `tai` 1000 x 1000 instances
-- *open*: all instances still open
-- *closed*: all instances already closed   
-
-<br/>
-
-Averages are made on instances solved. Outlier solutions returned by the engine (e.g. a schedule of makespan equal to the sum of processing times - all tasks scheduled one at a time) have been manually removed as they distort the arithmetic average. In such cases, the engine is considered as having not solved. We may formalize this in the future (e.g. only solutions better than a left-to-right greedy are accepted).
-
-<table>
-<tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb</th><th>ub</th><th>gap</th></tr>
-<tr><td rowspan="4">all</td><td>Cplex</td><td>376</td><td style="color:red">258</td><td>27</td><td>7%</td><td style="color:red">0.49</td><td style="color:red">1.27</td><td style="color:red">43%</td></tr>
-<tr><td>CPO</td><td>376</td><td >376</td><td>192</td><td>51%</td><td >0.89</td><td >1.03</td><td >8%</td></tr>
-<tr><td>CP-SAT</td><td>376</td><td style="color:red">350</td><td>165</td><td>44%</td><td style="color:red">0.91</td><td style="color:red">1.03</td><td style="color:red">5%</td></tr>
-<tr><td>OptalCP</td><td>376</td><td >376</td><td>223</td><td>59%</td><td >1.00</td><td >1.01</td><td >3%</td></tr>
-<tr><td rowspan="4">outdated</td><td>Cplex</td><td>53</td><td >53</td><td>10</td><td>19%</td><td >0.70</td><td >1.03</td><td >26%</td></tr>
-<tr><td>CPO</td><td>53</td><td >53</td><td>51</td><td>96%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td>CP-SAT</td><td>53</td><td >53</td><td>52</td><td>98%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td>OptalCP</td><td>53</td><td >53</td><td>53</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td rowspan="4">random</td><td>Cplex</td><td>322</td><td style="color:red">258</td><td>27</td><td>8%</td><td style="color:red">0.57</td><td style="color:red">1.27</td><td style="color:red">43%</td></tr>
-<tr><td>CPO</td><td>322</td><td >322</td><td>166</td><td>52%</td><td >0.92</td><td >1.02</td><td >6%</td></tr>
-<tr><td>CP-SAT</td><td>322</td><td style="color:red">312</td><td>139</td><td>43%</td><td style="color:red">0.90</td><td style="color:red">1.02</td><td style="color:red">5%</td></tr>
-<tr><td>OptalCP</td><td>322</td><td >322</td><td>185</td><td>57%</td><td >0.99</td><td >1.01</td><td >2%</td></tr>
-<tr><td rowspan="4">stress-test</td><td>Cplex</td><td>10</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
-<tr><td>CPO</td><td>10</td><td >10</td><td>0</td><td>0%</td><td >0.97</td><td >1.22</td><td >47%</td></tr>
-<tr><td>CP-SAT</td><td>10</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
-<tr><td>OptalCP</td><td>10</td><td >10</td><td>0</td><td>0%</td><td >1.00</td><td >1.10</td><td >39%</td></tr>
-<tr><td rowspan="4">industrial</td><td>Cplex</td><td>44</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">0.04</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
-<tr><td>CPO</td><td>44</td><td >44</td><td>26</td><td>59%</td><td >0.70</td><td >1.10</td><td >16%</td></tr>
-<tr><td>CP-SAT</td><td>44</td><td style="color:red">38</td><td>26</td><td>59%</td><td style="color:red">0.96</td><td style="color:red">1.07</td><td style="color:red">5%</td></tr>
-<tr><td>OptalCP</td><td>44</td><td >44</td><td>38</td><td>86%</td><td >1.00</td><td >1.04</td><td >2%</td></tr>
-<tr><td rowspan="4">open</td><td>Cplex</td><td>90</td><td style="color:red">60</td><td>0</td><td>0%</td><td style="color:red">0.58</td><td style="color:red">1.41</td><td style="color:red">61%</td></tr>
-<tr><td>CPO</td><td>90</td><td >90</td><td>0</td><td>0%</td><td >0.98</td><td >1.08</td><td >15%</td></tr>
-<tr><td>CP-SAT</td><td>90</td><td style="color:red">80</td><td>0</td><td>0%</td><td style="color:red">0.98</td><td style="color:red">1.08</td><td style="color:red">12%</td></tr>
-<tr><td>OptalCP</td><td>90</td><td >90</td><td>0</td><td>0%</td><td >0.99</td><td >1.04</td><td >11%</td></tr>
-<tr><td rowspan="4">closed</td><td>Cplex</td><td>286</td><td style="color:red">198</td><td>27</td><td>9%</td><td style="color:red">0.46</td><td style="color:red">1.23</td><td style="color:red">39%</td></tr>
-<tr><td>CPO</td><td>286</td><td >286</td><td>192</td><td>67%</td><td >0.87</td><td >1.02</td><td >6%</td></tr>
-<tr><td>CP-SAT</td><td>286</td><td style="color:red">270</td><td>165</td><td>58%</td><td style="color:red">0.89</td><td style="color:red">1.02</td><td style="color:red">3%</td></tr>
-<tr><td>OptalCP</td><td>286</td><td >286</td><td>223</td><td>78%</td><td >1.00</td><td >1.01</td><td >1%</td></tr>
-</table>
-
-#### Per family
-
-<table>
-<tr><th>Group</th><th>Solver</th><th>Ran</th><th>Solved</th><th>Optimal</th><th>%opt</th><th>lb dev</th><th>ub dev</th><th>gap</th></tr>
-<tr><td rowspan="4">ft</td><td>Cplex</td><td>3</td><td >3</td><td>1</td><td>33%</td><td >0.70</td><td >1.02</td><td >22%</td></tr>
-<tr><td>CPO</td><td>3</td><td >3</td><td>3</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td>CP-SAT</td><td>3</td><td >3</td><td>3</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td>OptalCP</td><td>3</td><td >3</td><td>3</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td rowspan="4">la</td><td>Cplex</td><td>40</td><td >40</td><td>8</td><td>20%</td><td >0.67</td><td >1.03</td><td >30%</td></tr>
-<tr><td>CPO</td><td>40</td><td >40</td><td>38</td><td>95%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td>CP-SAT</td><td>40</td><td >40</td><td>39</td><td>98%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td>OptalCP</td><td>40</td><td >40</td><td>40</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td rowspan="4">orb</td><td>Cplex</td><td>10</td><td >10</td><td>1</td><td>10%</td><td >0.87</td><td >1.01</td><td >13%</td></tr>
-<tr><td>CPO</td><td>10</td><td >10</td><td>10</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td>CP-SAT</td><td>10</td><td >10</td><td>10</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td>OptalCP</td><td>10</td><td >10</td><td>10</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td rowspan="4">abz</td><td>Cplex</td><td>5</td><td >5</td><td>1</td><td>20%</td><td >0.79</td><td >1.08</td><td >24%</td></tr>
-<tr><td>CPO</td><td>5</td><td >5</td><td>2</td><td>40%</td><td >0.97</td><td >1.01</td><td >4%</td></tr>
-<tr><td>CP-SAT</td><td>5</td><td >5</td><td>2</td><td>40%</td><td >0.98</td><td >1.01</td><td >3%</td></tr>
-<tr><td>OptalCP</td><td>5</td><td >5</td><td>3</td><td>60%</td><td >0.99</td><td >1.00</td><td >1%</td></tr>
-<tr><td rowspan="4">swv</td><td>Cplex</td><td>20</td><td >20</td><td>0</td><td>0%</td><td >0.38</td><td >1.22</td><td >65%</td></tr>
-<tr><td>CPO</td><td>20</td><td >20</td><td>7</td><td>35%</td><td >0.98</td><td >1.02</td><td >4%</td></tr>
-<tr><td>CP-SAT</td><td>20</td><td >20</td><td>6</td><td>30%</td><td >0.99</td><td >1.02</td><td >4%</td></tr>
-<tr><td>OptalCP</td><td>20</td><td >20</td><td>10</td><td>50%</td><td >0.99</td><td >1.01</td><td >2%</td></tr>
-<tr><td rowspan="4">yn</td><td>Cplex</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.79</td><td >1.13</td><td >30%</td></tr>
-<tr><td>CPO</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.90</td><td >1.02</td><td >11%</td></tr>
-<tr><td>CP-SAT</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.94</td><td >1.03</td><td >8%</td></tr>
-<tr><td>OptalCP</td><td>4</td><td >4</td><td>0</td><td>0%</td><td >0.95</td><td >1.01</td><td >6%</td></tr>
-<tr><td rowspan="4">dmu</td><td>Cplex</td><td>80</td><td >80</td><td>0</td><td>0%</td><td >0.52</td><td >1.41</td><td >60%</td></tr>
-<tr><td>CPO</td><td>80</td><td >80</td><td>16</td><td>20%</td><td >0.97</td><td >1.04</td><td >7%</td></tr>
-<tr><td>CP-SAT</td><td>80</td><td >80</td><td>10</td><td>13%</td><td >0.99</td><td >1.05</td><td >7%</td></tr>
-<tr><td>OptalCP</td><td>80</td><td >80</td><td>23</td><td>29%</td><td >0.99</td><td >1.02</td><td >4%</td></tr>
-<tr><td rowspan="4">ta</td><td>Cplex</td><td>80</td><td style="color:red">70</td><td>0</td><td>0%</td><td style="color:red">0.54</td><td style="color:red">1.30</td><td style="color:red">48%</td></tr>
-<tr><td>CPO</td><td>80</td><td >80</td><td>40</td><td>50%</td><td >0.98</td><td >1.01</td><td >3%</td></tr>
-<tr><td>CP-SAT</td><td>80</td><td >80</td><td>23</td><td>29%</td><td >0.99</td><td >1.02</td><td >3%</td></tr>
-<tr><td>OptalCP</td><td>80</td><td >80</td><td>46</td><td>58%</td><td >0.99</td><td >1.00</td><td >1%</td></tr>
-<tr><td rowspan="4">tai</td><td>Cplex</td><td>90</td><td style="color:red">26</td><td>16</td><td>18%</td><td style="color:red">0.66</td><td style="color:red">1.45</td><td style="color:red">15%</td></tr>
-<tr><td>CPO</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >0.78</td><td >1.05</td><td >16%</td></tr>
-<tr><td>CP-SAT</td><td>90</td><td style="color:red">70</td><td>46</td><td>51%</td><td style="color:red">0.68</td><td style="color:red">1.03</td><td style="color:red">9%</td></tr>
-<tr><td>OptalCP</td><td>90</td><td >90</td><td>50</td><td>56%</td><td >1.00</td><td >1.02</td><td >7%</td></tr>
-<tr><td rowspan="4">dct</td><td>Cplex</td><td>24</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">0.45</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
-<tr><td>CPO</td><td>24</td><td >24</td><td>6</td><td>25%</td><td >0.52</td><td >1.19</td><td >32%</td></tr>
-<tr><td>CP-SAT</td><td>24</td><td style="color:red">18</td><td>6</td><td>25%</td><td style="color:red">0.93</td><td style="color:red">1.16</td><td style="color:red">11%</td></tr>
-<tr><td>OptalCP</td><td>24</td><td >24</td><td>18</td><td>75%</td><td >1.00</td><td >1.07</td><td >5%</td></tr>
-<tr><td rowspan="4">bel</td><td>Cplex</td><td>20</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">0.02</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
-<tr><td>CPO</td><td>20</td><td >20</td><td>20</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td>CP-SAT</td><td>20</td><td >20</td><td>20</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-<tr><td>OptalCP</td><td>20</td><td >20</td><td>20</td><td>100%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
-</table>
-
-
-
-
-<br/>
-
-## Analysis of relaxations and their strength
-
-Inspired by **SchedulingLab**, this section analyzes how far you can get with polynomial algorithms before having to resort to exponential search. 
-
-Evaluating relaxations also gives an indirect 
-- measure of the **hardness of an instance**: how complex is the technique you need to solve it?
-- understanding of the **structure of an instance**: what features prevent the optimal bound from being reached?
-
-There is a long tradition in optimization of studying families of increasingly stronger relaxations to reveal the structure of a problem (e.g. the Sherali-Adams, or the Lasserre hierarchies). Without having the sophistication of such approaches, we attempt a similar structural analysis here.
-
-### Analysis via $n/m$ ratio
-
-The paper **"How the Landscape of Random Job Shop Scheduling Instances Depends on the Ratio of Jobs to Machines"** (Streeter and Smith 2006) introduced the statistical analysis of the jobshop instances via their job-to-machine $n/m$ ratio. 
-
-The authors show that the search space of randomly generated JSP problems behaves like a "big valley", with phase transitions occurring at extreme regimes:
-- As $N/M \to 0$: The expected backbone (variable assignments common to all globally optimal solutions) approaches 100%, and a random schedule or simple priority rule is almost surely optimal
-- As $N/M \to \infty$: The expected backbone size vanishes toward 0%, yet simple priority rules again almost surely produce an optimal schedule
-- In the middle ($N/M \approx 1$): The distance between random local optima and the global optimum is maximal. Algorithms regularly get trapped in local optima far from the global optimum, facing large search distances to escape into better solution pockets.  
-
-While this framework provides a good intuition for why square-ish instances ($N/M \approx 1$) are on average harder than rectangular ones, statistical landscape analysis remains insufficient: for instance `ta39` and `ta40` have the same size and shape (30 x 15), were generated by the same generator, yet one is solved under a minute while the other remains open.
-
-We believe the lower-bound analysis provides a much more insightful metric:
-- ta39 has a Carlier lower bound of 1791 for an optimal value of 1795.
-- ta40 has a Carlier lower bound of 1617 for an optimal value in the range [1658, 1669].
-
-Any optimization engine that uses the Carlier bound to propagate (like CP engines do) will quickly reduce the size of ta39 and close it.
-
-### Analysis via lower bounds
-
-We consider the following classic polynomial lower bounds
-
--  **Job length**
-
-The maximum total processing time of any job
-
-$$\max_j \sum_{o \in j} p_o$$
-
-- **Machine load**
-
-The maximum total processing time assigned to any machine:
-
-$$\max_m \sum_{o \in m} p_o$$
-
-- **Machine load with minimum heads and tails**
-
-Precedences can be approximated by static constants. The "head" of a task is its earliest start time induced by precedences, while the "tail" is the minimum time required after its completion:
-
-$$\sum_{i \prec j} p_i = \mathrm{head}_j$$ and $$\sum_{i \succ j} p_i = \mathrm{tail}_j$$
-
-The approximation resides in the fact that if any task is scheduled after its earliest start time, this delay is not reflected by the static head computed before scheduling. For a given machine, whichever task $o$ is scheduled first cannot start before $\mathrm{head}_o$, and symmetrically for the last task's tail. Therefore, a tighter bound is:
-
-$$\max_m \left ( \min_{o \in m}\mathrm{head}_o + \sum_{o \in m} p_o + \min_{o \in m}\mathrm{tail}_o\right )$$
-
-- **Single-machine preemptive relaxation (Carlier inequalities)**
-
-Carlier's inequalities compute the length of the optimal preemptive schedule for a single machine (known as Jackson's preemptive schedule). This relaxation simplifies precedences into heads and tails, allows tasks to be preempted, and ignores the interactions between different machines:
-
-$$\max_m \max_{p,q \in m} \left ( \mathrm{head}_p + \sum_{\substack{r \in m \\ \mathrm{head}_r \ge \mathrm{head}_p \\ \mathrm{tail}_r \ge \mathrm{tail}_q}} p_r + \mathrm{tail}_q \right )$$
-
-### Results on classic instances
-
-The background is colored in green when the lower bound reaches the best known upper-bound.
-
-<table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
-<tr><td>abz5</td><td >859</td><td >868</td><td >1000</td><td >1028</td><td>1234</td></tr>
-<tr><td>abz6</td><td >742</td><td >688</td><td >784</td><td >835</td><td>943</td></tr>
-<tr><td>abz7</td><td >410</td><td >556</td><td >638</td><td >650</td><td>656</td></tr>
-<tr><td>abz8</td><td >443</td><td >566</td><td >566</td><td >597</td><td>667</td></tr>
-<tr><td>abz9</td><td >467</td><td >563</td><td >606</td><td >616</td><td>678</td></tr>
-</table>
-
-<table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
-<tr><td>dmu01</td><td >1753</td><td >2179</td><td >2268</td><td >2363</td><td>2563</td></tr>
-<tr><td>dmu02</td><td >2167</td><td >2277</td><td >2318</td><td >2452</td><td>2706</td></tr>
-<tr><td>dmu03</td><td >1872</td><td >2350</td><td >2540</td><td >2571</td><td>2731</td></tr>
-<tr><td>dmu04</td><td >1908</td><td >2332</td><td >2332</td><td >2486</td><td>2669</td></tr>
-<tr><td>dmu05</td><td >1827</td><td >2455</td><td >2625</td><td >2654</td><td>2749</td></tr>
-<tr><td>dmu06</td><td >2585</td><td >2533</td><td >2783</td><td >2834</td><td>3244</td></tr>
-<tr><td>dmu07</td><td >2545</td><td >2354</td><td >2604</td><td >2677</td><td>3046</td></tr>
-<tr><td>dmu08</td><td >2493</td><td >2642</td><td >2642</td><td >2901</td><td>3188</td></tr>
-<tr><td>dmu09</td><td >2544</td><td >2466</td><td >2706</td><td >2739</td><td>3092</td></tr>
-<tr><td>dmu10</td><td >2394</td><td >2488</td><td >2699</td><td >2716</td><td>2984</td></tr>
-<tr><td>dmu11</td><td >1913</td><td >3395</td><td >3395</td><td >3395</td><td>3402 .. 3430</td></tr>
-<tr><td>dmu12</td><td >1902</td><td >3465</td><td >3465</td><td >3481</td><td>3481 .. 3492</td></tr>
-<tr><td>dmu13</td><td >1945</td><td >3450</td><td >3450</td><td style="background-color:green;color:white">3681</td><td>3681</td></tr>
-<tr><td>dmu14</td><td >1798</td><td style="background-color:green;color:white">3394</td><td style="background-color:green;color:white">3394</td><td style="background-color:green;color:white">3394</td><td>3394</td></tr>
-<tr><td>dmu15</td><td >1945</td><td >3296</td><td >3296</td><td >3332</td><td>3343</td></tr>
-<tr><td>dmu16</td><td >2351</td><td >3491</td><td >3726</td><td >3726</td><td>3734 .. 3744</td></tr>
-<tr><td>dmu17</td><td >2491</td><td >3670</td><td >3697</td><td >3697</td><td>3733 .. 3811</td></tr>
-<tr><td>dmu18</td><td >2546</td><td style="background-color:green;color:white">3844</td><td style="background-color:green;color:white">3844</td><td style="background-color:green;color:white">3844</td><td>3844</td></tr>
-<tr><td>dmu19</td><td >2315</td><td >3408</td><td >3408</td><td >3650</td><td>3707 .. 3764</td></tr>
-<tr><td>dmu20</td><td >2586</td><td >3604</td><td >3604</td><td >3604</td><td>3632 .. 3699</td></tr>
-<tr><td>dmu21</td><td >1873</td><td >4345</td><td >4345</td><td style="background-color:green;color:white">4380</td><td>4380</td></tr>
-<tr><td>dmu22</td><td >1965</td><td >4712</td><td >4712</td><td style="background-color:green;color:white">4725</td><td>4725</td></tr>
-<tr><td>dmu23</td><td >2038</td><td >4524</td><td >4524</td><td style="background-color:green;color:white">4668</td><td>4668</td></tr>
-<tr><td>dmu24</td><td >2120</td><td >4554</td><td style="background-color:green;color:white">4648</td><td style="background-color:green;color:white">4648</td><td>4648</td></tr>
-<tr><td>dmu25</td><td >1861</td><td style="background-color:green;color:white">4164</td><td style="background-color:green;color:white">4164</td><td style="background-color:green;color:white">4164</td><td>4164</td></tr>
-<tr><td>dmu26</td><td >2627</td><td >4559</td><td >4632</td><td style="background-color:green;color:white">4647</td><td>4647</td></tr>
-<tr><td>dmu27</td><td >2590</td><td style="background-color:green;color:white">4848</td><td style="background-color:green;color:white">4848</td><td style="background-color:green;color:white">4848</td><td>4848</td></tr>
-<tr><td>dmu28</td><td >2537</td><td >4538</td><td style="background-color:green;color:white">4692</td><td style="background-color:green;color:white">4692</td><td>4692</td></tr>
-<tr><td>dmu29</td><td >2505</td><td style="background-color:green;color:white">4691</td><td style="background-color:green;color:white">4691</td><td style="background-color:green;color:white">4691</td><td>4691</td></tr>
-<tr><td>dmu30</td><td >2606</td><td >4670</td><td >4707</td><td style="background-color:green;color:white">4732</td><td>4732</td></tr>
-<tr><td>dmu31</td><td >2159</td><td style="background-color:green;color:white">5640</td><td style="background-color:green;color:white">5640</td><td style="background-color:green;color:white">5640</td><td>5640</td></tr>
-<tr><td>dmu32</td><td >2134</td><td style="background-color:green;color:white">5927</td><td style="background-color:green;color:white">5927</td><td style="background-color:green;color:white">5927</td><td>5927</td></tr>
-<tr><td>dmu33</td><td >1828</td><td >5681</td><td >5681</td><td style="background-color:green;color:white">5728</td><td>5728</td></tr>
-<tr><td>dmu34</td><td >2040</td><td style="background-color:green;color:white">5385</td><td style="background-color:green;color:white">5385</td><td style="background-color:green;color:white">5385</td><td>5385</td></tr>
-<tr><td>dmu35</td><td >2241</td><td style="background-color:green;color:white">5635</td><td style="background-color:green;color:white">5635</td><td style="background-color:green;color:white">5635</td><td>5635</td></tr>
-<tr><td>dmu36</td><td >2705</td><td style="background-color:green;color:white">5621</td><td style="background-color:green;color:white">5621</td><td style="background-color:green;color:white">5621</td><td>5621</td></tr>
-<tr><td>dmu37</td><td >2616</td><td style="background-color:green;color:white">5851</td><td style="background-color:green;color:white">5851</td><td style="background-color:green;color:white">5851</td><td>5851</td></tr>
-<tr><td>dmu38</td><td >2436</td><td style="background-color:green;color:white">5713</td><td style="background-color:green;color:white">5713</td><td style="background-color:green;color:white">5713</td><td>5713</td></tr>
-<tr><td>dmu39</td><td >2607</td><td style="background-color:green;color:white">5747</td><td style="background-color:green;color:white">5747</td><td style="background-color:green;color:white">5747</td><td>5747</td></tr>
-<tr><td>dmu40</td><td >2548</td><td style="background-color:green;color:white">5577</td><td style="background-color:green;color:white">5577</td><td style="background-color:green;color:white">5577</td><td>5577</td></tr>
-<tr><td>dmu41</td><td >1842</td><td >2193</td><td >2839</td><td >2839</td><td>3176 .. 3248</td></tr>
-<tr><td>dmu42</td><td >1810</td><td >2504</td><td >2897</td><td >3066</td><td>3339 .. 3390</td></tr>
-<tr><td>dmu43</td><td >1915</td><td >2523</td><td >3121</td><td >3121</td><td>3441</td></tr>
-<tr><td>dmu44</td><td >1975</td><td >2530</td><td >3112</td><td >3112</td><td>3414 .. 3475</td></tr>
-<tr><td>dmu45</td><td >1768</td><td >2352</td><td >2930</td><td >2930</td><td>3217 .. 3266</td></tr>
-<tr><td>dmu46</td><td >2664</td><td >2495</td><td >3394</td><td >3425</td><td>3780 .. 4035</td></tr>
-<tr><td>dmu47</td><td >2689</td><td >2462</td><td >3268</td><td >3353</td><td>3714 .. 3939</td></tr>
-<tr><td>dmu48</td><td >2516</td><td >2387</td><td >3268</td><td >3317</td><td>3628 .. 3763</td></tr>
-<tr><td>dmu49</td><td >2403</td><td >2366</td><td >3369</td><td >3369</td><td>3543 .. 3706</td></tr>
-<tr><td>dmu50</td><td >2494</td><td >2426</td><td >3312</td><td >3379</td><td>3618 .. 3729</td></tr>
-<tr><td>dmu51</td><td >1825</td><td >3327</td><td >3827</td><td >3839</td><td>4070 .. 4151</td></tr>
-<tr><td>dmu52</td><td >1989</td><td >3504</td><td >4006</td><td >4012</td><td>4203 .. 4297</td></tr>
-<tr><td>dmu53</td><td >2229</td><td >3493</td><td >4108</td><td >4108</td><td>4248 .. 4378</td></tr>
-<tr><td>dmu54</td><td >1990</td><td >3554</td><td >4165</td><td >4165</td><td>4277 .. 4360</td></tr>
-<tr><td>dmu55</td><td >1959</td><td >3597</td><td >4099</td><td >4099</td><td>4191 .. 4258</td></tr>
-<tr><td>dmu56</td><td >2778</td><td >3526</td><td >4366</td><td >4366</td><td>4755 .. 4934</td></tr>
-<tr><td>dmu57</td><td >2529</td><td >3268</td><td >4182</td><td >4182</td><td>4462 .. 4643</td></tr>
-<tr><td>dmu58</td><td >2625</td><td >3452</td><td >4133</td><td >4214</td><td>4484 .. 4701</td></tr>
-<tr><td>dmu59</td><td >2546</td><td >3230</td><td >4009</td><td >4199</td><td>4366 .. 4607</td></tr>
-<tr><td>dmu60</td><td >2547</td><td >3380</td><td >4098</td><td >4259</td><td>4468 .. 4721</td></tr>
-<tr><td>dmu61</td><td >1995</td><td >4426</td><td >4850</td><td >4886</td><td>5038 .. 5159</td></tr>
-<tr><td>dmu62</td><td >2079</td><td >4513</td><td >5004</td><td >5004</td><td>5176 .. 5244</td></tr>
-<tr><td>dmu63</td><td >1877</td><td >4470</td><td >5049</td><td >5049</td><td>5245 .. 5296</td></tr>
-<tr><td>dmu64</td><td >2134</td><td >4447</td><td >5130</td><td >5130</td><td>5155 .. 5225</td></tr>
-<tr><td>dmu65</td><td >1892</td><td >4525</td><td >5072</td><td >5072</td><td>5122 .. 5158</td></tr>
-<tr><td>dmu66</td><td >2416</td><td >4479</td><td >5206</td><td >5357</td><td>5526 .. 5692</td></tr>
-<tr><td>dmu67</td><td >2668</td><td >4715</td><td >5454</td><td >5484</td><td>5661 .. 5774</td></tr>
-<tr><td>dmu68</td><td >2542</td><td >4476</td><td >5423</td><td >5423</td><td>5513 .. 5749</td></tr>
-<tr><td>dmu69</td><td >2453</td><td >4642</td><td >5384</td><td >5419</td><td>5511 .. 5682</td></tr>
-<tr><td>dmu70</td><td >2518</td><td >4696</td><td >5365</td><td >5492</td><td>5633 .. 5868</td></tr>
-<tr><td>dmu71</td><td >2029</td><td >5490</td><td >6050</td><td >6050</td><td>6129 .. 6206</td></tr>
-<tr><td>dmu72</td><td >2061</td><td >5889</td><td >6216</td><td >6223</td><td>6434 .. 6448</td></tr>
-<tr><td>dmu73</td><td >2071</td><td >5430</td><td >5935</td><td >5935</td><td>6107 .. 6132</td></tr>
-<tr><td>dmu74</td><td >2017</td><td >5442</td><td >5993</td><td >6015</td><td>6168 .. 6196</td></tr>
-<tr><td>dmu75</td><td >2087</td><td >5377</td><td >5915</td><td >6010</td><td>6123 .. 6186</td></tr>
-<tr><td>dmu76</td><td >2729</td><td >5493</td><td >6297</td><td >6329</td><td>6479 .. 6708</td></tr>
-<tr><td>dmu77</td><td >2542</td><td >5549</td><td >6247</td><td >6399</td><td>6520 .. 6739</td></tr>
-<tr><td>dmu78</td><td >2727</td><td >5742</td><td >6447</td><td >6508</td><td>6643 .. 6744</td></tr>
-<tr><td>dmu79</td><td >2717</td><td >5785</td><td >6593</td><td >6593</td><td>6720 .. 6899</td></tr>
-<tr><td>dmu80</td><td >2642</td><td >5670</td><td >6435</td><td >6435</td><td>6460 .. 6621</td></tr>
-</table>
-
-<table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
-<tr><td>ft06</td><td >47</td><td >43</td><td >52</td><td >52</td><td>55</td></tr>
-<tr><td>ft10</td><td >655</td><td >631</td><td >796</td><td >808</td><td>930</td></tr>
-<tr><td>ft20</td><td >387</td><td >1119</td><td >1164</td><td >1164</td><td>1165</td></tr>
-</table>
-
-<table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
-<tr><td>la01</td><td >413</td><td style="background-color:green;color:white">666</td><td style="background-color:green;color:white">666</td><td style="background-color:green;color:white">666</td><td>666</td></tr>
-<tr><td>la02</td><td >394</td><td >635</td><td style="background-color:green;color:white">655</td><td style="background-color:green;color:white">655</td><td>655</td></tr>
-<tr><td>la03</td><td >349</td><td >588</td><td >588</td><td >588</td><td>597</td></tr>
-<tr><td>la04</td><td >369</td><td >537</td><td >567</td><td >567</td><td>590</td></tr>
-<tr><td>la05</td><td >380</td><td style="background-color:green;color:white">593</td><td style="background-color:green;color:white">593</td><td style="background-color:green;color:white">593</td><td>593</td></tr>
-<tr><td>la06</td><td >413</td><td style="background-color:green;color:white">926</td><td style="background-color:green;color:white">926</td><td style="background-color:green;color:white">926</td><td>926</td></tr>
-<tr><td>la07</td><td >376</td><td >869</td><td style="background-color:green;color:white">890</td><td style="background-color:green;color:white">890</td><td>890</td></tr>
-<tr><td>la08</td><td >369</td><td style="background-color:green;color:white">863</td><td style="background-color:green;color:white">863</td><td style="background-color:green;color:white">863</td><td>863</td></tr>
-<tr><td>la09</td><td >382</td><td style="background-color:green;color:white">951</td><td style="background-color:green;color:white">951</td><td style="background-color:green;color:white">951</td><td>951</td></tr>
-<tr><td>la10</td><td >443</td><td style="background-color:green;color:white">958</td><td style="background-color:green;color:white">958</td><td style="background-color:green;color:white">958</td><td>958</td></tr>
-<tr><td>la11</td><td >413</td><td style="background-color:green;color:white">1222</td><td style="background-color:green;color:white">1222</td><td style="background-color:green;color:white">1222</td><td>1222</td></tr>
-<tr><td>la12</td><td >408</td><td style="background-color:green;color:white">1039</td><td style="background-color:green;color:white">1039</td><td style="background-color:green;color:white">1039</td><td>1039</td></tr>
-<tr><td>la13</td><td >382</td><td style="background-color:green;color:white">1150</td><td style="background-color:green;color:white">1150</td><td style="background-color:green;color:white">1150</td><td>1150</td></tr>
-<tr><td>la14</td><td >443</td><td style="background-color:green;color:white">1292</td><td style="background-color:green;color:white">1292</td><td style="background-color:green;color:white">1292</td><td>1292</td></tr>
-<tr><td>la15</td><td >378</td><td style="background-color:green;color:white">1207</td><td style="background-color:green;color:white">1207</td><td style="background-color:green;color:white">1207</td><td>1207</td></tr>
-<tr><td>la16</td><td >717</td><td >660</td><td >705</td><td >875</td><td>945</td></tr>
-<tr><td>la17</td><td >646</td><td >683</td><td >730</td><td >739</td><td>784</td></tr>
-<tr><td>la18</td><td >663</td><td >623</td><td >654</td><td >770</td><td>848</td></tr>
-<tr><td>la19</td><td >617</td><td >685</td><td >685</td><td >709</td><td>842</td></tr>
-<tr><td>la20</td><td >756</td><td >744</td><td >780</td><td >807</td><td>902</td></tr>
-<tr><td>la21</td><td >717</td><td >935</td><td >954</td><td >995</td><td>1046</td></tr>
-<tr><td>la22</td><td >619</td><td >830</td><td >913</td><td >913</td><td>927</td></tr>
-<tr><td>la23</td><td >640</td><td style="background-color:green;color:white">1032</td><td style="background-color:green;color:white">1032</td><td style="background-color:green;color:white">1032</td><td>1032</td></tr>
-<tr><td>la24</td><td >704</td><td >857</td><td >872</td><td >881</td><td>935</td></tr>
-<tr><td>la25</td><td >723</td><td >864</td><td >872</td><td >894</td><td>977</td></tr>
-<tr><td>la26</td><td >717</td><td style="background-color:green;color:white">1218</td><td style="background-color:green;color:white">1218</td><td style="background-color:green;color:white">1218</td><td>1218</td></tr>
-<tr><td>la27</td><td >686</td><td >1188</td><td style="background-color:green;color:white">1235</td><td style="background-color:green;color:white">1235</td><td>1235</td></tr>
-<tr><td>la28</td><td >756</td><td style="background-color:green;color:white">1216</td><td style="background-color:green;color:white">1216</td><td style="background-color:green;color:white">1216</td><td>1216</td></tr>
-<tr><td>la29</td><td >723</td><td >1105</td><td >1105</td><td >1114</td><td>1152</td></tr>
-<tr><td>la30</td><td >726</td><td style="background-color:green;color:white">1355</td><td style="background-color:green;color:white">1355</td><td style="background-color:green;color:white">1355</td><td>1355</td></tr>
-<tr><td>la31</td><td >717</td><td style="background-color:green;color:white">1784</td><td style="background-color:green;color:white">1784</td><td style="background-color:green;color:white">1784</td><td>1784</td></tr>
-<tr><td>la32</td><td >756</td><td style="background-color:green;color:white">1850</td><td style="background-color:green;color:white">1850</td><td style="background-color:green;color:white">1850</td><td>1850</td></tr>
-<tr><td>la33</td><td >723</td><td style="background-color:green;color:white">1719</td><td style="background-color:green;color:white">1719</td><td style="background-color:green;color:white">1719</td><td>1719</td></tr>
-<tr><td>la34</td><td >656</td><td style="background-color:green;color:white">1721</td><td style="background-color:green;color:white">1721</td><td style="background-color:green;color:white">1721</td><td>1721</td></tr>
-<tr><td>la35</td><td >647</td><td style="background-color:green;color:white">1888</td><td style="background-color:green;color:white">1888</td><td style="background-color:green;color:white">1888</td><td>1888</td></tr>
-<tr><td>la36</td><td >948</td><td >1028</td><td >1098</td><td >1224</td><td>1268</td></tr>
-<tr><td>la37</td><td >986</td><td >980</td><td >1187</td><td >1355</td><td>1397</td></tr>
-<tr><td>la38</td><td >943</td><td >876</td><td >914</td><td >1077</td><td>1196</td></tr>
-<tr><td>la39</td><td >922</td><td >1012</td><td >1137</td><td >1221</td><td>1233</td></tr>
-<tr><td>la40</td><td >955</td><td >1027</td><td >1069</td><td >1170</td><td>1222</td></tr>
-</table>
-
-<table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
-<tr><td>orb01</td><td >695</td><td >643</td><td >928</td><td >929</td><td>1059</td></tr>
-<tr><td>orb02</td><td >620</td><td >671</td><td >733</td><td >766</td><td>888</td></tr>
-<tr><td>orb03</td><td >648</td><td >624</td><td >851</td><td >865</td><td>1005</td></tr>
-<tr><td>orb04</td><td >753</td><td >759</td><td >833</td><td >833</td><td>1005</td></tr>
-<tr><td>orb05</td><td >584</td><td >630</td><td >801</td><td >801</td><td>887</td></tr>
-<tr><td>orb06</td><td >715</td><td >659</td><td >930</td><td >930</td><td>1010</td></tr>
-<tr><td>orb07</td><td >275</td><td >286</td><td >345</td><td >345</td><td>397</td></tr>
-<tr><td>orb08</td><td >573</td><td >585</td><td >894</td><td >894</td><td>899</td></tr>
-<tr><td>orb09</td><td >659</td><td >661</td><td >705</td><td >873</td><td>934</td></tr>
-<tr><td>orb10</td><td >681</td><td >652</td><td >868</td><td >899</td><td>944</td></tr>
-</table>
-
-<table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
-<tr><td>swv01</td><td >727</td><td >1219</td><td >1366</td><td >1366</td><td>1407</td></tr>
-<tr><td>swv02</td><td >664</td><td >1259</td><td style="background-color:green;color:white">1475</td><td style="background-color:green;color:white">1475</td><td>1475</td></tr>
-<tr><td>swv03</td><td >647</td><td >1178</td><td >1328</td><td >1328</td><td>1398</td></tr>
-<tr><td>swv04</td><td >642</td><td >1161</td><td >1366</td><td >1393</td><td>1464</td></tr>
-<tr><td>swv05</td><td >720</td><td >1235</td><td >1411</td><td >1411</td><td>1424</td></tr>
-<tr><td>swv06</td><td >974</td><td >1229</td><td >1477</td><td >1513</td><td>1667</td></tr>
-<tr><td>swv07</td><td >947</td><td >1128</td><td >1394</td><td >1394</td><td>1541 .. 1594</td></tr>
-<tr><td>swv08</td><td >1058</td><td >1330</td><td >1586</td><td >1586</td><td>1694 .. 1751</td></tr>
-<tr><td>swv09</td><td >947</td><td >1266</td><td >1594</td><td >1594</td><td>1655</td></tr>
-<tr><td>swv10</td><td >939</td><td >1159</td><td >1560</td><td >1560</td><td>1692 .. 1743</td></tr>
-<tr><td>swv11</td><td >739</td><td >2808</td><td style="background-color:green;color:white">2983</td><td style="background-color:green;color:white">2983</td><td>2983</td></tr>
-<tr><td>swv12</td><td >714</td><td >2829</td><td >2949</td><td >2955</td><td>2972</td></tr>
-<tr><td>swv13</td><td >727</td><td >2977</td><td style="background-color:green;color:white">3104</td><td style="background-color:green;color:white">3104</td><td>3104</td></tr>
-<tr><td>swv14</td><td >728</td><td >2842</td><td style="background-color:green;color:white">2968</td><td style="background-color:green;color:white">2968</td><td>2968</td></tr>
-<tr><td>swv15</td><td >687</td><td >2762</td><td style="background-color:green;color:white">2885</td><td style="background-color:green;color:white">2885</td><td>2885</td></tr>
-<tr><td>swv16</td><td >664</td><td style="background-color:green;color:white">2924</td><td style="background-color:green;color:white">2924</td><td style="background-color:green;color:white">2924</td><td>2924</td></tr>
-<tr><td>swv17</td><td >683</td><td style="background-color:green;color:white">2794</td><td style="background-color:green;color:white">2794</td><td style="background-color:green;color:white">2794</td><td>2794</td></tr>
-<tr><td>swv18</td><td >643</td><td style="background-color:green;color:white">2852</td><td style="background-color:green;color:white">2852</td><td style="background-color:green;color:white">2852</td><td>2852</td></tr>
-<tr><td>swv19</td><td >684</td><td style="background-color:green;color:white">2843</td><td style="background-color:green;color:white">2843</td><td style="background-color:green;color:white">2843</td><td>2843</td></tr>
-<tr><td>swv20</td><td >684</td><td style="background-color:green;color:white">2823</td><td style="background-color:green;color:white">2823</td><td style="background-color:green;color:white">2823</td><td>2823</td></tr>
-</table>
-
-<table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
-<tr><td>ta01js</td><td >963</td><td >977</td><td >1005</td><td >1168</td><td>1231</td></tr>
-<tr><td>ta02js</td><td >942</td><td >919</td><td >953</td><td >1143</td><td>1244</td></tr>
-<tr><td>ta03js</td><td >921</td><td >900</td><td >1036</td><td >1109</td><td>1218</td></tr>
-<tr><td>ta04js</td><td >911</td><td >870</td><td >973</td><td >1059</td><td>1175</td></tr>
-<tr><td>ta05js</td><td >940</td><td >902</td><td >914</td><td >1115</td><td>1224</td></tr>
-<tr><td>ta06js</td><td >849</td><td >889</td><td >1134</td><td >1134</td><td>1238</td></tr>
-<tr><td>ta07js</td><td >935</td><td >920</td><td >1103</td><td >1144</td><td>1227</td></tr>
-<tr><td>ta08js</td><td >963</td><td >860</td><td >980</td><td >1096</td><td>1217</td></tr>
-<tr><td>ta09js</td><td >982</td><td >966</td><td >1020</td><td >1136</td><td>1274</td></tr>
-<tr><td>ta10js</td><td >896</td><td >911</td><td >940</td><td >1107</td><td>1241</td></tr>
-<tr><td>ta11js</td><td >949</td><td >1139</td><td >1254</td><td >1254</td><td>1357</td></tr>
-<tr><td>ta12js</td><td >1012</td><td >1251</td><td >1267</td><td >1284</td><td>1367</td></tr>
-<tr><td>ta13js</td><td >919</td><td >1178</td><td >1243</td><td >1243</td><td>1342</td></tr>
-<tr><td>ta14js</td><td >990</td><td >1130</td><td >1329</td><td >1341</td><td>1345</td></tr>
-<tr><td>ta15js</td><td >880</td><td >1148</td><td >1163</td><td >1231</td><td>1339</td></tr>
-<tr><td>ta16js</td><td >932</td><td >1181</td><td >1211</td><td >1238</td><td>1360</td></tr>
-<tr><td>ta17js</td><td >979</td><td >1257</td><td >1306</td><td >1433</td><td>1462</td></tr>
-<tr><td>ta18js</td><td >900</td><td >1153</td><td >1315</td><td >1315</td><td>1396</td></tr>
-<tr><td>ta19js</td><td >920</td><td >1202</td><td >1202</td><td >1216</td><td>1332</td></tr>
-<tr><td>ta20js</td><td >928</td><td >1186</td><td >1213</td><td >1279</td><td>1348</td></tr>
-<tr><td>ta21js</td><td >1217</td><td >1182</td><td >1182</td><td >1435</td><td>1642</td></tr>
-<tr><td>ta22js</td><td >1223</td><td >1240</td><td >1314</td><td >1385</td><td>1600</td></tr>
-<tr><td>ta23js</td><td >1164</td><td >1185</td><td >1248</td><td >1422</td><td>1557</td></tr>
-<tr><td>ta24js</td><td >1151</td><td >1271</td><td >1284</td><td >1466</td><td>1644</td></tr>
-<tr><td>ta25js</td><td >1170</td><td >1256</td><td >1256</td><td >1473</td><td>1595</td></tr>
-<tr><td>ta26js</td><td >1207</td><td >1205</td><td >1245</td><td >1445</td><td>1643</td></tr>
-<tr><td>ta27js</td><td >1291</td><td >1331</td><td >1403</td><td >1567</td><td>1680</td></tr>
-<tr><td>ta28js</td><td >1221</td><td >1269</td><td >1387</td><td >1529</td><td>1603</td></tr>
-<tr><td>ta29js</td><td >1227</td><td >1267</td><td >1352</td><td >1413</td><td>1625</td></tr>
-<tr><td>ta30js</td><td >1212</td><td >1159</td><td >1277</td><td >1363</td><td>1562 .. 1584</td></tr>
-<tr><td>ta31js</td><td >990</td><td style="background-color:green;color:white">1764</td><td style="background-color:green;color:white">1764</td><td style="background-color:green;color:white">1764</td><td>1764</td></tr>
-<tr><td>ta32js</td><td >972</td><td >1774</td><td >1774</td><td >1774</td><td>1774 .. 1783</td></tr>
-<tr><td>ta33js</td><td >1056</td><td >1729</td><td >1733</td><td >1747</td><td>1791</td></tr>
-<tr><td>ta34js</td><td >975</td><td style="background-color:green;color:white">1828</td><td style="background-color:green;color:white">1828</td><td style="background-color:green;color:white">1828</td><td>1828</td></tr>
-<tr><td>ta35js</td><td >969</td><td >1729</td><td >1754</td><td >1997</td><td>2007</td></tr>
-<tr><td>ta36js</td><td >988</td><td >1777</td><td >1777</td><td style="background-color:green;color:white">1819</td><td>1819</td></tr>
-<tr><td>ta37js</td><td >1045</td><td style="background-color:green;color:white">1771</td><td style="background-color:green;color:white">1771</td><td style="background-color:green;color:white">1771</td><td>1771</td></tr>
-<tr><td>ta38js</td><td >952</td><td style="background-color:green;color:white">1673</td><td style="background-color:green;color:white">1673</td><td style="background-color:green;color:white">1673</td><td>1673</td></tr>
-<tr><td>ta39js</td><td >905</td><td >1641</td><td >1764</td><td >1791</td><td>1795</td></tr>
-<tr><td>ta40js</td><td >961</td><td >1602</td><td >1608</td><td >1617</td><td>1658 .. 1669</td></tr>
-<tr><td>ta41js</td><td >1232</td><td >1830</td><td >1850</td><td >1850</td><td>1926 .. 2005</td></tr>
-<tr><td>ta42js</td><td >1192</td><td >1761</td><td >1761</td><td >1867</td><td>1900 .. 1937</td></tr>
-<tr><td>ta43js</td><td >1230</td><td >1694</td><td >1710</td><td >1809</td><td>1809 .. 1846</td></tr>
-<tr><td>ta44js</td><td >1204</td><td >1787</td><td >1820</td><td >1887</td><td>1961 .. 1978</td></tr>
-<tr><td>ta45js</td><td >1253</td><td >1731</td><td >1785</td><td >1955</td><td>1997</td></tr>
-<tr><td>ta46js</td><td >1290</td><td >1856</td><td >1940</td><td >1940</td><td>1976 .. 2002</td></tr>
-<tr><td>ta47js</td><td >1334</td><td >1690</td><td >1751</td><td >1768</td><td>1827 .. 1889</td></tr>
-<tr><td>ta48js</td><td >1282</td><td >1744</td><td >1770</td><td >1905</td><td>1921 .. 1937</td></tr>
-<tr><td>ta49js</td><td >1190</td><td >1758</td><td >1758</td><td >1892</td><td>1938 .. 1960</td></tr>
-<tr><td>ta50js</td><td >1251</td><td >1674</td><td >1678</td><td >1804</td><td>1848 .. 1923</td></tr>
-<tr><td>ta51js</td><td >975</td><td style="background-color:green;color:white">2760</td><td style="background-color:green;color:white">2760</td><td style="background-color:green;color:white">2760</td><td>2760</td></tr>
-<tr><td>ta52js</td><td >1007</td><td style="background-color:green;color:white">2756</td><td style="background-color:green;color:white">2756</td><td style="background-color:green;color:white">2756</td><td>2756</td></tr>
-<tr><td>ta53js</td><td >942</td><td style="background-color:green;color:white">2717</td><td style="background-color:green;color:white">2717</td><td style="background-color:green;color:white">2717</td><td>2717</td></tr>
-<tr><td>ta54js</td><td >1144</td><td >2797</td><td >2813</td><td style="background-color:green;color:white">2839</td><td>2839</td></tr>
-<tr><td>ta55js</td><td >940</td><td style="background-color:green;color:white">2679</td><td style="background-color:green;color:white">2679</td><td style="background-color:green;color:white">2679</td><td>2679</td></tr>
-<tr><td>ta56js</td><td >920</td><td style="background-color:green;color:white">2781</td><td style="background-color:green;color:white">2781</td><td style="background-color:green;color:white">2781</td><td>2781</td></tr>
-<tr><td>ta57js</td><td >1137</td><td style="background-color:green;color:white">2943</td><td style="background-color:green;color:white">2943</td><td style="background-color:green;color:white">2943</td><td>2943</td></tr>
-<tr><td>ta58js</td><td >1042</td><td style="background-color:green;color:white">2885</td><td style="background-color:green;color:white">2885</td><td style="background-color:green;color:white">2885</td><td>2885</td></tr>
-<tr><td>ta59js</td><td >963</td><td style="background-color:green;color:white">2655</td><td style="background-color:green;color:white">2655</td><td style="background-color:green;color:white">2655</td><td>2655</td></tr>
-<tr><td>ta60js</td><td >1061</td><td style="background-color:green;color:white">2723</td><td style="background-color:green;color:white">2723</td><td style="background-color:green;color:white">2723</td><td>2723</td></tr>
-<tr><td>ta61js</td><td >1284</td><td style="background-color:green;color:white">2868</td><td style="background-color:green;color:white">2868</td><td style="background-color:green;color:white">2868</td><td>2868</td></tr>
-<tr><td>ta62js</td><td >1318</td><td >2848</td><td >2848</td><td style="background-color:green;color:white">2869</td><td>2869</td></tr>
-<tr><td>ta63js</td><td >1289</td><td style="background-color:green;color:white">2755</td><td style="background-color:green;color:white">2755</td><td style="background-color:green;color:white">2755</td><td>2755</td></tr>
-<tr><td>ta64js</td><td >1229</td><td >2691</td><td >2697</td><td style="background-color:green;color:white">2702</td><td>2702</td></tr>
-<tr><td>ta65js</td><td >1270</td><td style="background-color:green;color:white">2725</td><td style="background-color:green;color:white">2725</td><td style="background-color:green;color:white">2725</td><td>2725</td></tr>
-<tr><td>ta66js</td><td >1297</td><td style="background-color:green;color:white">2845</td><td style="background-color:green;color:white">2845</td><td style="background-color:green;color:white">2845</td><td>2845</td></tr>
-<tr><td>ta67js</td><td >1273</td><td >2812</td><td >2812</td><td >2821</td><td>2825</td></tr>
-<tr><td>ta68js</td><td >1343</td><td >2764</td><td >2764</td><td style="background-color:green;color:white">2784</td><td>2784</td></tr>
-<tr><td>ta69js</td><td >1416</td><td >3063</td><td style="background-color:green;color:white">3071</td><td style="background-color:green;color:white">3071</td><td>3071</td></tr>
-<tr><td>ta70js</td><td >1225</td><td style="background-color:green;color:white">2995</td><td style="background-color:green;color:white">2995</td><td style="background-color:green;color:white">2995</td><td>2995</td></tr>
-</table>
-
-<table>
-<tr><th>Instance</th><th>job length</th><th>machine</th><th>machine + h/t</th><th>Carlier</th><th>BKS</th></tr>
-<tr><td>yn1</td><td >694</td><td >643</td><td >689</td><td >763</td><td>884</td></tr>
-<tr><td>yn2</td><td >713</td><td >686</td><td >732</td><td >795</td><td>904</td></tr>
-<tr><td>yn3</td><td >680</td><td >659</td><td >733</td><td >793</td><td>892</td></tr>
-<tr><td>yn4</td><td >719</td><td >676</td><td >818</td><td >871</td><td>967</td></tr>
-</table>
-
-
-## Best-known solutions
-
-In this section are collected the best-known solutions (upper and lower bounds) for each problem in the benchmark. 
-
-The solutions may come from 
-- Published papers (eg. NS2002), the section [publications](#publications-best-known-solutions) provides references
-- An engine run by someone else (eg. CPO2015) whose results have been published
-- An engine run by us (CPO, OptalCP, CP-SAT) with approximate running time
-
-The type of hardware and time required to find the best known solution are difficult to track and compare, in particular for bounds coming from published papers. Which is why
-- When a reference engine reproduces a published bound, the table credits the engine because of the reproducibility advantage
-- An approximative timing for reference engines is provided, in particular when the time to find the solution is unusually long
-
-<br/>
-
-> We ***do not*** systematically run the instances for very long times on large machines. Most of the instances that appear as having been solved after a large computation time (eg. 40h) had peculiarities (e.g. `best lb + 1 == best ub`) that justified exploring how long it would take to solve them to optimality. We also devote more effort to solve instances which best-known solutions are given by papers that are old, difficult to find and difficult to reproduce. This allows verifying the paper claims and having a more accessible way of generating the result.
-
-<br/>
-
-### Best-known solutions json format
-
-The best-known solutions are now collected in a [json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/bks.json) file with the following syntax
-
-```json
-{
-   "instance": "dmu80",
-   "size": "50 x 20",
-   "family": "dmu",
-   "family_long": "Demirkol, Mehta and Uzsoy 1998",
-   "type": "synthetic",
-   "status": "open",
-   "lower_bound": 6460,
-   "upper_bound": 6621,
-   "history":{
-      "lb": [
-        { "value":6460,
-          "date":"2026-06-01",
-          "solver":"OptalCP",
-          "hardware":"Intel 11th Gen Core i7-1185G7",
-          "time":null,
-          "certificate":"no"
-        }
-      ],
-      "ub": [
-        { "value":6621,
-          "date":"2026-06-29",
-          "solver":"DOFP2026",
-          "hardware":"Intel 11th Gen Core i7-1185G7",
-          "time":null,
-          "certificate":"yes"
-        },
-        { "value":6633,
-          "date":"2026-06-22",
-          "solver":"QXL2026",
-          "hardware":null,
-          "time":null,
-          "certificate":"yes"
-        },
-        { "value":6634,
-          "date":"2022-01-01",
-          "solver":"CS2022",
-          "hardware":null,
-          "time":null,
-          "certificate":"no"
-        }
-      ]
-   }
-}
-```
-
-For most of the best-known solutions, the date, hardware, running time and certificate (valid primal or valid dual solution) are not known. The historical information in `bks.json` has been built from van Hoorn 2017, Optimizizer.com and other minor sources.
-
-<br/>
-
-### Best-known solutions per instance family
-
-#### Fisher and Thompson 1963
-
-<table>
-<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>ft06</td><td>6 x 6</td><td>random</td><td>55</td><td>55</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ft10</td><td>10 x 10</td><td>random</td><td>930</td><td>930</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ft20</td><td>20 x 5</td><td>random</td><td>1165</td><td>1165</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-</table>
-
-#### Lawrence 1984
-
-<table>
-<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>la01</td><td>10 x 5</td><td>random</td><td>666</td><td>666</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la02</td><td>10 x 5</td><td>random</td><td>655</td><td>655</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la03</td><td>10 x 5</td><td>random</td><td>597</td><td>597</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la04</td><td>10 x 5</td><td>random</td><td>590</td><td>590</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la05</td><td>10 x 5</td><td>random</td><td>593</td><td>593</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la06</td><td>15 x 5</td><td>random</td><td>926</td><td>926</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la07</td><td>15 x 5</td><td>random</td><td>890</td><td>890</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la08</td><td>15 x 5</td><td>random</td><td>863</td><td>863</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la09</td><td>15 x 5</td><td>random</td><td>951</td><td>951</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la10</td><td>15 x 5</td><td>random</td><td>958</td><td>958</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la11</td><td>20 x 5</td><td>random</td><td>1222</td><td>1222</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la12</td><td>20 x 5</td><td>random</td><td>1039</td><td>1039</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la13</td><td>20 x 5</td><td>random</td><td>1150</td><td>1150</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la14</td><td>20 x 5</td><td>random</td><td>1292</td><td>1292</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la15</td><td>20 x 5</td><td>random</td><td>1207</td><td>1207</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la16</td><td>10 x 10</td><td>random</td><td>945</td><td>945</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la17</td><td>10 x 10</td><td>random</td><td>784</td><td>784</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la18</td><td>10 x 10</td><td>random</td><td>848</td><td>848</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la19</td><td>10 x 10</td><td>random</td><td>842</td><td>842</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la20</td><td>10 x 10</td><td>random</td><td>902</td><td>902</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la21</td><td>15 x 10</td><td>random</td><td>1046</td><td>1046</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la22</td><td>15 x 10</td><td>random</td><td>927</td><td>927</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la23</td><td>15 x 10</td><td>random</td><td>1032</td><td>1032</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la24</td><td>15 x 10</td><td>random</td><td>935</td><td>935</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la25</td><td>15 x 10</td><td>random</td><td>977</td><td>977</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la26</td><td>20 x 10</td><td>random</td><td>1218</td><td>1218</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la27</td><td>20 x 10</td><td>random</td><td>1235</td><td>1235</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la28</td><td>20 x 10</td><td>random</td><td>1216</td><td>1216</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la29</td><td>20 x 10</td><td>random</td><td>1152</td><td>1152</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 5m</td></tr>
-<tr><td>la30</td><td>20 x 10</td><td>random</td><td>1355</td><td>1355</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la31</td><td>30 x 10</td><td>random</td><td>1784</td><td>1784</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la32</td><td>30 x 10</td><td>random</td><td>1850</td><td>1850</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la33</td><td>30 x 10</td><td>random</td><td>1719</td><td>1719</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la34</td><td>30 x 10</td><td>random</td><td>1721</td><td>1721</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la35</td><td>30 x 10</td><td>random</td><td>1888</td><td>1888</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la36</td><td>15 x 15</td><td>random</td><td>1268</td><td>1268</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la37</td><td>15 x 15</td><td>random</td><td>1397</td><td>1397</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la38</td><td>15 x 15</td><td>random</td><td>1196</td><td>1196</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la39</td><td>15 x 15</td><td>random</td><td>1233</td><td>1233</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>la40</td><td>15 x 15</td><td>random</td><td>1222</td><td>1222</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-</table>
-
-#### Adams, Balas and Zawack 1988
-
-<table>
-<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>abz5</td><td>10 x 10</td><td>random</td><td>1234</td><td>1234</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>abz6</td><td>10 x 10</td><td>random</td><td>943</td><td>943</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>abz7</td><td>20 x 15</td><td>random</td><td>656</td><td>656</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
-<tr><td>abz8</td><td>20 x 15</td><td>random</td><td>667</td><td>667</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 10h</td></tr>
-<tr><td>abz9</td><td>20 x 15</td><td>random</td><td>678</td><td>678</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-</table>
-
-*Various places report "Henning A (2002). Praktische Job-Shop Scheduling-Probleme. Ph.D. thesis, Friedrich-Schiller-Universität Jena, Jena, Germany" as having found a solution of 665 for abz8, but the original document says their solution is 667 and 665 is a "solution from the literature". Jelke J. van Hoorn attributes the 665 bound to "Paul Douglas Martin. A time-oriented approach to computing optimal schedules for the job-shop scheduling problem. PhD thesis. 1996".
-However, OptalCP proves a lower bound of 667 and Optimizizer only provides a verified solution for 667. We advise caution until this result is confirmed by independent means.*
-
-#### Applegate and Cook 1991
-
-<table>
-<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>orb01</td><td>10 x 10</td><td>random</td><td>1059</td><td>1059</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>orb02</td><td>10 x 10</td><td>random</td><td>888</td><td>888</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>orb03</td><td>10 x 10</td><td>random</td><td>1005</td><td>1005</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>orb04</td><td>10 x 10</td><td>random</td><td>1005</td><td>1005</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>orb05</td><td>10 x 10</td><td>random</td><td>887</td><td>887</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>orb06</td><td>10 x 10</td><td>random</td><td>1010</td><td>1010</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>orb07</td><td>10 x 10</td><td>random</td><td>397</td><td>397</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>orb08</td><td>10 x 10</td><td>random</td><td>899</td><td>899</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>orb09</td><td>10 x 10</td><td>random</td><td>934</td><td>934</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>orb10</td><td>10 x 10</td><td>random</td><td>944</td><td>944</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-</table>
-
-#### Storer, Wu and Vaccari 1992
-
-<table>
-<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>swv01</td><td>20 x 10</td><td>random</td><td>1407</td><td>1407</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>swv02</td><td>20 x 10</td><td>random</td><td>1475</td><td>1475</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>swv03</td><td>20 x 10</td><td>random</td><td>1398</td><td>1398</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
-<tr><td>swv04</td><td>20 x 10</td><td>random</td><td>1464</td><td>1464</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>swv05</td><td>20 x 10</td><td>random</td><td>1424</td><td>1424</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
-<tr><td>swv06</td><td>20 x 15</td><td>random</td><td>1667</td><td>1667</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 40h</td></tr>
-<tr><td>swv07</td><td>20 x 15</td><td>random</td><td>1541</td><td>1594</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub GR2014</td></tr>
-<tr><td>swv08</td><td>20 x 15</td><td>random</td><td>1694</td><td>1751</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Murovec2015</td></tr>
-<tr><td>swv09</td><td>20 x 15</td><td>random</td><td>1655</td><td>1655</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 15h</td></tr>
-<tr><td>swv10</td><td>20 x 15</td><td>random</td><td>1692</td><td>1743</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
-<tr><td>swv11</td><td>50 x 10</td><td>random</td><td>2983</td><td>2983</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>swv12</td><td>50 x 10</td><td>random</td><td>2972</td><td>2972</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>swv13</td><td>50 x 10</td><td>random</td><td>3104</td><td>3104</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>swv14</td><td>50 x 10</td><td>random</td><td>2968</td><td>2968</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>swv15</td><td>50 x 10</td><td>random</td><td>2885</td><td>2885</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 9h</td></tr>
-<tr><td>swv16</td><td>50 x 10</td><td>random</td><td>2924</td><td>2924</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>swv17</td><td>50 x 10</td><td>random</td><td>2794</td><td>2794</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>swv18</td><td>50 x 10</td><td>random</td><td>2852</td><td>2852</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>swv19</td><td>50 x 10</td><td>random</td><td>2843</td><td>2843</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>swv20</td><td>50 x 10</td><td>random</td><td>2823</td><td>2823</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-</table>
-
-#### Yamada Nakano 1992
-
-<table>
-<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>yn1</td><td>20 x 20</td><td>random</td><td>884</td><td>884</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 6h</td></tr>
-<tr><td>yn2</td><td>20 x 20</td><td>random</td><td>904</td><td>904</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 40h</td></tr>
-<tr><td>yn3</td><td>20 x 20</td><td>random</td><td>892</td><td>892</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 40h</td></tr>
-<tr><td>yn4</td><td>20 x 20</td><td>random</td><td>967</td><td>967</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 16h</td></tr>
-</table>
-
-#### Taillard 1993
-
-*We add the suffix `js` to distinguish the instance from other instances generated by Taillard for other problems*
-
-<table>
-<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>ta01js</td><td>15 x 15</td><td>random</td><td>1231</td><td>1231</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta02js</td><td>15 x 15</td><td>random</td><td>1244</td><td>1244</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta03js</td><td>15 x 15</td><td>random</td><td>1218</td><td>1218</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta04js</td><td>15 x 15</td><td>random</td><td>1175</td><td>1175</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta05js</td><td>15 x 15</td><td>random</td><td>1224</td><td>1224</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta06js</td><td>15 x 15</td><td>random</td><td>1238</td><td>1238</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
-<tr><td>ta07js</td><td>15 x 15</td><td>random</td><td>1227</td><td>1227</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta08js</td><td>15 x 15</td><td>random</td><td>1217</td><td>1217</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta09js</td><td>15 x 15</td><td>random</td><td>1274</td><td>1274</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta10js</td><td>15 x 15</td><td>random</td><td>1241</td><td>1241</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta11js</td><td>20 x 15</td><td>random</td><td>1357</td><td>1357</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>ta12js</td><td>20 x 15</td><td>random</td><td>1367</td><td>1367</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
-<tr><td>ta13js</td><td>20 x 15</td><td>random</td><td>1342</td><td>1342</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>ta14js</td><td>20 x 15</td><td>random</td><td>1345</td><td>1345</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta15js</td><td>20 x 15</td><td>random</td><td>1339</td><td>1339</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>ta16js</td><td>20 x 15</td><td>random</td><td>1360</td><td>1360</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>ta17js</td><td>20 x 15</td><td>random</td><td>1462</td><td>1462</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta18js</td><td>20 x 15</td><td>random</td><td>1396</td><td>1396</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>ta19js</td><td>20 x 15</td><td>random</td><td>1332</td><td>1332</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>ta20js</td><td>20 x 15</td><td>random</td><td>1348</td><td>1348</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>ta21js</td><td>20 x 20</td><td>random</td><td>1642</td><td>1642</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>ta22js</td><td>20 x 20</td><td>random</td><td>1600</td><td>1600</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
-<tr><td>ta23js</td><td>20 x 20</td><td>random</td><td>1557</td><td>1557</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
-<tr><td>ta24js</td><td>20 x 20</td><td>random</td><td>1644</td><td>1644</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
-<tr><td>ta25js</td><td>20 x 20</td><td>random</td><td>1595</td><td>1595</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>ta26js</td><td>20 x 20</td><td>random</td><td>1643</td><td>1643</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 7h</td></tr>
-<tr><td>ta27js</td><td>20 x 20</td><td>random</td><td>1680</td><td>1680</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>ta28js</td><td>20 x 20</td><td>random</td><td>1603</td><td>1603</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
-<tr><td>ta29js</td><td>20 x 20</td><td>random</td><td>1625</td><td>1625</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
-<tr><td>ta30js</td><td>20 x 20</td><td>random</td><td>1562</td><td>1584</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub NS2005</td></tr>
-<tr><td>ta31js</td><td>30 x 15</td><td>random</td><td>1764</td><td>1764</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
-<tr><td>ta32js</td><td>30 x 15</td><td>random</td><td>1774</td><td>1783</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CPO2015 | ub LLG2026</td></tr>
-<tr><td>ta33js</td><td>30 x 15</td><td>random</td><td>1791</td><td>1791</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 10h</td></tr>
-<tr><td>ta34js</td><td>30 x 15</td><td>random</td><td>1828</td><td>1828</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>ta35js</td><td>30 x 15</td><td>random</td><td>2007</td><td>2007</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta36js</td><td>30 x 15</td><td>random</td><td>1819</td><td>1819</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta37js</td><td>30 x 15</td><td>random</td><td>1771</td><td>1771</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
-<tr><td>ta38js</td><td>30 x 15</td><td>random</td><td>1673</td><td>1673</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 7h</td></tr>
-<tr><td>ta39js</td><td>30 x 15</td><td>random</td><td>1795</td><td>1795</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta40js</td><td>30 x 15</td><td>random</td><td>1658</td><td>1669</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub GR2014</td></tr>
-<tr><td>ta41js</td><td>30 x 20</td><td>random</td><td>1926</td><td>2005</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CPO2015</td></tr>
-<tr><td>ta42js</td><td>30 x 20</td><td>random</td><td>1900</td><td>1937</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub GR2014</td></tr>
-<tr><td>ta43js</td><td>30 x 20</td><td>random</td><td>1809</td><td>1846</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CPO2015 | ub PLC2015</td></tr>
-<tr><td>ta44js</td><td>30 x 20</td><td>random</td><td>1961</td><td>1978</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
-<tr><td>ta45js</td><td>30 x 20</td><td>random</td><td>1997</td><td>1997</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>CP-SAT in < 10m</td></tr>
-<tr><td>ta46js</td><td>30 x 20</td><td>random</td><td>1976</td><td>2002</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
-<tr><td>ta47js</td><td>30 x 20</td><td>random</td><td>1827</td><td>1889</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub PLC2015</td></tr>
-<tr><td>ta48js</td><td>30 x 20</td><td>random</td><td>1921</td><td>1937</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
-<tr><td>ta49js</td><td>30 x 20</td><td>random</td><td>1938</td><td>1960</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
-<tr><td>ta50js</td><td>30 x 20</td><td>random</td><td>1848</td><td>1923</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub PLC2015</td></tr>
-<tr><td>ta51js</td><td>50 x 15</td><td>random</td><td>2760</td><td>2760</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta52js</td><td>50 x 15</td><td>random</td><td>2756</td><td>2756</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta53js</td><td>50 x 15</td><td>random</td><td>2717</td><td>2717</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta54js</td><td>50 x 15</td><td>random</td><td>2839</td><td>2839</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta55js</td><td>50 x 15</td><td>random</td><td>2679</td><td>2679</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta56js</td><td>50 x 15</td><td>random</td><td>2781</td><td>2781</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta57js</td><td>50 x 15</td><td>random</td><td>2943</td><td>2943</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta58js</td><td>50 x 15</td><td>random</td><td>2885</td><td>2885</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta59js</td><td>50 x 15</td><td>random</td><td>2655</td><td>2655</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta60js</td><td>50 x 15</td><td>random</td><td>2723</td><td>2723</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta61js</td><td>50 x 20</td><td>random</td><td>2868</td><td>2868</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta62js</td><td>50 x 20</td><td>random</td><td>2869</td><td>2869</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>ta63js</td><td>50 x 20</td><td>random</td><td>2755</td><td>2755</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta64js</td><td>50 x 20</td><td>random</td><td>2702</td><td>2702</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta65js</td><td>50 x 20</td><td>random</td><td>2725</td><td>2725</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta66js</td><td>50 x 20</td><td>random</td><td>2845</td><td>2845</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta67js</td><td>50 x 20</td><td>random</td><td>2825</td><td>2825</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 4h</td></tr>
-<tr><td>ta68js</td><td>50 x 20</td><td>random</td><td>2784</td><td>2784</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta69js</td><td>50 x 20</td><td>random</td><td>3071</td><td>3071</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta70js</td><td>50 x 20</td><td>random</td><td>2995</td><td>2995</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta71js</td><td>100 x 20</td><td>random</td><td>5464</td><td>5464</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta72js</td><td>100 x 20</td><td>random</td><td>5181</td><td>5181</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta73js</td><td>100 x 20</td><td>random</td><td>5568</td><td>5568</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta74js</td><td>100 x 20</td><td>random</td><td>5339</td><td>5339</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta75js</td><td>100 x 20</td><td>random</td><td>5392</td><td>5392</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta76js</td><td>100 x 20</td><td>random</td><td>5342</td><td>5342</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta77js</td><td>100 x 20</td><td>random</td><td>5436</td><td>5436</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta78js</td><td>100 x 20</td><td>random</td><td>5394</td><td>5394</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta79js</td><td>100 x 20</td><td>random</td><td>5358</td><td>5358</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>ta80js</td><td>100 x 20</td><td>random</td><td>5183</td><td>5183</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-</table>
-
-#### Demirkol, Mehta and Uzsoy 1998
-
-<table>
-<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>dmu01</td><td>20 x 15</td><td>random</td><td>2563</td><td>2563</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dmu02</td><td>20 x 15</td><td>random</td><td>2706</td><td>2706</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
-<tr><td>dmu03</td><td>20 x 15</td><td>random</td><td>2731</td><td>2731</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
-<tr><td>dmu04</td><td>20 x 15</td><td>random</td><td>2669</td><td>2669</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dmu05</td><td>20 x 15</td><td>random</td><td>2749</td><td>2749</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dmu06</td><td>20 x 20</td><td>random</td><td>3244</td><td>3244</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
-<tr><td>dmu07</td><td>20 x 20</td><td>random</td><td>3046</td><td>3046</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
-<tr><td>dmu08</td><td>20 x 20</td><td>random</td><td>3188</td><td>3188</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
-<tr><td>dmu09</td><td>20 x 20</td><td>random</td><td>3092</td><td>3092</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
-<tr><td>dmu10</td><td>20 x 20</td><td>random</td><td>2984</td><td>2984</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dmu11</td><td>30 x 15</td><td>random</td><td>3402</td><td>3430</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub PLC2015</td></tr>
-<tr><td>dmu12</td><td>30 x 15</td><td>random</td><td>3481</td><td>3492</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
-<tr><td>dmu13</td><td>30 x 15</td><td>random</td><td>3681</td><td>3681</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
-<tr><td>dmu14</td><td>30 x 15</td><td>random</td><td>3394</td><td>3394</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>CP-SAT in < 1m</td></tr>
-<tr><td>dmu15</td><td>30 x 15</td><td>random</td><td>3343</td><td>3343</td><td style="background-color:green;color:white;font-weight:bold">easy</td><td>OptalCP in < 10m</td></tr>
-<tr><td>dmu16</td><td>30 x 20</td><td>random</td><td>3734</td><td>3744</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CPO2015 | ub Diaz2026</td></tr>
-<tr><td>dmu17</td><td>30 x 20</td><td>random</td><td>3733</td><td>3811</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>dmu18</td><td>30 x 20</td><td>random</td><td>3844</td><td>3844</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 10h</td></tr>
-<tr><td>dmu19</td><td>30 x 20</td><td>random</td><td>3707</td><td>3764</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
-<tr><td>dmu20</td><td>30 x 20</td><td>random</td><td>3632</td><td>3699</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
-<tr><td>dmu21</td><td>40 x 15</td><td>random</td><td>4380</td><td>4380</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu22</td><td>40 x 15</td><td>random</td><td>4725</td><td>4725</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu23</td><td>40 x 15</td><td>random</td><td>4668</td><td>4668</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu24</td><td>40 x 15</td><td>random</td><td>4648</td><td>4648</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu25</td><td>40 x 15</td><td>random</td><td>4164</td><td>4164</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu26</td><td>40 x 20</td><td>random</td><td>4647</td><td>4647</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dmu27</td><td>40 x 20</td><td>random</td><td>4848</td><td>4848</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu28</td><td>40 x 20</td><td>random</td><td>4692</td><td>4692</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu29</td><td>40 x 20</td><td>random</td><td>4691</td><td>4691</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu30</td><td>40 x 20</td><td>random</td><td>4732</td><td>4732</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dmu31</td><td>50 x 15</td><td>random</td><td>5640</td><td>5640</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu32</td><td>50 x 15</td><td>random</td><td>5927</td><td>5927</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu33</td><td>50 x 15</td><td>random</td><td>5728</td><td>5728</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu34</td><td>50 x 15</td><td>random</td><td>5385</td><td>5385</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu35</td><td>50 x 15</td><td>random</td><td>5635</td><td>5635</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu36</td><td>50 x 20</td><td>random</td><td>5621</td><td>5621</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu37</td><td>50 x 20</td><td>random</td><td>5851</td><td>5851</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu38</td><td>50 x 20</td><td>random</td><td>5713</td><td>5713</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu39</td><td>50 x 20</td><td>random</td><td>5747</td><td>5747</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu40</td><td>50 x 20</td><td>random</td><td>5577</td><td>5577</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dmu41</td><td>20 x 15</td><td>random</td><td>3176</td><td>3248</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub PLC2015</td></tr>
-<tr><td>dmu42</td><td>20 x 15</td><td>random</td><td>3339</td><td>3390</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
-<tr><td>dmu43</td><td>20 x 15</td><td>random</td><td>3441</td><td>3441</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 7h</td></tr>
-<tr><td>dmu44</td><td>20 x 15</td><td>random</td><td>3414</td><td>3475</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
-<tr><td>dmu45</td><td>20 x 15</td><td>random</td><td>3217</td><td>3266</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
-<tr><td>dmu46</td><td>20 x 20</td><td>random</td><td>3780</td><td>4035</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub GR2014</td></tr>
-<tr><td>dmu47</td><td>20 x 20</td><td>random</td><td>3714</td><td>3939</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub GR2014</td></tr>
-<tr><td>dmu48</td><td>20 x 20</td><td>random</td><td>3628</td><td>3763</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
-<tr><td>dmu49</td><td>20 x 20</td><td>random</td><td>3543</td><td>3706</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
-<tr><td>dmu50</td><td>20 x 20</td><td>random</td><td>3618</td><td>3729</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub PLC2015</td></tr>
-<tr><td>dmu51</td><td>30 x 15</td><td>random</td><td>4070</td><td>4151</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
-<tr><td>dmu52</td><td>30 x 15</td><td>random</td><td>4203</td><td>4297</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
-<tr><td>dmu53</td><td>30 x 15</td><td>random</td><td>4248</td><td>4378</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
-<tr><td>dmu54</td><td>30 x 15</td><td>random</td><td>4277</td><td>4360</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
-<tr><td>dmu55</td><td>30 x 15</td><td>random</td><td>4191</td><td>4258</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
-<tr><td>dmu56</td><td>30 x 20</td><td>random</td><td>4755</td><td>4934</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
-<tr><td>dmu57</td><td>30 x 20</td><td>random</td><td>4462</td><td>4643</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
-<tr><td>dmu58</td><td>30 x 20</td><td>random</td><td>4484</td><td>4701</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
-<tr><td>dmu59</td><td>30 x 20</td><td>random</td><td>4366</td><td>4607</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
-<tr><td>dmu60</td><td>30 x 20</td><td>random</td><td>4468</td><td>4721</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
-<tr><td>dmu61</td><td>40 x 15</td><td>random</td><td>5038</td><td>5159</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Diaz2026</td></tr>
-<tr><td>dmu62</td><td>40 x 15</td><td>random</td><td>5176</td><td>5244</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
-<tr><td>dmu63</td><td>40 x 15</td><td>random</td><td>5245</td><td>5296</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
-<tr><td>dmu64</td><td>40 x 15</td><td>random</td><td>5155</td><td>5225</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
-<tr><td>dmu65</td><td>40 x 15</td><td>random</td><td>5122</td><td>5158</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>dmu66</td><td>40 x 20</td><td>random</td><td>5526</td><td>5692</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>dmu67</td><td>40 x 20</td><td>random</td><td>5661</td><td>5774</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
-<tr><td>dmu68</td><td>40 x 20</td><td>random</td><td>5513</td><td>5749</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>dmu69</td><td>40 x 20</td><td>random</td><td>5511</td><td>5682</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>dmu70</td><td>40 x 20</td><td>random</td><td>5633</td><td>5868</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
-<tr><td>dmu71</td><td>50 x 15</td><td>random</td><td>6129</td><td>6206</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
-<tr><td>dmu72</td><td>50 x 15</td><td>random</td><td>6434</td><td>6448</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb CdGKGC2025 | ub LLG2026</td></tr>
-<tr><td>dmu73</td><td>50 x 15</td><td>random</td><td>6107</td><td>6132</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
-<tr><td>dmu74</td><td>50 x 15</td><td>random</td><td>6168</td><td>6196</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub SS2018</td></tr>
-<tr><td>dmu75</td><td>50 x 15</td><td>random</td><td>6123</td><td>6186</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>dmu76</td><td>50 x 20</td><td>random</td><td>6479</td><td>6708</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>dmu77</td><td>50 x 20</td><td>random</td><td>6520</td><td>6739</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
-<tr><td>dmu78</td><td>50 x 20</td><td>random</td><td>6643</td><td>6744</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
-<tr><td>dmu79</td><td>50 x 20</td><td>random</td><td>6720</td><td>6899</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
-<tr><td>dmu80</td><td>50 x 20</td><td>random</td><td>6460</td><td>6621</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-</table>
-
-#### Da Col and Teppan 2022 - taillard-like instances
-
-<table>
-<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>tai_10_10_1</td><td>10 x 10</td><td>random</td><td>8219</td><td>8219</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_10_2</td><td>10 x 10</td><td>random</td><td>7416</td><td>7416</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_10_3</td><td>10 x 10</td><td>random</td><td>8094</td><td>8094</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_10_4</td><td>10 x 10</td><td>random</td><td>8657</td><td>8657</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_10_5</td><td>10 x 10</td><td>random</td><td>7936</td><td>7936</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_10_6</td><td>10 x 10</td><td>random</td><td>8509</td><td>8509</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_10_7</td><td>10 x 10</td><td>random</td><td>8299</td><td>8299</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_10_8</td><td>10 x 10</td><td>random</td><td>7788</td><td>7788</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_10_9</td><td>10 x 10</td><td>random</td><td>8300</td><td>8300</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_10_10</td><td>10 x 10</td><td>random</td><td>8481</td><td>8481</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_100_1</td><td>10 x 100</td><td>random</td><td>56609</td><td>56609</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_100_2</td><td>10 x 100</td><td>random</td><td>52330</td><td>52330</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_100_3</td><td>10 x 100</td><td>random</td><td>56412</td><td>56412</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_100_4</td><td>10 x 100</td><td>random</td><td>54889</td><td>54889</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_100_5</td><td>10 x 100</td><td>random</td><td>54603</td><td>54603</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_100_6</td><td>10 x 100</td><td>random</td><td>53723</td><td>53723</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_100_7</td><td>10 x 100</td><td>random</td><td>55456</td><td>55456</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_100_8</td><td>10 x 100</td><td>random</td><td>56466</td><td>56466</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_100_9</td><td>10 x 100</td><td>random</td><td>55096</td><td>55096</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_100_10</td><td>10 x 100</td><td>random</td><td>56661</td><td>56661</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_1000_1</td><td>10 x 1000</td><td>random</td><td>515370</td><td>515370</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_1000_2</td><td>10 x 1000</td><td>random</td><td>513525</td><td>513525</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_1000_3</td><td>10 x 1000</td><td>random</td><td>508161</td><td>508161</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_1000_4</td><td>10 x 1000</td><td>random</td><td>513814</td><td>513814</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_1000_5</td><td>10 x 1000</td><td>random</td><td>517020</td><td>517020</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_1000_6</td><td>10 x 1000</td><td>random</td><td>517777</td><td>517777</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_1000_7</td><td>10 x 1000</td><td>random</td><td>514921</td><td>514921</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_1000_8</td><td>10 x 1000</td><td>random</td><td>522277</td><td>522277</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_1000_9</td><td>10 x 1000</td><td>random</td><td>511213</td><td>511213</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_10_1000_10</td><td>10 x 1000</td><td>random</td><td>509855</td><td>509855</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_100_10_1</td><td>100 x 10</td><td>random</td><td>54951</td><td>54951</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_100_10_2</td><td>100 x 10</td><td>random</td><td>57160</td><td>57160</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_100_10_3</td><td>100 x 10</td><td>random</td><td>54166</td><td>54166</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_100_10_4</td><td>100 x 10</td><td>random</td><td>54371</td><td>54371</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_100_10_5</td><td>100 x 10</td><td>random</td><td>56142</td><td>56142</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_100_10_6</td><td>100 x 10</td><td>random</td><td>52447</td><td>52447</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_100_10_7</td><td>100 x 10</td><td>random</td><td>54051</td><td>54051</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_100_10_8</td><td>100 x 10</td><td>random</td><td>55624</td><td>55624</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_100_10_9</td><td>100 x 10</td><td>random</td><td>54210</td><td>54210</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_100_10_10</td><td>100 x 10</td><td>random</td><td>55464</td><td>55464</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_100_100_1</td><td>100 x 100</td><td>random</td><td>62843</td><td>76926</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_100_2</td><td>100 x 100</td><td>random</td><td>62814</td><td>76613</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_100_3</td><td>100 x 100</td><td>random</td><td>61533</td><td>76607</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_100_4</td><td>100 x 100</td><td>random</td><td>64742</td><td>78604</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_100_5</td><td>100 x 100</td><td>random</td><td>61766</td><td>77297</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_100_6</td><td>100 x 100</td><td>random</td><td>61360</td><td>77258</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_100_7</td><td>100 x 100</td><td>random</td><td>64040</td><td>77670</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_100_8</td><td>100 x 100</td><td>random</td><td>63224</td><td>76956</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_100_9</td><td>100 x 100</td><td>random</td><td>62631</td><td>78219</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_100_10</td><td>100 x 100</td><td>random</td><td>64866</td><td>76869</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_1000_1</td><td>100 x 1000</td><td>random</td><td>522298</td><td>533080</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_1000_2</td><td>100 x 1000</td><td>random</td><td>530375</td><td>538067</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_1000_3</td><td>100 x 1000</td><td>random</td><td>530560</td><td>538757</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_1000_4</td><td>100 x 1000</td><td>random</td><td>527101</td><td>534746</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_1000_5</td><td>100 x 1000</td><td>random</td><td>517728</td><td>529580</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_1000_6</td><td>100 x 1000</td><td>random</td><td>522907</td><td>534969</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_1000_7</td><td>100 x 1000</td><td>random</td><td>522537</td><td>534974</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_1000_8</td><td>100 x 1000</td><td>random</td><td>526428</td><td>535757</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_1000_9</td><td>100 x 1000</td><td>random</td><td>528097</td><td>536993</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_100_1000_10</td><td>100 x 1000</td><td>random</td><td>521766</td><td>529918</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_1000_10_1</td><td>1000 x 10</td><td>random</td><td>515334</td><td>515334</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_1000_10_2</td><td>1000 x 10</td><td>random</td><td>509226</td><td>509226</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_1000_10_3</td><td>1000 x 10</td><td>random</td><td>517493</td><td>517493</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_1000_10_4</td><td>1000 x 10</td><td>random</td><td>519369</td><td>519369</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_1000_10_5</td><td>1000 x 10</td><td>random</td><td>513881</td><td>513881</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_1000_10_6</td><td>1000 x 10</td><td>random</td><td>511932</td><td>511932</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_1000_10_7</td><td>1000 x 10</td><td>random</td><td>523900</td><td>523900</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_1000_10_8</td><td>1000 x 10</td><td>random</td><td>513101</td><td>513101</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_1000_10_9</td><td>1000 x 10</td><td>random</td><td>508701</td><td>508701</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_1000_10_10</td><td>1000 x 10</td><td>random</td><td>521360</td><td>521360</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>tai_1000_100_1</td><td>1000 x 100</td><td>random</td><td>525343</td><td>525343</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tai_1000_100_2</td><td>1000 x 100</td><td>random</td><td>528088</td><td>528088</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
-<tr><td>tai_1000_100_3</td><td>1000 x 100</td><td>random</td><td>522793</td><td>522793</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
-<tr><td>tai_1000_100_4</td><td>1000 x 100</td><td>random</td><td>524271</td><td>524271</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
-<tr><td>tai_1000_100_5</td><td>1000 x 100</td><td>random</td><td>531216</td><td>531216</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>tai_1000_100_6</td><td>1000 x 100</td><td>random</td><td>518763</td><td>518763</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
-<tr><td>tai_1000_100_7</td><td>1000 x 100</td><td>random</td><td>527093</td><td>527093</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
-<tr><td>tai_1000_100_8</td><td>1000 x 100</td><td>random</td><td>519524</td><td>519524</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
-<tr><td>tai_1000_100_9</td><td>1000 x 100</td><td>random</td><td>520889</td><td>520889</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
-<tr><td>tai_1000_100_10</td><td>1000 x 100</td><td>random</td><td>529112</td><td>529112</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
-</table>
-
-<table>
-<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>tai_1000_1000_1</td><td>1000 x 1000</td><td>stress-test</td><td>549392</td><td>811195</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_1000_1000_2</td><td>1000 x 1000</td><td>stress-test</td><td>549043</td><td>813044</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_1000_1000_3</td><td>1000 x 1000</td><td>stress-test</td><td>552580</td><td>811269</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_1000_1000_4</td><td>1000 x 1000</td><td>stress-test</td><td>547670</td><td>809549</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_1000_1000_5</td><td>1000 x 1000</td><td>stress-test</td><td>545193</td><td>811467</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_1000_1000_6</td><td>1000 x 1000</td><td>stress-test</td><td>547286</td><td>813117</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_1000_1000_7</td><td>1000 x 1000</td><td>stress-test</td><td>545877</td><td>809043</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_1000_1000_8</td><td>1000 x 1000</td><td>stress-test</td><td>549220</td><td>812442</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_1000_1000_9</td><td>1000 x 1000</td><td>stress-test</td><td>543559</td><td>810111</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>tai_1000_1000_10</td><td>1000 x 1000</td><td>stress-test</td><td>549075</td><td>809421</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb Hexaly2026 | ub OptalCP</td></tr>
-</table>
-
-
-#### Da Col and Teppan (2022) - reentrant jobshop
-
-
-<table>
-<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>dct-long-100-10000-1</td><td>103 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-long-100-10000-2</td><td>103 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-long-100-10000-3</td><td>103 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-long-100-100000-1</td><td>109 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-long-100-100000-2</td><td>114 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-long-100-100000-3</td><td>109 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-long-1000-10000-1</td><td>1002 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-long-1000-10000-2</td><td>1002 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-long-1000-10000-3</td><td>1002 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-long-1000-100000-1</td><td>1002 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-long-1000-100000-2</td><td>1002 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-long-1000-100000-3</td><td>1003 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-short-100-10000-1</td><td>2162 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-short-100-10000-2</td><td>2192 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-short-100-10000-3</td><td>2169 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-short-100-100000-1</td><td>20685 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-short-100-100000-2</td><td>20870 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-short-100-100000-3</td><td>20767 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-short-1000-10000-1</td><td>2882 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-short-1000-10000-2</td><td>2863 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-short-1000-10000-3</td><td>2897 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>dct-short-1000-100000-1</td><td>21280 x 1000</td><td>industrial</td><td>600000</td><td>600019</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>OptalCP</td></tr>
-<tr><td>dct-short-1000-100000-2</td><td>21349 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-<tr><td>dct-short-1000-100000-3</td><td>21338 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
-</table>
-
-*Da Col and Teppan report that instance dct-short-1000-100000-1 was solved to optimality by CP Optimizer in 6h which we haven't been able to reproduce (with CPO or any other solver). We are still investigating*. 
-We have recently noticed some regression in OptalCP on two of these instances, hence you may need specific parameters to reach the solution in the time announced.
-
-#### Boveroux, Ernst and Louveaux 2025
-
-<table>
-<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>bel00</td><td>792 x 48</td><td>industrial</td><td>766329</td><td>766329</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel01</td><td>627 x 52</td><td>industrial</td><td>428900</td><td>428900</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel02</td><td>660 x 59</td><td>industrial</td><td>270437</td><td>270437</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel03</td><td>691 x 52</td><td>industrial</td><td>670943</td><td>670943</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel04</td><td>952 x 63</td><td>industrial</td><td>408633</td><td>408633</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel05</td><td>929 x 59</td><td>industrial</td><td>620171</td><td>620171</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel06</td><td>678 x 57</td><td>industrial</td><td>502510</td><td>502510</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel07</td><td>968 x 55</td><td>industrial</td><td>750360</td><td>750360</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel08</td><td>822 x 65</td><td>industrial</td><td>484451</td><td>484451</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel09</td><td>651 x 53</td><td>industrial</td><td>534811</td><td>534811</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel10</td><td>733 x 61</td><td>industrial</td><td>468304</td><td>468304</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel11</td><td>761 x 66</td><td>industrial</td><td>509503</td><td>509503</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel12</td><td>897 x 64</td><td>industrial</td><td>388715</td><td>388715</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel13</td><td>836 x 54</td><td>industrial</td><td>420576</td><td>420576</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel14</td><td>935 x 57</td><td>industrial</td><td>1115063</td><td>1115063</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel15</td><td>818 x 48</td><td>industrial</td><td>610946</td><td>610946</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel16</td><td>855 x 59</td><td>industrial</td><td>575843</td><td>575843</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel17</td><td>662 x 47</td><td>industrial</td><td>520426</td><td>520426</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel18</td><td>677 x 50</td><td>industrial</td><td>347889</td><td>347889</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-<tr><td>bel19</td><td>806 x 69</td><td>industrial</td><td>529239</td><td>529239</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">toy</td><td>OptalCP in < 1m</td></tr>
-</table>
-
-<br/>
-
-### Publications (best known solutions)
-
-The upper and lower bounds come from: 
-
-- NS2005 (1 bounds - ta30js) : **Nowicki, E., & Smutnicki, C.** (2002). Some new tools to solve the job shop problem. Raport serii: Preprinty, 60.
-
-- GR2014 (5 bounds in swv, ta and dmu) : **Gonçalves, J. F., & Resende, M. G.** (2014). An extended Akers graphical method with a biased random‐key genetic algorithm for job‐shop scheduling. International Transactions in Operational Research, 21(2), 215-246.
-
-- CPO2015 (4 bounds in ta and dmu) : **Vilím, P., Laborie, P., & Shaw, P.** (2015). [Failure-directed search for constraint-based scheduling](https://vilim.eu/petr/cpaior2015.pdf). In CPAIOR 2015 proceedings. [Detailed experimental results](https://vilim.eu/petr/cpaior2015-results.pdf).
-
-- Murovec2015 (1 bounds - swv08) : Personal communication to Optimizizer probably based on **Murovec, B.** (2015). Job-shop local-search move evaluation without direct consideration of the criterion’s value. European Journal of Operational Research, 241(2), 320-329.
-
-- PLC2015 (6 bounds in ta and dmu) : **Peng, B., Lü, Z., & Cheng, T. C. E.** (2015). [A tabu search/path relinking algorithm to solve the job shop scheduling problem](https://arxiv.org/abs/1402.5613). Computers & Operations Research, 53, 154-164.
-
-- SS2018 (7 bounds in swv, ta and dmu) : **Shylo, O. V., & Shams, H.** (2018). [Boosting binary optimization via binary classification: A case study of job shop scheduling](https://arxiv.org/abs/1808.10813).
-
-- CS2022 (6 bounds in dmu) : **Constantino, O. H., & Segura, C.** (2022). A parallel memetic algorithm with explicit management of diversity for the job shop scheduling problem. Applied Intelligence, 52(1), 141-153. [available online](https://doi.org/10.1007/s10489-021-02406-2)
-
-- LHW2024 (6 bounds in ta and dmu) : **Mingjie Li, Jin-Kao Hao & Qinghua Wu** (2025). Combining Hash-based Tabu Search and Frequent Pattern Mining for Job-Shop Scheduling. IISE Transactions.
-
-- CdGKGC2025 (1 bounds - dmu72) : **Marc-Emmanuel Coupvent des Graviers, Lotfi Kobrosly, Christophe Guettier, and Tristan Cazenave** (2025). [Updating Lower and Upper Bounds for the Job-Shop Scheduling Problem Test Instances](https://arxiv.org/abs/2504.16106).
-
-- LLG2026 (17 bounds in ta and dmu): **Qihao Liu, Xinyu Li, and Liang Gao** (2026). A Knowledge-Driven Decoupling and Coordinated Optimization Framework Based on Decision-Variable Parameterization and Release for the Job-Shop Scheduling Problem
-
-- DOFP2026 (9 bounds in dmu): **Diego Olivier Fernandez Pons** (2026) [Personal communication]: upper-bounds provided by optimizizer were given as a starting solution to OptalCP, and ran for 10 minutes
-
-- Diaz2026 (2 bounds in dmu) : **Hernan Diaz Rodriguez** (2026) [Personal communication]: a memetic algorithm with path-relinking crossover between elite schedules, tabu search on the N7 neighbourhood (Zhang et al. tenure) with GTA-style guided tenure, and restarts; The initial population holds good solutions already.
-
-All other bounds were found by OptalCP except 4 bounds by CP-SAT (equal but faster) and 1 bounds by Hexaly (strictly better than all other solvers). The cited papers also may use an engine directly like [CPO2015] or as part of an algorithm like [CdGKGC2025] which uses CP-SAT. [DOFP2026] uses OptalCP.
