@@ -113,7 +113,7 @@ When an engine provides upper and lower bounds for an instance, the instance is 
 <tr><td>Cplex</td><td>231</td><td style="color:red">147</td><td>0</td><td>0%</td><td style="color:red">0.55</td><td style="color:red">1.33</td><td style="color:red">55%</td></tr>
 <tr><td>CPO</td><td>231</td><td >231</td><td>52</td><td>23%</td><td >0.83</td><td >1.06</td><td >13%</td></tr>
 <tr><td>CP-SAT</td><td>231</td><td style="color:red">205</td><td>46</td><td>20%</td><td style="color:red">0.99</td><td style="color:red">1.05</td><td style="color:red">7%</td></tr>
-<tr><td>OptalCP</td><td>231</td><td >231</td><td>80</td><td>35%</td><td >0.99</td><td >1.02</td><td >5%</td></tr>
+<tr><td>OptalCP</td><td>231</td><td >231</td><td>80</td><td>35%</td><td >0.99</td><td >1.03</td><td >5%</td></tr>
 </table>
 
 
@@ -129,12 +129,12 @@ When an engine provides upper and lower bounds for an instance, the instance is 
 <tr><td>OptalCP</td><td>44</td><td >44</td><td>38</td><td>86%</td><td >1.00</td><td >1.04</td><td >2%</td></tr>
 <tr><td rowspan="4">random</td><td>Cplex</td><td>177</td><td style="color:red">147</td><td>0</td><td>0%</td><td style="color:red">0.55</td><td style="color:red">1.33</td><td style="color:red">55%</td></tr>
 <tr><td>CPO</td><td>177</td><td >177</td><td>26</td><td>15%</td><td >0.86</td><td >1.04</td><td >11%</td></tr>
-<tr><td>CP-SAT</td><td>177</td><td style="color:red">167</td><td>20</td><td>11%</td><td style="color:red">0.98</td><td style="color:red">1.04</td><td style="color:red">7%</td></tr>
+<tr><td>CP-SAT</td><td>177</td><td style="color:red">167</td><td>20</td><td>11%</td><td style="color:red">0.98</td><td style="color:red">1.05</td><td style="color:red">7%</td></tr>
 <tr><td>OptalCP</td><td>177</td><td >177</td><td>42</td><td>24%</td><td >0.99</td><td >1.02</td><td >4%</td></tr>
 <tr><td rowspan="4">stress-test</td><td>Cplex</td><td>10</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
-<tr><td>CPO</td><td>10</td><td >10</td><td>0</td><td>0%</td><td >0.97</td><td >1.23</td><td >47%</td></tr>
+<tr><td>CPO</td><td>10</td><td >10</td><td>0</td><td>0%</td><td >0.97</td><td >1.25</td><td >47%</td></tr>
 <tr><td>CP-SAT</td><td>10</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
-<tr><td>OptalCP</td><td>10</td><td >10</td><td>0</td><td>0%</td><td >1.00</td><td >1.11</td><td >39%</td></tr>
+<tr><td>OptalCP</td><td>10</td><td >10</td><td>0</td><td>0%</td><td >1.00</td><td >1.13</td><td >39%</td></tr>
 </table>
 </details>
 
@@ -163,9 +163,9 @@ When an engine provides upper and lower bounds for an instance, the instance is 
 <tr><td>CP-SAT</td><td>40</td><td >40</td><td>4</td><td>10%</td><td >0.98</td><td >1.02</td><td >4%</td></tr>
 <tr><td>OptalCP</td><td>40</td><td >40</td><td>8</td><td>20%</td><td >0.99</td><td >1.01</td><td >3%</td></tr>
 <tr><td rowspan="4">tai</td><td>Cplex</td><td>40</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
-<tr><td>CPO</td><td>40</td><td >40</td><td>0</td><td>0%</td><td >0.58</td><td >1.11</td><td >39%</td></tr>
-<tr><td>CP-SAT</td><td>40</td><td style="color:red">20</td><td>0</td><td>0%</td><td style="color:red">0.99</td><td style="color:red">1.10</td><td style="color:red">18%</td></tr>
-<tr><td>OptalCP</td><td>40</td><td >40</td><td>0</td><td>0%</td><td >1.00</td><td >1.04</td><td >15%</td></tr>
+<tr><td>CPO</td><td>40</td><td >40</td><td>0</td><td>0%</td><td >0.58</td><td >1.12</td><td >39%</td></tr>
+<tr><td>CP-SAT</td><td>40</td><td style="color:red">20</td><td>0</td><td>0%</td><td style="color:red">0.99</td><td style="color:red">1.12</td><td style="color:red">18%</td></tr>
+<tr><td>OptalCP</td><td>40</td><td >40</td><td>0</td><td>0%</td><td >1.00</td><td >1.05</td><td >15%</td></tr>
 <tr><td rowspan="4">dct</td><td>Cplex</td><td>24</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
 <tr><td>CPO</td><td>24</td><td >24</td><td>6</td><td>25%</td><td >0.52</td><td >1.19</td><td >32%</td></tr>
 <tr><td>CP-SAT</td><td>24</td><td style="color:red">18</td><td>6</td><td>25%</td><td style="color:red">1.00</td><td style="color:red">1.16</td><td style="color:red">11%</td></tr>
@@ -240,7 +240,7 @@ Random (177)
 - `yn`: 4 hard
 - `ta`: 5 trivial, 5 easy, 11 medium, 7 hard, 12 open
 - `dmu`: 19 trivial, 5 easy, 6 medium, 5 hard, 45 open
-- `tai`: 2 medium, 8 hard, 20 open
+- `tai`: 2 medium, 8 hard, 5 closed, 15 open
 
 Industrial (44)
 - `dct`: 21 trivial, 2 medium, 1 open
@@ -303,11 +303,11 @@ We check how many best known lower bounds can be certified with each algorithm o
 
 <table>
 <tr><th>Method</th><th>Number of best LB reached</th></tr>
-<tr><td>Job</td><td >0</td></tr>
-<tr><td>Machine</td><td >31</td></tr>
-<tr><td>Carlier</td><td >41</td></tr>
+<tr><td>Job</td><td >12</td></tr>
+<tr><td>Machine</td><td >73</td></tr>
+<tr><td>Carlier</td><td >94</td></tr>
 <tr><td>2-job</td><td >0</td></tr>
-<tr><td>2-machine</td><td >24</td></tr>
+<tr><td>2-machine</td><td >43</td></tr>
 </table>
 
 #### Lower bound certificates per family
@@ -318,9 +318,9 @@ We call **certification gap** the difference between the best known lower bound 
 <summary>abz</summary>
 <table>
 <tr><th>Instance</th><th>Job</th><th>Machine</th><th>Carlier</th><th>2-job</th><th>2-mach</th><th>Cert Gap</th><th>LB</th></tr>
-<tr><td>abz7</td><td >410</td><td >638</td><td >650</td><td >459</td><td >556</td><td style="border-left: 2px solid black;"> -6</td><td>656</td></tr>
-<tr><td>abz8</td><td >443</td><td >566</td><td >597</td><td >462</td><td >566</td><td style="border-left: 2px solid black;"> -70</td><td>667</td></tr>
-<tr><td>abz9</td><td >467</td><td >606</td><td >616</td><td >495</td><td >563</td><td style="border-left: 2px solid black;"> -62</td><td>678</td></tr>
+<tr><td>abz7</td><td >410</td><td >638</td><td >650</td><td >459</td><td >556</td><td style="border-left: 2px solid gray;"> -6</td><td>656</td></tr>
+<tr><td>abz8</td><td >443</td><td >566</td><td >597</td><td >462</td><td >566</td><td style="border-left: 2px solid gray;"> -70</td><td>667</td></tr>
+<tr><td>abz9</td><td >467</td><td >606</td><td >616</td><td >495</td><td >563</td><td style="border-left: 2px solid gray;"> -62</td><td>678</td></tr>
 </table>
 </details>
 
@@ -328,86 +328,86 @@ We call **certification gap** the difference between the best known lower bound 
 <summary>dmu</summary>
 <table>
 <tr><th>Instance</th><th>Job</th><th>Machine</th><th>Carlier</th><th>2-job</th><th>2-mach</th><th>Cert Gap</th><th>LB</th></tr>
-<tr><td>dmu01</td><td >1753</td><td >2268</td><td >2363</td><td >1878</td><td >2179</td><td style="border-left: 2px solid black;"> -200</td><td>2563</td></tr>
-<tr><td>dmu02</td><td >2167</td><td >2318</td><td >2452</td><td >2201</td><td >2277</td><td style="border-left: 2px solid black;"> -254</td><td>2706</td></tr>
-<tr><td>dmu03</td><td >1872</td><td >2540</td><td >2571</td><td >2005</td><td >2350</td><td style="border-left: 2px solid black;"> -160</td><td>2731</td></tr>
-<tr><td>dmu04</td><td >1908</td><td >2332</td><td >2486</td><td >2074</td><td >2332</td><td style="border-left: 2px solid black;"> -183</td><td>2669</td></tr>
-<tr><td>dmu05</td><td >1827</td><td >2625</td><td >2654</td><td >1972</td><td >2455</td><td style="border-left: 2px solid black;"> -95</td><td>2749</td></tr>
-<tr><td>dmu06</td><td >2585</td><td >2783</td><td >2834</td><td >2755</td><td >2533</td><td style="border-left: 2px solid black;"> -410</td><td>3244</td></tr>
-<tr><td>dmu07</td><td >2545</td><td >2604</td><td >2677</td><td >2652</td><td >2354</td><td style="border-left: 2px solid black;"> -369</td><td>3046</td></tr>
-<tr><td>dmu08</td><td >2493</td><td >2642</td><td >2901</td><td >2668</td><td >2642</td><td style="border-left: 2px solid black;"> -287</td><td>3188</td></tr>
-<tr><td>dmu09</td><td >2544</td><td >2706</td><td >2739</td><td >2643</td><td >2466</td><td style="border-left: 2px solid black;"> -353</td><td>3092</td></tr>
-<tr><td>dmu10</td><td >2394</td><td >2699</td><td >2716</td><td >2550</td><td >2488</td><td style="border-left: 2px solid black;"> -268</td><td>2984</td></tr>
-<tr><td>dmu11</td><td >1913</td><td >3395</td><td >3395</td><td >2011</td><td >3395</td><td style="border-left: 2px solid black;"> -7</td><td>3402</td></tr>
-<tr><td>dmu12</td><td >1902</td><td >3465</td><td style="background-color:green">3481</td><td >2044</td><td >3465</td><td style="border-left: 2px solid black;"> 0</td><td>3481</td></tr>
-<tr><td>dmu13</td><td >1945</td><td >3450</td><td style="background-color:green">3681</td><td >2048</td><td >3450</td><td style="border-left: 2px solid black;"> 0</td><td>3681</td></tr>
-<tr><td>dmu14</td><td >1798</td><td style="background-color:green">3394</td><td style="background-color:green">3394</td><td >1899</td><td style="background-color:green">3394</td><td style="border-left: 2px solid black;"> 0</td><td>3394</td></tr>
-<tr><td>dmu15</td><td >1945</td><td >3296</td><td >3332</td><td >2059</td><td >3296</td><td style="border-left: 2px solid black;"> -11</td><td>3343</td></tr>
-<tr><td>dmu16</td><td >2351</td><td >3726</td><td >3726</td><td >2466</td><td >3491</td><td style="border-left: 2px solid black;"> -8</td><td>3734</td></tr>
-<tr><td>dmu17</td><td >2491</td><td >3697</td><td >3697</td><td >2569</td><td >3670</td><td style="border-left: 2px solid black;"> -36</td><td>3733</td></tr>
-<tr><td>dmu18</td><td >2546</td><td style="background-color:green">3844</td><td style="background-color:green">3844</td><td >2652</td><td style="background-color:green">3844</td><td style="border-left: 2px solid black;"> 0</td><td>3844</td></tr>
-<tr><td>dmu19</td><td >2315</td><td >3408</td><td >3650</td><td >2462</td><td >3408</td><td style="border-left: 2px solid black;"> -57</td><td>3707</td></tr>
-<tr><td>dmu20</td><td >2586</td><td >3604</td><td >3604</td><td >2604</td><td >3604</td><td style="border-left: 2px solid black;"> -28</td><td>3632</td></tr>
-<tr><td>dmu21</td><td >1873</td><td >4345</td><td style="background-color:green">4380</td><td >2013</td><td >4345</td><td style="border-left: 2px solid black;"> 0</td><td>4380</td></tr>
-<tr><td>dmu22</td><td >1965</td><td >4712</td><td style="background-color:green">4725</td><td >2234</td><td >4712</td><td style="border-left: 2px solid black;"> 0</td><td>4725</td></tr>
-<tr><td>dmu23</td><td >2038</td><td >4524</td><td style="background-color:green">4668</td><td >2126</td><td >4524</td><td style="border-left: 2px solid black;"> 0</td><td>4668</td></tr>
-<tr><td>dmu24</td><td >2120</td><td style="background-color:green">4648</td><td style="background-color:green">4648</td><td >2182</td><td >4554</td><td style="border-left: 2px solid black;"> 0</td><td>4648</td></tr>
-<tr><td>dmu25</td><td >1861</td><td style="background-color:green">4164</td><td style="background-color:green">4164</td><td >2027</td><td style="background-color:green">4164</td><td style="border-left: 2px solid black;"> 0</td><td>4164</td></tr>
-<tr><td>dmu26</td><td >2627</td><td >4632</td><td style="background-color:green">4647</td><td >2688</td><td >4559</td><td style="border-left: 2px solid black;"> 0</td><td>4647</td></tr>
-<tr><td>dmu27</td><td >2590</td><td style="background-color:green">4848</td><td style="background-color:green">4848</td><td >2731</td><td style="background-color:green">4848</td><td style="border-left: 2px solid black;"> 0</td><td>4848</td></tr>
-<tr><td>dmu28</td><td >2537</td><td style="background-color:green">4692</td><td style="background-color:green">4692</td><td >2583</td><td >4538</td><td style="border-left: 2px solid black;"> 0</td><td>4692</td></tr>
-<tr><td>dmu29</td><td >2505</td><td style="background-color:green">4691</td><td style="background-color:green">4691</td><td >2666</td><td style="background-color:green">4691</td><td style="border-left: 2px solid black;"> 0</td><td>4691</td></tr>
-<tr><td>dmu30</td><td >2606</td><td >4707</td><td style="background-color:green">4732</td><td >2735</td><td >4670</td><td style="border-left: 2px solid black;"> 0</td><td>4732</td></tr>
-<tr><td>dmu31</td><td >2159</td><td style="background-color:green">5640</td><td style="background-color:green">5640</td><td >2241</td><td style="background-color:green">5640</td><td style="border-left: 2px solid black;"> 0</td><td>5640</td></tr>
-<tr><td>dmu32</td><td >2134</td><td style="background-color:green">5927</td><td style="background-color:green">5927</td><td >2264</td><td style="background-color:green">5927</td><td style="border-left: 2px solid black;"> 0</td><td>5927</td></tr>
-<tr><td>dmu33</td><td >1828</td><td >5681</td><td style="background-color:green">5728</td><td >2013</td><td >5681</td><td style="border-left: 2px solid black;"> 0</td><td>5728</td></tr>
-<tr><td>dmu34</td><td >2040</td><td style="background-color:green">5385</td><td style="background-color:green">5385</td><td >2134</td><td style="background-color:green">5385</td><td style="border-left: 2px solid black;"> 0</td><td>5385</td></tr>
-<tr><td>dmu35</td><td >2241</td><td style="background-color:green">5635</td><td style="background-color:green">5635</td><td >2426</td><td style="background-color:green">5635</td><td style="border-left: 2px solid black;"> 0</td><td>5635</td></tr>
-<tr><td>dmu36</td><td >2705</td><td style="background-color:green">5621</td><td style="background-color:green">5621</td><td >2745</td><td style="background-color:green">5621</td><td style="border-left: 2px solid black;"> 0</td><td>5621</td></tr>
-<tr><td>dmu37</td><td >2616</td><td style="background-color:green">5851</td><td style="background-color:green">5851</td><td >2733</td><td style="background-color:green">5851</td><td style="border-left: 2px solid black;"> 0</td><td>5851</td></tr>
-<tr><td>dmu38</td><td >2436</td><td style="background-color:green">5713</td><td style="background-color:green">5713</td><td >2526</td><td style="background-color:green">5713</td><td style="border-left: 2px solid black;"> 0</td><td>5713</td></tr>
-<tr><td>dmu39</td><td >2607</td><td style="background-color:green">5747</td><td style="background-color:green">5747</td><td >2695</td><td style="background-color:green">5747</td><td style="border-left: 2px solid black;"> 0</td><td>5747</td></tr>
-<tr><td>dmu40</td><td >2548</td><td style="background-color:green">5577</td><td style="background-color:green">5577</td><td >2670</td><td style="background-color:green">5577</td><td style="border-left: 2px solid black;"> 0</td><td>5577</td></tr>
-<tr><td>dmu41</td><td >1842</td><td >2839</td><td >2839</td><td >2019</td><td >2225</td><td style="border-left: 2px solid black;"> -337</td><td>3176</td></tr>
-<tr><td>dmu42</td><td >1810</td><td >2897</td><td >3066</td><td >2060</td><td >2520</td><td style="border-left: 2px solid black;"> -273</td><td>3339</td></tr>
-<tr><td>dmu43</td><td >1915</td><td >3121</td><td >3121</td><td >2113</td><td >2540</td><td style="border-left: 2px solid black;"> -320</td><td>3441</td></tr>
-<tr><td>dmu44</td><td >1975</td><td >3112</td><td >3112</td><td >2113</td><td >2577</td><td style="border-left: 2px solid black;"> -302</td><td>3414</td></tr>
-<tr><td>dmu45</td><td >1768</td><td >2930</td><td >2930</td><td >1972</td><td >2363</td><td style="border-left: 2px solid black;"> -287</td><td>3217</td></tr>
-<tr><td>dmu46</td><td >2664</td><td >3394</td><td >3425</td><td >2848</td><td >2508</td><td style="border-left: 2px solid black;"> -355</td><td>3780</td></tr>
-<tr><td>dmu47</td><td >2689</td><td >3268</td><td >3353</td><td >2782</td><td >2480</td><td style="border-left: 2px solid black;"> -361</td><td>3714</td></tr>
-<tr><td>dmu48</td><td >2516</td><td >3268</td><td >3317</td><td >2610</td><td >2405</td><td style="border-left: 2px solid black;"> -311</td><td>3628</td></tr>
-<tr><td>dmu49</td><td >2403</td><td >3369</td><td >3369</td><td >2613</td><td >2390</td><td style="border-left: 2px solid black;"> -174</td><td>3543</td></tr>
-<tr><td>dmu50</td><td >2494</td><td >3312</td><td >3379</td><td >2559</td><td >2444</td><td style="border-left: 2px solid black;"> -239</td><td>3618</td></tr>
-<tr><td>dmu51</td><td >1825</td><td >3827</td><td >3839</td><td >1984</td><td >3348</td><td style="border-left: 2px solid black;"> -231</td><td>4070</td></tr>
-<tr><td>dmu52</td><td >1989</td><td >4006</td><td >4012</td><td >2262</td><td >3515</td><td style="border-left: 2px solid black;"> -191</td><td>4203</td></tr>
-<tr><td>dmu53</td><td >2229</td><td >4108</td><td >4108</td><td >2408</td><td >3505</td><td style="border-left: 2px solid black;"> -140</td><td>4248</td></tr>
-<tr><td>dmu54</td><td >1990</td><td >4165</td><td >4165</td><td >2145</td><td >3567</td><td style="border-left: 2px solid black;"> -112</td><td>4277</td></tr>
-<tr><td>dmu55</td><td >1959</td><td >4099</td><td >4099</td><td >2119</td><td >3614</td><td style="border-left: 2px solid black;"> -92</td><td>4191</td></tr>
-<tr><td>dmu56</td><td >2778</td><td >4366</td><td >4366</td><td >2850</td><td >3555</td><td style="border-left: 2px solid black;"> -389</td><td>4755</td></tr>
-<tr><td>dmu57</td><td >2529</td><td >4182</td><td >4182</td><td >2656</td><td >3281</td><td style="border-left: 2px solid black;"> -280</td><td>4462</td></tr>
-<tr><td>dmu58</td><td >2625</td><td >4133</td><td >4214</td><td >2735</td><td >3465</td><td style="border-left: 2px solid black;"> -270</td><td>4484</td></tr>
-<tr><td>dmu59</td><td >2546</td><td >4009</td><td >4199</td><td >2773</td><td >3243</td><td style="border-left: 2px solid black;"> -167</td><td>4366</td></tr>
-<tr><td>dmu60</td><td >2547</td><td >4098</td><td >4259</td><td >2765</td><td >3399</td><td style="border-left: 2px solid black;"> -209</td><td>4468</td></tr>
-<tr><td>dmu61</td><td >1995</td><td >4850</td><td >4886</td><td >2216</td><td >4439</td><td style="border-left: 2px solid black;"> -152</td><td>5038</td></tr>
-<tr><td>dmu62</td><td >2079</td><td >5004</td><td >5004</td><td >2216</td><td >4528</td><td style="border-left: 2px solid black;"> -172</td><td>5176</td></tr>
-<tr><td>dmu63</td><td >1877</td><td >5049</td><td >5049</td><td >2030</td><td >4478</td><td style="border-left: 2px solid black;"> -196</td><td>5245</td></tr>
-<tr><td>dmu64</td><td >2134</td><td >5130</td><td >5130</td><td >2207</td><td >4456</td><td style="border-left: 2px solid black;"> -25</td><td>5155</td></tr>
-<tr><td>dmu65</td><td >1892</td><td >5072</td><td >5072</td><td >2202</td><td >4542</td><td style="border-left: 2px solid black;"> -50</td><td>5122</td></tr>
-<tr><td>dmu66</td><td >2416</td><td >5206</td><td >5357</td><td >2572</td><td >4488</td><td style="border-left: 2px solid black;"> -169</td><td>5526</td></tr>
-<tr><td>dmu67</td><td >2668</td><td >5454</td><td >5484</td><td >2838</td><td >4730</td><td style="border-left: 2px solid black;"> -177</td><td>5661</td></tr>
-<tr><td>dmu68</td><td >2542</td><td >5423</td><td >5423</td><td >2735</td><td >4495</td><td style="border-left: 2px solid black;"> -90</td><td>5513</td></tr>
-<tr><td>dmu69</td><td >2453</td><td >5384</td><td >5419</td><td >2614</td><td >4653</td><td style="border-left: 2px solid black;"> -92</td><td>5511</td></tr>
-<tr><td>dmu70</td><td >2518</td><td >5365</td><td >5492</td><td >2728</td><td >4708</td><td style="border-left: 2px solid black;"> -141</td><td>5633</td></tr>
-<tr><td>dmu71</td><td >2029</td><td >6050</td><td >6050</td><td >2328</td><td >5512</td><td style="border-left: 2px solid black;"> -79</td><td>6129</td></tr>
-<tr><td>dmu72</td><td >2061</td><td >6216</td><td >6223</td><td >2272</td><td >5897</td><td style="border-left: 2px solid black;"> -211</td><td>6434</td></tr>
-<tr><td>dmu73</td><td >2071</td><td >5935</td><td >5935</td><td >2219</td><td >5439</td><td style="border-left: 2px solid black;"> -172</td><td>6107</td></tr>
-<tr><td>dmu74</td><td >2017</td><td >5993</td><td >6015</td><td >2265</td><td >5451</td><td style="border-left: 2px solid black;"> -153</td><td>6168</td></tr>
-<tr><td>dmu75</td><td >2087</td><td >5915</td><td >6010</td><td >2225</td><td >5389</td><td style="border-left: 2px solid black;"> -113</td><td>6123</td></tr>
-<tr><td>dmu76</td><td >2729</td><td >6297</td><td >6329</td><td >2828</td><td >5506</td><td style="border-left: 2px solid black;"> -150</td><td>6479</td></tr>
-<tr><td>dmu77</td><td >2542</td><td >6247</td><td >6399</td><td >2708</td><td >5559</td><td style="border-left: 2px solid black;"> -121</td><td>6520</td></tr>
-<tr><td>dmu78</td><td >2727</td><td >6447</td><td >6508</td><td >2784</td><td >5753</td><td style="border-left: 2px solid black;"> -135</td><td>6643</td></tr>
-<tr><td>dmu79</td><td >2717</td><td >6593</td><td >6593</td><td >2958</td><td >5796</td><td style="border-left: 2px solid black;"> -127</td><td>6720</td></tr>
-<tr><td>dmu80</td><td >2642</td><td >6435</td><td >6435</td><td >2757</td><td >5679</td><td style="border-left: 2px solid black;"> -25</td><td>6460</td></tr>
+<tr><td>dmu01</td><td >1753</td><td >2268</td><td >2363</td><td >1878</td><td >2179</td><td style="border-left: 2px solid gray;"> -200</td><td>2563</td></tr>
+<tr><td>dmu02</td><td >2167</td><td >2318</td><td >2452</td><td >2201</td><td >2277</td><td style="border-left: 2px solid gray;"> -254</td><td>2706</td></tr>
+<tr><td>dmu03</td><td >1872</td><td >2540</td><td >2571</td><td >2005</td><td >2350</td><td style="border-left: 2px solid gray;"> -160</td><td>2731</td></tr>
+<tr><td>dmu04</td><td >1908</td><td >2332</td><td >2486</td><td >2074</td><td >2332</td><td style="border-left: 2px solid gray;"> -183</td><td>2669</td></tr>
+<tr><td>dmu05</td><td >1827</td><td >2625</td><td >2654</td><td >1972</td><td >2455</td><td style="border-left: 2px solid gray;"> -95</td><td>2749</td></tr>
+<tr><td>dmu06</td><td >2585</td><td >2783</td><td >2834</td><td >2755</td><td >2533</td><td style="border-left: 2px solid gray;"> -410</td><td>3244</td></tr>
+<tr><td>dmu07</td><td >2545</td><td >2604</td><td >2677</td><td >2652</td><td >2354</td><td style="border-left: 2px solid gray;"> -369</td><td>3046</td></tr>
+<tr><td>dmu08</td><td >2493</td><td >2642</td><td >2901</td><td >2668</td><td >2642</td><td style="border-left: 2px solid gray;"> -287</td><td>3188</td></tr>
+<tr><td>dmu09</td><td >2544</td><td >2706</td><td >2739</td><td >2643</td><td >2466</td><td style="border-left: 2px solid gray;"> -353</td><td>3092</td></tr>
+<tr><td>dmu10</td><td >2394</td><td >2699</td><td >2716</td><td >2550</td><td >2488</td><td style="border-left: 2px solid gray;"> -268</td><td>2984</td></tr>
+<tr><td>dmu11</td><td >1913</td><td >3395</td><td >3395</td><td >2011</td><td >3395</td><td style="border-left: 2px solid gray;"> -7</td><td>3402</td></tr>
+<tr><td>dmu12</td><td >1902</td><td >3465</td><td style="background-color:green;color:lightgray">3481</td><td >2044</td><td >3465</td><td style="border-left: 2px solid gray;"> 0</td><td>3481</td></tr>
+<tr><td>dmu13</td><td >1945</td><td >3450</td><td style="background-color:green;color:lightgray">3681</td><td >2048</td><td >3450</td><td style="border-left: 2px solid gray;"> 0</td><td>3681</td></tr>
+<tr><td>dmu14</td><td >1798</td><td style="background-color:green;color:lightgray">3394</td><td style="background-color:green;color:lightgray">3394</td><td >1899</td><td style="background-color:green;color:lightgray">3394</td><td style="border-left: 2px solid gray;"> 0</td><td>3394</td></tr>
+<tr><td>dmu15</td><td >1945</td><td >3296</td><td >3332</td><td >2059</td><td >3296</td><td style="border-left: 2px solid gray;"> -11</td><td>3343</td></tr>
+<tr><td>dmu16</td><td >2351</td><td >3726</td><td >3726</td><td >2466</td><td >3491</td><td style="border-left: 2px solid gray;"> -8</td><td>3734</td></tr>
+<tr><td>dmu17</td><td >2491</td><td >3697</td><td >3697</td><td >2569</td><td >3670</td><td style="border-left: 2px solid gray;"> -36</td><td>3733</td></tr>
+<tr><td>dmu18</td><td >2546</td><td style="background-color:green;color:lightgray">3844</td><td style="background-color:green;color:lightgray">3844</td><td >2652</td><td style="background-color:green;color:lightgray">3844</td><td style="border-left: 2px solid gray;"> 0</td><td>3844</td></tr>
+<tr><td>dmu19</td><td >2315</td><td >3408</td><td >3650</td><td >2462</td><td >3408</td><td style="border-left: 2px solid gray;"> -57</td><td>3707</td></tr>
+<tr><td>dmu20</td><td >2586</td><td >3604</td><td >3604</td><td >2604</td><td >3604</td><td style="border-left: 2px solid gray;"> -28</td><td>3632</td></tr>
+<tr><td>dmu21</td><td >1873</td><td >4345</td><td style="background-color:green;color:lightgray">4380</td><td >2013</td><td >4345</td><td style="border-left: 2px solid gray;"> 0</td><td>4380</td></tr>
+<tr><td>dmu22</td><td >1965</td><td >4712</td><td style="background-color:green;color:lightgray">4725</td><td >2234</td><td >4712</td><td style="border-left: 2px solid gray;"> 0</td><td>4725</td></tr>
+<tr><td>dmu23</td><td >2038</td><td >4524</td><td style="background-color:green;color:lightgray">4668</td><td >2126</td><td >4524</td><td style="border-left: 2px solid gray;"> 0</td><td>4668</td></tr>
+<tr><td>dmu24</td><td >2120</td><td style="background-color:green;color:lightgray">4648</td><td style="background-color:green;color:lightgray">4648</td><td >2182</td><td >4554</td><td style="border-left: 2px solid gray;"> 0</td><td>4648</td></tr>
+<tr><td>dmu25</td><td >1861</td><td style="background-color:green;color:lightgray">4164</td><td style="background-color:green;color:lightgray">4164</td><td >2027</td><td style="background-color:green;color:lightgray">4164</td><td style="border-left: 2px solid gray;"> 0</td><td>4164</td></tr>
+<tr><td>dmu26</td><td >2627</td><td >4632</td><td style="background-color:green;color:lightgray">4647</td><td >2688</td><td >4559</td><td style="border-left: 2px solid gray;"> 0</td><td>4647</td></tr>
+<tr><td>dmu27</td><td >2590</td><td style="background-color:green;color:lightgray">4848</td><td style="background-color:green;color:lightgray">4848</td><td >2731</td><td style="background-color:green;color:lightgray">4848</td><td style="border-left: 2px solid gray;"> 0</td><td>4848</td></tr>
+<tr><td>dmu28</td><td >2537</td><td style="background-color:green;color:lightgray">4692</td><td style="background-color:green;color:lightgray">4692</td><td >2583</td><td >4538</td><td style="border-left: 2px solid gray;"> 0</td><td>4692</td></tr>
+<tr><td>dmu29</td><td >2505</td><td style="background-color:green;color:lightgray">4691</td><td style="background-color:green;color:lightgray">4691</td><td >2666</td><td style="background-color:green;color:lightgray">4691</td><td style="border-left: 2px solid gray;"> 0</td><td>4691</td></tr>
+<tr><td>dmu30</td><td >2606</td><td >4707</td><td style="background-color:green;color:lightgray">4732</td><td >2735</td><td >4670</td><td style="border-left: 2px solid gray;"> 0</td><td>4732</td></tr>
+<tr><td>dmu31</td><td >2159</td><td style="background-color:green;color:lightgray">5640</td><td style="background-color:green;color:lightgray">5640</td><td >2241</td><td style="background-color:green;color:lightgray">5640</td><td style="border-left: 2px solid gray;"> 0</td><td>5640</td></tr>
+<tr><td>dmu32</td><td >2134</td><td style="background-color:green;color:lightgray">5927</td><td style="background-color:green;color:lightgray">5927</td><td >2264</td><td style="background-color:green;color:lightgray">5927</td><td style="border-left: 2px solid gray;"> 0</td><td>5927</td></tr>
+<tr><td>dmu33</td><td >1828</td><td >5681</td><td style="background-color:green;color:lightgray">5728</td><td >2013</td><td >5681</td><td style="border-left: 2px solid gray;"> 0</td><td>5728</td></tr>
+<tr><td>dmu34</td><td >2040</td><td style="background-color:green;color:lightgray">5385</td><td style="background-color:green;color:lightgray">5385</td><td >2134</td><td style="background-color:green;color:lightgray">5385</td><td style="border-left: 2px solid gray;"> 0</td><td>5385</td></tr>
+<tr><td>dmu35</td><td >2241</td><td style="background-color:green;color:lightgray">5635</td><td style="background-color:green;color:lightgray">5635</td><td >2426</td><td style="background-color:green;color:lightgray">5635</td><td style="border-left: 2px solid gray;"> 0</td><td>5635</td></tr>
+<tr><td>dmu36</td><td >2705</td><td style="background-color:green;color:lightgray">5621</td><td style="background-color:green;color:lightgray">5621</td><td >2745</td><td style="background-color:green;color:lightgray">5621</td><td style="border-left: 2px solid gray;"> 0</td><td>5621</td></tr>
+<tr><td>dmu37</td><td >2616</td><td style="background-color:green;color:lightgray">5851</td><td style="background-color:green;color:lightgray">5851</td><td >2733</td><td style="background-color:green;color:lightgray">5851</td><td style="border-left: 2px solid gray;"> 0</td><td>5851</td></tr>
+<tr><td>dmu38</td><td >2436</td><td style="background-color:green;color:lightgray">5713</td><td style="background-color:green;color:lightgray">5713</td><td >2526</td><td style="background-color:green;color:lightgray">5713</td><td style="border-left: 2px solid gray;"> 0</td><td>5713</td></tr>
+<tr><td>dmu39</td><td >2607</td><td style="background-color:green;color:lightgray">5747</td><td style="background-color:green;color:lightgray">5747</td><td >2695</td><td style="background-color:green;color:lightgray">5747</td><td style="border-left: 2px solid gray;"> 0</td><td>5747</td></tr>
+<tr><td>dmu40</td><td >2548</td><td style="background-color:green;color:lightgray">5577</td><td style="background-color:green;color:lightgray">5577</td><td >2670</td><td style="background-color:green;color:lightgray">5577</td><td style="border-left: 2px solid gray;"> 0</td><td>5577</td></tr>
+<tr><td>dmu41</td><td >1842</td><td >2839</td><td >2839</td><td >2019</td><td >2225</td><td style="border-left: 2px solid gray;"> -337</td><td>3176</td></tr>
+<tr><td>dmu42</td><td >1810</td><td >2897</td><td >3066</td><td >2060</td><td >2520</td><td style="border-left: 2px solid gray;"> -273</td><td>3339</td></tr>
+<tr><td>dmu43</td><td >1915</td><td >3121</td><td >3121</td><td >2113</td><td >2540</td><td style="border-left: 2px solid gray;"> -320</td><td>3441</td></tr>
+<tr><td>dmu44</td><td >1975</td><td >3112</td><td >3112</td><td >2113</td><td >2577</td><td style="border-left: 2px solid gray;"> -302</td><td>3414</td></tr>
+<tr><td>dmu45</td><td >1768</td><td >2930</td><td >2930</td><td >1972</td><td >2363</td><td style="border-left: 2px solid gray;"> -287</td><td>3217</td></tr>
+<tr><td>dmu46</td><td >2664</td><td >3394</td><td >3425</td><td >2848</td><td >2508</td><td style="border-left: 2px solid gray;"> -355</td><td>3780</td></tr>
+<tr><td>dmu47</td><td >2689</td><td >3268</td><td >3353</td><td >2782</td><td >2480</td><td style="border-left: 2px solid gray;"> -361</td><td>3714</td></tr>
+<tr><td>dmu48</td><td >2516</td><td >3268</td><td >3317</td><td >2610</td><td >2405</td><td style="border-left: 2px solid gray;"> -311</td><td>3628</td></tr>
+<tr><td>dmu49</td><td >2403</td><td >3369</td><td >3369</td><td >2613</td><td >2390</td><td style="border-left: 2px solid gray;"> -174</td><td>3543</td></tr>
+<tr><td>dmu50</td><td >2494</td><td >3312</td><td >3379</td><td >2559</td><td >2444</td><td style="border-left: 2px solid gray;"> -239</td><td>3618</td></tr>
+<tr><td>dmu51</td><td >1825</td><td >3827</td><td >3839</td><td >1984</td><td >3348</td><td style="border-left: 2px solid gray;"> -231</td><td>4070</td></tr>
+<tr><td>dmu52</td><td >1989</td><td >4006</td><td >4012</td><td >2262</td><td >3515</td><td style="border-left: 2px solid gray;"> -191</td><td>4203</td></tr>
+<tr><td>dmu53</td><td >2229</td><td >4108</td><td >4108</td><td >2408</td><td >3505</td><td style="border-left: 2px solid gray;"> -140</td><td>4248</td></tr>
+<tr><td>dmu54</td><td >1990</td><td >4165</td><td >4165</td><td >2145</td><td >3567</td><td style="border-left: 2px solid gray;"> -112</td><td>4277</td></tr>
+<tr><td>dmu55</td><td >1959</td><td >4099</td><td >4099</td><td >2119</td><td >3614</td><td style="border-left: 2px solid gray;"> -92</td><td>4191</td></tr>
+<tr><td>dmu56</td><td >2778</td><td >4366</td><td >4366</td><td >2850</td><td >3555</td><td style="border-left: 2px solid gray;"> -389</td><td>4755</td></tr>
+<tr><td>dmu57</td><td >2529</td><td >4182</td><td >4182</td><td >2656</td><td >3281</td><td style="border-left: 2px solid gray;"> -280</td><td>4462</td></tr>
+<tr><td>dmu58</td><td >2625</td><td >4133</td><td >4214</td><td >2735</td><td >3465</td><td style="border-left: 2px solid gray;"> -270</td><td>4484</td></tr>
+<tr><td>dmu59</td><td >2546</td><td >4009</td><td >4199</td><td >2773</td><td >3243</td><td style="border-left: 2px solid gray;"> -167</td><td>4366</td></tr>
+<tr><td>dmu60</td><td >2547</td><td >4098</td><td >4259</td><td >2765</td><td >3399</td><td style="border-left: 2px solid gray;"> -209</td><td>4468</td></tr>
+<tr><td>dmu61</td><td >1995</td><td >4850</td><td >4886</td><td >2216</td><td >4439</td><td style="border-left: 2px solid gray;"> -152</td><td>5038</td></tr>
+<tr><td>dmu62</td><td >2079</td><td >5004</td><td >5004</td><td >2216</td><td >4528</td><td style="border-left: 2px solid gray;"> -172</td><td>5176</td></tr>
+<tr><td>dmu63</td><td >1877</td><td >5049</td><td >5049</td><td >2030</td><td >4478</td><td style="border-left: 2px solid gray;"> -196</td><td>5245</td></tr>
+<tr><td>dmu64</td><td >2134</td><td >5130</td><td >5130</td><td >2207</td><td >4456</td><td style="border-left: 2px solid gray;"> -25</td><td>5155</td></tr>
+<tr><td>dmu65</td><td >1892</td><td >5072</td><td >5072</td><td >2202</td><td >4542</td><td style="border-left: 2px solid gray;"> -50</td><td>5122</td></tr>
+<tr><td>dmu66</td><td >2416</td><td >5206</td><td >5357</td><td >2572</td><td >4488</td><td style="border-left: 2px solid gray;"> -169</td><td>5526</td></tr>
+<tr><td>dmu67</td><td >2668</td><td >5454</td><td >5484</td><td >2838</td><td >4730</td><td style="border-left: 2px solid gray;"> -177</td><td>5661</td></tr>
+<tr><td>dmu68</td><td >2542</td><td >5423</td><td >5423</td><td >2735</td><td >4495</td><td style="border-left: 2px solid gray;"> -90</td><td>5513</td></tr>
+<tr><td>dmu69</td><td >2453</td><td >5384</td><td >5419</td><td >2614</td><td >4653</td><td style="border-left: 2px solid gray;"> -92</td><td>5511</td></tr>
+<tr><td>dmu70</td><td >2518</td><td >5365</td><td >5492</td><td >2728</td><td >4708</td><td style="border-left: 2px solid gray;"> -141</td><td>5633</td></tr>
+<tr><td>dmu71</td><td >2029</td><td >6050</td><td >6050</td><td >2328</td><td >5512</td><td style="border-left: 2px solid gray;"> -79</td><td>6129</td></tr>
+<tr><td>dmu72</td><td >2061</td><td >6216</td><td >6223</td><td >2272</td><td >5897</td><td style="border-left: 2px solid gray;"> -211</td><td>6434</td></tr>
+<tr><td>dmu73</td><td >2071</td><td >5935</td><td >5935</td><td >2219</td><td >5439</td><td style="border-left: 2px solid gray;"> -172</td><td>6107</td></tr>
+<tr><td>dmu74</td><td >2017</td><td >5993</td><td >6015</td><td >2265</td><td >5451</td><td style="border-left: 2px solid gray;"> -153</td><td>6168</td></tr>
+<tr><td>dmu75</td><td >2087</td><td >5915</td><td >6010</td><td >2225</td><td >5389</td><td style="border-left: 2px solid gray;"> -113</td><td>6123</td></tr>
+<tr><td>dmu76</td><td >2729</td><td >6297</td><td >6329</td><td >2828</td><td >5506</td><td style="border-left: 2px solid gray;"> -150</td><td>6479</td></tr>
+<tr><td>dmu77</td><td >2542</td><td >6247</td><td >6399</td><td >2708</td><td >5559</td><td style="border-left: 2px solid gray;"> -121</td><td>6520</td></tr>
+<tr><td>dmu78</td><td >2727</td><td >6447</td><td >6508</td><td >2784</td><td >5753</td><td style="border-left: 2px solid gray;"> -135</td><td>6643</td></tr>
+<tr><td>dmu79</td><td >2717</td><td >6593</td><td >6593</td><td >2958</td><td >5796</td><td style="border-left: 2px solid gray;"> -127</td><td>6720</td></tr>
+<tr><td>dmu80</td><td >2642</td><td >6435</td><td >6435</td><td >2757</td><td >5679</td><td style="border-left: 2px solid gray;"> -25</td><td>6460</td></tr>
 </table>
 </details>
 
@@ -415,26 +415,26 @@ We call **certification gap** the difference between the best known lower bound 
 <summary>swv</summary>
 <table>
 <tr><th>Instance</th><th>Job</th><th>Machine</th><th>Carlier</th><th>2-job</th><th>2-mach</th><th>Cert Gap</th><th>LB</th></tr>
-<tr><td>swv01</td><td >727</td><td >1366</td><td >1366</td><td >814</td><td >1226</td><td style="border-left: 2px solid black;"> -41</td><td>1407</td></tr>
-<tr><td>swv02</td><td >664</td><td style="background-color:green">1475</td><td style="background-color:green">1475</td><td >758</td><td >1273</td><td style="border-left: 2px solid black;"> 0</td><td>1475</td></tr>
-<tr><td>swv03</td><td >647</td><td >1328</td><td >1328</td><td >743</td><td >1189</td><td style="border-left: 2px solid black;"> -70</td><td>1398</td></tr>
-<tr><td>swv04</td><td >642</td><td >1366</td><td >1393</td><td >769</td><td >1172</td><td style="border-left: 2px solid black;"> -71</td><td>1464</td></tr>
-<tr><td>swv05</td><td >720</td><td >1411</td><td >1411</td><td >810</td><td >1247</td><td style="border-left: 2px solid black;"> -13</td><td>1424</td></tr>
-<tr><td>swv06</td><td >974</td><td >1477</td><td >1513</td><td >1079</td><td >1239</td><td style="border-left: 2px solid black;"> -154</td><td>1667</td></tr>
-<tr><td>swv07</td><td >947</td><td >1394</td><td >1394</td><td >1026</td><td >1139</td><td style="border-left: 2px solid black;"> -147</td><td>1541</td></tr>
-<tr><td>swv08</td><td >1058</td><td >1586</td><td >1586</td><td >1119</td><td >1339</td><td style="border-left: 2px solid black;"> -108</td><td>1694</td></tr>
-<tr><td>swv09</td><td >947</td><td >1594</td><td >1594</td><td >1087</td><td >1276</td><td style="border-left: 2px solid black;"> -61</td><td>1655</td></tr>
-<tr><td>swv10</td><td >939</td><td >1560</td><td >1560</td><td >1039</td><td >1179</td><td style="border-left: 2px solid black;"> -132</td><td>1692</td></tr>
-<tr><td>swv11</td><td >739</td><td style="background-color:green">2983</td><td style="background-color:green">2983</td><td >836</td><td >2812</td><td style="border-left: 2px solid black;"> 0</td><td>2983</td></tr>
-<tr><td>swv12</td><td >714</td><td >2949</td><td >2955</td><td >813</td><td >2836</td><td style="border-left: 2px solid black;"> -17</td><td>2972</td></tr>
-<tr><td>swv13</td><td >727</td><td style="background-color:green">3104</td><td style="background-color:green">3104</td><td >831</td><td >2981</td><td style="border-left: 2px solid black;"> 0</td><td>3104</td></tr>
-<tr><td>swv14</td><td >728</td><td style="background-color:green">2968</td><td style="background-color:green">2968</td><td >824</td><td >2847</td><td style="border-left: 2px solid black;"> 0</td><td>2968</td></tr>
-<tr><td>swv15</td><td >687</td><td style="background-color:green">2885</td><td style="background-color:green">2885</td><td >793</td><td >2771</td><td style="border-left: 2px solid black;"> 0</td><td>2885</td></tr>
-<tr><td>swv16</td><td >664</td><td style="background-color:green">2924</td><td style="background-color:green">2924</td><td >759</td><td style="background-color:green">2924</td><td style="border-left: 2px solid black;"> 0</td><td>2924</td></tr>
-<tr><td>swv17</td><td >683</td><td style="background-color:green">2794</td><td style="background-color:green">2794</td><td >764</td><td style="background-color:green">2794</td><td style="border-left: 2px solid black;"> 0</td><td>2794</td></tr>
-<tr><td>swv18</td><td >643</td><td style="background-color:green">2852</td><td style="background-color:green">2852</td><td >737</td><td style="background-color:green">2852</td><td style="border-left: 2px solid black;"> 0</td><td>2852</td></tr>
-<tr><td>swv19</td><td >684</td><td style="background-color:green">2843</td><td style="background-color:green">2843</td><td >794</td><td style="background-color:green">2843</td><td style="border-left: 2px solid black;"> 0</td><td>2843</td></tr>
-<tr><td>swv20</td><td >684</td><td style="background-color:green">2823</td><td style="background-color:green">2823</td><td >739</td><td style="background-color:green">2823</td><td style="border-left: 2px solid black;"> 0</td><td>2823</td></tr>
+<tr><td>swv01</td><td >727</td><td >1366</td><td >1366</td><td >814</td><td >1226</td><td style="border-left: 2px solid gray;"> -41</td><td>1407</td></tr>
+<tr><td>swv02</td><td >664</td><td style="background-color:green;color:lightgray">1475</td><td style="background-color:green;color:lightgray">1475</td><td >758</td><td >1273</td><td style="border-left: 2px solid gray;"> 0</td><td>1475</td></tr>
+<tr><td>swv03</td><td >647</td><td >1328</td><td >1328</td><td >743</td><td >1189</td><td style="border-left: 2px solid gray;"> -70</td><td>1398</td></tr>
+<tr><td>swv04</td><td >642</td><td >1366</td><td >1393</td><td >769</td><td >1172</td><td style="border-left: 2px solid gray;"> -71</td><td>1464</td></tr>
+<tr><td>swv05</td><td >720</td><td >1411</td><td >1411</td><td >810</td><td >1247</td><td style="border-left: 2px solid gray;"> -13</td><td>1424</td></tr>
+<tr><td>swv06</td><td >974</td><td >1477</td><td >1513</td><td >1079</td><td >1239</td><td style="border-left: 2px solid gray;"> -154</td><td>1667</td></tr>
+<tr><td>swv07</td><td >947</td><td >1394</td><td >1394</td><td >1026</td><td >1139</td><td style="border-left: 2px solid gray;"> -147</td><td>1541</td></tr>
+<tr><td>swv08</td><td >1058</td><td >1586</td><td >1586</td><td >1119</td><td >1339</td><td style="border-left: 2px solid gray;"> -108</td><td>1694</td></tr>
+<tr><td>swv09</td><td >947</td><td >1594</td><td >1594</td><td >1087</td><td >1276</td><td style="border-left: 2px solid gray;"> -61</td><td>1655</td></tr>
+<tr><td>swv10</td><td >939</td><td >1560</td><td >1560</td><td >1039</td><td >1179</td><td style="border-left: 2px solid gray;"> -132</td><td>1692</td></tr>
+<tr><td>swv11</td><td >739</td><td style="background-color:green;color:lightgray">2983</td><td style="background-color:green;color:lightgray">2983</td><td >836</td><td >2812</td><td style="border-left: 2px solid gray;"> 0</td><td>2983</td></tr>
+<tr><td>swv12</td><td >714</td><td >2949</td><td >2955</td><td >813</td><td >2836</td><td style="border-left: 2px solid gray;"> -17</td><td>2972</td></tr>
+<tr><td>swv13</td><td >727</td><td style="background-color:green;color:lightgray">3104</td><td style="background-color:green;color:lightgray">3104</td><td >831</td><td >2981</td><td style="border-left: 2px solid gray;"> 0</td><td>3104</td></tr>
+<tr><td>swv14</td><td >728</td><td style="background-color:green;color:lightgray">2968</td><td style="background-color:green;color:lightgray">2968</td><td >824</td><td >2847</td><td style="border-left: 2px solid gray;"> 0</td><td>2968</td></tr>
+<tr><td>swv15</td><td >687</td><td style="background-color:green;color:lightgray">2885</td><td style="background-color:green;color:lightgray">2885</td><td >793</td><td >2771</td><td style="border-left: 2px solid gray;"> 0</td><td>2885</td></tr>
+<tr><td>swv16</td><td >664</td><td style="background-color:green;color:lightgray">2924</td><td style="background-color:green;color:lightgray">2924</td><td >759</td><td style="background-color:green;color:lightgray">2924</td><td style="border-left: 2px solid gray;"> 0</td><td>2924</td></tr>
+<tr><td>swv17</td><td >683</td><td style="background-color:green;color:lightgray">2794</td><td style="background-color:green;color:lightgray">2794</td><td >764</td><td style="background-color:green;color:lightgray">2794</td><td style="border-left: 2px solid gray;"> 0</td><td>2794</td></tr>
+<tr><td>swv18</td><td >643</td><td style="background-color:green;color:lightgray">2852</td><td style="background-color:green;color:lightgray">2852</td><td >737</td><td style="background-color:green;color:lightgray">2852</td><td style="border-left: 2px solid gray;"> 0</td><td>2852</td></tr>
+<tr><td>swv19</td><td >684</td><td style="background-color:green;color:lightgray">2843</td><td style="background-color:green;color:lightgray">2843</td><td >794</td><td style="background-color:green;color:lightgray">2843</td><td style="border-left: 2px solid gray;"> 0</td><td>2843</td></tr>
+<tr><td>swv20</td><td >684</td><td style="background-color:green;color:lightgray">2823</td><td style="background-color:green;color:lightgray">2823</td><td >739</td><td style="background-color:green;color:lightgray">2823</td><td style="border-left: 2px solid gray;"> 0</td><td>2823</td></tr>
 </table>
 </details>
 
@@ -442,46 +442,46 @@ We call **certification gap** the difference between the best known lower bound 
 <summary>ta</summary>
 <table>
 <tr><th>Instance</th><th>Job</th><th>Machine</th><th>Carlier</th><th>2-job</th><th>2-mach</th><th>Cert Gap</th><th>LB</th></tr>
-<tr><td>ta11js</td><td >949</td><td >1254</td><td >1254</td><td >991</td><td >1139</td><td style="border-left: 2px solid black;"> -103</td><td>1357</td></tr>
-<tr><td>ta12js</td><td >1012</td><td >1267</td><td >1284</td><td >1046</td><td >1251</td><td style="border-left: 2px solid black;"> -83</td><td>1367</td></tr>
-<tr><td>ta13js</td><td >919</td><td >1243</td><td >1243</td><td >991</td><td >1178</td><td style="border-left: 2px solid black;"> -99</td><td>1342</td></tr>
-<tr><td>ta14js</td><td >990</td><td >1329</td><td >1341</td><td >1011</td><td >1130</td><td style="border-left: 2px solid black;"> -4</td><td>1345</td></tr>
-<tr><td>ta15js</td><td >880</td><td >1163</td><td >1231</td><td >948</td><td >1148</td><td style="border-left: 2px solid black;"> -108</td><td>1339</td></tr>
-<tr><td>ta16js</td><td >932</td><td >1211</td><td >1238</td><td >1031</td><td >1181</td><td style="border-left: 2px solid black;"> -122</td><td>1360</td></tr>
-<tr><td>ta17js</td><td >979</td><td >1306</td><td >1433</td><td >1061</td><td >1257</td><td style="border-left: 2px solid black;"> -29</td><td>1462</td></tr>
-<tr><td>ta18js</td><td >900</td><td >1315</td><td >1315</td><td >978</td><td >1153</td><td style="border-left: 2px solid black;"> -81</td><td>1396</td></tr>
-<tr><td>ta19js</td><td >920</td><td >1202</td><td >1216</td><td >951</td><td >1202</td><td style="border-left: 2px solid black;"> -116</td><td>1332</td></tr>
-<tr><td>ta20js</td><td >928</td><td >1213</td><td >1279</td><td >1025</td><td >1186</td><td style="border-left: 2px solid black;"> -69</td><td>1348</td></tr>
-<tr><td>ta21js</td><td >1217</td><td >1182</td><td >1435</td><td >1297</td><td >1182</td><td style="border-left: 2px solid black;"> -207</td><td>1642</td></tr>
-<tr><td>ta22js</td><td >1223</td><td >1314</td><td >1385</td><td >1274</td><td >1240</td><td style="border-left: 2px solid black;"> -215</td><td>1600</td></tr>
-<tr><td>ta23js</td><td >1164</td><td >1248</td><td >1422</td><td >1241</td><td >1185</td><td style="border-left: 2px solid black;"> -135</td><td>1557</td></tr>
-<tr><td>ta24js</td><td >1151</td><td >1284</td><td >1466</td><td >1226</td><td >1271</td><td style="border-left: 2px solid black;"> -178</td><td>1644</td></tr>
-<tr><td>ta25js</td><td >1170</td><td >1256</td><td >1473</td><td >1256</td><td >1256</td><td style="border-left: 2px solid black;"> -122</td><td>1595</td></tr>
-<tr><td>ta26js</td><td >1207</td><td >1245</td><td >1445</td><td >1272</td><td >1205</td><td style="border-left: 2px solid black;"> -198</td><td>1643</td></tr>
-<tr><td>ta27js</td><td >1291</td><td >1403</td><td >1567</td><td >1336</td><td >1331</td><td style="border-left: 2px solid black;"> -113</td><td>1680</td></tr>
-<tr><td>ta28js</td><td >1221</td><td >1387</td><td >1529</td><td >1276</td><td >1269</td><td style="border-left: 2px solid black;"> -74</td><td>1603</td></tr>
-<tr><td>ta29js</td><td >1227</td><td >1352</td><td >1413</td><td >1327</td><td >1267</td><td style="border-left: 2px solid black;"> -212</td><td>1625</td></tr>
-<tr><td>ta30js</td><td >1212</td><td >1277</td><td >1363</td><td >1245</td><td >1159</td><td style="border-left: 2px solid black;"> -199</td><td>1562</td></tr>
-<tr><td>ta31js</td><td >990</td><td style="background-color:green">1764</td><td style="background-color:green">1764</td><td >1026</td><td style="background-color:green">1764</td><td style="border-left: 2px solid black;"> 0</td><td>1764</td></tr>
-<tr><td>ta32js</td><td >972</td><td style="background-color:green">1774</td><td style="background-color:green">1774</td><td >1034</td><td style="background-color:green">1774</td><td style="border-left: 2px solid black;"> 0</td><td>1774</td></tr>
-<tr><td>ta33js</td><td >1056</td><td >1733</td><td >1747</td><td >1106</td><td >1729</td><td style="border-left: 2px solid black;"> -44</td><td>1791</td></tr>
-<tr><td>ta34js</td><td >975</td><td style="background-color:green">1828</td><td style="background-color:green">1828</td><td >1039</td><td style="background-color:green">1828</td><td style="border-left: 2px solid black;"> 0</td><td>1828</td></tr>
-<tr><td>ta35js</td><td >969</td><td >1754</td><td >1997</td><td >1021</td><td >1729</td><td style="border-left: 2px solid black;"> -10</td><td>2007</td></tr>
-<tr><td>ta36js</td><td >988</td><td >1777</td><td style="background-color:green">1819</td><td >1040</td><td >1777</td><td style="border-left: 2px solid black;"> 0</td><td>1819</td></tr>
-<tr><td>ta37js</td><td >1045</td><td style="background-color:green">1771</td><td style="background-color:green">1771</td><td >1076</td><td style="background-color:green">1771</td><td style="border-left: 2px solid black;"> 0</td><td>1771</td></tr>
-<tr><td>ta38js</td><td >952</td><td style="background-color:green">1673</td><td style="background-color:green">1673</td><td >1000</td><td style="background-color:green">1673</td><td style="border-left: 2px solid black;"> 0</td><td>1673</td></tr>
-<tr><td>ta39js</td><td >905</td><td >1764</td><td >1791</td><td >925</td><td >1641</td><td style="border-left: 2px solid black;"> -4</td><td>1795</td></tr>
-<tr><td>ta40js</td><td >961</td><td >1608</td><td >1617</td><td >1020</td><td >1602</td><td style="border-left: 2px solid black;"> -41</td><td>1658</td></tr>
-<tr><td>ta41js</td><td >1232</td><td >1850</td><td >1850</td><td >1297</td><td >1830</td><td style="border-left: 2px solid black;"> -76</td><td>1926</td></tr>
-<tr><td>ta42js</td><td >1192</td><td >1761</td><td >1867</td><td >1248</td><td >1761</td><td style="border-left: 2px solid black;"> -33</td><td>1900</td></tr>
-<tr><td>ta43js</td><td >1230</td><td >1710</td><td style="background-color:green">1809</td><td >1286</td><td >1694</td><td style="border-left: 2px solid black;"> 0</td><td>1809</td></tr>
-<tr><td>ta44js</td><td >1204</td><td >1820</td><td >1887</td><td >1290</td><td >1787</td><td style="border-left: 2px solid black;"> -74</td><td>1961</td></tr>
-<tr><td>ta45js</td><td >1253</td><td >1785</td><td >1955</td><td >1282</td><td >1731</td><td style="border-left: 2px solid black;"> -42</td><td>1997</td></tr>
-<tr><td>ta46js</td><td >1290</td><td >1940</td><td >1940</td><td >1355</td><td >1856</td><td style="border-left: 2px solid black;"> -36</td><td>1976</td></tr>
-<tr><td>ta47js</td><td >1334</td><td >1751</td><td >1768</td><td >1376</td><td >1690</td><td style="border-left: 2px solid black;"> -59</td><td>1827</td></tr>
-<tr><td>ta48js</td><td >1282</td><td >1770</td><td >1905</td><td >1314</td><td >1744</td><td style="border-left: 2px solid black;"> -16</td><td>1921</td></tr>
-<tr><td>ta49js</td><td >1190</td><td >1758</td><td >1892</td><td >1253</td><td >1758</td><td style="border-left: 2px solid black;"> -46</td><td>1938</td></tr>
-<tr><td>ta50js</td><td >1251</td><td >1678</td><td >1804</td><td >1297</td><td >1674</td><td style="border-left: 2px solid black;"> -44</td><td>1848</td></tr>
+<tr><td>ta11js</td><td >949</td><td >1254</td><td >1254</td><td >991</td><td >1139</td><td style="border-left: 2px solid gray;"> -103</td><td>1357</td></tr>
+<tr><td>ta12js</td><td >1012</td><td >1267</td><td >1284</td><td >1046</td><td >1251</td><td style="border-left: 2px solid gray;"> -83</td><td>1367</td></tr>
+<tr><td>ta13js</td><td >919</td><td >1243</td><td >1243</td><td >991</td><td >1178</td><td style="border-left: 2px solid gray;"> -99</td><td>1342</td></tr>
+<tr><td>ta14js</td><td >990</td><td >1329</td><td >1341</td><td >1011</td><td >1130</td><td style="border-left: 2px solid gray;"> -4</td><td>1345</td></tr>
+<tr><td>ta15js</td><td >880</td><td >1163</td><td >1231</td><td >948</td><td >1148</td><td style="border-left: 2px solid gray;"> -108</td><td>1339</td></tr>
+<tr><td>ta16js</td><td >932</td><td >1211</td><td >1238</td><td >1031</td><td >1181</td><td style="border-left: 2px solid gray;"> -122</td><td>1360</td></tr>
+<tr><td>ta17js</td><td >979</td><td >1306</td><td >1433</td><td >1061</td><td >1257</td><td style="border-left: 2px solid gray;"> -29</td><td>1462</td></tr>
+<tr><td>ta18js</td><td >900</td><td >1315</td><td >1315</td><td >978</td><td >1153</td><td style="border-left: 2px solid gray;"> -81</td><td>1396</td></tr>
+<tr><td>ta19js</td><td >920</td><td >1202</td><td >1216</td><td >951</td><td >1202</td><td style="border-left: 2px solid gray;"> -116</td><td>1332</td></tr>
+<tr><td>ta20js</td><td >928</td><td >1213</td><td >1279</td><td >1025</td><td >1186</td><td style="border-left: 2px solid gray;"> -69</td><td>1348</td></tr>
+<tr><td>ta21js</td><td >1217</td><td >1182</td><td >1435</td><td >1297</td><td >1182</td><td style="border-left: 2px solid gray;"> -207</td><td>1642</td></tr>
+<tr><td>ta22js</td><td >1223</td><td >1314</td><td >1385</td><td >1274</td><td >1240</td><td style="border-left: 2px solid gray;"> -215</td><td>1600</td></tr>
+<tr><td>ta23js</td><td >1164</td><td >1248</td><td >1422</td><td >1241</td><td >1185</td><td style="border-left: 2px solid gray;"> -135</td><td>1557</td></tr>
+<tr><td>ta24js</td><td >1151</td><td >1284</td><td >1466</td><td >1226</td><td >1271</td><td style="border-left: 2px solid gray;"> -178</td><td>1644</td></tr>
+<tr><td>ta25js</td><td >1170</td><td >1256</td><td >1473</td><td >1256</td><td >1256</td><td style="border-left: 2px solid gray;"> -122</td><td>1595</td></tr>
+<tr><td>ta26js</td><td >1207</td><td >1245</td><td >1445</td><td >1272</td><td >1205</td><td style="border-left: 2px solid gray;"> -198</td><td>1643</td></tr>
+<tr><td>ta27js</td><td >1291</td><td >1403</td><td >1567</td><td >1336</td><td >1331</td><td style="border-left: 2px solid gray;"> -113</td><td>1680</td></tr>
+<tr><td>ta28js</td><td >1221</td><td >1387</td><td >1529</td><td >1276</td><td >1269</td><td style="border-left: 2px solid gray;"> -74</td><td>1603</td></tr>
+<tr><td>ta29js</td><td >1227</td><td >1352</td><td >1413</td><td >1327</td><td >1267</td><td style="border-left: 2px solid gray;"> -212</td><td>1625</td></tr>
+<tr><td>ta30js</td><td >1212</td><td >1277</td><td >1363</td><td >1245</td><td >1159</td><td style="border-left: 2px solid gray;"> -199</td><td>1562</td></tr>
+<tr><td>ta31js</td><td >990</td><td style="background-color:green;color:lightgray">1764</td><td style="background-color:green;color:lightgray">1764</td><td >1026</td><td style="background-color:green;color:lightgray">1764</td><td style="border-left: 2px solid gray;"> 0</td><td>1764</td></tr>
+<tr><td>ta32js</td><td >972</td><td style="background-color:green;color:lightgray">1774</td><td style="background-color:green;color:lightgray">1774</td><td >1034</td><td style="background-color:green;color:lightgray">1774</td><td style="border-left: 2px solid gray;"> 0</td><td>1774</td></tr>
+<tr><td>ta33js</td><td >1056</td><td >1733</td><td >1747</td><td >1106</td><td >1729</td><td style="border-left: 2px solid gray;"> -44</td><td>1791</td></tr>
+<tr><td>ta34js</td><td >975</td><td style="background-color:green;color:lightgray">1828</td><td style="background-color:green;color:lightgray">1828</td><td >1039</td><td style="background-color:green;color:lightgray">1828</td><td style="border-left: 2px solid gray;"> 0</td><td>1828</td></tr>
+<tr><td>ta35js</td><td >969</td><td >1754</td><td >1997</td><td >1021</td><td >1729</td><td style="border-left: 2px solid gray;"> -10</td><td>2007</td></tr>
+<tr><td>ta36js</td><td >988</td><td >1777</td><td style="background-color:green;color:lightgray">1819</td><td >1040</td><td >1777</td><td style="border-left: 2px solid gray;"> 0</td><td>1819</td></tr>
+<tr><td>ta37js</td><td >1045</td><td style="background-color:green;color:lightgray">1771</td><td style="background-color:green;color:lightgray">1771</td><td >1076</td><td style="background-color:green;color:lightgray">1771</td><td style="border-left: 2px solid gray;"> 0</td><td>1771</td></tr>
+<tr><td>ta38js</td><td >952</td><td style="background-color:green;color:lightgray">1673</td><td style="background-color:green;color:lightgray">1673</td><td >1000</td><td style="background-color:green;color:lightgray">1673</td><td style="border-left: 2px solid gray;"> 0</td><td>1673</td></tr>
+<tr><td>ta39js</td><td >905</td><td >1764</td><td >1791</td><td >925</td><td >1641</td><td style="border-left: 2px solid gray;"> -4</td><td>1795</td></tr>
+<tr><td>ta40js</td><td >961</td><td >1608</td><td >1617</td><td >1020</td><td >1602</td><td style="border-left: 2px solid gray;"> -41</td><td>1658</td></tr>
+<tr><td>ta41js</td><td >1232</td><td >1850</td><td >1850</td><td >1297</td><td >1830</td><td style="border-left: 2px solid gray;"> -76</td><td>1926</td></tr>
+<tr><td>ta42js</td><td >1192</td><td >1761</td><td >1867</td><td >1248</td><td >1761</td><td style="border-left: 2px solid gray;"> -33</td><td>1900</td></tr>
+<tr><td>ta43js</td><td >1230</td><td >1710</td><td style="background-color:green;color:lightgray">1809</td><td >1286</td><td >1694</td><td style="border-left: 2px solid gray;"> 0</td><td>1809</td></tr>
+<tr><td>ta44js</td><td >1204</td><td >1820</td><td >1887</td><td >1290</td><td >1787</td><td style="border-left: 2px solid gray;"> -74</td><td>1961</td></tr>
+<tr><td>ta45js</td><td >1253</td><td >1785</td><td >1955</td><td >1282</td><td >1731</td><td style="border-left: 2px solid gray;"> -42</td><td>1997</td></tr>
+<tr><td>ta46js</td><td >1290</td><td >1940</td><td >1940</td><td >1355</td><td >1856</td><td style="border-left: 2px solid gray;"> -36</td><td>1976</td></tr>
+<tr><td>ta47js</td><td >1334</td><td >1751</td><td >1768</td><td >1376</td><td >1690</td><td style="border-left: 2px solid gray;"> -59</td><td>1827</td></tr>
+<tr><td>ta48js</td><td >1282</td><td >1770</td><td >1905</td><td >1314</td><td >1744</td><td style="border-left: 2px solid gray;"> -16</td><td>1921</td></tr>
+<tr><td>ta49js</td><td >1190</td><td >1758</td><td >1892</td><td >1253</td><td >1758</td><td style="border-left: 2px solid gray;"> -46</td><td>1938</td></tr>
+<tr><td>ta50js</td><td >1251</td><td >1678</td><td >1804</td><td >1297</td><td >1674</td><td style="border-left: 2px solid gray;"> -44</td><td>1848</td></tr>
 </table>
 </details>
 
@@ -489,16 +489,50 @@ We call **certification gap** the difference between the best known lower bound 
 <summary>tai</summary>
 <table>
 <tr><th>Instance</th><th>Job</th><th>Machine</th><th>Carlier</th><th>2-job</th><th>2-mach</th><th>Cert Gap</th><th>LB</th></tr>
-<tr><td>tai_100_100_1</td><td >58175</td><td >61674</td><td >62485</td><td >58486</td><td >59162</td><td style="border-left: 2px solid black;"> -358</td><td>62843</td></tr>
-<tr><td>tai_100_100_2</td><td >55304</td><td >58160</td><td >62367</td><td >56161</td><td >57126</td><td style="border-left: 2px solid black;"> -447</td><td>62814</td></tr>
-<tr><td>tai_100_100_3</td><td >56728</td><td >57806</td><td >60958</td><td >57304</td><td >57806</td><td style="border-left: 2px solid black;"> -575</td><td>61533</td></tr>
-<tr><td>tai_100_100_4</td><td >59359</td><td >59383</td><td >64165</td><td >59359</td><td >57965</td><td style="border-left: 2px solid black;"> -577</td><td>64742</td></tr>
-<tr><td>tai_100_100_5</td><td >56381</td><td >57369</td><td >61003</td><td >56486</td><td >55764</td><td style="border-left: 2px solid black;"> -763</td><td>61766</td></tr>
-<tr><td>tai_100_100_6</td><td >56191</td><td >56270</td><td >60706</td><td >56924</td><td >55408</td><td style="border-left: 2px solid black;"> -654</td><td>61360</td></tr>
-<tr><td>tai_100_100_7</td><td >56064</td><td >57412</td><td >63353</td><td >56869</td><td >57317</td><td style="border-left: 2px solid black;"> -687</td><td>64040</td></tr>
-<tr><td>tai_100_100_8</td><td >58951</td><td >57570</td><td >62426</td><td >58951</td><td >57570</td><td style="border-left: 2px solid black;"> -798</td><td>63224</td></tr>
-<tr><td>tai_100_100_9</td><td >58494</td><td >57824</td><td >62220</td><td >58505</td><td >57148</td><td style="border-left: 2px solid black;"> -411</td><td>62631</td></tr>
-<tr><td>tai_100_100_10</td><td >57454</td><td >59747</td><td >64625</td><td >57480</td><td >56194</td><td style="border-left: 2px solid black;"> -241</td><td>64866</td></tr>
+<tr><td>tai_100_100_1</td><td >58175</td><td >61674</td><td >62485</td><td >58486</td><td >59162</td><td style="border-left: 2px solid gray;"> -358</td><td>62843</td></tr>
+<tr><td>tai_100_100_2</td><td >55304</td><td >58160</td><td >62367</td><td >56161</td><td >57126</td><td style="border-left: 2px solid gray;"> -447</td><td>62814</td></tr>
+<tr><td>tai_100_100_3</td><td >56728</td><td >57806</td><td >60958</td><td >57304</td><td >57806</td><td style="border-left: 2px solid gray;"> -575</td><td>61533</td></tr>
+<tr><td>tai_100_100_4</td><td >59359</td><td >59383</td><td >64165</td><td >59359</td><td >57965</td><td style="border-left: 2px solid gray;"> -577</td><td>64742</td></tr>
+<tr><td>tai_100_100_5</td><td >56381</td><td >57369</td><td >61003</td><td >56486</td><td >55764</td><td style="border-left: 2px solid gray;"> -763</td><td>61766</td></tr>
+<tr><td>tai_100_100_6</td><td >56191</td><td >56270</td><td >60706</td><td >56924</td><td >55408</td><td style="border-left: 2px solid gray;"> -654</td><td>61360</td></tr>
+<tr><td>tai_100_100_7</td><td >56064</td><td >57412</td><td >63353</td><td >56869</td><td >57317</td><td style="border-left: 2px solid gray;"> -687</td><td>64040</td></tr>
+<tr><td>tai_100_100_8</td><td >58951</td><td >57570</td><td >62426</td><td >58951</td><td >57570</td><td style="border-left: 2px solid gray;"> -798</td><td>63224</td></tr>
+<tr><td>tai_100_100_9</td><td >58494</td><td >57824</td><td >62220</td><td >58505</td><td >57148</td><td style="border-left: 2px solid gray;"> -411</td><td>62631</td></tr>
+<tr><td>tai_100_100_10</td><td >57454</td><td >59747</td><td >64625</td><td >57480</td><td >56194</td><td style="border-left: 2px solid gray;"> -241</td><td>64866</td></tr>
+
+<tr><td>tai_100_1000_1</td><td style="background-color:green;color:lightgray">522298</td><td >101998</td><td style="background-color:green;color:lightgray">522298</td><td >0</td><td >58889</td><td style="border-left: 2px solid gray;"> 0</td><td>522298</td></tr>
+<tr><td>tai_100_1000_2</td><td style="background-color:green;color:lightgray">530375</td><td >107723</td><td style="background-color:green;color:lightgray">530375</td><td >0</td><td >58973</td><td style="border-left: 2px solid gray;"> 0</td><td>530375</td></tr>
+<tr><td>tai_100_1000_3</td><td style="background-color:green;color:lightgray">530560</td><td >96902</td><td style="background-color:green;color:lightgray">530560</td><td >0</td><td >59804</td><td style="border-left: 2px solid gray;"> 0</td><td>530560</td></tr>
+<tr><td>tai_100_1000_4</td><td style="background-color:green;color:lightgray">527101</td><td >89243</td><td style="background-color:green;color:lightgray">527101</td><td >0</td><td >58831</td><td style="border-left: 2px solid gray;"> 0</td><td>527101</td></tr>
+<tr><td>tai_100_1000_5</td><td style="background-color:green;color:lightgray">517728</td><td >91194</td><td style="background-color:green;color:lightgray">517728</td><td >0</td><td >58271</td><td style="border-left: 2px solid gray;"> 0</td><td>517728</td></tr>
+<tr><td>tai_100_1000_6</td><td style="background-color:green;color:lightgray">522907</td><td >88034</td><td style="background-color:green;color:lightgray">522907</td><td >0</td><td >58225</td><td style="border-left: 2px solid gray;"> 0</td><td>522907</td></tr>
+<tr><td>tai_100_1000_7</td><td style="background-color:green;color:lightgray">522537</td><td >117707</td><td style="background-color:green;color:lightgray">522537</td><td >0</td><td >59433</td><td style="border-left: 2px solid gray;"> 0</td><td>522537</td></tr>
+<tr><td>tai_100_1000_8</td><td style="background-color:green;color:lightgray">526428</td><td >100162</td><td style="background-color:green;color:lightgray">526428</td><td >0</td><td >59948</td><td style="border-left: 2px solid gray;"> 0</td><td>526428</td></tr>
+<tr><td>tai_100_1000_9</td><td style="background-color:green;color:lightgray">528097</td><td >94772</td><td style="background-color:green;color:lightgray">528097</td><td >0</td><td >58806</td><td style="border-left: 2px solid gray;"> 0</td><td>528097</td></tr>
+<tr><td>tai_100_1000_10</td><td style="background-color:green;color:lightgray">521766</td><td >94061</td><td style="background-color:green;color:lightgray">521766</td><td >0</td><td >60886</td><td style="border-left: 2px solid gray;"> 0</td><td>521766</td></tr>
+
+<tr><td>tai_1000_100_1</td><td >60201</td><td style="background-color:green;color:lightgray">525343</td><td style="background-color:green;color:lightgray">525343</td><td >0</td><td style="background-color:green;color:lightgray">525343</td><td style="border-left: 2px solid gray;"> 0</td><td>525343</td></tr>
+<tr><td>tai_1000_100_2</td><td >59555</td><td style="background-color:green;color:lightgray">528088</td><td style="background-color:green;color:lightgray">528088</td><td >0</td><td style="background-color:green;color:lightgray">528088</td><td style="border-left: 2px solid gray;"> 0</td><td>528088</td></tr>
+<tr><td>tai_1000_100_3</td><td >58117</td><td style="background-color:green;color:lightgray">522793</td><td style="background-color:green;color:lightgray">522793</td><td >0</td><td style="background-color:green;color:lightgray">522793</td><td style="border-left: 2px solid gray;"> 0</td><td>522793</td></tr>
+<tr><td>tai_1000_100_4</td><td >59281</td><td style="background-color:green;color:lightgray">524271</td><td style="background-color:green;color:lightgray">524271</td><td >0</td><td style="background-color:green;color:lightgray">524271</td><td style="border-left: 2px solid gray;"> 0</td><td>524271</td></tr>
+<tr><td>tai_1000_100_5</td><td >60656</td><td style="background-color:green;color:lightgray">531216</td><td style="background-color:green;color:lightgray">531216</td><td >0</td><td style="background-color:green;color:lightgray">531216</td><td style="border-left: 2px solid gray;"> 0</td><td>531216</td></tr>
+<tr><td>tai_1000_100_6</td><td >59258</td><td style="background-color:green;color:lightgray">518763</td><td style="background-color:green;color:lightgray">518763</td><td >0</td><td style="background-color:green;color:lightgray">518763</td><td style="border-left: 2px solid gray;"> 0</td><td>518763</td></tr>
+<tr><td>tai_1000_100_7</td><td >59210</td><td style="background-color:green;color:lightgray">527093</td><td style="background-color:green;color:lightgray">527093</td><td >0</td><td style="background-color:green;color:lightgray">527093</td><td style="border-left: 2px solid gray;"> 0</td><td>527093</td></tr>
+<tr><td>tai_1000_100_8</td><td >60782</td><td style="background-color:green;color:lightgray">519524</td><td style="background-color:green;color:lightgray">519524</td><td >0</td><td style="background-color:green;color:lightgray">519524</td><td style="border-left: 2px solid gray;"> 0</td><td>519524</td></tr>
+<tr><td>tai_1000_100_9</td><td >59467</td><td style="background-color:green;color:lightgray">520889</td><td style="background-color:green;color:lightgray">520889</td><td >0</td><td style="background-color:green;color:lightgray">520889</td><td style="border-left: 2px solid gray;"> 0</td><td>520889</td></tr>
+<tr><td>tai_1000_100_10</td><td >59394</td><td style="background-color:green;color:lightgray">529112</td><td style="background-color:green;color:lightgray">529112</td><td >0</td><td style="background-color:green;color:lightgray">529112</td><td style="border-left: 2px solid gray;"> 0</td><td>529112</td></tr>
+
+<tr><td>tai_1000_1000_1</td><td >527772</td><td >528107</td><td >549075</td><td >0</td><td >527765</td><td style="border-left: 2px solid gray;"> -317</td><td>549392</td></tr>
+<tr><td>tai_1000_1000_2</td><td >529859</td><td >529915</td><td >548643</td><td >0</td><td >528938</td><td style="border-left: 2px solid gray;"> -400</td><td>549043</td></tr>
+<tr><td>tai_1000_1000_3</td><td >524375</td><td >531531</td><td >552207</td><td >0</td><td >530808</td><td style="border-left: 2px solid gray;"> -373</td><td>552580</td></tr>
+<tr><td>tai_1000_1000_4</td><td >531646</td><td >539943</td><td style="background-color:green;color:lightgray">547670</td><td >0</td><td >539943</td><td style="border-left: 2px solid gray;"> 0</td><td>547670</td></tr>
+<tr><td>tai_1000_1000_5</td><td >529256</td><td >537059</td><td >544924</td><td >0</td><td >537059</td><td style="border-left: 2px solid gray;"> -269</td><td>545193</td></tr>
+<tr><td>tai_1000_1000_6</td><td >532426</td><td >527455</td><td >547126</td><td >0</td><td >527005</td><td style="border-left: 2px solid gray;"> -160</td><td>547286</td></tr>
+<tr><td>tai_1000_1000_7</td><td >535423</td><td >536249</td><td >545823</td><td >0</td><td >536249</td><td style="border-left: 2px solid gray;"> -54</td><td>545877</td></tr>
+<tr><td>tai_1000_1000_8</td><td >529450</td><td >527785</td><td >549093</td><td >0</td><td >527228</td><td style="border-left: 2px solid gray;"> -127</td><td>549220</td></tr>
+<tr><td>tai_1000_1000_9</td><td >535770</td><td >528007</td><td >543205</td><td >0</td><td >527208</td><td style="border-left: 2px solid gray;"> -354</td><td>543559</td></tr>
+<tr><td>tai_1000_1000_10</td><td >525263</td><td >528181</td><td >541092</td><td >0</td><td >527918</td><td style="border-left: 2px solid gray;"> -7983</td><td>549075</td></tr>
+
 </table>
 </details>
 
@@ -506,10 +540,10 @@ We call **certification gap** the difference between the best known lower bound 
 <summary>yn</summary>
 <table>
 <tr><th>Instance</th><th>Job</th><th>Machine</th><th>Carlier</th><th>2-job</th><th>2-mach</th><th>Cert Gap</th><th>LB</th></tr>
-<tr><td>yn1</td><td >694</td><td >689</td><td >763</td><td >736</td><td >643</td><td style="border-left: 2px solid black;"> -121</td><td>884</td></tr>
-<tr><td>yn2</td><td >713</td><td >732</td><td >795</td><td >730</td><td >686</td><td style="border-left: 2px solid black;"> -109</td><td>904</td></tr>
-<tr><td>yn3</td><td >680</td><td >733</td><td >793</td><td >715</td><td >659</td><td style="border-left: 2px solid black;"> -99</td><td>892</td></tr>
-<tr><td>yn4</td><td >719</td><td >818</td><td >871</td><td >739</td><td >676</td><td style="border-left: 2px solid black;"> -96</td><td>967</td></tr>
+<tr><td>yn1</td><td >694</td><td >689</td><td >763</td><td >736</td><td >643</td><td style="border-left: 2px solid gray;"> -121</td><td>884</td></tr>
+<tr><td>yn2</td><td >713</td><td >732</td><td >795</td><td >730</td><td >686</td><td style="border-left: 2px solid gray;"> -109</td><td>904</td></tr>
+<tr><td>yn3</td><td >680</td><td >733</td><td >793</td><td >715</td><td >659</td><td style="border-left: 2px solid gray;"> -99</td><td>892</td></tr>
+<tr><td>yn4</td><td >719</td><td >818</td><td >871</td><td >739</td><td >676</td><td style="border-left: 2px solid gray;"> -96</td><td>967</td></tr>
 </table>
 </details>
 
@@ -787,7 +821,7 @@ However, OptalCP proves a lower bound of 667 and Optimizizer only provides a ver
 <tr><td>dmu58</td><td>30 x 20</td><td>random</td><td>4484</td><td>4701</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
 <tr><td>dmu59</td><td>30 x 20</td><td>random</td><td>4366</td><td>4607</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LHW2024</td></tr>
 <tr><td>dmu60</td><td>30 x 20</td><td>random</td><td>4468</td><td>4721</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub CS2022</td></tr>
-<tr><td>dmu61</td><td>40 x 15</td><td>random</td><td>5038</td><td>5166</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Diaz2026</td></tr>
+<tr><td>dmu61</td><td>40 x 15</td><td>random</td><td>5038</td><td>5159</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Diaz2026</td></tr>
 <tr><td>dmu62</td><td>40 x 15</td><td>random</td><td>5176</td><td>5244</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
 <tr><td>dmu63</td><td>40 x 15</td><td>random</td><td>5245</td><td>5296</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
 <tr><td>dmu64</td><td>40 x 15</td><td>random</td><td>5155</td><td>5225</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub LLG2026</td></tr>
@@ -880,7 +914,7 @@ The upper and lower bounds come from:
 
 - CdGKGC2025 (1 bounds - dmu72) : **Marc-Emmanuel Coupvent des Graviers, Lotfi Kobrosly, Christophe Guettier, and Tristan Cazenave** (2025). [Updating Lower and Upper Bounds for the Job-Shop Scheduling Problem Test Instances](https://arxiv.org/abs/2504.16106).
 
-- LLG2026 (16 bounds in ta and dmu) : **Qihao Liu, Xinyu Li, and Liang Gao** (2026) A Knowledge-Driven Decoupling and Coordinated Optimization Framework Based on Decision-Variable Parameterization and Release for the Job-Shop Scheduling Problem'
+- LLG2026 (16 bounds in ta and dmu) : **Qihao Liu, Xinyu Li, and Liang Gao** (2026) A Knowledge-Driven Decoupling and Coordinated Optimization Framework Based on Decision-Variable Parameterization and Release for the Job-Shop Scheduling Problem
 
 - DOFP2026 (19 bounds in dmu and tai) : **Diego Olivier Fernandez Pons** (2026) [Personal communication] Best known so far upper-bounds were given as starting solution to OptalCP, and ran for 10 minutes
 
@@ -965,16 +999,12 @@ References
 - [Failure-Directed Search for Constraint-Based Scheduling](https://link.springer.com/chapter/10.1007/978-3-319-18008-3_30) (Petr Vilim, Philippe Laborie and Paul Shaw - 2015)
 - [Objective landscapes for constraint programming](https://link.springer.com/chapter/10.1007/978-3-319-93031-2_28) (Philippe Laborie - 2018)
 
-<br/>
-
 </details>
 
 <details markdown="1">
 <summary>Google OR-Tools CP-SAT (2018–present)</summary>
 
-<br/>
-
-CP-SAT is an open-source constraint-programming solver in Google [OR-Tools](https://developers.google.com/optimization) since July 2018. It is distinct from OR-Tools' older classic CP solver, which remains the foundation of the vehicle-routing library.
+**CP-SAT** is an open-source constraint-programming solver in Google [OR-Tools](https://developers.google.com/optimization) since July 2018. It is distinct from OR-Tools' older classic CP solver, which remains the foundation of the vehicle-routing library.
 
 CP-SAT combines lazy clause generation (LCG), specialized constraint propagation, linear programming (LP) relaxation, and mixed-integer programming (MIP) techniques within a parallel search architecture.
 
@@ -1039,14 +1069,10 @@ The principal implementation files in OR-Tools v9.15 are:
 - Google OR-Tools. [Scheduling documentation](https://developers.google.com/optimization/scheduling).
 - Google OR-Tools. [Release notes](https://developers.google.com/optimization/support/release_notes).
 
-<br/>
-
 </details>
 
 <details markdown="1">
 <summary>OptalCP (2021 - present)</summary>
-
-<br/>
 
 **OptalCP** was designed by Petr Vilim, Nicolas Bonifas and Diego Olivier Fernandez Pons (initially with input from Philippe Laborie). Compared to CPO, the parallelism is done with one strategy per core instead of interleaving. The strategies used are:
 - **Large Neighbourhood Search** (LNS): tree-search-based local search
@@ -1058,8 +1084,6 @@ OptalCP continues the legacy of CP Optimizer (engine style, modeling language). 
 References
 - [OptalCP at scheduling seminar](https://schedulingseminar.com/presentations/schedulingseminar_petrvilim_vilemheinz.pdf) (Petr Vilim - 2026)
 
-<br/>
-
 </details>
 
 <br/>
@@ -1069,4 +1093,3 @@ References
 >
 
 <br/>
-

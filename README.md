@@ -14,8 +14,8 @@ This is a comprehensive benchmark library for various scheduling problem  with t
 <br/>
 
 The problems that are benchmarked so far are
-- [Jobshop (JSPLib)](https://scheduleopt.github.io/benchmarks/jsplib/)
-- [Flexible jobshop (FJSPLib)](https://scheduleopt.github.io/benchmarks/fjsplib/)
+- [Jobshop (JSPLib)](https://scheduleopt.github.io/benchmarks/jsplib)
+- [Flexible jobshop (FJSPLib)](https://scheduleopt.github.io/benchmarks/fjsplib)
 
 We are working on adding rcpsp and workforce scheduling problems (stay tuned...)
 
