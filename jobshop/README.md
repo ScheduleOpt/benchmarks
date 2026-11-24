@@ -23,8 +23,8 @@ The old job shop problem is changing fast!
 - **Lower bounds matter as much as upper bounds**. From decompositions to pruning and proofs of optimality, lower bounds are essential to performance.
 
 What is in the JSPLib?
-- **Instances and results**: a repository of instances, best-known results with their history, primal and dual certificates
-- **Engine benchmarks**: a standardized 10-minute comparison of engines with deviations with respect to the best known results
+- **Instances and results**: a repository of instances, best-known results and their history, primal and dual certificates
+- **Engine benchmarks**: a standardized 10-minute comparison of engines, measuring deviations from the best known results
 - **Lower bound analysis**: an analysis of lower bounds, their certificates and how they affect the instance difficulty 
 
 Everything is open: the code, the instances, the engine results, and the history of best-known bounds.
@@ -68,7 +68,7 @@ This page is also the README.md of the [jobshop folder](https://github.com/Sched
 
 Optimization engines have become the reference players in job shop scheduling for their ability to handle complex side constraints, refine heuristic solutions and prove optimality.
 
-JSPLib tracks this with a standardized benchmark of four reference engines with a fixed 10-minute budget, and a record of best known upper and lower bounds. 
+JSPLib tracks this with a standardized benchmark of four reference engines with a fixed 10-minute budget, and a record of the best known upper and lower bounds. 
 
 ### What we measure
 
@@ -76,7 +76,7 @@ JSPLib tracks this with a standardized benchmark of four reference engines with 
 - **Upper bound deviation:** how close its best solution gets to the best known upper bound
 - **Lower bound deviation:** how close its proven bound gets to the best known lower bound
 
-We average geometrically, as the MIP community does in the Mittelmann benchmarks, to limit the influence of outliers.
+We use geometric averages, following the approach adopted by the MIP community in the Mittelmann benchmarks, to limit the influence of outliers.
 
 - **Geometric average of the lower bound to best known lower bound ratio**
 
@@ -106,7 +106,7 @@ $$GAP = \exp\left(\frac{1}{N} \sum_k\log\left(1 + \frac{UB_k - LB_k}{UB_k}\right
 
 Comparisons were performed on a Windows PC with an i7 4-core 3GHz 32GB RAM in 600 seconds.
 
-When an engine provides non-trivial upper and lower bounds for an instance, the instance is labelled `nontrivial` and is counted in the geometric mean. Because deviations and gaps are done only counting those instances, engines that fail on the hardest instances have artificially better averages. When this is the case, the corresponding averages are colored in red to signal values should be taken with caution.
+When an engine provides non-trivial upper and lower bounds for an instance, the instance is labelled `nontrivial` and is counted in the geometric mean. Because deviations and gaps are done only counting those instances, engines that fail on the hardest instances have artificially better averages. When this is the case, the corresponding averages are colored in red to signal that the values should be taken with caution.
 
 <table>
 <tr><th>solver</th><th>ran</th><th>nontrivial</th><th>optimal</th><th>opt</th><th>lb_dev</th><th>ub_dev</th><th>gap</th></tr>
@@ -201,7 +201,7 @@ We recommend running the benchmark on your own machines. The [code and instructi
 
 ### New instance organization
 
-We have reorganized the instances in new groups
+We have reorganized the instances into new groups
 - ***Legacy***: all instances that are too easy for modern software
     - `ft`,  `la`, `orb`, `abz[5-6]`,  `ta[01-10]`, `ta[51-80]` and the 50 easy `tai`
     - `ta62` and `ta67` are not easy, just collateral victims
@@ -209,23 +209,24 @@ We have reorganized the instances in new groups
 - ***Industrial***: instances that were generated in a way that mimics real problems
     - `bel` and `dct` 
 - ***Random***: randomly generated instances without any special structure
-    - `abz[7-9]`, `swv`, `yn`, `ta[11-50]`, `dmu`, `tai 1000 x 100`
+    - `abz[7-9]`, `swv`, `yn`, `ta[11-50]`, `dmu`, `tai_1000_100`
 - ***Stress-test***: instances generated to test the limit of engines
-    - `tai` 100 x 100 : slow convergence
-    - `tai` 100 x 1000 : job dominated, making (machine-based) propagation almost useless
-    - `tai` 1000 x 1000 : break memory of cp-engines (or make it prohibitively slow)
+    - `tai_100_100` : slow convergence
+    - `tai_100_1000` : job dominated, making (machine-based) propagation almost useless
+    - `tai_1000_1000` : break memory of cp-engines (or make it prohibitively slow)
 
 ### Beyond non-reentrancy
 
-Not only are industrial instances reentrant but the reentrant-jobshop is a sub-problem of the flexible-jobshop after assignment of tasks to machines. Therefore JSPLib won't make the distinction between jobshop and reentrant jobshop anymore, all instances are considered potentially reentrant.
-We have generated jobshop subproblems of the Dauzère-Pérès flexible jobshop problems for users to start testing their algorithms on reentrant jobshops [WORK IN PROGRESS]
+Not only are industrial instances reentrant but the reentrant-jobshop is a sub-problem of the flexible-jobshop after assignment of tasks to machines. Therefore JSPLib will no longer distinguish between jobshop and reentrant jobshop all instances are considered potentially reentrant.
+
+We have generated jobshop subproblems of the Dauzère-Pérès flexible jobshop problems to help users start testing their algorithms on reentrant jobshops [WORK IN PROGRESS]
 
 ### Difficulty classification of the jobshop instances
 
 We use the following criteria for classification of the instances
 
 - <strong style="color:cornflowerblue">trivial</strong>: solved to optimality (with proof) in 1 minute by at least 1 reference engine
-- <strong style="color:green">easy</strong>: solved to optimality (with proof) in 10 minute by at least 1 reference engine
+- <strong style="color:green">easy</strong>: solved to optimality (with proof) within 10 minute by at least 1 reference engine
 - <strong style="color:orange">medium</strong>: solved to optimality (with proof) in 1 hour by at least 1 reference engine
 - <strong style="color:red">hard</strong>: solved to optimality (with proof) in more than 1 hour by at least 1 reference engine
 - <strong style="color:purple">closed</strong>: *allegedly* solved to optimality. Most of the time the optimal solution is known because 2 different methods independently found equal upper and lower bounds. The problem is reclassified into trivial, easy, medium or hard when a reference engine is able to reproduce the results.
@@ -259,13 +260,13 @@ Legacy (145) : 141 trivial, 2 easy, 1 medium, 1 hard
 
 ### Certificates for lower bounds
 
-Schedules are certificates for upper bounds that are easy to verify. Certifying the validity of lower bounds however is more complex. Certificates can come from various origins and depending on the certificate they are more or less difficult to verify.
-- **Analytic lower bounds** : Formulas and simple polynomial algorithms. The certification is provided by an external theorem that guarantees their validity. Anyone can easily compute their value to check the result. 
-- **Relaxations** : A sub-problem of the jobshop can be solved to optimality leading to a lower bound certificate. An external theorem supports the reduction but the computation relies on third party tools. Confidence in the result is provided by the agreement of the external tools and the trust we place in them. These tools may themselves provide independently verifiable certificates.
+Schedules are certificates for upper bounds that are easy to verify. However, certifying the validity of lower bounds is more complex. Certificates can come from various origins and depending on the certificate they are more or less difficult to verify.
+- **Analytic lower bounds** : Formulas and simple polynomial algorithms. Their validity is guaranteed by an external theorem that guarantees their validity. Anyone can easily compute their value to check the result. 
+- **Relaxations** : A sub-problem of the jobshop can be solved to optimality leading to a lower bound certificate. An external theorem supports the reduction but the computation relies on third party tools. Confidence in the results comes from the agreement between external tools and our trust in their correctness. These tools may themselves provide independently verifiable certificates.
 - **Propagation strengthening** and **destructive lower bounds** : because lower bounds and relaxations often provide a support (a partial solution), they can be combined with propagation of the constraints in the original problem like precedences and no overlap, and be iterated till fixpoint. This can be seen as a mini-engine without search. While the relaxation is based on a theorem, the code required to embed and propagate requires care.
-- **Engine specific certificates** an engine can output a (logically compressed) trace of its deductions for external tools to verify that all the steps it took are correct. This is the case SAT engines that output certificates. While this is considered the golden standard in SAT communities, we see it as a certificate that is poorly informative / lacks minimality.
+- **Engine-specific certificates** an engine can output a (logically compressed) trace of its deductions for external tools to verify that all the steps it took are correct. This is the case with SAT engines that output certificates. While this is considered the golden standard in SAT communities, we see it as a certificate that is poorly informative / lacks minimality.
 
-In the same way we favor reproducibility for solutions, we favor certificates that are easy to reproduce and do not depend on a specific engine.
+Just as we favor reproducibility for solutions, we favor certificates that are easy to reproduce and do not depend on a specific engine.
 
 ### Analytic Lower bounds
 
@@ -284,7 +285,7 @@ $$\max_m \left [ \min_{i \neq j \in m}\bigg(\mathrm{head}_i + \mathrm{tail}_j \b
 
 - **Preemptive single machine relaxation with heads and tails** (Carlier)
 
-The Carlier inequalities describe the polytope of the preemptive relaxation for a single machine with release and due dates (authorized window). The preemptive relaxation can be either solved by Jackson algorithm ($n \log n$) or by maximization of the bound induced by Carlier inequalities ($n^3$)
+The Carlier inequalities describe the polytope of the preemptive relaxation for a single machine with release and due dates (authorized window). The preemptive relaxation can be solved either using Jackson's algorithm ($n \log n$) or by maximization of the bound induced by Carlier inequalities ($n^3$)
 
 
 $$\max_m\ \max_{i,j\in m} \Big[ \mathrm{head}_i + \sum_{\substack{o \in m \\ h_o \ge h_i,\ t_o \ge t_j}} p_o + \mathrm{tail}_j \Big]$$
@@ -574,14 +575,14 @@ Any engine that embeds a Carlier bound into a propagation step is likely to quic
 
 ## Best-known bounds: provenance and history 
 
-JSPLib records, for every instance, the best upper and lower bounds found by any method. We register date, solver, hardware, running time and certificate status, whenever these available.
+JSPLib records, for every instance, the best upper and lower bounds found by any method. We record the date, solver, hardware, running time and certificate status, whenever these are available.
 
-***We have done our best to retrospectively rebuild the history of the bounds for the jsplib instances*** from Hoorn 2018 and subsequent publications.
+***We have reconstructed as far as possible the history of the bounds for the jsplib instances*** from Hoorn (2018) and subsequent publications.
 
 The bounds come from various sources:
 
 - **Published papers**, referenced in the [publications](#publications-best-known-solutions) list
-- **Communications to JSPLib** (via GitHub issues, email, etc.) double checked by us
+- **Communications to JSPLib** (via GitHub issues, email, etc.) double-checked by us
 - **Engines run by others**, whose results have been made public (e.g. CPO2015)
 - **Engines run by us** (CPO, OptalCP, CP-SAT), with approximate running times
 
@@ -663,7 +664,7 @@ We have recently noticed some regression in OptalCP on two of these instances, h
 </table>
 
 
-*Various places report "Henning A (2002). Praktische Job-Shop Scheduling-Probleme. Ph.D. thesis, Friedrich-Schiller-Universität Jena, Jena, Germany" as having found a solution of 665 for abz8, but the original document says their solution is 667 and 665 is a "solution from the literature". Jelke J. van Hoorn attributes the 665 bound to "Paul Douglas Martin. A time-oriented approach to computing optimal schedules for the job-shop scheduling problem. PhD thesis. 1996".
+*Several sources report "Henning A (2002). Praktische Job-Shop Scheduling-Probleme. Ph.D. thesis, Friedrich-Schiller-Universität Jena, Jena, Germany" as having found a solution of 665 for abz8, but the original document says their solution is 667 and 665 is a "solution from the literature". Jelke J. van Hoorn attributes the 665 bound to "Paul Douglas Martin. A time-oriented approach to computing optimal schedules for the job-shop scheduling problem. PhD thesis. 1996".
 However, OptalCP proves a lower bound of 667 and Optimizizer only provides a verified solution for 667. We advise caution until this result is confirmed by independent means.*
 
 </details>
@@ -925,13 +926,13 @@ The upper and lower bounds come from:
 
 - LLG2026 (16 bounds in ta and dmu) : **Qihao Liu, Xinyu Li, and Liang Gao** (2026) A Knowledge-Driven Decoupling and Coordinated Optimization Framework Based on Decision-Variable Parameterization and Release for the Job-Shop Scheduling Problem
 
-- DOFP2026 (19 bounds in dmu and tai) : **Diego Olivier Fernandez Pons** (2026) [Personal communication] Best known so far upper-bounds were given as starting solution to OptalCP, and ran for 10 minutes
+- DOFP2026 (19 bounds in dmu and tai) : **Diego Olivier Fernandez Pons** (2026) [Personal communication] The best-known upper-bounds were provided as starting solution to OptalCP, and ran for 10 minutes
 
 - Diaz2026 (2 bounds - dmu16 and dmu61) : **Hernan Diaz Rodriguez** (2026) [Personal communication](https://github.com/ScheduleOpt/benchmarks/issues/9) A memetic algorithm with path-relinking crossover between elite schedules, tabu search on the N7 neighbourhood (Zhang et al. tenure) with GTA-style guided tenure, and restarts; The initial population holds good solutions already.
 
 - Schwemin2026 (11 bounds in dmu and tai) : **Marcel Schwemin** (2026) [Personal communication](https://github.com/ScheduleOpt/benchmarks/issues/15) N7 Tabu with time-slabs from initial population, on GPU
 
-- AMFCV2026 (9 bounds in tai) : **Andre Albrecht, Enzo Morosini Frazzon, Leandro C. Coelho and Bruno Vieira** (2026) [Personal communication](https://github.com/ScheduleOpt/benchmarks/issues/19) Corridor search + min-conflict repair + cp initial propagation + compaction
+- AMFCV2026 (9 bounds in tai) : **Andre Albrecht, Enzo Morosini Frazzon, Leandro C. Coelho and Bruno Vieira** (2026) [Personal communication](https://github.com/ScheduleOpt/benchmarks/issues/19) AI generated heuristic using corridor search + min-conflict repair + cp initial propagation + compaction
 
 
 All other bounds were found by OptalCP except 4 bounds by CP-SAT and 1 by Hexaly. The cited papers may use an engine directly like [CPO2015] or as part of an algorithm like [CdGKGC2025].
@@ -945,9 +946,9 @@ All other bounds were found by OptalCP except 4 bounds by CP-SAT and 1 by Hexaly
 <details markdown="1">
 <summary>Fisher and Thompson (FT, 1963)</summary>
 
-The `ft` appearaed in ***Probabilistic Learning Combinations of Local Job-Shop Scheduling Rules***, there were initially called `mt` because the paper was published in Industrial Scheduling (1963), edited by J. F. Muth and G. L. Thompson. 
+The `ft` appeared in ***Probabilistic Learning Combinations of Local Job-Shop Scheduling Rules***, they were initially called `mt` because the paper was published in Industrial Scheduling (1963), edited by J. F. Muth and G. L. Thompson. 
 
-Instance `ft10` is famous for having resisted a proof of optimality for more than twenty years, until Carlier and Pinson closed it in 1989 using a dedicaded branch-and-bound combining single machine relaxations (Jackson's preemptive schedule) and 'immediate selections' that are the predecessor of modern edge-finding / not-first not-last rules. It was subsequently solved by Applegate and Cook in 1991 using a bottle-neck heurisic combined with an LP+cuts for the lower bound, embedded in a branch-and-bound.
+Instance `ft10` is famous for having resisted a proof of optimality for more than twenty years, until Carlier and Pinson closed it in 1989 using a dedicated branch-and-bound combining single machine relaxations (Jackson's preemptive schedule) and 'immediate selections' that are the predecessors of modern edge-finding / not-first not-last rules. It was subsequently solved by Applegate and Cook in 1991 using a bottleneck heurisic combined with an LP+cuts for the lower bound, embedded in a branch-and-bound.
 
 </details>
 
@@ -961,7 +962,7 @@ The 40 `la` instances were published in the supplement to S. Lawrence's ***Resou
 <details markdown="1">
 <summary>Adams, Balas and Zawack (ABZ, 1988)</summary>
 
-Introduced in ***The Shifting Bottleneck Procedure for Job Shop Scheduling*** (1988) to test a machine-oriented decomposition of the job-shop problem: at each iteration, the non-preemptive Jackson schedule is computed for each machine with the branch-and-bound of Carlier and Pinson; The machine with the largest makespan is selected as the bottleneck and sequenced.  Dauzère-Pérès and Lasserre (1993), followed by Balas, Lenstra and Vazacopoulos (1995) improved the procedure.
+Introduced in ***The Shifting Bottleneck Procedure for Job Shop Scheduling*** (1988) to evaluate a machine-oriented decomposition of the job-shop problem: at each iteration, the non-preemptive Jackson schedule is computed for each machine with the branch-and-bound of Carlier and Pinson; The machine with the largest makespan is selected as the bottleneck and its tasks are sequenced.  Dauzère-Pérès and Lasserre (1993), followed by Balas, Lenstra and Vazacopoulos (1995) improved the procedure.
 
 </details>
 
@@ -977,7 +978,7 @@ The `orb` instances were generated to test the Applegate and Cook approach that 
 
 The 20 `swv` instances were introduced by Storer, Wu and Vaccari in ***New Search Spaces for Sequencing Problems with Application to Job Shop Scheduling*** (Management Science, 1992). Their research investigated alternative solution representations and neighbourhood structures, combining problem-specific scheduling knowledge with local-search techniques from artificial intelligence.
 
-The swv instances have an early machine - late machine sructue
+The swv instances have an early machine - late machine structure
 
 | Instances	 | Size	 | First machine group |Second machine group |
 |---|---|---|---|
@@ -992,7 +993,7 @@ swv 16–20 | 50 × 10 |	No partition | No partition |
 <details markdown="1">
 <summary>Yamada and Nakano (YN, 1992)</summary>
 
-The 4 `yn` instances appeared in ***A Genetic Algorithm Applicable to Large-Scale Job-Shop Problems***, second International Conference on Parallel Problem Solving from Nature (PPSN II, 1992). They were created to investigate genetic algorithms on relatively large job-shop problems.
+The 4 `yn` instances appeared in ***A Genetic Algorithm Applicable to Large-Scale Job-Shop Problems***, Second International Conference on Parallel Problem Solving from Nature (PPSN II, 1992). They were created to investigate genetic algorithms on relatively large job-shop problems.
 
 </details>
 
@@ -1006,9 +1007,9 @@ Taillard's ***Benchmarks for Basic Scheduling Problems*** (European Journal of O
 <details markdown="1">
 <summary>Demirkol, Mehta and Uzsoy (DMU, 1998)</summary>
 
-The 80 `dmu` appeared in ***Benchmarks for Shop Scheduling Problems*** (European Journal of Operational Research, 1998). Their work introduced a broad collection of 600 randomly generated scheduling problems covering flow-shop and job-shop environments, several problem sizes, objectives and due-date configurations. The 80 job-shop instances retained in JSPLib combine two different routing structures. 
+The 80 `dmu` instances appeared in ***Benchmarks for Shop Scheduling Problems*** (European Journal of Operational Research, 1998). Their work introduced a broad collection of 600 randomly generated scheduling problems covering flow-shop and job-shop environments, several problem sizes, objectives and due-date configurations. The 80 job-shop instances retained in JSPLib combine two different routing structures. 
 - dmu 01–40 are conventional random job shops
-- dmu 41–80 have a two-stage technological structure
+- dmu 41–80 have a two-stage structure
 
 Demirkol et al. reported that the two stage instances required one to two orders of magnitude more computation than conventional random job shops in ***A Computational Study of Shifting Bottleneck Procedures for Shop Scheduling Problems*** (1997).
 
@@ -1018,10 +1019,10 @@ Demirkol et al. reported that the two stage instances required one to two orders
 <summary>Da Col and Teppan (DCT, TAI 2022)</summary>
 
 Da Col and Teppan generated large jobshop instances to study how constraint programming engines perform with instances that are closer to actual manufacturing plants
-- `dct` instances were created to mimic semi-conductor plants with a known optimum
+- `dct` instances were created to mimic semiconductor plants with a known optimum
 - `tai` instances use Taillard generator with job and machine sizes of $10^k$
 
-However `dct` instances are too easy as the known optimum is reached by a simple machine capacity lower bound, whie `tai` besides inheriting the limitations of the `ta` family have unusual characteristics that are not typically seen in industrial problems.
+However `dct` instances are too easy because the known optimum can be reached using a simple machine-capacity lower bound, while `tai` in addition to inheriting the limitations of the `ta` family, have unusual characteristics that are not typically seen in industrial problems.
 
 - `tai_100_100` suffer from ***slow convergence***. The search landscape is extremely flat: once a reasonably good solution is found, a large number of neighbouring solutions that differ by only a few units of makespan appear almost immediately.
 
@@ -1029,7 +1030,7 @@ However `dct` instances are too easy as the known optimum is reached by a simple
 
 - `tai_1000_1000` ***break the memory capacity*** of most CP engines (or make them prohibitively slow).
 
-`tai` instances were added to JSPlib in 2024 for CP-researchers to investigate pathological cases. 
+`tai` instances were added to JSPLib in 2024 for CP-researchers to investigate pathological cases. 
 
 </details>
 
