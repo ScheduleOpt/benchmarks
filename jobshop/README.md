@@ -106,10 +106,10 @@ $$GAP = \exp\left(\frac{1}{N} \sum_k\log\left(1 + \frac{UB_k - LB_k}{UB_k}\right
 
 Comparisons were performed on a Windows PC with an i7 4-core 3GHz 32GB RAM in 600 seconds.
 
-When an engine provides upper and lower bounds for an instance, the instance is labelled `solved` and is counted in the geometric mean. Because deviations and gaps are done only counting those instances, engines that fail on the hardest instances have artificially better averages. When this is the case, the corresponding averages are colored in red to signal values should be taken with caution.
+When an engine provides non-trivial upper and lower bounds for an instance, the instance is labelled `nontrivial` and is counted in the geometric mean. Because deviations and gaps are done only counting those instances, engines that fail on the hardest instances have artificially better averages. When this is the case, the corresponding averages are colored in red to signal values should be taken with caution.
 
 <table>
-<tr><th>solver</th><th>ran</th><th>solved</th><th>optimal</th><th>opt</th><th>lb_dev</th><th>ub_dev</th><th>gap</th></tr>
+<tr><th>solver</th><th>ran</th><th>nontrivial</th><th>optimal</th><th>opt</th><th>lb_dev</th><th>ub_dev</th><th>gap</th></tr>
 <tr><td>Cplex</td><td>231</td><td style="color:red">147</td><td>0</td><td>0%</td><td style="color:red">0.55</td><td style="color:red">1.33</td><td style="color:red">55%</td></tr>
 <tr><td>CPO</td><td>231</td><td >231</td><td>52</td><td>23%</td><td >0.83</td><td >1.06</td><td >13%</td></tr>
 <tr><td>CP-SAT</td><td>231</td><td style="color:red">205</td><td>46</td><td>20%</td><td style="color:red">0.99</td><td style="color:red">1.05</td><td style="color:red">7%</td></tr>
@@ -122,26 +122,26 @@ When an engine provides upper and lower bounds for an instance, the instance is 
 <details  markdown="1">
 <summary>Per type</summary>
 <table>
-<tr><th>group</th><th>solver</th><th>ran</th><th>solved</th><th>optimal</th><th>opt</th><th>lb_dev</th><th>ub_dev</th><th>gap</th></tr>
+<tr><th>group</th><th>solver</th><th>ran</th><th>nontrivial</th><th>optimal</th><th>opt</th><th>lb_dev</th><th>ub_dev</th><th>gap</th></tr>
 <tr><td rowspan="4">industrial</td><td>Cplex</td><td>44</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
 <tr><td>CPO</td><td>44</td><td >44</td><td>26</td><td>59%</td><td >0.70</td><td >1.10</td><td >16%</td></tr>
 <tr><td>CP-SAT</td><td>44</td><td style="color:red">38</td><td>26</td><td>59%</td><td style="color:red">1.00</td><td style="color:red">1.07</td><td style="color:red">5%</td></tr>
 <tr><td>OptalCP</td><td>44</td><td >44</td><td>38</td><td>86%</td><td >1.00</td><td >1.04</td><td >2%</td></tr>
-<tr><td rowspan="4">random</td><td>Cplex</td><td>177</td><td style="color:red">147</td><td>0</td><td>0%</td><td style="color:red">0.55</td><td style="color:red">1.33</td><td style="color:red">55%</td></tr>
-<tr><td>CPO</td><td>177</td><td >177</td><td>26</td><td>15%</td><td >0.86</td><td >1.04</td><td >11%</td></tr>
-<tr><td>CP-SAT</td><td>177</td><td style="color:red">167</td><td>20</td><td>11%</td><td style="color:red">0.98</td><td style="color:red">1.05</td><td style="color:red">7%</td></tr>
-<tr><td>OptalCP</td><td>177</td><td >177</td><td>42</td><td>24%</td><td >0.99</td><td >1.02</td><td >4%</td></tr>
-<tr><td rowspan="4">stress-test</td><td>Cplex</td><td>10</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
-<tr><td>CPO</td><td>10</td><td >10</td><td>0</td><td>0%</td><td >0.97</td><td >1.25</td><td >47%</td></tr>
-<tr><td>CP-SAT</td><td>10</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
-<tr><td>OptalCP</td><td>10</td><td >10</td><td>0</td><td>0%</td><td >1.00</td><td >1.13</td><td >39%</td></tr>
+<tr><td rowspan="4">random</td><td>Cplex</td><td>157</td><td style="color:red">147</td><td>0</td><td>0%</td><td style="color:red">0.55</td><td style="color:red">1.33</td><td style="color:red">55%</td></tr>
+<tr><td>CPO</td><td>157</td><td >157</td><td>26</td><td>17%</td><td >0.85</td><td >1.03</td><td >11%</td></tr>
+<tr><td>CP-SAT</td><td>157</td><td style="color:red">147</td><td>20</td><td>13%</td><td style="color:red">0.98</td><td style="color:red">1.04</td><td style="color:red">6%</td></tr>
+<tr><td>OptalCP</td><td>157</td><td >157</td><td>42</td><td>27%</td><td >0.99</td><td >1.02</td><td >3%</td></tr>
+<tr><td rowspan="4">stress-test</td><td>Cplex</td><td>30</td><td style="color:red">0</td><td>0</td><td>0%</td><td style="color:red">NaN</td><td style="color:red">NaN</td><td style="color:red">NaN%</td></tr>
+<tr><td>CPO</td><td>30</td><td >30</td><td>0</td><td>0%</td><td >0.99</td><td >1.15</td><td >26%</td></tr>
+<tr><td>CP-SAT</td><td>30</td><td style="color:red">20</td><td>0</td><td>0%</td><td style="color:red">0.99</td><td style="color:red">1.12</td><td style="color:red">18%</td></tr>
+<tr><td>OptalCP</td><td>30</td><td >30</td><td>0</td><td>0%</td><td >1.00</td><td >1.07</td><td >20%</td></tr>
 </table>
 </details>
 
 <details  markdown="1">
 <summary>Per family</summary>
 <table>
-<tr><th>group</th><th>solver</th><th>ran</th><th>solved</th><th>optimal</th><th>opt</th><th>lb_dev</th><th>ub_dev</th><th>gap</th></tr>
+<tr><th>group</th><th>solver</th><th>ran</th><th>nontrivial</th><th>optimal</th><th>opt</th><th>lb_dev</th><th>ub_dev</th><th>gap</th></tr>
 <tr><td rowspan="4">abz</td><td>Cplex</td><td>3</td><td >3</td><td>0</td><td>0%</td><td >0.71</td><td >1.13</td><td >38%</td></tr>
 <tr><td>CPO</td><td>3</td><td >3</td><td>0</td><td>0%</td><td >0.94</td><td >1.01</td><td >7%</td></tr>
 <tr><td>CP-SAT</td><td>3</td><td >3</td><td>0</td><td>0%</td><td >0.97</td><td >1.01</td><td >4%</td></tr>
@@ -180,7 +180,7 @@ When an engine provides upper and lower bounds for an instance, the instance is 
 <details  markdown="1">
 <summary>Legacy</summary>
 <table>
-<tr><th>group</th><th>solver</th><th>ran</th><th>solved</th><th>optimal</th><th>opt</th><th>lb_dev</th><th>ub_dev</th><th>gap</th></tr>
+<tr><th>group</th><th>solver</th><th>ran</th><th>nontrivial</th><th>optimal</th><th>opt</th><th>lb_dev</th><th>ub_dev</th><th>gap</th></tr>
 <tr><td rowspan="4">legacy</td><td>Cplex</td><td>145</td><td style="color:red">111</td><td>27</td><td>19%</td><td style="color:red">0.71</td><td style="color:red">1.19</td><td style="color:red">29%</td></tr>
 <tr><td>CPO</td><td>145</td><td >145</td><td>140</td><td>97%</td><td >1.00</td><td >1.00</td><td >0%</td></tr>
 <tr><td>CP-SAT</td><td>145</td><td >145</td><td>119</td><td>82%</td><td >0.94</td><td >1.00</td><td >2%</td></tr>
@@ -209,9 +209,11 @@ We have reorganized the instances in new groups
 - ***Industrial***: instances that were generated in a way that mimics real problems
     - `bel` and `dct` 
 - ***Random***: randomly generated instances without any special structure
-    - `abz[7-9]`, `swv`, `yn`, `ta[11-50]`, `dmu`, `tai` 100 x 100, 1000 x 100 and 100 x 1000
-- ***Stress-test***: instances generated to test the limit of engines due to their sheer size but without any specific structure
-    - `tai` 1000 x 1000
+    - `abz[7-9]`, `swv`, `yn`, `ta[11-50]`, `dmu`, `tai 1000 x 100`
+- ***Stress-test***: instances generated to test the limit of engines
+    - `tai` 100 x 100 : slow convergence
+    - `tai` 100 x 1000 : job dominated, making (machine-based) propagation almost useless
+    - `tai` 1000 x 1000 : break memory of cp-engines (or make it prohibitively slow)
 
 ### Beyond non-reentrancy
 
@@ -234,20 +236,20 @@ We use the following criteria for classification of the instances
 
 Currently there are
 
-Random (177)
+Random (157)
 - `abz`: 1 easy, 1 medium, 1 hard
 - `swv`: 9 trivial, 2 easy, 3 medium, 3 hard, 3 open
 - `yn`: 4 hard
 - `ta`: 5 trivial, 5 easy, 11 medium, 7 hard, 12 open
 - `dmu`: 19 trivial, 5 easy, 6 medium, 5 hard, 45 open
-- `tai`: 2 medium, 8 hard, 5 closed, 15 open
+- `tai`: 2 medium, 8 hard
 
 Industrial (44)
 - `dct`: 21 trivial, 2 medium, 1 open
 - `bel`: 20 trivial
 
-Stress-test (10)
-- `tai`: 10 open
+Stress-test (30)
+- `tai`: 5 closed, 25 open
 
 Legacy (145) : 141 trivial, 2 easy, 1 medium, 1 hard
 
@@ -306,13 +308,13 @@ We check how many best known lower bounds can be certified with each algorithm o
 <tr><td>Job</td><td >12</td></tr>
 <tr><td>Machine</td><td >73</td></tr>
 <tr><td>Carlier</td><td >94</td></tr>
-<tr><td>2-job</td><td >0</td></tr>
+<tr><td>2-job</td><td >14</td></tr>
 <tr><td>2-machine</td><td >43</td></tr>
 </table>
 
 #### Lower bound certificates per family
 
-We call **certification gap** the difference between the best known lower bound and the best certified lower bound.
+We call **certification gap** the difference between the best known lower bound and the best certified lower bound. 
 
 <details  markdown="1">
 <summary>abz</summary>
@@ -499,40 +501,36 @@ We call **certification gap** the difference between the best known lower bound 
 <tr><td>tai_100_100_8</td><td >58951</td><td >57570</td><td >62426</td><td >58951</td><td >57570</td><td style="border-left: 2px solid gray;"> -798</td><td>63224</td></tr>
 <tr><td>tai_100_100_9</td><td >58494</td><td >57824</td><td >62220</td><td >58505</td><td >57148</td><td style="border-left: 2px solid gray;"> -411</td><td>62631</td></tr>
 <tr><td>tai_100_100_10</td><td >57454</td><td >59747</td><td >64625</td><td >57480</td><td >56194</td><td style="border-left: 2px solid gray;"> -241</td><td>64866</td></tr>
-
-<tr><td>tai_100_1000_1</td><td style="background-color:green;color:lightgray">522298</td><td >101998</td><td style="background-color:green;color:lightgray">522298</td><td >0</td><td >58889</td><td style="border-left: 2px solid gray;"> 0</td><td>522298</td></tr>
-<tr><td>tai_100_1000_2</td><td style="background-color:green;color:lightgray">530375</td><td >107723</td><td style="background-color:green;color:lightgray">530375</td><td >0</td><td >58973</td><td style="border-left: 2px solid gray;"> 0</td><td>530375</td></tr>
-<tr><td>tai_100_1000_3</td><td style="background-color:green;color:lightgray">530560</td><td >96902</td><td style="background-color:green;color:lightgray">530560</td><td >0</td><td >59804</td><td style="border-left: 2px solid gray;"> 0</td><td>530560</td></tr>
-<tr><td>tai_100_1000_4</td><td style="background-color:green;color:lightgray">527101</td><td >89243</td><td style="background-color:green;color:lightgray">527101</td><td >0</td><td >58831</td><td style="border-left: 2px solid gray;"> 0</td><td>527101</td></tr>
-<tr><td>tai_100_1000_5</td><td style="background-color:green;color:lightgray">517728</td><td >91194</td><td style="background-color:green;color:lightgray">517728</td><td >0</td><td >58271</td><td style="border-left: 2px solid gray;"> 0</td><td>517728</td></tr>
-<tr><td>tai_100_1000_6</td><td style="background-color:green;color:lightgray">522907</td><td >88034</td><td style="background-color:green;color:lightgray">522907</td><td >0</td><td >58225</td><td style="border-left: 2px solid gray;"> 0</td><td>522907</td></tr>
-<tr><td>tai_100_1000_7</td><td style="background-color:green;color:lightgray">522537</td><td >117707</td><td style="background-color:green;color:lightgray">522537</td><td >0</td><td >59433</td><td style="border-left: 2px solid gray;"> 0</td><td>522537</td></tr>
-<tr><td>tai_100_1000_8</td><td style="background-color:green;color:lightgray">526428</td><td >100162</td><td style="background-color:green;color:lightgray">526428</td><td >0</td><td >59948</td><td style="border-left: 2px solid gray;"> 0</td><td>526428</td></tr>
-<tr><td>tai_100_1000_9</td><td style="background-color:green;color:lightgray">528097</td><td >94772</td><td style="background-color:green;color:lightgray">528097</td><td >0</td><td >58806</td><td style="border-left: 2px solid gray;"> 0</td><td>528097</td></tr>
-<tr><td>tai_100_1000_10</td><td style="background-color:green;color:lightgray">521766</td><td >94061</td><td style="background-color:green;color:lightgray">521766</td><td >0</td><td >60886</td><td style="border-left: 2px solid gray;"> 0</td><td>521766</td></tr>
-
-<tr><td>tai_1000_100_1</td><td >60201</td><td style="background-color:green;color:lightgray">525343</td><td style="background-color:green;color:lightgray">525343</td><td >0</td><td style="background-color:green;color:lightgray">525343</td><td style="border-left: 2px solid gray;"> 0</td><td>525343</td></tr>
-<tr><td>tai_1000_100_2</td><td >59555</td><td style="background-color:green;color:lightgray">528088</td><td style="background-color:green;color:lightgray">528088</td><td >0</td><td style="background-color:green;color:lightgray">528088</td><td style="border-left: 2px solid gray;"> 0</td><td>528088</td></tr>
-<tr><td>tai_1000_100_3</td><td >58117</td><td style="background-color:green;color:lightgray">522793</td><td style="background-color:green;color:lightgray">522793</td><td >0</td><td style="background-color:green;color:lightgray">522793</td><td style="border-left: 2px solid gray;"> 0</td><td>522793</td></tr>
-<tr><td>tai_1000_100_4</td><td >59281</td><td style="background-color:green;color:lightgray">524271</td><td style="background-color:green;color:lightgray">524271</td><td >0</td><td style="background-color:green;color:lightgray">524271</td><td style="border-left: 2px solid gray;"> 0</td><td>524271</td></tr>
-<tr><td>tai_1000_100_5</td><td >60656</td><td style="background-color:green;color:lightgray">531216</td><td style="background-color:green;color:lightgray">531216</td><td >0</td><td style="background-color:green;color:lightgray">531216</td><td style="border-left: 2px solid gray;"> 0</td><td>531216</td></tr>
-<tr><td>tai_1000_100_6</td><td >59258</td><td style="background-color:green;color:lightgray">518763</td><td style="background-color:green;color:lightgray">518763</td><td >0</td><td style="background-color:green;color:lightgray">518763</td><td style="border-left: 2px solid gray;"> 0</td><td>518763</td></tr>
-<tr><td>tai_1000_100_7</td><td >59210</td><td style="background-color:green;color:lightgray">527093</td><td style="background-color:green;color:lightgray">527093</td><td >0</td><td style="background-color:green;color:lightgray">527093</td><td style="border-left: 2px solid gray;"> 0</td><td>527093</td></tr>
-<tr><td>tai_1000_100_8</td><td >60782</td><td style="background-color:green;color:lightgray">519524</td><td style="background-color:green;color:lightgray">519524</td><td >0</td><td style="background-color:green;color:lightgray">519524</td><td style="border-left: 2px solid gray;"> 0</td><td>519524</td></tr>
-<tr><td>tai_1000_100_9</td><td >59467</td><td style="background-color:green;color:lightgray">520889</td><td style="background-color:green;color:lightgray">520889</td><td >0</td><td style="background-color:green;color:lightgray">520889</td><td style="border-left: 2px solid gray;"> 0</td><td>520889</td></tr>
-<tr><td>tai_1000_100_10</td><td >59394</td><td style="background-color:green;color:lightgray">529112</td><td style="background-color:green;color:lightgray">529112</td><td >0</td><td style="background-color:green;color:lightgray">529112</td><td style="border-left: 2px solid gray;"> 0</td><td>529112</td></tr>
-
-<tr><td>tai_1000_1000_1</td><td >527772</td><td >528107</td><td >549075</td><td >0</td><td >527765</td><td style="border-left: 2px solid gray;"> -317</td><td>549392</td></tr>
-<tr><td>tai_1000_1000_2</td><td >529859</td><td >529915</td><td >548643</td><td >0</td><td >528938</td><td style="border-left: 2px solid gray;"> -400</td><td>549043</td></tr>
-<tr><td>tai_1000_1000_3</td><td >524375</td><td >531531</td><td >552207</td><td >0</td><td >530808</td><td style="border-left: 2px solid gray;"> -373</td><td>552580</td></tr>
-<tr><td>tai_1000_1000_4</td><td >531646</td><td >539943</td><td style="background-color:green;color:lightgray">547670</td><td >0</td><td >539943</td><td style="border-left: 2px solid gray;"> 0</td><td>547670</td></tr>
-<tr><td>tai_1000_1000_5</td><td >529256</td><td >537059</td><td >544924</td><td >0</td><td >537059</td><td style="border-left: 2px solid gray;"> -269</td><td>545193</td></tr>
-<tr><td>tai_1000_1000_6</td><td >532426</td><td >527455</td><td >547126</td><td >0</td><td >527005</td><td style="border-left: 2px solid gray;"> -160</td><td>547286</td></tr>
-<tr><td>tai_1000_1000_7</td><td >535423</td><td >536249</td><td >545823</td><td >0</td><td >536249</td><td style="border-left: 2px solid gray;"> -54</td><td>545877</td></tr>
-<tr><td>tai_1000_1000_8</td><td >529450</td><td >527785</td><td >549093</td><td >0</td><td >527228</td><td style="border-left: 2px solid gray;"> -127</td><td>549220</td></tr>
-<tr><td>tai_1000_1000_9</td><td >535770</td><td >528007</td><td >543205</td><td >0</td><td >527208</td><td style="border-left: 2px solid gray;"> -354</td><td>543559</td></tr>
-<tr><td>tai_1000_1000_10</td><td >525263</td><td >528181</td><td >541092</td><td >0</td><td >527918</td><td style="border-left: 2px solid gray;"> -7983</td><td>549075</td></tr>
-
+<tr><td>tai_100_1000_1</td><td style="background-color:green;color:lightgray">522298</td><td >101998</td><td style="background-color:green;color:lightgray">522298</td><td style="background-color:green;color:lightgray">522298</td><td >58889</td><td style="border-left: 2px solid gray;"> 0</td><td>522298</td></tr>
+<tr><td>tai_100_1000_2</td><td style="background-color:green;color:lightgray">530375</td><td >107723</td><td style="background-color:green;color:lightgray">530375</td><td style="background-color:green;color:lightgray">530375</td><td >58973</td><td style="border-left: 2px solid gray;"> 0</td><td>530375</td></tr>
+<tr><td>tai_100_1000_3</td><td style="background-color:green;color:lightgray">530560</td><td >96902</td><td style="background-color:green;color:lightgray">530560</td><td style="background-color:green;color:lightgray">530560</td><td >59804</td><td style="border-left: 2px solid gray;"> 0</td><td>530560</td></tr>
+<tr><td>tai_100_1000_4</td><td style="background-color:green;color:lightgray">527101</td><td >89243</td><td style="background-color:green;color:lightgray">527101</td><td style="background-color:green;color:lightgray">527101</td><td >58831</td><td style="border-left: 2px solid gray;"> 0</td><td>527101</td></tr>
+<tr><td>tai_100_1000_5</td><td style="background-color:green;color:lightgray">517728</td><td >91194</td><td style="background-color:green;color:lightgray">517728</td><td style="background-color:green;color:lightgray">517728</td><td >58271</td><td style="border-left: 2px solid gray;"> 0</td><td>517728</td></tr>
+<tr><td>tai_100_1000_6</td><td style="background-color:green;color:lightgray">522907</td><td >88034</td><td style="background-color:green;color:lightgray">522907</td><td style="background-color:green;color:lightgray">522907</td><td >58225</td><td style="border-left: 2px solid gray;"> 0</td><td>522907</td></tr>
+<tr><td>tai_100_1000_7</td><td style="background-color:green;color:lightgray">522537</td><td >117707</td><td style="background-color:green;color:lightgray">522537</td><td style="background-color:green;color:lightgray">522537</td><td >59433</td><td style="border-left: 2px solid gray;"> 0</td><td>522537</td></tr>
+<tr><td>tai_100_1000_8</td><td style="background-color:green;color:lightgray">526428</td><td >100162</td><td style="background-color:green;color:lightgray">526428</td><td style="background-color:green;color:lightgray">526428</td><td >59948</td><td style="border-left: 2px solid gray;"> 0</td><td>526428</td></tr>
+<tr><td>tai_100_1000_9</td><td style="background-color:green;color:lightgray">528097</td><td >94772</td><td style="background-color:green;color:lightgray">528097</td><td style="background-color:green;color:lightgray">528097</td><td >58806</td><td style="border-left: 2px solid gray;"> 0</td><td>528097</td></tr>
+<tr><td>tai_100_1000_10</td><td style="background-color:green;color:lightgray">521766</td><td >94061</td><td style="background-color:green;color:lightgray">521766</td><td style="background-color:green;color:lightgray">521766</td><td >60886</td><td style="border-left: 2px solid gray;"> 0</td><td>521766</td></tr>
+<tr><td>tai_1000_100_1</td><td >60201</td><td style="background-color:green;color:lightgray">525343</td><td style="background-color:green;color:lightgray">525343</td><td >60268</td><td style="background-color:green;color:lightgray">525343</td><td style="border-left: 2px solid gray;"> 0</td><td>525343</td></tr>
+<tr><td>tai_1000_100_2</td><td >59555</td><td style="background-color:green;color:lightgray">528088</td><td style="background-color:green;color:lightgray">528088</td><td >59924</td><td style="background-color:green;color:lightgray">528088</td><td style="border-left: 2px solid gray;"> 0</td><td>528088</td></tr>
+<tr><td>tai_1000_100_3</td><td >58117</td><td style="background-color:green;color:lightgray">522793</td><td style="background-color:green;color:lightgray">522793</td><td >59118</td><td style="background-color:green;color:lightgray">522793</td><td style="border-left: 2px solid gray;"> 0</td><td>522793</td></tr>
+<tr><td>tai_1000_100_4</td><td >59281</td><td style="background-color:green;color:lightgray">524271</td><td style="background-color:green;color:lightgray">524271</td><td >59894</td><td style="background-color:green;color:lightgray">524271</td><td style="border-left: 2px solid gray;"> 0</td><td>524271</td></tr>
+<tr><td>tai_1000_100_5</td><td >60656</td><td style="background-color:green;color:lightgray">531216</td><td style="background-color:green;color:lightgray">531216</td><td >60939</td><td style="background-color:green;color:lightgray">531216</td><td style="border-left: 2px solid gray;"> 0</td><td>531216</td></tr>
+<tr><td>tai_1000_100_6</td><td >59258</td><td style="background-color:green;color:lightgray">518763</td><td style="background-color:green;color:lightgray">518763</td><td >59514</td><td style="background-color:green;color:lightgray">518763</td><td style="border-left: 2px solid gray;"> 0</td><td>518763</td></tr>
+<tr><td>tai_1000_100_7</td><td >59210</td><td style="background-color:green;color:lightgray">527093</td><td style="background-color:green;color:lightgray">527093</td><td >60080</td><td style="background-color:green;color:lightgray">527093</td><td style="border-left: 2px solid gray;"> 0</td><td>527093</td></tr>
+<tr><td>tai_1000_100_8</td><td >60782</td><td style="background-color:green;color:lightgray">519524</td><td style="background-color:green;color:lightgray">519524</td><td >61017</td><td style="background-color:green;color:lightgray">519524</td><td style="border-left: 2px solid gray;"> 0</td><td>519524</td></tr>
+<tr><td>tai_1000_100_9</td><td >59467</td><td style="background-color:green;color:lightgray">520889</td><td style="background-color:green;color:lightgray">520889</td><td >59830</td><td style="background-color:green;color:lightgray">520889</td><td style="border-left: 2px solid gray;"> 0</td><td>520889</td></tr>
+<tr><td>tai_1000_100_10</td><td >59394</td><td style="background-color:green;color:lightgray">529112</td><td style="background-color:green;color:lightgray">529112</td><td >59515</td><td style="background-color:green;color:lightgray">529112</td><td style="border-left: 2px solid gray;"> 0</td><td>529112</td></tr>
+<tr><td>tai_1000_1000_1</td><td >527772</td><td >528107</td><td >549075</td><td >527873</td><td >527765</td><td style="border-left: 2px solid gray;"> -317</td><td>549392</td></tr>
+<tr><td>tai_1000_1000_2</td><td >529859</td><td >529915</td><td >548643</td><td >529859</td><td >528938</td><td style="border-left: 2px solid gray;"> -400</td><td>549043</td></tr>
+<tr><td>tai_1000_1000_3</td><td >524375</td><td >531531</td><td >552207</td><td >524929</td><td >530808</td><td style="border-left: 2px solid gray;"> -373</td><td>552580</td></tr>
+<tr><td>tai_1000_1000_4</td><td >531646</td><td >539943</td><td style="background-color:green;color:lightgray">547670</td><td >531646</td><td >539943</td><td style="border-left: 2px solid gray;"> 0</td><td>547670</td></tr>
+<tr><td>tai_1000_1000_5</td><td >529256</td><td >537059</td><td >544924</td><td >529913</td><td >537059</td><td style="border-left: 2px solid gray;"> -269</td><td>545193</td></tr>
+<tr><td>tai_1000_1000_6</td><td >532426</td><td >527455</td><td >547126</td><td >532426</td><td >527005</td><td style="border-left: 2px solid gray;"> -160</td><td>547286</td></tr>
+<tr><td>tai_1000_1000_7</td><td >535423</td><td >536249</td><td >545823</td><td >535423</td><td >536249</td><td style="border-left: 2px solid gray;"> -54</td><td>545877</td></tr>
+<tr><td>tai_1000_1000_8</td><td >529450</td><td >527785</td><td >549093</td><td >529753</td><td >527228</td><td style="border-left: 2px solid gray;"> -127</td><td>549220</td></tr>
+<tr><td>tai_1000_1000_9</td><td >535770</td><td >528007</td><td >543205</td><td >535770</td><td >527208</td><td style="border-left: 2px solid gray;"> -354</td><td>543559</td></tr>
+<tr><td>tai_1000_1000_10</td><td >525263</td><td >528181</td><td >541092</td><td >525833</td><td >527918</td><td style="border-left: 2px solid gray;"> -7983</td><td>549075</td></tr>
 </table>
 </details>
 
@@ -546,6 +544,8 @@ We call **certification gap** the difference between the best known lower bound 
 <tr><td>yn4</td><td >719</td><td >818</td><td >871</td><td >739</td><td >676</td><td style="border-left: 2px solid gray;"> -96</td><td>967</td></tr>
 </table>
 </details>
+
+<br/>Full results in [lb.json](https://github.com/ScheduleOpt/benchmarks/tree/main/jobshop/solutions/lb.json)
 
 ### Relaxation certificates
 
@@ -589,8 +589,8 @@ Hardware and running times are hard to compare. When a reference engine reproduc
 
 ### Industrial instances
 
-<details  markdown="1">
-<summary>Da Col and Teppan 2022</summary>
+<details markdown="1">
+<summary>Da Col and Teppan 2022 - dct</summary>
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
 <tr><td>dct-long-100-10000-1</td><td>103 x 100</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:cornflowerblue;color:white;font-weight:bold">trivial</td><td>OptalCP in < 1m</td></tr>
@@ -618,7 +618,6 @@ Hardware and running times are hard to compare. When a reference engine reproduc
 <tr><td>dct-short-1000-100000-2</td><td>21349 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>dct-short-1000-100000-3</td><td>21338 x 1000</td><td>industrial</td><td>600000</td><td>600000</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 </table>
-
 
 *Da Col and Teppan report that instance dct-short-1000-100000-1 was solved to optimality by CP Optimizer in 6h which we haven't been able to reproduce (with CPO or any other solver). We are still investigating*. 
 We have recently noticed some regression in OptalCP on two of these instances, hence you may need specific parameters to reach the solution in the time announced.
@@ -844,32 +843,11 @@ However, OptalCP proves a lower bound of 667 and Optimizizer only provides a ver
 </table>
 </details>
 
-### Stress-test
-
 <details  markdown="1">
-<summary>Da Col and Teppan 2022 - Taillard like instances `tai`</summary>
+<summary>Da Col and Teppan 2022 - tai</summary>
+
 <table>
 <tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
-<tr><td>tai_100_100_1</td><td>100 x 100</td><td>random</td><td>62843</td><td>76118</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>tai_100_100_2</td><td>100 x 100</td><td>random</td><td>62814</td><td>75478</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>tai_100_100_3</td><td>100 x 100</td><td>random</td><td>61533</td><td>75366</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>tai_100_100_4</td><td>100 x 100</td><td>random</td><td>64742</td><td>77307</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>tai_100_100_5</td><td>100 x 100</td><td>random</td><td>61766</td><td>76403</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>tai_100_100_6</td><td>100 x 100</td><td>random</td><td>61360</td><td>76060</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>tai_100_100_7</td><td>100 x 100</td><td>random</td><td>64040</td><td>76713</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>tai_100_100_8</td><td>100 x 100</td><td>random</td><td>63224</td><td>76767</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>tai_100_100_9</td><td>100 x 100</td><td>random</td><td>62631</td><td>77337</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>tai_100_100_10</td><td>100 x 100</td><td>random</td><td>64866</td><td>75827</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>tai_100_1000_1</td><td>100 x 1000</td><td>random</td><td>522298</td><td>525389</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub AMFCV2026</td></tr>
-<tr><td>tai_100_1000_2</td><td>100 x 1000</td><td>random</td><td>530375</td><td>530375</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb OptalCP | ub AMFCV2026</td></tr>
-<tr><td>tai_100_1000_3</td><td>100 x 1000</td><td>random</td><td>530560</td><td>530560</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb OptalCP | ub AMFCV2026</td></tr>
-<tr><td>tai_100_1000_4</td><td>100 x 1000</td><td>random</td><td>527101</td><td>527101</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb OptalCP | ub AMFCV2026</td></tr>
-<tr><td>tai_100_1000_5</td><td>100 x 1000</td><td>random</td><td>517728</td><td>523876</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
-<tr><td>tai_100_1000_6</td><td>100 x 1000</td><td>random</td><td>522907</td><td>523503</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub AMFCV2026</td></tr>
-<tr><td>tai_100_1000_7</td><td>100 x 1000</td><td>random</td><td>522537</td><td>525283</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub AMFCV2026</td></tr>
-<tr><td>tai_100_1000_8</td><td>100 x 1000</td><td>random</td><td>526428</td><td>526428</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb OptalCP | ub AMFCV2026</td></tr>
-<tr><td>tai_100_1000_9</td><td>100 x 1000</td><td>random</td><td>528097</td><td>528097</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb OptalCP | ub AMFCV2026</td></tr>
-<tr><td>tai_100_1000_10</td><td>100 x 1000</td><td>random</td><td>521766</td><td>524358</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub AMFCV2026</td></tr>
 <tr><td>tai_1000_100_1</td><td>1000 x 100</td><td>random</td><td>525343</td><td>525343</td><td style="background-color:orange;color:white;font-weight:bold">medium</td><td>OptalCP in < 1h</td></tr>
 <tr><td>tai_1000_100_2</td><td>1000 x 100</td><td>random</td><td>528088</td><td>528088</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
 <tr><td>tai_1000_100_3</td><td>1000 x 100</td><td>random</td><td>522793</td><td>522793</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 2h</td></tr>
@@ -880,6 +858,37 @@ However, OptalCP proves a lower bound of 667 and Optimizizer only provides a ver
 <tr><td>tai_1000_100_8</td><td>1000 x 100</td><td>random</td><td>519524</td><td>519524</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
 <tr><td>tai_1000_100_9</td><td>1000 x 100</td><td>random</td><td>520889</td><td>520889</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
 <tr><td>tai_1000_100_10</td><td>1000 x 100</td><td>random</td><td>529112</td><td>529112</td><td style="background-color:red;color:white;font-weight:bold">hard</td><td>OptalCP in < 3h</td></tr>
+</table>
+
+</details>
+
+
+### Stress-test
+
+<details  markdown="1">
+<summary>Da Col and Teppan 2022 - tai</summary>
+<table>
+<tr><th>Instance</th><th>Size</th><th>Problem</th><th>LB</th><th>UB</th><th>Type</th><th>Solved by</th></tr>
+<tr><td>tai_100_100_1</td><td>100 x 100</td><td>stress-test</td><td>62843</td><td>76118</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_2</td><td>100 x 100</td><td>stress-test</td><td>62814</td><td>75478</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_3</td><td>100 x 100</td><td>stress-test</td><td>61533</td><td>75366</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_4</td><td>100 x 100</td><td>stress-test</td><td>64742</td><td>77307</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_5</td><td>100 x 100</td><td>stress-test</td><td>61766</td><td>76403</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_6</td><td>100 x 100</td><td>stress-test</td><td>61360</td><td>76060</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_7</td><td>100 x 100</td><td>stress-test</td><td>64040</td><td>76713</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_8</td><td>100 x 100</td><td>stress-test</td><td>63224</td><td>76767</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_9</td><td>100 x 100</td><td>stress-test</td><td>62631</td><td>77337</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_100_10</td><td>100 x 100</td><td>stress-test</td><td>64866</td><td>75827</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_1000_1</td><td>100 x 1000</td><td>stress-test</td><td>522298</td><td>525389</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_2</td><td>100 x 1000</td><td>stress-test</td><td>530375</td><td>530375</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_3</td><td>100 x 1000</td><td>stress-test</td><td>530560</td><td>530560</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_4</td><td>100 x 1000</td><td>stress-test</td><td>527101</td><td>527101</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_5</td><td>100 x 1000</td><td>stress-test</td><td>517728</td><td>523876</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub DOFP2026</td></tr>
+<tr><td>tai_100_1000_6</td><td>100 x 1000</td><td>stress-test</td><td>522907</td><td>523503</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_7</td><td>100 x 1000</td><td>stress-test</td><td>522537</td><td>525283</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_8</td><td>100 x 1000</td><td>stress-test</td><td>526428</td><td>526428</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_9</td><td>100 x 1000</td><td>stress-test</td><td>528097</td><td>528097</td><td style="background-color:purple;color:white;font-weight:bold">closed</td><td>lb OptalCP | ub AMFCV2026</td></tr>
+<tr><td>tai_100_1000_10</td><td>100 x 1000</td><td>stress-test</td><td>521766</td><td>524358</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub AMFCV2026</td></tr>
 <tr><td>tai_1000_1000_1</td><td>1000 x 1000</td><td>stress-test</td><td>549392</td><td>796759</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Schwemin2026</td></tr>
 <tr><td>tai_1000_1000_2</td><td>1000 x 1000</td><td>stress-test</td><td>549043</td><td>797337</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Schwemin2026</td></tr>
 <tr><td>tai_1000_1000_3</td><td>1000 x 1000</td><td>stress-test</td><td>552580</td><td>798050</td><td style="background-color:gray;color:white;font-weight:bold">open</td><td>lb OptalCP | ub Schwemin2026</td></tr>
@@ -933,13 +942,108 @@ All other bounds were found by OptalCP except 4 bounds by CP-SAT and 1 by Hexaly
 
 ### History of jsplib instances
 
-[WORK IN PROGRESS]
+<details markdown="1">
+<summary>Fisher and Thompson (FT, 1963)</summary>
+
+The `ft` appearaed in ***Probabilistic Learning Combinations of Local Job-Shop Scheduling Rules***, there were initially called `mt` because the paper was published in Industrial Scheduling (1963), edited by J. F. Muth and G. L. Thompson. 
+
+Instance `ft10` is famous for having resisted a proof of optimality for more than twenty years, until Carlier and Pinson closed it in 1989 using a dedicaded branch-and-bound combining single machine relaxations (Jackson's preemptive schedule) and 'immediate selections' that are the predecessor of modern edge-finding / not-first not-last rules. It was subsequently solved by Applegate and Cook in 1991 using a bottle-neck heurisic combined with an LP+cuts for the lower bound, embedded in a branch-and-bound.
+
+</details>
+
+<details markdown="1">
+<summary>Lawrence (LA, 1984)</summary>
+
+The 40 `la` instances were published in the supplement to S. Lawrence's ***Resource Constrained Project Scheduling: An Experimental Investigation of Heuristic Scheduling Techniques*** (Carnegie Mellon University, 1984). For being a more varied collection covering different combinations of jobs and machines, they quickly became a standard benchmark.
+
+</details>
+
+<details markdown="1">
+<summary>Adams, Balas and Zawack (ABZ, 1988)</summary>
+
+Introduced in ***The Shifting Bottleneck Procedure for Job Shop Scheduling*** (1988) to test a machine-oriented decomposition of the job-shop problem: at each iteration, the non-preemptive Jackson schedule is computed for each machine with the branch-and-bound of Carlier and Pinson; The machine with the largest makespan is selected as the bottleneck and sequenced.  Dauzère-Pérès and Lasserre (1993), followed by Balas, Lenstra and Vazacopoulos (1995) improved the procedure.
+
+</details>
+
+<details markdown="1">
+<summary>Applegate and Cook (ORB, 1991)</summary>
+
+The `orb` instances were generated to test the Applegate and Cook approach that combined a bottleneck heuristic and an LP+cuts for the lower bound, all embedded in a branch-and-bound. 
+
+</details>
+
+<details markdown="1">
+<summary>Storer, Wu and Vaccari (SWV, 1992)</summary>
+
+The 20 `swv` instances were introduced by Storer, Wu and Vaccari in ***New Search Spaces for Sequencing Problems with Application to Job Shop Scheduling*** (Management Science, 1992). Their research investigated alternative solution representations and neighbourhood structures, combining problem-specific scheduling knowledge with local-search techniques from artificial intelligence.
+
+The swv instances have an early machine - late machine sructue
+
+| Instances	 | Size	 | First machine group |Second machine group |
+|---|---|---|---|
+swv 01–05 | 20 × 10 | 0–4	| 5–9 |
+swv 06–10 | 20 × 15 |	0–6	| 7–14 
+swv 11–15 | 50 × 10 |	0–4 |	5–9  |
+swv 16–20 | 50 × 10 |	No partition | No partition |
+
+
+</details>
+
+<details markdown="1">
+<summary>Yamada and Nakano (YN, 1992)</summary>
+
+The 4 `yn` instances appeared in ***A Genetic Algorithm Applicable to Large-Scale Job-Shop Problems***, second International Conference on Parallel Problem Solving from Nature (PPSN II, 1992). They were created to investigate genetic algorithms on relatively large job-shop problems.
+
+</details>
+
+<details markdown="1">
+<summary>Taillard (TA, 1993)</summary>
+
+Taillard's ***Benchmarks for Basic Scheduling Problems*** (European Journal of Operational Research, 1993) introduced 260 randomly generated scheduling problems covering permutation flow shop, job shop and open shop environments. The 80 job-shop instances became one of the most widely used benchmark collections in scheduling research as it provided combinations of problem sizes up to 100 jobs and 20 machines.
+
+</details>
+
+<details markdown="1">
+<summary>Demirkol, Mehta and Uzsoy (DMU, 1998)</summary>
+
+The 80 `dmu` appeared in ***Benchmarks for Shop Scheduling Problems*** (European Journal of Operational Research, 1998). Their work introduced a broad collection of 600 randomly generated scheduling problems covering flow-shop and job-shop environments, several problem sizes, objectives and due-date configurations. The 80 job-shop instances retained in JSPLib combine two different routing structures. 
+- dmu 01–40 are conventional random job shops
+- dmu 41–80 have a two-stage technological structure
+
+Demirkol et al. reported that the two stage instances required one to two orders of magnitude more computation than conventional random job shops in ***A Computational Study of Shifting Bottleneck Procedures for Shop Scheduling Problems*** (1997).
+
+</details>
+
+<details markdown="1">
+<summary>Da Col and Teppan (DCT, TAI 2022)</summary>
+
+Da Col and Teppan generated large jobshop instances to study how constraint programming engines perform with instances that are closer to actual manufacturing plants
+- `dct` instances were created to mimic semi-conductor plants with a known optimum
+- `tai` instances use Taillard generator with job and machine sizes of $10^k$
+
+However `dct` instances are too easy as the known optimum is reached by a simple machine capacity lower bound, whie `tai` besides inheriting the limitations of the `ta` family have unusual characteristics that are not typically seen in industrial problems.
+
+- `tai_100_100` suffer from ***slow convergence***. The search landscape is extremely flat: once a reasonably good solution is found, a large number of neighbouring solutions that differ by only a few units of makespan appear almost immediately.
+
+- `tai_100_1000` are completely ***job-dominated***. Machine capacity is never the binding constraint; Most of the usual machine-based reasoning (edge-finding, not-first/not-last, energetic reasoning, etc.) brings almost no pruning. The makespan is essentially determined by the longest job and the problem is to fit all other jobs within that limit.
+
+- `tai_1000_1000` ***break the memory capacity*** of most CP engines (or make them prohibitively slow).
+
+`tai` instances were added to JSPlib in 2024 for CP-researchers to investigate pathological cases. 
+
+</details>
+
+
 
 ### History of jsplib
 
 [WORK IN PROGRESS]
 
 ### History of the engines
+
+>
+> If your name appears in this section and you notice an error, contact me
+>
 
 <details markdown="1">
 <summary>IBM ILOG Cplex (1987 - present)</summary>
@@ -1069,6 +1173,8 @@ The principal implementation files in OR-Tools v9.15 are:
 - Google OR-Tools. [Scheduling documentation](https://developers.google.com/optimization/scheduling).
 - Google OR-Tools. [Release notes](https://developers.google.com/optimization/support/release_notes).
 
+<br/>
+
 </details>
 
 <details markdown="1">
@@ -1086,10 +1192,3 @@ References
 
 </details>
 
-<br/>
-
->
-> If your name appears in this section and you notice an error, contact me
->
-
-<br/>
