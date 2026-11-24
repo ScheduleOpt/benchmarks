@@ -52,6 +52,7 @@ This page is also the README.md of the [jobshop folder](https://github.com/Sched
   - [Analytic Lower bounds](#analytic-lower-bounds)
   - [Relaxation certificates](#relaxation-certificates)
   - [Engine trace certificates](#engine-trace-certificates)
+  - [Understanding instance hardness](#understanding-instance-hardness)
 - [Best-known bounds: provenance and history](#best-known-bounds-provenance-and-history)
   - [Industrial instances](#industrial-instances)
   - [Random instances](#random-instances)
@@ -208,8 +209,9 @@ We have reorganized the instances into new groups
     - updates on legacy instances will be discontinued
 - ***Industrial***: instances that were generated in a way that mimics real problems
     - `bel` and `dct` 
-- ***Random***: randomly generated instances without any special structure
-    - `abz[7-9]`, `swv`, `yn`, `ta[11-50]`, `dmu`, `tai_1000_100`
+- ***Random***: randomly generated instances 
+    - without any special structure `abz[7-9]`, `swv[16-20]`, `yn`, `ta[11-50]`, `dmu[01-40]`, `tai_1000_100`
+    - with a two-stage structure `swv[01-15]`, `dmu[41-80]`
 - ***Stress-test***: instances generated to test the limit of engines
     - `tai_100_100` : slow convergence
     - `tai_100_1000` : job dominated, making (machine-based) propagation almost useless
@@ -562,13 +564,27 @@ An engine trace certificate is the search tree of an engine (logically) compress
 
 ### Understanding instance hardness
 
-Streeter and Smith ("How the Landscape of Random Job Shop Scheduling Instances Depends on the Ratio of Jobs to Machines" 2006) showed that random instances are hardest when the ratio of jobs to machines $n/m$ is close to one. Their statistical study shows that as size grows the best solutions become more and more distant from each other. Landscape statistics miss a lot, however: `ta39` and `ta40` have the same size (30 x 15) and the same generator, yet one is solved in under a minute and the other is still open.
+#### Landscape structure and the job-to-machine ratio
 
-The lower bounds can be used to refine the understanding of instance difficulty: 
-- on `ta39`, Carlier's bound is 1791 for an optimum of 1795
-- on `ta40`, Carlier's bound is 1617 for an optimum between 1658 and 1669
+Streeter and Smith ("[How the Landscape of Random Job Shop Scheduling Instances Depends on the Ratio of Jobs to Machines](https://mattstreeter.org/Research/mstreeter_jair_2006.pdf)", 2006) experiments reveal two complementary aspects of instance difficulty:
 
-Any engine that embeds a Carlier bound into a propagation step is likely to quickly close the gap between 1791 and 1795, and with the help of heuristics close `ta39`.
+- **Distance from optimality:** random schedules and random local optima are furthest from optimality when \(n/m\) is close to one.
+- **Dispersion of good solutions:** for a given relative optimality gap, the expected distance between two near-optimal schedules increases with \(n/m\).
+
+#### Lower bounds as indicators of instance difficulty
+
+Lower bounds provide a complementary way to investigate the difficulty of individual instances as they indicate how much of the optimality gap a particular relaxation can explain.
+
+Consider two Taillard instances of identical size (30 × 15), generated using the same procedure:
+
+- On `ta39`, Carlier's lower bound is 1791, against an optimum of 1795.
+- On `ta40`, Carlier's lower bound is 1617, while the best-known bounds establish an interval of [1658, 1669].
+
+Despite their identical size and generator, `ta39` is solved to optimality in under a minute, whereas `ta40` remains open. On `ta39`, the remaining gap is very small therefore propagation-based strengthening engines embedding Carlier's relaxation together with effective heuristics close the remaining gap quickly. On `ta40`, substantially stronger lower-bound reasoning is needed.
+
+Two-stage instances such as `swv[01-15]` and `dmu[41-80]`, are known to be significantly harder than their unstructured counterparts; Demirkol et al. ("[A Computational Study of Shifting Bottleneck Procedures for Shop Scheduling Problems](https://doi.org/10.1023/A:1009627429878)", 1997) showed that this routing structure significantly affects the performance of shifting-bottleneck procedures: the gap between the lower bounds and the solutions obtained is approximately 7–8% for classical random job shops, compared with approximately 20% for two-stage instances. Mattfeld et al. ("[A Search Space Analysis of the Job Shop Scheduling Problem](https://doi.org/10.1023/A:1018979424002)", 1999) found that the hard instances exhibit greater dispersion of local optima, greater entropy in machine precedence relations, and longer fitness correlation lengths.
+
+The distinction is reflected in the lower bounds of `dmu` where Carlier's lower bound matches the best-known lower bounds on half of `dmu[01-40]`, but falls short on every instance in `dmu[41-80]`.
 
 
 <br/>
